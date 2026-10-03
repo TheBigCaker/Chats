@@ -764,7 +764,7 @@ static int get_int(long words) {
 #define MAX_LABELS 524288
 #define MAX_PATCHES 524288
 typedef struct Code {
-    uint32_t words[4194304];
+    uint32_t words[8388608];
     int nwords;
     /* labels: name hash -> word index */
     int label_hash[MAX_LABELS];
@@ -797,11 +797,11 @@ static void emit_mov64(Code* code, int rd, long value) {
  * was larger than ~45 KB wrote past the end of the mapping and the compiler
  * segfaulted while compiling VALID input (`static char big[50000];`).  Size the
  * mapping from the struct plus a full-size data allowance instead. */
-#define DRYGON_COMPILER_BYTES (256 * 1024 * 1024)
+#define DRYGON_COMPILER_BYTES (384 * 1024 * 1024)
 /* Size of the mmap'd JIT syscall scratch buffer. Code is words[4194304]
  * (16 MB) + label_hash/label_idx (2 MB each) + 5 patch tables (2 MB each),
  * i.e. ~30 MB; 32 MB covers it. */
-#define DRYGON_JIT_CODE_BYTES 67108864
+#define DRYGON_JIT_CODE_BYTES 100663296
 static long drygon_jit_syscall_impl(long num, long a, long b, long c, long d, long e, long f) {
     /* Code is ~30 MB, far past the 8 MB stack, so the scratch buffer is mmap'd
      * the way Compiler is -- and mmap is lazy, so only the few pages actually
@@ -2308,7 +2308,7 @@ static int hash_mem(char* s, int len) {
     return h & 0x7FFFFFFF;
 }
 static void code_emit(Code* c, uint32_t w) {
-    if (c->nwords >= 4194304) {
+    if (c->nwords >= 8388608) {
         if (d_getenv("DRYGON_TRACE") != 0) { d_puts("TRACE nw: "); d_putdec(c->nwords); d_puts("\n"); }
         d_puts("words overflow\n"); sys_exit(1); }
     c->words[c->nwords] = w;
@@ -20123,8 +20123,8 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
     static void cg_kw_call_fix(IRNode* n, IRNode* unit) {
         int nkw = 0, nstar = 0, i = 0, np = 0, j = 0, npos = 0, nout = 0, soff = 0, nplain = 0;
         IRNode* params;
-        IRNode* posv[8];
-        IRNode* out[8];
+        IRNode* posv[24];
+        IRNode* out[24];
         if (!n || d_strcmp(n->type,"CALL")!=0 || !n->value || !n->value[0]) return;
         i = 0;
         while (i < n->nchildren) {
@@ -20168,14 +20168,18 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
             if (!params) return;
         }
         np = params->nchildren - soff;
-        if (np < 1 || np > 8) return;
+        if (np < 1 || np > 24) return;
         /* a method call parses as a call to the method's own name: never
          * rewrite one against a same-named module-level def */
         if (soff == 0 && d_strcmp(params->children[0]->value,"self")==0) return;
-        while (j < np) {                     /* only plain scalar parameters */
+        while (j < np) {   /* a seq parameter takes array+count, a dict three
+                            * arrays, `*args` the packed array: those shapes are
+                            * emitted from the parameter's own type, so a LIST
+                            * slot is fine here -- but a DICT/`*args` slot is
+                            * not positional at all and bails (`Cls(**kw)` and
+                            * variadic forwarding have their own paths). */
             const char* dt = params->children[j + soff]->data_type;
-            if (dt && (d_strcmp(dt,"VARGS")==0 || d_strcmp(dt,"DICT")==0 ||
-                       d_strcmp(dt,"LIST")==0)) return;
+            if (dt && (d_strcmp(dt,"VARGS")==0 || d_strcmp(dt,"DICT")==0)) return;
             j++;
         }
         i = 0;                               /* every keyword must name a param */
@@ -20195,7 +20199,7 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
         i = 0;
         while (i < n->nchildren) {
             IRNode* c = n->children[i];
-            if (c && d_strcmp(c->type,"KWARG")!=0 && npos < 8) { posv[npos] = c; npos++; }
+            if (c && d_strcmp(c->type,"KWARG")!=0 && npos < 24) { posv[npos] = c; npos++; }
             i++;
         }
         if (npos > np) return;
@@ -22155,7 +22159,8 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
         return -1;
     }
     static int py_is_comp(const IRNode* n) {
-        return n && d_strcmp(n->type, "COMPLIST") == 0;
+        return n && (d_strcmp(n->type, "COMPLIST") == 0 ||
+                     d_strcmp(n->type, "COMPDICT") == 0);
     }
     /* `for VAR in range(...)` rendered as the canonical three-clause loop the
      * codegen already emits for that builtin. */
@@ -22198,7 +22203,170 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
         }
     }
     /* build `name` from a COMPLIST: reset the count, then the append loop */
-    static IRNode* py_comp_fill(const char* name, const IRNode* c) {
+    /* one clause of a comprehension that is not the first: it nests INSIDE
+     * the loop before it, so the store below runs once per combination of
+     * every clause's loop variable (`[x+y for x in a for y in b]`).
+     *
+     * clause layout -- COMPLIST: [elem, target, iter, cond?, rest?]
+     *                   COMPDICT: [key, val, target, iter, cond?, rest?] */
+    /* the loop a comprehension clause runs: `for VAR in range(...)` has to take
+     * the canonical three-clause form the codegen emits for that builtin, so an
+     * inner clause over `range` is lowered the same way the first clause is */
+    static IRNode* py_comp_for(IRNode* vtgt, const IRNode* iter) {
+        if (vtgt && d_strcmp(vtgt->type,"IDENTIFIER")==0 && vtgt->value &&
+            iter && d_strcmp(iter->type,"CALL")==0 && d_strcmp(iter->value,"range")==0)
+            return py_comp_range_for(vtgt->value, iter);
+        IRNode* f = ir_new("FOR", "", "ANY");
+        if (vtgt) ir_add_child(f, vtgt);
+        else ir_add_child(f, ir_new("IDENTIFIER", "i", "ANY"));
+        if (iter) ir_add_child(f, iter);
+        return f;
+    }
+    /* `d.items()` as a comprehension iterable -- the source dictionary's own
+     * key/value flags then type the loop variables */
+    static const char* py_comp_items_src(const IRNode* it) {
+        if (!it || d_strcmp(it->type,"CALL") != 0 || it->nchildren < 1) return NULL;
+        const IRNode* m = it->children[0];
+        if (!m || d_strcmp(m->type,"MEMBER_ACCESS") != 0) return NULL;
+        if (d_strcmp(m->value,"items") != 0 || m->nchildren < 1) return NULL;
+        const IRNode* d = m->children[0];
+        if (!d || d_strcmp(d->type,"IDENTIFIER") != 0) return NULL;
+        return d->value;
+    }
+    /* A dict comprehension is built while its source is still being parsed,
+     * but the key type follows tables that the source scans only finish
+     * filling later -- `{k: v for k, v in d.items()}` has string keys exactly
+     * when `d` does.  Remember the clause to ask about and settle it once the
+     * tables are complete. */
+    static int cg_compkey_n = 0;
+    static char cg_compkey_dst[128 * 32];
+    static IRNode* cg_compkey_iter[128];
+    static void cg_compkey_note(const char* dst, const IRNode* it) {
+        if (cg_compkey_n >= 128 || !dst) return;
+        int i = 0;
+        while (dst[i] && i < 31) { cg_compkey_dst[cg_compkey_n * 32 + i] = dst[i]; i++; }
+        cg_compkey_dst[cg_compkey_n * 32 + i] = 0;
+        cg_compkey_iter[cg_compkey_n] = (IRNode*)it;
+        cg_compkey_n = cg_compkey_n + 1;
+    }
+    static void cg_compkey_resolve(void) {
+        int i = 0;
+        while (i < cg_compkey_n) {
+            const IRNode* it = cg_compkey_iter[i];
+            int kf = 0;
+            const char* isn = py_comp_items_src(it);
+            if (isn) {
+                if (cg_dict_kf(isn)) kf = 1;
+            } else if (cg_node_is_str_static(it)) kf = 1;
+            if (kf) cg_note_dict(cg_compkey_dst + i * 32, 0, 1);
+            i++;
+        }
+
+    }
+    static IRNode* py_comp_store(const char* name, const IRNode* elem, int isdict,
+                                 const IRNode* key) {
+        /* a comprehension whose element is the backing list of another
+         * comprehension is a 2-D list: the finished row is appended whole, and
+         * the 2-D append path copies it element-wise into the flattening
+         * backing array (`[[i * j for j ...] for i ...]`) */
+        if (!isdict && elem && d_strcmp(elem->type,"IDENTIFIER")==0 &&
+            elem->value && cg_pyc_find(elem->value) >= 0) {
+            IRNode* rowbody = ir_new("BLOCK", "", "ANY");
+            IRNode* rma = ir_new("MEMBER_ACCESS", "append", ".");
+            ir_add_child(rma, ir_new("IDENTIFIER", name, "ANY"));
+            IRNode* rap = ir_new("CALL", "COMPLEX", "ANY");
+            ir_add_child(rap, rma);
+            ir_add_child(rap, elem);
+            IRNode* res = ir_new("EXPR_STMT", "", "ANY");
+            ir_add_child(res, rap);
+            ir_add_child(rowbody, res);
+            return rowbody;
+        }
+        IRNode* body = ir_new("BLOCK", "", "ANY");
+        IRNode* acc = ir_new("ARRAY_ACCESS", "", "ANY");
+        ir_add_child(acc, ir_new("IDENTIFIER", name, "ANY"));
+        if (isdict) {
+            if (key) ir_add_child(acc, key);
+        } else {
+            char cn[128];
+            cg_pyc_count_name(cn, name);
+            ir_add_child(acc, ir_new("IDENTIFIER", cn, "ANY"));
+        }
+        IRNode* ai = ir_new("ASSIGN", "=", "ANY");
+        ir_add_child(ai, acc);
+        if (elem) ir_add_child(ai, elem);
+        ir_add_child(body, ai);
+        if (!isdict) {
+            char cn[128];
+            cg_pyc_count_name(cn, name);
+            IRNode* an = ir_new("ASSIGN", "=", "ANY");
+            ir_add_child(an, ir_new("IDENTIFIER", cn, "ANY"));
+            IRNode* plus = ir_new("BINARY_OP", "+", "ANY");
+            ir_add_child(plus, ir_new("IDENTIFIER", cn, "ANY"));
+            ir_add_child(plus, ir_new("CONSTANT", "1", "INT"));
+            ir_add_child(an, plus);
+            ir_add_child(body, an);
+        }
+        return body;
+    }
+    static IRNode* py_comp_nest(const char* name, const IRNode* c) {
+        if (!c) return NULL;
+        int isdict = d_strcmp(c->type, "COMPDICT") == 0;
+        int b = isdict ? 2 : 1;
+        const IRNode* key = (isdict && c->nchildren > 0) ? c->children[0] : NULL;
+        const IRNode* elem = c->nchildren > (isdict ? 1 : 0) ? c->children[isdict ? 1 : 0] : NULL;
+        IRNode* vtgt = c->nchildren > b ? c->children[b] : NULL;
+        const IRNode* iter = c->nchildren > b + 1 ? c->children[b + 1] : NULL;
+        const IRNode* cond = c->nchildren > b + 2 ? c->children[b + 2] : NULL;
+        const IRNode* rest = c->nchildren > b + 3 ? c->children[b + 3] : NULL;
+        IRNode* f = py_comp_for(vtgt, iter);
+        IRNode* body = ir_new("BLOCK", "", "ANY");
+        if (rest) ir_add_child(body, py_comp_nest(name, rest));
+        else ir_add_child(body, py_comp_store(name, elem, isdict, key));
+        if (cond) {
+            IRNode* iff = ir_new("IF", "", "ANY");
+            ir_add_child(iff, cond);
+            ir_add_child(iff, body);
+            IRNode* ib = ir_new("BLOCK", "", "ANY");
+            ir_add_child(ib, iff);
+            ir_add_child(f, ib);
+        } else ir_add_child(f, body);
+        return f;
+    }
+    /* build `name` from a COMPDICT: an empty dictionary, then the keyed store
+     * loops.  Unlike a list comprehension there is no counter to reset, so the
+     * clauses nest directly and the value array is typed from the item. */
+    static IRNode* py_comp_fill_dict(const char* name, const IRNode* c) {
+        const IRNode* key = c->nchildren > 0 ? c->children[0] : NULL;
+        const IRNode* val = c->nchildren > 1 ? c->children[1] : NULL;
+        IRNode* vtgt = c->nchildren > 2 ? c->children[2] : NULL;
+        const IRNode* iter = c->nchildren > 3 ? c->children[3] : NULL;
+        const IRNode* cond = c->nchildren > 4 ? c->children[4] : NULL;
+        const IRNode* rest = c->nchildren > 5 ? c->children[5] : NULL;
+        int _kf = cg_node_is_str_static(key) ? 1 : 0;
+        if (!_kf) cg_compkey_note(name, iter);
+        cg_note_dict(name, cg_dict_vflag(val), _kf);
+        IRNode* seq = ir_new("BLOCK", "SEQ", "ANY");
+        IRNode* ini = ir_new("ASSIGN", "=", "ANY");
+        ir_add_child(ini, ir_new("IDENTIFIER", name, "ANY"));
+        ir_add_child(ini, ir_new("BLOCK", "DICT", "ANY"));
+        ir_add_child(seq, ini);
+        IRNode* f = py_comp_for(vtgt, iter);
+        IRNode* body = ir_new("BLOCK", "", "ANY");
+        if (rest) ir_add_child(body, py_comp_nest(name, rest));
+        else ir_add_child(body, py_comp_store(name, val, 1, key));
+        if (cond) {
+            IRNode* iff = ir_new("IF", "", "ANY");
+            ir_add_child(iff, cond);
+            ir_add_child(iff, body);
+            IRNode* ib = ir_new("BLOCK", "", "ANY");
+            ir_add_child(ib, iff);
+            ir_add_child(f, ib);
+        } else ir_add_child(f, body);
+        ir_add_child(seq, f);
+        return seq;
+    }
+    static IRNode* py_comp_fill_p(const char* name, const IRNode* c, IRNode* pre) {
         const IRNode* elem = c->nchildren > 0 ? c->children[0] : NULL;
         IRNode* vtgt = c->nchildren > 1 ? c->children[1] : NULL;
         const char* var = (vtgt && d_strcmp(vtgt->type,"IDENTIFIER")==0) ? vtgt->value : "i";
@@ -22269,6 +22437,33 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
             if (iter) ir_add_child(f, iter);
         }
         IRNode* body = ir_new("BLOCK", "", "ANY");
+        /* statements that must run once per iteration of this loop, before the
+         * element is stored: a nested comprehension in the element
+         * (`[[x for x in r] for r in m]`) is built here, not once up front, so
+         * its loop sees the current value of this loop's variable */
+        if (pre) { int _pi = 0; while (_pi < pre->nchildren) { ir_add_child(body, pre->children[_pi]); _pi = _pi + 1; } }
+        /* `[x for a in A for b in B]` and `{k: v for a in A for b in B}`: the
+         * clauses after the first nest inside this loop, so the store below
+         * runs once per combination of the loop variables */
+        const IRNode* rest = c->nchildren > 4 ? c->children[4] : NULL;
+        const IRNode* storee = elem2 ? elem2 : elem;
+        if (rest) ir_add_child(body, py_comp_nest(name, rest));
+        else if (storee && d_strcmp(storee->type,"IDENTIFIER")==0 && storee->value &&
+                 cg_pyc_find(storee->value) >= 0) {
+        /* the element is the backing list of an inner comprehension: this
+         * target holds list rows, so the finished row is appended whole and
+         * the 2-D append path copies it in row by row.  Assigning it would
+         * truncate the pointer into one int slot (60_comprehensive check 45:
+         * `[[i * j for j in range(1, 4)] for i in range(1, 4)]`). */
+        IRNode* rma = ir_new("MEMBER_ACCESS", "append", ".");
+        ir_add_child(rma, ir_new("IDENTIFIER", name, "ANY"));
+        IRNode* rap = ir_new("CALL", "COMPLEX", "ANY");
+        ir_add_child(rap, rma);
+        ir_add_child(rap, storee);
+        IRNode* res = ir_new("EXPR_STMT", "", "ANY");
+        ir_add_child(res, rap);
+        ir_add_child(body, res);
+        } else {
         IRNode* acc = ir_new("ARRAY_ACCESS", "", "ANY");
         ir_add_child(acc, ir_new("IDENTIFIER", name, "ANY"));
         ir_add_child(acc, ir_new("IDENTIFIER", cn, "ANY"));
@@ -22284,6 +22479,7 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
         ir_add_child(plus, ir_new("CONSTANT", "1", "INT"));
         ir_add_child(an, plus);
         ir_add_child(body, an);
+        }
         if (cond) {
             IRNode* iff = ir_new("IF", "", "ANY");
             ir_add_child(iff, cond);
@@ -22302,23 +22498,50 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
         ir_add_child(seq, f);
         return seq;
     }
+    /* comprehension fill with nothing to run before the store */
+    static IRNode* py_comp_fill(const char* name, const IRNode* c) {
+        return py_comp_fill_p(name, c, NULL);
+    }
     /* replace every comprehension inside a statement with the name of the
      * array that holds it, collecting the loops that build those arrays */
     static void py_comp_hoist(IRNode* n, IRNode** seq) {
         if (!n) return;
+        /* a comprehension's trailing clause slot holds another clause node,
+         * not a value: it must stay in place for py_comp_nest to walk (`rest`),
+         * so hide it from the hoist loop and recurse into it afterwards */
+        int keepslot = -1;
+        IRNode* keep = NULL;
+        if (py_is_comp(n)) {
+            keepslot = (d_strcmp(n->type,"COMPDICT")==0) ? 5 : 4;
+            if (n->nchildren > keepslot && py_is_comp(n->children[keepslot])) {
+                keep = n->children[keepslot];
+                n->children[keepslot] = NULL;
+            }
+        }
         int i = 0;
         while (i < n->nchildren) {
             IRNode* c = n->children[i];
             if (py_is_comp(c)) {
-                py_comp_hoist(c, seq); /* nested comprehensions build first */
+                /* a comprehension nested inside this one is rebuilt on every
+                 * iteration of this one, so its loops are handed to the fill
+                 * below as a prelude instead of running once, up front */
+                IRNode* cseq = NULL;
+                py_comp_hoist(c, &cseq);
                 char nm[64];
                 cg_pyc_fresh(nm);
-                cg_pyc_note(nm, c->nchildren > 0 ? c->children[0] : NULL);
+                int cdict = d_strcmp(c->type, "COMPDICT") == 0;
+                /* a dict comprehension is not an array: it is registered as a
+                 * dictionary by py_comp_fill_dict, not as a backing list. */
+                if (!cdict) cg_pyc_note(nm, c->nchildren > 0 ? c->children[0] : NULL);
                 if (!*seq) *seq = ir_new("BLOCK", "SEQ", "ANY");
-                ir_add_child(*seq, py_comp_fill(nm, c));
+                ir_add_child(*seq, cdict ? py_comp_fill_dict(nm, c) : py_comp_fill_p(nm, c, cseq));
                 n->children[i] = ir_new("IDENTIFIER", nm, "ANY");
             } else py_comp_hoist(c, seq);
             i++;
+        }
+        if (keep) {
+            n->children[keepslot] = keep;
+            py_comp_hoist(keep, seq);
         }
     }
     /* a statement mentioning a comprehension becomes its append loop followed
@@ -22330,8 +22553,21 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
             d_strcmp(s->children[0]->type,"IDENTIFIER")==0 &&
             py_is_comp(s->children[1])) {
             const char* nm = s->children[0]->value;
+            /* a comprehension nested in the element (`[[x for x in a] for i in b]`)
+             * has to be built first, then referenced by name */
+            IRNode* pseq = NULL;
+            py_comp_hoist(s->children[1], &pseq);
+            if (d_strcmp(s->children[1]->type,"COMPDICT")==0) {
+                IRNode* df = py_comp_fill_dict(nm, s->children[1]);
+                if (!pseq) return df;
+                ir_add_child(pseq, df);
+                return pseq;
+            }
             cg_pyc_note(nm, s->children[1]->nchildren > 0 ? s->children[1]->children[0] : NULL);
-            return py_comp_fill(nm, s->children[1]);
+            /* the hoisted loops belong inside this comprehension's loop body,
+             * not before it: they read its loop variable */
+            IRNode* lf = py_comp_fill_p(nm, s->children[1], pseq);
+            return lf;
         }
         IRNode* seq = NULL;
         py_comp_hoist(s, &seq);
@@ -22339,10 +22575,20 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
         ir_add_child(seq, s);
         return seq;
     }
-    /* `for VAR in ITER [if COND]` following a comprehension element */
-    static IRNode* py_comp_new(const IRNode* elem, PyParser* p) {
-        IRNode* c = ir_new("COMPLIST", "", "ANY");
-        if (elem) ir_add_child(c, elem);
+    /* One `for VAR in ITER [if COND]` clause, plus every clause chained after
+     * it: `[x for a in A for b in B if c]` is one COMPLIST whose tail clauses
+     * hang off the first, so the whole comprehension is parsed in one pass.
+     *
+     * COMPLIST keeps `elem` first; a dict comprehension keeps `key` and `val`
+     * first instead (see py_comp_nest for the layout).  A clause followed by
+     * more clauses but carrying no `if` gets a constant-true condition, so the
+     * nesting code always finds the condition in the same slot. */
+    static IRNode* py_comp_clause(const IRNode* elem, const IRNode* key, PyParser* p, int isdict) {
+        IRNode* c = ir_new(isdict ? "COMPDICT" : "COMPLIST", "", "ANY");
+        if (isdict) {
+            if (key) ir_add_child(c, key);
+            if (elem) ir_add_child(c, elem);
+        } else if (elem) ir_add_child(c, elem);
         if (is_kw(p,"for")) advance(p);
         char vn[128];
         if (pk(p)->kind == TOK_NAME) { d_strncpy(vn, pk(p)->text, 127); vn[127] = '\0'; advance(p); }
@@ -22364,12 +22610,23 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
         if (is_kw(p,"in")) advance(p);
         IRNode* iter = parse_expr(p);
         if (iter) ir_add_child(c, iter);
+        int hascond = 0;
         if (is_kw(p,"if")) {
+            hascond = 1;
             advance(p);
             IRNode* cond = parse_expr(p);
             if (cond) ir_add_child(c, cond);
         }
+        if (is_kw(p,"for")) {
+            if (!hascond) ir_add_child(c, ir_new("CONSTANT", "1", "INT"));
+            IRNode* rest = py_comp_clause(elem, key, p, isdict);
+            if (rest) ir_add_child(c, rest);
+        }
         return c;
+    }
+    /* `for VAR in ITER [if COND]` following a comprehension element */
+    static IRNode* py_comp_new(const IRNode* elem, PyParser* p) {
+        return py_comp_clause(elem, NULL, p, 0);
     }
     /* Parse a block of statements until a DEDENT || EOF. */
     static void parse_block(PyParser* p, IRNode* block) {
@@ -22968,6 +23225,14 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
                 advance(p);
                 IRNode* dict_node = ir_new("BLOCK", "DICT", "ANY");
                 IRNode* v = parse_expr(p);
+                if (is_kw(p,"for")) {
+                    /* `{k: v for ...}` — a dict COMPREHENSION built into a real
+                     * dictionary (the literal above would leave the clause
+                     * unconsumed and index garbage) */
+                    IRNode* comp = py_comp_clause(v, first, p, 1);
+                    if (pk(p)->kind == TOK_RBRACE) advance(p);
+                    return parse_postfix(p, comp);
+                }
                 if (first && v) { ir_add_child(dict_node, first); ir_add_child(dict_node, v); }
                 while (pk(p)->kind == TOK_COMMA) {
                     advance(p);
@@ -25048,16 +25313,31 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
      * nested block, so `if`-guarded methods are covered too) and give every
      * method the same two passes.  `mode` 0 is py_fix_locals, 1 is
      * py_unbound_fix. */
-    static void py_class_members(IRNode* n, int mode) {
+    static void py_class_members(IRNode* n, int mode, const char* cls) {
         int i = 0;
+        char here[192];
         if (!n) return;
+        /* the driver hands in the CLASS_DEF itself */
+        if (d_strcmp(n->type,"CLASS_DEF")==0 && n->value && n->value[0]) {
+            py_fns_mkname(here, cls, n->value);
+            cls = here;
+        }
         while (i < n->nchildren) {
             IRNode* c = n->children[i];
             if (c && d_strcmp(c->type,"FUNCTION_DEF")==0 && c->nchildren > 1) {
-                if (mode == 0) py_fix_locals(c->children[1], c->value);
-                else py_unbound_fix(c->children[1], c->value);
+                /* the local-name isolation has to use the same name the backend
+                 * emits for the method (`<class>_<method>`), or two `__next__`
+                 * methods rename their locals onto one cell (see py_fnsq) */
+                char qn[192];
+                py_fns_mkname(qn, cls, c->value ? c->value : "");
+                if (mode == 0) py_fix_locals(c->children[1], qn);
+                else py_unbound_fix(c->children[1], qn);
+            } else if (c && d_strcmp(c->type,"CLASS_DEF")==0 && c->value && c->value[0]) {
+                char sub[192];
+                py_fns_mkname(sub, cls, c->value);
+                py_class_members(c, mode, sub);
             } else {
-                py_class_members(c, mode);
+                py_class_members(c, mode, cls);
             }
             i++;
         }
@@ -25186,15 +25466,64 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
         }
         return 0;
     }
+    /* Every function that owns a flat C body: top-level defs AND the methods of
+     * every class.  A method's locals live in the same file-scope namespace as a
+     * module function's, so `io.StringIO.read`'s `r` (a string accumulator) and
+     * `csv.DictReader.__next__`'s `r` (the row list from the wrapped reader) met
+     * on one `char* r[64]`; the list kind won and `StringIO_read`
+     * returned `char**`/`drygon_rls`, so `csv.reader(...)` read an empty buffer
+     * for every program that did not happen to declare a module-level `r` (the
+     * collision that used to mask it).  Nested defs are reached through their
+     * outer's subtree, exactly as before. */
+    static IRNode* py_fns[512];
+    /* the name the C backend gives the function: a method is emitted as
+     * `<class>_<method>`, so the renamed local has to carry the same prefix.
+     * Two `__next__` methods in different classes otherwise still renamed their
+     * `out` to one `___next___out` cell, and whichever class noted its element
+     * type last decided the array kind for both (the `char* out[64]` of
+     * `csv.reader` degenerated to `int`, so `50_csv` read empty rows). */
+    static char py_fnsq[512][28];
+    static int py_nfns;
+    static void py_fns_mkname(char* dst, const char* cls, const char* nm) {
+        int k = 0, q = 0;
+        if (cls && cls[0]) {
+            while (cls[q] && k < 26) { dst[k] = cls[q]; k++; q++; }
+            if (k < 27) dst[k++] = '_';
+        }
+        q = 0;
+        while (nm[q] && k < 27) { dst[k] = nm[q]; k++; q++; }
+        dst[k] = 0;
+    }
+    static void py_fns_collect(IRNode* n, const char* cls) {
+        int i = 0;
+        if (!n) return;
+        if (d_strcmp(n->type,"FUNCTION_DEF")==0) {
+            if (n->nchildren > 1 && py_nfns < 512) {
+                py_fns[py_nfns] = n;
+                py_fns_mkname(py_fnsq[py_nfns], cls, n->value ? n->value : "");
+                py_nfns++;
+            }
+            return;
+        }
+        if (d_strcmp(n->type,"CLASS_DEF")==0 && n->value && n->value[0]) {
+            char sub[192];
+            py_fns_mkname(sub, cls, n->value);
+            while (i < n->nchildren) { py_fns_collect(n->children[i], sub); i++; }
+            return;
+        }
+        while (i < n->nchildren) { py_fns_collect(n->children[i], cls); i++; }
+    }
     static void py_fix_shared_locals(IRNode* prog) {
         int i = 0;
         if (!prog) return;
         py_nsubseen = 0;
         py_nsubshared = 0;
+        py_nfns = 0;
+        py_fns_collect(prog, NULL);
         i = 0;
-        while (i < prog->nchildren) {
-            IRNode* f = prog->children[i];
-            if (f && d_strcmp(f->type,"FUNCTION_DEF")==0 && f->nchildren > 1) {
+        while (i < py_nfns) {
+            IRNode* f = py_fns[i];
+            {
                 int j = 0;
                 py_nlcl = 0;
                 py_nsgbl = 0;
@@ -25212,9 +25541,9 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
         }
         if (py_nsubshared == 0) return;
         i = 0;
-        while (i < prog->nchildren) {
-            IRNode* f = prog->children[i];
-            if (f && d_strcmp(f->type,"FUNCTION_DEF")==0 && f->nchildren > 1) {
+        while (i < py_nfns) {
+            IRNode* f = py_fns[i];
+            {
                 int j = 0;
                 py_nlcl = 0;
                 py_nsgbl = 0;
@@ -25231,7 +25560,7 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
                     if (py_param_has(f->children[0], from)) continue;
                     if (py_nested_def_named(f->children[1], from)) continue;
                     to[k++] = '_';
-                    q = 0; while (f->value[q] && k < 110) { to[k++] = f->value[q++]; }
+                    q = 0; while (py_fnsq[i][q] && k < 110) { to[k++] = py_fnsq[i][q]; q++; }
                     if (k < 118) to[k++] = '_';
                     q = 0; while (from[q] && k < 126) { to[k++] = from[q++]; }
                     to[k] = 0;
@@ -25372,7 +25701,7 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
                  * importing program declared, and the spliced module's locals
                  * clobbered the caller's globals. */
                 if (_g && d_strcmp(_g->type,"CLASS_DEF")==0)
-                    py_class_members(_g, 0);
+                    py_class_members(_g, 0, NULL);
                 _mi++;
             }
             py_fix_shared_locals(prog);
@@ -25383,7 +25712,7 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
                 if (_g && d_strcmp(_g->type,"FUNCTION_DEF")==0 && _g->nchildren > 1)
                     py_unbound_fix(_g->children[1], _g->value);
                 if (_g && d_strcmp(_g->type,"CLASS_DEF")==0)
-                    py_class_members(_g, 1);
+                    py_class_members(_g, 1, NULL);
                 _mi++;
             }
         }
@@ -26437,6 +26766,26 @@ static int cg_is_known_str_method(const char* m) {
         while (j < cg_cls_nmeth[ci]) { if (d_strcmp(cg_cls_methnames[ci*12 + j], m) == 0) return 1; j++; }
         return 0;
     }
+    /* Class that declares method `m`, without knowing the receiver's class.
+     * `writer = csv.writer(output)` puts an instance of a *module function's*
+     * return value in a variable; the receiver's class is only recorded while
+     * the body is emitted, which is after the signature scan has run, so the
+     * scan had no class to key the list parameter under and `writer.writerow`
+     * kept an int-width `row` (50_csv).  Declaration order is the module
+     * order, so the first class that declares the name is the module's own. */
+    static const char* cg_cls_find_m_any(const char* m) {
+        if (!m || !m[0]) return 0;
+        int i = 0;
+        while (i < cg_cls_n) {
+            int j = 0;
+            while (j < cg_cls_nmeth[i]) {
+                if (d_strcmp(cg_cls_methnames[i*12 + j], m) == 0) return cg_cls_names[i];
+                j++;
+            }
+            i++;
+        }
+        return 0;
+    }
     static const char* cg_cls_find_m(const char* cls, const char* m) {
         if (!cls || !cls[0]) return 0;
         int ci = -1;
@@ -26770,6 +27119,46 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
     /* `self.f = [1,2]` / `self.f.append(x)` name a field the same way a
      * subscript or `len()` does: the field holds a LIST, so it needs the
      * inline array plus the `<f>_n` counter. */
+    /* Names a method binds as parameters.  The program-wide list registry keys
+     * on the bare name only, so `self.pos = p` inside `StringIO.seek(self, p)`
+     * resolved `p` through that registry and marked the integer field `pos` as
+     * a LIST: the struct came out `char* pos[64]; int pos_n;`, every
+     * `self.pos = self.pos + 1` was emitted as `self->pos_n = 0;` (the count of
+     * a list-literal assignment) and the field was never incremented, so every
+     * read through `io.StringIO` returned the wrong slice.  A parameter of the
+     * method being scanned shadows any module-level variable of the same name,
+     * so the inference has to know which names those are. */
+    static char cg_mparam[16384];
+    static int cg_nmparam;
+    static void cg_mparam_clear(void) { cg_nmparam = 0; }
+    static void cg_mparam_add(const char* n) {
+        if (!n || !n[0]) return;
+        if (cg_nmparam >= 256) return;
+        d_strncpy(cg_mparam + cg_nmparam*64, n, 63);
+        cg_mparam[cg_nmparam*64 + 63] = 0;
+        cg_nmparam = cg_nmparam + 1;
+    }
+    static int cg_mparam_has(const char* n) {
+        int i = 0;
+        if (!n) return 0;
+        while (i < cg_nmparam) {
+            if (d_strcmp(cg_mparam + i*64, n) == 0) return 1;
+            i++;
+        }
+        return 0;
+    }
+    static void cg_mparam_of(const IRNode* fn) {
+        cg_mparam_clear();
+        if (!fn || fn->nchildren < 1) return;
+        const IRNode* ps = fn->children[0];
+        if (!ps) return;
+        int j = 0;
+        while (j < ps->nchildren) {
+            const IRNode* pn = ps->children[j];
+            if (pn) cg_mparam_add(pn->value);
+            j++;
+        }
+    }
     static int cg_cls_field_is_lf_use(const IRNode* nn, const char* f) {
         if (!nn) return 0;
         if (d_strcmp(nn->type,"ASSIGN")==0 && nn->nchildren>1) {
@@ -26784,8 +27173,10 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
                  * truncated to an int (csv 50: `self._rows = _csv_parse(...)`). */
                 if (r2 && r2->value && d_strcmp(r2->type,"CALL")==0 &&
                     d_strcmp(r2->value,"COMPLEX")!=0 && cg_fn_is_list(r2->value)) return 1;
-                /* `self.f = xs` where `xs` is already a list */
+                /* `self.f = xs` where `xs` is already a list.  A parameter of
+                 * the enclosing method shadows any such variable. */
                 if (r2 && d_strcmp(r2->type,"IDENTIFIER")==0 && r2->value &&
+                    !cg_mparam_has(r2->value) &&
                     (cg_is_dyn_list(r2->value) || cg_list_size(r2->value) >= 0)) return 1;
             }
         }
@@ -26824,6 +27215,23 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
         }
         return 0;
     }
+    /* Same question, asked one method at a time so that each method's own
+     * parameters shadow the program-wide variable tables (see cg_mparam). */
+    static int cg_cls_field_is_ptr_m(const IRNode* body, const char* f) {
+        if (!body) return 0;
+        int mi = 0;
+        while (mi < body->nchildren) {
+            const IRNode* m = body->children[mi];
+            if (m && d_strcmp(m->type,"FUNCTION_DEF")==0) {
+                cg_mparam_of(m);
+                if (cg_cls_field_is_ptr(m, f)) { cg_mparam_clear(); return 1; }
+            }
+            mi++;
+        }
+        cg_mparam_clear();
+        return 0;
+    }
+
     /* A method parameter the body dereferences with `.field`, e.g. `other.x`
      * in `Vector.__eq__(self, other)`, is a POINTER to an instance of the
      * enclosing class: declaring it `int` made `other.x` a member access on an
@@ -26857,6 +27265,38 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
             i++;
         }
         return 0;
+    }
+    /* (owning class, field) pairs whose struct member holds an INSTANCE of
+     * another class -- `csv.writer.f` is a StringIO, `Outer.i` an Inner.  The
+     * field type is otherwise inferred from the assignment alone and came out
+     * `char*`/`int`, so `self.f.write(x)` never reached the class-method
+     * lowering: it was emitted verbatim as `self->f.write(x)`, which the
+     * backend turned into a jump through garbage (50_csv segfaulted inside
+     * writer_writerow).  The class is known from the method-parameter tables,
+     * which already type the parameter as `Cls*`. */
+    static char cg_of_cls[128][32];
+    static char cg_of_fld[128][32];
+    static char cg_of_tgt[128][32];
+    static int cg_of_n = 0;
+    static const char* cg_of_get(const char* cls, const char* f) {
+        if (!cls || !f || !cls[0] || !f[0]) return "";
+        int i = 0;
+        while (i < cg_of_n) {
+            if (d_strcmp(cg_of_cls[i], cls) == 0 && d_strcmp(cg_of_fld[i], f) == 0)
+                return cg_of_tgt[i];
+            i++;
+        }
+        return "";
+    }
+    static void cg_of_add(const char* cls, const char* f, const char* t) {
+        if (!cls || !f || !t || !cls[0] || !f[0] || !t[0]) return;
+        const char* e = cg_of_get(cls, f);
+        if (e && e[0]) return;
+        if (cg_of_n >= 128) return;
+        d_strncpy(cg_of_cls[cg_of_n], cls, 31); cg_of_cls[cg_of_n][31] = 0;
+        d_strncpy(cg_of_fld[cg_of_n], f, 31);   cg_of_fld[cg_of_n][31] = 0;
+        d_strncpy(cg_of_tgt[cg_of_n], t, 31);   cg_of_tgt[cg_of_n][31] = 0;
+        cg_of_n = cg_of_n + 1;
     }
     /* True when `f` is a counted list field of the class whose methods are
      * being emitted right now. */
@@ -26974,6 +27414,75 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
             k++;
         }
         return (IRNode*)0;
+    }
+    /* ── method-parameter defaults collected BEFORE emission ────────────────
+     * A method call whose callee's class has not been emitted yet (csv.py's
+     * `reader.__init__` calls `io.StringIO.read()`, and io is inlined after
+     * csv) found no class body in cg_cls_body, so the parameter that the call
+     * omitted was passed NOTHING: `f.read()` inside `reader.__init__` left
+     * `size` holding whatever happened to be in that register.  When it was a
+     * small non-negative value `StringIO.read` copied zero characters, so
+     * `csv.reader` saw an empty stream and 50_csv check 2 segfaulted reading
+     * the empty first field.  Record every (class, method, parameter-index) ->
+     * default node in the pre-emission scan so any call site can fill the gap
+     * no matter what order the classes were emitted in. */
+    static const IRNode* cg_md_node[1024];
+    static char cg_md_cls[32768];
+    static char cg_md_mth[32768];
+    static int cg_md_idx[1024];
+    static int cg_md_nf;
+    static void cg_md_note(const char* cls, const char* m, int idx, const IRNode* dv) {
+        int k = 0;
+        if (!cls || !m) return;
+        while (k < cg_md_nf) {
+            if (cg_md_idx[k] == idx && d_strcmp(cg_md_cls + k*32, cls) == 0 &&
+                d_strcmp(cg_md_mth + k*32, m) == 0) return;
+            k++;
+        }
+        if (cg_md_nf >= 1024) return;
+        d_strncpy(cg_md_cls + cg_md_nf*32, cls, 31);
+        d_strncpy(cg_md_mth + cg_md_nf*32, m, 31);
+        cg_md_idx[cg_md_nf] = idx;
+        cg_md_node[cg_md_nf] = dv;
+        cg_md_nf = cg_md_nf + 1;
+    }
+    static const IRNode* cg_md_get(const char* cls, const char* m, int idx) {
+        int k = 0;
+        if (!cls || !m || idx < 0) return (IRNode*)0;
+        while (k < cg_md_nf) {
+            if (cg_md_idx[k] == idx && d_strcmp(cg_md_cls + k*32, cls) == 0 &&
+                d_strcmp(cg_md_mth + k*32, m) == 0) return cg_md_node[k];
+            k++;
+        }
+        return (IRNode*)0;
+    }
+    static void cg_md_scan(const IRNode* a) {
+        if (!a) return;
+        if (d_strcmp(a->type,"CLASS_DEF")==0 && a->value && a->nchildren > 0) {
+            const IRNode* body = a->children[0];
+            int k = 0;
+            while (body && k < body->nchildren) {
+                const IRNode* m = body->children[k];
+                if (d_strcmp(m->type,"FUNCTION_DEF")==0 && m->value && m->nchildren > 0 &&
+                    m->children[0] && d_strcmp(m->children[0]->value,"PARAMS")==0) {
+                    const IRNode* ps = m->children[0];
+                    int seen = 0;
+                    int j = 0;
+                    while (j < ps->nchildren) {
+                        const IRNode* p = ps->children[j];
+                        if (d_strcmp(p->value,"self")!=0 && d_strcmp(p->value,"cls")!=0) {
+                            if (p->nchildren > 0 && p->children[0])
+                                cg_md_note(a->value, m->value, seen, p->children[0]);
+                            seen++;
+                        }
+                        j++;
+                    }
+                }
+                k++;
+            }
+        }
+        { int i = 0;
+          while (i < a->nchildren) { cg_md_scan(a->children[i]); i++; } }
     }
     /* `x = Cls([...])` passes a LIST to a constructor parameter.  When the
      * `__init__` stores that parameter into `self.f`, the field holds an
@@ -27201,6 +27710,7 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
     static int cg_call_mask_static(const IRNode* a);
     static int cg_call_mask_live(const IRNode* a);
     static int cg_list_is_str(const char* name);
+    static int cg_list_twod_kind(const char* name);
     static int cg_sl_base_et(const IRNode* n);
     static int cg_sl_islice(const IRNode* n);
     static int cg_is_list_like(const IRNode* a);
@@ -27223,6 +27733,8 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
     static void cg_pyc_register_lists(void);
     static int cg_fn_variant(const char* name);
     static int cg_call_is_str(const IRNode* a);
+    static int cg_ret_strlist_of(const IRNode* a);
+    static const char* cg_call_recv_cls(const IRNode* r);
     /* subprocess: names that hold a live native child process */
     static void cg_sp_note(const char* name, int kind);
     static int cg_sp_lookup(const char* name);
@@ -27397,6 +27909,125 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
     }
     static void cg_tmp1_name(int i, char* out) { cg_num_suffix("_gt1", i, out); }
     static void cg_tmp2_name(int i, char* out) { cg_num_suffix("_gt2", i, out); }
+    /* One class' scratch storage plus its two statement-level store helpers.
+     * It MUST be emitted right after that class' own typedef and therefore
+     * BEFORE every method body that uses it: a file-scope object referenced
+     * textually before its declaration is not resolved by the C front end, so
+     * the reference became garbage and the method segfaulted (`DictReader`
+     * stored a `reader()` into `self._r`, probe a5/q1). */
+    static char cg_gs_done[128];
+    static void cg_scratch_emit(CGen* g, int gi) {
+        if (gi < 0 || gi >= cg_gs_n) return;
+        if (cg_gs_done[gi]) return;
+        cg_gs_done[gi] = 1;
+        {
+            char gsb[32];
+            char gtb[32];
+            char h1[32];
+            char h2[32];
+            cg_scratch_name(gi, gsb);
+            cg_put(g, "static "); cg_put(g, cg_gs_cls[gi]);
+            cg_put(g, " "); cg_put(g, gsb); cg_put(g, ";\n");
+            if (gi < cg_gt_n) {
+                cg_scratch2_name(gi, gtb);
+                cg_put(g, "static "); cg_put(g, cg_gt_cls[gi]);
+                cg_put(g, " "); cg_put(g, gtb); cg_put(g, ";\n");
+            }
+            /* statement-level store, so an operand that is a METHOD CALL
+             * (`dt.date()`) can be handed to the dunder */
+            cg_tmp1_name(gi, h1);
+            cg_put(g, "static "); cg_put(g, cg_gs_cls[gi]);
+            cg_put(g, "* "); cg_put(g, h1); cg_put(g, "(");
+            cg_put(g, cg_gs_cls[gi]); cg_put(g, " v) { ");
+            cg_put(g, gsb); cg_put(g, " = v; return &");
+            cg_put(g, gsb); cg_put(g, "; }\n");
+            if (gi < cg_gt_n) {
+                cg_tmp2_name(gi, h2);
+                cg_put(g, "static "); cg_put(g, cg_gt_cls[gi]);
+                cg_put(g, "* "); cg_put(g, h2); cg_put(g, "(");
+                cg_put(g, cg_gt_cls[gi]); cg_put(g, " v) { ");
+                cg_put(g, gtb); cg_put(g, " = v; return &");
+                cg_put(g, gtb); cg_put(g, "; }\n");
+            }
+        }
+    }
+    /* Register every class that could own a scratch instance BEFORE any body
+     * is emitted, so the class emitter can declare it in the right place.
+     * Same predicate the emission loop used to apply inline. */
+    static int cg_scratch_need(const char* gcn) {
+        if (!gcn || !gcn[0]) return 0;
+        return cg_cls_find_m(gcn,"__bool__") || cg_cls_find_m(gcn,"__eq__") ||
+               cg_cls_find_m(gcn,"__ne__") || cg_cls_find_m(gcn,"__lt__") ||
+               cg_cls_find_m(gcn,"__le__") || cg_cls_find_m(gcn,"__ge__") ||
+               cg_cls_find_m(gcn,"__call__") || cg_cls_hasm(gcn,"__init__");
+    }
+    static const IRNode* cg_prog_class(const IRNode* prog, const char* nm) {
+        if (!prog || !nm || !nm[0]) return 0;
+        int i = 0;
+        while (i < prog->nchildren) {
+            const IRNode* n = prog->children[i];
+            if (d_strcmp(n->type,"CLASS_DEF")==0 && n->value && d_strcmp(n->value,nm)==0)
+                return n;
+            i++;
+        }
+        return 0;
+    }
+    /* Does this class need a scratch instance?  Reads the IR instead of the
+     * class registry on purpose: `cg_cls_names`/`cg_cls_nmeth` are only filled
+     * while classes are being EMITTED, so the registry was still empty here and
+     * nothing was ever pre-registered -- every scratch declaration ended up in
+     * the catch-up block after all method bodies, i.e. after its first use
+     * (`static Inner _gcs0;` below `Outer___init__`), which the C front end
+     * resolves to garbage and the program segfaults on. */
+    static int cg_scratch_need_ir(const IRNode* prog, const IRNode* cd, int depth) {
+        if (!cd || !cd->value || !cd->value[0] || cd->nchildren < 1 || depth > 4) return 0;
+        const IRNode* b = cd->children[0];
+        if (b) {
+            int i = 0;
+            while (i < b->nchildren) {
+                const IRNode* m = b->children[i];
+                if (d_strcmp(m->type,"FUNCTION_DEF")==0 && m->value && m->value[0] &&
+                    (d_strcmp(m->value,"__init__")==0 || d_strcmp(m->value,"__bool__")==0 ||
+                     d_strcmp(m->value,"__eq__")==0 || d_strcmp(m->value,"__ne__")==0 ||
+                     d_strcmp(m->value,"__lt__")==0 || d_strcmp(m->value,"__le__")==0 ||
+                     d_strcmp(m->value,"__ge__")==0 || d_strcmp(m->value,"__call__")==0))
+                    return 1;
+                i++;
+            }
+        }
+        /* an inherited dunder counts too (`class B(A)` with no `__init__`) */
+        int s = 0;
+        int k = 0;
+        while (cd->data_type[s] && k < 3) {
+            char bb[64];
+            int e = s;
+            int p = 0;
+            while (cd->data_type[e] && cd->data_type[e] != ',') e++;
+            while (s + p < e && p < 63) { bb[p] = cd->data_type[s + p]; p++; }
+            bb[p] = 0;
+            if (p > 0 && d_strcmp(bb,"ANY")!=0) {
+                const IRNode* bcd = cg_prog_class(prog, bb);
+                if (bcd && bcd != cd && cg_scratch_need_ir(prog, bcd, depth + 1)) return 1;
+            }
+            if (!cd->data_type[e]) break;
+            s = e + 1;
+            k++;
+        }
+        return 0;
+    }
+    static void cg_scratch_pre(const IRNode* prog) {
+        if (!prog) return;
+        int i = 0;
+        while (i < prog->nchildren) {
+            const IRNode* n = prog->children[i];
+            if (d_strcmp(n->type,"CLASS_DEF")==0 && n->value && n->value[0] &&
+                cg_scratch_need_ir(prog, n, 0)) {
+                cg_scratch_cls(n->value);
+                cg_scratch2_cls(n->value);
+            }
+            i++;
+        }
+    }
     /* String-valued names seen so far. print() has to pick %s or %d for a bare
      * identifier and the Python IR carries no types, so remember which locals
      * were assigned a string literal. */
@@ -27928,6 +28559,17 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
         if (d_strcmp(m,"substitute")==0) return 1;
         if (d_strcmp(m,"safe_substitute")==0) return 1;
         if (d_strcmp(m,"zfill")==0) return 1;
+        /* stream reads hand back a string -- `f.read()` on an io.StringIO or
+         * io.File receiver was typed int and truncated to its low word */
+        if (d_strcmp(m,"read")==0) return 1;
+        if (d_strcmp(m,"readline")==0) return 1;
+        if (d_strcmp(m,"readlines")==0) return 1;
+        if (d_strcmp(m,"getvalue")==0) return 1;
+        if (d_strcmp(m,"decode")==0) return 1;
+        if (d_strcmp(m,"read_text")==0) return 1;
+        if (d_strcmp(m,"expandtabs")==0) return 1;
+        if (d_strcmp(m,"removeprefix")==0) return 1;
+        if (d_strcmp(m,"removesuffix")==0) return 1;
         if (d_strcmp(m,"center")==0) return 1;
         if (d_strcmp(m,"ljust")==0) return 1;
         if (d_strcmp(m,"rjust")==0) return 1;
@@ -28387,6 +29029,54 @@ static int cg_is_str_node(const IRNode* a) {
             d_strcmp(a->children[0]->children[0]->type,"CALL")==0 &&
             d_strcmp(a->children[0]->children[0]->value,"open")==0)
             return d_strcmp(a->children[0]->value,"read")==0;
+        /* A method call on a class whose registered return type is a string --
+         * or a built-in string method on a receiver whose class is not known
+         * yet.  `io` is inlined after `csv`, so `csv.reader.__init__`'s
+         * `f.read()` ran before StringIO's method table existed; the call was
+         * typed `int` and the string was truncated to its low word. */
+        if (d_strcmp(a->type,"CALL")==0 && d_strcmp(a->value,"COMPLEX")==0 && a->nchildren>0 &&
+            d_strcmp(a->children[0]->type,"MEMBER_ACCESS")==0 &&
+            a->children[0]->value) {
+            const char* cv = cg_call_recv_cls(a->children[0]);
+            const char* mn = a->children[0]->value;
+            int known = 0;
+            if (cv) {
+                int ci2 = -1;
+                int k2 = 0;
+                while (k2 < cg_cls_n) {
+                    if (d_strcmp(cg_cls_names[k2], cv) == 0) { ci2 = k2; break; }
+                    k2++;
+                }
+                if (ci2 >= 0) {
+                    /* the method the receiver's class inherits also counts */
+                    int k3 = 0;
+                    while (k3 < cg_cls_nmeth[ci2]) {
+                        if (d_strcmp(cg_cls_methnames[ci2*12 + k3], mn) == 0) {
+                            known = 1;
+                            if (cg_cls_mret[ci2][k3] == 2) return 1;
+                            if (cg_cls_mret[ci2][k3] == 1) return 0;
+                            break;
+                        }
+                        k3++;
+                    }
+                }
+            }
+            if (!known &&
+                (d_strcmp(mn,"read")==0 || d_strcmp(mn,"readline")==0 ||
+                 d_strcmp(mn,"readlines")==0 || d_strcmp(mn,"getvalue")==0 ||
+                 d_strcmp(mn,"strip")==0 || d_strcmp(mn,"lstrip")==0 ||
+                 d_strcmp(mn,"rstrip")==0 || d_strcmp(mn,"upper")==0 ||
+                 d_strcmp(mn,"lower")==0 || d_strcmp(mn,"replace")==0 ||
+                 d_strcmp(mn,"join")==0 || d_strcmp(mn,"decode")==0 ||
+                 d_strcmp(mn,"format")==0 || d_strcmp(mn,"title")==0 ||
+                 d_strcmp(mn,"capitalize")==0 || d_strcmp(mn,"swapcase")==0 ||
+                 d_strcmp(mn,"zfill")==0 || d_strcmp(mn,"ljust")==0 ||
+                 d_strcmp(mn,"rjust")==0 || d_strcmp(mn,"center")==0 ||
+                 d_strcmp(mn,"expandtabs")==0 || d_strcmp(mn,"translate")==0 ||
+                 d_strcmp(mn,"read_text")==0 || d_strcmp(mn,"removeprefix")==0 ||
+                 d_strcmp(mn,"removesuffix")==0))
+                return 1;
+        }
         /* string + string / string + value concatenates; "ab" * 3 repeats */
         if (d_strcmp(a->type,"BINARY_OP")==0 && a->nchildren>1 &&
             (d_strcmp(a->value,"+")==0 || d_strcmp(a->value,"*")==0)) {
@@ -28425,6 +29115,16 @@ static int cg_is_str_node(const IRNode* a) {
             if (cg_is_lparam(bn) && cg_lparam_type(bn) == 2) return 1;
             if (cg_list_size(bn) >= 0 && cg_list_is_str(bn)) return 1;
         }
+        /* a cell of a 2D list whose rows are char* (`rows = list(csv.reader(f))`):
+         * `rows[0][0] == "name"` compared raw pointers and was always false.
+         * The flattened row store is `NAME_back[NAME_off[i] + j]`, so the cell
+         * is a string exactly when the row element kind is. */
+        if (d_strcmp(a->type,"ARRAY_ACCESS")==0 && a->nchildren>0 &&
+            a->children[0] && d_strcmp(a->children[0]->type,"ARRAY_ACCESS")==0 &&
+            a->children[0]->nchildren>0 && a->children[0]->children[0] &&
+            d_strcmp(a->children[0]->children[0]->type,"IDENTIFIER")==0 &&
+            cg_list_twod_kind(a->children[0]->children[0]->value) == 1)
+            return 1;
         if (d_strcmp(a->type,"ARRAY_ACCESS")==0 && a->nchildren>0) {
             const IRNode* b = a->children[0];
             if (b && d_strcmp(b->type,"CALL")==0 && d_strcmp(b->value,"COMPLEX")==0 &&
@@ -29687,6 +30387,27 @@ static int cg_is_str_node(const IRNode* a) {
     }
     /* Is `name` used as an arithmetic operand?  A string on the other side of
      * a `+` does not count: that is concatenation. */
+    /* A local that is a string inside one function body: assigned a string
+     * literal, or a parameter carrying a string default.  The arithmetic-drop
+     * pass needs this because the live string table is empty before emission:
+     * `field = ""` ... `field + quote` read as arithmetic and dropped the
+     * `char*` from `quote` (`_csv_parse`'s quote character), so `quote[0]`
+     * indexed an integer and the parser trapped on the first row. */
+    static const IRNode* cg_ua_body;
+    static int cg_body_str_local(const IRNode* a, const char* nm) {
+        if (!a || !nm || !nm[0]) return 0;
+        if (d_strcmp(a->type,"FUNCTION_DEF")==0 || d_strcmp(a->type,"CLASS_DEF")==0) return 0;
+        if (d_strcmp(a->type,"ASSIGN")==0 && a->nchildren>1 &&
+            a->children[0] && d_strcmp(a->children[0]->type,"IDENTIFIER")==0 &&
+            d_strcmp(a->children[0]->value, nm)==0 && cg_node_is_str_static(a->children[1]))
+            return 1;
+        if (d_strcmp(a->type,"PARAM_DECL")==0 && a->value &&
+            d_strcmp(a->value, nm)==0 && a->nchildren>0 &&
+            cg_node_is_str_static(a->children[0])) return 1;
+        int i = 0;
+        while (i < a->nchildren) { if (cg_body_str_local(a->children[i], nm)) return 1; i++; }
+        return 0;
+    }
     static int cg_used_arith(const IRNode* a, const char* name) {
         if (!a) return 0;
         if (d_strcmp(a->type,"BINARY_OP")==0) {
@@ -29698,10 +30419,16 @@ static int cg_is_str_node(const IRNode* a) {
             }
             if (d_strcmp(a->value,"+")==0) {
                 if (l && d_strcmp(l->type,"IDENTIFIER")==0 && d_strcmp(l->value,name)==0) {
-                    if (!cg_node_is_str_static(r)) return 1;
+                    if (!cg_node_is_str_static(r) &&
+                        !(r && d_strcmp(r->type,"IDENTIFIER")==0 &&
+                          (cg_is_strdef_param(r->value) ||
+                           cg_body_str_local(cg_ua_body, r->value)))) return 1;
                 }
                 if (r && d_strcmp(r->type,"IDENTIFIER")==0 && d_strcmp(r->value,name)==0) {
-                    if (!cg_node_is_str_static(l)) return 1;
+                    if (!cg_node_is_str_static(l) &&
+                        !(l && d_strcmp(l->type,"IDENTIFIER")==0 &&
+                          (cg_is_strdef_param(l->value) ||
+                           cg_body_str_local(cg_ua_body, l->value)))) return 1;
                 }
             }
         }
@@ -29830,6 +30557,66 @@ static int cg_is_str_node(const IRNode* a) {
         }
         return 0;
     }
+    /* A CLASS METHOD that returns a list OF STRINGS writes into `drygon_rls`,
+     * which has to be declared too (StringIO.readlines, a method splitting). */
+    static int cg_method_retstrlist_scan(const IRNode* a) {
+        if (!a) return 0;
+        if (d_strcmp(a->type,"CLASS_DEF")==0) {
+            int ci = 0;
+            while (ci < a->nchildren) {
+                const IRNode* b = a->children[ci];
+                if (d_strcmp(b->type,"BLOCK")==0) {
+                    int i = 0;
+                    while (i < b->nchildren) {
+                        const IRNode* m = b->children[i];
+                        if (d_strcmp(m->type,"FUNCTION_DEF")==0 && m->nchildren>1 &&
+                            cg_ret_strlist_of(m->children[1])) return 1;
+                        i++;
+                    }
+                }
+                ci++;
+            }
+        }
+        int i = 0;
+        while (i < a->nchildren) { if (cg_method_retstrlist_scan(a->children[i])) return 1; i++; }
+        return 0;
+    }
+    static void cg_mrd_add(const char* nm, int vf, int kf);
+    /* A CLASS METHOD that builds and returns a python dict publishes the triple
+     * through `drygon_rdk and the rdv arrays` -- the same channel a dict-returning module
+     * function uses -- so the buffer has to exist (the `any_rd` test at
+     * declaration time only saw module-level defs, leaving `drygon_rdk`
+     * undeclared and the method writing through an unresolved symbol: that is
+     * the DictReader.__next__ SEGV).  Register each such method's shape here so
+     * the call sites can bind the result, and return 1 when any exists. */
+    static int cg_method_retdict_scan(const IRNode* a) {
+        if (!a) return 0;
+        if (d_strcmp(a->type,"CLASS_DEF")==0) {
+            int ci = 0;
+            while (ci < a->nchildren) {
+                const IRNode* b = a->children[ci];
+                if (d_strcmp(b->type,"BLOCK")==0) {
+                    int i = 0;
+                    while (i < b->nchildren) {
+                        const IRNode* m = b->children[i];
+                        if (d_strcmp(m->type,"FUNCTION_DEF")==0 && m->nchildren>1) {
+                            int _dkf = 0;
+                            int _dvf = 0;
+                            if (cg_ret_dict_scan(m->children[1], &_dkf, &_dvf)) {
+                                cg_mrd_add(m->value, _dvf, _dkf);
+                                return 1;
+                            }
+                        }
+                        i++;
+                    }
+                }
+                ci++;
+            }
+        }
+        int i = 0;
+        while (i < a->nchildren) { if (cg_method_retdict_scan(a->children[i])) return 1; i++; }
+        return 0;
+    }
     /* Which parameter of `pr` is `nm`, if any. */
     static int cg_pdecl_of(const IRNode* pr, const char* nm) {
         int i = 0;
@@ -29911,14 +30698,82 @@ static int cg_is_str_node(const IRNode* a) {
         while (i < a->nchildren) { if (cg_method_retlist_scan(a->children[i])) return 1; i++; }
         return 0;
     }
+    /* The FUNCTION_DEF node of method `mname` in a class body. */
+    static const IRNode* cg_cls_method_def(const IRNode* clsbody, const char* mname) {
+        if (!clsbody || !mname) return (IRNode*)0;
+        int k = 0;
+        while (k < clsbody->nchildren) {
+            const IRNode* c = clsbody->children[k];
+            if (c && d_strcmp(c->type,"FUNCTION_DEF")==0 &&
+                d_strcmp(c->value, mname)==0 && c->nchildren > 1) return c;
+            k++;
+        }
+        return (IRNode*)0;
+    }
+    /* The element type of the list local `nm` as this ONE body builds it: 1 for
+     * a list of strings, 0 for anything else, -1 when the body does not say.
+     * The whole-program list registry is shared by every same-named local (all
+     * names are hoisted to file scope), so `q.append(1)` in `nums` inherited the
+     * string element type `q.append("a")` had given its own `q` in `items`, and
+     * `for i in bx.nums()` bound char* where an int was needed.  The body text
+     * of the function being compiled decides instead. */
+    static int cg_body_list_elems(const IRNode* body, const char* nm) {
+        if (!body || !nm || !nm[0]) return -1;
+        if (d_strcmp(body->type,"CALL")==0 && body->nchildren > 1 &&
+            body->children[0] && d_strcmp(body->children[0]->type,"MEMBER_ACCESS")==0 &&
+            body->children[0]->value && d_strcmp(body->children[0]->value,"append")==0 &&
+            body->children[0]->nchildren > 0 &&
+            d_strcmp(body->children[0]->children[0]->type,"IDENTIFIER")==0 &&
+            d_strcmp(body->children[0]->children[0]->value, nm)==0) {
+            const IRNode* ev = body->children[1];
+            if (!ev) return -1;
+            if (cg_node_is_str_static(ev)) return 1;
+            if (d_strcmp(ev->type,"IDENTIFIER")==0 && ev->value &&
+                cg_list_is_str(ev->value)) return 1;
+            /* `q.append(1)`: a numeric operand settles it as a list of numbers
+             * however the shared registry classified the name */
+            if (d_strcmp(ev->type,"CONSTANT")==0 &&
+                (d_strcmp(ev->data_type,"INT")==0 || d_strcmp(ev->data_type,"FLOAT")==0))
+                return 0;
+            if (d_strcmp(ev->type,"BINARY_OP")==0) return 0;
+            return -1;
+        }
+        if (d_strcmp(body->type,"ASSIGN")==0 && body->nchildren > 1 &&
+            body->children[0] && d_strcmp(body->children[0]->type,"IDENTIFIER")==0 &&
+            d_strcmp(body->children[0]->value, nm)==0) {
+            const IRNode* rs = body->children[1];
+            if (rs && d_strcmp(rs->type,"BLOCK")==0 && rs->nchildren > 0 &&
+                (d_strcmp(rs->value,"LIST")==0 || d_strcmp(rs->value,"TUPLE")==0)) {
+                int j = 0;
+                int all = 1;
+                while (j < rs->nchildren) {
+                    if (!cg_node_is_str_static(rs->children[j])) all = 0;
+                    j++;
+                }
+                return all;
+            }
+        }
+        int i = 0;
+        while (i < body->nchildren) {
+            int s = cg_body_list_elems(body->children[i], nm);
+            if (s >= 0) return s;
+            i++;
+        }
+        return -1;
+    }
     /* True when a body returns a list OF STRINGS: `return result` where result
      * is a string list (how a function that appends text and returns the list
-     * is written), or a literal of string elements. */
-    static int cg_ret_strlist_of(const IRNode* a) {
+     * is written), or a literal of string elements.  `root` is the whole body,
+     * which decides the element type of a returned local. */
+    static int cg_ret_strlist_in(const IRNode* a, const IRNode* root) {
         if (!a) return 0;
         if (d_strcmp(a->type,"RETURN")==0 && a->nchildren>0) {
             const IRNode* rc = a->children[0];
-            if (d_strcmp(rc->type,"IDENTIFIER")==0 && cg_list_is_str(rc->value)) return 1;
+            if (d_strcmp(rc->type,"IDENTIFIER")==0 && rc->value && rc->value[0]) {
+                int be = cg_body_list_elems(root, rc->value);
+                if (be == 1) return 1;
+                if (be < 0 && cg_list_is_str(rc->value)) return 1;
+            }
             /* the same for a `char**` list parameter handed straight back */
             if (d_strcmp(rc->type,"IDENTIFIER")==0 && cg_is_lparam(rc->value) &&
                 cg_lparam_type(rc->value) == 2) return 1;
@@ -29927,8 +30782,159 @@ static int cg_is_str_node(const IRNode* a) {
                 cg_node_is_str_static(rc->children[0])) return 1;
         }
         int i = 0;
-        while (i < a->nchildren) { if (cg_ret_strlist_of(a->children[i])) return 1; i++; }
+        while (i < a->nchildren) { if (cg_ret_strlist_in(a->children[i], root)) return 1; i++; }
         return 0;
+    }
+    static int cg_ret_strlist_of(const IRNode* a) {
+        return cg_ret_strlist_in(a, a);
+    }
+    /* A function body that returns a locally built list of strings is published
+     * through `drygon_rls`, but the local array itself is declared from
+     * `cg_list_is_str`, which cannot see a list whose elements arrived from a
+     * call (`rows.append(push(...))` -- the callee's string return is only known
+     * later).  Force the very names the body returns to be string lists so the
+     * declaration matches the buffer they are copied into (`char* rows[64]`
+     * instead of `int rows[64]`, which truncated every element pointer). */
+    static void cg_mark_retlist_str(const IRNode* body) {
+        if (!body) return;
+        if (d_strcmp(body->type,"RETURN")==0 && body->nchildren > 0) {
+            const IRNode* rc = body->children[0];
+            if (rc && d_strcmp(rc->type,"IDENTIFIER")==0 && rc->value && rc->value[0]) {
+                cg_note_list(rc->value, 512, 2);
+                cg_note_strlist(rc->value);
+            }
+        }
+        int i = 0;
+        while (i < body->nchildren) { cg_mark_retlist_str(body->children[i]); i++; }
+    }
+    /* Does `body` build a python list in this local name?  Method bodies are
+     * scanned for their return type BEFORE the body is emitted, so the
+     * list-ness of a local (`q = []` / `q.append(...)`) is not yet in
+     * `cg_list_size` when `cg_ret_list_scan` asks.  Look at the body text. */
+    static int cg_body_list_local(const IRNode* body, const char* nm) {
+        if (!body || !nm) return 0;
+        if (d_strcmp(body->type,"ASSIGN")==0 && body->nchildren > 1 &&
+            body->children[0] && d_strcmp(body->children[0]->type,"IDENTIFIER")==0 &&
+            d_strcmp(body->children[0]->value, nm)==0) {
+            const IRNode* rs = body->children[1];
+            if (rs && cg_is_list_node(rs)) return 1;
+            if (rs && d_strcmp(rs->type,"CALL")==0 && rs->value &&
+                (d_strcmp(rs->value,"list")==0 || d_strcmp(rs->value,"sorted")==0 ||
+                 d_strcmp(rs->value,"tuple")==0)) return 1;
+            if (rs && d_strcmp(rs->type,"IDENTIFIER")==0 && cg_is_dyn_list(rs->value))
+                return 1;
+        }
+        /* `nm.append(...)` proves nm is a list as well */
+        if (d_strcmp(body->type,"METHOD_CALL")==0 && body->value &&
+            d_strcmp(body->value,"append")==0 && body->nchildren > 0 &&
+            body->children[0] && body->children[0]->value &&
+            d_strcmp(body->children[0]->type,"IDENTIFIER")==0 &&
+            d_strcmp(body->children[0]->value, nm)==0) return 1;
+        int i = 0;
+        while (i < body->nchildren) {
+            if (cg_body_list_local(body->children[i], nm)) return 1;
+            i++;
+        }
+        return 0;
+    }
+    /* `return <name>` inside `body` where `<name>` is a list built in that same
+     * body.  `cg_ret_list_scan` cannot see it (the local is not registered as a
+     * list until the body is emitted), so a method that assembles a list and
+     * hands it back stayed `int` and truncated the pointer. */
+    static int cg_ret_name_list_scan(const IRNode* a, const IRNode* body) {
+        if (!a || !body) return 0;
+        if (d_strcmp(a->type,"RETURN")==0 && a->nchildren > 0) {
+            const IRNode* rc = a->children[0];
+            if (rc && d_strcmp(rc->type,"IDENTIFIER")==0 &&
+                cg_body_list_local(body, rc->value)) return 1;
+        }
+        int i = 0;
+        while (i < a->nchildren) {
+            if (cg_ret_name_list_scan(a->children[i], body)) return 1;
+            i++;
+        }
+        return 0;
+    }
+    /* Methods that build and return a python list, by BARE method name.  The
+     * class emitter records them while it writes each definition; a call site
+     * (`c = bx.get()`) cannot resolve `bx` to its class here (only parameters
+     * are tracked), so it consults this table instead of leaving the returned
+     * array pointer truncated into an int (24_collections `od.keys()`,
+     * 50_csv `reader.__next__()`). */
+    /* Methods that build and return a python DICT, by BARE method name, with
+     * the key/value element shapes of their result.  `cg_prog_retdict` covers
+     * module-level defs only, so `x = recv.m()` left the caller reading the
+     * dummy `0` return word while the method had published its triple through
+     * `drygon_rdk and the rdv arrays`: `len(x)` and `x["k"]` then indexed address 0.
+     * `csv.DictReader.__next__` is exactly this shape (50_csv 10-13). */
+    static char cg_mrd_names[64*32];
+    static char cg_mrd_vf[64];
+    static char cg_mrd_kf[64];
+    static int cg_nmrd;
+    static void cg_mrd_add(const char* nm, int vf, int kf) {
+        if (!nm || !nm[0] || cg_nmrd >= 64) return;
+        int i = 0;
+        while (i < cg_nmrd) {
+            if (d_strcmp(cg_mrd_names + i*32, nm)==0) return;
+            i++;
+        }
+        d_strncpy(cg_mrd_names + cg_nmrd*32, nm, 31);
+        cg_mrd_names[cg_nmrd*32 + 31] = 0;
+        cg_mrd_vf[cg_nmrd] = (char)vf;
+        cg_mrd_kf[cg_nmrd] = (char)kf;
+        cg_nmrd = cg_nmrd + 1;
+    }
+    static int cg_mrd_find(const char* nm) {
+        if (!nm || !nm[0]) return -1;
+        int i = 0;
+        while (i < cg_nmrd) {
+            if (d_strcmp(cg_mrd_names + i*32, nm)==0) return i;
+            i++;
+        }
+        return -1;
+    }
+    static char cg_mrl_names[64*32];
+    static char cg_mrl_sls[64];
+    static int cg_nmrl;
+    static void cg_mrl_add(const char* nm, int sls) {
+        if (!nm || !nm[0] || cg_nmrl >= 64) return;
+        int i = 0;
+        while (i < cg_nmrl) {
+            if (d_strcmp(cg_mrl_names + i*32, nm)==0) return;
+            i++;
+        }
+        d_strncpy(cg_mrl_names + cg_nmrl*32, nm, 31);
+        cg_mrl_names[cg_nmrl*32 + 31] = 0;
+        cg_mrl_sls[cg_nmrl] = (char)sls;
+        cg_nmrl = cg_nmrl + 1;
+    }
+    static int cg_mrl_find(const char* nm) {
+        if (!nm || !nm[0]) return -1;
+        int i = 0;
+        while (i < cg_nmrl) {
+            if (d_strcmp(cg_mrl_names + i*32, nm)==0) return i;
+            i++;
+        }
+        return -1;
+    }
+    /* `recv.m(...)`: does the method body hand back a python list?  Methods
+     * never live in the `cg_prog_*` tables, so a call site could not tell that
+     * `od.keys()` or `reader.__next__()` yields an array: the pointer was
+     * truncated into an int (24_collections, 50_csv).  Resolve the receiver's
+     * class from its declared type and inspect the method body. */
+    static int cg_mcall_ret_list(const IRNode* call, int* sls) {
+        if (sls) *sls = 0;
+        if (!call || !call->value || call->nchildren < 1) return 0;
+        /* a dict-returning method publishes a triple through the shared dict
+         * buffer, never an element array (DictReader.__next__) */
+        if (cg_mrd_find(call->value) >= 0) return 0;
+        if (cg_mrd_find(call->children[0] ? call->children[0]->value : NULL) >= 0) return 0;
+        int mi = cg_mrl_find(call->value);
+        if (mi < 0 && call->children[0] && call->children[0]->value)
+            mi = cg_mrl_find(call->children[0]->value);
+        if (mi < 0) return 0;
+        if (sls) *sls = cg_mrl_sls[mi];
+        return 1;
     }
     /* True when a body contains `return <expr>`.  A bare `def` carries no
      * return annotation, so the emitter used to declare every such function
@@ -30092,27 +31098,24 @@ static int cg_is_str_node(const IRNode* a) {
             int i = 0;
             int mk = 0;
             while (i < a->nchildren && i < 8) {
-                /* a list argument is a pointer plus a count, never a char* */
-                if (cg_node_is_str_static(a->children[i]) && !cg_static_is_listnode(a->children[i])) {
-                    if (!cg_prog_pstr[fi * 8 + i]) cg_pstr_changed = 1;
-                    cg_prog_pstr[fi * 8 + i] = 1;
-                    cg_prog_variant[fi] = 1;
-                    mk = mk | (1 << i);
-                }
-                /* An argument that is a python OBJECT makes the parameter a
-                 * `Cls*`: `f(Point(0, 0))`, `f(p)` where `p = Point(...)`. */
-                if (a->children[i]) {
-                    if (d_strcmp(a->children[i]->type,"CALL")==0 &&
-                        a->children[i]->value && a->children[i]->value[0] &&
-                        cg_is_class_scan(a->children[i]->value))
-                        cg_note_pcls(fi, i, a->children[i]->value);
-                    else if (d_strcmp(a->children[i]->type,"IDENTIFIER")==0) {
-                        const char* ac = cg_ov_class(a->children[i]->value);
-                        if (ac) cg_note_pcls(fi, i, ac);
+                    /* An argument that is a python OBJECT makes the parameter a
+                     * `Cls*`: `f(Point(0, 0))`, `f(mod.Point(...))`, `f(p)`.  It
+                     * is never a `char*`, so the string note is skipped. */
+                    const char* ioc = cg_arg_obj_class(a->children[i]);
+                    if (ioc) cg_note_pcls(fi, i, ioc);
+                    /* A list argument is a pointer plus a count, never a char* */
+                    else if ((cg_node_is_str_static(a->children[i]) &&
+                         !cg_static_is_listnode(a->children[i])) ||
+                        (a->children[i] &&
+                         d_strcmp(a->children[i]->type,"IDENTIFIER")==0 &&
+                         cg_is_strdef_param(a->children[i]->value))) {
+                        if (!cg_prog_pstr[fi * 8 + i]) cg_pstr_changed = 1;
+                        cg_prog_pstr[fi * 8 + i] = 1;
+                        cg_prog_variant[fi] = 1;
+                        mk = mk | (1 << i);
                     }
+                    i++;
                 }
-                i++;
-            }
             if (cg_call_find(a) < 0) cg_note_mask(fi, mk);
         }
         int i = 0;
@@ -30158,6 +31161,61 @@ static int cg_is_str_node(const IRNode* a) {
             i++;
         }
         return 0;
+    }
+    /* ── object arguments ───────────────────────────────────────────────────
+     * A parameter filled with an OBJECT (`reader.__init__(self, f, ...)` reached
+     * as `csv.reader(io.StringIO(data))`) stayed `int`; the method body then did
+     * `f.read()` on an integer and called through it, so every csv/io/pathlib
+     * entry point trapped the moment it touched the object.  The class of such
+     * an argument is recorded per (class, method, position) alongside the string
+     * note and used to declare the parameter `Cls*`. */
+    static char cg_cps_obj[64*32];
+    static void cg_cps_note_obj(const char* cls, const char* meth, int pos, const char* argcls) {
+        if (!cls || !cls[0] || !meth || !meth[0] || !argcls || !argcls[0]) return;
+        cg_cps_note(cls, meth, pos);
+        int i = 0;
+        while (i < cg_ncps) {
+            if (cg_cps_pos[i] == pos && d_strcmp(cg_cps_cls + i*64, cls) == 0 &&
+                d_strcmp(cg_cps_meth + i*64, meth) == 0) {
+                d_strncpy(cg_cps_obj + i*32, argcls, 31);
+                cg_cps_obj[i*32 + 31] = 0;
+                return;
+            }
+            i++;
+        }
+    }
+    static const char* cg_cps_obj_get(const char* cls, const char* meth, int pos) {
+        int i = 0;
+        while (i < cg_ncps) {
+            if (cg_cps_pos[i] == pos && d_strcmp(cg_cps_cls + i*64, cls) == 0 &&
+                d_strcmp(cg_cps_meth + i*64, meth) == 0) {
+                if (cg_cps_obj[i*32]) return cg_cps_obj + i*32;
+                return (const char*)0;
+            }
+            i++;
+        }
+        return (const char*)0;
+    }
+    /* The class held by an argument expression: an object built right there
+     * (`Cls(...)`, `mod.Cls(...)`) or a variable already known to hold one. */
+    static const char* cg_arg_obj_class(const IRNode* v) {
+        if (!v) return (const char*)0;
+        if (d_strcmp(v->type,"CALL")==0) {
+            if (v->value && v->value[0] && d_strcmp(v->value,"COMPLEX")!=0 &&
+                cg_is_class_scan(v->value)) return v->value;
+            if (v->value && d_strcmp(v->value,"COMPLEX")==0 && v->nchildren > 0 &&
+                v->children[0] &&
+                d_strcmp(v->children[0]->type,"MEMBER_ACCESS")==0 &&
+                v->children[0]->value && cg_is_class_scan(v->children[0]->value))
+                return v->children[0]->value;
+            return (const char*)0;
+        }
+        if (d_strcmp(v->type,"IDENTIFIER")==0 && v->value) {
+            const char* c = cg_ov_class(v->value);
+            if (!c) c = cg_cvar_class(v->value);
+            return c;
+        }
+        return (const char*)0;
     }
     static void cg_scan_super_args(const IRNode* a, const char* base) {
         if (!a) return;
@@ -30211,14 +31269,27 @@ static int cg_is_str_node(const IRNode* a) {
      * the same table `super().__init__("x")` fills. */
     static void cg_scan_init_args(const IRNode* a) {
         if (!a) return;
-        if (d_strcmp(a->type,"CALL")==0 && a->value && a->value[0] &&
-            d_strcmp(a->value,"COMPLEX")!=0 && cg_is_class_scan(a->value)) {
-            int j = 0;
-            while (j < a->nchildren && j < 8) {
-                if (cg_node_is_str_static(a->children[j]) &&
-                    !cg_static_is_listnode(a->children[j]))
-                    cg_cps_note(a->value, "__init__", j);
-                j++;
+        if (d_strcmp(a->type,"CALL")==0 && a->value && a->value[0]) {
+            const char* icls = (const char*)0;
+            int ab = 0;
+            if (d_strcmp(a->value,"COMPLEX")!=0 && cg_is_class_scan(a->value)) icls = a->value;
+            else if (d_strcmp(a->value,"COMPLEX")==0 && a->nchildren>0 &&
+                     a->children[0] &&
+                     d_strcmp(a->children[0]->type,"MEMBER_ACCESS")==0 &&
+                     a->children[0]->value && cg_is_class_scan(a->children[0]->value)) {
+                icls = a->children[0]->value;
+                ab = 1;
+            }
+            if (icls) {
+                int j = ab;
+                while (j < a->nchildren && j < 8 + ab) {
+                    const char* oc = cg_arg_obj_class(a->children[j]);
+                    if (oc) { cg_cps_note_obj(icls, "__init__", j - ab, oc); }
+                    else if (cg_node_is_str_static(a->children[j]) &&
+                             !cg_static_is_listnode(a->children[j]))
+                        cg_cps_note(icls, "__init__", j - ab);
+                    j++;
+                }
             }
         }
         int i = 0;
@@ -30258,28 +31329,188 @@ static int cg_is_str_node(const IRNode* a) {
         }
         return 0;
     }
-    static void cg_scan_meth_args(const IRNode* a) {
+    static char cg_mps_obj[128*32];
+    static void cg_mps_note_obj(const char* cls, const char* meth, int pos, const char* argcls) {
+        if (!cls || !cls[0] || !meth || !meth[0] || !argcls || !argcls[0]) return;
+        cg_mps_note(cls, meth, pos);
+        int i = 0;
+        while (i < cg_mps_n) {
+            if (cg_mps_pos[i] == pos && d_strcmp(cg_mps_cls + i*32, cls) == 0 &&
+                d_strcmp(cg_mps_meth + i*32, meth) == 0) {
+                d_strncpy(cg_mps_obj + i*32, argcls, 31);
+                cg_mps_obj[i*32 + 31] = 0;
+                return;
+            }
+            i++;
+        }
+    }
+    static const char* cg_mps_obj_get(const char* cls, const char* meth, int pos) {
+        int i = 0;
+        while (i < cg_mps_n) {
+            if (cg_mps_pos[i] == pos && d_strcmp(cg_mps_cls + i*32, cls) == 0 &&
+                d_strcmp(cg_mps_meth + i*32, meth) == 0) {
+                if (cg_mps_obj[i*32]) return cg_mps_obj + i*32;
+                return (const char*)0;
+            }
+            i++;
+        }
+        return (const char*)0;
+    }
+    /* Class methods are not in the `cg_prog_*` tables -- `cg_prog_add` only
+     * walks module-level FUNCTION_DEFs -- so a method parameter that receives a
+     * python list stayed an int-width pointer with no element count: `len(row)`
+     * fell back to `drygon_bytes_len(row)` and returned garbage, and `row[i]`
+     * read a truncated pointer (csv.writer.writerow).  The list parameters of
+     * every method are recovered from its call sites instead, the way
+     * `cg_scan_ltypes` does it for module functions: `cg_mps_lk` holds the
+     * element kind of each (class, method, position), 0 meaning "not a list".
+     * The table stays small -- the backend rejects a program whose code words
+     * overflow. */
+    static char cg_mps_lk[128];
+    static int cg_mps_lk_note(const char* cls, const char* meth, int pos, int kind) {
+        if (!cls || !cls[0] || !meth || !meth[0]) return 0;
+        int i = 0;
+        while (i < cg_mps_n) {
+            if (cg_mps_pos[i] == pos && d_strcmp(cg_mps_cls + i*32, cls) == 0 &&
+                d_strcmp(cg_mps_meth + i*32, meth) == 0) {
+                /* the first call site to name a list settles the element type */
+                if (cg_mps_lk[i]) return 0;
+                cg_mps_lk[i] = (char)(kind + 1);
+                return 1;
+            }
+            i++;
+        }
+        if (cg_mps_n < 128) {
+            cg_mps_note(cls, meth, pos);
+            cg_mps_lk[cg_mps_n - 1] = (char)(kind + 1);
+            return 1;
+        }
+        return 0;
+    }
+    static int cg_mps_lk_get(const char* cls, const char* meth, int pos) {
+        int i = 0;
+        while (i < cg_mps_n) {
+            if (cg_mps_pos[i] == pos && d_strcmp(cg_mps_cls + i*32, cls) == 0 &&
+                d_strcmp(cg_mps_meth + i*32, meth) == 0)
+                return cg_mps_lk[i];
+            i++;
+        }
+        /* The receiver's class can be unknown at both ends (scan and
+         * emission); method names carry the signature, so fall back to the
+         * position when the (class, method) key was never recorded. */
+        i = 0;
+        while (i < cg_mps_n) {
+            if (cg_mps_pos[i] == pos && d_strcmp(cg_mps_meth + i*32, meth) == 0) return cg_mps_lk[i];
+            i++;
+        }
+        return 0;
+    }
+
+    /* One ARGUMENT of a method call whose parameter is a counted python list:
+     * the backing array and its element count, exactly as a module function's
+     * list parameter is passed.  An argument that cannot be resolved still has
+     * to keep the shape of the signature, so it hands over an empty list. */
+    static void cg_emit_list_arg(CGen* g, const IRNode* c, int kind) {
+        if (d_strcmp(c->type,"IDENTIFIER")==0 && c->value && c->value[0]) {
+            if (cg_is_lparam(c->value) || cg_list_size(c->value) >= 0 ||
+                cg_sl_index(c->value) >= 0) {
+                cg_put(g, c->value); cg_put(g, ", ");
+                cg_put(g, c->value); cg_put(g, "_n");
+                return;
+            }
+        } else if (cg_sl_islice(c)) {
+            cg_gen_expr(g, c); cg_put(g, ", ");
+            cg_gen_expr(g, c); cg_put(g, "_n");
+            return;
+        } else if (cg_is_list_node(c)) {
+            int kk = cg_lit_index(c);
+            if (kk < 0) kk = cg_lit_add(c);
+            if (kk >= 0) {
+                cg_lit_put_name(g, kk);
+                cg_put(g, ", "); cg_put_int(g, c->nchildren);
+                return;
+            }
+        }
+        cg_put(g, kind == 2 ? "(char**)0, 0" :
+                   (kind == 1 ? "(double*)0, 0" : "(int*)0, 0"));
+    }
+    /* One ARGUMENT of a call, when the callee's parameter is a python OBJECT
+     * of another class.  `reader.__init__(self, f)` stores the instance and
+     * then calls through it, so a bare `x` passed the struct by value and a
+     * constructor expression (`csv.reader(io.StringIO(d))`) passed the `1`
+     * sentinel; the parameter was garbage either way.  Emits `&x`, or the
+     * instance itself when the argument is already a `<Cls>*` parameter, or
+     * materialises `Cls(...)` into the class's scratch instance.  Returns 1
+     * when it emitted the argument. */
+    static int cg_emit_obj_arg(CGen* g, const char* cls, const char* meth,
+                               int pos, const IRNode* av) {
+        if (!cls || !meth || !av) return 0;
+        const char* oc = cg_cps_obj_get(cls, meth, pos);
+        if (!oc) oc = cg_mps_obj_get(cls, meth, pos);
+        if (!oc || !oc[0]) return 0;
+        if (d_strcmp(av->type,"CALL")==0 && av->value &&
+            d_strcmp(av->value,oc)==0 && cg_cls_hasm(oc,"__init__")) {
+            int osc = cg_scratch_find(oc);
+            if (osc < 0) return 0;
+            char osb[32];
+            cg_scratch_name(osc, osb);
+            cg_put(g, "(");
+            cg_emit_init(g, oc, av, osb);
+            cg_put(g, ", &"); cg_put(g, osb);
+            cg_put(g, ")");
+            return 1;
+        }
+        if (d_strcmp(av->type,"IDENTIFIER")==0 && av->value && av->value[0]) {
+            if (cg_is_clsptr(av->value)) cg_put(g, av->value);
+            else { cg_put(g, "&"); cg_put(g, av->value); }
+            return 1;
+        }
+        return 0;
+    }
+    /* The enclosing class of every call site, threaded through the walk.  `self`
+     * is never a registered variable, so a receiver of `self` resolved to no
+     * class at all -- and that is exactly the receiver of a call inside a method
+     * body, the one case that matters.  `self.eq(P(1))` therefore left the
+     * parameter table empty and the argument was emitted as the `((void*)1)`
+     * sentinel (probe a5 segfaulted in `P_eq`).  The table is keyed by the class
+     * that DEFINES the method, which is what the emission side looks up. */
+    static void cg_scan_meth_args_ctx(const IRNode* a, const char* curcls) {
         if (!a) return;
+        if (d_strcmp(a->type,"CLASS_DEF")==0 && a->value && a->value[0]) {
+            int ci = 0;
+            while (ci < a->nchildren) { cg_scan_meth_args_ctx(a->children[ci], a->value); ci++; }
+            return;
+        }
         if (d_strcmp(a->type,"CALL")==0 && d_strcmp(a->value,"COMPLEX")==0 &&
             a->nchildren>0 && a->children[0] &&
             d_strcmp(a->children[0]->type,"MEMBER_ACCESS")==0 &&
             a->children[0]->nchildren>0 && a->children[0]->children[0] &&
             d_strcmp(a->children[0]->children[0]->type,"IDENTIFIER")==0) {
             const char* bn = a->children[0]->children[0]->value;
-            const char* cv = cg_cvar_class(bn);
+            const char* cv = 0;
+            if (curcls && curcls[0] && d_strcmp(bn,"self")==0) cv = curcls;
+            if (!cv) cv = cg_cvar_class(bn);
             if (!cv && cg_is_class_scan(bn)) cv = bn;
+            if (!cv) cv = cg_ov_class(bn);
             if (cv) {
+                const char* dc = cg_cls_find_m(cv, a->children[0]->value);
+                if (!dc) dc = cv;
                 int j = 1;
                 while (j < a->nchildren && j < 9) {
-                    if (cg_node_is_str_static(a->children[j]) &&
-                        !cg_static_is_listnode(a->children[j]))
-                        cg_mps_note(cv, a->children[0]->value, j - 1);
+                    const char* oc = cg_arg_obj_class(a->children[j]);
+                    if (oc) cg_mps_note_obj(dc, a->children[0]->value, j - 1, oc);
+                    else if (cg_node_is_str_static(a->children[j]) &&
+                             !cg_static_is_listnode(a->children[j]))
+                        cg_mps_note(dc, a->children[0]->value, j - 1);
                     j++;
                 }
             }
         }
         int i = 0;
-        while (i < a->nchildren) { cg_scan_meth_args(a->children[i]); i++; }
+        while (i < a->nchildren) { cg_scan_meth_args_ctx(a->children[i], curcls); i++; }
+    }
+    static void cg_scan_meth_args(const IRNode* a) {
+        cg_scan_meth_args_ctx(a, (const char*)0);
     }
 
     static int cg_scan_float(const IRNode* a) {
@@ -30563,6 +31794,52 @@ static int cg_is_str_node(const IRNode* a) {
             cg_prog_lprev[i] = cg_prog_ltype[i];
             cg_prog_ldprev[i] = cg_prog_ldec[i];
             cg_prog_lmprev[i] = cg_prog_lmask[i];
+            i++;
+        }
+    }
+    /* `phase` 0 settles the element kind of every method list parameter from the
+     * call sites; `phase` 1 walks again and gives each literal argument the
+     * backing array its settled parameter needs (`writer.writerow([1, 2, 3])`
+     * into a `char**` row has to become "1", "2", "3"). */
+    static void cg_scan_meth_listargs(const IRNode* a, const char* curcls, int phase) {
+        if (!a) return;
+        if (d_strcmp(a->type,"CLASS_DEF")==0 && a->value && a->value[0]) curcls = a->value;
+        if (d_strcmp(a->type,"CALL")==0 && d_strcmp(a->value,"COMPLEX")==0 &&
+            a->nchildren>0 && a->children[0] &&
+            d_strcmp(a->children[0]->type,"MEMBER_ACCESS")==0 &&
+            a->children[0]->nchildren>0 && a->children[0]->children[0] &&
+            d_strcmp(a->children[0]->children[0]->type,"IDENTIFIER")==0) {
+            const char* rn = a->children[0]->children[0]->value;
+            const char* cv = cg_cvar_class(rn);
+            /* `self.helper(row)` inside a method: the enclosing class is the
+             * receiver's class */
+            if (!cv && curcls && d_strcmp(rn,"self")==0) cv = curcls;
+            if (!cv && cg_is_class_scan(rn)) cv = rn;
+            if (!cv) cv = cg_ov_class(rn);
+            /* a value returned by a module function (`writer = csv.writer(f)`)
+             * has no recorded class yet: key the note under the class that
+             * declares the method, so `cg_mps_lk_get` can find it */
+            const char* m_any = cg_cls_find_m_any(a->children[0]->value);
+            if (cv || m_any) {
+                const char* m_cls = cv ? cg_cls_find_m(cv, a->children[0]->value) : 0;
+                if (!m_cls) m_cls = cv ? cv : m_any;
+                int j = 1;
+                while (j < a->nchildren && j < 9) {
+                    const IRNode* av = a->children[j];
+                    if (phase) {
+                        int lk = cg_mps_lk_get(m_cls, a->children[0]->value, j - 1);
+                        if (lk > 0 && cg_is_list_node(av)) cg_litw_note(av, lk - 1);
+                    } else {
+                        int lt = cg_larg_type(av, -1, NULL);
+                        if (lt) cg_mps_lk_note(m_cls, a->children[0]->value, j - 1, lt - 1);
+                    }
+                    j++;
+                }
+            }
+        }
+        int i = 0;
+        while (i < a->nchildren) {
+            cg_scan_meth_listargs(a->children[i], curcls, phase);
             i++;
         }
     }
@@ -30967,7 +32244,17 @@ static int cg_is_str_node(const IRNode* a) {
         }
         cg_ob_walk(prog);
     }
-    static void cg_scan_list_names_m(const IRNode* a, const char* fname, int fstr) {
+    static void cg_scan_list_names_m(const IRNode* a, const char* fname, int fstr, const IRNode* fbody) {
+        /* The enclosing function body is needed by the `x = []` / `x.append(s)`
+         * pair below, and that test runs before the FUNCTION_DEF branch that
+         * would otherwise set up the per-body values.  Declaring them first is
+         * what makes a method-local string accumulator (`cur = ""` ...
+         * `out.append(cur)`) visible: reading `nb` after its original
+         * declaration point saw an uninitialised slot, so `out` stayed
+         * `int out[64]` while every element was a `char*`. */
+        const char* nf = fname;
+        int ns = fstr;
+        const IRNode* nb = fbody;
         if (!a) return;
         if (d_strcmp(a->type,"ASSIGN")==0 && a->nchildren>1) {
             const IRNode* lhs = a->children[0];
@@ -31080,6 +32367,13 @@ static int cg_is_str_node(const IRNode* a) {
                 if (cg_node_is_str_static(arg) || cg_is_str_node(arg) ||
                     (d_strcmp(arg->type, "IDENTIFIER") == 0 &&
                      (cg_name_is_str(arg->value) ||
+                      /* an accumulator built from string literals inside the SAME
+                       * function: `cur = ""` ... `out.append(cur)`.  The global
+                       * string table is filled by the return-type scans, which
+                       * only walk module-level defs, so a method local never made
+                       * it there and `out` was declared `int out[64]` while its
+                       * elements were `char*` (50_csv read empty rows). */
+                      cg_body_str_local(nb, arg->value) ||
                       (fstr && fname && d_strcmp(arg->value, fname) == 0)))) {
                     cg_note_strlist(recv->value);
                 }
@@ -31106,18 +32400,19 @@ static int cg_is_str_node(const IRNode* a) {
         }
         /* a `for` over a string-valued iterable binds its target to a string
          * for the whole body; a function body is a separate scope */
-        const char* nf = fname;
-        int ns = fstr;
-        if (d_strcmp(a->type, "FUNCTION_DEF") == 0) { nf = NULL; ns = 0; }
+        if (d_strcmp(a->type, "FUNCTION_DEF") == 0) {
+            nf = NULL; ns = 0;
+            nb = a->nchildren > 1 ? a->children[1] : NULL;
+        }
         else if (d_strcmp(a->type, "FOR") == 0 && a->nchildren >= 2) {
             const IRNode* v = a->children[0];
             if (v && d_strcmp(v->type, "IDENTIFIER") == 0 && v->value &&
                 cg_for_iter_str(a->children[1])) { nf = v->value; ns = 1; }
         }
         int i = 0;
-        while (i < a->nchildren) { cg_scan_list_names_m(a->children[i], nf, ns); i++; }
+        while (i < a->nchildren) { cg_scan_list_names_m(a->children[i], nf, ns, nb); i++; }
     }
-    static void cg_scan_list_names(const IRNode* a) { cg_scan_list_names_m(a, NULL, 0); }
+    static void cg_scan_list_names(const IRNode* a) { cg_scan_list_names_m(a, NULL, 0, NULL); }
     /* Register every float-valued function in the program, in source order so
      * that a later definition can be reached through an earlier one. */
     /* python `global name` makes the name module-scoped so it survives
@@ -31215,6 +32510,70 @@ static int cg_is_str_node(const IRNode* a) {
         int i = 0;
         while (i < a->nchildren) { cg_scan_ret_calls(a->children[i], depth + 1); i++; }
     }
+    /* A function's own body can prove that a parameter holds a string even when
+     * no call site in the program passes a literal there: `def cut(s): return
+     * s[0:3]` is reached through `cut(field)` where `field` is a plain local, so
+     * the call-site scan saw nothing and the parameter was emitted `int`, which
+     * truncated the pointer (50_csv split helpers, 23_pathlib parts).  These
+     * body shapes are unambiguous string uses. */
+    static int cg_str_use_of(const IRNode* nn, const char* nm) {
+        if (!nn || !nm || !nm[0]) return 0;
+        if (d_strcmp(nn->type,"SLICE")==0 && nn->nchildren>0 &&
+            nn->children[0] && d_strcmp(nn->children[0]->type,"IDENTIFIER")==0 &&
+            d_strcmp(nn->children[0]->value,nm)==0) return 1;
+        if (d_strcmp(nn->type,"BINARY_OP")==0 && nn->nchildren>1 &&
+            (d_strcmp(nn->value,"+")==0 || d_strcmp(nn->value,"==")==0 ||
+             d_strcmp(nn->value,"!=")==0)) {
+            const IRNode* l = nn->children[0];
+            const IRNode* r = nn->children[1];
+            int lis = l && d_strcmp(l->type,"IDENTIFIER")==0 &&
+                      d_strcmp(l->value,nm)==0;
+            int ris = r && d_strcmp(r->type,"IDENTIFIER")==0 &&
+                      d_strcmp(r->value,nm)==0;
+            if (lis && !ris && cg_node_is_str_static(r)) return 1;
+            if (ris && !lis && cg_node_is_str_static(l)) return 1;
+        }
+        if (d_strcmp(nn->type,"CALL")==0 && d_strcmp(nn->value,"COMPLEX")==0 &&
+            nn->nchildren>0 && nn->children[0] &&
+            d_strcmp(nn->children[0]->type,"MEMBER_ACCESS")==0 &&
+            nn->children[0]->nchildren>0 && nn->children[0]->children[0] &&
+            d_strcmp(nn->children[0]->children[0]->type,"IDENTIFIER")==0 &&
+            d_strcmp(nn->children[0]->children[0]->value,nm)==0 &&
+            cg_is_known_str_method(nn->children[0]->value)) return 1;
+        if (cg_param_needs_str(nn, nm)) return 1;
+        int i = 0;
+        while (i < nn->nchildren) {
+            if (cg_str_use_of(nn->children[i], nm)) return 1;
+            i++;
+        }
+        return 0;
+    }
+    static void cg_scan_body_str(const IRNode* prog, const char* fname, int fi) {
+        int i = 0;
+        while (i < prog->nchildren) {
+            const IRNode* n = prog->children[i];
+            if (d_strcmp(n->type,"FUNCTION_DEF")==0 && n->nchildren>1 &&
+                d_strcmp(n->value,fname)==0) {
+                const IRNode* pr = n->children[0];
+                int k = 0;
+                while (pr && k < pr->nchildren && k < 8) {
+                    const IRNode* pk = pr->children[k];
+                    if (!cg_prog_pstr[fi * 8 + k] &&
+                        !(cg_lbits(fi) & (1 << k)) &&
+                        d_strcmp(pk->data_type,"VARGS")!=0 &&
+                        d_strcmp(pk->data_type,"LIST")!=0 &&
+                        !cg_is_dict_param(pk) &&
+                        cg_str_use_of(n->children[1], pk->value)) {
+                        cg_prog_pstr[fi * 8 + k] = 1;
+                        cg_prog_variant[fi] = 1;
+                        cg_pstr_changed = 1;
+                    }
+                    k++;
+                }
+            }
+            i++;
+        }
+    }
     static void cg_scan_program_fns(const IRNode* prog) {
         cg_nfn_float = 0;
         cg_nprog_fns = 0;
@@ -31248,6 +32607,9 @@ static int cg_is_str_node(const IRNode* a) {
         cg_scan_static_str(prog);
         cg_scan_dict_names(prog);
         cg_scan_list_names(prog);
+        /* the source tables are populated now: type the keys of every dict
+         * comprehension whose key came out of a dictionary or a string */
+        cg_compkey_resolve();
         cg_scan_maketrans(prog);
         cg_scan_template(prog);
         cg_scan_hash_objs(prog);
@@ -31272,6 +32634,7 @@ static int cg_is_str_node(const IRNode* a) {
                         cg_prog_retstr[fi] = cg_ret_str_scan(n->children[1]) ? 1 : 0;
                         cg_prog_retlist[fi] = cg_ret_list_scan(n->children[1]) ? 1 : 0;
                         cg_prog_retsls[fi] = cg_ret_strlist_of(n->children[1]) ? 1 : 0;
+                        if (cg_prog_retsls[fi]) cg_mark_retlist_str(n->children[1]);
                         {
                             int _dkf = 0; int _dvf = 0;
                             cg_prog_retdict[fi] = cg_ret_dict_scan(n->children[1], &_dkf, &_dvf) ? 1 : 0;
@@ -31301,6 +32664,8 @@ static int cg_is_str_node(const IRNode* a) {
             it++;
         }
         cg_ltypes_snapshot();
+        cg_scan_meth_listargs(prog, NULL, 0);
+        cg_scan_meth_listargs(prog, NULL, 1);
         /* second pass: which parameters take a string, which take a list, and
          * of what element type?  A `char*` that only becomes known from a
          * caller further down the source has to reach the callee too (`def a(n):
@@ -31318,6 +32683,7 @@ static int cg_is_str_node(const IRNode* a) {
                 nm[j] = 0;
                 cg_scan_list_args(prog, nm, i, -1, NULL);
                 cg_scan_calls(prog, nm, i);
+                cg_scan_body_str(prog, nm, i);
                 i++;
             }
             if (!cg_pstr_changed) break;
@@ -31333,7 +32699,8 @@ static int cg_is_str_node(const IRNode* a) {
                 if (fi >= 0 && pr) {
                     int k = 0;
                     while (k < pr->nchildren && k < 8) {
-                        if (cg_prog_pstr[fi * 8 + k] && cg_used_arith(n->children[1], pr->children[k]->value))
+                        if (cg_prog_pstr[fi * 8 + k] && (cg_ua_body = n->children[1],
+                        cg_used_arith(n->children[1], pr->children[k]->value)))
                             cg_prog_pstr[fi * 8 + k] = 0;
                         k++;
                     }
@@ -31403,6 +32770,7 @@ static int cg_is_str_node(const IRNode* a) {
                     }
                     cg_prog_retlist[fi] = cg_ret_list_scan(n->children[1]);
                     cg_prog_retsls[fi] = cg_ret_strlist_of(n->children[1]) ? 1 : 0;
+                    if (cg_prog_retsls[fi]) cg_mark_retlist_str(n->children[1]);
                     {
                         int _dkf = 0; int _dvf = 0;
                         cg_prog_retdict[fi] = cg_ret_dict_scan(n->children[1], &_dkf, &_dvf) ? 1 : 0;
@@ -37095,17 +38463,20 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                     cg_list_is_twod(br->children[0]->value) &&
                     cg_is_list_node(cg_eval_tuple_expr(bl))) { raa = br; rlit = cg_eval_tuple_expr(bl); }
                 if (raa && rlit && rlit->nchildren > 0) {
-                    /* only flat rows of scalars: a string or nested row belongs
-                     * to the repr/row paths above */
-                    int rflat = 1;
+                    /* flat rows of scalars, plus rows of strings (compared
+                     * with the runtime streq): a nested row still belongs to
+                     * the repr/row paths above.  Without the string mode
+                     * `rows[0] == ["name","age","city"]` fell through to the
+                     * array-pointer comparison and was always false (50_csv). */
+                    int rmode = 1;
                     int rz = 0;
                     while (rz < rlit->nchildren) {
                         const IRNode* rl = rlit->children[rz];
-                        if (rl && (cg_node_is_str_static(rl) || cg_is_str_node(rl))) rflat = 0;
-                        if (cg_is_list_node(cg_eval_tuple_expr(rl))) rflat = 0;
+                        if (rl && (cg_node_is_str_static(rl) || cg_is_str_node(rl))) rmode = 2;
+                        if (cg_is_list_node(cg_eval_tuple_expr(rl))) rmode = 0;
                         rz++;
                     }
-                    if (rflat) {
+                    if (rmode) {
                         int is_neq = (d_strcmp(n->value,"!=")==0);
                         if (is_neq) cg_put(g, "(!");
                         cg_put(g, "(");
@@ -37115,14 +38486,18 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                         cg_put_int(g, rlit->nchildren);
                         rz = 0;
                         while (rz < rlit->nchildren) {
+                            const IRNode* rl = rlit->children[rz];
+                            int rest = rl && (cg_node_is_str_static(rl) || cg_is_str_node(rl));
                             cg_put(g, " && ");
+                            if (rest || rmode == 2) cg_put(g, "drygon_streq(");
                             cg_dyn_put_name(g, raa->children[0]); cg_put(g, "_back[");
                             cg_dyn_put_name(g, raa->children[0]); cg_put(g, "_off[drygon_lidx2(");
                             cg_gen_expr(g, raa->children[1]);
                             cg_put(g, ", "); cg_dyn_put_name(g, raa->children[0]); cg_put(g, "_n)] + ");
                             cg_put_int(g, rz);
-                            cg_put(g, "] == ");
-                            cg_gen_expr(g, rlit->children[rz]);
+                            cg_put(g, "], ");
+                            cg_gen_expr(g, rl);
+                            if (rest || rmode == 2) cg_put(g, ")");
                             rz++;
                         }
                         cg_put(g, ")");
@@ -38457,12 +39832,26 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                                 cg_put(g, "(&"); cg_put(g, target->children[0]->value);
                             }
                             int ai = 1;
-                            while (ai < n->nchildren) { cg_put(g, ", "); cg_gen_expr(g, n->children[ai]); ai++; }
+                            while (ai < n->nchildren) {
+                                cg_put(g, ", ");
+                                if (!cg_emit_obj_arg(g, m_cls, target->value, ai - 1,
+                                                     n->children[ai])) {
+                                    /* a python list parameter of a method takes
+                                     * the array and its element count */
+                                    int _mlk = cg_mps_lk_get(m_cls, target->value, ai - 1);
+                                    if (_mlk > 0)
+                                        cg_emit_list_arg(g, n->children[ai], _mlk - 1);
+                                    else
+                                        cg_gen_expr(g, n->children[ai]);
+                                }
+                                ai++;
+                            }
                             { int cbi = cg_cls_index(m_cls);
                               const IRNode* cb2 = (cbi >= 0) ? cg_cls_body[cbi] : NULL;
                               int dp = ai - 1;
-                              while (cb2 && dp < 16) {
-                                  const IRNode* dv = cg_cls_m_default(cb2, target->value, dp);
+                              while (dp < 16) {
+                                  const IRNode* dv = cb2 ? cg_cls_m_default(cb2, target->value, dp) : (IRNode*)0;
+                                  if (!dv) dv = cg_md_get(m_cls, target->value, dp);
                                   if (!dv) break;
                                   cg_put(g, ", "); cg_gen_expr(g, dv); dp++;
                               } }
@@ -38569,6 +39958,63 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                         }
                         return;
                     }
+                    /* method call on a FIELD holding another instance:
+                     * `self.f.write(x)`.  The receiver is a member access, not
+                     * a variable, so no branch above matched and the call was
+                     * emitted verbatim as `self->f.write(x)` -- not C, and the
+                     * backend jumped through garbage (50_csv). */
+                    if (d_strcmp(target->type,"MEMBER_ACCESS")==0 && target->nchildren>0 &&
+                        target->children[0] &&
+                        d_strcmp(target->children[0]->type,"MEMBER_ACCESS")==0 &&
+                        target->children[0]->nchildren>0 &&
+                        target->children[0]->children[0] &&
+                        d_strcmp(target->children[0]->children[0]->type,"IDENTIFIER")==0) {
+                        const IRNode* ob = target->children[0];
+                        const char* ocls = cg_of_get(cg_lf_recv_cls(ob->children[0]), ob->value);
+                        if (ocls && ocls[0]) {
+                            const char* m_cls = cg_cls_find_m(ocls, target->value);
+                            if (!m_cls) m_cls = ocls;
+                            cg_put(g, m_cls); cg_put(g, "_"); cg_put(g, target->value);
+                            cg_put(g, "(");
+                            /* the field is a POINTER to the instance, so the
+                             * receiver is the member access itself and the
+                             * argument list opens right here: `self->f`.
+                             * Never `&<member>` -- drygon's own C front end
+                             * mis-evaluates the address of a struct member,
+                             * which segfaulted 50_csv inside writer_writerow. */
+                            cg_gen_expr(g, ob->children[0]);
+                            if (d_strcmp(ob->children[0]->value,"self")==0) {
+                                cg_put(g, "->");
+                            } else if (d_strcmp(ob->children[0]->type,"IDENTIFIER")==0 &&
+                                       cg_is_clsptr(ob->children[0]->value)) {
+                                cg_put(g, "->");
+                            } else if (d_strcmp(ob->children[0]->type,"MEMBER_ACCESS")==0 &&
+                                       ob->children[0]->nchildren>0 &&
+                                       ob->children[0]->children[0] &&
+                                       cg_of_get(cg_lf_recv_cls(ob->children[0]->children[0]),
+                                                 ob->children[0]->value)) {
+                                cg_put(g, ".");
+                            } else if (d_strcmp(ob->children[0]->type,"IDENTIFIER")==0) {
+                                cg_put(g, ".");
+                            } else cg_put(g, ".");
+                            cg_put(g, ob->value);
+                            int ai = 1;
+                            while (ai < n->nchildren) {
+                                cg_put(g, ", ");
+                                if (!cg_emit_obj_arg(g, m_cls, target->value, ai - 1,
+                                                     n->children[ai])) {
+                                    int _mlk = cg_mps_lk_get(m_cls, target->value, ai - 1);
+                                    if (_mlk > 0)
+                                        cg_emit_list_arg(g, n->children[ai], _mlk - 1);
+                                    else
+                                        cg_gen_expr(g, n->children[ai]);
+                                }
+                                ai++;
+                            }
+                            cg_put(g, ")");
+                            return;
+                        }
+                    }
                     /* list methods: here a list is a fixed array plus a runtime
                      * element count, so the mutators are inlined against it. */
                     if (d_strcmp(target->type,"MEMBER_ACCESS")==0 && target->nchildren>0 &&
@@ -38657,6 +40103,68 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                             }
                             cg_put(g, nm); cg_put(g, "_n = "); cg_put(g, nm); cg_put(g, "_n + 1");
                             return;
+                        }
+                        if (d_strcmp(m,"append")==0 && a0 && !a1 &&
+                            d_strcmp(a0->type,"IDENTIFIER")==0 && a0->value &&
+                            (cg_list_size(a0->value) >= 0 || cg_is_dyn_list(a0->value)) &&
+                            !cg_list_is_trow(nm) && !cg_list_is_lx(nm) &&
+                            cg_ob_lookup(nm) < 0) {
+                            /* `rows.append(rowvar)`: the new row is a list
+                             * variable, so it is copied element-wise out of
+                             * that variable (2-D or plain) into the flattening
+                             * backing array.  This is how a nested list
+                             * comprehension hands each row it built to the
+                             * outer 2-D target. */
+                            int _s2d = cg_list_is_twod(a0->value);
+                            char _sc2[72];
+                            cg_lf_src_count(g, a0, _sc2);
+                            if (_s2d || _sc2[0]) {
+                                cg_note_twod_k(nm, _s2d ? cg_list_twod_kind(a0->value) : 0);
+                                cg_sw_serial = cg_sw_serial + 1;
+                                int _ss = cg_sw_serial;
+                                cg_put(g, "{ int _rw"); cg_put_int(g, _ss);
+                                cg_put(g, " = "); cg_put(g, nm); cg_put(g, "_n; ");
+                                cg_put(g, nm); cg_put(g, "_off[_rw"); cg_put_int(g, _ss);
+                                cg_put(g, "] = (_rw"); cg_put_int(g, _ss); cg_put(g, " == 0) ? 0 : (");
+                                cg_put(g, nm); cg_put(g, "_off[_rw"); cg_put_int(g, _ss);
+                                cg_put(g, " - 1] + "); cg_put(g, nm); cg_put(g, "_ln[_rw");
+                                cg_put_int(g, _ss); cg_put(g, " - 1]); ");
+                                cg_put(g, nm); cg_put(g, "_ln[_rw"); cg_put_int(g, _ss);
+                                cg_put(g, "] = ");
+                                if (_s2d) {
+                                    cg_put(g, a0->value); cg_put(g, "_ln[");
+                                    cg_put(g, a0->value); cg_put(g, "_n]");
+                                } else cg_put(g, _sc2);
+                                cg_put(g, "; }\n");
+                                cg_indent(g);
+                                cg_sw_serial = cg_sw_serial + 1;
+                                int _sr = cg_sw_serial;
+                                cg_put(g, "{ int _ri"); cg_put_int(g, _sr);
+                                cg_put(g, " = 0; while (_ri"); cg_put_int(g, _sr);
+                                cg_put(g, " < ");
+                                if (_s2d) {
+                                    cg_put(g, a0->value); cg_put(g, "_ln[");
+                                    cg_put(g, a0->value); cg_put(g, "_n]");
+                                } else cg_put(g, _sc2);
+                                cg_put(g, ") { ");
+                                cg_put(g, nm); cg_put(g, "_back["); cg_put(g, nm);
+                                cg_put(g, "_off["); cg_put(g, nm); cg_put(g, "_n] + _ri");
+                                cg_put_int(g, _sr); cg_put(g, "] = ");
+                                if (_s2d) {
+                                    cg_put(g, a0->value); cg_put(g, "_back[");
+                                    cg_put(g, a0->value); cg_put(g, "_off[");
+                                    cg_put(g, a0->value); cg_put(g, "_n] + _ri");
+                                    cg_put_int(g, _sr); cg_put(g, "]");
+                                } else {
+                                    cg_put(g, a0->value); cg_put(g, "[_ri");
+                                    cg_put_int(g, _sr); cg_put(g, "]");
+                                }
+                                cg_put(g, "; _ri"); cg_put_int(g, _sr);
+                                cg_put(g, " = _ri"); cg_put_int(g, _sr); cg_put(g, " + 1; } }\n");
+                                cg_indent(g);
+                                cg_put(g, nm); cg_put(g, "_n = "); cg_put(g, nm); cg_put(g, "_n + 1");
+                                return;
+                            }
                         }
                         if (d_strcmp(m,"append")==0 && a0 && !a1) {
                             /* object list: one element is a whole struct, so it
@@ -41535,6 +43043,26 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                     return;
                 }
             }
+            /* `self.<f>.<attr>` where `<f>` holds an INSTANCE of another class
+             * (cg_of_*): the attribute lives in the nested struct, not in a
+             * flattened global (`self._r.line_num`). */
+            if (n->nchildren>0 && n->children[0] &&
+                d_strcmp(n->children[0]->type,"MEMBER_ACCESS")==0 &&
+                n->children[0]->nchildren>0 && n->children[0]->children[0] &&
+                d_strcmp(n->children[0]->children[0]->type,"IDENTIFIER")==0) {
+                const IRNode* _rob = n->children[0];
+                const char* _roc = cg_of_get(cg_lf_recv_cls(_rob->children[0]),
+                                             _rob->value);
+                if (_roc && _roc[0]) {
+                    cg_gen_expr(g, _rob->children[0]);
+                    if (d_strcmp(_rob->children[0]->value,"self")==0 ||
+                        cg_is_clsptr(_rob->children[0]->value)) cg_put(g, "->");
+                    else cg_put(g, ".");
+                    cg_put(g, _rob->value);
+                    cg_put(g, "->"); cg_put(g, n->value);
+                    return;
+                }
+            }
             if (n->nchildren>0) cg_gen_expr(g, n->children[0]);
             /* self->attr → self->attr (struct pointer); other obj.attr → obj.attr */
             if (n->nchildren>0 && (d_strcmp(n->children[0]->value,"self")==0 ||
@@ -41893,6 +43421,45 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
         int islp = 0;
         int is_lfield = 0;
         int isstrp = 0;
+        /* `for x in recv.m()` where the METHOD builds and returns a list:
+         * cg_gen_for_iter has no branch for a method-call source, so it fell
+         * through to the default and looped on a nonexistent `<recv>_n`,
+         * spinning forever over garbage (24_collections, 50_csv).  The call
+         * lands in the shared result buffer, so drain that with its runtime
+         * count. */
+        if (it && d_strcmp(it->type,"CALL")==0 && it->nchildren > 0 &&
+            it->children[0] && d_strcmp(it->children[0]->type,"MEMBER_ACCESS")==0) {
+            int _msls = 0;
+            if (cg_mcall_ret_list(it, &_msls)) {
+                const char* _lv = (tup && tup->nchildren > 0) ? tup->children[0]->value
+                                                              : v->value;
+                if (_lv && _lv[0]) {
+                    cg_indent(g); cg_put(g, "{\n"); g->indent++;
+                    cg_indent(g);
+                    cg_put(g, _msls ? "char* " : "int "); cg_put(g, _lv); cg_put(g, ";\n");
+                    if (_msls) cg_note_str(_lv); else cg_forget_str(_lv);
+                    cg_indent(g);
+                    cg_put(g, _msls ? "char** _mfl = " : "int* _mfl = ");
+                    cg_gen_expr(g, it); cg_put(g, ";\n");
+                    cg_indent(g); cg_put(g, "int _mfn = ");
+                    cg_put(g, _msls ? "drygon_rls_n" : "drygon_rl_n"); cg_put(g, ";\n");
+                    cg_indent(g); cg_put(g, "int _mfi;\n");
+                    cg_indent(g); cg_put(g, "for (_mfi = 0; _mfi < _mfn; _mfi++) {\n");
+                    g->indent++;
+                    cg_indent(g); cg_put(g, _lv); cg_put(g, " = _mfl[_mfi];\n");
+                    if (body) {
+                        int _bi = 0;
+                        while (_bi < body->nchildren) {
+                            cg_gen_node(g, body->children[_bi], 1);
+                            _bi++;
+                        }
+                    }
+                    g->indent--; cg_indent(g); cg_put(g, "}\n");
+                    g->indent--; cg_indent(g); cg_put(g, "}\n");
+                    return;
+                }
+            }
+        }
         int isdict = 0;
         int dkf = 0;
         int has_src = 0;
@@ -41946,7 +43513,10 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             const char* itx = cg_cls_find_m(itc, "__next__");
             char itn[32];
             char ivb[32]; char ivn[32]; char ivt[32]; char ivg[32];
-            cg_scratch_name(100 + cg_it_serial, itn);
+            /* base 1000: the `_gcs<n>` class-scratch namespace only ever holds
+             * indices < 128, so an iterator instance can never be given the
+             * name of a class' scratch object. */
+            cg_scratch_name(1000 + cg_it_serial, itn);
             cg_it_serial = cg_it_serial + 1;
             cg_put(g, "{\n"); g->indent++;
             cg_indent(g);
@@ -42082,6 +43652,11 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
          * component variables. */
         int istup = (tup != NULL) && cg_is_list_node(it) && !is_enum;
         int is_trow_loop = (tup != NULL) && it && d_strcmp(it->type, "IDENTIFIER") == 0 && cg_list_is_trow(it->value) && !is_enum;
+        /* `for row in matrix` over a flattened 2D list: each element is itself a
+         * list, so the loop variable is a copy of that row (a list in its own
+         * right, which lets the body index it or iterate it again) */
+        int is_twod_loop = (tup == NULL) && it && d_strcmp(it->type, "IDENTIFIER") == 0 &&
+                           !is_enum && cg_list_is_twod(it->value);
         int trow_bits = is_trow_loop ? cg_list_kybits(it->value) : 0;
         int istupv = 0;
         int tk = 0;
@@ -42246,6 +43821,14 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             else { cg_put(g, "int "); cg_forget_str(v->value); }
         }
         else if (isob) { cg_put(g, obcls); cg_put(g, " "); }
+        else if (is_twod_loop) {
+            int _wk = cg_list_twod_kind(it->value);
+            cg_put(g, _wk == 2 ? "char* " : (_wk == 1 ? "double " : "int "));
+            cg_put(g, v->value); cg_put(g, "[64]; int ");
+            cg_put(g, v->value); cg_put(g, "_n;\n");
+            cg_note_list(v->value, 0, _wk);
+            cg_forget_str(v->value);
+        }
         else if (issl || is_split || isstrp || isstr) { cg_put(g, "char* "); cg_note_str(is_enum ? enum_val : v->value); }
         else if (istupv) {
             /* the variable is a tuple value: buffer + runtime length, and
@@ -42257,7 +43840,18 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             cg_note_tuple(v->value);
             cg_forget_str(v->value);
         }
-        else {
+        else if (is_twod_loop) {
+            int _wk2 = cg_list_twod_kind(it->value);
+            cg_put(g, _wk2 == 2 ? "char* " : (_wk2 == 1 ? "double " : "int "));
+            cg_put(g, v->value); cg_put(g, "[64]; int ");
+            cg_put(g, v->value); cg_put(g, "_n;\n");
+            cg_note_list(v->value, 0, _wk2);
+            cg_forget_str(v->value);
+        }
+        else if (!(tup && !is_enum)) {
+            /* a tuple target declares each of its own names in the loop
+             * header below: emitting a bare type here too used to produce
+             * declarations like `int char* k;` */
             cg_put(g, isstr ? "char " : (isf ? "double " : "int "));
             if (isstr) cg_note_char(is_enum ? enum_val : v->value);
             /* the loop variable holds a double for the rest of the body, so
@@ -42266,8 +43860,57 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
         }
         if (tup && !is_enum) {
             int ti = 0;
+            /* `for k, v in d.items()`: the column types follow the dict's own
+             * key/value flags, and a dict of lists keeps each value in a
+             * flattened row, so that variable is a list in its own right. */
+            int _tkf = 0;
+            int _tvf = 0;
+            int _tdl = 0;
+            if (is_dict_items && d_items_name) {
+                int _di = cg_dict_index(d_items_name);
+                if (_di >= 0) { _tkf = cg_dict_kfs[_di]; _tvf = cg_dict_vfs[_di]; }
+                _tdl = cg_dl_on(d_items_name);
+            }
             while (ti < tup->nchildren) {
-                cg_put(g, "char* "); cg_put(g, tup->children[ti]->value); cg_put(g, ";\n");
+                /* Column type of a tuple target: a dict's own key/value
+                 * flags, the slots of a known sequence of tuples
+                 * (`for i, v in enumerate(["a"])` builds `(idx, "a")` rows),
+                 * or -- when neither is known -- the historical `char*`,
+                 * left unregistered so an int column still prints as one. */
+                int _tstr = 1;
+                int _tklass = 0;
+                if (is_dict_items) { _tstr = (ti == 0) ? (_tkf != 0) : (_tvf == 2); _tklass = 1; }
+                else {
+                    const IRNode* _seq = it;
+                    if (_seq && d_strcmp(_seq->type, "CALL") == 0 && _seq->value &&
+                        d_strcmp(_seq->value, "enumerate") == 0 && _seq->nchildren > 0)
+                        _seq = _seq->children[0];
+                    if (_seq && cg_is_list_node(_seq)) {
+                        _tklass = 1;
+                        _tstr = 0;
+                        int _ei = 0;
+                        while (_ei < _seq->nchildren) {
+                            const IRNode* _el = _seq->children[_ei];
+                            if (_el && d_strcmp(_el->type, "BLOCK") == 0 &&
+                                d_strcmp(_el->value, "TUPLE") == 0 && ti < _el->nchildren &&
+                                cg_is_str_node(_el->children[ti])) { _tstr = 1; break; }
+                            _ei++;
+                        }
+                    }
+                }
+                if (is_dict_items && _tdl && ti == 1) {
+                    cg_put(g, "int "); cg_put(g, tup->children[ti]->value); cg_put(g, "[64]; int ");
+                    cg_put(g, tup->children[ti]->value); cg_put(g, "_n;\n");
+                    cg_note_list(tup->children[ti]->value, 0, 0);
+                    cg_forget_str(tup->children[ti]->value);
+                } else {
+                    cg_put(g, _tstr ? "char* " : "int ");
+                    cg_put(g, tup->children[ti]->value); cg_put(g, ";\n");
+                    if (_tklass) {
+                        if (_tstr) cg_note_str(tup->children[ti]->value);
+                        else cg_forget_str(tup->children[ti]->value);
+                    }
+                }
                 cg_indent(g);
                 ti++;
             }
@@ -42336,8 +43979,25 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             if (tup && tup->nchildren >= 2 && d_items_name) {
                 cg_indent(g); cg_put(g, tup->children[0]->value); cg_put(g, " = ");
                 cg_put(g, d_items_name); cg_put(g, "_k[_dyi"); cg_put_int(g, ln); cg_put(g, "];\n");
-                cg_indent(g); cg_put(g, tup->children[1]->value); cg_put(g, " = ");
-                cg_put(g, d_items_name); cg_put(g, "_v[_dyi"); cg_put_int(g, ln); cg_put(g, "];\n");
+                if (cg_dl_on(d_items_name)) {
+                    /* the value lives in the flattened pool: copy this entry's
+                     * row into the list variable so `sum(v)` and `for x in v`
+                     * see real elements */
+                    const char* dvv = tup->children[1]->value;
+                    cg_indent(g); cg_put(g, dvv); cg_put(g, "_n = ");
+                    cg_put(g, d_items_name); cg_put(g, "_ln[_dyi"); cg_put_int(g, ln); cg_put(g, "];\n");
+                    cg_indent(g); cg_put(g, "int _dyj"); cg_put_int(g, ln); cg_put(g, " = 0;\n");
+                    cg_indent(g); cg_put(g, "while (_dyj"); cg_put_int(g, ln); cg_put(g, " < ");
+                    cg_put(g, dvv); cg_put(g, "_n) { "); cg_put(g, dvv); cg_put(g, "[_dyj");
+                    cg_put_int(g, ln); cg_put(g, "] = ");
+                    cg_put(g, d_items_name); cg_put(g, "_back[");
+                    cg_put(g, d_items_name); cg_put(g, "_off[_dyi"); cg_put_int(g, ln); cg_put(g, "] + _dyj");
+                    cg_put_int(g, ln); cg_put(g, "]; _dyj"); cg_put_int(g, ln); cg_put(g, " = _dyj");
+                    cg_put_int(g, ln); cg_put(g, " + 1; }\n");
+                } else {
+                    cg_indent(g); cg_put(g, tup->children[1]->value); cg_put(g, " = ");
+                    cg_put(g, d_items_name); cg_put(g, "_v[_dyi"); cg_put_int(g, ln); cg_put(g, "];\n");
+                }
             }
         } else if (is_call_iter || isob) {
             /* no-op (an object list copies its columns below) */
@@ -42345,9 +44005,24 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
         if (is_enum) {
             cg_indent(g); cg_put(g, enum_idx); cg_put(g, " = _dyi"); cg_put_int(g, ln); cg_put(g, ";\n");
             cg_indent(g); cg_put(g, enum_val);
+        } else if (is_twod_loop) {
+            /* copy row <_dyi> of the flattened 2D source into the variable: the
+             * loop variable is a list in its own right, so the body may index it
+             * or iterate it again (`[x for row in matrix for x in row]`) */
+            cg_indent(g); cg_put(g, v->value); cg_put(g, "_n = ");
+            cg_put(g, it->value); cg_put(g, "_ln[_dyi"); cg_put_int(g, ln); cg_put(g, "];\n");
+            cg_indent(g); cg_put(g, "int _dyj"); cg_put_int(g, ln); cg_put(g, " = 0;\n");
+            cg_indent(g); cg_put(g, "while (_dyj"); cg_put_int(g, ln); cg_put(g, " < ");
+            cg_put(g, v->value); cg_put(g, "_n) { ");
+            cg_put(g, v->value); cg_put(g, "[_dyj"); cg_put_int(g, ln); cg_put(g, "] = ");
+            cg_put(g, it->value); cg_put(g, "_back[");
+            cg_put(g, it->value); cg_put(g, "_off[_dyi"); cg_put_int(g, ln); cg_put(g, "] + _dyj");
+            cg_put_int(g, ln); cg_put(g, "]; _dyj"); cg_put_int(g, ln);
+            cg_put(g, " = _dyj"); cg_put_int(g, ln); cg_put(g, " + 1; }\n");
         } else {
             cg_indent(g); cg_put(g, v->value);
         }
+        if (!is_twod_loop) {
         cg_put(g, " = ");
         if (isstrtmp || isstr) {
             cg_put(g, "drygon_substr(");
@@ -42362,6 +44037,7 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             else if (cg_is_list_node(it)) { cg_put(g, "_dyl"); cg_put_int(g, ln); }
             else { cg_gen_expr(g, it); }
             cg_put(g, "[_dyi"); cg_put_int(g, ln); cg_put(g, "];\n");
+        }
         }
         }
         if (istup) {
@@ -42415,9 +44091,20 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
         int save_nfl = cg_nfloat_vars;
         int fret = 0;
         int retstr;
+        int mretlist = 0;
+        int mretsls = 0;
         if (isvar) retstr = cg_mask_retstr(n->value, mask);
         else retstr = cg_fn_is_str(n->value);
         int retlist = (!isvar) ? cg_fn_is_list(n->value) : 0;
+        /* A METHOD is not in the `cg_prog_*` tables (those key on plain
+         * function names), so its list-ness was invisible here and a method
+         * that builds and returns a list was declared `int`: the array pointer
+         * was truncated and the caller read garbage (24_collections
+         * `OrderedDict.keys()`, 50_csv `reader.__next__`).  The body is right
+         * here, so ask it. */
+        if (!retlist && cg_prog_find(n->value) < 0 && body &&
+            (cg_ret_list_scan(body) || cg_ret_name_list_scan(body, body))) mretlist = 1;
+        if (mretlist && cg_ret_strlist_of(body)) mretsls = 1;
         if (isvar && fm) fret = cg_mask_fret(n->value, mask, fm);
         else if (isvar) fret = cg_mask_fret(n->value, mask, fm);
         else {
@@ -42469,9 +44156,9 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
         /* a function whose list elements are strings hands back a `char**`:
          * declaring it `int*` truncated the pointee and the caller read the
          * array out of the wrong word size (10_control check 37) */
-        int retsli = retlist && cg_fn_ret_strlist(n->value);
+        int retsli = (retlist && cg_fn_ret_strlist(n->value)) || mretsls;
         if (retsli) ret = "char**";
-        else if (retlist) ret = "int*";
+        else if (retlist || mretlist) ret = "int*";
         else if (retstr) ret = "char*";
         else if (isf || fret) ret = "double";
         else ret = ir_to_c_type(n->data_type);
@@ -42714,6 +44401,51 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
         char vvb[32]; char vvn[32]; char vvt[32]; char vvg[32]; char vvj[32];
         cg_iter_names(cg_it_serial, vvb, vvn, vvt, vvg, vvj);
         cg_it_serial = cg_it_serial + 1;
+        /* A `__next__` that hands back a python LIST yields a ROW per step, so
+         * the drained name is a flattened 2-D list (`rows = list(reader)`).
+         * The old branch typed the name `int` and read the `char**` return
+         * through it, which left 50_csv reading garbage rows. */
+        if (vmk == 4) {
+            int v2k = 0;
+            int vmli = cg_mrl_find("__next__");
+            if (vmli >= 0 && cg_mrl_sls[vmli]) v2k = 1;
+            cg_note_list(alhs->value, 64, v2k);
+            cg_note_twod_k(alhs->value, v2k);
+            cg_put(g, "{\n"); g->indent++;
+            cg_indent(g);
+            cg_put(g, "int "); cg_put(g, vvn); cg_put(g, " = 0; int ");
+            cg_put(g, vvg); cg_put(g, " = 0;\n");
+            cg_indent(g);
+            cg_put(g, "while (!pyx_pendq()) { pyx_clear(); char** ");
+            cg_put(g, vvt); cg_put(g, " = ");  cg_put(g, vnx);
+            cg_put(g, "___next__(&"); cg_put(g, src->value);
+            cg_put(g, "); if (pyx_pendq()) { pyx_clear(); break; } ");
+            cg_put(g, alhs->value); cg_put(g, "_off[");
+            cg_put(g, vvn); cg_put(g, "] = "); cg_put(g, vvg); cg_put(g, "; ");
+            cg_put(g, alhs->value); cg_put(g, "_ln["); cg_put(g, vvn);
+            cg_put(g, "] = drygon_rls_n; { int "); cg_put(g, vvj);
+            cg_put(g, " = 0; while ("); cg_put(g, vvj);
+            cg_put(g, " < drygon_rls_n) { "); cg_put(g, alhs->value);
+            cg_put(g, "_back["); cg_put(g, vvg); cg_put(g, " + ");
+            cg_put(g, vvj); cg_put(g, "] = "); cg_put(g, vvt);
+            cg_put(g, "["); cg_put(g, vvj); cg_put(g, "]; ");
+            cg_put(g, vvj); cg_put(g, "++; } ");
+            /* The row cursor must advance by the WHOLE row once the copy is
+             * done.  Incrementing it inside the copy loop moved it twice as
+             * fast as the element index, so `rows = list(reader)` wrote row i
+             * at `rows_back[2*off]` and every row read back interleaved
+             * neighbours (50_csv check 2). */
+            cg_put(g, vvg); cg_put(g, " = "); cg_put(g, vvg);
+            cg_put(g, " + drygon_rls_n; } ");
+            cg_put(g, vvn); cg_put(g, " = ");
+            cg_put(g, vvn); cg_put(g, " + 1; }\n");
+            cg_indent(g);
+            cg_put(g, alhs->value); cg_put(g, "_n = "); cg_put(g, vvn); cg_put(g, ";\n");
+            g->indent--;
+            cg_indent(g);
+            cg_put(g, "}\n");
+            return;
+        }
         cg_note_list(alhs->value, 64, vkf);
         cg_put(g, "{\n"); g->indent++;
         cg_iter_fill(g, vnx, src->value, vvb, vvn, vvt);
@@ -42802,6 +44534,65 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
         else cg_dyn_put_name(g, xs);
         cg_put(g, "["); cg_put(g, jn); cg_put(g, "]); ");
         cg_put(g, jn); cg_put(g, " = "); cg_put(g, jn); cg_put(g, " + 1; }\n");
+    }
+    /* Record every `self.<f> = <param>` inside a method whose parameter the
+     * parameter tables already typed as `Cls*` -- that is the class the field
+     * holds (cg_of_*). */
+    static void cg_of_walk(const char* cls, const char* meth, const IRNode* ps,
+                           const IRNode* nn) {
+        if (!nn) return;
+        if (d_strcmp(nn->type,"ASSIGN")==0 && nn->nchildren>1 && nn->children[1] &&
+            nn->children[0] &&
+            d_strcmp(nn->children[0]->type,"MEMBER_ACCESS")==0 &&
+            nn->children[0]->nchildren>0 && nn->children[0]->children[0] &&
+            d_strcmp(nn->children[0]->children[0]->type,"IDENTIFIER")==0 &&
+            d_strcmp(nn->children[0]->children[0]->value,"self")==0 &&
+            nn->children[0]->value && nn->children[0]->value[0]) {
+            const IRNode* orhs = nn->children[1];
+            const char* oc = 0;
+            /* RHS is one of this method's own class-typed PARAMETERS */
+            if (d_strcmp(orhs->type,"IDENTIFIER")==0 && orhs->value &&
+                orhs->value[0]) {
+                int idx = 0;
+                int found = 0;
+                int j = 0;
+                if (ps) {
+                    while (j < ps->nchildren) {
+                        const IRNode* p = ps->children[j];
+                        if (p && p->value && d_strcmp(p->value,"self")!=0 &&
+                            d_strcmp(p->value,"cls")!=0) {
+                            if (d_strcmp(p->value, orhs->value)==0) { found = 1; break; }
+                            idx++;
+                        }
+                        j++;
+                    }
+                }
+                if (found) {
+                    oc = cg_cps_obj_get(cls, meth, idx);
+                    if (!oc || !oc[0]) oc = cg_mps_obj_get(cls, meth, idx);
+                }
+            }
+            /* RHS is a constructor call (`self._r = reader(f)`) or a NAME of
+             * an instance already known (`self.i = other`) */
+            if (!oc || !oc[0]) {
+                const char* rcls = 0;
+                int rk = cg_cmp_operand(orhs, &rcls);
+                if ((rk == 1 || rk == 2) && rcls && rcls[0]) oc = rcls;
+            }
+            if (oc && oc[0]) cg_of_add(cls, nn->children[0]->value, oc);
+        }
+        int i = 0;
+        while (i < nn->nchildren) { cg_of_walk(cls, meth, ps, nn->children[i]); i++; }
+    }
+    static void cg_of_scan(const char* cls, const IRNode* body) {
+        if (!cls || !cls[0] || !body) return;
+        int mi = 0;
+        while (mi < body->nchildren) {
+            const IRNode* m = body->children[mi];
+            if (m && d_strcmp(m->type,"FUNCTION_DEF")==0 && m->nchildren>1)
+                cg_of_walk(cls, m->value, m->children[0], m->children[1]);
+            mi++;
+        }
     }
     static void cg_gen_node(CGen* g, const IRNode* n, int stmt) {
         if (!n) return;
@@ -43402,6 +45193,68 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                 cg_put(g, "; }\n");
                 return;
             }
+            /* `x = recv.m()` where the METHOD builds and returns a DICT: methods
+             * live in no function table, so the caller bound the dummy `0` return
+             * word while the callee had published its triple through
+             * `drygon_rdk and the rdv arrays` -- `len(x)`/`x["k"]` then read address 0.
+             * Bind the target as a dict of the method's element shapes and copy
+             * the published triple (50_csv DictReader.__next__, 59_pickle_adv). */
+            if (alhs && arhs && d_strcmp(alhs->type,"IDENTIFIER")==0 &&
+                d_strcmp(arhs->type,"CALL")==0 && arhs->value &&
+                !cg_fn_ret_dict(arhs->value) && !cg_fn_is_list(arhs->value) &&
+                arhs->nchildren>0 && arhs->children[0] &&
+                d_strcmp(arhs->children[0]->type,"MEMBER_ACCESS")==0) {
+                int _mrdi = cg_mrd_find(arhs->value);
+                if (_mrdi < 0 && arhs->children[0]->value)
+                    _mrdi = cg_mrd_find(arhs->children[0]->value);
+                if (_mrdi >= 0) {
+                    const char* dvn = alhs->value;
+                    int _dvf = cg_mrd_vf[_mrdi];
+                    int _dkf = cg_mrd_kf[_mrdi];
+                    cg_note_dict(dvn, _dvf, _dkf);
+                    cg_indent(g);
+                    cg_put(g, "{ int _drc = "); cg_gen_expr(g, arhs); cg_put(g, "; ");
+                    cg_put(g, dvn); cg_put(g, "_n = drygon_rdn; int _drl = 0;\n");
+                    g->indent++;
+                    cg_indent(g);
+                    cg_put(g, "while (_drl < drygon_rdn && _drl < 64) { ");
+                    cg_put(g, dvn); cg_put(g, "_k[_drl] = drygon_rdk[_drl]; ");
+                    cg_put(g, dvn); cg_put(g, "_v[_drl] = ");
+                    cg_put(g, _dvf == 2 ? "drygon_rdvs[_drl]; " :
+                              (_dvf == 1 ? "drygon_rdvd[_drl]; " : "drygon_rdv[_drl]; "));
+                    cg_put(g, "_drl = _drl + 1; }\n");
+                    g->indent--;
+                    cg_indent(g);
+                    cg_put(g, "}\n");
+                    return;
+                }
+            }
+            /* `x = recv.m()` where the METHOD builds and returns a list: the
+             * method is not in the `cg_prog_*` tables, so the pointer used to be
+             * truncated into an int and the count was never bound
+             * (24_collections `dict.keys()`, 50_csv `reader.__next__()`). */
+            if (alhs && arhs && d_strcmp(alhs->type,"IDENTIFIER")==0 &&
+                d_strcmp(arhs->type,"CALL")==0 && arhs->value &&
+                !cg_fn_is_list(arhs->value)) {
+                int _msls = 0;
+                if (arhs->nchildren>0 && arhs->children[0] &&
+                    d_strcmp(arhs->children[0]->type,"MEMBER_ACCESS")==0 &&
+                    cg_mcall_ret_list(arhs, &_msls)) {
+                    cg_note_list(alhs->value, 512, _msls ? 2 : 0);
+                    if (_msls) cg_note_strlist(alhs->value);
+                    cg_indent(g);
+                    cg_put(g, _msls ? "{ char** _lcp = " : "{ int* _lcp = ");
+                    cg_gen_expr(g, arhs);
+                    cg_put(g, "; int _lci; for (_lci = 0; _lci < ");
+                    cg_put(g, _msls ? "drygon_rls_n" : "drygon_rl_n");
+                    cg_put(g, " && _lci < 512; _lci++) ");
+                    cg_put(g, alhs->value); cg_put(g, "[_lci] = _lcp[_lci]; ");
+                    cg_put(g, alhs->value); cg_put(g, "_n = ");
+                    cg_put(g, _msls ? "drygon_rls_n" : "drygon_rl_n");
+                    cg_put(g, "; }\n");
+                    return;
+                }
+            }
             /* `x = operator.concat(A, B)` (or any list-returning operator call):
              * the runtime returns an int* plus a hidden count, so bind BOTH --
              * without this the name stayed an int and printed as a pointer
@@ -43802,7 +45655,8 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                         while (ai < arhs->nchildren) {
                             cg_put(g, ", ");
                             const IRNode* av = arhs->children[ai];
-                            cg_gen_expr(g, av);
+                            if (!cg_emit_obj_arg(g, cn, "__init__", ai, av))
+                                cg_gen_expr(g, av);
                             /* an argument that fills a counted LIST field also
                              * passes its element count (12_classes 23/26) */
                             const char* ipn = cbb ? cg_cls_init_param(cbb, ai) : (const char*)0;
@@ -44998,6 +46852,59 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                 cg_put(g, ");\n");
                 return;
             }
+            /* `self.<f> = <value>` where `<f>` holds an INSTANCE of another
+             * class (cg_of_*): the member is a POINTER to that class' struct.
+             * A constructor RHS needs somewhere for the instance to live --
+             * the class' scratch instance carries it -- and a class-typed
+             * PARAMETER is already that pointer, so it is stored as is. */
+            if (alhs && arhs && d_strcmp(alhs->type,"MEMBER_ACCESS")==0 &&
+                d_strcmp(n->value,"=")==0 && alhs->nchildren>0 &&
+                alhs->children[0] &&
+                d_strcmp(alhs->children[0]->type,"IDENTIFIER")==0) {
+                const char* _afc = cg_of_get(cg_lf_recv_cls(alhs->children[0]),
+                                             alhs->value);
+                if (_afc && _afc[0]) {
+                    char _atb[128];
+                    int _atp = 0;
+                    const char* _ar = alhs->children[0]->value;
+                    while (_ar[_atp] && _atp < 60) { _atb[_atp] = _ar[_atp]; _atp++; }
+                    if (d_strcmp(_ar,"self")==0 || cg_is_clsptr(_ar)) {
+                        _atb[_atp] = '-'; _atp++; _atb[_atp] = '>';
+                    } else _atb[_atp] = '.';
+                    _atp++;
+                    {
+                        int _afj = 0;
+                        while (alhs->value[_afj] && _atp < 120) {
+                            _atb[_atp] = alhs->value[_afj]; _atp++; _afj++;
+                        }
+                    }
+                    _atb[_atp] = 0;
+                    const char* _arc = 0;
+                    int _ak = cg_cmp_operand(arhs, &_arc);
+                    if (_ak == 2 && _arc && _arc[0]) {
+                        int _asi = cg_scratch_cls(_arc);
+                        if (_asi >= 0) {
+                            char _asn[32];
+                            cg_scratch_name(_asi, _asn);
+                            cg_lf_zero_ctor(g, _arc, _asn, ".");
+                            cg_indent(g);
+                            cg_emit_init(g, _arc, arhs, _asn);
+                            cg_put(g, ";\n");
+                            cg_indent(g);
+                            cg_put(g, _atb); cg_put(g, " = &");
+                            cg_put(g, _asn); cg_put(g, ";\n");
+                            return;
+                        }
+                    }
+                    if (d_strcmp(arhs->type,"IDENTIFIER")==0 &&
+                        cg_is_clsptr(arhs->value)) {
+                        cg_indent(g);
+                        cg_put(g, _atb); cg_put(g, " = ");
+                        cg_put(g, arhs->value); cg_put(g, ";\n");
+                        return;
+                    }
+                }
+            }
             cg_gen_expr(g, alhs);
             if (d_strcmp(n->value,"**=")==0) {
                 cg_put(g, " = drygon_pow("); cg_gen_expr(g, alhs); cg_put(g, ", "); cg_gen_expr(g, arhs); cg_put(g, ");\n");
@@ -45766,8 +47673,19 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                         ifi++;
                     }
                 }
+                cg_of_scan(cg_cls_names[cg_cls_n - 1], body);
                 int fi2 = 0;
                 while (fi2 < cnf) {
+                    /* a field holding an INSTANCE of another class is a POINTER
+                     * to that class' struct, not a `char*`/`int` (cg_of_*) */
+                    const char* _oft = cg_of_get(cg_cls_names[cg_cls_n - 1], cfn + fi2*64);
+                    if (_oft && _oft[0]) {
+                        cg_indent(g);
+                        cg_put(g, _oft); cg_put(g, "* "); cg_put(g, cfn + fi2*64);
+                        cg_put(g, ";\n");
+                        fi2++;
+                        continue;
+                    }
                     int ft = cg_cls_ftype(body, cfn + fi2*64);
                     if (!ft) ft = cg_if_field_ftype(cg_cls_names[cg_cls_n - 1], cfn + fi2*64);
                     if (!ft) {
@@ -45790,7 +47708,7 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                     }
                     if (ft) {
                         if (ft != 2 && cg_lf_is(cg_cls_names[cg_cls_n - 1], cfn + fi2*64)) ft = 4;
-                        if (ft != 2 && cg_cls_field_is_ptr(body, cfn + fi2*64)) ft = 4;
+                        if (ft != 2 && cg_cls_field_is_ptr_m(body, cfn + fi2*64)) ft = 4;
                         cg_indent(g);
                         if (ft == 2) cg_put(g, "char* ");
                         else if (ft == 3) cg_put(g, "double ");
@@ -45819,6 +47737,11 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             }
             g->indent--;
             cg_indent(g); cg_put(g, "} "); cg_put(g, n->value); cg_put(g, ";\n");
+            /* The struct is complete for the first time right here, and every
+             * method of every later class may need this class' scratch object
+             * (`self._r = reader(...)`), so its declaration belongs here --
+             * after the typedef, before any body. */
+            { int _sgi = cg_scratch_find(n->value); if (_sgi >= 0) cg_scratch_emit(g, _sgi); }
             /* methods as functions taking the struct pointer */
             if (body) {
                 for (int i=0;i<body->nchildren;i++) {
@@ -45827,6 +47750,33 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                         int ci = cg_cls_n - 1;
                         const IRNode* mbody0 = c->nchildren>1 ? c->children[1] : NULL;
                         int mdt = cg_infer_mret(mbody0, g, 0);
+                        /* A method that builds and returns a python list must be
+                         * declared `int*` / `char**`, not `int`: the array pointer
+                         * was truncated into the return word and the caller read
+                         * garbage (`od.keys()`, `reader.__next__()`).  Methods are
+                         * not in the `cg_prog_*` tables, so ask the body. */
+                        int mlist = 0;
+                        int msls = 0;
+                        if (mbody0 &&
+                            (cg_ret_list_scan(mbody0) || cg_ret_name_list_scan(mbody0, mbody0))) {
+                            mlist = 1;
+                            if (cg_ret_strlist_of(mbody0)) msls = 1;
+                        }
+                        {
+                            /* A method that builds and returns a python dict
+                             * publishes the triple through the shared buffer
+                             * instead of the return word: record its shape for
+                             * the call sites and make sure it is not also taken
+                             * for a list-returning method (DictReader.__next__). */
+                            int _mdkf = 0;
+                            int _mdvf = 0;
+                            if (mbody0 && cg_ret_dict_scan(mbody0, &_mdkf, &_mdvf)) {
+                                cg_mrd_add(c->value, _mdvf, _mdkf);
+                                mlist = 0;
+                                msls = 0;
+                            }
+                        }
+                        if (mlist) cg_mrl_add(c->value, msls);
                         if (ci >= 0 && cg_cls_nmeth[ci] < 12) {
                             int mj = cg_cls_nmeth[ci];
                             d_strncpy(cg_cls_methnames[ci*12 + mj], c->value, 31); cg_cls_methnames[ci*12 + mj][31] = 0;
@@ -45904,7 +47854,8 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                             const char* mretc = (ci >= 0 && cg_cls_nmeth[ci] > 0 &&
                                                  cg_cls_mret[ci][cg_cls_nmeth[ci]-1] == 4) ?
                                 cg_cls_mret_cls[ci*12 + (cg_cls_nmeth[ci]-1)] : (const char*)0;
-                            if (mretc && mretc[0]) { cg_put(g, mretc); cg_put(g, " "); }
+                            if (mlist) cg_put(g, msls ? "char**" : "int*");
+                            else if (mretc && mretc[0]) { cg_put(g, mretc); cg_put(g, " "); }
                             else cg_put(g, mdt==2 ? "char*" : (mdt==3 ? "double" : (mdt==1 ? "void" : "int")));
                         }
                         cg_put(g, " ");
@@ -45949,6 +47900,51 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                                  * parameter truncated the pointers and the
                                  * handler saw garbage (16_exceptions 38) */
                                 if (m_is_exit) pt = "char*";
+                                /* a parameter handed an object of another class
+                                 * (`csv.reader.__init__`'s `f`) is a pointer to
+                                 * it; typed `int` the body's `f.read()` was a
+                                 * call through an integer and trapped.  Tested
+                                 * before the string arms -- an object is never
+                                 * a `char*`. */
+                                if (d_strcmp(pt,"int")==0) {
+                                    const char* oc = cg_cps_obj_get(n->value, c->value, mpidx);
+                                    if (!oc) oc = cg_mps_obj_get(n->value, c->value, mpidx);
+                                    if (oc && oc[0]) {
+                                        if (pemit) cg_put(g, ", ");
+                                        cg_put(g, oc); cg_put(g, "* ");
+                                        cg_put(g, p->value);
+                                        cg_note_cvar(p->value, oc);
+                                        /* the parameter IS the pointer, so a
+                                         * call through it must not take its
+                                         * address (`StringIO_read(&f)` read the
+                                         * parameter slot as if it held the
+                                         * instance, 50_csv) */
+                                        cg_note_clsptr(p->value);
+                                        pemit = 1;
+                                        mpidx++;
+                                        continue;
+                                    }
+                                }
+                                /* ... or hands over a python list: the backing
+                                 * array plus its element count, the way a
+                                 * module function's list parameter is passed
+                                 * (the element kind of a method parameter comes
+                                 * from its call sites, `cg_mps_lk`) */
+                                if (d_strcmp(pt,"int")==0) {
+                                    int lk = cg_mps_lk_get(n->value, c->value, mpidx);
+                                    if (lk > 0) {
+                                        if (pemit) cg_put(g, ", ");
+                                        cg_put(g, lk == 3 ? "char** " :
+                                                   (lk == 2 ? "double* " : "int* "));
+                                        cg_put(g, p->value);
+                                        cg_put(g, ", int "); cg_put(g, p->value);
+                                        cg_put(g, "_n");
+                                        cg_note_lparam(p->value, lk - 1);
+                                        pemit = 1;
+                                        mpidx++;
+                                        continue;
+                                    }
+                                }
                                 /* a parameter with a string literal default
                                  * (`def __init__(self, initial_value="")`) is a
                                  * char* even when every call site omits it:
@@ -46772,6 +48768,10 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             }
         }
         cg_scan_program_fns(prog);
+        /* dict-returning METHODS are in no function table, so this pass (which
+         * also runs before the bodies are emitted) registers them and decides
+         * whether the shared dict-result buffer has to be declared at all. */
+        cg_method_retdict_scan(prog);
         /* a dict literal handed to a dict parameter is hoisted into a temp dict
          * variable; this runs after the dict-name scan so the parameter types
          * are known, and registers each temp itself (36_match check 23). */
@@ -46904,6 +48904,8 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             int any_rls = 0;
             zi = 0;
             while (zi < cg_nprog_fns) { if (cg_prog_retsls[zi]) any_rls = 1; zi++; }
+            /* a class METHOD returning a list of strings is in neither table */
+            if (!any_rls && cg_method_retstrlist_scan(prog)) any_rls = 1;
             if (any_rls) cg_put(&g, "char* drygon_rls[512]; int drygon_rls_n;\n\n");
             /* The shared python-dict result channel: a dict is a triple of
              * arrays, and only one of them can carry `char*` keys, so the value
@@ -46913,6 +48915,8 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
              * the caller's tables stayed empty (59_pickle_adv). */
             zi = 0;
             while (zi < cg_nprog_fns) { if (cg_prog_retdict[zi]) any_rd = 1; zi++; }
+            /* a dict-returning CLASS METHOD is in neither table (50_csv) */
+            if (!any_rd && cg_nmrd > 0) any_rd = 1;
             if (any_rd) cg_put(&g, "char* drygon_rdk[512]; int drygon_rdv[512]; double drygon_rdvd[512]; char* drygon_rdvs[512]; int drygon_rdn;\n\n");
         cg_cur_prog_for_var = prog;
         }
@@ -46942,65 +48946,38 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             cg_if_scan(prog);
             cg_dir_reg(prog);
             cg_lf_scan(prog);
+            cg_md_scan(prog);
             cg_gs_n = 0;
             cg_gt_n = 0;
+            cg_of_n = 0;
+            {
+                int _gz = 0;
+                while (_gz < 128) { cg_gs_done[_gz] = 0; _gz++; }
+            }
+            /* Pre-register the scratch classes before anything is emitted: the
+             * class emitter declares each one right after its own typedef. */
+            cg_scratch_pre(prog);
             while (i < prog->nchildren) {
                 const IRNode* n = prog->children[i];
                 if (d_strcmp(n->type,"FUNCTION_DEF")==0 || d_strcmp(n->type,"CLASS_DEF")==0)
                     cg_gen_node(&t, n, 1);
                 /* A class whose instances answer `==`/`bool()`/`()` needs a
-                 * scratch object for its expression-position constructors. */
-                if (d_strcmp(n->type,"CLASS_DEF")==0 && n->value && n->value[0]) {
-                    const char* gcn = n->value;
-                    if (cg_cls_find_m(gcn,"__bool__") || cg_cls_find_m(gcn,"__eq__") ||
-                        cg_cls_find_m(gcn,"__ne__") || cg_cls_find_m(gcn,"__lt__") ||
-                        cg_cls_find_m(gcn,"__le__") || cg_cls_find_m(gcn,"__ge__") ||
-                        cg_cls_find_m(gcn,"__call__") || cg_cls_hasm(gcn,"__init__")) {
-                        cg_scratch_cls(gcn);
-                        cg_scratch2_cls(gcn);
-                    }
+                 * scratch object for its expression-position constructors.
+                 * Already registered by cg_scratch_pre; a class first seen
+                 * here is emitted by the catch-up loop below. */
+                if (d_strcmp(n->type,"CLASS_DEF")==0 && n->value && n->value[0] &&
+                    (cg_scratch_need_ir(prog, n, 0) || cg_scratch_need(n->value))) {
+                    cg_scratch_cls(n->value);
+                    cg_scratch2_cls(n->value);
                 }
                 i++;
             }
-            /* Scratch instances: one file-scope object per class that appears in
-             * an expression-position constructor, so `n3 == Num(7)` has a real
-             * object to hand the dunder. */
+            /* Catch-up: a scratch class that the class emitter never saw (a
+             * nested class) still needs its declaration, and the uses that
+             * registered it are behind us either way. */
             {
                 int gi = 0;
-                while (gi < cg_gs_n) {
-                    char gsb[32];
-                    cg_scratch_name(gi, gsb);
-                    cg_put(&t, "static "); cg_put(&t, cg_gs_cls[gi]);
-                    cg_put(&t, " "); cg_put(&t, gsb); cg_put(&t, ";\n");
-                    if (gi < cg_gt_n) {
-                        char gtb[32];
-                        cg_scratch2_name(gi, gtb);
-                        cg_put(&t, "static "); cg_put(&t, cg_gt_cls[gi]);
-                        cg_put(&t, " "); cg_put(&t, gtb); cg_put(&t, ";\n");
-                    }
-                    /* statement-level store, so an operand that is a METHOD
-                     * CALL (`dt.date()`) can be handed to the dunder */
-                    {
-                        char h1[32], h2[32];
-                        cg_tmp1_name(gi, h1);
-                        cg_put(&t, "static "); cg_put(&t, cg_gs_cls[gi]);
-                        cg_put(&t, "* "); cg_put(&t, h1); cg_put(&t, "(");
-                        cg_put(&t, cg_gs_cls[gi]); cg_put(&t, " v) { ");
-                        cg_put(&t, gsb); cg_put(&t, " = v; return &");
-                        cg_put(&t, gsb); cg_put(&t, "; }\n");
-                        if (gi < cg_gt_n) {
-                            char gtb[32];
-                            cg_scratch2_name(gi, gtb);
-                            cg_tmp2_name(gi, h2);
-                            cg_put(&t, "static "); cg_put(&t, cg_gt_cls[gi]);
-                            cg_put(&t, "* "); cg_put(&t, h2); cg_put(&t, "(");
-                            cg_put(&t, cg_gt_cls[gi]); cg_put(&t, " v) { ");
-                            cg_put(&t, gtb); cg_put(&t, " = v; return &");
-                            cg_put(&t, gtb); cg_put(&t, "; }\n");
-                        }
-                    }
-                    gi++;
-                }
+                while (gi < cg_gs_n) { cg_scratch_emit(&t, gi); gi++; }
             }
             cg_ob_emit_getters(&t);
             if (!have_main) { cg_put(&t, "\nint drygon_main(void) {\n"); t.indent++; }
