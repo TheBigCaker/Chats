@@ -31272,6 +31272,13 @@ static int cg_is_str_node(const IRNode* a) {
                         cg_prog_retstr[fi] = cg_ret_str_scan(n->children[1]) ? 1 : 0;
                         cg_prog_retlist[fi] = cg_ret_list_scan(n->children[1]) ? 1 : 0;
                         cg_prog_retsls[fi] = cg_ret_strlist_of(n->children[1]) ? 1 : 0;
+                        {
+                            int _dkf = 0; int _dvf = 0;
+                            cg_prog_retdict[fi] = cg_ret_dict_scan(n->children[1], &_dkf, &_dvf) ? 1 : 0;
+                            cg_prog_retdictkf[fi] = _dkf;
+                            cg_prog_retdictvf[fi] = _dvf;
+                            if (cg_prog_retdict[fi]) cg_prog_retlist[fi] = 0;
+                        }
                         cg_scope_exit();
                     }
                 }
@@ -31396,6 +31403,13 @@ static int cg_is_str_node(const IRNode* a) {
                     }
                     cg_prog_retlist[fi] = cg_ret_list_scan(n->children[1]);
                     cg_prog_retsls[fi] = cg_ret_strlist_of(n->children[1]) ? 1 : 0;
+                    {
+                        int _dkf = 0; int _dvf = 0;
+                        cg_prog_retdict[fi] = cg_ret_dict_scan(n->children[1], &_dkf, &_dvf) ? 1 : 0;
+                        cg_prog_retdictkf[fi] = _dkf;
+                        cg_prog_retdictvf[fi] = _dvf;
+                        if (cg_prog_retdict[fi]) cg_prog_retlist[fi] = 0;
+                    }
                     cg_ret_shape_fill(fi, n->children[1], pr);
                     cg_nlp_vars = _slp0;
                     cg_scope_exit();
@@ -43330,6 +43344,32 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             }
             if (alhs && arhs && d_strcmp(alhs->type,"IDENTIFIER")==0 &&
                 d_strcmp(arhs->type,"CALL")==0 && arhs->value &&
+                d_strcmp(arhs->value,"COMPLEX")!=0 && cg_fn_ret_dict(arhs->value)) {
+                /* `e = mk()` where `mk` returns a dict: run the call once and
+                 * copy the published triple into this name's own triple, so
+                 * `e["x"]` and `len(e)` read it (59_pickle_adv). */
+                const char* dvn = alhs->value;
+                int _dvf = cg_fn_ret_dict_vf(arhs->value);
+                int _dkf = cg_fn_ret_dict_kf(arhs->value);
+                cg_note_dict(dvn, _dvf, _dkf);
+                cg_indent(g);
+                cg_put(g, "{ int _drc = "); cg_gen_expr(g, arhs); cg_put(g, "; ");
+                cg_put(g, dvn); cg_put(g, "_n = drygon_rdn; int _drl = 0;\n");
+                g->indent++;
+                cg_indent(g);
+                cg_put(g, "while (_drl < drygon_rdn) { ");
+                cg_put(g, dvn); cg_put(g, "_k[_drl] = drygon_rdk[_drl]; ");
+                cg_put(g, dvn); cg_put(g, "_v[_drl] = ");
+                cg_put(g, _dvf == 2 ? "drygon_rdvs[_drl]; " :
+                          (_dvf == 1 ? "drygon_rdvd[_drl]; " : "drygon_rdv[_drl]; "));
+                cg_put(g, "_drl = _drl + 1; }\n");
+                g->indent--;
+                cg_indent(g);
+                cg_put(g, "}\n");
+                return;
+            }
+            if (alhs && arhs && d_strcmp(alhs->type,"IDENTIFIER")==0 &&
+                d_strcmp(arhs->type,"CALL")==0 && arhs->value &&
                 d_strcmp(arhs->value,"COMPLEX")!=0 && cg_fn_is_list(arhs->value)) {
                 /* a returned list of strings travels in `drygon_rls` (a char*
                  * buffer), an int list in `drygon_rl` */
@@ -45123,6 +45163,26 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                 cg_put(g, _rlstr ? "return drygon_rls;\n" : "return drygon_rl;\n");
                 return;
             }
+            /* `return d` where `d` is a python dict: publish the triple through
+             * the shared result buffer and return a dummy.  Emitting `return d;`
+             * produced an UNRESOLVED symbol (there is no such C value) and the
+             * caller's tables stayed empty (59_pickle_adv). */
+            if (n->nchildren>0 && d_strcmp(n->children[0]->type,"IDENTIFIER")==0 &&
+                cg_is_dict(n->children[0]->value)) {
+                const char* rsrc = n->children[0]->value;
+                int _rvf = cg_dict_vf(rsrc);
+                cg_put(g, "drygon_rdn = "); cg_put(g, rsrc); cg_put(g, "_n;\n");
+                cg_indent(g); cg_put(g, "int _drlc = 0;\n");
+                cg_indent(g); cg_put(g, "while (_drlc < "); cg_put(g, rsrc);
+                cg_put(g, "_n) { drygon_rdk[_drlc] = "); cg_put(g, rsrc);
+                cg_put(g, "_k[_drlc]; ");
+                cg_put(g, _rvf == 2 ? "drygon_rdvs[_drlc] = "
+                                    : (_rvf == 1 ? "drygon_rdvd[_drlc] = "
+                                                 : "drygon_rdv[_drlc] = "));
+                cg_put(g, rsrc); cg_put(g, "_v[_drlc]; _drlc = _drlc + 1; }\n");
+                cg_indent(g); cg_put(g, "return 0;\n");
+                return;
+            }
             /* `return list(x)` / `return tuple(x)`: copy the source sequence
              * into the shared result buffer so the caller can read the element
              * count from `drygon_rl_n`.  Emitting the source array directly made
@@ -46816,6 +46876,7 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
              * result buffer; the element count travels in its companion */
             int zi = 0;
             int any_rl = 0;
+            int any_rd = 0;
             while (zi < cg_nprog_fns) { if (cg_prog_retlist[zi]) any_rl = 1; zi++; }
             /* a generator inside a CLASS METHOD is not in cg_prog_fns, so
              * scanning only the top-level function table left `drygon_rl`
@@ -46844,6 +46905,15 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             zi = 0;
             while (zi < cg_nprog_fns) { if (cg_prog_retsls[zi]) any_rls = 1; zi++; }
             if (any_rls) cg_put(&g, "char* drygon_rls[512]; int drygon_rls_n;\n\n");
+            /* The shared python-dict result channel: a dict is a triple of
+             * arrays, and only one of them can carry `char*` keys, so the value
+             * side gets a slot per element type.  A function that `return`s a
+             * dict publishes through these; its caller copies them into its OWN
+             * triple.  Without this `return d` emitted an UNRESOLVED symbol and
+             * the caller's tables stayed empty (59_pickle_adv). */
+            zi = 0;
+            while (zi < cg_nprog_fns) { if (cg_prog_retdict[zi]) any_rd = 1; zi++; }
+            if (any_rd) cg_put(&g, "char* drygon_rdk[512]; int drygon_rdv[512]; double drygon_rdvd[512]; char* drygon_rdvs[512]; int drygon_rdn;\n\n");
         cg_cur_prog_for_var = prog;
         }
         if (cg_script_wrap) {
