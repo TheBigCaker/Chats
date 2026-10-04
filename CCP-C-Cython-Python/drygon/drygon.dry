@@ -17651,7 +17651,19 @@ static char* dc_runtime_prelude(void) {
     p[1512] = "while (i < n) { if (k[i] && drygon_streq(k[i], key)) return v[i] ? v[i] : \"\"; i = i + 1; }\nreturn \"\";\n}\n";
     p[1513] = "char* drygon_dd_setk(char* b, int i, char* k) { long long* h = (long long*)b; ((char**)h[1])[i] = k; return b; }\n";
     p[1514] = "char* drygon_dd_setv(char* b, int i, char* v) { long long* h = (long long*)b; ((char**)h[2])[i] = v; return b; }\n";
-    p[1515] = 0;
+    /* ---- `d.keys()` / `d.values()` on a plain python dict ---------------
+     * A dict variable is a triple of parallel arrays (`d_k`, `d_v`, `d_n`), so
+     * a view is materialised into these shared buffers: an expression position
+     * has no array of its own and the raw `d.keys()` call resolved to nothing,
+     * which trapped the program (24_collections, 46_weakref).  Callers that
+     * need the view to outlive the next call copy out of it immediately. */
+    p[1515] = "char* drygon_dvy_s[1024]; int drygon_dvy_i[1024]; double drygon_dvy_d[1024]; int drygon_dvy_n;\n";
+    p[1516] = "char** drygon_dvy_keys_s(char** k, int n) { int i = 0; while (i < n && i < 1024) { drygon_dvy_s[i] = k[i]; i = i + 1; } drygon_dvy_n = n; return drygon_dvy_s; }\n";
+    p[1517] = "int* drygon_dvy_keys_i(int* k, int n) { int i = 0; while (i < n && i < 1024) { drygon_dvy_i[i] = k[i]; i = i + 1; } drygon_dvy_n = n; return drygon_dvy_i; }\n";
+    p[1518] = "int* drygon_dvy_vals_i(int* v, int n) { int i = 0; while (i < n && i < 1024) { drygon_dvy_i[i] = v[i]; i = i + 1; } drygon_dvy_n = n; return drygon_dvy_i; }\n";
+    p[1519] = "double* drygon_dvy_vals_d(double* v, int n) { int i = 0; while (i < n && i < 1024) { drygon_dvy_d[i] = v[i]; i = i + 1; } drygon_dvy_n = n; return drygon_dvy_d; }\n";
+    p[1520] = "char** drygon_dvy_vals_s(char** v, int n) { int i = 0; while (i < n && i < 1024) { drygon_dvy_s[i] = v[i]; i = i + 1; } drygon_dvy_n = n; return drygon_dvy_s; }\n";
+    p[1521] = 0;
     int total = 0;
     int i = 0;
     while (p[i]) { total = total + d_strlen(p[i]); i = i + 1; }
@@ -20442,6 +20454,144 @@ static inline int d_isspace(char c) { return c==' '||c=='\t'||c=='\n'||c=='\r'; 
         int i = 0;
         while (i < cg_fr_n) { if (d_strcmp(cg_fr_names[i], c)==0) return 1; i++; }
         return 0;
+    }
+    /* `__slots__ = ['x', 'y']`: the only attributes an instance of the class may
+     * carry.  A store to any other name is an AttributeError at run time
+     * (39_descriptors checks 17/20, 60_comprehensive check 41), and
+     * `hasattr(cls, '__slots__')` has to answer 1.  cg_ss_pre collects the
+     * names, folding in the slots of every base class: `__slots__` on a
+     * subclass ADDS to the inherited set instead of replacing it. */
+    static char cg_ss_cls[64][32];
+    static char cg_ss_names[512][24];
+    static int  cg_ss_cnt[64];
+    static int  cg_ss_n;
+    static void cg_strlit_copy(const char* s, char* out, int max);
+    static const IRNode* cg_prog_class(const IRNode* prog, const char* nm);
+    static int cg_ss_find(const char* c) {
+        if (!c || !c[0]) return -1;
+        int i = 0;
+        while (i < cg_ss_n) { if (d_strcmp(cg_ss_cls[i], c)==0) return i; i++; }
+        return -1;
+    }
+    static int cg_ss_add(const char* c) {
+        if (!c || !c[0]) return -1;
+        int i = cg_ss_find(c);
+        if (i >= 0) return i;
+        if (cg_ss_n >= 64) return -1;
+        d_strncpy(cg_ss_cls[cg_ss_n], c, 31); cg_ss_cls[cg_ss_n][31] = 0;
+        cg_ss_cnt[cg_ss_n] = 0;
+        cg_ss_n = cg_ss_n + 1;
+        return cg_ss_n - 1;
+    }
+    static int cg_ss_is_slotted(const char* c) { return cg_ss_find(c) >= 0; }
+    static void cg_ss_note(const char* c, const char* nm) {
+        int i = cg_ss_add(c);
+        if (i < 0 || !nm || !nm[0]) return;
+        int j = 0;
+        while (j < cg_ss_cnt[i]) { if (d_strcmp(cg_ss_names[i*8+j], nm)==0) return; j++; }
+        if (cg_ss_cnt[i] >= 8) return;
+        d_strncpy(cg_ss_names[i*8+cg_ss_cnt[i]], nm, 23);
+        cg_ss_names[i*8+cg_ss_cnt[i]][23] = 0;
+        cg_ss_cnt[i] = cg_ss_cnt[i] + 1;
+    }
+    static int cg_ss_has(const char* c, const char* nm) {
+        int i = cg_ss_find(c);
+        if (i < 0 || !nm || !nm[0]) return 0;
+        int j = 0;
+        while (j < cg_ss_cnt[i]) { if (d_strcmp(cg_ss_names[i*8+j], nm)==0) return 1; j++; }
+        return 0;
+    }
+    static void cg_ss_scan_cls(const IRNode* prog, const IRNode* cd, int depth) {
+        if (!cd || !cd->value || !cd->value[0] || depth > 4) return;
+        const IRNode* b = cd->nchildren>0 ? cd->children[0] : NULL;
+        int own = 0;
+        char own_names[8][24];
+        int own_n = 0;
+        if (b) {
+            int j = 0;
+            while (j < b->nchildren) {
+                const IRNode* s = b->children[j];
+                if (s && d_strcmp(s->type,"ASSIGN")==0 && s->nchildren>1 && s->children[0] &&
+                    d_strcmp(s->children[0]->type,"IDENTIFIER")==0 &&
+                    s->children[0]->value &&
+                    d_strcmp(s->children[0]->value,"__slots__")==0) {
+                    const IRNode* v = s->children[1];
+                    if (v && d_strcmp(v->type,"BLOCK")==0 &&
+                        (d_strcmp(v->value,"LIST")==0 || d_strcmp(v->value,"TUPLE")==0)) {
+                        own = 1;
+                        int k = 0;
+                        while (k < v->nchildren && own_n < 8) {
+                            const IRNode* e = v->children[k];
+                            if (e && d_strcmp(e->type,"CONSTANT")==0 &&
+                                (d_strcmp(e->data_type,"STR")==0 ||
+                                 d_strcmp(e->data_type,"FSTR")==0)) {
+                                char nmv[64];
+                                nmv[0] = 0;
+                                cg_strlit_copy(e->value, nmv, 64);
+                                if (nmv[0]) {
+                                    int q = 0, dup = 0;
+                                    while (q < own_n) {
+                                        if (d_strcmp(own_names[q], nmv)==0) dup = 1;
+                                        q++;
+                                    }
+                                    if (!dup) {
+                                        d_strncpy(own_names[own_n], nmv, 23);
+                                        own_names[own_n][23] = 0;
+                                        own_n++;
+                                    }
+                                }
+                            }
+                            k++;
+                        }
+                    }
+                }
+                j++;
+            }
+        }
+        if (own) {
+            int k = 0;
+            cg_ss_add(cd->value);
+            while (k < own_n) { cg_ss_note(cd->value, own_names[k]); k++; }
+        }
+        /* A class without `__slots__` of its own is not restricted even when a
+         * base is, so it is simply left unregistered here. */
+        if (cg_ss_find(cd->value) < 0) return;
+        if (!cd->data_type) return;
+        int s2 = 0, k2 = 0;
+        while (cd->data_type[s2] && k2 < 4) {
+            char bb[64];
+            int e2 = s2, p2 = 0;
+            while (cd->data_type[e2] && cd->data_type[e2] != ',') e2++;
+            while (s2 + p2 < e2 && p2 < 63) { bb[p2] = cd->data_type[s2 + p2]; p2++; }
+            bb[p2] = 0;
+            if (p2 > 0 && d_strcmp(bb,"ANY")!=0) {
+                const IRNode* bcd = cg_prog_class(prog, bb);
+                if (bcd && bcd != cd) {
+                    cg_ss_scan_cls(prog, bcd, depth + 1);
+                    int bi = cg_ss_find(bb);
+                    if (bi >= 0) {
+                        int j2 = 0;
+                        while (j2 < cg_ss_cnt[bi]) {
+                            cg_ss_note(cd->value, cg_ss_names[bi*8+j2]);
+                            j2++;
+                        }
+                    }
+                }
+            }
+            if (!cd->data_type[e2]) break;
+            s2 = e2 + 1;
+            k2++;
+        }
+    }
+    static void cg_ss_pre(const IRNode* prog) {
+        if (!prog) return;
+        int i = 0;
+        while (i < prog->nchildren) {
+            const IRNode* n = prog->children[i];
+            if (n && d_strcmp(n->type,"CLASS_DEF")==0 && n->value && n->value[0])
+                cg_ss_scan_cls(prog, n, 0);
+            i++;
+        }
     }
     static void cg_dataclass_init(IRNode* cls, int frozen, int order) {
         if (frozen) cg_fr_add(cls->value);
@@ -29941,6 +30091,16 @@ static int cg_is_str_node(const IRNode* a) {
                         if (cmr >= 0) return cmr == 2;
                     }
                 }
+                /* `repr(Class(...))` renders in a scratch instance through the
+                 * class' own `__repr__`, so it is a char* exactly when that
+                 * method returns one.  Missing this made the result an int and
+                 * `repr(Pair(1, 2)) == "Pair(1, 2)"` compared a pointer with a
+                 * string (60_comprehensive 44). */
+                if (crr && d_strcmp(crr->type,"CALL")==0 && crr->value && crr->value[0] &&
+                    cg_is_class(crr->value)) {
+                    int cmr2 = cg_cls_mret_find(crr->value, "__repr__", 0);
+                    if (cmr2 >= 0) return cmr2 == 2;
+                }
                 return 0;
             }
             if (d_strcmp(a->value,"COMPLEX")==0) {
@@ -32119,6 +32279,25 @@ static int cg_is_str_node(const IRNode* a) {
         if (!call || !call->value || call->nchildren < 1) return 0;
         const char* _mnm = cg_mcx_meth(call);
         if (!_mnm || !_mnm[0]) return 0;
+        /* `d.keys()` / `d.values()` on a plain python DICT variable: the view is
+         * the dict's own parallel arrays, so the call publishes a list.  The
+         * generic path below only knows class methods, so `ks = d.keys()` stayed
+         * a scalar and the raw call trapped (24_collections, 46_weakref). */
+        {
+            const IRNode* _dvrc = cg_mcx_recv(call);
+            if (_dvrc && d_strcmp(_dvrc->type,"IDENTIFIER")==0 && _dvrc->value &&
+                _dvrc->value[0] && cg_is_dict(_dvrc->value)) {
+                if (d_strcmp(_mnm,"keys")==0) {
+                    if (sls) *sls = cg_dict_kf(_dvrc->value) ? 1 : 0;
+                    return 1;
+                }
+                if (d_strcmp(_mnm,"values")==0) {
+                    if (sls) *sls = (cg_dict_vf(_dvrc->value) == 2) ? 1 : 0;
+                    return 1;
+                }
+                return 0;
+            }
+        }
         /* a dict-returning method publishes a triple through the shared dict
          * buffer, never an element array (DictReader.__next__) */
         const char* _mrc = cg_call_recv_cls(cg_mcx_recv(call));
@@ -40919,6 +41098,37 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
              * side is the integer tag the `type()` lowering produces.  Mapping
              * it HERE (instead of making every bare `str` a number) keeps
              * class-level calls like `str.maketrans(...)` working. */
+            /* `Cls.__slots__ == ['x', 'y']` (39_descriptors check 21, 60 check 41):
+             * both sides are fixed at compile time, so decide it in the compiler
+             * instead of comparing the int class-attr stub against a pointer. */
+            if ((d_strcmp(n->value,"==")==0 || d_strcmp(n->value,"!=")==0) && bl && br &&
+                d_strcmp(bl->type,"MEMBER_ACCESS")==0 && bl->value &&
+                d_strcmp(bl->value,"__slots__")==0 &&
+                bl->nchildren>0 && bl->children[0] &&
+                d_strcmp(bl->children[0]->type,"IDENTIFIER")==0 &&
+                d_strcmp(br->type,"BLOCK")==0 &&
+                (d_strcmp(br->value,"LIST")==0 || d_strcmp(br->value,"TUPLE")==0)) {
+                int ssi = cg_ss_find(bl->children[0]->value);
+                if (ssi >= 0) {
+                    int same = 1;
+                    if (br->nchildren != cg_ss_cnt[ssi]) same = 0;
+                    else {
+                        int z = 0;
+                        while (z < br->nchildren) {
+                            const IRNode* e = br->children[z];
+                            char nmv[64];
+                            nmv[0] = 0;
+                            if (e && d_strcmp(e->type,"CONSTANT")==0)
+                                cg_strlit_copy(e->value, nmv, 64);
+                            if (!nmv[0] || d_strcmp(nmv, cg_ss_names[ssi*8+z])!=0) same = 0;
+                            z++;
+                        }
+                    }
+                    if (d_strcmp(n->value,"!=")==0) same = !same;
+                    cg_put(g, same ? "1" : "0");
+                    return;
+                }
+            }
             /* A partition/rpartition call compared against a tuple literal:
              * lower both sides into a single elementwise helper call, since
              * `char** == (char*[]){...}` would compare pointers. */
@@ -41543,6 +41753,15 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                                d_strcmp(onf,"TestResult")==0 ||
                                d_strcmp(onf,"loadTestsFromTestCase")==0)) havef = 1;
                 if (d_strcmp(n->value,"hasattr")==0) {
+                    /* `hasattr(cls, '__slots__')` is true exactly when the class
+                     * declares one (39_descriptors check 21); the field scan
+                     * above cannot see it because `__slots__` is not a member. */
+                    if (onf[0] && d_strcmp(onf,"__slots__")==0 && n->children[0] &&
+                        d_strcmp(n->children[0]->type,"IDENTIFIER")==0 &&
+                        cg_ss_is_slotted(n->children[0]->value)) {
+                        cg_put(g, "1");
+                        return;
+                    }
                     cg_put(g, havef ? "1" : "0");
                     return;
                 }
@@ -41726,6 +41945,30 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                 return;
             }
             if (d_strcmp(n->value,"COMPLEX")==0) {
+                /* `d.keys()` / `d.values()` on a plain python dict: publish the
+                 * view through the shared view buffer so an enclosing
+                 * `list(...)`/`sorted(...)`/`set(...)` reads real storage
+                 * instead of an unresolved call (24_collections, 46_weakref). */
+                if (n->nchildren == 1 && n->children[0] &&
+                    d_strcmp(n->children[0]->type,"MEMBER_ACCESS")==0 &&
+                    n->children[0]->nchildren>0 && n->children[0]->children[0] &&
+                    d_strcmp(n->children[0]->children[0]->type,"IDENTIFIER")==0 &&
+                    cg_is_dict(n->children[0]->children[0]->value)) {
+                    const char* dnm = n->children[0]->children[0]->value;
+                    const char* dmn = n->children[0]->value;
+                    if (d_strcmp(dmn,"keys")==0) {
+                        cg_put(g, cg_dict_kf(dnm) ? "drygon_dvy_keys_s(" : "drygon_dvy_keys_i(");
+                        cg_put(g, dnm); cg_put(g, "_k, "); cg_put(g, dnm); cg_put(g, "_n)");
+                        return;
+                    }
+                    if (d_strcmp(dmn,"values")==0) {
+                        int _dvvf = cg_dict_vf(dnm);
+                        cg_put(g, _dvvf == 2 ? "drygon_dvy_vals_s(" :
+                                    (_dvvf == 1 ? "drygon_dvy_vals_d(" : "drygon_dvy_vals_i("));
+                        cg_put(g, dnm); cg_put(g, "_v, "); cg_put(g, dnm); cg_put(g, "_n)");
+                        return;
+                    }
+                }
                 /* `Cls(args).method(...)`: the receiver is a temporary instance
                  * with no variable of its own, so the class-constructor lowering
                  * handed the member call the `((void*)1)` sentinel and the
@@ -47798,6 +48041,30 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                     return;
                 }
             }
+            /* a slotted class rejects a store to any attribute it does not list:
+             * `sc.z = 3` has to raise AttributeError instead of quietly
+             * inventing a field (39_descriptors checks 17/20,
+             * 60_comprehensive check 41). */
+            if (alhs && d_strcmp(alhs->type,"MEMBER_ACCESS")==0 && alhs->value &&
+                alhs->nchildren>0 && alhs->children[0] &&
+                d_strcmp(alhs->children[0]->type,"IDENTIFIER")==0) {
+                const char* _ssc = cg_cvar_class(alhs->children[0]->value);
+                if (!_ssc && d_strcmp(alhs->children[0]->value,"self")==0 &&
+                    cg_cur_cls_i >= 0 && cg_cur_cls_i < cg_cls_n)
+                    _ssc = cg_cls_names[cg_cur_cls_i];
+                if (_ssc && _ssc[0] && cg_ss_is_slotted(_ssc) &&
+                    !cg_ss_has(_ssc, alhs->value) &&
+                    !cg_cls_has_member(_ssc, alhs->value) &&
+                    !cg_lf_recv_field(alhs->children[0], alhs->value)) {
+                    cg_indent(g);
+                    cg_put(g, "py_raise_str(\"AttributeError\", \"'");
+                    cg_put(g, _ssc);
+                    cg_put(g, "' object has no attribute '");
+                    cg_put(g, alhs->value);
+                    cg_put(g, "'\");\n");
+                    return;
+                }
+            }
             /* a frozen dataclass forbids field writes */
             if (alhs && d_strcmp(alhs->type,"MEMBER_ACCESS")==0 && alhs->nchildren>0 &&
                 alhs->children[0] && d_strcmp(alhs->children[0]->type,"IDENTIFIER")==0) {
@@ -48414,6 +48681,36 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                     return;
                 }
             }
+            /* `ks = d.keys()` / `vs = d.values()` on a plain python dict: the
+             * view is materialised straight from the dict's own parallel arrays.
+             * The shared view buffers are only safe for an expression consumed
+             * on the spot, so the destination gets its own copy element-wise
+             * (24_collections, 46_weakref). */
+            if (alhs && d_strcmp(alhs->type,"IDENTIFIER")==0 && arhs &&
+                d_strcmp(arhs->type,"CALL")==0 && d_strcmp(arhs->value,"COMPLEX")==0 &&
+                arhs->nchildren == 1 && arhs->children[0] &&
+                d_strcmp(arhs->children[0]->type,"MEMBER_ACCESS")==0 &&
+                arhs->children[0]->nchildren>0 && arhs->children[0]->children[0] &&
+                d_strcmp(arhs->children[0]->children[0]->type,"IDENTIFIER")==0 &&
+                cg_is_dict(arhs->children[0]->children[0]->value)) {
+                const char* _dqnm = arhs->children[0]->children[0]->value;
+                const char* _dqmn = arhs->children[0]->value;
+                int _dqk = (d_strcmp(_dqmn,"keys")==0);
+                int _dqv = (d_strcmp(_dqmn,"values")==0);
+                if (_dqk || _dqv) {
+                    int _dqkind = _dqk ? (cg_dict_kf(_dqnm) ? 2 : 0) : cg_dict_vf(_dqnm);
+                    cg_note_list(alhs->value, 512, _dqkind);
+                    if (_dqkind == 2) cg_note_strlist(alhs->value);
+                    cg_indent(g);
+                    cg_put(g, "{ int _dqi; for (_dqi = 0; _dqi < "); cg_put(g, _dqnm);
+                    cg_put(g, "_n && _dqi < 512; _dqi++) ");
+                    cg_put(g, alhs->value); cg_put(g, "[_dqi] = "); cg_put(g, _dqnm);
+                    cg_put(g, _dqk ? "_k[_dqi]; " : "_v[_dqi]; ");
+                    cg_put(g, alhs->value); cg_put(g, "_n = "); cg_put(g, _dqnm);
+                    cg_put(g, "_n; }\n");
+                    return;
+                }
+            }
             /* `x = recv.m()` where the METHOD builds and returns a list: the
              * method is not in the `cg_prog_*` tables, so the pointer used to be
              * truncated into an int and the count was never bound
@@ -48667,6 +48964,32 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                     }
                     cg_put(g, alhs->value); cg_put(g, "_n = "); cg_put_int(g, src->nchildren); cg_put(g, ";\n");
                     return;
+                }
+                /* `keys = list(od.keys())` / `vals = list(od.values())`: the view
+                 * helpers publish the buffer and its own count, so the copy is
+                 * element-wise straight from the dict's parallel arrays --
+                 * without this the name was bound to the shared view buffer but
+                 * sized from the unrelated `drygon_rls_n` (24_collections 7,
+                 * 46_weakref 24). */
+                {
+                    const IRNode* _dvr = (src && d_strcmp(src->type,"CALL")==0) ? cg_mcx_recv(src) : 0;
+                    const char* _dvm = (src && d_strcmp(src->type,"CALL")==0) ? cg_mcx_meth(src) : 0;
+                    if (_dvr && _dvm && _dvr->value && d_strcmp(_dvr->type,"IDENTIFIER")==0 &&
+                        cg_is_dict(_dvr->value) &&
+                        (d_strcmp(_dvm,"keys")==0 || d_strcmp(_dvm,"values")==0)) {
+                        int _dvk = (d_strcmp(_dvm,"keys")==0) ? (cg_dict_kf(_dvr->value) ? 2 : 0)
+                                                              : cg_dict_vf(_dvr->value);
+                        cg_note_list(alhs->value, 512, _dvk);
+                        if (_dvk == 2) cg_note_strlist(alhs->value);
+                        cg_put(g, "{ int _dvi; for (_dvi = 0; _dvi < ");
+                        cg_put(g, _dvr->value);
+                        cg_put(g, "_n && _dvi < 512; _dvi++) ");
+                        cg_put(g, alhs->value); cg_put(g, "[_dvi] = "); cg_put(g, _dvr->value);
+                        cg_put(g, (d_strcmp(_dvm,"keys")==0) ? "_k[_dvi]; " : "_v[_dvi]; ");
+                        cg_put(g, alhs->value); cg_put(g, "_n = "); cg_put(g, _dvr->value);
+                        cg_put(g, "_n; }\n");
+                        return;
+                    }
                 }
                 /* `items = list(Path(".").iterdir())`: the argument is a method
                  * call that builds a list, so the drain is the same as the
@@ -52401,6 +52724,7 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             /* Pre-register the scratch classes before anything is emitted: the
              * class emitter declares each one right after its own typedef. */
             cg_scratch_pre(prog);
+            cg_ss_pre(prog);
             while (i < prog->nchildren) {
                 const IRNode* n = prog->children[i];
                 if (d_strcmp(n->type,"FUNCTION_DEF")==0 || d_strcmp(n->type,"CLASS_DEF")==0)

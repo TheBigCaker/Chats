@@ -1693,3 +1693,24 @@ sub-features. Ordered by payoff the intended sequence is
 `24_collections` → `46_weakref`+`46_weakref_i` → `39_descriptors` →
 `47_contextlib` → `60_comprehensive`, with `20_advanced`/`58_metaclass` last
 (they need a real generator state machine / metaclass objects).
+
+## e92 -- dict view support (`d.keys()` / `d.values()`)
+
+* `cg_mcall_ret_list` (32265) gained a dict-receiver branch: `d.keys()` /
+  `d.values()` on a plain python dict variable now answer as list-returning
+  method calls (string-ness taken from `cg_dict_kf` / `cg_dict_vf`), so the
+  typing pre-pass declares the destination as a real list.
+* New prelude helpers `drygon_dvy_keys_s/keys_i/vals_i/vals_d/vals_s` over the
+  shared view buffers `drygon_dvy_s/i/d` + `drygon_dvy_n` (table terminator is
+  now `p[1521] = 0;`).
+* New expression emission at the top of the `COMPLEX` branch in `cg_gen_expr`
+  (41916): `d.keys()` / `d.values()` publish the dict's own parallel arrays
+  through those helpers instead of emitting an unresolved raw call (which
+  trapped with SIGTRAP 133).
+* New statement bindings: `ks = d.keys()` and `keys = list(od.keys())` copy the
+  parallel arrays element-wise into the destination, sized from `<nm>_n`, and
+  register the destination as a list/str-list.
+* Verified: `ks = d.keys()` / `vs = d.values()`, `len`, `for k in d.keys()`,
+  `list(d.keys()) == [1, 2]`, `list(od.keys()) == ['c', 'a', 'b']` all correct.
+  Suite held at **103/112, 0 compiler crashes** (dict views are a prerequisite
+  for 24_collections / 46_weakref, they do not flip a test on their own).
