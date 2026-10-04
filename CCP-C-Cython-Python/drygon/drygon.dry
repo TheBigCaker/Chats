@@ -17644,7 +17644,14 @@ static char* dc_runtime_prelude(void) {
     p[1505] = "char* drygon_drl_gets(char** k, int* ro, int* rn, char** v, int row, char* key) {\nint i = drygon_drl_find(k, ro, rn, row, key);\nif (i < 0) { py_raise_str(\"KeyError\", key); return (char*)0; }\nreturn v[i];\n}\n";
     p[1506] = "double drygon_powf(double b, double e) {\ndouble fl = drygon_m_floor(e);\nif (fl == e) {\nlong k = (long)e;\ndouble r = 1.0;\nif (k < 0) { k = 0 - k; b = 1.0 / b; }\nwhile (k > 0) { r = r * b; k = k - 1; }\nreturn r;\n}\nif (b <= 0.0) return 0.0;\nreturn drygon_m_exp(e * drygon_m_log(b));\n}\n";
     p[1507] = "static char dfsp_statb[256];\nstatic char dfsp_dirb[8192];\nstatic char dfsp_namebuf[8192];\nstatic int dfsp_seed = 987654321;\nchar* dfsp_mmap(int n) { return (char*)drygon_alloc(n + 16); }\nint dfsp_len(char* s) { int i = 0; if (!s) return 0; while (s[i]) { i = i + 1; } return i; }\nint dfsp_eq(char* a, char* b) {\nint i = 0;\nif (!a) return 0;\nif (!b) return 0;\nwhile (a[i]) { if (b[i] == 0) return 0; if (a[i] != b[i]) return 0; i = i + 1; }\nif (b[i] == 0) return 1;\nreturn 0; }\nchar* dfsp_dup(char* s) {\nint n = dfsp_len(s);\nchar* r = dfsp_mmap(n + 16);\nint i = 0;\nwhile (i < n) { r[i] = s[i]; i = i + 1; }\nr[n] = 0;\nreturn r; }\nchar* dfsp_cat2(char* a, char* b) {\nint la = dfsp_len(a);\nint lb = dfsp_len(b);\nchar* r = dfsp_mmap(la + lb + 16);\nint i = 0;\nint j = 0;\nwhile (i < la) { r[i] = a[i]; i = i + 1; }\nwhile (j < lb) { r[la + j] = b[j]; j = j + 1; }\nr[la + lb] = 0;\nreturn r; }\nchar* dfsp_cat3(char* a, char* b, char* c) { return dfsp_cat2(dfsp_cat2(a, b), c); }\nint dfsp_slash(char* a) { int la = dfsp_len(a); if (la > 0) { if (a[la-1] == 47) return 1; } return 0; }\nchar* dfsp_join_raw(char* a, char* b) { if (dfsp_slash(a)) return dfsp_cat2(a, b); return dfsp_cat3(a, \"/\", b); }\nchar* drygon_fs_getcwd() {\nchar* r = dfsp_mmap(4096);\nlong n = dsp_get(17, (long)r, 4000, 0, 0, 0, 0);\nif (n <= 0) { r[0] = 47; r[1] = 0; return r; }\nr[n] = 0;\nreturn r; }\nlong drygon_fs_rawstat(char* path) {\nif (!path) return -1;\nif (path[0] == 0) return -1;\nreturn dsp_get(79, -100, (long)path, (long)dfsp_statb, 0, 0, 0); }\nint drygon_fs_mode(char* path) {\nlong r = drygon_fs_rawstat(path);\nif (r < 0) return -1;\nreturn *(int*)(dfsp_statb + 16); }\nlong drygon_fs_size(char* path) {\nlong r = drygon_fs_rawstat(path);\nif (r < 0) return -1;\nreturn *(long*)(dfsp_statb + 48); }\nint drygon_fs_exists(char* path) { if (drygon_fs_mode(path) >= 0) return 1; return 0; }\nint drygon_fs_isdir(char* path) {\nint m = drygon_fs_mode(path);\nif (m < 0) return 0;\nm = m & 61440;\nif (m == 16384) return 1;\nreturn 0; }\nint drygon_fs_isfile(char* path) {\nint m = drygon_fs_mode(path);\nif (m < 0) return 0;\nm = m & 61440;\nif (m == 32768) return 1;\nreturn 0; }\nint drygon_fs_islink(char* path) {\nint r = (int)dsp_get(78, -100, (long)path, (long)dfsp_dirb, 4000, 0, 0);\nif (r > 0) return 1;\nreturn 0; }\nint drygon_fs_mkdir(char* path) { return (int)dsp_get(34, -100, (long)path, 511, 0, 0, 0); }\nint drygon_fs_rmdir(char* path) { return (int)dsp_get(35, -100, (long)path, 512, 0, 0, 0); }\nint drygon_fs_unlink(char* path) { return (int)dsp_get(35, -100, (long)path, 0, 0, 0, 0); }\nint drygon_fs_mkdirp(char* path) {\nint n = dfsp_len(path);\nchar* t = dfsp_dup(path);\nint i = 0;\nif (n <= 0) return -1;\nif (t[0] == 47) i = 1;\nwhile (i <= n) {\nif (i == n) {\nt[i] = 0;\ndrygon_fs_mkdir(t);\ni = n + 1;\n} else {\nif (t[i] == 47) {\nint c = t[i];\nt[i] = 0;\nif (i > 0) drygon_fs_mkdir(t);\nt[i] = c;\n}\ni = i + 1;\n} }\nreturn 0; }\nchar* drygon_fs_listdir(char* path) {\nint fd = (int)dsp_get(56, -100, (long)path, 16384, 0, 0, 0);\nchar* out = 0;\nint on = 0;\nint go = 1;\nif (fd < 0) return dfsp_dup(\"\");\nout = dfsp_mmap(65536);\nout[0] = 0;\nwhile (go) {\nint r = (int)dsp_get(61, fd, (long)dfsp_dirb, 4000, 0, 0, 0);\nif (r <= 0) { go = 0; } else {\nint off = 0;\nwhile (off < r) {\nint rl = *(short*)(dfsp_dirb + off + 16);\nif (rl <= 0) { off = r; } else {\nchar* nm = dfsp_dirb + off + 19;\nint skip = 0;\nif (nm[0] == 46) { if (nm[1] == 0) skip = 1; }\nif (nm[0] == 46) { if (nm[1] == 46) { if (nm[2] == 0) skip = 1; } }\nif (skip == 0) {\nint j = 0;\nwhile (nm[j]) { if (on < 65000) { out[on] = nm[j]; on = on + 1; } j = j + 1; }\nif (on < 65000) { out[on] = 10; on = on + 1; }\n}\noff = off + rl;\n} }\n} }\nout[on] = 0;\ndsp_get(57, fd, 0, 0, 0, 0, 0);\nreturn out; }\nint drygon_fs_match(char* pat, char* s) {\nint pi = 0;\nint si = 0;\nint star = -1;\nint ss = 0;\nwhile (s[si]) {\nif (pat[pi] == 42) { star = pi; ss = si; pi = pi + 1; }\nelse if (pat[pi] == 63) { pi = pi + 1; si = si + 1; }\nelse if (pat[pi] == s[si]) { pi = pi + 1; si = si + 1; }\nelse if (star >= 0) { pi = star + 1; ss = ss + 1; si = ss; }\nelse return 0;\n}\nwhile (pat[pi] == 42) { pi = pi + 1; }\nif (pat[pi] == 0) return 1;\nreturn 0; }\nint drygon_fs_scan(char* dir, char* pat, char* out, int rec) {\nchar* names = drygon_fs_listdir(dir);\nint i = 0;\nwhile (names[i]) {\nint j = i;\nint k = 0;\nchar* full = 0;\nint sub = 0;\nwhile (names[j]) { if (names[j] == 10) break; j = j + 1; }\nwhile (i + k < j) { dfsp_namebuf[k] = names[i + k]; k = k + 1; }\ndfsp_namebuf[k] = 0;\nfull = dfsp_join_raw(dir, dfsp_namebuf);\nif (rec == 1) { if (drygon_fs_isdir(full)) sub = 1; }\nif (sub == 1) { drygon_fs_scan(full, pat, out, 1); }\nelse if (drygon_fs_match(pat, dfsp_namebuf)) {\nint o2 = dfsp_len(out);\nint f = 0;\nif (o2 < 65000) {\nwhile (full[f]) { out[o2] = full[f]; o2 = o2 + 1; f = f + 1; }\nout[o2] = 10;\nout[o2 + 1] = 0;\n}\n}\ni = j;\nif (names[i] == 10) i = i + 1;\n}\nreturn 0; }\nchar* drygon_fs_glob(char* dir, char* pat) {\nchar* out = dfsp_mmap(65536);\nout[0] = 0;\ndrygon_fs_scan(dir, pat, out, 0);\nreturn out; }\nchar* drygon_fs_rglob(char* dir, char* pat) {\nchar* out = dfsp_mmap(65536);\nout[0] = 0;\ndrygon_fs_scan(dir, pat, out, 1);\nreturn out; }\nint drygon_fs_rmtree(char* path) {\nchar* names = 0;\nint i = 0;\nif (drygon_fs_isdir(path) == 0) return drygon_fs_unlink(path);\nnames = drygon_fs_listdir(path);\nwhile (names[i]) {\nint j = i;\nint k = 0;\nchar* full = 0;\nwhile (names[j]) { if (names[j] == 10) break; j = j + 1; }\nwhile (i + k < j) { dfsp_namebuf[k] = names[i + k]; k = k + 1; }\ndfsp_namebuf[k] = 0;\nfull = dfsp_join_raw(path, dfsp_namebuf);\ndrygon_fs_rmtree(full);\ni = j;\nif (names[i] == 10) i = i + 1;\n}\nreturn drygon_fs_rmdir(path); }\nchar* drygon_fs_read(char* path) {\nint fd = (int)dsp_get(56, -100, (long)path, 0, 0, 0, 0);\nlong sz = 0;\nchar* out = 0;\nlong n = 0;\nif (fd < 0) return dfsp_dup(\"\");\nsz = drygon_fs_size(path);\nif (sz < 0) sz = 65536;\nout = dfsp_mmap(sz + 64);\nn = dsp_get(63, fd, (long)out, sz, 0, 0, 0);\ndsp_get(57, fd, 0, 0, 0, 0, 0);\nif (n < 0) n = 0;\nout[n] = 0;\nreturn out; }\nint drygon_fs_write(char* path, char* s) {\nint fd = (int)dsp_get(56, -100, (long)path, 577, 420, 0, 0);\nint n = 0;\nif (fd < 0) return -1;\nn = dfsp_len(s);\ndsp_get(64, fd, (long)s, n, 0, 0, 0);\ndsp_get(57, fd, 0, 0, 0, 0, 0);\nreturn n; }\nchar* dfsp_strip(char* s) {\nint n = dfsp_len(s);\nint i = 0;\nchar* r = 0;\nwhile (n > 1) { if (s[n-1] != 47) break; n = n - 1; }\nr = dfsp_mmap(n + 16);\nwhile (i < n) { r[i] = s[i]; i = i + 1; }\nr[n] = 0;\nreturn r; }\nchar* drygon_path_sub(char* s, int a, int b) {\nchar* r = 0;\nint k = a;\nif (b < a) b = a;\nr = dfsp_mmap((b - a) + 16);\nwhile (k < b) { r[k-a] = s[k]; k = k + 1; }\nr[b-a] = 0;\nreturn r; }\nchar* drygon_path_normalize(char* s) {\nchar* t = 0;\nchar* o = 0;\nint n = 0;\nint on = 0;\nint i = 0;\nif (!s) return dfsp_dup(\".\");\nif (s[0] == 0) return dfsp_dup(\".\");\nif (s[0] == 47) t = dfsp_dup(s); else t = dfsp_join_raw(drygon_fs_getcwd(), s);\nn = dfsp_len(t);\no = dfsp_mmap(n + 64);\nif (t[0] == 47) { o[0] = 47; on = 1; i = 1; }\nwhile (i < n) {\nif (t[i] == 47) { i = i + 1; } else {\nint j = i;\nint seglen = 0;\nint dot = 0;\nint dotdot = 0;\nwhile (j < n) { if (t[j] == 47) break; j = j + 1; }\nseglen = j - i;\nif (seglen == 1) { if (t[i] == 46) dot = 1; }\nif (seglen == 2) { if (t[i] == 46) { if (t[i+1] == 46) dotdot = 1; } }\nif (dot == 1) { }\nelse if (dotdot == 1) {\nif (on > 1) {\non = on - 1;\nwhile (on > 1) { if (o[on-1] == 47) break; on = on - 1; }\n}\n} else {\nint k = i;\nif (on > 1) { o[on] = 47; on = on + 1; }\nelse { if (on == 1) { if (o[0] != 47) { o[on] = 47; on = on + 1; } } }\nwhile (k < j) { o[on] = t[k]; on = on + 1; k = k + 1; }\n}\ni = j;\n} }\nif (on == 0) { o[0] = 46; on = 1; }\no[on] = 0;\nreturn o; }\nchar* drygon_path_name(char* s) {\nchar* t = dfsp_strip(s);\nint n = dfsp_len(t);\nint i = 0;\nif (n == 0) return dfsp_dup(\"\");\nif (n == 1) { if (t[0] == 47) return dfsp_dup(\"\"); }\ni = n - 1;\nwhile (i > 0) { if (t[i] == 47) break; i = i - 1; }\nif (t[i] == 47) i = i + 1;\nreturn dfsp_dup(t + i); }\nchar* drygon_path_parent(char* s) {\nchar* t = dfsp_strip(s);\nint n = dfsp_len(t);\nint i = 0;\nif (n == 0) return dfsp_dup(\".\");\ni = n - 1;\nwhile (i > 0) { if (t[i] == 47) break; i = i - 1; }\nif (i == 0) {\nif (t[0] == 47) return dfsp_dup(\"/\");\nreturn dfsp_dup(\".\");\n}\nreturn drygon_path_sub(t, 0, i); }\nint drygon_path_isabs(char* s) { if (!s) return 0; if (s[0] == 47) return 1; return 0; }\nint drygon_path_len(char* s) { return dfsp_len(s); }\nint drygon_path_charis(char* s, int i, int c) { if (s[i] == c) return 1; return 0; }\nchar* drygon_path_join(char* a, char* b) {\nif (!a) return dfsp_dup(b);\nif (!b) return dfsp_dup(a);\nif (a[0] == 0) return dfsp_dup(b);\nif (b[0] == 0) return dfsp_dup(a);\nif (b[0] == 47) return dfsp_dup(b);\nreturn dfsp_join_raw(a, b); }\nchar* drygon_path_stem(char* s) {\nchar* nm = drygon_path_name(s);\nint n = dfsp_len(nm);\nint i = 0;\nint cut = 0;\nif (n == 0) return dfsp_dup(\"\");\ni = n - 1;\nwhile (i > 0) { if (nm[i] == 46) break; i = i - 1; }\ncut = n;\nif (i > 0) cut = i;\nreturn drygon_path_sub(nm, 0, cut); }\nchar* drygon_path_suffix(char* s) {\nchar* nm = drygon_path_name(s);\nint n = dfsp_len(nm);\nint i = 0;\nif (n == 0) return dfsp_dup(\"\");\ni = n - 1;\nwhile (i > 0) { if (nm[i] == 46) break; i = i - 1; }\nif (i > 0) return drygon_path_sub(nm, i, n);\nreturn dfsp_dup(\"\"); }\nchar* drygon_path_seg(char* s, int i) {\nint n = dfsp_len(s);\nint c = 0;\nint k = 0;\nif (n == 0) return dfsp_dup(\"\");\nif (s[0] == 47) { if (i == 0) return dfsp_dup(\"/\"); c = 1; k = 1; }\nwhile (k < n) {\nint j = k;\nwhile (j < n) { if (s[j] == 47) break; j = j + 1; }\nif (j > k) { if (c == i) return drygon_path_sub(s, k, j); c = c + 1; }\nk = j + 1;\n}\nreturn dfsp_dup(\"\"); }\nchar* drygon_path_with_suffix(char* s, char* sfx) {\nchar* st = drygon_path_stem(s);\nchar* nm = dfsp_cat2(st, sfx);\nchar* par = drygon_path_parent(s);\nif (dfsp_eq(par, \".\")) return nm;\nreturn dfsp_join_raw(par, nm); }\nchar* drygon_path_with_name(char* s, char* nm) {\nchar* par = drygon_path_parent(s);\nif (dfsp_eq(par, \".\")) return dfsp_dup(nm);\nreturn dfsp_join_raw(par, nm); }\nint drygon_path_nparts(char* s) {\nchar* t = dfsp_strip(s);\nint n = dfsp_len(t);\nint c = 0;\nint i = 0;\nif (n == 0) return 0;\nif (t[0] == 47) { c = 1; i = 1; }\nwhile (i < n) {\nif (t[i] == 47) { i = i + 1; } else {\nc = c + 1;\nwhile (i < n) { if (t[i] == 47) break; i = i + 1; }\n} }\nreturn c; }\nchar* drygon_path_part(char* s, int idx) {\nchar* t = dfsp_strip(s);\nint n = dfsp_len(t);\nint c = 0;\nint i = 0;\nif (n == 0) return dfsp_dup(\"\");\nif (t[0] == 47) { if (idx == 0) return dfsp_dup(\"/\"); c = 1; i = 1; }\nwhile (i < n) {\nif (t[i] == 47) { i = i + 1; } else {\nint j = i;\nwhile (j < n) { if (t[j] == 47) break; j = j + 1; }\nif (c == idx) return drygon_path_sub(t, i, j);\nc = c + 1;\ni = j;\n} }\nreturn dfsp_dup(\"\"); }\nint drygon_path_eq(char* a, char* b) { return dfsp_eq(a, b); }\nint dfsp_rand() {\nint x = dfsp_seed % 4294967291;\nif (x < 0) x = 0 - x;\nx = x * 31 + 17;\nx = x % 4294967291;\nif (x < 0) x = 0 - x;\ndfsp_seed = x;\nreturn x; }\nint drygon_fs_getpid() { return (int)dsp_get(172, 0, 0, 0, 0, 0, 0); }\nchar* drygon_fs_tempdir() {\nchar* b = dsp_getenv(\"TMPDIR\");\nif (!b) return \"/data/data/com.termux/files/usr/tmp\";\nif (b[0] == 0) return \"/data/data/com.termux/files/usr/tmp\";\nif (drygon_fs_isdir(b)) return b;\nreturn \"/tmp\"; }\nchar* dfsp_randname(char* prefix) {\nint v = dfsp_rand();\nint q = 0;\nif (v < 0) v = 0 - v;\nwhile (q < 6) { int d = v % 16; if (d < 10) dfsp_namebuf[q] = 48 + d; else dfsp_namebuf[q] = 87 + d; v = v / 16; q = q + 1; }\ndfsp_namebuf[q] = 0;\nif (dfsp_namebuf[0] == 48) { if (dfsp_namebuf[1] == 48) { dfsp_namebuf[0] = 99; } }\nreturn dfsp_cat2(prefix, dfsp_dup(dfsp_namebuf)); }\nchar* drygon_fs_mkdtemp_in(char* base, char* prefix) {\nint a = 0;\nwhile (a < 500) {\nchar* nm = dfsp_randname(prefix);\nchar* full = dfsp_join_raw(base, nm);\nif (drygon_fs_mkdir(full) == 0) return full;\na = a + 1;\n}\nreturn dfsp_dup(\"\"); }\nchar* drygon_fs_mkdtemp(char* prefix) { return drygon_fs_mkdtemp_in(drygon_fs_tempdir(), prefix); }\nchar* drygon_fs_mktemp_in(char* base, char* prefix, char* suffix) {\nint a = 0;\nwhile (a < 500) {\nchar* nm = dfsp_cat2(dfsp_randname(prefix), suffix);\nchar* full = dfsp_join_raw(base, nm);\nif (drygon_fs_exists(full) == 0) return full;\na = a + 1;\n}\nreturn dfsp_dup(\"\"); }\nchar* drygon_fs_mktemp(char* prefix, char* suffix) { return drygon_fs_mktemp_in(drygon_fs_tempdir(), prefix, suffix); }\nint drygon_fs_rename(char* a, char* b) { return (int)dsp_get(38, -100, (long)a, -100, (long)b, 0, 0); }\nlong drygon_fs_mtime(char* path) { long r = drygon_fs_rawstat(path); if (r < 0) return 0; return *(long*)(dfsp_statb + 88); }\nchar* drygon_fs_which(char* nm) { return dsp_which(nm); }\nint drygon_fs_fdopen(char* path, int fl, int mode) { return (int)dsp_get(56, -100, (long)path, fl, mode, 0, 0); }\nint drygon_fs_fdclose(int fd) { return (int)dsp_get(57, fd, 0, 0, 0, 0, 0); }\nint drygon_fs_fdwrite(int fd, char* s) { return (int)dsp_get(64, fd, (long)s, dfsp_len(s), 0, 0, 0); }\nchar* drygon_fs_fdread(int fd) { return dsp_readall(fd); }\nchar* drygon_fs_readlink(char* path) {\nint r = (int)dsp_get(78, -100, (long)path, (long)dfsp_dirb, 4000, 0, 0);\nif (r <= 0) return dfsp_dup(\"\");\ndfsp_dirb[r] = 0;\nreturn dfsp_dup(dfsp_dirb); }\nint drygon_all_int(int* a, int n) { int i = 0; while (i < n) { if (a[i] == 0) return 0; i = i + 1; } return 1; }\nint drygon_any_int(int* a, int n) { int i = 0; while (i < n) { if (a[i] != 0) return 1; i = i + 1; } return 0; }\nint drygon_all_dbl(double* a, int n) { int i = 0; while (i < n) { if (a[i] == 0.0) return 0; i = i + 1; } return 1; }\nint drygon_any_dbl(double* a, int n) { int i = 0; while (i < n) { if (a[i] != 0.0) return 1; i = i + 1; } return 0; }\nint drygon_all_str(char** a, int n) { int i = 0; while (i < n) { if (a[i] == 0) return 0; if (a[i][0] == 0) return 0; i = i + 1; } return 1; }\nint drygon_any_str(char** a, int n) { int i = 0; while (i < n) { if (a[i] != 0) { if (a[i][0] != 0) return 1; } i = i + 1; } return 0; }";
-    p[1508] = 0;
+    p[1508] = "char* drygon_dd_make(int n) {\n";
+    p[1509] = "long long* h = (long long*)drygon_alloc(48);\nchar** k = (char**)drygon_alloc((n + 1) * 8);\nchar** v = (char**)drygon_alloc((n + 1) * 8);\nint i = 0;\n";
+    p[1510] = "while (i <= n) { k[i] = \"\"; v[i] = \"\"; i = i + 1; }\nh[0] = n;\nh[1] = (long long)k;\nh[2] = (long long)v;\nreturn (char*)h;\n}\n";
+    p[1511] = "char* drygon_dd_get(char* b, char* key) {\nif (!b) return \"\";\nlong long* h = (long long*)b;\nint n = (int)h[0];\nchar** k = (char**)h[1];\nchar** v = (char**)h[2];\nint i = 0;\n";
+    p[1512] = "while (i < n) { if (k[i] && drygon_streq(k[i], key)) return v[i] ? v[i] : \"\"; i = i + 1; }\nreturn \"\";\n}\n";
+    p[1513] = "char* drygon_dd_setk(char* b, int i, char* k) { long long* h = (long long*)b; ((char**)h[1])[i] = k; return b; }\n";
+    p[1514] = "char* drygon_dd_setv(char* b, int i, char* v) { long long* h = (long long*)b; ((char**)h[2])[i] = v; return b; }\n";
+    p[1515] = 0;
     int total = 0;
     int i = 0;
     while (p[i]) { total = total + d_strlen(p[i]); i = i + 1; }
@@ -28861,6 +28868,7 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
         }
     }
     static int cg_is_str_node(const IRNode* a);
+    static int cg_is_dd_node(const IRNode* a);
         static const char* cg_expr_obj_class(const IRNode* e);
     static int cg_mret_kind_of(const IRNode* recv, const char* meth);
     static int cg_is_list_literal(const IRNode* a);
@@ -29541,6 +29549,7 @@ static int cg_emit_path_str(CGen* g, const IRNode* r) {
 }
 static int cg_is_str_node(const IRNode* a) {
         if (!a) return 0;
+        if (cg_is_dd_node(a)) return 1;
         if (cg_sp_is_strexpr(a)) return 1;
         if (d_strcmp(a->type,"CONSTANT")==0)
             return d_strcmp(a->data_type,"STR")==0 || d_strcmp(a->data_type,"FSTR")==0;
@@ -35208,6 +35217,8 @@ static int cg_is_str_node(const IRNode* a) {
     static int cg_dict_vfs[256]; /* 0 int, 1 double, 2 char* */
     static int cg_dict_kfs[256]; /* 0 int, 1 char* */
     static int cg_ndict_vars;
+    static char cg_das_names[64 * 64];
+    static int cg_ndas;
     static int cg_dict_index(const char* name) {
         int i = 0;
         while (i < cg_ndict_vars) {
@@ -35229,6 +35240,55 @@ static int cg_is_str_node(const IRNode* a) {
     static int cg_is_dict(const char* name) {
         if (!name || !name[0]) return 0;
         return cg_dict_index(name) >= 0;
+    }
+    /* dicts built by `asdict` over a NESTED dataclass keep a heap bundle
+     * (`drygon_dd_*`) in the value slot: the second subscript of
+     * `d["address"]["city"]` then has a real table to index instead of walking
+     * a member pointer as if it were a string (37_dataclasses check 30). */
+    static int cg_das_index(const char* name) {
+        int i = 0;
+        while (i < cg_ndas) {
+            int base = i * 64;
+            int j = 0;
+            int eq = 1;
+            while (1) {
+                int ca = cg_das_names[base + j];
+                int cb = name[j];
+                if (ca != cb) { eq = 0; break; }
+                if (ca == 0) break;
+                j++;
+            }
+            if (eq) return i;
+            i++;
+        }
+        return -1;
+    }
+    static void cg_das_add(const char* name) {
+        if (!name || !name[0] || cg_ndas >= 64) return;
+        if (cg_das_index(name) >= 0) return;
+        int base = cg_ndas * 64;
+        int j = 0;
+        while (name[j] && j < 63) { cg_das_names[base + j] = name[j]; j++; }
+        cg_das_names[base + j] = 0;
+        cg_ndas = cg_ndas + 1;
+    }
+    static int cg_das_on(const char* name) {
+        if (!name || !name[0]) return 0;
+        return cg_das_index(name) >= 0;
+    }
+    /* `d["k1"]["k2"]` on an asdict() dict whose entry is a nested bundle: the
+     * read is lowered to drygon_dd_get(), so the node is a VALUE (a string),
+     * never a character.  Without this the subscript chain matched
+     * cg_is_char_node and `== "text"` went through drygon_chreq -- which only
+     * compares ONE-character strings -- so the comparison could never hold
+     * (37_dataclasses check 30). */
+    static int cg_is_dd_node(const IRNode* a) {
+        if (!a || d_strcmp(a->type,"ARRAY_ACCESS")!=0 || a->nchildren<1) return 0;
+        const IRNode* inr = a->children[0];
+        if (!inr || d_strcmp(inr->type,"ARRAY_ACCESS")!=0 || inr->nchildren<1) return 0;
+        const IRNode* ib = inr->children[0];
+        if (!ib || d_strcmp(ib->type,"IDENTIFIER")!=0) return 0;
+        return cg_das_on(ib->value);
     }
     /* `{}` in expression position: an empty DICT literal, so `d == {}` is
      * `d_n == 0` rather than a comparison with a compound literal. */
@@ -45041,6 +45101,20 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                 cg_put(g, ")");
                 return;
             }
+            /* `d["k1"]["k2"]` where `d` came from `asdict` over a nested
+             * dataclass: the first subscript yields the bundle the store side
+             * parked in the value slot, so the second looks a key up in it
+             * (37_dataclasses check 30). */
+            if (base && d_strcmp(base->type,"ARRAY_ACCESS")==0 && base->nchildren>1 &&
+                base->children[0] && d_strcmp(base->children[0]->type,"IDENTIFIER")==0 &&
+                base->children[0]->value && cg_das_on(base->children[0]->value)) {
+                cg_put(g, "drygon_dd_get(");
+                cg_gen_expr(g, base);
+                cg_put(g, ", ");
+                cg_gen_dict_key(g, idx);
+                cg_put(g, ")");
+                return;
+            }
             /* `d[k]` on a python dict: key lookup at run time */
             if (base && d_strcmp(base->type,"IDENTIFIER")==0 && cg_is_dict(base->value)) {
                 int vf = cg_dict_vf(base->value);
@@ -45777,6 +45851,7 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
      * subscript of a string. */
     static int cg_is_char_node(const IRNode* a) {
         if (!a) return 0;
+        if (cg_is_dd_node(a)) return 0;
         if (d_strcmp(a->type,"IDENTIFIER")==0) return cg_is_char_var(a->value);
         if (d_strcmp(a->type,"ARRAY_ACCESS")==0 && a->nchildren>0 &&
             cg_is_str_node(a->children[0])) return 1;
@@ -47155,6 +47230,56 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                     while (_i < _ab->nchildren) {
                         const IRNode* _fc = _ab->children[_i];
                         if (_fc && d_strcmp(_fc->type,"VAR_DECL")==0 && _fc->value && _fc->value[0]) {
+                            char _qbuf[24];
+                            const char* _qty = _fc->data_type[0] ? cg_strip_q(_fc->data_type, _qbuf, 23) : "";
+                            int _nci = (_qty[0] && d_strcmp(_qty,"list")!=0 && d_strcmp(_qty,"dict")!=0) ? cg_cls_index(_qty) : -1;
+                            const IRNode* _nbd = (_nci >= 0) ? cg_cls_body[_nci] : 0;
+                            if (_nbd) {
+                                int _nn = 0;
+                                int _j2 = 0;
+                                while (_j2 < _nbd->nchildren) {
+                                    const IRNode* _nf0 = _nbd->children[_j2];
+                                    if (_nf0 && d_strcmp(_nf0->type,"VAR_DECL")==0 && _nf0->value && _nf0->value[0]) _nn++;
+                                    _j2++;
+                                }
+                                cg_indent(g);
+                                cg_put(g, alhs->value); cg_put(g, "_k["); cg_put_int(g, _cnt); cg_put(g, "] = \"");
+                                cg_put(g, _fc->value); cg_put(g, "\";\n");
+                                cg_indent(g);
+                                cg_put(g, alhs->value); cg_put(g, "_v["); cg_put_int(g, _cnt); cg_put(g, "] = drygon_dd_make(");
+                                cg_put_int(g, _nn); cg_put(g, ");\n");
+                                _j2 = 0;
+                                { int _ni = 0;
+                                  while (_j2 < _nbd->nchildren) {
+                                    const IRNode* _nf = _nbd->children[_j2];
+                                    if (_nf && d_strcmp(_nf->type,"VAR_DECL")==0 && _nf->value && _nf->value[0]) {
+                                        cg_indent(g);
+                                        cg_put(g, "drygon_dd_setk("); cg_put(g, alhs->value); cg_put(g, "_v["); cg_put_int(g, _cnt); cg_put(g, "], ");
+                                        cg_put_int(g, _ni); cg_put(g, ", \""); cg_put(g, _nf->value); cg_put(g, "\");\n");
+                                        cg_indent(g);
+                                        cg_put(g, "drygon_dd_setv("); cg_put(g, alhs->value); cg_put(g, "_v["); cg_put_int(g, _cnt); cg_put(g, "], ");
+                                        cg_put_int(g, _ni); cg_put(g, ", ");
+                                        { IRNode* _mb2 = ir_new("MEMBER_ACCESS", _fc->value, ".");
+                                          ir_add_child(_mb2, ir_new("IDENTIFIER", arhs->children[0]->value, "ANY"));
+                                          /* the nested field's OWN annotation decides
+                                           * the conversion (cg_strify cannot resolve a
+                                           * two-level chain and emitted itoa10(ptr)) */
+                                          char _nfb[24];
+                                          const char* _nfty = _nf->data_type[0] ? cg_strip_q(_nf->data_type, _nfb, 23) : "";
+                                          int _nsv = (_nfty[0]=='s' && _nfty[1]=='t' && _nfty[2]=='r' && _nfty[3]==0);
+                                          if (!_nsv) cg_put(g, "itoa10(");
+                                          cg_gen_expr(g, _mb2);
+                                          cg_put(g, "->");
+                                          cg_put(g, _nf->value);
+                                          if (!_nsv) cg_put(g, ")"); }
+                                        cg_put(g, ");\n");
+                                        _ni++;
+                                    }
+                                    _j2++;
+                                  } }
+                                cg_das_add(alhs->value);
+                                _cnt++;
+                            } else {
                             cg_indent(g);
                             cg_put(g, alhs->value); cg_put(g, "_k["); cg_put_int(g, _cnt); cg_put(g, "] = \"");
                             cg_put(g, _fc->value); cg_put(g, "\";\n");
@@ -47165,6 +47290,7 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                               cg_strify(g, _ma); }
                             cg_put(g, ";\n");
                             _cnt++;
+                            }
                         }
                         _i++;
                     }
@@ -50272,7 +50398,20 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                     if (d_strcmp(c->type,"VAR_DECL")==0) {
                         if (cg_lf_is(n->value, c->value)) continue; /* list field emitted by cg_lf */
                         if (cg_mem_seen(c->value)) continue;
-                        cg_indent(g); cg_put(g, ir_to_c_type(c->data_type)); cg_put(g, " "); cg_put(g, c->value); cg_put(g, ";\n");
+                        /* `address: Address` is a POINTER: the constructor stores
+                         * the sub-object's address and reads go through `->`.
+                         * By value the flat asdict() handed the raw member to a
+                         * `char*` slot and a nested read dereferenced the struct
+                         * bytes (37_dataclasses check 30). */
+                        char _fdb[64];
+                        const char* _fdn = c->data_type[0] ? cg_strip_q(c->data_type, _fdb, 63) : "";
+                        cg_indent(g);
+                        if (_fdn[0] && cg_is_class(_fdn)) {
+                            cg_put(g, _fdn); cg_put(g, "* ");
+                        } else {
+                            cg_put(g, ir_to_c_type(c->data_type)); cg_put(g, " ");
+                        }
+                        cg_put(g, c->value); cg_put(g, ";\n");
                     } else if (d_strcmp(c->type,"ARRAY_DECL")==0) {
                         if (cg_lf_is(n->value, c->value)) continue;
                         if (cg_mem_seen(c->value)) continue;

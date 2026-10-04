@@ -1578,3 +1578,31 @@ one compiler, one bootstrap.
 `46_weakref` / `46_weakref_i` (139), `47_contextlib` (1), `51_logging` (139),
 `58_metaclass` (139), `59_pickle_adv` (139), `60_comprehensive` (139),
 `20_advanced` (124, hangs past 60 s).
+
+## 102/112 — nested `asdict` (`37_dataclasses` green)
+
+`37_dataclasses` check 30 (`d2["address"]["city"] == "Springfield"`) was the only
+failure left in that test. Three separate gaps, all now closed:
+
+* **nested dataclass fields were by-value structs.** `address: Address` was laid
+  out as `Address address;` while `__init__` stores the *address* of the
+  sub-object (`self->address = address;`), so the flat `asdict()` handed the raw
+  member to a `char*` slot and a nested read dereferenced the struct bytes. A
+  field annotated with a known class is now emitted as `<Cls>* ` (the same rule
+  `cg_of_*` already applied to inferred instance fields).
+* **no dict-of-dict representation.** `asdict()` now allocates a heap bundle
+  (`drygon_dd_make/get/setk/setv`, prelude slots 1508–1514) for a nested
+  dataclass field and marks the target, so `d["k1"]["k2"]` lowers to
+  `drygon_dd_get(<entry>, <key>)` instead of subscripting a member pointer.
+  The nested value is emitted from the *nested field's own annotation*
+  (`cg_strify` cannot resolve a two-level chain and emitted `itoa10(ptr)`).
+* **the comparison was a one-character compare.** The subscript chain matched
+  `cg_is_char_node`, so `== "Springfield"` went through `drygon_chreq()`, which
+  only compares single-character strings and could never hold. New
+  `cg_is_dd_node()` (a `x["a"]["b"]` read on an `asdict` target) is a string in
+  `cg_is_str_node` and not a character in `cg_is_char_node`.
+
+Suite: **102/112** (49/49 C99, 53/63 Python), compiler-crash 0, front-end
+rejections 0. Remaining 10: `20_advanced` (hang), `24_collections`,
+`39_descriptors`, `46_weakref`, `46_weakref_i`, `47_contextlib`, `51_logging`,
+`58_metaclass`, `59_pickle_adv`, `60_comprehensive`.

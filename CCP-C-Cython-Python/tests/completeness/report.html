@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>report</title>
+  <style>
+
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+white-space: pre-wrap;
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+border: none;
+border-top: 1px solid #1a1a1a;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+</head>
+<body>
+<h1 id="drygon-completeness-report">drygon completeness report</h1>
+<p>Generated: Sat Oct 3 21:57:12 PDT 2026 Binary:
+/data/data/com.termux/files/home/CCP-C-Cython-Python/drygon/drygon.elf
+(sha256
+42a800d418f1dcdc249e88067bc8ddc60a91131d8d97fc7968ec264e0ccda9a3)
+Method: each case compiled to a named .elf (no .ros cache), then run
+separately; compile failures and program failures are counted
+separately. Features: parallel execution (4 jobs), incremental caching,
+granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
+<h2 id="summary">Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total tests</td>
+<td>112</td>
+</tr>
+<tr>
+<td>Compiled OK</td>
+<td>112</td>
+</tr>
+<tr>
+<td>Pass (correct stdout/exit)</td>
+<td>102 (91%)</td>
+</tr>
+<tr>
+<td>Fail (wrong value)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Crash (compiler)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Crash (program)</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Timeout (program)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>C99</td>
+<td>49 / 49 (100%)</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>53 / 63 (84%)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="failure-layers">Failure layers</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Count</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Parse</td>
+<td></td>
+<td>Front end can’t tokenize/accept syntax</td>
+</tr>
+<tr>
+<td>Compile</td>
+<td>0</td>
+<td>Front end rejected valid construct</td>
+</tr>
+<tr>
+<td>Codegen</td>
+<td>0</td>
+<td>Member offset / code generation error</td>
+</tr>
+<tr>
+<td>Transpiler</td>
+<td>0</td>
+<td>Python-&gt;C transpiler gap</td>
+</tr>
+<tr>
+<td>Linker</td>
+<td>0</td>
+<td>Unresolved symbols</td>
+</tr>
+<tr>
+<td>Compiler crash</td>
+<td>0</td>
+<td>SIGSEGV/SIGABRT in drygon itself</td>
+</tr>
+<tr>
+<td>Program crash</td>
+<td>6</td>
+<td>Compiled ok; program segfaulted</td>
+</tr>
+<tr>
+<td>Program timeout</td>
+<td>1</td>
+<td>Compiled ok; program hung</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>3</td>
+<td>Compiled+ran; wrong value (check N failed)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c99-tests">C99 tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Status</th>
+<th>Layer</th>
+<th>Exit</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01_types.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>02_operators.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>03_control_flow.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>04_functions.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>05_preprocessor.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>06_stdio.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>07_string.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>08_memory.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>10_vla.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>11_structs.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>09_bool.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>13_enums.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>15_pointers.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>14_storage.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>16_casts.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>17_unions.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>18_initializers.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>20_limits.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>19_switch.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>21_stdlib.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>23_limits.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>22_math.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>24_stdint.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>27_stdio_adv.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>26_string_lib.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>25_ctype.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>28_complex.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>31_errno.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>30_signal.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>29_setjmp.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>32_assert.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>33_time.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>34_fenv.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>35_promotions.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>36_restrict.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>38_variadic.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>37_noreturn.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>39_compound_lit.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>40_translation.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>41_locale.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>42_wchar.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>44_iso646.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>43_inttypes.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>45_tgmath.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>46_string_literals.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>47_ub_edge.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>48_digraphs.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>49_initializer_edge.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>50_conversion.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="python-tests">Python tests</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 22%" />
+<col style="width: 19%" />
+<col style="width: 17%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr>
+<th>Test</th>
+<th>Status</th>
+<th>Layer</th>
+<th>Exit</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01_int.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>02_float.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>03_str.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>04_list.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>05_dict.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>06_tuple.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>08_bool_none.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>07_set.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>09_operators.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>10_control.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>12_classes.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>13_builtins.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>11_functions.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>14_methods.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>15_comprehensions.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>16_exceptions.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>17_string_ops.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>18_modules.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>19_file_io.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>21_os.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>22_sys.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>23_pathlib.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>24_collections.py</td>
+<td>FAIL</td>
+<td>output</td>
+<td>0/133</td>
+<td>wrong value: check 133 failed</td>
+</tr>
+<tr>
+<td>25_itertools.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>26_functools.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>27_re.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>28_datetime.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>29_copy.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>30_random.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>31_hashlib.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>32_struct.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>33_io.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>34_abc.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>35_async.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>36_match.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>37_dataclasses.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>38_typing.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>39_descriptors.py</td>
+<td>FAIL</td>
+<td>output</td>
+<td>0/1</td>
+<td>wrong value: check 1 failed</td>
+</tr>
+<tr>
+<td>40_serialization.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>42_calendar.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>41_textwrap.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>43_bisect.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>44_array_mod.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>45_threading.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>46_weakref.py</td>
+<td>CRASH</td>
+<td>prog-crash</td>
+<td>0/139</td>
+<td>program segfault/abort (rc=139)</td>
+</tr>
+<tr>
+<td>46_weakref_i.py</td>
+<td>CRASH</td>
+<td>prog-crash</td>
+<td>0/139</td>
+<td>program segfault/abort (rc=139)</td>
+</tr>
+<tr>
+<td>47_contextlib.py</td>
+<td>FAIL</td>
+<td>output</td>
+<td>0/1</td>
+<td>wrong value: check 1 failed</td>
+</tr>
+<tr>
+<td>48_enum.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>49_subprocess.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>50_csv.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>51_logging.py</td>
+<td>CRASH</td>
+<td>prog-crash</td>
+<td>0/139</td>
+<td>program segfault/abort (rc=139)</td>
+</tr>
+<tr>
+<td>52_unittest.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>53_memoryview.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>54_string_adv.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>55_operator_mod.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>56_math_adv.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>57_nonlocal_global.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>58_metaclass.py</td>
+<td>CRASH</td>
+<td>prog-crash</td>
+<td>0/139</td>
+<td>program segfault/abort (rc=139)</td>
+</tr>
+<tr>
+<td>59_pickle_adv.py</td>
+<td>CRASH</td>
+<td>prog-crash</td>
+<td>0/139</td>
+<td>program segfault/abort (rc=139)</td>
+</tr>
+<tr>
+<td>60_comprehensive.py</td>
+<td>CRASH</td>
+<td>prog-crash</td>
+<td>0/139</td>
+<td>program segfault/abort (rc=139)</td>
+</tr>
+<tr>
+<td>simple_test.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>test.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>20_advanced.py</td>
+<td>TIMEOUT</td>
+<td>prog-timeout</td>
+<td>0/124</td>
+<td>program exceeded 60s</td>
+</tr>
+</tbody>
+</table>
+<h2 id="repair-priority">Repair priority</h2>
+<ol type="1">
+<li><strong>Transpiler</strong> (0 direct + most of the malformed-C
+parse errors) — set/dict/tuple literals in expression position, super(),
+del, match/case, tuple unpacking, literal method calls, module-attr
+chains</li>
+<li><strong>Compiler crashes</strong> (0) —
+05_preprocessor/11_functions/47_contextlib segfault drygon itself</li>
+<li><strong>Program crashes</strong> (6) — 28_complex, 39_compound_lit,
+22_sys, 51_logging</li>
+<li><strong>Wrong values</strong> (3) — unsigned wrap, INT_MIN literals,
+VLA, struct-by-value, digraphs</li>
+<li><strong>Macro expansion</strong> — &amp;&amp; token vanishes in
+macro-argument substitution (32_assert)</li>
+</ol>
+</body>
+</html>
