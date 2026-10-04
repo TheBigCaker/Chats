@@ -1754,3 +1754,10 @@ Suite after install: 112 total / 103 pass / 0 compiler crashes (unchanged).
   -> c b a, `for i in sorted([3,1,2], reverse=True)` -> 3 2 1, and the dict forms
   `for k in sorted(d, reverse=True)` / `for k in sorted(d.keys(), reverse=True)`
   now compile.  Suite unchanged at 103/112, 0 compiler crashes.
+
+## e95
+- `for k in sorted(d)` / `for k in sorted(d.keys(), reverse=True)` declared the loop
+  variable `int` (the key pointer printed as a number) because the slice-temp
+  element type came from `cg_sl_base_et`, which only knows plain lists; a
+  dict-sorted temp now asks `cg_dsort_et`.  `for v in sorted(d.values())` follows
+  the dict's value flag (int/double/char*).  Suite unchanged at 103/112.

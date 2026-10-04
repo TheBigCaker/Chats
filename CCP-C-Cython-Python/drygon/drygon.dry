@@ -46843,9 +46843,13 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
         } else if (cg_sl_islice(it)) {
             /* `for x in xs[a:b]` iterates the slice temp filled just before
              * the loop; the element type decides what the loop variable is */
+            /* A dict-sorted temp (`for k in sorted(d)`) has no bare list to
+             * read an element type from: `sorted(d.keys())` lives in
+             * `<name>_k`, so the plain helper answered "int" and the loop
+             * variable printed the key pointer. */
+            int et = cg_sl_isdictsorted(it) ? cg_dsort_et(it) : cg_sl_base_et(it);
             int k = cg_slx_index(it);
-            if (k < 0) k = cg_sl_add(it, cg_sl_base_et(it));
-            int et = cg_sl_base_et(it);
+            if (k < 0) k = cg_sl_add(it, et);
             isf = (et == 1);
             isstrp = (et == 2);
             isslt = 1;
