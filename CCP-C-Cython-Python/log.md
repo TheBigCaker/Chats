@@ -1743,3 +1743,14 @@ operator: drygon's own front end rejects `a = 1, b++;` with
 `direct_compiler: expected kind=10 got kind=11`.
 
 Suite after install: 112 total / 103 pass / 0 compiler crashes (unchanged).
+
+## e94
+- `sorted(xs, reverse=True)` in a `for` header was a hard compile failure: the
+  expression emitter only mapped `sorted`/`reversed` slice temps, so the loop
+  header emitted the literal call `sorted_r(xs)_n` and the generated C no longer
+  parsed (`expected kind=5 got kind=1 text='_n'`, `front-end errors=2`,
+  `UNRESOLVED: sorted_r`).  Both the slice-temp and the dict-temp expression
+  handlers now accept `sorted_r`.  Probes: `for z in sorted(["b","a","c"], reverse=True)`
+  -> c b a, `for i in sorted([3,1,2], reverse=True)` -> 3 2 1, and the dict forms
+  `for k in sorted(d, reverse=True)` / `for k in sorted(d.keys(), reverse=True)`
+  now compile.  Suite unchanged at 103/112, 0 compiler crashes.

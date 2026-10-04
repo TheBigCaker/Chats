@@ -45176,7 +45176,8 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                 /* `sorted(xs, key=cmp_to_key(f))`: the statement temp holds the
                  * copy sorted by f (see cg_sl_copy); the value is the temp. */
                 cg_sl_put_name(g, cg_slx_index(n));
-            } else if (d_strcmp(n->value,"sorted")==0 && n->nchildren==1 && cg_sl_islice(n)) {
+            } else if ((d_strcmp(n->value,"sorted")==0 || d_strcmp(n->value,"sorted_r")==0) &&
+                       n->nchildren==1 && cg_sl_islice(n)) {
                 /* `sorted(xs)`: the statement temp holds a copy of xs, sorted
                  * in place right after the copy (see cg_sl_copy). */
                 int k = cg_slx_index(n);
@@ -45190,7 +45191,8 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                 if (krv < 0) krv = cg_sl_add(n, cg_sl_base_et(n));
                 if (krv >= 0) cg_sl_put_name(g, krv);
                 else cg_put(g, "0");
-            } else if (d_strcmp(n->value,"sorted")==0 && cg_slx_index(n) >= 0) {
+            } else if ((d_strcmp(n->value,"sorted")==0 || d_strcmp(n->value,"sorted_r")==0) &&
+                       cg_slx_index(n) >= 0) {
                 /* `sorted(d)`: the key-copy + insertion sort was emitted at
                  * statement level by cg_dict_sort_emit, which also registered
                  * this call node's temp in the slice table.  The expression is
