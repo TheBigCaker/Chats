@@ -1640,3 +1640,56 @@ Remaining 9 (`20_advanced`, `24_collections`, `39_descriptors`, `46_weakref`,
 `46_weakref_i`, `47_contextlib`, `58_metaclass`, `59_pickle_adv`,
 `60_comprehensive`) each need a distinct missing feature; the first failing line
 and required feature set are recorded per test in the triage notes.
+
+## Augmented-assign dunder dispatch (e90)
+
+* **`d[k] += v` on a user class bypassed `__setitem__`/`__getitem__`.** The dict
+  prescan (`cg_scan_dict_names`) registers *any* name subscripted with a static
+  string key, so `d['x'] = 1` marks the instance name `d` as a dict and
+  `cg_is_dict("d")` is true even though the value is a class instance. The
+  plain-store branch guards against this by dispatching to `C___setitem__`
+  (49610) and the read side to `C___getitem__` (45403), but the `x[k] += v`
+  branch did not: it fell into the dict read-modify-write and emitted
+  `d_k = drygon_dset_is(d_k, d_v, d_n, "x", drygon_dget_is(...) +
+  1)` — module-level arrays the instance does not own.
+* Fix: a `__setitem__`+`__getitem__` dispatch branch inserted immediately
+  before the dict augmented-assign block (≈50096), mirroring the plain store.
+  A probe (`$T/p/kk.py`) now emits
+  `D___setitem__(&d, "x", D___getitem__(&d, "x") + 1)`.
+
+Suite: **103/112**, gate clean (`errors total 19   baseline 15   NEW 0`), no
+regressions. The fix is a latent-miscompile repair: no test among the remaining
+9 is flipped by it alone.
+
+### Companion bugs the same probe exposed (not yet fixed)
+
+* `__getitem__`/`__setitem__` parameter typing: a method whose body is
+  `self.v[key]` over a *member dict* emits `static int D___getitem__(D* self,
+  int key)` because a class member assigned `{}` is never registered by the
+  prescan (only a bare `IDENTIFIER` LHS of `X = {...}` is, see
+  `cg_scan_dict_names`); the member then gets an `int v[64]; int v_n;` list
+  layout and `self.v[key]` becomes array indexing. The call site passes the
+  string literal `"x"` into the `int` slot.
+* `for k in <instance with only __iter__>` still iterates the module-level dict
+  arrays: `cg_iter_var_ok()` requires `__next__`, and `__iter__` returning a
+  list does not qualify, so the loop falls into the dict/list paths.
+
+### Remaining 9 — required feature per test
+
+| test | first blocker | features required |
+| --- | --- | --- |
+| `20_advanced` | hang at `while True: value = yield total` + `gen.send` | real generator state machine (`YIELD` currently eager-appends to `drygon_rl`), `next()`, `eval`/`exec`, decorator metadata |
+| `24_collections` | `defaultdict`/`deque`/`Counter`/`OrderedDict`/`namedtuple` raw-emitted | inlined `collections` module + `namedtuple` class synthesis at parse time; `_replace`/`_fields`; Counter `+ - & \|` and `most_common`; deque `maxlen`/`rotate`/`appendleft`/`popleft`; heterogeneous `__getitem__` returns |
+| `39_descriptors` | check 1 `obj.value == 10` | descriptor protocol (`__get__`/`__set__`/`__delete__` dispatch on attribute get/set/del), per-instance `__dict__` as a string-keyed dict (`__dict__.get`, `d[k][k2]`), `__slots__` (+ inheritance, restriction, listing), `hasattr`, `__doc__`, non-data descriptor precedence |
+| `46_weakref` | `weakref.ref(obj)` raw → SEGV | weakref registry with `del` semantics + `gc.collect()`, `ref()` (returns the target or `None`), callbacks, `WeakKeyDictionary`, `WeakValueDictionary`, `finalize`+`detach`, `proxy` + `ReferenceError`, `TypeError` for non-objects |
+| `46_weakref_i` | same, marker-instrumented copy | same as `46_weakref` (2 tests, one feature) |
+| `47_contextlib` | check 1 `with managed_resource() as r` | lazy generator suspension (eager model runs `finally` before the body), `contextmanager`, `closing`, `suppress` (+ multiple types), `redirect_stdout`/`redirect_stderr` (needs stdout capture), `ExitStack` (`push`/`enter_context`/`callback`, LIFO), `nullcontext` |
+| `58_metaclass` | check 1 `type(42) == int` | `type()` objects, `type(obj).__name__`, metaclass `__new__`/`__init__`/`__prepare__`, `metaclass=` classes, `__init_subclass__`, `__class__`, `super()`, `isinstance(cls, Meta)` |
+| `59_pickle_adv` | line 14 `pickle.loads(pickle.dumps(42))` raw | `pickle` (dumps/loads for int/float/str/list/dict/tuple/set/bool/None/bytes) + `HIGHEST_PROTOCOL`/`protocol=`, `__getstate__`/`__setstate__` + `__dict__.copy()`/`del`, `configparser`, bytes handling |
+| `60_comprehensive` | check 26 (tuple-key `sorted(key=lambda r: (...))`) | tuple-key comparator synthesis, `copy.deepcopy` (+ identity/independence), `@property` + setter `raise`, `__slots__`, `staticmethod`/`classmethod`, `__repr__`/`__eq__`, nested comprehension, descriptor protocol with instance `__dict__` |
+
+No single remaining test can be flipped by one lowering: each needs 5–9 distinct
+sub-features. Ordered by payoff the intended sequence is
+`24_collections` → `46_weakref`+`46_weakref_i` → `39_descriptors` →
+`47_contextlib` → `60_comprehensive`, with `20_advanced`/`58_metaclass` last
+(they need a real generator state machine / metaclass objects).

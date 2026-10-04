@@ -50090,6 +50090,36 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             if (alhs && d_strcmp(alhs->type,"IDENTIFIER")==0 && arhs &&
                 d_strcmp(arhs->type,"CALL")==0 && d_strcmp(arhs->value,"sorted")==0 &&
                 cg_sl_isdictsorted(arhs)) return;
+            /* `d[k] += v` on a user class: the store must dispatch to
+             * __setitem__ and the read to __getitem__, exactly like the plain
+             * store above.  The dict prescan registers any name subscripted
+             * with a literal string key, so cg_is_dict() is true for the
+             * instance too and the dict read-modify-write below would emit
+             * `d_k`/`d_v`/`d_n` -- arrays the instance does not have. */
+            if (alhs && arhs && d_strcmp(alhs->type,"ARRAY_ACCESS")==0 &&
+                alhs->nchildren>1 &&
+                alhs->children[0] && d_strcmp(alhs->children[0]->type,"IDENTIFIER")==0) {
+                const char* _aoc = cg_cvar_class(alhs->children[0]->value);
+                const char* _aoi = (_aoc && _aoc[0]) ? cg_cls_find_m(_aoc, "__getitem__") : 0;
+                const char* _aos = (_aoc && _aoc[0]) ? cg_cls_find_m(_aoc, "__setitem__") : 0;
+                if (_aos && _aos[0] && _aoi && _aoi[0]) {
+                    cg_put(g, _aos); cg_put(g, "___setitem__(&");
+                    cg_put(g, alhs->children[0]->value);
+                    cg_put(g, ", ");
+                    cg_gen_expr(g, alhs->children[1]);
+                    cg_put(g, ", ");
+                    cg_put(g, _aoi); cg_put(g, "___getitem__(&");
+                    cg_put(g, alhs->children[0]->value);
+                    cg_put(g, ", ");
+                    cg_gen_expr(g, alhs->children[1]);
+                    cg_put(g, ") ");
+                    cg_put(g, cg_bin_op(n->value));
+                    cg_put(g, " ");
+                    cg_gen_expr(g, arhs);
+                    cg_put(g, ");\n");
+                    return;
+                }
+            }
             if (alhs && d_strcmp(alhs->type,"ARRAY_ACCESS")==0 && alhs->nchildren>1 &&
                 alhs->children[0] && d_strcmp(alhs->children[0]->type,"IDENTIFIER")==0 &&
                 cg_is_dict(alhs->children[0]->value)) {
