@@ -1606,3 +1606,37 @@ Suite: **102/112** (49/49 C99, 53/63 Python), compiler-crash 0, front-end
 rejections 0. Remaining 10: `20_advanced` (hang), `24_collections`,
 `39_descriptors`, `46_weakref`, `46_weakref_i`, `47_contextlib`, `51_logging`,
 `58_metaclass`, `59_pickle_adv`, `60_comprehensive`.
+
+## 51_logging green (103/112)
+
+Two independent bugs kept `51_logging` red.
+
+* **Handler structs disagreed on layout.** The inlined `logging` module had a
+  `StreamHandler` (`Formatter* formatter; StringIO* stream; char* _buf`) and a
+  `FileHandler` (`Formatter* formatter; char* _filename; int _closed; char* _buf`)
+  with different offsets. The object-element registry stores **one** element
+  class per (cls, field) and the last registration wins, so every list element
+  was dispatched through the winner's `emit` and read the winner's `_buf`
+  offset — garbage pointer, SEGV at line 52. `FileHandler` now has the same
+  leading layout as `StreamHandler` (`formatter`, `stream`), its sink defaults
+  to `io.StringIO()` (`import io` added to the module source) and its `emit` is
+  byte-identical to `StreamHandler.emit`; `close()` flushes
+  `drygon_fwrite(self._filename, self.stream.getvalue())`. The inlined source
+  lives in `drygon_lib_copy` as offset/length-carrying `d_strncpy` chunks
+  (now 22238–22242, 5963 bytes) and was rewritten by re-chunking the decoded
+  literals.
+* **`os.path.exists(...)` was emitted verbatim.** The expression emitter's
+  fallback for unrecognised dotted calls passes raw Python text through; the
+  permissive self-hosted C front end accepts it and the program dies at line 87
+  (`check(os.path.exists(log_file), 18)`). `os.path.exists` now lowers to
+  `drygon_fs_exists(arg)` and `os.remove`/`os.unlink` to `drygon_fs_unlink(arg)`
+  (~line 43546, next to the `sys.exit` special case).
+
+Suite: **103/112**, compiler-crash 0, no regressions (`50_csv` 0, `45_threading`
+0, `12_classes` 0, `37_dataclasses` 0, `21_os` 0, `60_comprehensive` 26 checks
+unchanged). Installed as `drygon.elf` at e89.
+
+Remaining 9 (`20_advanced`, `24_collections`, `39_descriptors`, `46_weakref`,
+`46_weakref_i`, `47_contextlib`, `58_metaclass`, `59_pickle_adv`,
+`60_comprehensive`) each need a distinct missing feature; the first failing line
+and required feature set are recorded per test in the triage notes.

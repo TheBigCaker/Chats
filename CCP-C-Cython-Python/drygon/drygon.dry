@@ -22235,11 +22235,12 @@ static int drygon_lib_copy(char* n, char* dst) {
         return 3969;
     }
     if (d_strcmp(n, "logging") == 0) {
-        d_strncpy(dst + 0, "\"\"\"logging     a small Drygon-native implementation of the logging module.\n\nImplements the subset the completeness suite exercises.  Inheritance is used\nonly so `isinstance(x, Handler)` holds: every method is re-declared in the\nsubclass because a backend-inlined subclass does not dispatch to a module\nbase-class method (it reads a garbage slot instead).\n\"\"\"\n\nDEBUG = 10\nINFO = 20\nWARNING = 30\nERROR = 40\nCRITICAL = 50\nNOTSET = 0\n\n_disable_level = 0\n\n\nclass Formatter:\n    def __init__(self, fmt=\"%(message)s\"):\n        self._fmt = fmt\n\n    def format(self, levelname, message):\n        s = self._fmt\n        s = s.replace(\"%(levelname)s\", levelname)\n        s = s.replace(\"%(message)s\", message)\n        s = s.replace(\"%(name)s\", \"\")\n        s = s.replace(\"%(levelno)s\", \"\")\n        return s\n\n\nclass Handler:\n    def __init__(self):\n        self.formatter = Formatter(\"%(message)s\")\n        self.stream = 0\n        self._closed = 0\n        self._buf = \"\"\n\n    def setFormatter(self, f):\n        self.formatter = f\n        return 0\n\n    def close(self):\n        self._closed = 1\n        return 0\n\n    def emit(self, levelname, message):\n        return 0\n\n\nclass StreamHandler(Handler):\n    def __init__(self, stream=0):\n        self.formatter = Formatter(\"%(message)s\")\n        self.stream = stream\n        self._closed = 0\n        self._buf = \"\"\n\n    def setFormatter(self, f):\n        self.formatter = f\n        return 0\n\n    def close(self):\n        self._closed = 1\n        return 0\n\n    def emit(self, levelname, message):\n        if self.stream != 0:\n            s = self.formatter.format(levelname, message)\n            self.stream.write(s + \"\\n\")\n        return 0\n\n\nclass FileHandler(Strea", 1697);
-        d_strncpy(dst + 1697, "mHandler):\n    def __init__(self, filename, mode=\"a\"):\n        self.formatter = Formatter(\"%(message)s\")\n        self.stream = 0\n        self._closed = 0\n        self._buf = \"\"\n        self._filename = filename\n\n    def setFormatter(self, f):\n        self.formatter = f\n        return 0\n\n    def emit(self, levelname, message):\n        s = self.formatter.format(levelname, message)\n        self._buf = self._buf + s + \"\\n\"\n        drygon_fwrite(self._filename, self._buf)\n        return 0\n\n    def close(self):\n        self._closed = 1\n        return 0\n\n\nclass Logger:\n    def __init__(self, name=\"root\"):\n        self.name = name\n        self.level = 0\n        self.handlers = []\n\n    def setLevel(self, lv):\n        self.level = lv\n        return 0\n\n    def getEffectiveLevel(self):\n        return self.level\n\n    def addHandler(self, h):\n        self.handlers.append(h)\n        return 0\n\n    def removeHandler(self, h):\n        i = 0\n        kept = []\n        while i < len(self.handlers):\n            if self.handlers[i] is not h:\n                kept.append(self.handlers[i])\n            i = i + 1\n        self.handlers = kept\n        return 0\n\n    def isEnabledFor(self, lv):\n        if _disable_level != 0 and lv <= _disable_level:\n            return False\n        return lv >= self.level\n\n    def _name_of(self, lv):\n        if lv == 10:\n            return \"DEBUG\"\n        if lv == 20:\n            return \"INFO\"\n        if lv == 30:\n            return \"WARNING\"\n        if lv == 40:\n            return \"ERROR\"\n        if lv == 50:\n            return \"CRITICAL\"\n        return \"NOTSET\"\n\n    def _log(self, lv, msg):\n        if not self.isEnabledFor(lv):\n            return 0\n        levelname = self", 1706);
-        d_strncpy(dst + 3403, "._name_of(lv)\n        i = 0\n        while i < len(self.handlers):\n            self.handlers[i].emit(levelname, msg)\n            i = i + 1\n        return 0\n\n    def debug(self, msg):\n        return self._log(DEBUG, msg)\n\n    def info(self, msg):\n        return self._log(INFO, msg)\n\n    def warning(self, msg):\n        return self._log(WARNING, msg)\n\n    def error(self, msg):\n        return self._log(ERROR, msg)\n\n    def critical(self, msg):\n        return self._log(CRITICAL, msg)\n\n    def log(self, lv, msg):\n        return self._log(lv, msg)\n\n    def exception(self, msg):\n        return self._log(ERROR, msg + \" ValueError\")\n\n\nclass getLogger(Logger):\n    def __init__(self, name=\"root\"):\n        self.name = name\n        self.level = 0\n        self.handlers = []\n\n    def setLevel(self, lv):\n        self.level = lv\n        return 0\n\n    def addHandler(self, h):\n        self.handlers.append(h)\n        return 0\n\n    def removeHandler(self, h):\n        i = 0\n        kept = []\n        while i < len(self.handlers):\n            if self.handlers[i] is not h:\n                kept.append(self.handlers[i])\n            i = i + 1\n        self.handlers = kept\n        return 0\n\n    def isEnabledFor(self, lv):\n        if _disable_level != 0 and lv <= _disable_level:\n            return False\n        return lv >= self.level\n\n    def _name_of(self, lv):\n        if lv == 10:\n            return \"DEBUG\"\n        if lv == 20:\n            return \"INFO\"\n        if lv == 30:\n            return \"WARNING\"\n        if lv == 40:\n            return \"ERROR\"\n        if lv == 50:\n            return \"CRITICAL\"\n        return \"NOTSET\"\n\n    def _log(self, lv, msg):\n        if not self.isEnabledFor(lv):\n            return 0\n", 1710);
-        d_strncpy(dst + 5113, "        levelname = self._name_of(lv)\n        i = 0\n        while i < len(self.handlers):\n            self.handlers[i].emit(levelname, msg)\n            i = i + 1\n        return 0\n\n    def debug(self, msg):\n        return self._log(DEBUG, msg)\n\n    def info(self, msg):\n        return self._log(INFO, msg)\n\n    def warning(self, msg):\n        return self._log(WARNING, msg)\n\n    def error(self, msg):\n        return self._log(ERROR, msg)\n\n    def critical(self, msg):\n        return self._log(CRITICAL, msg)\n\n    def exception(self, msg):\n        return self._log(ERROR, msg + \" ValueError\")\n\n\ndef disable(level=50):\n    global _disable_level\n    _disable_level = level\n    return 0\n\n\ndef basicConfig():\n    return 0\n\n\ndef shutdown():\n    return 0\n\n", 748);
-        dst[5861] = 0;
+        d_strncpy(dst + 0, "import io\n\n\"\"\"logging     a small Drygon-native implementation of the logging module.\n\nImplements the subset the completeness suite exercises.  Inheritance is used\nonly so `isinstance(x, Handler)` holds: every method is re-declared in the\nsubclass because a backend-inlined subclass does not dispatch to a module\nbase-class method (it reads a garbage slot instead).\n\"\"\"\n\nDEBUG = 10\nINFO = 20\nWARNING = 30\nERROR = 40\nCRITICAL = 50\nNOTSET = 0\n\n_disable_level = 0\n\n\nclass Formatter:\n    def __init__(self, fmt=\"%(message)s\"):\n        self._fmt = fmt\n\n    def format(self, levelname, message):\n        s = self._fmt\n        s = s.replace(\"%(levelname)s\", levelname)\n        s = s.replace(\"%(message)s\", message)\n        s = s.replace(\"%(name)s\", \"\")\n        s = s.replace(\"%(levelno)s\", \"\")\n        return s\n\n\nclass Handler:\n    def __init__(self):\n        self.formatter = Formatter(\"%(message)s\")\n        self.stream = 0\n        self._closed = 0\n        self._buf = \"\"\n\n    def setFormatter(self, f):\n        self.formatter = f\n        return 0\n\n    def close(self):\n        self._closed = 1\n        return 0\n\n    def emit(self, levelname, message):\n        return 0\n\n\nclass StreamHandler(Handler):\n    def __init__(self, stream=0):\n        self.formatter = Formatter(\"%(message)s\")\n        self.stream = stream\n        self._closed = 0\n        self._buf = \"\"\n\n    def setFormatter(self, f):\n        self.formatter = f\n        return 0\n\n    def close(self):\n        self._closed = 1\n        return 0\n\n    def emit(self, levelname, message):\n        if self.stream != 0:\n            s = self.formatter.format(levelname, message)\n            self.stream.write(s + \"\\n\")\n        return 0\n\n\nclass FileHandl", 1700);
+        d_strncpy(dst + 1700, "er(StreamHandler):\n    def __init__(self, filename, mode=\"a\"):\n        self.formatter = Formatter(\"%(message)s\")\n        self.stream = io.StringIO()\n        self._closed = 0\n        self._buf = \"\"\n        self._filename = filename\n\n    def setFormatter(self, f):\n        self.formatter = f\n        return 0\n\n    def emit(self, levelname, message):\n        if self.stream != 0:\n            s = self.formatter.format(levelname, message)\n            self.stream.write(s + \"\\n\")\n        return 0\n\n    def close(self):\n        if self._closed == 0:\n            drygon_fwrite(self._filename, self.stream.getvalue())\n        self._closed = 1\n        return 0\n\n\nclass Logger:\n    def __init__(self, name=\"root\"):\n        self.name = name\n        self.level = 0\n        self.handlers = []\n\n    def setLevel(self, lv):\n        self.level = lv\n        return 0\n\n    def getEffectiveLevel(self):\n        return self.level\n\n    def addHandler(self, h):\n        self.handlers.append(h)\n        return 0\n\n    def removeHandler(self, h):\n        i = 0\n        kept = []\n        while i < len(self.handlers):\n            if self.handlers[i] is not h:\n                kept.append(self.handlers[i])\n            i = i + 1\n        self.handlers = kept\n        return 0\n\n    def isEnabledFor(self, lv):\n        if _disable_level != 0 and lv <= _disable_level:\n            return False\n        return lv >= self.level\n\n    def _name_of(self, lv):\n        if lv == 10:\n            return \"DEBUG\"\n        if lv == 20:\n            return \"INFO\"\n        if lv == 30:\n            return \"WARNING\"\n        if lv == 40:\n            return \"ERROR\"\n        if lv == 50:\n            return \"CRITICAL\"\n        return \"NOTSET\"\n\n    def", 1700);
+        d_strncpy(dst + 3400, " _log(self, lv, msg):\n        if not self.isEnabledFor(lv):\n            return 0\n        levelname = self._name_of(lv)\n        i = 0\n        while i < len(self.handlers):\n            self.handlers[i].emit(levelname, msg)\n            i = i + 1\n        return 0\n\n    def debug(self, msg):\n        return self._log(DEBUG, msg)\n\n    def info(self, msg):\n        return self._log(INFO, msg)\n\n    def warning(self, msg):\n        return self._log(WARNING, msg)\n\n    def error(self, msg):\n        return self._log(ERROR, msg)\n\n    def critical(self, msg):\n        return self._log(CRITICAL, msg)\n\n    def log(self, lv, msg):\n        return self._log(lv, msg)\n\n    def exception(self, msg):\n        return self._log(ERROR, msg + \" ValueError\")\n\n\nclass getLogger(Logger):\n    def __init__(self, name=\"root\"):\n        self.name = name\n        self.level = 0\n        self.handlers = []\n\n    def setLevel(self, lv):\n        self.level = lv\n        return 0\n\n    def addHandler(self, h):\n        self.handlers.append(h)\n        return 0\n\n    def removeHandler(self, h):\n        i = 0\n        kept = []\n        while i < len(self.handlers):\n            if self.handlers[i] is not h:\n                kept.append(self.handlers[i])\n            i = i + 1\n        self.handlers = kept\n        return 0\n\n    def isEnabledFor(self, lv):\n        if _disable_level != 0 and lv <= _disable_level:\n            return False\n        return lv >= self.level\n\n    def _name_of(self, lv):\n        if lv == 10:\n            return \"DEBUG\"\n        if lv == 20:\n            return \"INFO\"\n        if lv == 30:\n            return \"WARNING\"\n        if lv == 40:\n            return \"ERROR\"\n        if lv == 50:\n            return \"CRITICAL", 1700);
+        d_strncpy(dst + 5100, "\"\n        return \"NOTSET\"\n\n    def _log(self, lv, msg):\n        if not self.isEnabledFor(lv):\n            return 0\n        levelname = self._name_of(lv)\n        i = 0\n        while i < len(self.handlers):\n            self.handlers[i].emit(levelname, msg)\n            i = i + 1\n        return 0\n\n    def debug(self, msg):\n        return self._log(DEBUG, msg)\n\n    def info(self, msg):\n        return self._log(INFO, msg)\n\n    def warning(self, msg):\n        return self._log(WARNING, msg)\n\n    def error(self, msg):\n        return self._log(ERROR, msg)\n\n    def critical(self, msg):\n        return self._log(CRITICAL, msg)\n\n    def exception(self, msg):\n        return self._log(ERROR, msg + \" ValueError\")\n\n\ndef disable(level=50):\n    global _disable_level\n    _disable_level = level\n    return 0\n\n\ndef basicConfig():\n    return 0\n\n\ndef shutdown():\n    return 0\n\n", 863);
+        dst[5963] = 0;
+        return 5963;
         return 5861;
     }
     if (d_strcmp(n, "pathlib") == 0) {
@@ -27664,6 +27665,44 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
         d_strncpy(cg_of_tgt[cg_of_n], t, 31);   cg_of_tgt[cg_of_n][31] = 0;
         cg_of_n = cg_of_n + 1;
     }
+    /* (owning class, list field) pairs whose ELEMENTS are instances of another
+     * class: `logging.Logger.handlers` collects StreamHandler objects.  A
+     * counted list field can only hold int/double/char* elements, so the
+     * appended object was stored as an int and the member call
+     * `self.handlers[i].emit(...)` was emitted verbatim -- not C, and the
+     * backend jumped through the stored word (51_logging segfaulted inside
+     * _log).  The struct declares the element `Cls*` and the call lowering
+     * goes through the class method on the stored pointer. */
+    static char cg_oe_cls[64][32];
+    static char cg_oe_fld[64][32];
+    static char cg_oe_tgt[64][32];
+    static int cg_oe_n = 0;
+    static const char* cg_oe_get(const char* cls, const char* f) {
+        if (!cls || !f || !cls[0] || !f[0]) return "";
+        int i = 0;
+        while (i < cg_oe_n) {
+            if (d_strcmp(cg_oe_cls[i], cls) == 0 && d_strcmp(cg_oe_fld[i], f) == 0)
+                return cg_oe_tgt[i];
+            i++;
+        }
+        return "";
+    }
+    static void cg_oe_add(const char* cls, const char* f, const char* t) {
+        if (!cls || !f || !t || !cls[0] || !f[0] || !t[0]) return;
+        const char* e = cg_oe_get(cls, f);
+        if (e && e[0]) return;
+        if (cg_oe_n >= 64) return;
+        d_strncpy(cg_oe_cls[cg_oe_n], cls, 31); cg_oe_cls[cg_oe_n][31] = 0;
+        d_strncpy(cg_oe_fld[cg_oe_n], f, 31);   cg_oe_fld[cg_oe_n][31] = 0;
+        d_strncpy(cg_oe_tgt[cg_oe_n], t, 31);   cg_oe_tgt[cg_oe_n][31] = 0;
+        cg_oe_n = cg_oe_n + 1;
+    }
+    /* is `f` a list field of `obj`'s class whose elements are objects? */
+    static int cg_oe_recv_field(const IRNode* obj, const char* f) {
+        if (!obj || !f || !f[0]) return 0;
+        const char* e = cg_oe_get(cg_lf_recv_cls(obj), f);
+        return (e && e[0]) ? 1 : 0;
+    }
     /* True when `f` is a counted list field of the class whose methods are
      * being emitted right now. */
     static int cg_is_cur_listfield(const char* f) {
@@ -28146,11 +28185,16 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
     static void cg_scope_enter(const IRNode* fd);
     static void cg_scope_enter_m(const IRNode* fd, int mask);
     static void cg_scope_exit(void);
+    static int cg_param_cmp_str(const IRNode* nn, const char* nm);
     static void cg_pyc_register_lists(void);
     static int cg_fn_variant(const char* name);
     static int cg_call_is_str(const IRNode* a);
     static int cg_ret_strlist_of(const IRNode* a);
     static const char* cg_call_recv_cls(const IRNode* r);
+    /* Methods whose body hands back a `char*`: a local assigned from such a call
+     * must be declared `char*` too (logging's `levelname = self.name_of(lv)`). */
+    static int cg_mrs_find(const char* nm);
+    static int cg_mrs_call(const IRNode* r);
     /* subprocess: names that hold a live native child process */
     static void cg_sp_note(const char* name, int kind);
     static int cg_sp_lookup(const char* name);
@@ -28557,6 +28601,28 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
         }
         return 0;
     }
+    /* A parameter compared against a string constant (`spec == "short"`).  The
+     * method parameter `Person.__format__`'s `spec` was typed `int`, so the
+     * comparison tested a truncated pointer against the literal's address and
+     * the custom format spec never matched (60_comprehensive check 24). */
+    static int cg_param_cmp_str(const IRNode* nn, const char* nm) {
+        if (!nn || !nm || !nm[0]) return 0;
+        if (d_strcmp(nn->type,"BINARY_OP")==0 && nn->nchildren > 1 &&
+            (d_strcmp(nn->value,"==")==0 || d_strcmp(nn->value,"!=")==0)) {
+            const IRNode* l = nn->children[0];
+            const IRNode* r = nn->children[1];
+            int lis = d_strcmp(l->type,"IDENTIFIER")==0 && d_strcmp(l->value,nm)==0;
+            int ris = d_strcmp(r->type,"IDENTIFIER")==0 && d_strcmp(r->value,nm)==0;
+            if (lis && !ris && cg_is_str_node(r)) return 1;
+            if (ris && !lis && cg_is_str_node(l)) return 1;
+        }
+        int i = 0;
+        while (i < nn->nchildren) {
+            if (cg_param_cmp_str(nn->children[i], nm)) return 1;
+            i++;
+        }
+        return 0;
+    }
     /* A parameter handed to one of the runtime's own string/path primitives --
      * `drygon_fread(path)`, `sys_openat(-100, path, ...)` -- is a `char*`.  The
      * syscall wrappers take a pointer, so a parameter that only ever appeared in
@@ -28567,6 +28633,9 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
         if (d_strcmp(fn,"drygon_fread")==0) return 0;
         if (d_strcmp(fn,"drygon_fwrite")==0) return 0;
         if (d_strcmp(fn,"drygon_strlen")==0) return 0;
+        if (d_strcmp(fn,"drygon_replace")==0) return -2;
+        if (d_strcmp(fn,"replace")==0) return -2;
+        if (d_strcmp(fn,"drygon_str_replace")==0) return -2;
         if (d_strcmp(fn,"drygon_streq")==0) return -2;
         if (d_strcmp(fn,"drygon_strcpy")==0) return 0;
         if (d_strcmp(fn,"sys_openat")==0) return 1;
@@ -28629,13 +28698,24 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
     static int cg_param_needs_str(const IRNode* nn, const char* nm) {
         if (!nn || !nm || !nm[0]) return 0;
         if (d_strcmp(nn->type,"CALL")==0) {
-            int ai = cg_pns_argi(nn->value);
+            /* `s.replace(...)` arrives as a call whose value is COMPLEX and
+             * whose receiver carries the method name, so the primitive table
+             * has to be asked about the METHOD, with the arguments starting
+             * one child later. */
+            const char* fn = nn->value;
+            int ab = 0;
+            if (fn && d_strcmp(fn,"COMPLEX")==0 && nn->nchildren>0 && nn->children[0] &&
+                d_strcmp(nn->children[0]->type,"MEMBER_ACCESS")==0) {
+                fn = nn->children[0]->value;
+                ab = 1;
+            }
+            int ai = cg_pns_argi(fn);
             if (ai >= 0 || ai == -2) {
                 int i = 0;
                 while (i < nn->nchildren) {
                     const IRNode* a = nn->children[i];
                     if (a && d_strcmp(a->type,"IDENTIFIER")==0 &&
-                        d_strcmp(a->value,nm)==0 && (ai == -2 || i == ai)) return 1;
+                        d_strcmp(a->value,nm)==0 && (ai == -2 || i == ai + ab)) return 1;
                     i++;
                 }
             }
@@ -28643,6 +28723,86 @@ static int cg_cls_ftype_of(const char* cls, const char* field, int depth) {
         int i = 0;
         while (i < nn->nchildren) {
             if (cg_param_needs_str(nn->children[i], nm)) return 1;
+            i++;
+        }
+        return 0;
+    }
+    /* A parameter the body only FORWARDS to a class method whose matching
+     * parameter is a string.  `StreamHandler.emit(self, levelname, message)`
+     * passed both straight on to `Formatter.format`, whose parameters are
+     * `char*` (they go through drygon_replace); without this the caller's
+     * parameters stayed `int` and the formatted line printed the low word of
+     * each pointer (51_logging). */
+    static int cg_param_fwd_depth = 0;
+    static int cg_param_fwd_str(const char* cls, const IRNode* nn, const char* nm) {
+        if (!nn || !nm || !nm[0]) return 0;
+        if (cg_param_fwd_depth > 6) return 0;
+        if (d_strcmp(nn->type,"CALL")==0 && nn->nchildren>1 && nn->children[0] &&
+            d_strcmp(nn->children[0]->type,"MEMBER_ACCESS")==0 &&
+            nn->children[0]->value && nn->children[0]->value[0] &&
+            nn->children[0]->nchildren>0 && nn->children[0]->children[0]) {
+            const IRNode* rob = nn->children[0]->children[0];
+            const char* rcls = 0;
+            if (d_strcmp(rob->type,"IDENTIFIER")==0) rcls = cg_lf_recv_cls(rob);
+            else if (d_strcmp(rob->type,"MEMBER_ACCESS")==0 && rob->value &&
+                     rob->nchildren>0 && rob->children[0] &&
+                     d_strcmp(rob->children[0]->type,"IDENTIFIER")==0 &&
+                     d_strcmp(rob->children[0]->value,"self")==0) {
+                /* `self.<field>.method(...)` -- the field's class comes from
+                 * the object-field registry (`self.formatter = formatter`) */
+                const char* of = cg_of_get(cls, rob->value);
+                if (of && of[0]) rcls = of;
+            }
+            if (rcls && rcls[0]) {
+                const char* dc = cg_cls_find_m(rcls, nn->children[0]->value);
+                if (!dc || !dc[0]) dc = rcls;
+                int ci = cg_cls_index(dc);
+                const IRNode* cb = (ci >= 0) ? cg_cls_body[ci] : NULL;
+                const IRNode* mnode = NULL;
+                int k = 0;
+                while (cb && k < cb->nchildren) {
+                    const IRNode* m = cb->children[k];
+                    if (m && d_strcmp(m->type,"FUNCTION_DEF")==0 && m->value &&
+                        d_strcmp(m->value, nn->children[0]->value)==0 && m->nchildren>1) {
+                        mnode = m; break;
+                    }
+                    k++;
+                }
+                if (mnode) {
+                    const IRNode* ps = mnode->children[0];
+                    int j = 0;
+                    int ai = 1;
+                    while (ai < nn->nchildren) {
+                        const IRNode* a = nn->children[ai];
+                        if (a && d_strcmp(a->type,"IDENTIFIER")==0 && a->value &&
+                            d_strcmp(a->value, nm)==0 && ps) {
+                            int seen = 0;
+                            int pk = 0;
+                            while (pk < ps->nchildren) {
+                                const IRNode* p = ps->children[pk];
+                                if (p && p->value && d_strcmp(p->value,"self")!=0) {
+                                    if (seen == j) {
+                                        cg_param_fwd_depth++;
+                                        int hit = cg_param_needs_str(mnode->children[1], p->value) ||
+                                                  cg_param_fwd_str(dc, mnode->children[1], p->value);
+                                        cg_param_fwd_depth--;
+                                        if (hit) return 1;
+                                        break;
+                                    }
+                                    seen++;
+                                }
+                                pk++;
+                            }
+                        }
+                        j++;
+                        ai++;
+                    }
+                }
+            }
+        }
+        int i = 0;
+        while (i < nn->nchildren) {
+            if (cg_param_fwd_str(cls, nn->children[i], nm)) return 1;
             i++;
         }
         return 0;
@@ -31856,6 +32016,46 @@ static int cg_is_str_node(const IRNode* a) {
         }
         return -1;
     }
+    /* Methods that return a `char*`, by bare name.  Filled while each class
+     * body is emitted (from the same inferred return kind the prototype uses),
+     * because a call site inside another method -- `levelname = self.name_of(lv)`
+     * -- cannot resolve `self` to a class at declaration time.  Without this the
+     * local was declared `int` and the string pointer was truncated, so
+     * `logging`'s level name reached the handler as garbage and SEGV'd. */
+    static char cg_mrs_names[256*32];
+    static int cg_nmrs;
+    static void cg_mrs_add(const char* nm) {
+        if (!nm || !nm[0] || cg_nmrs >= 256) return;
+        int i = 0;
+        while (i < cg_nmrs) {
+            if (d_strcmp(cg_mrs_names + i*32, nm)==0) return;
+            i++;
+        }
+        d_strncpy(cg_mrs_names + cg_nmrs*32, nm, 31);
+        cg_mrs_names[cg_nmrs*32 + 31] = 0;
+        cg_nmrs = cg_nmrs + 1;
+    }
+    static int cg_mrs_find(const char* nm) {
+        if (!nm || !nm[0]) return -1;
+        int i = 0;
+        while (i < cg_nmrs) {
+            if (d_strcmp(cg_mrs_names + i*32, nm)==0) return i;
+            i++;
+        }
+        return -1;
+    }
+    /* A call that hands back a string: `self.name_of(lv)`, `obj.getvalue()`, or
+     * a plain `name_of(lv)` naming one of those methods. */
+    static int cg_mrs_call(const IRNode* r) {
+        if (!r || d_strcmp(r->type,"CALL")!=0) return 0;
+        if (d_strcmp(r->value,"COMPLEX")==0) {
+            if (r->nchildren<1 || !r->children[0]) return 0;
+            if (d_strcmp(r->children[0]->type,"MEMBER_ACCESS")==0)
+                return cg_mrs_find(r->children[0]->value) >= 0;
+            return 0;
+        }
+        return cg_mrs_find(r->value) >= 0;
+    }
     /* `recv.m(...)`: does the method body hand back a python list?  Methods
      * never live in the `cg_prog_*` tables, so a call site could not tell that
      * `od.keys()` or `reader.__next__()` yields an array: the pointer was
@@ -33914,13 +34114,112 @@ static int cg_is_str_node(const IRNode* a) {
                     int bi = cg_c3_find(bas[k]);
                     if (bi >= 0 && cg_c3_sup[bi][0] == 0) {
                         d_strncpy(cg_c3_sup[bi], bas[k+1], 31); cg_c3_sup[bi][31] = 0;
-                        d_puts("MI "); d_puts(bas[k]); d_puts("->"); d_puts(bas[k+1]); d_puts("\n");
                     }
                     k++;
                 }
             }
             i++;
         }
+    }
+    /* `class B(A)` whose MRO-next base is C (because of `class D(B, C)`) emits
+     * `super().method()` as a call to `C_method`, but C used to be emitted AFTER
+     * B: the class registry (`cg_cls_nmeth`) is only filled while classes are
+     * EMITTED, so `cg_cls_hasm("C", ...)` was still empty and B's `super()`
+     * came out as `((void)0)` (60_comprehensive check 8).  Emit the class
+     * bodies in an order where every declared base AND every MRO-next base
+     * precedes its user, so a `super()` target is always registered -- and its
+     * method definition already emitted -- before the caller.  Stable Kahn over
+     * the top-level class nodes only, so a program without multiple inheritance
+     * keeps its exact source order. */
+    static IRNode* cg_c3_node[128];
+    static int cg_c3_dep[128*16];
+    static int cg_c3_ndep[128];
+    static int cg_c3_inslot(const int* ord, int n, int id) {
+        int i = 0;
+        while (i < n) { if (ord[i] == id) return 1; i++; }
+        return 0;
+    }
+    static void cg_c3_reorder(IRNode* prog) {
+        int has = 0;
+        int i = 0;
+        while (i < cg_c3_n) { if (cg_c3_sup[i][0]) { has = 1; break; } i++; }
+        if (!has || !prog) return;
+        int slot[128];
+        int order[128];
+        int nslot = 0;
+        i = 0;
+        while (i < 128) { cg_c3_ndep[i] = 0; i++; }
+        i = 0;
+        while (i < prog->nchildren) {
+            IRNode* c = prog->children[i];
+            if (c && d_strcmp(c->type,"CLASS_DEF")==0 && c->value && c->value[0] && nslot < 128) {
+                int cid = cg_c3_find(c->value);
+                if (cid >= 0) {
+                    slot[nslot] = i; order[nslot] = cid; cg_c3_node[cid] = c; nslot = nslot + 1;
+                }
+            }
+            i++;
+        }
+        int k = 0;
+        while (k < nslot) {
+            int v = order[k];
+            const char* bs = cg_c3_bas[v];
+            int p = 0;
+            while (bs[p] && cg_c3_ndep[v] < 16) {
+                char nb[32];
+                int q = 0;
+                while (bs[p] && bs[p] != ',' && q < 31) { nb[q] = bs[p]; q++; p++; }
+                nb[q] = 0;
+                if (bs[p] == ',') p++;
+                if (nb[0]) {
+                    int bid = cg_c3_find(nb);
+                    if (bid >= 0 && bid != v && cg_c3_inslot(order, nslot, bid)) {
+                        cg_c3_dep[v*16 + cg_c3_ndep[v]] = bid; cg_c3_ndep[v] = cg_c3_ndep[v] + 1;
+                    }
+                }
+            }
+            if (cg_c3_sup[v][0] && cg_c3_ndep[v] < 16) {
+                int sid = cg_c3_find(cg_c3_sup[v]);
+                if (sid >= 0 && sid != v && cg_c3_inslot(order, nslot, sid)) {
+                    cg_c3_dep[v*16 + cg_c3_ndep[v]] = sid; cg_c3_ndep[v] = cg_c3_ndep[v] + 1;
+                }
+            }
+            k++;
+        }
+        int placed[128];
+        i = 0;
+        while (i < 128) { placed[i] = 0; i++; }
+        int cnt = 0;
+        int guard = 0;
+        while (cnt < nslot && guard < 4096) {
+            int picked = -1;
+            int m = 0;
+            guard = guard + 1;
+            while (m < nslot && picked < 0) {
+                int v = order[m];
+                if (!placed[v]) {
+                    int ok = 1;
+                    int d = 0;
+                    while (d < cg_c3_ndep[v]) {
+                        if (!placed[cg_c3_dep[v*16 + d]]) { ok = 0; break; }
+                        d++;
+                    }
+                    if (ok) picked = m;
+                }
+                m++;
+            }
+            if (picked < 0) break;
+            placed[order[picked]] = 1;
+            if (picked != cnt) {
+                int tmp = order[picked];
+                int j = picked;
+                while (j > cnt) { order[j] = order[j-1]; j--; }
+                order[cnt] = tmp;
+            }
+            cnt = cnt + 1;
+        }
+        k = 0;
+        while (k < nslot) { prog->children[slot[k]] = cg_c3_node[order[k]]; k++; }
     }
     static void cg_ob_walk(const IRNode* a) {
         if (!a) return;
@@ -34278,6 +34577,14 @@ static int cg_is_str_node(const IRNode* a) {
             const IRNode* lhs = n->children[0];
             if (lhs && d_strcmp(lhs->type,"IDENTIFIER")==0) {
                 cg_gscan_record(lhs->value);
+                /* A local bound to a call whose method hands back a `char*`
+                 * (logging's `levelname = self.name_of(lv)`) is a string, so it
+                 * must be declared as one: as an `int` the pointer was truncated
+                 * and the level name reached the handler as garbage.  The method
+                 * table is complete by the time this runs (class bodies are
+                 * emitted first). */
+                if (n->nchildren > 1 && cg_mrs_call(n->children[1]))
+                    cg_note_str(lhs->value);
             } else if (lhs && cg_is_list_node(lhs)) {
                 for (i=0;i<lhs->nchildren;i++) {
                     if (lhs->children[i] && d_strcmp(lhs->children[i]->type,"IDENTIFIER")==0) {
@@ -36336,7 +36643,7 @@ static int cg_is_str_node(const IRNode* a) {
             const IRNode* l = a->children[0];
             const IRNode* r = a->children[1];
             if (l && d_strcmp(l->type,"IDENTIFIER")==0 && l->value && r) {
-                if (cg_node_is_str_static(r) || cg_is_strlist_node(r)) cg_note_str(l->value);
+                if (cg_node_is_str_static(r) || cg_is_strlist_node(r) || cg_mrs_call(r)) cg_note_str(l->value);
                 else cg_forget_str(l->value);
             }
         }
@@ -39595,7 +39902,12 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                  * false (51_logging). */
                 if (br && d_strcmp(br->type,"MEMBER_ACCESS")==0 && br->nchildren>0 &&
                     cg_lf_recv_field(br->children[0], br->value)) {
+                    /* an OBJECT-element list field (`Logger.handlers`) stores
+                     * pointers, so the address comparison reads through an
+                     * `int*` view of the array (51_logging 27/28). */
+                    int _oef = cg_oe_recv_field(br->children[0], br->value);
                     cg_put(g, cg_is_str_node(bl) ? "drygon_inlist(" : "drygon_inlist_i(");
+                    if (_oef) cg_put(g, "(int*)");
                     cg_gen_expr(g, br); cg_put(g, ", ");
                     cg_gen_expr(g, br); cg_put(g, "_n, ");
                     /* a struct operand is stored in the int[] field by address
@@ -40151,10 +40463,22 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                     cg_put_int(g, clit->nchildren);
                     int z = 0;
                     int clit_tup = (d_strcmp(clit->value,"TUPLE")==0);
+                    int clit_lst = (d_strcmp(clit->value,"BLOCK")==0 &&
+                                    d_strcmp(clit->value,"LIST")==0);
                     while (z < clit->nchildren) {
                         const IRNode* _ce = clit->children[z];
-                        if (clit_tup && _ce && d_strcmp(_ce->type,"BLOCK")==0 &&
-                            d_strcmp(_ce->value,"LIST")==0) {
+                        /* a nested TUPLE literal rides in the payload area
+                         * exactly like a nested list, but only the BLOCK/LIST
+                         * spelling was recognised -- `f(1, 2, 3, 4, x=5) ==
+                         * (1, 2, (3, 4), {"x": 5})` then compared the payload
+                         * slot against the compound-literal ADDRESS and was
+                         * always false (60_comprehensive check 18). */
+                        int _cnest = ((clit_tup || clit_lst) && _ce &&
+                                      ((d_strcmp(_ce->type,"BLOCK")==0 &&
+                                        (d_strcmp(_ce->value,"LIST")==0 ||
+                                         d_strcmp(_ce->value,"TUPLE")==0)) ||
+                                       d_strcmp(_ce->type,"TUPLE")==0));
+                        if (_cnest) {
                             /* a list nested inside the compared tuple: the
                              * emitter stashed it in the payload area (see the
                              * tuple-return path), so compare the recorded
@@ -40170,6 +40494,42 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                                 cg_put_int(g, _ck); cg_put(g, "] == ");
                                 cg_gen_expr(g, _ce->children[_ck]);
                                 _ck++;
+                            }
+                            z++;
+                            continue;
+                        }
+                        /* a nested DICT literal: the producer copies it into the
+                         * dict payload area and records flag 3, so compare the
+                         * dictionary entry by entry instead of the int slot
+                         * (which held a garbage compound literal)
+                         * (60_comprehensive check 18). */
+                        if ((clit_tup || clit_lst) && _ce && d_strcmp(_ce->type,"BLOCK")==0 &&
+                            d_strcmp(_ce->value,"DICT")==0) {
+                            int _dk2 = 0;
+                            cg_put(g, " && drygon_rlK["); cg_put_int(g, z); cg_put(g, "] == 3");
+                            cg_put(g, " && drygon_rlDn["); cg_put_int(g, z);
+                            cg_put(g, "] == "); cg_put_int(g, _ce->nchildren / 2);
+                            while (_dk2 + 1 < _ce->nchildren) {
+                                const IRNode* _kn = _ce->children[_dk2];
+                                const IRNode* _vv = _ce->children[_dk2 + 1];
+                                cg_put(g, " && drygon_streq(drygon_rlD_k[drygon_rlDo[");
+                                cg_put_int(g, z); cg_put(g, "] + "); cg_put_int(g, _dk2 / 2);
+                                cg_put(g, "], "); cg_gen_dict_key(g, _kn);
+                                cg_put(g, ")");
+                                if (cg_dict_vflag(_vv) == 2) {
+                                    cg_put(g, " && drygon_streq(drygon_rlD_s[drygon_rlDo[");
+                                    cg_put_int(g, z); cg_put(g, "] + "); cg_put_int(g, _dk2 / 2);
+                                    cg_put(g, "], "); cg_gen_expr(g, _vv); cg_put(g, ")");
+                                } else if (cg_dict_vflag(_vv) == 1) {
+                                    cg_put(g, " && drygon_rlD_d[drygon_rlDo[");
+                                    cg_put_int(g, z); cg_put(g, "] + "); cg_put_int(g, _dk2 / 2);
+                                    cg_put(g, "] == "); cg_gen_expr(g, _vv);
+                                } else {
+                                    cg_put(g, " && drygon_rlD_v[drygon_rlDo[");
+                                    cg_put_int(g, z); cg_put(g, "] + "); cg_put_int(g, _dk2 / 2);
+                                    cg_put(g, "] == "); cg_gen_expr(g, _vv);
+                                }
+                                _dk2 = _dk2 + 2;
                             }
                             z++;
                             continue;
@@ -42058,6 +42418,43 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                             return;
                         }
                     }
+                    /* `self.handlers[i].emit(...)`: a method call on an ELEMENT
+                     * of a counted list FIELD whose elements are instances.
+                     * `self->handlers[i].emit(...)` is not C -- it was emitted
+                     * verbatim and the backend jumped through the stored word
+                     * (51_logging).  The element class is registered by
+                     * cg_oe_scan, so the call goes through that class' method
+                     * on the stored pointer. */
+                    if (d_strcmp(target->type,"MEMBER_ACCESS")==0 && target->nchildren>0 &&
+                        target->children[0] &&
+                        d_strcmp(target->children[0]->type,"ARRAY_ACCESS")==0 &&
+                        target->children[0]->nchildren>1) {
+                        const IRNode* _sb = target->children[0];
+                        const IRNode* _sbb = _sb->children[0];
+                        const char* _ecls = "";
+                        if (_sbb && d_strcmp(_sbb->type,"MEMBER_ACCESS")==0 && _sbb->value &&
+                            _sbb->nchildren>0)
+                            _ecls = cg_oe_get(cg_lf_recv_cls(_sbb->children[0]), _sbb->value);
+                        if (_ecls && _ecls[0]) {
+                            const char* _emc = cg_cls_find_m(_ecls, target->value);
+                            if (!_emc || !_emc[0]) _emc = _ecls;
+                            cg_put(g, _emc); cg_put(g, "_"); cg_put(g, target->value);
+                            cg_put(g, "((("); cg_put(g, _emc); cg_put(g, "*)");
+                            cg_gen_expr(g, _sb);
+                            cg_put(g, ")");
+                            int _eai = 1;
+                            while (_eai < n->nchildren) {
+                                const IRNode* _av = n->children[_eai];
+                                if (_av && d_strcmp(_av->type,"KWARG")==0 && _av->nchildren>0)
+                                    _av = _av->children[0];
+                                cg_put(g, ", ");
+                                cg_gen_expr(g, _av);
+                                _eai++;
+                            }
+                            cg_put(g, ")");
+                            return;
+                        }
+                    }
                     /* class instance method call: P_get(&var, ...) */
                     if (d_strcmp(target->type,"MEMBER_ACCESS")==0 && target->nchildren>0 &&
                         d_strcmp(target->children[0]->type,"IDENTIFIER")==0) {
@@ -43147,6 +43544,31 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                         if (target->nchildren>0 && d_strcmp(target->children[0]->value,"sys")==0 &&
                             d_strcmp(target->value,"exit")==0) {
                             cg_put(g, "sys_exit(");
+                            if (n->nchildren>1) cg_gen_expr(g, n->children[1]);
+                            else cg_put(g, "0");
+                            cg_put(g, ")");
+                            return;
+                        }
+                        /* `os.path.exists(p)` -> the prelude's native stat
+                         * probe.  Emitted verbatim the permissive front end
+                         * still accepted `os.path.exists(x)` and the PROGRAM
+                         * died with SIGSEGV there. */
+                        if (target->nchildren>0 && target->children[0] &&
+                            d_strcmp(target->value,"exists")==0 &&
+                            d_strcmp(target->children[0]->type,"MEMBER_ACCESS")==0 &&
+                            d_strcmp(target->children[0]->value,"path")==0) {
+                            cg_put(g, "drygon_fs_exists(");
+                            if (n->nchildren>1) cg_gen_expr(g, n->children[1]);
+                            else cg_put(g, "0");
+                            cg_put(g, ")");
+                            return;
+                        }
+                        /* `os.remove(p)` / `os.unlink(p)` */
+                        if (target->nchildren>0 && target->children[0] &&
+                            d_strcmp(target->children[0]->value,"os")==0 &&
+                            (d_strcmp(target->value,"remove")==0 ||
+                             d_strcmp(target->value,"unlink")==0)) {
+                            cg_put(g, "drygon_fs_unlink(");
                             if (n->nchildren>1) cg_gen_expr(g, n->children[1]);
                             else cg_put(g, "0");
                             cg_put(g, ")");
@@ -45679,6 +46101,28 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             cg_put(g, "(("); cg_gen_expr(g, e); cg_put(g, ") ? \"True\" : \"False\")");
             return;
         }
+        /* An object that defines `__format__` decides its own rendering:
+         * `f"{p:short}"` must call `Person___format__(p, "short")` instead of
+         * stringifying the pointer through itoa10 (60_comprehensive 24/25).  The
+         * same method serves the plain `f"{p}"` with an empty spec. */
+        {
+            const char* ocls = cg_expr_obj_class(e);
+            if (ocls && ocls[0] && cg_cls_hasm(ocls, "__format__")) {
+                int spec_at = -1;
+                int k2 = 0;
+                while (k2 < n && text[k2]) { if (text[k2] == 58) { spec_at = k2; break; } k2++; }
+                cg_put(g, ocls); cg_put(g, "___format__((void*)");
+                cg_gen_expr(g, e);
+                cg_put(g, ", ");
+                if (spec_at >= 0) {
+                    int sl = 0;
+                    while (spec_at + 1 + sl < n && text[spec_at + 1 + sl]) sl++;
+                    cg_fstr_lit(g, text + spec_at + 1, sl);
+                } else cg_put(g, "\"\"");
+                cg_put(g, ")");
+                return;
+            }
+        }
         /* An explicit float precision (`f"{pi:.2f}"`) must round to N decimals;
          * plain ftoa printed the full expansion.  Only the `:.Nf` form is
          * handled here -- `>`/`<` alignment specs remain unsupported. */
@@ -47127,6 +47571,61 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
             const IRNode* m = body->children[mi];
             if (m && d_strcmp(m->type,"FUNCTION_DEF")==0 && m->nchildren>1)
                 cg_of_walk(cls, m->value, m->children[0], m->children[1]);
+            mi++;
+        }
+    }
+    /* `self.handlers.append(h)`: the APPENDED value names the class the list
+     * holds.  `h` is resolved the way cg_of_add resolves `self.f = h` -- one of
+     * the method's own class-typed parameters, a name already known to hold an
+     * instance, or a constructor call. */
+    static void cg_oe_walk(const char* cls, const char* meth, const IRNode* ps,
+                           const IRNode* nn) {
+        if (!nn) return;
+        if (d_strcmp(nn->type,"CALL")==0 && nn->nchildren>1 && nn->children[0] &&
+            d_strcmp(nn->children[0]->type,"MEMBER_ACCESS")==0 &&
+            nn->children[0]->value && nn->children[0]->nchildren>0 &&
+            (d_strcmp(nn->children[0]->value,"append")==0 ||
+             d_strcmp(nn->children[0]->value,"insert")==0 ||
+             d_strcmp(nn->children[0]->value,"__setitem__")==0)) {
+            const IRNode* recv = nn->children[0]->children[0];
+            if (recv && d_strcmp(recv->type,"MEMBER_ACCESS")==0 && recv->value &&
+                recv->value[0] && recv->nchildren>0 && recv->children[0] &&
+                d_strcmp(recv->children[0]->type,"IDENTIFIER")==0 &&
+                d_strcmp(recv->children[0]->value,"self")==0) {
+                const IRNode* arg = nn->children[1];
+                const char* oc = 0;
+                if (arg && d_strcmp(arg->type,"IDENTIFIER")==0 && arg->value && arg->value[0]) {
+                    int idx = 0;
+                    if (ps) {
+                        int j = 0;
+                        while (j < ps->nchildren) {
+                            const IRNode* p = ps->children[j];
+                            if (p && p->value && d_strcmp(p->value,"self")!=0) {
+                                if (d_strcmp(p->value, arg->value)==0) {
+                                    oc = cg_mps_obj_get(cls, meth, idx);
+                                    if (!oc || !oc[0]) oc = cg_cps_obj_get(cls, meth, idx);
+                                    break;
+                                }
+                                idx++;
+                            }
+                            j++;
+                        }
+                    }
+                }
+                if (!oc || !oc[0]) oc = cg_arg_obj_class(arg);
+                if (oc && oc[0]) cg_oe_add(cls, recv->value, oc);
+            }
+        }
+        int i = 0;
+        while (i < nn->nchildren) { cg_oe_walk(cls, meth, ps, nn->children[i]); i++; }
+    }
+    static void cg_oe_scan(const char* cls, const IRNode* body) {
+        if (!cls || !cls[0] || !body) return;
+        int mi = 0;
+        while (mi < body->nchildren) {
+            const IRNode* m = body->children[mi];
+            if (m && d_strcmp(m->type,"FUNCTION_DEF")==0 && m->nchildren>1)
+                cg_oe_walk(cls, m->value, m->children[0], m->children[1]);
             mi++;
         }
     }
@@ -50486,6 +50985,7 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                     }
                 }
                 cg_of_scan(cg_cls_names[cg_cls_n - 1], body);
+                cg_oe_scan(cg_cls_names[cg_cls_n - 1], body);
                 int fi2 = 0;
                 while (fi2 < cnf) {
                     /* a field holding an INSTANCE of another class is a POINTER
@@ -50539,7 +51039,9 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                         else if (ft == 3) cg_put(g, "double ");
                         else if (ft == 4) {
                             int _lk = cg_lf_kind(cg_cls_names[cg_cls_n - 1], cfn + fi2*64);
-                            if (_lk == 2) cg_put(g, "char* ");
+                            const char* _oec = cg_oe_get(cg_cls_names[cg_cls_n - 1], cfn + fi2*64);
+                            if (_oec && _oec[0]) { cg_put(g, _oec); cg_put(g, "* "); }
+                            else if (_lk == 2) cg_put(g, "char* ");
                             else if (_lk == 1) cg_put(g, "double ");
                             else cg_put(g, "int ");
                         }
@@ -50603,6 +51105,10 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                             }
                         }
                         if (mlist) cg_mrl_add(c->value, msls);
+                        /* a method whose body returns a `char*` is remembered by
+                         * name, so a local bound to its result is declared as a
+                         * string (see cg_mrs_call) */
+                        if (mdt == 2) cg_mrs_add(c->value);
                         if (ci >= 0 && cg_cls_nmeth[ci] < 48) {
                             int mj = cg_cls_nmeth[ci];
                             d_strncpy(cg_cls_methnames[ci*48 + mj], c->value, 31); cg_cls_methnames[ci*48 + mj][31] = 0;
@@ -50863,6 +51369,13 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                                  * truncated the pointer (Person.name) */
                                 if (d_strcmp(pt,"int")==0 && body &&
                                     cg_cls_ftype(body, p->value) == 2) pt = "char*";
+                                /* ... or compared against a string constant in
+                                 * the body (`__format__`'s `spec == "short"`) */
+                                if (d_strcmp(pt,"int")==0 &&
+                                    cg_param_cmp_str(c->nchildren>1 ? c->children[1] : NULL, p->value)) {
+                                    pt = "char*";
+                                    cg_note_str(p->value);
+                                }
                                 /* ... or concatenated with a string inside the
                                  * method (`io.StringIO.write`'s `s`) */
                                 if (d_strcmp(pt,"int")==0 &&
@@ -50872,6 +51385,12 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
                                  * io.File.path, io._ioch_exists.path) */
                                 if (d_strcmp(pt,"int")==0 &&
                                     cg_param_needs_str(c->nchildren>1 ? c->children[1] : NULL, p->value)) pt = "char*";
+                                /* ... or forwarded to a class method whose
+                                 * matching parameter is a string
+                                 * (StreamHandler.emit -> Formatter.format) */
+                                if (d_strcmp(pt,"int")==0 && n->value && n->value[0] &&
+                                    cg_param_fwd_str(n->value,
+                                        c->nchildren>1 ? c->children[1] : NULL, p->value)) pt = "char*";
                                 /* ... and a parameter stored into a list field
                                  * is the array pointer (MyList.data) */
                                 if (d_strcmp(pt,"int")==0 && body &&
@@ -51686,6 +52205,7 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
         cg_lit_scan(prog, 0);
         cg_ob_scan(prog);
         cg_c3_build(prog);
+        cg_c3_reorder(prog);
         CGen g; g.buf=NULL; g.cap=0; g.pos=0; g.indent=0; g.prog=prog;
         cg_put(&g, "/* cygemm primitives — already in drygon monolith, no external include */\n\n");
         cg_put(&g, "#define NULL 0\n");
@@ -51914,6 +52434,11 @@ static void cg_gen_expr(CGen* g, const IRNode* n) {
              * so that cg_note_float() calls during codegen have already run and
              * cg_name_is_float() correctly excludes float variables. */
             cg_gn = 0;
+            /* the class bodies are emitted by now, so the string-returning
+             * method table is complete: a last pass notes every local bound to
+             * one of those calls before the declarations are printed (a local
+             * assigned from `self.name_of(lv)` must be `char*`). */
+            cg_scan_static_str(prog);
             cg_gscan_add(prog);
             {
                 int gi = 0;
