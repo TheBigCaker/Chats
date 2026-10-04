@@ -1,7 +1,7 @@
 # drygon completeness report
 
-Generated: Sat Oct  3 22:36:13 PDT 2026
-Binary: /data/data/com.termux/files/home/CCP-C-Cython-Python/drygon/drygon.elf (sha256 8cd9d1a230718f59c8a2f0dd45fa8b1de4847a0bd4cfc8b0591b6cf53dee61dd)
+Generated: Sat Oct  3 23:10:53 PDT 2026
+Binary: /data/data/com.termux/files/home/CCP-C-Cython-Python/drygon/drygon.elf (sha256 133bc96a9b59622e06a59354a6de9316118ee4402065dc330b078d95be641cd3)
 Method: each case compiled to a named .elf (no .ros cache), then run separately;
 compile failures and program failures are counted separately.
 Features: parallel execution (8 jobs), incremental caching, granular timeouts, JSON/JUnit output, resource isolation (unshare).
@@ -38,46 +38,46 @@ Features: parallel execution (8 jobs), incremental caching, granular timeouts, J
 
 | Test | Status | Layer | Exit | Detail |
 |------|--------|-------|------|--------|
-| 01_types.c | PASS | pass | 0/0 |  |
-| 02_operators.c | PASS | pass | 0/0 |  |
 | 03_control_flow.c | PASS | pass | 0/0 |  |
-| 04_functions.c | PASS | pass | 0/0 |  |
-| 07_string.c | PASS | pass | 0/0 |  |
+| 01_types.c | PASS | pass | 0/0 |  |
 | 05_preprocessor.c | PASS | pass | 0/0 |  |
+| 07_string.c | PASS | pass | 0/0 |  |
 | 06_stdio.c | PASS | pass | 0/0 |  |
+| 02_operators.c | PASS | pass | 0/0 |  |
 | 08_memory.c | PASS | pass | 0/0 |  |
-| 10_vla.c | PASS | pass | 0/0 |  |
+| 04_functions.c | PASS | pass | 0/0 |  |
 | 09_bool.c | PASS | pass | 0/0 |  |
+| 10_vla.c | PASS | pass | 0/0 |  |
 | 11_structs.c | PASS | pass | 0/0 |  |
+| 14_storage.c | PASS | pass | 0/0 |  |
 | 13_enums.c | PASS | pass | 0/0 |  |
+| 17_unions.c | PASS | pass | 0/0 |  |
 | 16_casts.c | PASS | pass | 0/0 |  |
 | 15_pointers.c | PASS | pass | 0/0 |  |
-| 17_unions.c | PASS | pass | 0/0 |  |
-| 14_storage.c | PASS | pass | 0/0 |  |
+| 20_limits.c | PASS | pass | 0/0 |  |
 | 19_switch.c | PASS | pass | 0/0 |  |
 | 18_initializers.c | PASS | pass | 0/0 |  |
-| 20_limits.c | PASS | pass | 0/0 |  |
-| 24_stdint.c | PASS | pass | 0/0 |  |
 | 21_stdlib.c | PASS | pass | 0/0 |  |
 | 23_limits.c | PASS | pass | 0/0 |  |
-| 22_math.c | PASS | pass | 0/0 |  |
 | 25_ctype.c | PASS | pass | 0/0 |  |
+| 24_stdint.c | PASS | pass | 0/0 |  |
+| 22_math.c | PASS | pass | 0/0 |  |
+| 26_string_lib.c | PASS | pass | 0/0 |  |
+| 29_setjmp.c | PASS | pass | 0/0 |  |
 | 27_stdio_adv.c | PASS | pass | 0/0 |  |
 | 30_signal.c | PASS | pass | 0/0 |  |
 | 28_complex.c | PASS | pass | 0/0 |  |
-| 29_setjmp.c | PASS | pass | 0/0 |  |
-| 26_string_lib.c | PASS | pass | 0/0 |  |
-| 31_errno.c | PASS | pass | 0/0 |  |
-| 32_assert.c | PASS | pass | 0/0 |  |
 | 33_time.c | PASS | pass | 0/0 |  |
-| 36_restrict.c | PASS | pass | 0/0 |  |
+| 32_assert.c | PASS | pass | 0/0 |  |
+| 31_errno.c | PASS | pass | 0/0 |  |
 | 35_promotions.c | PASS | pass | 0/0 |  |
-| 34_fenv.c | PASS | pass | 0/0 |  |
 | 37_noreturn.c | PASS | pass | 0/0 |  |
+| 36_restrict.c | PASS | pass | 0/0 |  |
 | 38_variadic.c | PASS | pass | 0/0 |  |
+| 34_fenv.c | PASS | pass | 0/0 |  |
 | 39_compound_lit.c | PASS | pass | 0/0 |  |
-| 41_locale.c | PASS | pass | 0/0 |  |
 | 40_translation.c | PASS | pass | 0/0 |  |
+| 41_locale.c | PASS | pass | 0/0 |  |
 | 42_wchar.c | PASS | pass | 0/0 |  |
 | 43_inttypes.c | PASS | pass | 0/0 |  |
 | 44_iso646.c | PASS | pass | 0/0 |  |
@@ -85,74 +85,74 @@ Features: parallel execution (8 jobs), incremental caching, granular timeouts, J
 | 46_string_literals.c | PASS | pass | 0/0 |  |
 | 47_ub_edge.c | PASS | pass | 0/0 |  |
 | 48_digraphs.c | PASS | pass | 0/0 |  |
-| 50_conversion.c | PASS | pass | 0/0 |  |
 | 49_initializer_edge.c | PASS | pass | 0/0 |  |
+| 50_conversion.c | PASS | pass | 0/0 |  |
 
 ## Python tests
 
 | Test | Status | Layer | Exit | Detail |
 |------|--------|-------|------|--------|
-| 01_int.py | PASS | pass | 0/0 |  |
 | 02_float.py | PASS | pass | 0/0 |  |
+| 01_int.py | PASS | pass | 0/0 |  |
 | 03_str.py | PASS | pass | 0/0 |  |
 | 05_dict.py | PASS | pass | 0/0 |  |
 | 04_list.py | PASS | pass | 0/0 |  |
-| 06_tuple.py | PASS | pass | 0/0 |  |
 | 07_set.py | PASS | pass | 0/0 |  |
-| 09_operators.py | PASS | pass | 0/0 |  |
+| 06_tuple.py | PASS | pass | 0/0 |  |
 | 08_bool_none.py | PASS | pass | 0/0 |  |
+| 09_operators.py | PASS | pass | 0/0 |  |
 | 10_control.py | PASS | pass | 0/0 |  |
-| 12_classes.py | PASS | pass | 0/0 |  |
 | 13_builtins.py | PASS | pass | 0/0 |  |
+| 12_classes.py | PASS | pass | 0/0 |  |
 | 15_comprehensions.py | PASS | pass | 0/0 |  |
-| 18_modules.py | PASS | pass | 0/0 |  |
 | 14_methods.py | PASS | pass | 0/0 |  |
-| 17_string_ops.py | PASS | pass | 0/0 |  |
 | 16_exceptions.py | PASS | pass | 0/0 |  |
-| 11_functions.py | PASS | pass | 0/0 |  |
+| 18_modules.py | PASS | pass | 0/0 |  |
+| 17_string_ops.py | PASS | pass | 0/0 |  |
 | 19_file_io.py | PASS | pass | 0/0 |  |
+| 11_functions.py | PASS | pass | 0/0 |  |
 | 21_os.py | PASS | pass | 0/0 |  |
 | 22_sys.py | PASS | pass | 0/0 |  |
 | 24_collections.py | FAIL | output | 0/133 | wrong value: check 133 failed |
-| 25_itertools.py | PASS | pass | 0/0 |  |
 | 27_re.py | PASS | pass | 0/0 |  |
 | 23_pathlib.py | PASS | pass | 0/0 |  |
+| 25_itertools.py | PASS | pass | 0/0 |  |
 | 26_functools.py | PASS | pass | 0/0 |  |
-| 29_copy.py | PASS | pass | 0/0 |  |
-| 31_hashlib.py | PASS | pass | 0/0 |  |
 | 28_datetime.py | PASS | pass | 0/0 |  |
+| 29_copy.py | PASS | pass | 0/0 |  |
 | 30_random.py | PASS | pass | 0/0 |  |
-| 34_abc.py | PASS | pass | 0/0 |  |
-| 33_io.py | PASS | pass | 0/0 |  |
+| 31_hashlib.py | PASS | pass | 0/0 |  |
 | 32_struct.py | PASS | pass | 0/0 |  |
-| 35_async.py | PASS | pass | 0/0 |  |
+| 33_io.py | PASS | pass | 0/0 |  |
+| 34_abc.py | PASS | pass | 0/0 |  |
 | 36_match.py | PASS | pass | 0/0 |  |
-| 38_typing.py | PASS | pass | 0/0 |  |
+| 35_async.py | PASS | pass | 0/0 |  |
 | 37_dataclasses.py | PASS | pass | 0/0 |  |
-| 40_serialization.py | PASS | pass | 0/0 |  |
-| 41_textwrap.py | PASS | pass | 0/0 |  |
+| 38_typing.py | PASS | pass | 0/0 |  |
 | 39_descriptors.py | FAIL | output | 0/1 | wrong value: check 1 failed |
+| 40_serialization.py | PASS | pass | 0/0 |  |
 | 42_calendar.py | PASS | pass | 0/0 |  |
-| 44_array_mod.py | PASS | pass | 0/0 |  |
+| 41_textwrap.py | PASS | pass | 0/0 |  |
 | 43_bisect.py | PASS | pass | 0/0 |  |
-| 48_enum.py | PASS | pass | 0/0 |  |
+| 44_array_mod.py | PASS | pass | 0/0 |  |
 | 46_weakref.py | CRASH | prog-crash | 0/139 | program segfault/abort (rc=139) |
 | 45_threading.py | PASS | pass | 0/0 |  |
+| 48_enum.py | PASS | pass | 0/0 |  |
 | 46_weakref_i.py | CRASH | prog-crash | 0/139 | program segfault/abort (rc=139) |
 | 47_contextlib.py | FAIL | output | 0/1 | wrong value: check 1 failed |
-| 50_csv.py | PASS | pass | 0/0 |  |
 | 53_memoryview.py | PASS | pass | 0/0 |  |
 | 49_subprocess.py | PASS | pass | 0/0 |  |
-| 55_operator_mod.py | PASS | pass | 0/0 |  |
-| 54_string_adv.py | PASS | pass | 0/0 |  |
+| 50_csv.py | PASS | pass | 0/0 |  |
 | 52_unittest.py | PASS | pass | 0/0 |  |
 | 51_logging.py | PASS | pass | 0/0 |  |
+| 54_string_adv.py | PASS | pass | 0/0 |  |
+| 55_operator_mod.py | PASS | pass | 0/0 |  |
 | 56_math_adv.py | PASS | pass | 0/0 |  |
 | 58_metaclass.py | CRASH | prog-crash | 0/139 | program segfault/abort (rc=139) |
 | 57_nonlocal_global.py | PASS | pass | 0/0 |  |
 | simple_test.py | PASS | pass | 0/0 |  |
-| test.py | PASS | pass | 0/0 |  |
 | 59_pickle_adv.py | CRASH | prog-crash | 0/139 | program segfault/abort (rc=139) |
+| test.py | PASS | pass | 0/0 |  |
 | 60_comprehensive.py | FAIL | output | 0/26 | wrong value: check 26 failed |
 | 20_advanced.py | TIMEOUT | prog-timeout | 0/124 | program exceeded 60s |
 

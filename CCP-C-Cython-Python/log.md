@@ -1714,3 +1714,32 @@ sub-features. Ordered by payoff the intended sequence is
   `list(d.keys()) == [1, 2]`, `list(od.keys()) == ['c', 'a', 'b']` all correct.
   Suite held at **103/112, 0 compiler crashes** (dict views are a prerequisite
   for 24_collections / 46_weakref, they do not flip a test on their own).
+
+## e93 — `sorted()` over dict views + reversed dict sorts
+
+`list(d.keys())` worked, but `sorted(d.keys())`, `sorted(d.values())` and any
+dict sort with `reverse=True` were still unusable (`sorted_r(...)` on a view
+trap'd at runtime, and the temp was typed as an int list so it printed
+pointers).
+
+Three gaps, all "the dict name is read from `children[0]->value`, which is
+`"COMPLEX"` when the source is a view":
+
+* `cg_dsort_et` (new): element type of a dict-sorted node — 2 for `char*`,
+  1 for `double`, 0 for `int` — resolving through `keys()`/`values()`.
+  Used by `cg_sl_fill` (target list registration) and `cg_pk` (print repr).
+* `cg_dict_sort_emit`: the copy loop named the bare dict (`d[_dsk]`); dicts
+  live in `d_k`/`d_v`/`d_n`, so `sorted(d)` read past the end of nothing and
+  SEGV'd.  The source array is now built as `<name>_k` / `<name>_v` and the
+  count as `<name>_n` in `sary`/`scnt`.
+* `sorted(d, reverse=True)` / `sorted(d.keys(), reverse=True)`: `cg_sl_isdictsorted`,
+  `cg_dsort_et` and `cg_dict_sort_emit` now accept `sorted_r` (the desugared
+  descending form) and the insertion-sort comparison flips to `<`.  The
+  statement emitter also suppresses the bogus `xs = sorted_r(...)` fallback
+  for dict sources.
+
+New statements in the monolith use `if (x) { a; b; }` blocks, never the comma
+operator: drygon's own front end rejects `a = 1, b++;` with
+`direct_compiler: expected kind=10 got kind=11`.
+
+Suite after install: 112 total / 103 pass / 0 compiler crashes (unchanged).
