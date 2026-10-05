@@ -1,0 +1,4 @@
+
+# Local Wi-Fi credentials for the ESP32 sketch -- never commit these
+wifi_secrets.h
+esp32_rpsmn_sntnl/wifi_secrets.h

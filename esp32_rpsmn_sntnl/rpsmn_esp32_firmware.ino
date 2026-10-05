@@ -16,9 +16,32 @@
 #include <WiFiUdp.h>
 #include "poly_binary_esp32.h"
 
-/* Wi-Fi Configuration: Set your LAN credentials or leave empty for Auto-AP */
-const char* WIFI_SSID = "YOUR_WIFI_SSID";
-const char* WIFI_PASS = "YOUR_WIFI_PASSWORD";
+/*
+ * Wi-Fi Configuration
+ * -------------------
+ * Credentials are NEVER committed to this repository. To join a LAN in
+ * Station mode, create `wifi_secrets.h` beside this sketch (it is gitignored;
+ * `wifi_secrets.h.example` shows the shape):
+ *
+ *     #define WIFI_SSID "my-network"
+ *     #define WIFI_PASS "my-password"
+ *
+ * With no such header the placeholders below apply, the guard below skips
+ * Station mode, and the node stands up its own Sovereign AP -- so a fresh
+ * clone can neither broadcast a password nor dial out with someone else's.
+ */
+#if defined(__has_include)
+#  if __has_include("wifi_secrets.h")
+#    include "wifi_secrets.h"
+#  endif
+#endif
+
+#ifndef WIFI_SSID
+#  define WIFI_SSID "YOUR_WIFI_SSID"
+#endif
+#ifndef WIFI_PASS
+#  define WIFI_PASS "YOUR_WIFI_PASSWORD"
+#endif
 
 /* Sntnl Mesh Network Configuration */
 const unsigned int SNTNL_UDP_PORT   = 9876;
