@@ -1,0 +1,26 @@
+/* =========================================================================
+ *  mesh_token.h.example
+ *  =========================================================================
+ *  Copy to `mesh_token.h` in this same directory and set it to a long random
+ *  string -- the same one on every node you want to be able to command.
+ *
+ *      cp mesh_token.h.example mesh_token.h
+ *      printf '#define SNTNL_MESH_TOKEN "%s"\n' "$(head -c 32 /dev/urandom | xxd -p)" \
+ *          > mesh_token.h
+ *
+ *  `mesh_token.h` is gitignored and must never be committed.  With it absent
+ *  this node has NO token, and a node with no token refuses every privileged
+ *  verb outright -- it does not fall open.
+ *
+ *  What the token buys you: a DRYGON frame asks this node to run the drygon
+ *  compiler.  Every other verb (PING, LED, STATE, REPORT, ACK) is bounded --
+ *  it can only set a light, a label or a reply, so anyone who reaches the mesh
+ *  may use them.  DRYGON runs a compiler, so it must prove it knows this string
+ *  first.  The tag is HMAC-SHA256 over the whole frame, truncated to 64 bits
+ *  because the deep payload has room for 126 bytes and no more.
+ *
+ *  Treat this like a password: it is one.  Rotating it means re-flashing every
+ *  node that should keep accepting DRYGON.
+ * ========================================================================= */
+
+#define SNTNL_MESH_TOKEN "replace-me-with-32-random-bytes"
