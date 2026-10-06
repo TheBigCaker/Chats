@@ -172,10 +172,9 @@ vertical-align: middle;
 </head>
 <body>
 <h1 id="drygon-completeness-report">drygon completeness report</h1>
-<p>Generated: Sat Oct 3 23:25:39 PDT 2026 Binary:
-/data/data/com.termux/files/home/CCP-C-Cython-Python/drygon/drygon.elf
+<p>Generated: Tue Oct 6 08:03:42 PDT 2026 Binary: drygon/drygon.elf
 (sha256
-d908e24b6eb76da9d606a6addb2c5eeec4c3ef49363c12824b0874f6866945af)
+d64cc98f0f9f4d8a8cf5a25ee3db668baab8ee623933f282fe9eb7f7c39869e5)
 Method: each case compiled to a named .elf (no .ros cache), then run
 separately; compile failures and program failures are counted
 separately. Features: parallel execution (8 jobs), incremental caching,
@@ -199,11 +198,11 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 </tr>
 <tr>
 <td>Pass (correct stdout/exit)</td>
-<td>103 (91%)</td>
+<td>112 (100%)</td>
 </tr>
 <tr>
 <td>Fail (wrong value)</td>
-<td>4</td>
+<td>0</td>
 </tr>
 <tr>
 <td>Crash (compiler)</td>
@@ -211,11 +210,11 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 </tr>
 <tr>
 <td>Crash (program)</td>
-<td>4</td>
+<td>0</td>
 </tr>
 <tr>
 <td>Timeout (program)</td>
-<td>1</td>
+<td>0</td>
 </tr>
 <tr>
 <td>C99</td>
@@ -223,7 +222,7 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 </tr>
 <tr>
 <td>Python</td>
-<td>54 / 63 (85%)</td>
+<td>63 / 63 (100%)</td>
 </tr>
 </tbody>
 </table>
@@ -269,17 +268,17 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 </tr>
 <tr>
 <td>Program crash</td>
-<td>4</td>
+<td>0</td>
 <td>Compiled ok; program segfaulted</td>
 </tr>
 <tr>
 <td>Program timeout</td>
-<td>1</td>
+<td>0</td>
 <td>Compiled ok; program hung</td>
 </tr>
 <tr>
 <td>Output</td>
-<td>4</td>
+<td>0</td>
 <td>Compiled+ran; wrong value (check N failed)</td>
 </tr>
 </tbody>
@@ -297,6 +296,13 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 </thead>
 <tbody>
 <tr>
+<td>02_operators.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
 <td>01_types.c</td>
 <td>PASS</td>
 <td>pass</td>
@@ -311,21 +317,7 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>02_operators.c</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
 <td>06_stdio.c</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
-<td>07_string.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -339,7 +331,7 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>05_preprocessor.c</td>
+<td>07_string.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -347,6 +339,13 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 </tr>
 <tr>
 <td>03_control_flow.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>05_preprocessor.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -374,7 +373,7 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>13_enums.c</td>
+<td>14_storage.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -388,14 +387,14 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>16_casts.c</td>
+<td>13_enums.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
 <td></td>
 </tr>
 <tr>
-<td>14_storage.c</td>
+<td>16_casts.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -437,14 +436,7 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>24_stdint.c</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
-<td>22_math.c</td>
+<td>23_limits.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -458,7 +450,14 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>23_limits.c</td>
+<td>24_stdint.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>22_math.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -479,21 +478,7 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>30_signal.c</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
-<td>32_assert.c</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
-<td>31_errno.c</td>
+<td>27_stdio_adv.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -507,14 +492,28 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>33_time.c</td>
+<td>30_signal.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
 <td></td>
 </tr>
 <tr>
-<td>27_stdio_adv.c</td>
+<td>31_errno.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>32_assert.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>33_time.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -549,14 +548,14 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>39_compound_lit.c</td>
+<td>38_variadic.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
 <td></td>
 </tr>
 <tr>
-<td>38_variadic.c</td>
+<td>39_compound_lit.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -577,21 +576,14 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>42_wchar.c</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
-<td>43_inttypes.c</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
 <td>44_iso646.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>42_wchar.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -605,14 +597,14 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>47_ub_edge.c</td>
+<td>43_inttypes.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
 <td></td>
 </tr>
 <tr>
-<td>48_digraphs.c</td>
+<td>47_ub_edge.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -626,7 +618,7 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>50_conversion.c</td>
+<td>48_digraphs.c</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -639,17 +631,17 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td>0/0</td>
 <td></td>
 </tr>
+<tr>
+<td>50_conversion.c</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h2 id="python-tests">Python tests</h2>
-<table style="width:100%;">
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 22%" />
-<col style="width: 19%" />
-<col style="width: 17%" />
-<col style="width: 22%" />
-</colgroup>
+<table>
 <thead>
 <tr>
 <th>Test</th>
@@ -660,6 +652,13 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>05_dict.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
 <tr>
 <td>01_int.py</td>
 <td>PASS</td>
@@ -675,13 +674,6 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>04_list.py</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
 <td>03_str.py</td>
 <td>PASS</td>
 <td>pass</td>
@@ -689,7 +681,14 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>05_dict.py</td>
+<td>06_tuple.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>04_list.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -697,13 +696,6 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 </tr>
 <tr>
 <td>07_set.py</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
-<td>06_tuple.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -724,14 +716,7 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>10_control.py</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
-<td>15_comprehensions.py</td>
+<td>14_methods.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -745,7 +730,21 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>14_methods.py</td>
+<td>12_classes.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>10_control.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>15_comprehensions.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -773,7 +772,14 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>12_classes.py</td>
+<td>20_advanced.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>21_os.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -794,14 +800,21 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>21_os.py</td>
+<td>22_sys.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
 <td></td>
 </tr>
 <tr>
-<td>22_sys.py</td>
+<td>23_pathlib.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>24_collections.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -815,21 +828,7 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>24_collections.py</td>
-<td>FAIL</td>
-<td>output</td>
-<td>0/133</td>
-<td>wrong value: check 133 failed</td>
-</tr>
-<tr>
-<td>23_pathlib.py</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
-<td>27_re.py</td>
+<td>29_copy.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -843,21 +842,14 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>29_copy.py</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
-<td>28_datetime.py</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
 <td>30_random.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>27_re.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -878,7 +870,7 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>33_io.py</td>
+<td>28_datetime.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -886,6 +878,13 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 </tr>
 <tr>
 <td>34_abc.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>33_io.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -906,13 +905,6 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>38_typing.py</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
 <td>37_dataclasses.py</td>
 <td>PASS</td>
 <td>pass</td>
@@ -920,7 +912,14 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>41_textwrap.py</td>
+<td>38_typing.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>39_descriptors.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -934,11 +933,11 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>39_descriptors.py</td>
-<td>FAIL</td>
-<td>output</td>
-<td>0/1</td>
-<td>wrong value: check 1 failed</td>
+<td>44_array_mod.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
 </tr>
 <tr>
 <td>43_bisect.py</td>
@@ -955,7 +954,7 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>44_array_mod.py</td>
+<td>41_textwrap.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -963,10 +962,10 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 </tr>
 <tr>
 <td>46_weakref.py</td>
-<td>CRASH</td>
-<td>prog-crash</td>
-<td>0/139</td>
-<td>program segfault/abort (rc=139)</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
 </tr>
 <tr>
 <td>45_threading.py</td>
@@ -976,18 +975,11 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>46_weakref_i.py</td>
-<td>CRASH</td>
-<td>prog-crash</td>
-<td>0/139</td>
-<td>program segfault/abort (rc=139)</td>
-</tr>
-<tr>
 <td>47_contextlib.py</td>
-<td>FAIL</td>
-<td>output</td>
-<td>0/1</td>
-<td>wrong value: check 1 failed</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
 </tr>
 <tr>
 <td>48_enum.py</td>
@@ -997,14 +989,7 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>53_memoryview.py</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
-<td>50_csv.py</td>
+<td>46_weakref_i.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -1018,21 +1003,21 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
+<td>50_csv.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>53_memoryview.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
 <td>49_subprocess.py</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
-<td>51_logging.py</td>
-<td>PASS</td>
-<td>pass</td>
-<td>0/0</td>
-<td></td>
-</tr>
-<tr>
-<td>55_operator_mod.py</td>
 <td>PASS</td>
 <td>pass</td>
 <td>0/0</td>
@@ -1053,11 +1038,32 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
+<td>51_logging.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>55_operator_mod.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
 <td>58_metaclass.py</td>
-<td>CRASH</td>
-<td>prog-crash</td>
-<td>0/139</td>
-<td>program segfault/abort (rc=139)</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
+</tr>
+<tr>
+<td>59_pickle_adv.py</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
 </tr>
 <tr>
 <td>simple_test.py</td>
@@ -1074,18 +1080,11 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td></td>
 </tr>
 <tr>
-<td>59_pickle_adv.py</td>
-<td>CRASH</td>
-<td>prog-crash</td>
-<td>0/139</td>
-<td>program segfault/abort (rc=139)</td>
-</tr>
-<tr>
 <td>60_comprehensive.py</td>
-<td>FAIL</td>
-<td>output</td>
-<td>0/26</td>
-<td>wrong value: check 26 failed</td>
+<td>PASS</td>
+<td>pass</td>
+<td>0/0</td>
+<td></td>
 </tr>
 <tr>
 <td>test.py</td>
@@ -1093,13 +1092,6 @@ granular timeouts, JSON/JUnit output, resource isolation (unshare).</p>
 <td>pass</td>
 <td>0/0</td>
 <td></td>
-</tr>
-<tr>
-<td>20_advanced.py</td>
-<td>TIMEOUT</td>
-<td>prog-timeout</td>
-<td>0/124</td>
-<td>program exceeded 60s</td>
 </tr>
 </tbody>
 </table>
@@ -1111,9 +1103,9 @@ del, match/case, tuple unpacking, literal method calls, module-attr
 chains</li>
 <li><strong>Compiler crashes</strong> (0) —
 05_preprocessor/11_functions/47_contextlib segfault drygon itself</li>
-<li><strong>Program crashes</strong> (4) — 28_complex, 39_compound_lit,
+<li><strong>Program crashes</strong> (0) — 28_complex, 39_compound_lit,
 22_sys, 51_logging</li>
-<li><strong>Wrong values</strong> (4) — unsigned wrap, INT_MIN literals,
+<li><strong>Wrong values</strong> (0) — unsigned wrap, INT_MIN literals,
 VLA, struct-by-value, digraphs</li>
 <li><strong>Macro expansion</strong> — &amp;&amp; token vanishes in
 macro-argument substitution (32_assert)</li>
