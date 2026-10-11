@@ -1,0 +1,1 @@
+# Dummy module for engine\nclass {project_name.capitalize()}Engine:\n    def __init__(self, *args, **kwargs):\n        pass\n\n

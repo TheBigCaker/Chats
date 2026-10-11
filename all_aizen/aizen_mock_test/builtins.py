@@ -1,0 +1,1 @@
+# Dummy module for builtins\nclass Dummy:\n    def __init__(self, *args, **kwargs):\n        pass\n

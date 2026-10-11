@@ -1,0 +1,1 @@
+# Stub module for aizen_multimodal\nclass VisionFiberEngine:\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass AcousticEngine:\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass MultimodalFiberBundle:\n    def __init__(self, *args, **kwargs):\n        pass\n\n

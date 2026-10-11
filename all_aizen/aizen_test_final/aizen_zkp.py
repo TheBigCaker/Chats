@@ -1,0 +1,1 @@
+# Stub module for aizen_zkp\nclass SovereignZKProver:\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass R1CSCircuit:\n    def __init__(self, *args, **kwargs):\n        pass\n\n

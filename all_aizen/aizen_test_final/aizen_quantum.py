@@ -1,0 +1,1 @@
+# Stub module for aizen_quantum\nclass QuantumCircuit:\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass QuantumAlgorithms:\n    def __init__(self, *args, **kwargs):\n        pass\n\n

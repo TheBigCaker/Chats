@@ -1,0 +1,1 @@
+# Dummy module for controllers.service_controller\nclass {s_name.replace("_":\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass " ").title().replace(" ":\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass "")}Controller:\n    def __init__(self, *args, **kwargs):\n        pass\n\n

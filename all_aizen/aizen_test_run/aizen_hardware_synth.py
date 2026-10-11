@@ -1,0 +1,1 @@
+# Stub module for aizen_hardware_synth\nclass AizenHardwareRTLGenerator:\n    def __init__(self, *args, **kwargs):\n        pass\n\n

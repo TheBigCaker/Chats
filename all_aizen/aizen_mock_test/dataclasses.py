@@ -1,0 +1,1 @@
+# Dummy module for dataclasses\nclass dataclass:\n    def __init__(self, *args, **kwargs):\n        pass\n\n

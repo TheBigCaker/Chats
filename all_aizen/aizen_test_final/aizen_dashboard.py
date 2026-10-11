@@ -1,0 +1,1 @@
+# Stub module for aizen_dashboard\nclass AizenDashboardServer:\n    def __init__(self, *args, **kwargs):\n        pass\n\n

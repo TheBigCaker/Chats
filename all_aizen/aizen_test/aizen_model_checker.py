@@ -1,0 +1,1 @@
+# Stub module for aizen_model_checker\nclass FormalModelChecker:\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass StateTransitionSystem:\n    def __init__(self, *args, **kwargs):\n        pass\n\n

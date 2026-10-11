@@ -1,0 +1,1 @@
+# Stub module for aizen_tda\nclass PersistentHomologyEngine:\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass VietorisRipsFiltration:\n    def __init__(self, *args, **kwargs):\n        pass\n\n

@@ -1,0 +1,1 @@
+# Dummy module for aizen_regulatory\nclass ComplianceAuditor:\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass RegulatoryKnowledgebase:\n    def __init__(self, *args, **kwargs):\n        pass\n\n

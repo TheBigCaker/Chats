@@ -1,0 +1,1 @@
+# Dummy module for aizen_pde_sim\nclass D2Q9LatticeBoltzmann:\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass ThermalPDESolver:\n    def __init__(self, *args, **kwargs):\n        pass\n\n

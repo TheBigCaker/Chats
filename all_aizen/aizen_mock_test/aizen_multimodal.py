@@ -1,0 +1,1 @@
+# Dummy module for aizen_multimodal\nclass VisionFiberEngine:\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass AcousticEngine:\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass MultimodalFiberBundle as SovereignMultimodalBundle:\n    def __init__(self, *args, **kwargs):\n        pass\n\n

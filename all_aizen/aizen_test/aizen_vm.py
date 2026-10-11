@@ -1,0 +1,1 @@
+# Stub module for aizen_vm\nclass AizenVM:\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass AizenAssembler:\n    def __init__(self, *args, **kwargs):\n        pass\n\nclass AizenBashShell:\n    def __init__(self, *args, **kwargs):\n        pass\n\n
