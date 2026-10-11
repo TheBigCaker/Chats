@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "GPRP",
+  "BACKENDS": ["ARM","RISCV"],
+  "INDEX": {
+    "GPRPair": {"ARM": "GPRPair"},
+    "GPRPairnosp": {"ARM": "GPRPairnosp"},
+    "GPRPair": {"RISCV": "GPRPair"},
+    "GPRPairNoX0": {"RISCV": "GPRPairNoX0"},
+    "GPRPairC": {"RISCV": "GPRPairC"}
+  },
+  "INPUTS": {
+    "GPRPair": {"ARM": []},
+    "GPRPairnosp": {"ARM": []},
+    "GPRPair": {"RISCV": []},
+    "GPRPairNoX0": {"RISCV": []},
+    "GPRPairC": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "GPRPair": {"ARM": []},
+    "GPRPairnosp": {"ARM": []},
+    "GPRPair": {"RISCV": []},
+    "GPRPairNoX0": {"RISCV": []},
+    "GPRPairC": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "GPRPair": {"ARM": ["RegisterClass","64"]},
+    "GPRPairnosp": {"ARM": ["RegisterClass","64"]},
+    "GPRPair": {"RISCV": ["RISCVRegisterClass","64"]},
+    "GPRPairNoX0": {"RISCV": ["RISCVRegisterClass","64"]},
+    "GPRPairC": {"RISCV": ["RISCVRegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "GPRPair": {"ARM": ["RegisterClass","64"]},
+    "GPRPairnosp": {"ARM": ["RegisterClass","64"]},
+    "GPRPair": {"RISCV": ["RISCVRegisterClass","64"]},
+    "GPRPairNoX0": {"RISCV": ["RISCVRegisterClass","64"]},
+    "GPRPairC": {"RISCV": ["RISCVRegisterClass","64"]}
+  }
+}

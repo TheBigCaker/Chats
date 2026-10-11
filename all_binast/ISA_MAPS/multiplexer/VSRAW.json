@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSRAW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSRAW": {"PowerPC": "VSRAW"}
+  },
+  "INPUTS": {
+    "VSRAW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSRAW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSRAW": {"PowerPC": ["VX1_Int_Ty","900"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSRAW": {"PowerPC": ["VX1_Int_Ty","900"]}
+  }
+}

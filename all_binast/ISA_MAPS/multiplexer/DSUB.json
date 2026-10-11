@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "DSUB",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "DSUBu": {"Mips": "DSUBu"},
+    "DSUB": {"Mips": "DSUB"}
+  },
+  "INPUTS": {
+    "DSUBu": {"Mips": [["RO:$rs",0],["RO:$rt",0]]},
+    "DSUB": {"Mips": [["RO:$rs",0],["RO:$rt",0]]}
+  },
+  "OUTPUTS": {
+    "DSUBu": {"Mips": [["RO:$rd",0]]},
+    "DSUB": {"Mips": [["RO:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "DSUBu": {"Mips": ["ArithLogicR","0"]},
+    "DSUB": {"Mips": ["ArithLogicR","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "DSUBu": {"Mips": ["ArithLogicR","0"]},
+    "DSUB": {"Mips": ["ArithLogicR","0"]}
+  }
+}

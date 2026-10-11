@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "ZERO",
+  "BACKENDS": ["Mips","PowerPC","AMDGPU"],
+  "INDEX": {
+    "ZERO": {"Mips": "ZERO"},
+    "ZERO_64": {"Mips": "ZERO_64"},
+    "ZERO": {"PowerPC": "ZERO"},
+    "ZERO": {"AMDGPU": "ZERO"}
+  },
+  "INPUTS": {
+    "ZERO": {"Mips": []},
+    "ZERO_64": {"Mips": []},
+    "ZERO": {"PowerPC": []},
+    "ZERO": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "ZERO": {"Mips": []},
+    "ZERO_64": {"Mips": []},
+    "ZERO": {"PowerPC": []},
+    "ZERO": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "ZERO": {"Mips": ["MipsGPRReg","0"]},
+    "ZERO_64": {"Mips": ["Mips64GPRReg","0"]},
+    "ZERO": {"PowerPC": ["GPR","0"]},
+    "ZERO": {"AMDGPU": ["R600Reg","248"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZERO": {"Mips": ["MipsGPRReg","0"]},
+    "ZERO_64": {"Mips": ["Mips64GPRReg","0"]},
+    "ZERO": {"PowerPC": ["GPR","0"]},
+    "ZERO": {"AMDGPU": ["R600Reg","248"]}
+  }
+}

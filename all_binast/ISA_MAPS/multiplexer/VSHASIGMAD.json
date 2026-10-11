@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSHASIGMAD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSHASIGMAD": {"PowerPC": "VSHASIGMAD"}
+  },
+  "INPUTS": {
+    "VSHASIGMAD": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSHASIGMAD": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSHASIGMAD": {"PowerPC": ["VXCR_Int_Ty","1730"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSHASIGMAD": {"PowerPC": ["VXCR_Int_Ty","1730"]}
+  }
+}

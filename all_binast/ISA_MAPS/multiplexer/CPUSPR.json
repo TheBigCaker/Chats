@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CPUSPR",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "CPUSPReg": {"Mips": "CPUSPReg"}
+  },
+  "INPUTS": {
+    "CPUSPReg": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "CPUSPReg": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "CPUSPReg": {"Mips": ["RegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "CPUSPReg": {"Mips": ["RegisterClass","32"]}
+  }
+}

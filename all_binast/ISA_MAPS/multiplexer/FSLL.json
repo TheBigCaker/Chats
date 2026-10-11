@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FSLL",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FSLL16": {"Sparc": "FSLL16"},
+    "FSLL32": {"Sparc": "FSLL32"}
+  },
+  "INPUTS": {
+    "FSLL16": {"Sparc": []},
+    "FSLL32": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FSLL16": {"Sparc": []},
+    "FSLL32": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FSLL16": {"Sparc": ["VISInst","0b000100001"]},
+    "FSLL32": {"Sparc": ["VISInst","0b000100101"]}
+  },
+  "OUTPUT_BYTES": {
+    "FSLL16": {"Sparc": ["VISInst","0b000100001"]},
+    "FSLL32": {"Sparc": ["VISInst","0b000100101"]}
+  }
+}

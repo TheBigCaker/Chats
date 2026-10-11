@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FSRA",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FSRA16": {"Sparc": "FSRA16"},
+    "FSRA32": {"Sparc": "FSRA32"}
+  },
+  "INPUTS": {
+    "FSRA16": {"Sparc": []},
+    "FSRA32": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FSRA16": {"Sparc": []},
+    "FSRA32": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FSRA16": {"Sparc": ["VISInst","0b000101011"]},
+    "FSRA32": {"Sparc": ["VISInst","0b000101111"]}
+  },
+  "OUTPUT_BYTES": {
+    "FSRA16": {"Sparc": ["VISInst","0b000101011"]},
+    "FSRA32": {"Sparc": ["VISInst","0b000101111"]}
+  }
+}

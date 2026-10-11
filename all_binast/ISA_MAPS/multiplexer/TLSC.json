@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "TLSC",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "TLSCall_32": {"X86": "TLSCall_32"},
+    "TLSCall_64": {"X86": "TLSCall_64"}
+  },
+  "INPUTS": {
+    "TLSCall_32": {"X86": [["i32mem",0]]},
+    "TLSCall_64": {"X86": [["i64mem",0]]}
+  },
+  "OUTPUTS": {
+    "TLSCall_32": {"X86": []},
+    "TLSCall_64": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "TLSCall_32": {"X86": ["0"]},
+    "TLSCall_64": {"X86": ["0"]}
+  },
+  "OUTPUT_BYTES": {
+    "TLSCall_32": {"X86": ["0"]},
+    "TLSCall_64": {"X86": ["0"]}
+  }
+}

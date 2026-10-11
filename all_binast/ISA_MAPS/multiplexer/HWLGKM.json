@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HWLGKM",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "HWLGKM": {"AMDGPU": "HWLGKM"}
+  },
+  "INPUTS": {
+    "HWLGKM": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "HWLGKM": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "HWLGKM": {"AMDGPU": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "HWLGKM": {"AMDGPU": ["ProcResource","1"]}
+  }
+}

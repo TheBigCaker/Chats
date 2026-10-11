@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FLCMPD",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FLCMPD": {"Sparc": "FLCMPD"}
+  },
+  "INPUTS": {
+    "FLCMPD": {"Sparc": [["DFPRegs",0],["DFPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FLCMPD": {"Sparc": [["FCCRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FLCMPD": {"Sparc": ["VISInstFormat","0b101010010"]}
+  },
+  "OUTPUT_BYTES": {
+    "FLCMPD": {"Sparc": ["VISInstFormat","0b101010010"]}
+  }
+}

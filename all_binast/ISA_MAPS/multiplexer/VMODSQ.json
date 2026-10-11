@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMODSQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMODSQ": {"PowerPC": "VMODSQ"}
+  },
+  "INPUTS": {
+    "VMODSQ": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMODSQ": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMODSQ": {"PowerPC": ["VXForm_1","1803"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMODSQ": {"PowerPC": ["VXForm_1","1803"]}
+  }
+}

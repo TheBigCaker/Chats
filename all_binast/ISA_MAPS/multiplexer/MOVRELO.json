@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVRELO",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "MOVRELOffset": {"AMDGPU": "MOVRELOffset"}
+  },
+  "INPUTS": {
+    "MOVRELOffset": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "MOVRELOffset": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "MOVRELOffset": {"AMDGPU": ["ComplexPattern","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVRELOffset": {"AMDGPU": ["ComplexPattern","2"]}
+  }
+}

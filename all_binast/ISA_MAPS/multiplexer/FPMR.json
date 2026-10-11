@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FPMR",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "FPMR": {"AArch64": "FPMR"}
+  },
+  "INPUTS": {
+    "FPMR": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "FPMR": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "FPMR": {"AArch64": ["AArch64Reg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPMR": {"AArch64": ["AArch64Reg","0"]}
+  }
+}

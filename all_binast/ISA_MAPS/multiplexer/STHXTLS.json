@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "STHXTLS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STHXTLS": {"PowerPC": "STHXTLS"},
+    "STHXTLS_32": {"PowerPC": "STHXTLS_32"},
+    "STHXTLS_": {"PowerPC": "STHXTLS_"}
+  },
+  "INPUTS": {
+    "STHXTLS": {"PowerPC": [["g8rc",0],["ptr_rc_nor0",0],["tlsreg",0]]},
+    "STHXTLS_32": {"PowerPC": [["gprc",0],["ptr_rc_nor0",0],["tlsreg",0]]},
+    "STHXTLS_": {"PowerPC": [["g8rc",0],["ptr_rc_nor0",0],["tlsreg",0]]}
+  },
+  "OUTPUTS": {
+    "STHXTLS": {"PowerPC": []},
+    "STHXTLS_32": {"PowerPC": []},
+    "STHXTLS_": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STHXTLS": {"PowerPC": ["XForm_8","31","407"]},
+    "STHXTLS_32": {"PowerPC": ["XForm_8","31","407"]},
+    "STHXTLS_": {"PowerPC": ["XForm_8","31","407"]}
+  },
+  "OUTPUT_BYTES": {
+    "STHXTLS": {"PowerPC": ["XForm_8","31","407"]},
+    "STHXTLS_32": {"PowerPC": ["XForm_8","31","407"]},
+    "STHXTLS_": {"PowerPC": ["XForm_8","31","407"]}
+  }
+}

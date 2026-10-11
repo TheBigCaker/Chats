@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RSM",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "RSM": {"X86": "RSM"}
+  },
+  "INPUTS": {
+    "RSM": {"X86": []}
+  },
+  "OUTPUTS": {
+    "RSM": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "RSM": {"X86": ["0xAA"]}
+  },
+  "OUTPUT_BYTES": {
+    "RSM": {"X86": ["0xAA"]}
+  }
+}

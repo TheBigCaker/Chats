@@ -1,0 +1,59 @@
+{
+  "CATEGORY": "THXT",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "THXT8XUnitALU": {"AArch64": "THXT8XUnitALU"},
+    "THXT8XUnitMAC": {"AArch64": "THXT8XUnitMAC"},
+    "THXT8XUnitDiv": {"AArch64": "THXT8XUnitDiv"},
+    "THXT8XUnitLdSt": {"AArch64": "THXT8XUnitLdSt"},
+    "THXT8XUnitBr": {"AArch64": "THXT8XUnitBr"},
+    "THXT8XUnitFPALU": {"AArch64": "THXT8XUnitFPALU"},
+    "THXT8XUnitFPMDS": {"AArch64": "THXT8XUnitFPMDS"},
+    "THXT8XReadShifted": {"AArch64": "THXT8XReadShifted"},
+    "THXT8XReadNotShifted": {"AArch64": "THXT8XReadNotShifted"}
+  },
+  "INPUTS": {
+    "THXT8XUnitALU": {"AArch64": []},
+    "THXT8XUnitMAC": {"AArch64": []},
+    "THXT8XUnitDiv": {"AArch64": []},
+    "THXT8XUnitLdSt": {"AArch64": []},
+    "THXT8XUnitBr": {"AArch64": []},
+    "THXT8XUnitFPALU": {"AArch64": []},
+    "THXT8XUnitFPMDS": {"AArch64": []},
+    "THXT8XReadShifted": {"AArch64": []},
+    "THXT8XReadNotShifted": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "THXT8XUnitALU": {"AArch64": []},
+    "THXT8XUnitMAC": {"AArch64": []},
+    "THXT8XUnitDiv": {"AArch64": []},
+    "THXT8XUnitLdSt": {"AArch64": []},
+    "THXT8XUnitBr": {"AArch64": []},
+    "THXT8XUnitFPALU": {"AArch64": []},
+    "THXT8XUnitFPMDS": {"AArch64": []},
+    "THXT8XReadShifted": {"AArch64": []},
+    "THXT8XReadNotShifted": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "THXT8XUnitALU": {"AArch64": ["ProcResource","2"]},
+    "THXT8XUnitMAC": {"AArch64": ["ProcResource","1"]},
+    "THXT8XUnitDiv": {"AArch64": ["ProcResource","1"]},
+    "THXT8XUnitLdSt": {"AArch64": ["ProcResource","1"]},
+    "THXT8XUnitBr": {"AArch64": ["ProcResource","1"]},
+    "THXT8XUnitFPALU": {"AArch64": ["ProcResource","1"]},
+    "THXT8XUnitFPMDS": {"AArch64": ["ProcResource","1"]},
+    "THXT8XReadShifted": {"AArch64": ["SchedReadAdvance","1"]},
+    "THXT8XReadNotShifted": {"AArch64": ["SchedReadAdvance","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "THXT8XUnitALU": {"AArch64": ["ProcResource","2"]},
+    "THXT8XUnitMAC": {"AArch64": ["ProcResource","1"]},
+    "THXT8XUnitDiv": {"AArch64": ["ProcResource","1"]},
+    "THXT8XUnitLdSt": {"AArch64": ["ProcResource","1"]},
+    "THXT8XUnitBr": {"AArch64": ["ProcResource","1"]},
+    "THXT8XUnitFPALU": {"AArch64": ["ProcResource","1"]},
+    "THXT8XUnitFPMDS": {"AArch64": ["ProcResource","1"]},
+    "THXT8XReadShifted": {"AArch64": ["SchedReadAdvance","1"]},
+    "THXT8XReadNotShifted": {"AArch64": ["SchedReadAdvance","2"]}
+  }
+}

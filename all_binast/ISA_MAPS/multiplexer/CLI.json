@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CLI",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CLI": {"X86": "CLI"}
+  },
+  "INPUTS": {
+    "CLI": {"X86": []}
+  },
+  "OUTPUTS": {
+    "CLI": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CLI": {"X86": ["0xFA"]}
+  },
+  "OUTPUT_BYTES": {
+    "CLI": {"X86": ["0xFA"]}
+  }
+}

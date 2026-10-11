@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SMRDI",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SMRDImm": {"AMDGPU": "SMRDImm"},
+    "SMRDImm32": {"AMDGPU": "SMRDImm32"}
+  },
+  "INPUTS": {
+    "SMRDImm": {"AMDGPU": []},
+    "SMRDImm32": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SMRDImm": {"AMDGPU": []},
+    "SMRDImm32": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SMRDImm": {"AMDGPU": ["ComplexPattern","2"]},
+    "SMRDImm32": {"AMDGPU": ["ComplexPattern","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMRDImm": {"AMDGPU": ["ComplexPattern","2"]},
+    "SMRDImm32": {"AMDGPU": ["ComplexPattern","2"]}
+  }
+}

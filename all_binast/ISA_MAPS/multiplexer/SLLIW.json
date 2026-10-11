@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SLLIW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SLLIW": {"RISCV": "SLLIW"}
+  },
+  "INPUTS": {
+    "SLLIW": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SLLIW": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SLLIW": {"RISCV": ["ShiftW_ri","0b0000000","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "SLLIW": {"RISCV": ["ShiftW_ri","0b0000000","0b001"]}
+  }
+}

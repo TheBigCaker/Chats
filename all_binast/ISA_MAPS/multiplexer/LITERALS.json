@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LITERALS",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "LITERALS": {"AMDGPU": "LITERALS"}
+  },
+  "INPUTS": {
+    "LITERALS": {"AMDGPU": [["LITERAL",0],["LITERAL",0]]}
+  },
+  "OUTPUTS": {
+    "LITERALS": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "LITERALS": {"AMDGPU": ["R600WrapperInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "LITERALS": {"AMDGPU": ["R600WrapperInst"]}
+  }
+}

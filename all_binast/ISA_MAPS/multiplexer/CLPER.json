@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "CLPER",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "CLPER_OLD.i32": {"Mali": "CLPER_OLD.i32"},
+    "CLPER.i32": {"Mali": "CLPER.i32"},
+    "CLPER.i32": {"Mali": "CLPER.i32"}
+  },
+  "INPUTS": {
+    "CLPER_OLD.i32": {"Mali": [["R32",32],["R32",32]]},
+    "CLPER.i32": {"Mali": [["R32",32],["R32",32]]},
+    "CLPER.i32": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "CLPER_OLD.i32": {"Mali": [["R",32]]},
+    "CLPER.i32": {"Mali": [["R",32]]},
+    "CLPER.i32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "CLPER_OLD.i32": {"Mali": ["Bifrost_add","0x3f0c0","0xfffc0"]},
+    "CLPER.i32": {"Mali": ["Bifrost_add","0x7c000","0xfc000"]},
+    "CLPER.i32": {"Mali": ["Valhall_SFU"]}
+  },
+  "OUTPUT_BYTES": {
+    "CLPER_OLD.i32": {"Mali": ["Bifrost_add","0x3f0c0","0xfffc0"]},
+    "CLPER.i32": {"Mali": ["Bifrost_add","0x7c000","0xfc000"]},
+    "CLPER.i32": {"Mali": ["Valhall_SFU"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVRESP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVRESP": {"PowerPC": "XVRESP"}
+  },
+  "INPUTS": {
+    "XVRESP": {"PowerPC": [["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVRESP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVRESP": {"PowerPC": ["XX2Form","60","154"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVRESP": {"PowerPC": ["XX2Form","60","154"]}
+  }
+}

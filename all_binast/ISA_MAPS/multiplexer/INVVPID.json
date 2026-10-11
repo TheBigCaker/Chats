@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "INVVPID",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "INVVPID32": {"X86": "INVVPID32"},
+    "INVVPID64": {"X86": "INVVPID64"},
+    "INVVPID64_EVEX": {"X86": "INVVPID64_EVEX"}
+  },
+  "INPUTS": {
+    "INVVPID32": {"X86": [["GR32",32],["i128mem",0]]},
+    "INVVPID64": {"X86": [["GR64",64],["i128mem",0]]},
+    "INVVPID64_EVEX": {"X86": [["GR64",64],["i128mem",0]]}
+  },
+  "OUTPUTS": {
+    "INVVPID32": {"X86": []},
+    "INVVPID64": {"X86": []},
+    "INVVPID64_EVEX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "INVVPID32": {"X86": ["0x81"]},
+    "INVVPID64": {"X86": ["0x81"]},
+    "INVVPID64_EVEX": {"X86": ["0xF1"]}
+  },
+  "OUTPUT_BYTES": {
+    "INVVPID32": {"X86": ["0x81"]},
+    "INVVPID64": {"X86": ["0x81"]},
+    "INVVPID64_EVEX": {"X86": ["0xF1"]}
+  }
+}

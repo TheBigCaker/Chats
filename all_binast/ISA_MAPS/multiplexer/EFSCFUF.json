@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFSCFUF",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFSCFUF": {"PowerPC": "EFSCFUF"}
+  },
+  "INPUTS": {
+    "EFSCFUF": {"PowerPC": [["spe4rc",0]]}
+  },
+  "OUTPUTS": {
+    "EFSCFUF": {"PowerPC": [["spe4rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFSCFUF": {"PowerPC": ["EFXForm_2a","722"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFSCFUF": {"PowerPC": ["EFXForm_2a","722"]}
+  }
+}

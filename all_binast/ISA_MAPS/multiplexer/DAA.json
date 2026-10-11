@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DAA",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "DAA": {"X86": "DAA"}
+  },
+  "INPUTS": {
+    "DAA": {"X86": []}
+  },
+  "OUTPUTS": {
+    "DAA": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "DAA": {"X86": ["0x27"]}
+  },
+  "OUTPUT_BYTES": {
+    "DAA": {"X86": ["0x27"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMRESUME",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMRESUME": {"X86": "VMRESUME"}
+  },
+  "INPUTS": {
+    "VMRESUME": {"X86": []}
+  },
+  "OUTPUTS": {
+    "VMRESUME": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMRESUME": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMRESUME": {"X86": ["0x01"]}
+  }
+}

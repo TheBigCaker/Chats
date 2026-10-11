@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LDREXH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "LDREXH": {"ARM": "LDREXH"}
+  },
+  "INPUTS": {
+    "LDREXH": {"ARM": [["addr_offset_none",0]]}
+  },
+  "OUTPUTS": {
+    "LDREXH": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "LDREXH": {"ARM": ["AIldrex","0b11"]}
+  },
+  "OUTPUT_BYTES": {
+    "LDREXH": {"ARM": ["AIldrex","0b11"]}
+  }
+}

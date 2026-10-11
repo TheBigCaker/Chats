@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "HFENCE",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "HFENCE_VVMA": {"RISCV": "HFENCE_VVMA"},
+    "HFENCE_GVMA": {"RISCV": "HFENCE_GVMA"}
+  },
+  "INPUTS": {
+    "HFENCE_VVMA": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "HFENCE_GVMA": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "HFENCE_VVMA": {"RISCV": []},
+    "HFENCE_GVMA": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "HFENCE_VVMA": {"RISCV": ["Priv_rr","0b0010001"]},
+    "HFENCE_GVMA": {"RISCV": ["Priv_rr","0b0110001"]}
+  },
+  "OUTPUT_BYTES": {
+    "HFENCE_VVMA": {"RISCV": ["Priv_rr","0b0010001"]},
+    "HFENCE_GVMA": {"RISCV": ["Priv_rr","0b0110001"]}
+  }
+}

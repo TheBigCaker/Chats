@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MVES",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MVEShiftImm1_7AsmOperand": {"ARM": "MVEShiftImm1_7AsmOperand"},
+    "MVEShiftImm1_15AsmOperand": {"ARM": "MVEShiftImm1_15AsmOperand"}
+  },
+  "INPUTS": {
+    "MVEShiftImm1_7AsmOperand": {"ARM": []},
+    "MVEShiftImm1_15AsmOperand": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "MVEShiftImm1_7AsmOperand": {"ARM": []},
+    "MVEShiftImm1_15AsmOperand": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "MVEShiftImm1_7AsmOperand": {"ARM": ["ImmAsmOperand","1","7"]},
+    "MVEShiftImm1_15AsmOperand": {"ARM": ["ImmAsmOperand","1","15"]}
+  },
+  "OUTPUT_BYTES": {
+    "MVEShiftImm1_7AsmOperand": {"ARM": ["ImmAsmOperand","1","7"]},
+    "MVEShiftImm1_15AsmOperand": {"ARM": ["ImmAsmOperand","1","15"]}
+  }
+}

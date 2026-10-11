@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STVXL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STVXL": {"PowerPC": "STVXL"}
+  },
+  "INPUTS": {
+    "STVXL": {"PowerPC": [["vrrc",0],["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "STVXL": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STVXL": {"PowerPC": ["XForm_8_memOp","31","487"]}
+  },
+  "OUTPUT_BYTES": {
+    "STVXL": {"PowerPC": ["XForm_8_memOp","31","487"]}
+  }
+}

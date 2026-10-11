@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFPU",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFPUnaryFrm": {"ARM": "VFPUnaryFrm"}
+  },
+  "INPUTS": {
+    "VFPUnaryFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VFPUnaryFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VFPUnaryFrm": {"ARM": ["Format","15"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFPUnaryFrm": {"ARM": ["Format","15"]}
+  }
+}

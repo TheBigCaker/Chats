@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VRGATHEREI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VRGATHEREI16_VV": {"RISCV": "VRGATHEREI16_VV"}
+  },
+  "INPUTS": {
+    "VRGATHEREI16_VV": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VRGATHEREI16_VV": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VRGATHEREI16_VV": {"RISCV": ["VALUVV","0b001110"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRGATHEREI16_VV": {"RISCV": ["VALUVV","0b001110"]}
+  }
+}

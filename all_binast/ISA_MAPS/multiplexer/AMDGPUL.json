@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AMDGPUL",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "AMDGPULoopOp": {"AMDGPU": "AMDGPULoopOp"}
+  },
+  "INPUTS": {
+    "AMDGPULoopOp": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "AMDGPULoopOp": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "AMDGPULoopOp": {"AMDGPU": ["SDTypeProfile","0","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "AMDGPULoopOp": {"AMDGPU": ["SDTypeProfile","0","2"]}
+  }
+}

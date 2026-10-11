@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ADDC",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "ADDC_UINT": {"AMDGPU": "ADDC_UINT"}
+  },
+  "INPUTS": {
+    "ADDC_UINT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "ADDC_UINT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "ADDC_UINT": {"AMDGPU": ["R600_2OP_Helper","0x52"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADDC_UINT": {"AMDGPU": ["R600_2OP_Helper","0x52"]}
+  }
+}

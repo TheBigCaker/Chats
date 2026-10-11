@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AFGR",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "AFGR64": {"Mips": "AFGR64"}
+  },
+  "INPUTS": {
+    "AFGR64": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "AFGR64": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "AFGR64": {"Mips": ["RegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "AFGR64": {"Mips": ["RegisterClass","64"]}
+  }
+}

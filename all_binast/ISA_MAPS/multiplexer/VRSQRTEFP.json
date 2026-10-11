@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VRSQRTEFP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VRSQRTEFP": {"PowerPC": "VRSQRTEFP"}
+  },
+  "INPUTS": {
+    "VRSQRTEFP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VRSQRTEFP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VRSQRTEFP": {"PowerPC": ["VX2_Int_SP","330"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRSQRTEFP": {"PowerPC": ["VX2_Int_SP","330"]}
+  }
+}

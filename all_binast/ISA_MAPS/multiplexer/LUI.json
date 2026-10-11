@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LUI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "LUI": {"RISCV": "LUI"}
+  },
+  "INPUTS": {
+    "LUI": {"RISCV": [["uimm20_lui",0]]}
+  },
+  "OUTPUTS": {
+    "LUI": {"RISCV": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "LUI": {"RISCV": ["RVInstU"]}
+  },
+  "OUTPUT_BYTES": {
+    "LUI": {"RISCV": ["RVInstU"]}
+  }
+}

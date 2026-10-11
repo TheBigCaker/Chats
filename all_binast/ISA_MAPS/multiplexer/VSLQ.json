@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSLQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSLQ": {"PowerPC": "VSLQ"}
+  },
+  "INPUTS": {
+    "VSLQ": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSLQ": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSLQ": {"PowerPC": ["VX1_VT5_VA5_VB5","261"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSLQ": {"PowerPC": ["VX1_VT5_VA5_VB5","261"]}
+  }
+}

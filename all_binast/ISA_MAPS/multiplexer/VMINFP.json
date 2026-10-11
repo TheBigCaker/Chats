@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMINFP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMINFP": {"PowerPC": "VMINFP"}
+  },
+  "INPUTS": {
+    "VMINFP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMINFP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMINFP": {"PowerPC": ["VX1_Int_Ty","1098"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMINFP": {"PowerPC": ["VX1_Int_Ty","1098"]}
+  }
+}

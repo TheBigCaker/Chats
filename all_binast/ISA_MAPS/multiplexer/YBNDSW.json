@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YBNDSW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YBNDSW": {"RISCV": "YBNDSW"}
+  },
+  "INPUTS": {
+    "YBNDSW": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YBNDSW": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YBNDSW": {"RISCV": ["RVY_rr","0b0011011"]}
+  },
+  "OUTPUT_BYTES": {
+    "YBNDSW": {"RISCV": ["RVY_rr","0b0011011"]}
+  }
+}

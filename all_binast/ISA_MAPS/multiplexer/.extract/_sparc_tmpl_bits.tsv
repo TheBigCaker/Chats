@@ -1,0 +1,67 @@
+Proc	3	Name	list<SubtargetFeature> Features	list<SubtargetFeature> TuneFeatures = []	1	Processor
+ASITag	3	name	alt_name	op	0
+bpr_alias	3	OpcStr	Instruction NAPT	Instruction APT	0
+intcond_mov_alias	7	cond	int condVal	ccreg	Instruction movrr	Instruction movri	Instruction fmovs	Instruction fmovd	0
+fpcond_mov_alias	6	cond	int condVal	Instruction movrr	Instruction movri	Instruction fmovs	Instruction fmovd	0
+regcond_mov_alias	7	rcond	int condVal	Instruction movrrr	Instruction movrri	Instruction fmovrs	Instruction fmovrd	Instruction fmovrq	0
+int_cond_alias	2	cond	int condVal	0
+fp_cond_alias	2	cond	int condVal	0
+cp_cond_alias	2	cond	int condVal	0
+reg_cond_alias	2	rcond	int condVal	0
+cwb_cond_alias	2	cond	int condVal	0
+cxb_cond_alias	2	cond	int condVal	0
+FourOpImm	4	OpcStr	op3val	op5val	RC	1	F3_4
+InstSP	5	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	Instruction	31-30=op
+F2	5	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	InstSP	21-0=imm22	24-22=op2
+F2_1	6	op2Val	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F2	29-25=rd
+F2_2	7	op2Val	annul	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F2	28-25=cond
+F2_3	8	op2Val	annul	pred	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	InstSP	18-0=imm19	28-25=cond	21-20=cc	24-22=op2Val
+F2_4	7	annul	pred	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	InstSP	13-0=imm16	21-20=imm16	18-14=rs1	24-22=0b011	27-25=rcond
+F2_5	6	cc	outs	ins	asmstr	pattern = []	InstrItinClass itin = NoItinerary	1	InstSP	12-5=imm10	4-0=rs2	18-14=rs1	20-19=imm10	24-22=0b011	27-25=cond
+F2_6	6	cc	outs	ins	asmstr	pattern = []	InstrItinClass itin = NoItinerary	1	InstSP	12-5=imm10	4-0=simm5	18-14=rs1	20-19=imm10	24-22=0b011	27-25=cond
+F3	5	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	InstSP	29-25=rd	24-19=op3	18-14=rs1
+F3_1_asi	7	opVal	op3val	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F3	12-5=asi	4-0=rs2
+F3_1_cas_asi	7	opVal	op3val	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F3_1_asi
+F3_1	7	opVal	op3val	outs	ins	asmstr	pattern	InstrItinClass itin = IIC_iu_instr	1	F3_1_asi
+F3_2	7	opVal	op3val	outs	ins	asmstr	pattern	InstrItinClass itin = IIC_iu_instr	1	F3	12-0=simm13
+F3_3	8	opVal	op3val	opfval	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F3	4-0=rs2	13-5=opfval
+F3_3u	8	opVal	op3val	opfval	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F3	4-0=rs2	13-5=opfval
+F3_3c	8	opVal	op3val	opfval	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F3	4-0=rs2	13-5=opfval
+F3_3_siam	8	opVal	op3val	opfval	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F3	2-0=mode	4-3=0	13-5=opfval
+F3_Sr	8	opVal	op3val	xVal	outs	ins	asmstr	pattern	InstrItinClass itin = IIC_iu_instr	1	F3	4-0=rs2
+F3_Si	8	opVal	op3val	xVal	outs	ins	asmstr	pattern	InstrItinClass itin = IIC_iu_instr	1	F3	5-0=shcnt
+F3_S	8	OpcStr	Op3Val	XVal	SDNode OpNode	ValueType VT	SIT	RC	InstrItinClass itin = IIC_iu_instr	0
+F3_4	7	op3val	op5val	outs	ins	asmstr	pattern = []	InstrItinClass itin = NoItinerary	1	F3	8-5=op5	4-0=rs2	13-9=rs3
+F4	6	op3	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	InstSP	29-25=rd	24-19=op3
+F4_1	6	op3	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F4	4-0=rs2	17-14=cond	12-11=cc
+F4_2	6	op3	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F4	17-14=cond	10-0=simm11	12-11=cc
+F4_3	7	op3	opf_low	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F4	10-5=opf_low	4-0=rs2	17-14=cond	12-11=opf_cc
+F4_4r	7	op3	opf_low	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F4	4-0=rs2	18-14=rs1	9-5=opf_low	12-10=rcond
+F4_4i	6	op3	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F4	9-0=simm10	18-14=rs1	12-10=rcond
+TRAPSP	7	op3Val	isimm	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	F3	12-11=cc
+TRAPSPrr	6	op3Val	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	TRAPSP	10-5=0	4-0=rs2
+TRAPSPri	6	op3Val	outs	ins	asmstr	pattern	InstrItinClass itin = NoItinerary	1	TRAPSP	10-8=0	7-0=imm
+AsmPseudoInst	3	outs	ins	asm	1	InstSP
+ShiftAmtImmAsmOperand	1	int Bits	1	AsmOperandClass
+SparcTailRelocSymAsmOperand	1	Kind	1	AsmOperandClass
+ICC_VAL	1	int N	1	PatLeaf
+F3_12np	3	OpcStr	Op3Val	InstrItinClass itin = IIC_iu_instr	0
+Load	6	OpcStr	Op3Val	OpNode	RC	ValueType Ty	InstrItinClass itin = IIC_iu_instr	0
+LoadASI	3	OpcStr	Op3Val	RC	0
+LoadA	7	OpcStr	Op3Val	LoadAOp3Val	OpNode	RC	ValueType Ty	InstrItinClass itin = NoItinerary	1	Load
+Store	6	OpcStr	Op3Val	OpNode	RC	ValueType Ty	InstrItinClass itin = IIC_st	0
+StoreASI	4	OpcStr	Op3Val	RC	InstrItinClass itin = IIC_st	0
+StoreA	6	OpcStr	Op3Val	StoreAOp3Val	OpNode	RC	ValueType Ty	1	Store
+Pseudo	4	outs	ins	asmstr	pattern	1	InstSP
+BranchAlways	3	ins	asmstr	pattern	1	F2_2
+FPBranchSP	3	ins	asmstr	pattern	1	F2_2
+CPBranchSP	3	ins	asmstr	pattern	1	F2_2	29-0=disp
+TRAP	1	regStr	0
+FourOp	4	OpcStr	op3val	op5val	RC	1	F3_4
+VISInstFormat	4	opfval	outs	ins	asmstr	1	F3_3
+PrefetchTag	2	name	op	0
+SparcReg	2	Enc	n	1	Register
+SparcCtrlReg	3	Enc	n	list<string> altNames = []	1	Register
+Ri	2	Enc	n	1	SparcReg
+Rf	2	Enc	n	1	SparcReg
+Rq	3	Enc	n	list<Register> subregs	1	SparcReg

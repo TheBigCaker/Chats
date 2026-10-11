@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVLWHOSX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVLWHOSX": {"PowerPC": "EVLWHOSX"}
+  },
+  "INPUTS": {
+    "EVLWHOSX": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "EVLWHOSX": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVLWHOSX": {"PowerPC": ["EVXForm_1","790"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVLWHOSX": {"PowerPC": ["EVXForm_1","790"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NCLIPRI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "NCLIPRI": {"RISCV": "NCLIPRI"}
+  },
+  "INPUTS": {
+    "NCLIPRI": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "NCLIPRI": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "NCLIPRI": {"RISCV": ["RVPNarrowingShiftW_ri","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "NCLIPRI": {"RISCV": ["RVPNarrowingShiftW_ri","0b111"]}
+  }
+}

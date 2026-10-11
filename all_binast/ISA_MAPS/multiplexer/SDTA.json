@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "SDTA",
+  "BACKENDS": ["NVPTX","AMDGPU"],
+  "INDEX": {
+    "SDTAsyncStoreMbarrierB128": {"NVPTX": "SDTAsyncStoreMbarrierB128"},
+    "SDTAsyncStoreRelease": {"NVPTX": "SDTAsyncStoreRelease"},
+    "SDTAsyncStoreMMIO": {"NVPTX": "SDTAsyncStoreMMIO"},
+    "SDTAtomic2_f32": {"AMDGPU": "SDTAtomic2_f32"}
+  },
+  "INPUTS": {
+    "SDTAsyncStoreMbarrierB128": {"NVPTX": []},
+    "SDTAsyncStoreRelease": {"NVPTX": []},
+    "SDTAsyncStoreMMIO": {"NVPTX": []},
+    "SDTAtomic2_f32": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SDTAsyncStoreMbarrierB128": {"NVPTX": []},
+    "SDTAsyncStoreRelease": {"NVPTX": []},
+    "SDTAsyncStoreMMIO": {"NVPTX": []},
+    "SDTAtomic2_f32": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SDTAsyncStoreMbarrierB128": {"NVPTX": ["SDTypeProfile","0","4"]},
+    "SDTAsyncStoreRelease": {"NVPTX": ["SDTypeProfile","0","3"]},
+    "SDTAsyncStoreMMIO": {"NVPTX": ["SDTypeProfile","0","2"]},
+    "SDTAtomic2_f32": {"AMDGPU": ["SDTypeProfile","1","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTAsyncStoreMbarrierB128": {"NVPTX": ["SDTypeProfile","0","4"]},
+    "SDTAsyncStoreRelease": {"NVPTX": ["SDTypeProfile","0","3"]},
+    "SDTAsyncStoreMMIO": {"NVPTX": ["SDTypeProfile","0","2"]},
+    "SDTAtomic2_f32": {"AMDGPU": ["SDTypeProfile","1","2"]}
+  }
+}

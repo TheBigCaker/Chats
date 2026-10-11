@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LES",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LES16rm": {"X86": "LES16rm"},
+    "LES32rm": {"X86": "LES32rm"}
+  },
+  "INPUTS": {
+    "LES16rm": {"X86": [["opaquemem",0]]},
+    "LES32rm": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "LES16rm": {"X86": [["GR16",16]]},
+    "LES32rm": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "LES16rm": {"X86": ["0xc4"]},
+    "LES32rm": {"X86": ["0xc4"]}
+  },
+  "OUTPUT_BYTES": {
+    "LES16rm": {"X86": ["0xc4"]},
+    "LES32rm": {"X86": ["0xc4"]}
+  }
+}

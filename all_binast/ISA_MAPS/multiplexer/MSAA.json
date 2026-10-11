@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MSAA",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MSAAccess": {"Mips": "MSAAccess"}
+  },
+  "INPUTS": {
+    "MSAAccess": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "MSAAccess": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "MSAAccess": {"Mips": ["MipsReg","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "MSAAccess": {"Mips": ["MipsReg","2"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PSMASH",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PSMASH": {"X86": "PSMASH"}
+  },
+  "INPUTS": {
+    "PSMASH": {"X86": []}
+  },
+  "OUTPUTS": {
+    "PSMASH": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PSMASH": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "PSMASH": {"X86": ["0x01"]}
+  }
+}

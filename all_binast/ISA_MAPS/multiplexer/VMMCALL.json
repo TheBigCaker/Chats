@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMMCALL",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMMCALL": {"X86": "VMMCALL"}
+  },
+  "INPUTS": {
+    "VMMCALL": {"X86": []}
+  },
+  "OUTPUTS": {
+    "VMMCALL": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMMCALL": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMMCALL": {"X86": ["0x01"]}
+  }
+}

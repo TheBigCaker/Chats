@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVMWLUMIA",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVMWLUMIA": {"PowerPC": "EVMWLUMIA"}
+  },
+  "INPUTS": {
+    "EVMWLUMIA": {"PowerPC": [["sperc",0],["sperc",0]]}
+  },
+  "OUTPUTS": {
+    "EVMWLUMIA": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVMWLUMIA": {"PowerPC": ["EVXForm_1","1128"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVMWLUMIA": {"PowerPC": ["EVXForm_1","1128"]}
+  }
+}

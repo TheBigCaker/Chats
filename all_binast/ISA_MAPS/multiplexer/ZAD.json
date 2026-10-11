@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "ZAD",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "ZAD0": {"AArch64": "ZAD0"},
+    "ZAD1": {"AArch64": "ZAD1"},
+    "ZAD2": {"AArch64": "ZAD2"},
+    "ZAD3": {"AArch64": "ZAD3"},
+    "ZAD4": {"AArch64": "ZAD4"},
+    "ZAD5": {"AArch64": "ZAD5"},
+    "ZAD6": {"AArch64": "ZAD6"},
+    "ZAD7": {"AArch64": "ZAD7"}
+  },
+  "INPUTS": {
+    "ZAD0": {"AArch64": []},
+    "ZAD1": {"AArch64": []},
+    "ZAD2": {"AArch64": []},
+    "ZAD3": {"AArch64": []},
+    "ZAD4": {"AArch64": []},
+    "ZAD5": {"AArch64": []},
+    "ZAD6": {"AArch64": []},
+    "ZAD7": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "ZAD0": {"AArch64": []},
+    "ZAD1": {"AArch64": []},
+    "ZAD2": {"AArch64": []},
+    "ZAD3": {"AArch64": []},
+    "ZAD4": {"AArch64": []},
+    "ZAD5": {"AArch64": []},
+    "ZAD6": {"AArch64": []},
+    "ZAD7": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "ZAD0": {"AArch64": ["AArch64Reg","0"]},
+    "ZAD1": {"AArch64": ["AArch64Reg","1"]},
+    "ZAD2": {"AArch64": ["AArch64Reg","2"]},
+    "ZAD3": {"AArch64": ["AArch64Reg","3"]},
+    "ZAD4": {"AArch64": ["AArch64Reg","4"]},
+    "ZAD5": {"AArch64": ["AArch64Reg","5"]},
+    "ZAD6": {"AArch64": ["AArch64Reg","6"]},
+    "ZAD7": {"AArch64": ["AArch64Reg","7"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZAD0": {"AArch64": ["AArch64Reg","0"]},
+    "ZAD1": {"AArch64": ["AArch64Reg","1"]},
+    "ZAD2": {"AArch64": ["AArch64Reg","2"]},
+    "ZAD3": {"AArch64": ["AArch64Reg","3"]},
+    "ZAD4": {"AArch64": ["AArch64Reg","4"]},
+    "ZAD5": {"AArch64": ["AArch64Reg","5"]},
+    "ZAD6": {"AArch64": ["AArch64Reg","6"]},
+    "ZAD7": {"AArch64": ["AArch64Reg","7"]}
+  }
+}

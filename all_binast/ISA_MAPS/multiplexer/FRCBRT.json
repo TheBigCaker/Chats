@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "FRCBRT",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FRCBRT_APPROX_A.f32": {"Mali": "FRCBRT_APPROX_A.f32"},
+    "FRCBRT_APPROX_B.f32": {"Mali": "FRCBRT_APPROX_B.f32"},
+    "FRCBRT_APPROX_C.f32": {"Mali": "FRCBRT_APPROX_C.f32"}
+  },
+  "INPUTS": {
+    "FRCBRT_APPROX_A.f32": {"Mali": [["R32",32]]},
+    "FRCBRT_APPROX_B.f32": {"Mali": [["R32",32]]},
+    "FRCBRT_APPROX_C.f32": {"Mali": [["R32",32]]}
+  },
+  "OUTPUTS": {
+    "FRCBRT_APPROX_A.f32": {"Mali": [["R",32]]},
+    "FRCBRT_APPROX_B.f32": {"Mali": [["R",32]]},
+    "FRCBRT_APPROX_C.f32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FRCBRT_APPROX_A.f32": {"Mali": ["Bifrost_add"]},
+    "FRCBRT_APPROX_B.f32": {"Mali": ["Bifrost_add","0x67ab0","0xffff8"]},
+    "FRCBRT_APPROX_C.f32": {"Mali": ["Bifrost_add","0x67ab8","0xffff8"]}
+  },
+  "OUTPUT_BYTES": {
+    "FRCBRT_APPROX_A.f32": {"Mali": ["Bifrost_add"]},
+    "FRCBRT_APPROX_B.f32": {"Mali": ["Bifrost_add","0x67ab0","0xffff8"]},
+    "FRCBRT_APPROX_C.f32": {"Mali": ["Bifrost_add","0x67ab8","0xffff8"]}
+  }
+}

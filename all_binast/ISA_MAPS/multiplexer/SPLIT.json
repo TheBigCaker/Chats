@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SPLIT",
+  "BACKENDS": ["PowerPC","Mali"],
+  "INDEX": {
+    "SPLIT_QUADWORD": {"PowerPC": "SPLIT_QUADWORD"},
+    "SPLIT.i32": {"Mali": "SPLIT.i32"}
+  },
+  "INPUTS": {
+    "SPLIT_QUADWORD": {"PowerPC": [["g8prc",0]]},
+    "SPLIT.i32": {"Mali": [["R32",32]]}
+  },
+  "OUTPUTS": {
+    "SPLIT_QUADWORD": {"PowerPC": [["g8rc",0],["g8rc",0]]},
+    "SPLIT.i32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "SPLIT_QUADWORD": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SPLIT.i32": {"Mali": ["Bifrost_add"]}
+  },
+  "OUTPUT_BYTES": {
+    "SPLIT_QUADWORD": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SPLIT.i32": {"Mali": ["Bifrost_add"]}
+  }
+}

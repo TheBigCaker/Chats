@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCMPSQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCMPSQ": {"PowerPC": "VCMPSQ"}
+  },
+  "INPUTS": {
+    "VCMPSQ": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VCMPSQ": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCMPSQ": {"PowerPC": ["VXForm_BF3_VAB5","321"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCMPSQ": {"PowerPC": ["VXForm_BF3_VAB5","321"]}
+  }
+}

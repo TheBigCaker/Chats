@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "VDOT",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VDOT4A_VV": {"RISCV": "VDOT4A_VV"},
+    "VDOT4A_VX": {"RISCV": "VDOT4A_VX"},
+    "VDOT4AU_VV": {"RISCV": "VDOT4AU_VV"},
+    "VDOT4AU_VX": {"RISCV": "VDOT4AU_VX"},
+    "VDOT4ASU_VV": {"RISCV": "VDOT4ASU_VV"},
+    "VDOT4ASU_VX": {"RISCV": "VDOT4ASU_VX"},
+    "VDOT4AUS_VX": {"RISCV": "VDOT4AUS_VX"}
+  },
+  "INPUTS": {
+    "VDOT4A_VV": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["VR:$vs1",0],["VMaskOp:$vm",0]]},
+    "VDOT4A_VX": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["GPR:$rs1",0],["VMaskOp:$vm",0]]},
+    "VDOT4AU_VV": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["VR:$vs1",0],["VMaskOp:$vm",0]]},
+    "VDOT4AU_VX": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["GPR:$rs1",0],["VMaskOp:$vm",0]]},
+    "VDOT4ASU_VV": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["VR:$vs1",0],["VMaskOp:$vm",0]]},
+    "VDOT4ASU_VX": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["GPR:$rs1",0],["VMaskOp:$vm",0]]},
+    "VDOT4AUS_VX": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["GPR:$rs1",0],["VMaskOp:$vm",0]]}
+  },
+  "OUTPUTS": {
+    "VDOT4A_VV": {"RISCV": [["VR:$vd_wb",0]]},
+    "VDOT4A_VX": {"RISCV": [["VR:$vd_wb",0]]},
+    "VDOT4AU_VV": {"RISCV": [["VR:$vd_wb",0]]},
+    "VDOT4AU_VX": {"RISCV": [["VR:$vd_wb",0]]},
+    "VDOT4ASU_VV": {"RISCV": [["VR:$vd_wb",0]]},
+    "VDOT4ASU_VX": {"RISCV": [["VR:$vd_wb",0]]},
+    "VDOT4AUS_VX": {"RISCV": [["VR:$vd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "VDOT4A_VV": {"RISCV": ["VDOT4AVV","0b101100"]},
+    "VDOT4A_VX": {"RISCV": ["VDOT4AVX","0b101100"]},
+    "VDOT4AU_VV": {"RISCV": ["VDOT4AVV","0b101000"]},
+    "VDOT4AU_VX": {"RISCV": ["VDOT4AVX","0b101000"]},
+    "VDOT4ASU_VV": {"RISCV": ["VDOT4AVV","0b101010"]},
+    "VDOT4ASU_VX": {"RISCV": ["VDOT4AVX","0b101010"]},
+    "VDOT4AUS_VX": {"RISCV": ["VDOT4AVX","0b101110"]}
+  },
+  "OUTPUT_BYTES": {
+    "VDOT4A_VV": {"RISCV": ["VDOT4AVV","0b101100"]},
+    "VDOT4A_VX": {"RISCV": ["VDOT4AVX","0b101100"]},
+    "VDOT4AU_VV": {"RISCV": ["VDOT4AVV","0b101000"]},
+    "VDOT4AU_VX": {"RISCV": ["VDOT4AVX","0b101000"]},
+    "VDOT4ASU_VV": {"RISCV": ["VDOT4AVV","0b101010"]},
+    "VDOT4ASU_VX": {"RISCV": ["VDOT4AVX","0b101010"]},
+    "VDOT4AUS_VX": {"RISCV": ["VDOT4AVX","0b101110"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "VSETLN",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VSETLNi8": {"ARM": "VSETLNi8"},
+    "VSETLNi16": {"ARM": "VSETLNi16"},
+    "VSETLNi32": {"ARM": "VSETLNi32"}
+  },
+  "INPUTS": {
+    "VSETLNi8": {"ARM": [["DPR",0],["GPR",64],["VectorIndex8",0]]},
+    "VSETLNi16": {"ARM": [["DPR",0],["GPR",64],["VectorIndex16",0]]},
+    "VSETLNi32": {"ARM": [["DPR",0],["GPR",64],["VectorIndex32",0]]}
+  },
+  "OUTPUTS": {
+    "VSETLNi8": {"ARM": [["DPR",0]]},
+    "VSETLNi16": {"ARM": [["DPR",0]]},
+    "VSETLNi32": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSETLNi8": {"ARM": ["NVSetLane","1","1","0","0","1","0b1011"]},
+    "VSETLNi16": {"ARM": ["NVSetLane","1","1","0","0","0","0b1011"]},
+    "VSETLNi32": {"ARM": ["NVSetLane","1","1","0","0","0","0b1011","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSETLNi8": {"ARM": ["NVSetLane","1","1","0","0","1","0b1011"]},
+    "VSETLNi16": {"ARM": ["NVSetLane","1","1","0","0","0","0b1011"]},
+    "VSETLNi32": {"ARM": ["NVSetLane","1","1","0","0","0","0b1011","0b00"]}
+  }
+}

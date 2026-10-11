@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RDMSR",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "RDMSR": {"X86": "RDMSR"}
+  },
+  "INPUTS": {
+    "RDMSR": {"X86": []}
+  },
+  "OUTPUTS": {
+    "RDMSR": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "RDMSR": {"X86": ["0x32"]}
+  },
+  "OUTPUT_BYTES": {
+    "RDMSR": {"X86": ["0x32"]}
+  }
+}

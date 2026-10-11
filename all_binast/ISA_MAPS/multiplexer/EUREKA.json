@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EUREKA",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "EUREKA": {"Mali": "EUREKA"}
+  },
+  "INPUTS": {
+    "EUREKA": {"Mali": [["R32",32]]}
+  },
+  "OUTPUTS": {
+    "EUREKA": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "EUREKA": {"Mali": ["Bifrost_add","0xd7850","0xffff8"]}
+  },
+  "OUTPUT_BYTES": {
+    "EUREKA": {"Mali": ["Bifrost_add","0xd7850","0xffff8"]}
+  }
+}

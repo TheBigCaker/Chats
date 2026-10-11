@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WSP",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "WSP": {"AArch64": "WSP"}
+  },
+  "INPUTS": {
+    "WSP": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "WSP": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "WSP": {"AArch64": ["AArch64Reg","31"]}
+  },
+  "OUTPUT_BYTES": {
+    "WSP": {"AArch64": ["AArch64Reg","31"]}
+  }
+}

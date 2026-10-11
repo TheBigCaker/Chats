@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BUFSO",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "BUFSOffset": {"AMDGPU": "BUFSOffset"}
+  },
+  "INPUTS": {
+    "BUFSOffset": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "BUFSOffset": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "BUFSOffset": {"AMDGPU": ["ComplexPattern","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "BUFSOffset": {"AMDGPU": ["ComplexPattern","1"]}
+  }
+}

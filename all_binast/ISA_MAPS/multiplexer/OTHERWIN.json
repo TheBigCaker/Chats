@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "OTHERWIN",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "OTHERWIN": {"Sparc": "OTHERWIN"}
+  },
+  "INPUTS": {
+    "OTHERWIN": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "OTHERWIN": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "OTHERWIN": {"Sparc": ["SparcCtrlReg","13"]}
+  },
+  "OUTPUT_BYTES": {
+    "OTHERWIN": {"Sparc": ["SparcCtrlReg","13"]}
+  }
+}

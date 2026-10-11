@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SRET",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SRET": {"RISCV": "SRET"}
+  },
+  "INPUTS": {
+    "SRET": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SRET": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SRET": {"RISCV": ["Priv","0b0001000"]}
+  },
+  "OUTPUT_BYTES": {
+    "SRET": {"RISCV": ["Priv","0b0001000"]}
+  }
+}

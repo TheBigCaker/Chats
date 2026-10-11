@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VADDH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VADDH": {"ARM": "VADDH"}
+  },
+  "INPUTS": {
+    "VADDH": {"ARM": [["HPR",0],["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VADDH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VADDH": {"ARM": ["AHbI","0b11100","0b11","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VADDH": {"ARM": ["AHbI","0b11100","0b11","0","0"]}
+  }
+}

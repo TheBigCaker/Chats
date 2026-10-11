@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SCC",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SCC_CLASS": {"AMDGPU": "SCC_CLASS"}
+  },
+  "INPUTS": {
+    "SCC_CLASS": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SCC_CLASS": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SCC_CLASS": {"AMDGPU": ["SIRegisterClass","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "SCC_CLASS": {"AMDGPU": ["SIRegisterClass","1"]}
+  }
+}

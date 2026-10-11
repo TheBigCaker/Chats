@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "AXCHG",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "AXCHG.i32": {"Mali": "AXCHG.i32"},
+    "AXCHG.i64": {"Mali": "AXCHG.i64"}
+  },
+  "INPUTS": {
+    "AXCHG.i32": {"Mali": [["R32",32],["R32",32]]},
+    "AXCHG.i64": {"Mali": [["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "AXCHG.i32": {"Mali": [["R",32]]},
+    "AXCHG.i64": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "AXCHG.i32": {"Mali": ["Bifrost_add","0x640c0","0xffdc0"]},
+    "AXCHG.i64": {"Mali": ["Bifrost_add","0x64100","0xffdc0"]}
+  },
+  "OUTPUT_BYTES": {
+    "AXCHG.i32": {"Mali": ["Bifrost_add","0x640c0","0xffdc0"]},
+    "AXCHG.i64": {"Mali": ["Bifrost_add","0x64100","0xffdc0"]}
+  }
+}

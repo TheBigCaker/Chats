@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SETPAN",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SETPAN": {"ARM": "SETPAN"}
+  },
+  "INPUTS": {
+    "SETPAN": {"ARM": [["imm0_1",0]]}
+  },
+  "OUTPUTS": {
+    "SETPAN": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SETPAN": {"ARM": ["AInoP"]}
+  },
+  "OUTPUT_BYTES": {
+    "SETPAN": {"ARM": ["AInoP"]}
+  }
+}

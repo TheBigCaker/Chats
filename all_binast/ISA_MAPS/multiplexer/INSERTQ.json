@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "INSERTQ",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "INSERTQ": {"X86": "INSERTQ"}
+  },
+  "INPUTS": {
+    "INSERTQ": {"X86": [["VR128",128],["VR128",128]]}
+  },
+  "OUTPUTS": {
+    "INSERTQ": {"X86": [["VR128",128]]}
+  },
+  "INPUT_BYTES": {
+    "INSERTQ": {"X86": ["0x79"]}
+  },
+  "OUTPUT_BYTES": {
+    "INSERTQ": {"X86": ["0x79"]}
+  }
+}

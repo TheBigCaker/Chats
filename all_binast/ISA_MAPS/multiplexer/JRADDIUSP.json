@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "JRADDIUSP",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "JRADDIUSP": {"Mips": "JRADDIUSP"}
+  },
+  "INPUTS": {
+    "JRADDIUSP": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "JRADDIUSP": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "JRADDIUSP": {"Mips": ["JumpRAddiuStackMM16","0x18"]}
+  },
+  "OUTPUT_BYTES": {
+    "JRADDIUSP": {"Mips": ["JumpRAddiuStackMM16","0x18"]}
+  }
+}

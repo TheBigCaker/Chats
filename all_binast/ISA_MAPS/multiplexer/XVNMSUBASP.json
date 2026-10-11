@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVNMSUBASP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVNMSUBASP": {"PowerPC": "XVNMSUBASP"}
+  },
+  "INPUTS": {
+    "XVNMSUBASP": {"PowerPC": [["vsrc",0],["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVNMSUBASP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVNMSUBASP": {"PowerPC": ["XX3Form","60","209"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVNMSUBASP": {"PowerPC": ["XX3Form","60","209"]}
+  }
+}

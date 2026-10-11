@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SPERC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SPERC": {"PowerPC": "SPERC"}
+  },
+  "INPUTS": {
+    "SPERC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "SPERC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "SPERC": {"PowerPC": ["PPCRegisterClass","64","2","30"]}
+  },
+  "OUTPUT_BYTES": {
+    "SPERC": {"PowerPC": ["PPCRegisterClass","64","2","30"]}
+  }
+}

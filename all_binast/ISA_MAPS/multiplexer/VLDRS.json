@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VLDRS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VLDRS": {"ARM": "VLDRS"}
+  },
+  "INPUTS": {
+    "VLDRS": {"ARM": [["addrmode5",0]]}
+  },
+  "OUTPUTS": {
+    "VLDRS": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VLDRS": {"ARM": ["ASI5","0b1101","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "VLDRS": {"ARM": ["ASI5","0b1101","0b01"]}
+  }
+}

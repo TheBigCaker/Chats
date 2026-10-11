@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VAARG",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VAARG_64": {"X86": "VAARG_64"},
+    "VAARG_X32": {"X86": "VAARG_X32"}
+  },
+  "INPUTS": {
+    "VAARG_64": {"X86": [["i8mem",0],["i32imm",32],["i8imm",8],["i32imm",32]]},
+    "VAARG_X32": {"X86": [["i8mem",0],["i32imm",32],["i8imm",8],["i32imm",32]]}
+  },
+  "OUTPUTS": {
+    "VAARG_64": {"X86": [["GR64",64]]},
+    "VAARG_X32": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "VAARG_64": {"X86": ["0"]},
+    "VAARG_X32": {"X86": ["0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VAARG_64": {"X86": ["0"]},
+    "VAARG_X32": {"X86": ["0"]}
+  }
+}

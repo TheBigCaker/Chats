@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DATA",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "DATA16_PREFIX": {"X86": "DATA16_PREFIX"}
+  },
+  "INPUTS": {
+    "DATA16_PREFIX": {"X86": []}
+  },
+  "OUTPUTS": {
+    "DATA16_PREFIX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "DATA16_PREFIX": {"X86": ["0x66"]}
+  },
+  "OUTPUT_BYTES": {
+    "DATA16_PREFIX": {"X86": ["0x66"]}
+  }
+}

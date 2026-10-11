@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SETBCR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SETBCR": {"PowerPC": "SETBCR"},
+    "SETBCR8": {"PowerPC": "SETBCR8"}
+  },
+  "INPUTS": {
+    "SETBCR": {"PowerPC": [["crbitrc",0]]},
+    "SETBCR8": {"PowerPC": [["crbitrc",0]]}
+  },
+  "OUTPUTS": {
+    "SETBCR": {"PowerPC": [["gprc",0]]},
+    "SETBCR8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "SETBCR": {"PowerPC": ["XForm_XT5_BI5","31","416"]},
+    "SETBCR8": {"PowerPC": ["XForm_XT5_BI5","31","416"]}
+  },
+  "OUTPUT_BYTES": {
+    "SETBCR": {"PowerPC": ["XForm_XT5_BI5","31","416"]},
+    "SETBCR8": {"PowerPC": ["XForm_XT5_BI5","31","416"]}
+  }
+}

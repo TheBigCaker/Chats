@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FFLAGS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FFLAGS": {"RISCV": "FFLAGS"}
+  },
+  "INPUTS": {
+    "FFLAGS": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "FFLAGS": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "FFLAGS": {"RISCV": ["RISCVReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FFLAGS": {"RISCV": ["RISCVReg","0"]}
+  }
+}

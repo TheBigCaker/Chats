@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HINT",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "HINT": {"ARM": "HINT"}
+  },
+  "INPUTS": {
+    "HINT": {"ARM": [["imm0_239",0]]}
+  },
+  "OUTPUTS": {
+    "HINT": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "HINT": {"ARM": ["AI"]}
+  },
+  "OUTPUT_BYTES": {
+    "HINT": {"ARM": ["AI"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PMHRACCU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PMHRACCU_H": {"RISCV": "PMHRACCU_H"},
+    "PMHRACCU_W": {"RISCV": "PMHRACCU_W"}
+  },
+  "INPUTS": {
+    "PMHRACCU_H": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMHRACCU_W": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PMHRACCU_H": {"RISCV": [["GPR:$rd_wb",0]]},
+    "PMHRACCU_W": {"RISCV": [["GPR:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "PMHRACCU_H": {"RISCV": ["RVPTernary_rrr","0b0011","0b10","0b111"]},
+    "PMHRACCU_W": {"RISCV": ["RVPTernary_rrr","0b0011","0b11","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "PMHRACCU_H": {"RISCV": ["RVPTernary_rrr","0b0011","0b10","0b111"]},
+    "PMHRACCU_W": {"RISCV": ["RVPTernary_rrr","0b0011","0b11","0b111"]}
+  }
+}

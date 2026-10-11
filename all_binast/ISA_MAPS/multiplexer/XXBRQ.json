@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XXBRQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXBRQ": {"PowerPC": "XXBRQ"}
+  },
+  "INPUTS": {
+    "XXBRQ": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XXBRQ": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XXBRQ": {"PowerPC": ["XX2_XT6_XO5_XB6","60","31","475"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXBRQ": {"PowerPC": ["XX2_XT6_XO5_XB6","60","31","475"]}
+  }
+}

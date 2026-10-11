@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WADDU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "WADDU": {"RISCV": "WADDU"}
+  },
+  "INPUTS": {
+    "WADDU": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "WADDU": {"RISCV": [["GPRPairRV32:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "WADDU": {"RISCV": ["RVPWideningBinary_rr","0b0010","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "WADDU": {"RISCV": ["RVPWideningBinary_rr","0b0010","0b01"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FPACK",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FPACK16": {"Sparc": "FPACK16"},
+    "FPACK32": {"Sparc": "FPACK32"}
+  },
+  "INPUTS": {
+    "FPACK16": {"Sparc": []},
+    "FPACK32": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FPACK16": {"Sparc": []},
+    "FPACK32": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FPACK16": {"Sparc": ["VISInst2","0b000111011"]},
+    "FPACK32": {"Sparc": ["VISInst","0b000111010"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPACK16": {"Sparc": ["VISInst2","0b000111011"]},
+    "FPACK32": {"Sparc": ["VISInst","0b000111010"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "PREFETCH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PREFETCH_I": {"RISCV": "PREFETCH_I"},
+    "PREFETCH_R": {"RISCV": "PREFETCH_R"},
+    "PREFETCH_W": {"RISCV": "PREFETCH_W"}
+  },
+  "INPUTS": {
+    "PREFETCH_I": {"RISCV": [["BasePtr:$rs1",0],["simm12_lsb00000:$imm12",0]]},
+    "PREFETCH_R": {"RISCV": [["BasePtr:$rs1",0],["simm12_lsb00000:$imm12",0]]},
+    "PREFETCH_W": {"RISCV": [["BasePtr:$rs1",0],["simm12_lsb00000:$imm12",0]]}
+  },
+  "OUTPUTS": {
+    "PREFETCH_I": {"RISCV": []},
+    "PREFETCH_R": {"RISCV": []},
+    "PREFETCH_W": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PREFETCH_I": {"RISCV": ["Prefetch_ri","0b00000"]},
+    "PREFETCH_R": {"RISCV": ["Prefetch_ri","0b00001"]},
+    "PREFETCH_W": {"RISCV": ["Prefetch_ri","0b00011"]}
+  },
+  "OUTPUT_BYTES": {
+    "PREFETCH_I": {"RISCV": ["Prefetch_ri","0b00000"]},
+    "PREFETCH_R": {"RISCV": ["Prefetch_ri","0b00001"]},
+    "PREFETCH_W": {"RISCV": ["Prefetch_ri","0b00011"]}
+  }
+}

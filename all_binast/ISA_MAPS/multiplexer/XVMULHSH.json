@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVMULHSH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVMULHSH": {"PowerPC": "XVMULHSH"}
+  },
+  "INPUTS": {
+    "XVMULHSH": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVMULHSH": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVMULHSH": {"PowerPC": ["XX3Form_XTAB6","60","187"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVMULHSH": {"PowerPC": ["XX3Form_XTAB6","60","187"]}
+  }
+}

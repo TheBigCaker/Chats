@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "FPADD",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FPADD16": {"Sparc": "FPADD16"},
+    "FPADD16S": {"Sparc": "FPADD16S"},
+    "FPADD32": {"Sparc": "FPADD32"},
+    "FPADD32S": {"Sparc": "FPADD32S"},
+    "FPADD64": {"Sparc": "FPADD64"}
+  },
+  "INPUTS": {
+    "FPADD16": {"Sparc": []},
+    "FPADD16S": {"Sparc": []},
+    "FPADD32": {"Sparc": []},
+    "FPADD32S": {"Sparc": []},
+    "FPADD64": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FPADD16": {"Sparc": []},
+    "FPADD16S": {"Sparc": []},
+    "FPADD32": {"Sparc": []},
+    "FPADD32S": {"Sparc": []},
+    "FPADD64": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FPADD16": {"Sparc": ["VISInst","0b001010000"]},
+    "FPADD16S": {"Sparc": ["VISInst","0b001010001"]},
+    "FPADD32": {"Sparc": ["VISInst","0b001010010"]},
+    "FPADD32S": {"Sparc": ["VISInst","0b001010011"]},
+    "FPADD64": {"Sparc": ["VISInst","0b001000010"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPADD16": {"Sparc": ["VISInst","0b001010000"]},
+    "FPADD16S": {"Sparc": ["VISInst","0b001010001"]},
+    "FPADD32": {"Sparc": ["VISInst","0b001010010"]},
+    "FPADD32S": {"Sparc": ["VISInst","0b001010011"]},
+    "FPADD64": {"Sparc": ["VISInst","0b001000010"]}
+  }
+}

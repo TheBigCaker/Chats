@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSMAXJDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSMAXJDP": {"PowerPC": "XSMAXJDP"}
+  },
+  "INPUTS": {
+    "XSMAXJDP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSMAXJDP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSMAXJDP": {"PowerPC": ["XX3_XT5_XA5_XB5","60","144"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSMAXJDP": {"PowerPC": ["XX3_XT5_XA5_XB5","60","144"]}
+  }
+}

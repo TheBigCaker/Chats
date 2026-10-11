@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCMPZS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VCMPZS": {"ARM": "VCMPZS"}
+  },
+  "INPUTS": {
+    "VCMPZS": {"ARM": [["SPR",0]]}
+  },
+  "OUTPUTS": {
+    "VCMPZS": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VCMPZS": {"ARM": ["ASuI","0b11101","0b11","0b0101","0b01","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCMPZS": {"ARM": ["ASuI","0b11101","0b11","0b0101","0b01","0"]}
+  }
+}

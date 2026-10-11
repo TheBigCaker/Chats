@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVDIVSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVDIVSP": {"PowerPC": "XVDIVSP"}
+  },
+  "INPUTS": {
+    "XVDIVSP": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVDIVSP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVDIVSP": {"PowerPC": ["XX3Form","60","88"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVDIVSP": {"PowerPC": ["XX3Form","60","88"]}
+  }
+}

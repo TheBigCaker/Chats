@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "VAND",
+  "BACKENDS": ["ARM","PowerPC"],
+  "INDEX": {
+    "VANDd": {"ARM": "VANDd"},
+    "VANDq": {"ARM": "VANDq"},
+    "VAND": {"PowerPC": "VAND"}
+  },
+  "INPUTS": {
+    "VANDd": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VANDq": {"ARM": [["QPR:$Vn",0],["QPR:$Vm",0]]},
+    "VAND": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VANDd": {"ARM": [["DPR:$Vd",0]]},
+    "VANDq": {"ARM": [["QPR:$Vd",0]]},
+    "VAND": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VANDd": {"ARM": ["N3VDX","0","0","0b00","0b0001","1","1"]},
+    "VANDq": {"ARM": ["N3VQX","0","0","0b00","0b0001","1","1"]},
+    "VAND": {"PowerPC": ["VXForm_1","1028"]}
+  },
+  "OUTPUT_BYTES": {
+    "VANDd": {"ARM": ["N3VDX","0","0","0b00","0b0001","1","1"]},
+    "VANDq": {"ARM": ["N3VQX","0","0","0b00","0b0001","1","1"]},
+    "VAND": {"PowerPC": ["VXForm_1","1028"]}
+  }
+}

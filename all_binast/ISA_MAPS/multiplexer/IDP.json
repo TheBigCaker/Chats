@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "IDP",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "IDP.v4i8": {"Mali": "IDP.v4i8"}
+  },
+  "INPUTS": {
+    "IDP.v4i8": {"Mali": [["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "IDP.v4i8": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "IDP.v4i8": {"Mali": ["Bifrost_fma","0x73e8c0","0x7ff9c0"]}
+  },
+  "OUTPUT_BYTES": {
+    "IDP.v4i8": {"Mali": ["Bifrost_fma","0x73e8c0","0x7ff9c0"]}
+  }
+}

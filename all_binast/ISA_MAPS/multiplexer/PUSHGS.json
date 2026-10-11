@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "PUSHGS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PUSHGS16": {"X86": "PUSHGS16"},
+    "PUSHGS32": {"X86": "PUSHGS32"},
+    "PUSHGS64": {"X86": "PUSHGS64"}
+  },
+  "INPUTS": {
+    "PUSHGS16": {"X86": []},
+    "PUSHGS32": {"X86": []},
+    "PUSHGS64": {"X86": []}
+  },
+  "OUTPUTS": {
+    "PUSHGS16": {"X86": []},
+    "PUSHGS32": {"X86": []},
+    "PUSHGS64": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PUSHGS16": {"X86": ["0xa8"]},
+    "PUSHGS32": {"X86": ["0xa8"]},
+    "PUSHGS64": {"X86": ["0xa8"]}
+  },
+  "OUTPUT_BYTES": {
+    "PUSHGS16": {"X86": ["0xa8"]},
+    "PUSHGS32": {"X86": ["0xa8"]},
+    "PUSHGS64": {"X86": ["0xa8"]}
+  }
+}

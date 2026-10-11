@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AMDGPUM",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "AMDGPUMul24Op": {"AMDGPU": "AMDGPUMul24Op"}
+  },
+  "INPUTS": {
+    "AMDGPUMul24Op": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "AMDGPUMul24Op": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "AMDGPUMul24Op": {"AMDGPU": ["SDTypeProfile","1","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "AMDGPUMul24Op": {"AMDGPU": ["SDTypeProfile","1","2"]}
+  }
+}

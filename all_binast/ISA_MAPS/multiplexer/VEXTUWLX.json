@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VEXTUWLX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VEXTUWLX": {"PowerPC": "VEXTUWLX"}
+  },
+  "INPUTS": {
+    "VEXTUWLX": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VEXTUWLX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VEXTUWLX": {"PowerPC": ["VX1_RT5_RA5_VB5","1677"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEXTUWLX": {"PowerPC": ["VX1_RT5_RA5_VB5","1677"]}
+  }
+}

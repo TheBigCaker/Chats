@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXVKQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXVKQ": {"PowerPC": "LXVKQ"}
+  },
+  "INPUTS": {
+    "LXVKQ": {"PowerPC": [["u5imm",5]]}
+  },
+  "OUTPUTS": {
+    "LXVKQ": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LXVKQ": {"PowerPC": ["XForm_XT6_IMM5","60","31","360"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXVKQ": {"PowerPC": ["XForm_XT6_IMM5","60","31","360"]}
+  }
+}

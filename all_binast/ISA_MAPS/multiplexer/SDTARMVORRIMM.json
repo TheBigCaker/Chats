@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SDTARMVORRIMM",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SDTARMVORRIMM": {"ARM": "SDTARMVORRIMM"}
+  },
+  "INPUTS": {
+    "SDTARMVORRIMM": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SDTARMVORRIMM": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SDTARMVORRIMM": {"ARM": ["SDTypeProfile","1","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTARMVORRIMM": {"ARM": ["SDTypeProfile","1","2"]}
+  }
+}

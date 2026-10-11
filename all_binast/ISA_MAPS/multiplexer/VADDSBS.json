@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VADDSBS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VADDSBS": {"PowerPC": "VADDSBS"}
+  },
+  "INPUTS": {
+    "VADDSBS": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VADDSBS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VADDSBS": {"PowerPC": ["VX1_Int_Ty","768"]}
+  },
+  "OUTPUT_BYTES": {
+    "VADDSBS": {"PowerPC": ["VX1_Int_Ty","768"]}
+  }
+}

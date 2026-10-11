@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NCLIPU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "NCLIPU": {"RISCV": "NCLIPU"}
+  },
+  "INPUTS": {
+    "NCLIPU": {"RISCV": [["GPRPairRV32:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "NCLIPU": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "NCLIPU": {"RISCV": ["RVPNarrowingShift_rr","0b010","0b11"]}
+  },
+  "OUTPUT_BYTES": {
+    "NCLIPU": {"RISCV": ["RVPNarrowingShift_rr","0b010","0b11"]}
+  }
+}

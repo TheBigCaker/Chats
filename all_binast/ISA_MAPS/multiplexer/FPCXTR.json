@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FPCXTR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "FPCXTRegs": {"ARM": "FPCXTRegs"}
+  },
+  "INPUTS": {
+    "FPCXTRegs": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "FPCXTRegs": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "FPCXTRegs": {"ARM": ["RegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPCXTRegs": {"ARM": ["RegisterClass","32"]}
+  }
+}

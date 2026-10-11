@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "CUBEFACE",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "CUBEFACE1": {"Mali": "CUBEFACE1"},
+    "CUBEFACE2": {"Mali": "CUBEFACE2"},
+    "CUBEFACE": {"Mali": "CUBEFACE"},
+    "CUBEFACE2_V9": {"Mali": "CUBEFACE2_V9"},
+    "CUBEFACE1": {"Mali": "CUBEFACE1"},
+    "CUBEFACE2_V9": {"Mali": "CUBEFACE2_V9"}
+  },
+  "INPUTS": {
+    "CUBEFACE1": {"Mali": [["R32",32],["R32",32],["R32",32]]},
+    "CUBEFACE2": {"Mali": [["R32",32]]},
+    "CUBEFACE": {"Mali": [["R32",32],["R32",32],["R32",32]]},
+    "CUBEFACE2_V9": {"Mali": [["R32",32],["R32",32],["R32",32]]},
+    "CUBEFACE1": {"Mali": []},
+    "CUBEFACE2_V9": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "CUBEFACE1": {"Mali": [["R",32]]},
+    "CUBEFACE2": {"Mali": [["R",32]]},
+    "CUBEFACE": {"Mali": [["R",32],["R",32]]},
+    "CUBEFACE2_V9": {"Mali": [["R",32]]},
+    "CUBEFACE1": {"Mali": [["R",32]]},
+    "CUBEFACE2_V9": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "CUBEFACE1": {"Mali": ["Bifrost_fma","0x706800","0x7ffc00"]},
+    "CUBEFACE2": {"Mali": ["Bifrost_add","0x3de58","0xffff8"]},
+    "CUBEFACE": {"Mali": ["Bifrost_add"]},
+    "CUBEFACE2_V9": {"Mali": ["Bifrost_add"]},
+    "CUBEFACE1": {"Mali": ["Valhall_SFU"]},
+    "CUBEFACE2_V9": {"Mali": ["Valhall_SFU"]}
+  },
+  "OUTPUT_BYTES": {
+    "CUBEFACE1": {"Mali": ["Bifrost_fma","0x706800","0x7ffc00"]},
+    "CUBEFACE2": {"Mali": ["Bifrost_add","0x3de58","0xffff8"]},
+    "CUBEFACE": {"Mali": ["Bifrost_add"]},
+    "CUBEFACE2_V9": {"Mali": ["Bifrost_add"]},
+    "CUBEFACE1": {"Mali": ["Valhall_SFU"]},
+    "CUBEFACE2_V9": {"Mali": ["Valhall_SFU"]}
+  }
+}

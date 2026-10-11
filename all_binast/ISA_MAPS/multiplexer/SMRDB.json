@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SMRDB",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SMRDBufferImm": {"AMDGPU": "SMRDBufferImm"},
+    "SMRDBufferImm32": {"AMDGPU": "SMRDBufferImm32"},
+    "SMRDBufferSgprImm": {"AMDGPU": "SMRDBufferSgprImm"}
+  },
+  "INPUTS": {
+    "SMRDBufferImm": {"AMDGPU": []},
+    "SMRDBufferImm32": {"AMDGPU": []},
+    "SMRDBufferSgprImm": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SMRDBufferImm": {"AMDGPU": []},
+    "SMRDBufferImm32": {"AMDGPU": []},
+    "SMRDBufferSgprImm": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SMRDBufferImm": {"AMDGPU": ["ComplexPattern","1"]},
+    "SMRDBufferImm32": {"AMDGPU": ["ComplexPattern","1"]},
+    "SMRDBufferSgprImm": {"AMDGPU": ["ComplexPattern","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMRDBufferImm": {"AMDGPU": ["ComplexPattern","1"]},
+    "SMRDBufferImm32": {"AMDGPU": ["ComplexPattern","1"]},
+    "SMRDBufferSgprImm": {"AMDGPU": ["ComplexPattern","2"]}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "GPRC",
+  "BACKENDS": ["RISCV","PowerPC"],
+  "INDEX": {
+    "GPRC": {"RISCV": "GPRC"},
+    "GPRC32": {"PowerPC": "GPRC32"},
+    "GPRC": {"PowerPC": "GPRC"},
+    "GPRC_NOR0": {"PowerPC": "GPRC_NOR0"}
+  },
+  "INPUTS": {
+    "GPRC": {"RISCV": []},
+    "GPRC32": {"PowerPC": []},
+    "GPRC": {"PowerPC": []},
+    "GPRC_NOR0": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "GPRC": {"RISCV": []},
+    "GPRC32": {"PowerPC": []},
+    "GPRC": {"PowerPC": []},
+    "GPRC_NOR0": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "GPRC": {"RISCV": ["GPRRegisterClass","10","8"]},
+    "GPRC32": {"PowerPC": ["PPCNonAllocatableRegisterClass","32","2","30"]},
+    "GPRC": {"PowerPC": ["PPCGPRRegisterClass","32","2","30","2","31"]},
+    "GPRC_NOR0": {"PowerPC": ["PPCGPRRegisterClass","32","2","31"]}
+  },
+  "OUTPUT_BYTES": {
+    "GPRC": {"RISCV": ["GPRRegisterClass","10","8"]},
+    "GPRC32": {"PowerPC": ["PPCNonAllocatableRegisterClass","32","2","30"]},
+    "GPRC": {"PowerPC": ["PPCGPRRegisterClass","32","2","30","2","31"]},
+    "GPRC_NOR0": {"PowerPC": ["PPCGPRRegisterClass","32","2","31"]}
+  }
+}

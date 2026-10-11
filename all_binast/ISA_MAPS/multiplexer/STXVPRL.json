@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STXVPRL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STXVPRL": {"PowerPC": "STXVPRL"}
+  },
+  "INPUTS": {
+    "STXVPRL": {"PowerPC": [["vsrprc",0],["(memr",0]]}
+  },
+  "OUTPUTS": {
+    "STXVPRL": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STXVPRL": {"PowerPC": ["XForm_XTp5_RAB5","31","717"]}
+  },
+  "OUTPUT_BYTES": {
+    "STXVPRL": {"PowerPC": ["XForm_XTp5_RAB5","31","717"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "INSTRETH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "INSTRETH": {"RISCV": "INSTRETH"}
+  },
+  "INPUTS": {
+    "INSTRETH": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "INSTRETH": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "INSTRETH": {"RISCV": ["SysReg","0xC82"]}
+  },
+  "OUTPUT_BYTES": {
+    "INSTRETH": {"RISCV": ["SysReg","0xC82"]}
+  }
+}

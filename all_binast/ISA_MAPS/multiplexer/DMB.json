@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DMB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "DMB": {"ARM": "DMB"}
+  },
+  "INPUTS": {
+    "DMB": {"ARM": [["memb_opt",0]]}
+  },
+  "OUTPUTS": {
+    "DMB": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "DMB": {"ARM": ["AInoP"]}
+  },
+  "OUTPUT_BYTES": {
+    "DMB": {"ARM": ["AInoP"]}
+  }
+}

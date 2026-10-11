@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TIME",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "TIME": {"RISCV": "TIME"}
+  },
+  "INPUTS": {
+    "TIME": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "TIME": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "TIME": {"RISCV": ["SysReg","0xC01"]}
+  },
+  "OUTPUT_BYTES": {
+    "TIME": {"RISCV": ["SysReg","0xC01"]}
+  }
+}

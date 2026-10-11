@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MRC",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MRC": {"ARM": "MRC"},
+    "MRC2": {"ARM": "MRC2"}
+  },
+  "INPUTS": {
+    "MRC": {"ARM": [["p_imm",0],["imm0_7",0],["c_imm",0],["c_imm",0],["imm0_7",0]]},
+    "MRC2": {"ARM": [["p_imm",0],["imm0_7",0],["c_imm",0],["c_imm",0],["imm0_7",0]]}
+  },
+  "OUTPUTS": {
+    "MRC": {"ARM": [["GPRwithAPSR",0]]},
+    "MRC2": {"ARM": [["GPRwithAPSR",0]]}
+  },
+  "INPUT_BYTES": {
+    "MRC": {"ARM": ["MovRCopro"]},
+    "MRC2": {"ARM": ["MovRCopro2"]}
+  },
+  "OUTPUT_BYTES": {
+    "MRC": {"ARM": ["MovRCopro"]},
+    "MRC2": {"ARM": ["MovRCopro2"]}
+  }
+}

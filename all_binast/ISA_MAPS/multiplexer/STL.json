@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STL",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "STL": {"ARM": "STL"}
+  },
+  "INPUTS": {
+    "STL": {"ARM": [["GPR",64],["addr_offset_none",0]]}
+  },
+  "OUTPUTS": {
+    "STL": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "STL": {"ARM": ["AIstrrel","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "STL": {"ARM": ["AIstrrel","0b00"]}
+  }
+}

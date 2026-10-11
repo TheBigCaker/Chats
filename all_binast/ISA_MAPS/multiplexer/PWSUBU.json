@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PWSUBU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PWSUBU_H": {"RISCV": "PWSUBU_H"},
+    "PWSUBU_B": {"RISCV": "PWSUBU_B"}
+  },
+  "INPUTS": {
+    "PWSUBU_H": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PWSUBU_B": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PWSUBU_H": {"RISCV": [["GPRPairRV32:$rd",0]]},
+    "PWSUBU_B": {"RISCV": [["GPRPairRV32:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "PWSUBU_H": {"RISCV": ["RVPWideningBinary_rr","0b1010","0b00"]},
+    "PWSUBU_B": {"RISCV": ["RVPWideningBinary_rr","0b1010","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "PWSUBU_H": {"RISCV": ["RVPWideningBinary_rr","0b1010","0b00"]},
+    "PWSUBU_B": {"RISCV": ["RVPWideningBinary_rr","0b1010","0b10"]}
+  }
+}

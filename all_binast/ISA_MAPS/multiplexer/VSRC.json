@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSRC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSRC": {"PowerPC": "VSRC"}
+  },
+  "INPUTS": {
+    "VSRC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSRC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSRC": {"PowerPC": ["PPCRegisterClassWithSize","128","128"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSRC": {"PowerPC": ["PPCRegisterClassWithSize","128","128"]}
+  }
+}

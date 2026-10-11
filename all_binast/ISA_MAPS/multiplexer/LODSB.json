@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LODSB",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LODSB": {"X86": "LODSB"}
+  },
+  "INPUTS": {
+    "LODSB": {"X86": [["srcidx8",0]]}
+  },
+  "OUTPUTS": {
+    "LODSB": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "LODSB": {"X86": ["0xAC"]}
+  },
+  "OUTPUT_BYTES": {
+    "LODSB": {"X86": ["0xAC"]}
+  }
+}

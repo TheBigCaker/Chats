@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VBPERMQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VBPERMQ": {"PowerPC": "VBPERMQ"}
+  },
+  "INPUTS": {
+    "VBPERMQ": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VBPERMQ": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VBPERMQ": {"PowerPC": ["VX1_Int_Ty2","1356"]}
+  },
+  "OUTPUT_BYTES": {
+    "VBPERMQ": {"PowerPC": ["VX1_Int_Ty2","1356"]}
+  }
+}

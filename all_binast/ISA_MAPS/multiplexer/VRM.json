@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "VRM",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VRM2": {"RISCV": "VRM2"},
+    "VRM2NoV0": {"RISCV": "VRM2NoV0"},
+    "VRM4": {"RISCV": "VRM4"},
+    "VRM4NoV0": {"RISCV": "VRM4NoV0"},
+    "VRM8": {"RISCV": "VRM8"},
+    "VRM8NoV0": {"RISCV": "VRM8NoV0"}
+  },
+  "INPUTS": {
+    "VRM2": {"RISCV": []},
+    "VRM2NoV0": {"RISCV": []},
+    "VRM4": {"RISCV": []},
+    "VRM4NoV0": {"RISCV": []},
+    "VRM8": {"RISCV": []},
+    "VRM8NoV0": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VRM2": {"RISCV": []},
+    "VRM2NoV0": {"RISCV": []},
+    "VRM4": {"RISCV": []},
+    "VRM4NoV0": {"RISCV": []},
+    "VRM8": {"RISCV": []},
+    "VRM8NoV0": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VRM2": {"RISCV": ["VReg","8","31","6","0","2"]},
+    "VRM2NoV0": {"RISCV": ["VReg","2"]},
+    "VRM4": {"RISCV": ["VReg","4"]},
+    "VRM4NoV0": {"RISCV": ["VReg","4"]},
+    "VRM8": {"RISCV": ["VReg","8"]},
+    "VRM8NoV0": {"RISCV": ["VReg","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRM2": {"RISCV": ["VReg","8","31","6","0","2"]},
+    "VRM2NoV0": {"RISCV": ["VReg","2"]},
+    "VRM4": {"RISCV": ["VReg","4"]},
+    "VRM4NoV0": {"RISCV": ["VReg","4"]},
+    "VRM8": {"RISCV": ["VReg","8"]},
+    "VRM8NoV0": {"RISCV": ["VReg","8"]}
+  }
+}

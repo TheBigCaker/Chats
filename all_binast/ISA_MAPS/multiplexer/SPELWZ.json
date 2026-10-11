@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SPELWZ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SPELWZ": {"PowerPC": "SPELWZ"}
+  },
+  "INPUTS": {
+    "SPELWZ": {"PowerPC": [["(memri",0]]}
+  },
+  "OUTPUTS": {
+    "SPELWZ": {"PowerPC": [["spe4rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "SPELWZ": {"PowerPC": ["DForm_1","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "SPELWZ": {"PowerPC": ["DForm_1","32"]}
+  }
+}

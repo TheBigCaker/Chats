@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BCCTRL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BCCTRL8": {"PowerPC": "BCCTRL8"},
+    "BCCTRL8n": {"PowerPC": "BCCTRL8n"}
+  },
+  "INPUTS": {
+    "BCCTRL8": {"PowerPC": [["crbitrc",0]]},
+    "BCCTRL8n": {"PowerPC": [["crbitrc",0]]}
+  },
+  "OUTPUTS": {
+    "BCCTRL8": {"PowerPC": []},
+    "BCCTRL8n": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "BCCTRL8": {"PowerPC": ["XLForm_2_br2","19","528","12","1"]},
+    "BCCTRL8n": {"PowerPC": ["XLForm_2_br2","19","528","4","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "BCCTRL8": {"PowerPC": ["XLForm_2_br2","19","528","12","1"]},
+    "BCCTRL8n": {"PowerPC": ["XLForm_2_br2","19","528","4","1"]}
+  }
+}

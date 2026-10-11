@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SRSIB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SRSIB": {"ARM": "SRSIB"},
+    "SRSIB_UPD": {"ARM": "SRSIB_UPD"}
+  },
+  "INPUTS": {
+    "SRSIB": {"ARM": [["imm0_31:$mode",0]]},
+    "SRSIB_UPD": {"ARM": [["imm0_31:$mode",0]]}
+  },
+  "OUTPUTS": {
+    "SRSIB": {"ARM": []},
+    "SRSIB_UPD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SRSIB": {"ARM": ["SRSI","0"]},
+    "SRSIB_UPD": {"ARM": ["SRSI","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "SRSIB": {"ARM": ["SRSI","0"]},
+    "SRSIB_UPD": {"ARM": ["SRSI","1"]}
+  }
+}

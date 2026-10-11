@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ORYONST",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "ORYONST0": {"AArch64": "ORYONST0"},
+    "ORYONST1": {"AArch64": "ORYONST1"}
+  },
+  "INPUTS": {
+    "ORYONST0": {"AArch64": []},
+    "ORYONST1": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "ORYONST0": {"AArch64": []},
+    "ORYONST1": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "ORYONST0": {"AArch64": ["ProcResource","1"]},
+    "ORYONST1": {"AArch64": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "ORYONST0": {"AArch64": ["ProcResource","1"]},
+    "ORYONST1": {"AArch64": ["ProcResource","1"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SDTARMVIDUP",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SDTARMVIDUP": {"ARM": "SDTARMVIDUP"}
+  },
+  "INPUTS": {
+    "SDTARMVIDUP": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SDTARMVIDUP": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SDTARMVIDUP": {"ARM": ["SDTypeProfile","2","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTARMVIDUP": {"ARM": ["SDTypeProfile","2","2"]}
+  }
+}

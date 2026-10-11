@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BARRIER",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "BARRIER": {"Mali": "BARRIER"},
+    "BARRIER": {"Mali": "BARRIER"}
+  },
+  "INPUTS": {
+    "BARRIER": {"Mali": []},
+    "BARRIER": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "BARRIER": {"Mali": [["R",32]]},
+    "BARRIER": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "BARRIER": {"Mali": ["Bifrost_add/","0xd7874","0xfffff"]},
+    "BARRIER": {"Mali": ["Valhall_NONE"]}
+  },
+  "OUTPUT_BYTES": {
+    "BARRIER": {"Mali": ["Bifrost_add/","0xd7874","0xfffff"]},
+    "BARRIER": {"Mali": ["Valhall_NONE"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "UHADD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UHADD16": {"ARM": "UHADD16"},
+    "UHADD8": {"ARM": "UHADD8"}
+  },
+  "INPUTS": {
+    "UHADD16": {"ARM": []},
+    "UHADD8": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "UHADD16": {"ARM": []},
+    "UHADD8": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "UHADD16": {"ARM": ["AAIIntrinsic","0b01100111","0b11110001"]},
+    "UHADD8": {"ARM": ["AAIIntrinsic","0b01100111","0b11111001"]}
+  },
+  "OUTPUT_BYTES": {
+    "UHADD16": {"ARM": ["AAIIntrinsic","0b01100111","0b11110001"]},
+    "UHADD8": {"ARM": ["AAIIntrinsic","0b01100111","0b11111001"]}
+  }
+}

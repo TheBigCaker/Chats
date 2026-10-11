@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCMPES",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VCMPES": {"ARM": "VCMPES"}
+  },
+  "INPUTS": {
+    "VCMPES": {"ARM": [["SPR",0],["SPR",0]]}
+  },
+  "OUTPUTS": {
+    "VCMPES": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VCMPES": {"ARM": ["ASuI","0b11101","0b11","0b0100","0b11","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCMPES": {"ARM": ["ASuI","0b11101","0b11","0b0100","0b11","0"]}
+  }
+}

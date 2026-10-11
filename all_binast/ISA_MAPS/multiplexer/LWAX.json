@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LWAX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LWAX": {"PowerPC": "LWAX"},
+    "LWAX_32": {"PowerPC": "LWAX_32"}
+  },
+  "INPUTS": {
+    "LWAX": {"PowerPC": [["(memrr",0]]},
+    "LWAX_32": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LWAX": {"PowerPC": [["g8rc",0]]},
+    "LWAX_32": {"PowerPC": [["gprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LWAX": {"PowerPC": ["XForm_1_memOp","31","341"]},
+    "LWAX_32": {"PowerPC": ["XForm_1_memOp","31","341"]}
+  },
+  "OUTPUT_BYTES": {
+    "LWAX": {"PowerPC": ["XForm_1_memOp","31","341"]},
+    "LWAX_32": {"PowerPC": ["XForm_1_memOp","31","341"]}
+  }
+}

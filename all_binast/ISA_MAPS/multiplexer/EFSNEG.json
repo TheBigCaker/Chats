@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFSNEG",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFSNEG": {"PowerPC": "EFSNEG"}
+  },
+  "INPUTS": {
+    "EFSNEG": {"PowerPC": [["spe4rc",0]]}
+  },
+  "OUTPUTS": {
+    "EFSNEG": {"PowerPC": [["spe4rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFSNEG": {"PowerPC": ["EFXForm_2","710"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFSNEG": {"PowerPC": ["EFXForm_2","710"]}
+  }
+}

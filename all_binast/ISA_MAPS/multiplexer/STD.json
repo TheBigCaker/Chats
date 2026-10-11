@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "STD",
+  "BACKENDS": ["X86","PowerPC"],
+  "INDEX": {
+    "STD": {"X86": "STD"},
+    "STD": {"PowerPC": "STD"}
+  },
+  "INPUTS": {
+    "STD": {"X86": []},
+    "STD": {"PowerPC": [["g8rc",0],["(memrix",0]]}
+  },
+  "OUTPUTS": {
+    "STD": {"X86": []},
+    "STD": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STD": {"X86": ["0xFD"]},
+    "STD": {"PowerPC": ["DSForm_1","62","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "STD": {"X86": ["0xFD"]},
+    "STD": {"PowerPC": ["DSForm_1","62","0"]}
+  }
+}

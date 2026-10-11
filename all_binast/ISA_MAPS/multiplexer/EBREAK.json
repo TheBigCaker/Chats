@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EBREAK",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "EBREAK": {"RISCV": "EBREAK"}
+  },
+  "INPUTS": {
+    "EBREAK": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "EBREAK": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "EBREAK": {"RISCV": ["RVInstI","0b000"]}
+  },
+  "OUTPUT_BYTES": {
+    "EBREAK": {"RISCV": ["RVInstI","0b000"]}
+  }
+}

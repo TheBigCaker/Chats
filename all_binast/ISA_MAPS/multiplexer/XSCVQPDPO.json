@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSCVQPDPO",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSCVQPDPO": {"PowerPC": "XSCVQPDPO"}
+  },
+  "INPUTS": {
+    "XSCVQPDPO": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSCVQPDPO": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSCVQPDPO": {"PowerPC": ["X_VT5_XO5_VB5_VSFR_Ro","63","20","836"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSCVQPDPO": {"PowerPC": ["X_VT5_XO5_VB5_VSFR_Ro","63","20","836"]}
+  }
+}

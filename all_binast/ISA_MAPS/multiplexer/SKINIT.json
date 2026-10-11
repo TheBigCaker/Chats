@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SKINIT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SKINIT": {"X86": "SKINIT"}
+  },
+  "INPUTS": {
+    "SKINIT": {"X86": []}
+  },
+  "OUTPUTS": {
+    "SKINIT": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SKINIT": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "SKINIT": {"X86": ["0x01"]}
+  }
+}

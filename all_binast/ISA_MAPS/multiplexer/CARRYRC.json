@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CARRYRC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "CARRYRC": {"PowerPC": "CARRYRC"}
+  },
+  "INPUTS": {
+    "CARRYRC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "CARRYRC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "CARRYRC": {"PowerPC": ["PPCNonAllocatableRegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "CARRYRC": {"PowerPC": ["PPCNonAllocatableRegisterClass","32"]}
+  }
+}

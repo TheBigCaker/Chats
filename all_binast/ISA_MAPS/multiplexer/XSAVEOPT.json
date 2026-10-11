@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSAVEOPT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XSAVEOPT": {"X86": "XSAVEOPT"}
+  },
+  "INPUTS": {
+    "XSAVEOPT": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "XSAVEOPT": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "XSAVEOPT": {"X86": ["0xAE"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSAVEOPT": {"X86": ["0xAE"]}
+  }
+}

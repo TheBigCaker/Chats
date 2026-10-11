@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SEXT",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SEXT_B": {"RISCV": "SEXT_B"},
+    "SEXT_H": {"RISCV": "SEXT_H"}
+  },
+  "INPUTS": {
+    "SEXT_B": {"RISCV": []},
+    "SEXT_H": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SEXT_B": {"RISCV": []},
+    "SEXT_H": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SEXT_B": {"RISCV": ["Unary_r","0b011000000100","0b001"]},
+    "SEXT_H": {"RISCV": ["Unary_r","0b011000000101","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "SEXT_B": {"RISCV": ["Unary_r","0b011000000100","0b001"]},
+    "SEXT_H": {"RISCV": ["Unary_r","0b011000000101","0b001"]}
+  }
+}

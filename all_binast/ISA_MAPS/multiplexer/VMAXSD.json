@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMAXSD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMAXSD": {"PowerPC": "VMAXSD"}
+  },
+  "INPUTS": {
+    "VMAXSD": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMAXSD": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMAXSD": {"PowerPC": ["VX1_Int_Ty","450"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMAXSD": {"PowerPC": ["VX1_Int_Ty","450"]}
+  }
+}

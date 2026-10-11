@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVNTI",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MOVNTImr": {"X86": "MOVNTImr"}
+  },
+  "INPUTS": {
+    "MOVNTImr": {"X86": [["i32mem",0],["GR32",32]]}
+  },
+  "OUTPUTS": {
+    "MOVNTImr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "MOVNTImr": {"X86": ["0xC3"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVNTImr": {"X86": ["0xC3"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ADDG",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "ADDG6S8": {"PowerPC": "ADDG6S8"}
+  },
+  "INPUTS": {
+    "ADDG6S8": {"PowerPC": [["g8rc",0],["g8rc",0]]}
+  },
+  "OUTPUTS": {
+    "ADDG6S8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "ADDG6S8": {"PowerPC": ["XOForm_1","31","74","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADDG6S8": {"PowerPC": ["XOForm_1","31","74","0"]}
+  }
+}

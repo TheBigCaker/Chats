@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LHBRX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LHBRX8": {"PowerPC": "LHBRX8"}
+  },
+  "INPUTS": {
+    "LHBRX8": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LHBRX8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LHBRX8": {"PowerPC": ["XForm_1_memOp","31","790"]}
+  },
+  "OUTPUT_BYTES": {
+    "LHBRX8": {"PowerPC": ["XForm_1_memOp","31","790"]}
+  }
+}

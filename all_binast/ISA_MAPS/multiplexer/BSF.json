@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "BSF",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "BSF16rr": {"X86": "BSF16rr"},
+    "BSF16rm": {"X86": "BSF16rm"},
+    "BSF32rr": {"X86": "BSF32rr"},
+    "BSF32rm": {"X86": "BSF32rm"}
+  },
+  "INPUTS": {
+    "BSF16rr": {"X86": [["GR16",16],["GR16",16]]},
+    "BSF16rm": {"X86": [["GR16",16],["i16mem",0]]},
+    "BSF32rr": {"X86": [["GR32",32],["GR32",32]]},
+    "BSF32rm": {"X86": [["GR32",32],["i32mem",0]]}
+  },
+  "OUTPUTS": {
+    "BSF16rr": {"X86": [["GR16",16]]},
+    "BSF16rm": {"X86": [["GR16",16]]},
+    "BSF32rr": {"X86": [["GR32",32]]},
+    "BSF32rm": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "BSF16rr": {"X86": ["0xBC"]},
+    "BSF16rm": {"X86": ["0xBC"]},
+    "BSF32rr": {"X86": ["0xBC"]},
+    "BSF32rm": {"X86": ["0xBC"]}
+  },
+  "OUTPUT_BYTES": {
+    "BSF16rr": {"X86": ["0xBC"]},
+    "BSF16rm": {"X86": ["0xBC"]},
+    "BSF32rr": {"X86": ["0xBC"]},
+    "BSF32rm": {"X86": ["0xBC"]}
+  }
+}

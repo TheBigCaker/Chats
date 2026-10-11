@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "CR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "CR0": {"PowerPC": "CR0"},
+    "CR1": {"PowerPC": "CR1"},
+    "CR2": {"PowerPC": "CR2"},
+    "CR3": {"PowerPC": "CR3"},
+    "CR4": {"PowerPC": "CR4"},
+    "CR5": {"PowerPC": "CR5"},
+    "CR6": {"PowerPC": "CR6"},
+    "CR7": {"PowerPC": "CR7"}
+  },
+  "INPUTS": {
+    "CR0": {"PowerPC": []},
+    "CR1": {"PowerPC": []},
+    "CR2": {"PowerPC": []},
+    "CR3": {"PowerPC": []},
+    "CR4": {"PowerPC": []},
+    "CR5": {"PowerPC": []},
+    "CR6": {"PowerPC": []},
+    "CR7": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "CR0": {"PowerPC": []},
+    "CR1": {"PowerPC": []},
+    "CR2": {"PowerPC": []},
+    "CR3": {"PowerPC": []},
+    "CR4": {"PowerPC": []},
+    "CR5": {"PowerPC": []},
+    "CR6": {"PowerPC": []},
+    "CR7": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "CR0": {"PowerPC": ["CR","0"]},
+    "CR1": {"PowerPC": ["CR","1"]},
+    "CR2": {"PowerPC": ["CR","2"]},
+    "CR3": {"PowerPC": ["CR","3"]},
+    "CR4": {"PowerPC": ["CR","4"]},
+    "CR5": {"PowerPC": ["CR","5"]},
+    "CR6": {"PowerPC": ["CR","6"]},
+    "CR7": {"PowerPC": ["CR","7"]}
+  },
+  "OUTPUT_BYTES": {
+    "CR0": {"PowerPC": ["CR","0"]},
+    "CR1": {"PowerPC": ["CR","1"]},
+    "CR2": {"PowerPC": ["CR","2"]},
+    "CR3": {"PowerPC": ["CR","3"]},
+    "CR4": {"PowerPC": ["CR","4"]},
+    "CR5": {"PowerPC": ["CR","5"]},
+    "CR6": {"PowerPC": ["CR","6"]},
+    "CR7": {"PowerPC": ["CR","7"]}
+  }
+}

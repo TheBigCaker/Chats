@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VEXTRACTUB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VEXTRACTUB": {"PowerPC": "VEXTRACTUB"}
+  },
+  "INPUTS": {
+    "VEXTRACTUB": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VEXTRACTUB": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VEXTRACTUB": {"PowerPC": ["VX1_VT5_UIM5_VB5","525"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEXTRACTUB": {"PowerPC": ["VX1_VT5_UIM5_VB5","525"]}
+  }
+}

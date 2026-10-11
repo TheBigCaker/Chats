@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FPMADDX",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FPMADDX": {"Sparc": "FPMADDX"}
+  },
+  "INPUTS": {
+    "FPMADDX": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FPMADDX": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FPMADDX": {"Sparc": ["FourOp","0b110111","0b0000"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPMADDX": {"Sparc": ["FourOp","0b110111","0b0000"]}
+  }
+}

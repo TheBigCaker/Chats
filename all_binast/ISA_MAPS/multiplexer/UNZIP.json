@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "UNZIP",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "UNZIP8P": {"RISCV": "UNZIP8P"},
+    "UNZIP16P": {"RISCV": "UNZIP16P"},
+    "UNZIP8HP": {"RISCV": "UNZIP8HP"},
+    "UNZIP16HP": {"RISCV": "UNZIP16HP"},
+    "UNZIP_RV32": {"RISCV": "UNZIP_RV32"}
+  },
+  "INPUTS": {
+    "UNZIP8P": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "UNZIP16P": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "UNZIP8HP": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "UNZIP16HP": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "UNZIP_RV32": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "UNZIP8P": {"RISCV": [["GPR:$rd",0]]},
+    "UNZIP16P": {"RISCV": [["GPR:$rd",0]]},
+    "UNZIP8HP": {"RISCV": [["GPR:$rd",0]]},
+    "UNZIP16HP": {"RISCV": [["GPR:$rd",0]]},
+    "UNZIP_RV32": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "UNZIP8P": {"RISCV": ["RVPBinary_rr","0b1100","0b00","0b010"]},
+    "UNZIP16P": {"RISCV": ["RVPBinary_rr","0b1100","0b01","0b010"]},
+    "UNZIP8HP": {"RISCV": ["RVPBinary_rr","0b1100","0b10","0b010"]},
+    "UNZIP16HP": {"RISCV": ["RVPBinary_rr","0b1100","0b11","0b010"]},
+    "UNZIP_RV32": {"RISCV": ["Unary_r","0b000010001111","0b101"]}
+  },
+  "OUTPUT_BYTES": {
+    "UNZIP8P": {"RISCV": ["RVPBinary_rr","0b1100","0b00","0b010"]},
+    "UNZIP16P": {"RISCV": ["RVPBinary_rr","0b1100","0b01","0b010"]},
+    "UNZIP8HP": {"RISCV": ["RVPBinary_rr","0b1100","0b10","0b010"]},
+    "UNZIP16HP": {"RISCV": ["RVPBinary_rr","0b1100","0b11","0b010"]},
+    "UNZIP_RV32": {"RISCV": ["Unary_r","0b000010001111","0b101"]}
+  }
+}

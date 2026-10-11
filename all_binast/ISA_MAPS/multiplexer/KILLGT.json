@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "KILLGT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "KILLGT": {"AMDGPU": "KILLGT"}
+  },
+  "INPUTS": {
+    "KILLGT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "KILLGT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "KILLGT": {"AMDGPU": ["R600_2OP","0x2D"]}
+  },
+  "OUTPUT_BYTES": {
+    "KILLGT": {"AMDGPU": ["R600_2OP","0x2D"]}
+  }
+}

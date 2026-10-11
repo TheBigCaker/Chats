@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "VSEXT",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VSEXT_VF8": {"RISCV": "VSEXT_VF8"},
+    "VSEXT_VF4": {"RISCV": "VSEXT_VF4"},
+    "VSEXT_VF2": {"RISCV": "VSEXT_VF2"}
+  },
+  "INPUTS": {
+    "VSEXT_VF8": {"RISCV": []},
+    "VSEXT_VF4": {"RISCV": []},
+    "VSEXT_VF2": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VSEXT_VF8": {"RISCV": []},
+    "VSEXT_VF4": {"RISCV": []},
+    "VSEXT_VF2": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VSEXT_VF8": {"RISCV": ["VEXT_MV_VS2","0b010010","0b00011"]},
+    "VSEXT_VF4": {"RISCV": ["VEXT_MV_VS2","0b010010","0b00101"]},
+    "VSEXT_VF2": {"RISCV": ["VEXT_MV_VS2","0b010010","0b00111"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSEXT_VF8": {"RISCV": ["VEXT_MV_VS2","0b010010","0b00011"]},
+    "VSEXT_VF4": {"RISCV": ["VEXT_MV_VS2","0b010010","0b00101"]},
+    "VSEXT_VF2": {"RISCV": ["VEXT_MV_VS2","0b010010","0b00111"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFDADD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFDADD": {"PowerPC": "EFDADD"}
+  },
+  "INPUTS": {
+    "EFDADD": {"PowerPC": [["sperc",0],["sperc",0]]}
+  },
+  "OUTPUTS": {
+    "EFDADD": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFDADD": {"PowerPC": ["EFXForm_1","736"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFDADD": {"PowerPC": ["EFXForm_1","736"]}
+  }
+}

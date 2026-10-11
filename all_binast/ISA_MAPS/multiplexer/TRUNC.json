@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TRUNC",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "TRUNC": {"AMDGPU": "TRUNC"}
+  },
+  "INPUTS": {
+    "TRUNC": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "TRUNC": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "TRUNC": {"AMDGPU": ["R600_1OP_Helper","0x11"]}
+  },
+  "OUTPUT_BYTES": {
+    "TRUNC": {"AMDGPU": ["R600_1OP_Helper","0x11"]}
+  }
+}

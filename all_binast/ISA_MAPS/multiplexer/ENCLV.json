@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ENCLV",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "ENCLV": {"X86": "ENCLV"}
+  },
+  "INPUTS": {
+    "ENCLV": {"X86": []}
+  },
+  "OUTPUTS": {
+    "ENCLV": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "ENCLV": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "ENCLV": {"X86": ["0x01"]}
+  }
+}

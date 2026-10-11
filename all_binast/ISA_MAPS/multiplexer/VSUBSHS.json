@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSUBSHS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSUBSHS": {"PowerPC": "VSUBSHS"}
+  },
+  "INPUTS": {
+    "VSUBSHS": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSUBSHS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSUBSHS": {"PowerPC": ["VX1_Int_Ty","1856"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSUBSHS": {"PowerPC": ["VX1_Int_Ty","1856"]}
+  }
+}

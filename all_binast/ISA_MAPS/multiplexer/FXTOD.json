@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FXTOD",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FXTOD": {"Sparc": "FXTOD"}
+  },
+  "INPUTS": {
+    "FXTOD": {"Sparc": [["DFPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FXTOD": {"Sparc": [["DFPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FXTOD": {"Sparc": ["F3_3u","2","0b110100","0b010001000"]}
+  },
+  "OUTPUT_BYTES": {
+    "FXTOD": {"Sparc": ["F3_3u","2","0b110100","0b010001000"]}
+  }
+}

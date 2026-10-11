@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STHUX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STHUX8": {"PowerPC": "STHUX8"}
+  },
+  "INPUTS": {
+    "STHUX8": {"PowerPC": [["g8rc",0],["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "STHUX8": {"PowerPC": [["ptr_rc_nor0",0]]}
+  },
+  "INPUT_BYTES": {
+    "STHUX8": {"PowerPC": ["XForm_8_memOp","31","439"]}
+  },
+  "OUTPUT_BYTES": {
+    "STHUX8": {"PowerPC": ["XForm_8_memOp","31","439"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STMXCSR",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "STMXCSR": {"X86": "STMXCSR"}
+  },
+  "INPUTS": {
+    "STMXCSR": {"X86": [["i32mem",0]]}
+  },
+  "OUTPUTS": {
+    "STMXCSR": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "STMXCSR": {"X86": ["0xAE"]}
+  },
+  "OUTPUT_BYTES": {
+    "STMXCSR": {"X86": ["0xAE"]}
+  }
+}

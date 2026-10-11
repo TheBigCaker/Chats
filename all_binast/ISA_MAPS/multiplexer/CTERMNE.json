@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "CTERMNE",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "CTERMNE_WW": {"AArch64": "CTERMNE_WW"},
+    "CTERMNE_XX": {"AArch64": "CTERMNE_XX"}
+  },
+  "INPUTS": {
+    "CTERMNE_WW": {"AArch64": [["rt:$Rn",0],["rt:$Rm",0]]},
+    "CTERMNE_XX": {"AArch64": [["rt:$Rn",0],["rt:$Rm",0]]}
+  },
+  "OUTPUTS": {
+    "CTERMNE_WW": {"AArch64": []},
+    "CTERMNE_XX": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "CTERMNE_WW": {"AArch64": ["sve_int_cterm","0b0","0b1"]},
+    "CTERMNE_XX": {"AArch64": ["sve_int_cterm","0b1","0b1"]}
+  },
+  "OUTPUT_BYTES": {
+    "CTERMNE_WW": {"AArch64": ["sve_int_cterm","0b0","0b1"]},
+    "CTERMNE_XX": {"AArch64": ["sve_int_cterm","0b1","0b1"]}
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "EXP",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "EXP": {"AMDGPU": "EXP"},
+    "EXP_DONE": {"AMDGPU": "EXP_DONE"},
+    "EXP_ROW": {"AMDGPU": "EXP_ROW"},
+    "EXP_ROW_DONE": {"AMDGPU": "EXP_ROW_DONE"},
+    "EXP_IEEE_eg": {"AMDGPU": "EXP_IEEE_eg"},
+    "EXP_IEEE_r600": {"AMDGPU": "EXP_IEEE_r600"}
+  },
+  "INPUTS": {
+    "EXP": {"AMDGPU": []},
+    "EXP_DONE": {"AMDGPU": []},
+    "EXP_ROW": {"AMDGPU": []},
+    "EXP_ROW_DONE": {"AMDGPU": []},
+    "EXP_IEEE_eg": {"AMDGPU": []},
+    "EXP_IEEE_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "EXP": {"AMDGPU": []},
+    "EXP_DONE": {"AMDGPU": []},
+    "EXP_ROW": {"AMDGPU": []},
+    "EXP_ROW_DONE": {"AMDGPU": []},
+    "EXP_IEEE_eg": {"AMDGPU": []},
+    "EXP_IEEE_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "EXP": {"AMDGPU": ["EXP_Pseudo","0","0"]},
+    "EXP_DONE": {"AMDGPU": ["EXP_Pseudo","0","1"]},
+    "EXP_ROW": {"AMDGPU": ["EXP_Pseudo","1","0"]},
+    "EXP_ROW_DONE": {"AMDGPU": ["EXP_Pseudo","1","1"]},
+    "EXP_IEEE_eg": {"AMDGPU": ["EXP_IEEE_Common","0x81"]},
+    "EXP_IEEE_r600": {"AMDGPU": ["EXP_IEEE_Common","0x61"]}
+  },
+  "OUTPUT_BYTES": {
+    "EXP": {"AMDGPU": ["EXP_Pseudo","0","0"]},
+    "EXP_DONE": {"AMDGPU": ["EXP_Pseudo","0","1"]},
+    "EXP_ROW": {"AMDGPU": ["EXP_Pseudo","1","0"]},
+    "EXP_ROW_DONE": {"AMDGPU": ["EXP_Pseudo","1","1"]},
+    "EXP_IEEE_eg": {"AMDGPU": ["EXP_IEEE_Common","0x81"]},
+    "EXP_IEEE_r600": {"AMDGPU": ["EXP_IEEE_Common","0x61"]}
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "CATEGORY": "VMOV",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMOVv8i8": {"ARM": "VMOVv8i8"},
+    "VMOVv16i8": {"ARM": "VMOVv16i8"},
+    "VMOVv4i16": {"ARM": "VMOVv4i16"},
+    "VMOVv8i16": {"ARM": "VMOVv8i16"},
+    "VMOVv2i32": {"ARM": "VMOVv2i32"},
+    "VMOVv4i32": {"ARM": "VMOVv4i32"},
+    "VMOVv1i64": {"ARM": "VMOVv1i64"},
+    "VMOVv2i64": {"ARM": "VMOVv2i64"},
+    "VMOVv2f32": {"ARM": "VMOVv2f32"},
+    "VMOVv4f32": {"ARM": "VMOVv4f32"}
+  },
+  "INPUTS": {
+    "VMOVv8i8": {"ARM": [["nImmSplatI8",0]]},
+    "VMOVv16i8": {"ARM": [["nImmSplatI8",0]]},
+    "VMOVv4i16": {"ARM": [["nImmSplatI16",0]]},
+    "VMOVv8i16": {"ARM": [["nImmSplatI16",0]]},
+    "VMOVv2i32": {"ARM": [["nImmVMOVI32",0]]},
+    "VMOVv4i32": {"ARM": [["nImmVMOVI32",0]]},
+    "VMOVv1i64": {"ARM": [["nImmSplatI64",0]]},
+    "VMOVv2i64": {"ARM": [["nImmSplatI64",0]]},
+    "VMOVv2f32": {"ARM": [["nImmVMOVF32",0]]},
+    "VMOVv4f32": {"ARM": [["nImmVMOVF32",0]]}
+  },
+  "OUTPUTS": {
+    "VMOVv8i8": {"ARM": [["DPR",0]]},
+    "VMOVv16i8": {"ARM": [["QPR",0]]},
+    "VMOVv4i16": {"ARM": [["DPR",0]]},
+    "VMOVv8i16": {"ARM": [["QPR",0]]},
+    "VMOVv2i32": {"ARM": [["DPR",0]]},
+    "VMOVv4i32": {"ARM": [["QPR",0]]},
+    "VMOVv1i64": {"ARM": [["DPR",0]]},
+    "VMOVv2i64": {"ARM": [["QPR",0]]},
+    "VMOVv2f32": {"ARM": [["DPR",0]]},
+    "VMOVv4f32": {"ARM": [["QPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMOVv8i8": {"ARM": ["N1ModImm","1","0b000","0b1110","0","0","0","1"]},
+    "VMOVv16i8": {"ARM": ["N1ModImm","1","0b000","0b1110","0","1","0","1"]},
+    "VMOVv4i16": {"ARM": ["N1ModImm","1","0b000","0","0","0","0","1"]},
+    "VMOVv8i16": {"ARM": ["N1ModImm","1","0b000","0","0","1","0","1"]},
+    "VMOVv2i32": {"ARM": ["N1ModImm","1","0b000","0","0","0","1"]},
+    "VMOVv4i32": {"ARM": ["N1ModImm","1","0b000","0","1","0","1"]},
+    "VMOVv1i64": {"ARM": ["N1ModImm","1","0b000","0b1110","0","0","1","1"]},
+    "VMOVv2i64": {"ARM": ["N1ModImm","1","0b000","0b1110","0","1","1","1"]},
+    "VMOVv2f32": {"ARM": ["N1ModImm","1","0b000","0b1111","0","0","0","1"]},
+    "VMOVv4f32": {"ARM": ["N1ModImm","1","0b000","0b1111","0","1","0","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMOVv8i8": {"ARM": ["N1ModImm","1","0b000","0b1110","0","0","0","1"]},
+    "VMOVv16i8": {"ARM": ["N1ModImm","1","0b000","0b1110","0","1","0","1"]},
+    "VMOVv4i16": {"ARM": ["N1ModImm","1","0b000","0","0","0","0","1"]},
+    "VMOVv8i16": {"ARM": ["N1ModImm","1","0b000","0","0","1","0","1"]},
+    "VMOVv2i32": {"ARM": ["N1ModImm","1","0b000","0","0","0","1"]},
+    "VMOVv4i32": {"ARM": ["N1ModImm","1","0b000","0","1","0","1"]},
+    "VMOVv1i64": {"ARM": ["N1ModImm","1","0b000","0b1110","0","0","1","1"]},
+    "VMOVv2i64": {"ARM": ["N1ModImm","1","0b000","0b1110","0","1","1","1"]},
+    "VMOVv2f32": {"ARM": ["N1ModImm","1","0b000","0b1111","0","0","0","1"]},
+    "VMOVv4f32": {"ARM": ["N1ModImm","1","0b000","0b1111","0","1","0","1"]}
+  }
+}

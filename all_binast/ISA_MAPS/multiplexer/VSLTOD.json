@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSLTOD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VSLTOD": {"ARM": "VSLTOD"}
+  },
+  "INPUTS": {
+    "VSLTOD": {"ARM": [["DPR",0],["fbits32",0]]}
+  },
+  "OUTPUTS": {
+    "VSLTOD": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSLTOD": {"ARM": ["AVConv1XInsD_Encode","0b11101","0b11","0b1010","0b1011","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSLTOD": {"ARM": ["AVConv1XInsD_Encode","0b11101","0b11","0b1010","0b1011","1"]}
+  }
+}

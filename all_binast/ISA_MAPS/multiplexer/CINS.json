@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CINS",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "CINS64_32": {"Mips": "CINS64_32"}
+  },
+  "INPUTS": {
+    "CINS64_32": {"Mips": [["GPR32Opnd",32],["uimm5",0],["uimm5",0]]}
+  },
+  "OUTPUTS": {
+    "CINS64_32": {"Mips": [["GPR64Opnd",64]]}
+  },
+  "INPUT_BYTES": {
+    "CINS64_32": {"Mips": ["InstSE"]}
+  },
+  "OUTPUT_BYTES": {
+    "CINS64_32": {"Mips": ["InstSE"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVSTWWEX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVSTWWEX": {"PowerPC": "EVSTWWEX"}
+  },
+  "INPUTS": {
+    "EVSTWWEX": {"PowerPC": [["sperc",0],["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "EVSTWWEX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "EVSTWWEX": {"PowerPC": ["EVXForm_1","824"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVSTWWEX": {"PowerPC": ["EVXForm_1","824"]}
+  }
+}

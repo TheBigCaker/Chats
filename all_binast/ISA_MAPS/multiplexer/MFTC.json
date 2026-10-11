@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MFTC",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MFTC0": {"Mips": "MFTC0"},
+    "MFTC1": {"Mips": "MFTC1"}
+  },
+  "INPUTS": {
+    "MFTC0": {"Mips": [["COP0Opnd",0],["uimm3",0]]},
+    "MFTC1": {"Mips": [["FGR32Opnd",32]]}
+  },
+  "OUTPUTS": {
+    "MFTC0": {"Mips": [["GPR32Opnd",32]]},
+    "MFTC1": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "INPUT_BYTES": {
+    "MFTC0": {"Mips": ["MipsAsmPseudoInst"]},
+    "MFTC1": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "MFTC0": {"Mips": ["MipsAsmPseudoInst"]},
+    "MFTC1": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

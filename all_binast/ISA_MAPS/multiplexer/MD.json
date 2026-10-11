@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MD",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "MD5": {"Sparc": "MD5"}
+  },
+  "INPUTS": {
+    "MD5": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "MD5": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "MD5": {"Sparc": ["F3_3","2","0b110110","0b101000000"]}
+  },
+  "OUTPUT_BYTES": {
+    "MD5": {"Sparc": ["F3_3","2","0b110110","0b101000000"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PACKH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PACKH": {"RISCV": "PACKH"}
+  },
+  "INPUTS": {
+    "PACKH": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PACKH": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "PACKH": {"RISCV": ["ALU_rr","0b0000100","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "PACKH": {"RISCV": ["ALU_rr","0b0000100","0b111"]}
+  }
+}

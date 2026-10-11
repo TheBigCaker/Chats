@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MLS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MLS": {"ARM": "MLS"}
+  },
+  "INPUTS": {
+    "MLS": {"ARM": [["GPR",64],["GPR",64],["GPR",64]]}
+  },
+  "OUTPUTS": {
+    "MLS": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "MLS": {"ARM": ["AMul1I","0b0000011"]}
+  },
+  "OUTPUT_BYTES": {
+    "MLS": {"ARM": ["AMul1I","0b0000011"]}
+  }
+}

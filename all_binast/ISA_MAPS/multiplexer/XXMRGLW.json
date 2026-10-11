@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XXMRGLW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXMRGLW": {"PowerPC": "XXMRGLW"}
+  },
+  "INPUTS": {
+    "XXMRGLW": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XXMRGLW": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XXMRGLW": {"PowerPC": ["XX3Form","60","50"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXMRGLW": {"PowerPC": ["XX3Form","60","50"]}
+  }
+}

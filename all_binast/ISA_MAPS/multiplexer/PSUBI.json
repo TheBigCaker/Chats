@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PSUBI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "PSUBI": {"PowerPC": "PSUBI"}
+  },
+  "INPUTS": {
+    "PSUBI": {"PowerPC": [["g8rc",0],["g8rc_nox0",0],["s34imm64",34]]}
+  },
+  "OUTPUTS": {
+    "PSUBI": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "PSUBI": {"PowerPC": ["PPCAsmPseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "PSUBI": {"PowerPC": ["PPCAsmPseudo"]}
+  }
+}

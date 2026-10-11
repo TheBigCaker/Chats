@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSETBV",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XSETBV": {"X86": "XSETBV"}
+  },
+  "INPUTS": {
+    "XSETBV": {"X86": []}
+  },
+  "OUTPUTS": {
+    "XSETBV": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "XSETBV": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSETBV": {"X86": ["0x01"]}
+  }
+}

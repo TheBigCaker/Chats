@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "WHILE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "WHILE_LOOP_EG": {"AMDGPU": "WHILE_LOOP_EG"},
+    "WHILE_LOOP_R600": {"AMDGPU": "WHILE_LOOP_R600"}
+  },
+  "INPUTS": {
+    "WHILE_LOOP_EG": {"AMDGPU": [["i32imm",32]]},
+    "WHILE_LOOP_R600": {"AMDGPU": [["i32imm",32]]}
+  },
+  "OUTPUTS": {
+    "WHILE_LOOP_EG": {"AMDGPU": []},
+    "WHILE_LOOP_R600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "WHILE_LOOP_EG": {"AMDGPU": ["CF_CLAUSE_EG","6"]},
+    "WHILE_LOOP_R600": {"AMDGPU": ["CF_CLAUSE_R600","6"]}
+  },
+  "OUTPUT_BYTES": {
+    "WHILE_LOOP_EG": {"AMDGPU": ["CF_CLAUSE_EG","6"]},
+    "WHILE_LOOP_R600": {"AMDGPU": ["CF_CLAUSE_R600","6"]}
+  }
+}

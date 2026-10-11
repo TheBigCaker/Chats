@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMSIF",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VMSIF_M": {"RISCV": "VMSIF_M"}
+  },
+  "INPUTS": {
+    "VMSIF_M": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VMSIF_M": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VMSIF_M": {"RISCV": ["VMSFS_MV_VS2","0b010100","0b00011"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMSIF_M": {"RISCV": ["VMSFS_MV_VS2","0b010100","0b00011"]}
+  }
+}

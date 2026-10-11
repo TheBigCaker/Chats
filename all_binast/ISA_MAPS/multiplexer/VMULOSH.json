@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULOSH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMULOSH": {"PowerPC": "VMULOSH"}
+  },
+  "INPUTS": {
+    "VMULOSH": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMULOSH": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMULOSH": {"PowerPC": ["VX1_Int_Ty2","328"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULOSH": {"PowerPC": ["VX1_Int_Ty2","328"]}
+  }
+}

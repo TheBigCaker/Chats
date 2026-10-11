@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ARPL",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "ARPL16rr": {"X86": "ARPL16rr"},
+    "ARPL16mr": {"X86": "ARPL16mr"}
+  },
+  "INPUTS": {
+    "ARPL16rr": {"X86": [["GR16",16]]},
+    "ARPL16mr": {"X86": [["i16mem",0],["GR16",16]]}
+  },
+  "OUTPUTS": {
+    "ARPL16rr": {"X86": [["GR16",16]]},
+    "ARPL16mr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "ARPL16rr": {"X86": ["0x63"]},
+    "ARPL16mr": {"X86": ["0x63"]}
+  },
+  "OUTPUT_BYTES": {
+    "ARPL16rr": {"X86": ["0x63"]},
+    "ARPL16mr": {"X86": ["0x63"]}
+  }
+}

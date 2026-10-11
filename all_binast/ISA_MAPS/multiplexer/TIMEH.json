@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TIMEH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "TIMEH": {"RISCV": "TIMEH"}
+  },
+  "INPUTS": {
+    "TIMEH": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "TIMEH": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "TIMEH": {"RISCV": ["SysReg","0xC81"]}
+  },
+  "OUTPUT_BYTES": {
+    "TIMEH": {"RISCV": ["SysReg","0xC81"]}
+  }
+}

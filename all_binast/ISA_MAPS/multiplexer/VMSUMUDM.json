@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMSUMUDM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMSUMUDM": {"PowerPC": "VMSUMUDM"}
+  },
+  "INPUTS": {
+    "VMSUMUDM": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMSUMUDM": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMSUMUDM": {"PowerPC": ["VA1a_Int_Ty3","35"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMSUMUDM": {"PowerPC": ["VA1a_Int_Ty3","35"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YTOPR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YTOPR": {"RISCV": "YTOPR"}
+  },
+  "INPUTS": {
+    "YTOPR": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YTOPR": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YTOPR": {"RISCV": ["RVY_r_xy","0b00010"]}
+  },
+  "OUTPUT_BYTES": {
+    "YTOPR": {"RISCV": ["RVY_r_xy","0b00010"]}
+  }
+}

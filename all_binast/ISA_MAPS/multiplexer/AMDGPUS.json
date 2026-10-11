@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AMDGPUS",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "AMDGPUSetCCOp": {"AMDGPU": "AMDGPUSetCCOp"}
+  },
+  "INPUTS": {
+    "AMDGPUSetCCOp": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "AMDGPUSetCCOp": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "AMDGPUSetCCOp": {"AMDGPU": ["SDTypeProfile","1","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "AMDGPUSetCCOp": {"AMDGPU": ["SDTypeProfile","1","3"]}
+  }
+}

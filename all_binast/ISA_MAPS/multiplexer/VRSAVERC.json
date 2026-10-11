@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VRSAVERC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VRSAVERC": {"PowerPC": "VRSAVERC"}
+  },
+  "INPUTS": {
+    "VRSAVERC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VRSAVERC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VRSAVERC": {"PowerPC": ["PPCRegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRSAVERC": {"PowerPC": ["PPCRegisterClass","32"]}
+  }
+}

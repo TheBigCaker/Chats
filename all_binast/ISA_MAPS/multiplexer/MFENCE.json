@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MFENCE",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MFENCE": {"X86": "MFENCE"}
+  },
+  "INPUTS": {
+    "MFENCE": {"X86": []}
+  },
+  "OUTPUTS": {
+    "MFENCE": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "MFENCE": {"X86": ["0xAE"]}
+  },
+  "OUTPUT_BYTES": {
+    "MFENCE": {"X86": ["0xAE"]}
+  }
+}

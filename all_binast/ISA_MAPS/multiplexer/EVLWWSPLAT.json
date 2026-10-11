@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVLWWSPLAT",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVLWWSPLAT": {"PowerPC": "EVLWWSPLAT"}
+  },
+  "INPUTS": {
+    "EVLWWSPLAT": {"PowerPC": [["(spe4dis",0]]}
+  },
+  "OUTPUTS": {
+    "EVLWWSPLAT": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVLWWSPLAT": {"PowerPC": ["EVXForm_D","793"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVLWWSPLAT": {"PowerPC": ["EVXForm_D","793"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULOUD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMULOUD": {"PowerPC": "VMULOUD"}
+  },
+  "INPUTS": {
+    "VMULOUD": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMULOUD": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMULOUD": {"PowerPC": ["VXForm_1","200"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULOUD": {"PowerPC": ["VXForm_1","200"]}
+  }
+}

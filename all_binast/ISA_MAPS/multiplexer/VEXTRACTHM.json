@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VEXTRACTHM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VEXTRACTHM": {"PowerPC": "VEXTRACTHM"}
+  },
+  "INPUTS": {
+    "VEXTRACTHM": {"PowerPC": [["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VEXTRACTHM": {"PowerPC": [["gprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VEXTRACTHM": {"PowerPC": ["VXForm_RD5_XO5_RS5","1602","9"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEXTRACTHM": {"PowerPC": ["VXForm_RD5_XO5_RS5","1602","9"]}
+  }
+}

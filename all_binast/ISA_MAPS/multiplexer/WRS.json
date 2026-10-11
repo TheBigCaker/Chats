@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "WRS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "WRS_NTO": {"RISCV": "WRS_NTO"},
+    "WRS_STO": {"RISCV": "WRS_STO"}
+  },
+  "INPUTS": {
+    "WRS_NTO": {"RISCV": []},
+    "WRS_STO": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "WRS_NTO": {"RISCV": []},
+    "WRS_STO": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "WRS_NTO": {"RISCV": ["WRSInst","0b000000001101"]},
+    "WRS_STO": {"RISCV": ["WRSInst","0b000000011101"]}
+  },
+  "OUTPUT_BYTES": {
+    "WRS_NTO": {"RISCV": ["WRSInst","0b000000001101"]},
+    "WRS_STO": {"RISCV": ["WRSInst","0b000000011101"]}
+  }
+}

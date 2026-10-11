@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PWADDU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PWADDU_H": {"RISCV": "PWADDU_H"},
+    "PWADDU_B": {"RISCV": "PWADDU_B"}
+  },
+  "INPUTS": {
+    "PWADDU_H": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PWADDU_B": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PWADDU_H": {"RISCV": [["GPRPairRV32:$rd",0]]},
+    "PWADDU_B": {"RISCV": [["GPRPairRV32:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "PWADDU_H": {"RISCV": ["RVPWideningBinary_rr","0b0010","0b00"]},
+    "PWADDU_B": {"RISCV": ["RVPWideningBinary_rr","0b0010","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "PWADDU_H": {"RISCV": ["RVPWideningBinary_rr","0b0010","0b00"]},
+    "PWADDU_B": {"RISCV": ["RVPWideningBinary_rr","0b0010","0b10"]}
+  }
+}

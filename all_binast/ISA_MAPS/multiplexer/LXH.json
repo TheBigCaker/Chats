@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "LXH": {"RISCV": "LXH"}
+  },
+  "INPUTS": {
+    "LXH": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "LXH": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "LXH": {"RISCV": ["ZilxLoad","0b10010","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXH": {"RISCV": ["ZilxLoad","0b10010","0b001"]}
+  }
+}

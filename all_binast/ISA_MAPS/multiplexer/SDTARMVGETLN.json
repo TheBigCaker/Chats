@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SDTARMVGETLN",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SDTARMVGETLN": {"ARM": "SDTARMVGETLN"}
+  },
+  "INPUTS": {
+    "SDTARMVGETLN": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SDTARMVGETLN": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SDTARMVGETLN": {"ARM": ["SDTypeProfile","1","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTARMVGETLN": {"ARM": ["SDTypeProfile","1","2"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSMULQPO",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSMULQPO": {"PowerPC": "XSMULQPO"}
+  },
+  "INPUTS": {
+    "XSMULQPO": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSMULQPO": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSMULQPO": {"PowerPC": ["X_VT5_VA5_VB5_Ro","63","36"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSMULQPO": {"PowerPC": ["X_VT5_VA5_VB5_Ro","63","36"]}
+  }
+}

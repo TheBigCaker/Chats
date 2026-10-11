@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SLBSYNC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SLBSYNC": {"PowerPC": "SLBSYNC"}
+  },
+  "INPUTS": {
+    "SLBSYNC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "SLBSYNC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "SLBSYNC": {"PowerPC": ["XForm_0","31","338"]}
+  },
+  "OUTPUT_BYTES": {
+    "SLBSYNC": {"PowerPC": ["XForm_0","31","338"]}
+  }
+}

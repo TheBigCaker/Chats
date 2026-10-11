@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCLZW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCLZW": {"PowerPC": "VCLZW"}
+  },
+  "INPUTS": {
+    "VCLZW": {"PowerPC": [["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VCLZW": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCLZW": {"PowerPC": ["VXForm_2","1922"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCLZW": {"PowerPC": ["VXForm_2","1922"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MVED",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MVEDomain": {"ARM": "MVEDomain"}
+  },
+  "INPUTS": {
+    "MVEDomain": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "MVEDomain": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "MVEDomain": {"ARM": ["Domain","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "MVEDomain": {"ARM": ["Domain","8"]}
+  }
+}

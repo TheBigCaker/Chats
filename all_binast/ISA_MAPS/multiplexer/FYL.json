@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FYL",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "FYL2X": {"X86": "FYL2X"},
+    "FYL2XP1": {"X86": "FYL2XP1"}
+  },
+  "INPUTS": {
+    "FYL2X": {"X86": []},
+    "FYL2XP1": {"X86": []}
+  },
+  "OUTPUTS": {
+    "FYL2X": {"X86": []},
+    "FYL2XP1": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "FYL2X": {"X86": ["0xD9"]},
+    "FYL2XP1": {"X86": ["0xD9"]}
+  },
+  "OUTPUT_BYTES": {
+    "FYL2X": {"X86": ["0xD9"]},
+    "FYL2XP1": {"X86": ["0xD9"]}
+  }
+}

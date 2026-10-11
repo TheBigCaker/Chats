@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "STRICT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "STRICT_WWM": {"AMDGPU": "STRICT_WWM"},
+    "STRICT_WQM": {"AMDGPU": "STRICT_WQM"}
+  },
+  "INPUTS": {
+    "STRICT_WWM": {"AMDGPU": [["unknown",0]]},
+    "STRICT_WQM": {"AMDGPU": [["unknown",0]]}
+  },
+  "OUTPUTS": {
+    "STRICT_WWM": {"AMDGPU": [["unknown",0]]},
+    "STRICT_WQM": {"AMDGPU": [["unknown",0]]}
+  },
+  "INPUT_BYTES": {
+    "STRICT_WWM": {"AMDGPU": ["PseudoInstSI"]},
+    "STRICT_WQM": {"AMDGPU": ["PseudoInstSI"]}
+  },
+  "OUTPUT_BYTES": {
+    "STRICT_WWM": {"AMDGPU": ["PseudoInstSI"]},
+    "STRICT_WQM": {"AMDGPU": ["PseudoInstSI"]}
+  }
+}

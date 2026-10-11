@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SLWPCB",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SLWPCB": {"X86": "SLWPCB"},
+    "SLWPCB64": {"X86": "SLWPCB64"}
+  },
+  "INPUTS": {
+    "SLWPCB": {"X86": []},
+    "SLWPCB64": {"X86": []}
+  },
+  "OUTPUTS": {
+    "SLWPCB": {"X86": [["GR32",32]]},
+    "SLWPCB64": {"X86": [["GR64",64]]}
+  },
+  "INPUT_BYTES": {
+    "SLWPCB": {"X86": ["0x12"]},
+    "SLWPCB64": {"X86": ["0x12"]}
+  },
+  "OUTPUT_BYTES": {
+    "SLWPCB": {"X86": ["0x12"]},
+    "SLWPCB64": {"X86": ["0x12"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HPR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "HPR": {"ARM": "HPR"}
+  },
+  "INPUTS": {
+    "HPR": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "HPR": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "HPR": {"ARM": ["RegisterClass","32","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "HPR": {"ARM": ["RegisterClass","32","0"]}
+  }
+}

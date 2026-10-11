@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ADDR",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "ADDR16_PREFIX": {"X86": "ADDR16_PREFIX"},
+    "ADDR32_PREFIX": {"X86": "ADDR32_PREFIX"}
+  },
+  "INPUTS": {
+    "ADDR16_PREFIX": {"X86": []},
+    "ADDR32_PREFIX": {"X86": []}
+  },
+  "OUTPUTS": {
+    "ADDR16_PREFIX": {"X86": []},
+    "ADDR32_PREFIX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "ADDR16_PREFIX": {"X86": ["0x67"]},
+    "ADDR32_PREFIX": {"X86": ["0x67"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADDR16_PREFIX": {"X86": ["0x67"]},
+    "ADDR32_PREFIX": {"X86": ["0x67"]}
+  }
+}

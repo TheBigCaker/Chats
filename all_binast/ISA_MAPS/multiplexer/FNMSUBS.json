@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FNMSUBS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FNMSUBS": {"Sparc": "FNMSUBS"}
+  },
+  "INPUTS": {
+    "FNMSUBS": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FNMSUBS": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FNMSUBS": {"Sparc": ["FourOp","0b110111","0b1001"]}
+  },
+  "OUTPUT_BYTES": {
+    "FNMSUBS": {"Sparc": ["FourOp","0b110111","0b1001"]}
+  }
+}

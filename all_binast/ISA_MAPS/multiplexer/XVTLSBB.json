@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVTLSBB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVTLSBB": {"PowerPC": "XVTLSBB"}
+  },
+  "INPUTS": {
+    "XVTLSBB": {"PowerPC": [["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVTLSBB": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVTLSBB": {"PowerPC": ["XX2_BF3_XO5_XB6_XO9","60","2","475"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVTLSBB": {"PowerPC": ["XX2_BF3_XO5_XB6_XO9","60","2","475"]}
+  }
+}

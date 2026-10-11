@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VDIVSD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VDIVSD": {"PowerPC": "VDIVSD"}
+  },
+  "INPUTS": {
+    "VDIVSD": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VDIVSD": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VDIVSD": {"PowerPC": ["VXForm_1","459"]}
+  },
+  "OUTPUT_BYTES": {
+    "VDIVSD": {"PowerPC": ["VXForm_1","459"]}
+  }
+}

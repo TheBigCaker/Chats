@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "RRX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "RRX": {"ARM": "RRX"},
+    "RRXi": {"ARM": "RRXi"}
+  },
+  "INPUTS": {
+    "RRX": {"ARM": [["GPR",64]]},
+    "RRXi": {"ARM": [["GPR",64],["GPR",64],["pred",0],["cc_out",0]]}
+  },
+  "OUTPUTS": {
+    "RRX": {"ARM": [["GPR",64]]},
+    "RRXi": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "RRX": {"ARM": ["PseudoInst"]},
+    "RRXi": {"ARM": ["ARMAsmPseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "RRX": {"ARM": ["PseudoInst"]},
+    "RRXi": {"ARM": ["ARMAsmPseudo"]}
+  }
+}

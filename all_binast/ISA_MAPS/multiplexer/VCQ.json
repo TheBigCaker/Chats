@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCQ",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VCQ": {"RISCV": "VCQ"}
+  },
+  "INPUTS": {
+    "VCQ": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VCQ": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VCQ": {"RISCV": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCQ": {"RISCV": ["ProcResource","1"]}
+  }
+}

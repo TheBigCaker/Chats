@@ -1,0 +1,64 @@
+{
+  "CATEGORY": "FROUND",
+  "BACKENDS": ["RISCV","Mali"],
+  "INDEX": {
+    "FROUND_S": {"RISCV": "FROUND_S"},
+    "FROUND_D": {"RISCV": "FROUND_D"},
+    "FROUND_H": {"RISCV": "FROUND_H"},
+    "FROUND_Q": {"RISCV": "FROUND_Q"},
+    "FROUND.f32": {"Mali": "FROUND.f32"},
+    "FROUND.v2f16": {"Mali": "FROUND.v2f16"},
+    "FROUND.f32": {"Mali": "FROUND.f32"},
+    "FROUND.v2f16": {"Mali": "FROUND.v2f16"},
+    "FROUND.f32": {"Mali": "FROUND.f32"},
+    "FROUND.v2f16": {"Mali": "FROUND.v2f16"}
+  },
+  "INPUTS": {
+    "FROUND_S": {"RISCV": [["rs1ty:$rs1",0],["frmarg:$frm",0]]},
+    "FROUND_D": {"RISCV": [["rs1ty:$rs1",0],["frmarg:$frm",0]]},
+    "FROUND_H": {"RISCV": [["rs1ty:$rs1",0],["frmarg:$frm",0]]},
+    "FROUND_Q": {"RISCV": [["rs1ty:$rs1",0],["frmarg:$frm",0]]},
+    "FROUND.f32": {"Mali": [["R32",32]]},
+    "FROUND.v2f16": {"Mali": [["R32",32]]},
+    "FROUND.f32": {"Mali": [["R32",32]]},
+    "FROUND.v2f16": {"Mali": [["R32",32]]},
+    "FROUND.f32": {"Mali": []},
+    "FROUND.v2f16": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "FROUND_S": {"RISCV": [["rdty:$rd",0]]},
+    "FROUND_D": {"RISCV": [["rdty:$rd",0]]},
+    "FROUND_H": {"RISCV": [["rdty:$rd",0]]},
+    "FROUND_Q": {"RISCV": [["rdty:$rd",0]]},
+    "FROUND.f32": {"Mali": [["R",32]]},
+    "FROUND.v2f16": {"Mali": [["R",32]]},
+    "FROUND.f32": {"Mali": [["R",32]]},
+    "FROUND.v2f16": {"Mali": [["R",32]]},
+    "FROUND.f32": {"Mali": [["R",32]]},
+    "FROUND.v2f16": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FROUND_S": {"RISCV": ["FPUnaryOp_r_frm","0b0100000","0b00100"]},
+    "FROUND_D": {"RISCV": ["FPUnaryOp_r_frm","0b0100001","0b00100"]},
+    "FROUND_H": {"RISCV": ["FPUnaryOp_r_frm","0b0100010","0b00100"]},
+    "FROUND_Q": {"RISCV": ["FPUnaryOp_r_frm","0b0100011","0b00100"]},
+    "FROUND.f32": {"Mali": ["Bifrost_fma"]},
+    "FROUND.v2f16": {"Mali": ["Bifrost_fma"]},
+    "FROUND.f32": {"Mali": ["Bifrost_add","0x3e820","0xff860"]},
+    "FROUND.v2f16": {"Mali": ["Bifrost_add","0x3e800","0xff860"]},
+    "FROUND.f32": {"Mali": ["Valhall_"]},
+    "FROUND.v2f16": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "FROUND_S": {"RISCV": ["FPUnaryOp_r_frm","0b0100000","0b00100"]},
+    "FROUND_D": {"RISCV": ["FPUnaryOp_r_frm","0b0100001","0b00100"]},
+    "FROUND_H": {"RISCV": ["FPUnaryOp_r_frm","0b0100010","0b00100"]},
+    "FROUND_Q": {"RISCV": ["FPUnaryOp_r_frm","0b0100011","0b00100"]},
+    "FROUND.f32": {"Mali": ["Bifrost_fma"]},
+    "FROUND.v2f16": {"Mali": ["Bifrost_fma"]},
+    "FROUND.f32": {"Mali": ["Bifrost_add","0x3e820","0xff860"]},
+    "FROUND.v2f16": {"Mali": ["Bifrost_add","0x3e800","0xff860"]},
+    "FROUND.f32": {"Mali": ["Valhall_"]},
+    "FROUND.v2f16": {"Mali": ["Valhall_"]}
+  }
+}

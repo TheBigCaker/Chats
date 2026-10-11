@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "UBFX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UBFX": {"ARM": "UBFX"}
+  },
+  "INPUTS": {
+    "UBFX": {"ARM": [["GPRnopc",0],["imm0_31",0],["imm1_32",0]]}
+  },
+  "OUTPUTS": {
+    "UBFX": {"ARM": [["GPRnopc",0]]}
+  },
+  "INPUT_BYTES": {
+    "UBFX": {"ARM": ["I","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "UBFX": {"ARM": ["I","4"]}
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "VUZP",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VUZPd8": {"ARM": "VUZPd8"},
+    "VUZPd16": {"ARM": "VUZPd16"},
+    "VUZPq8": {"ARM": "VUZPq8"},
+    "VUZPq16": {"ARM": "VUZPq16"},
+    "VUZPq32": {"ARM": "VUZPq32"}
+  },
+  "INPUTS": {
+    "VUZPd8": {"ARM": []},
+    "VUZPd16": {"ARM": []},
+    "VUZPq8": {"ARM": []},
+    "VUZPq16": {"ARM": []},
+    "VUZPq32": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VUZPd8": {"ARM": []},
+    "VUZPd16": {"ARM": []},
+    "VUZPq8": {"ARM": []},
+    "VUZPq16": {"ARM": []},
+    "VUZPq32": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VUZPd8": {"ARM": ["N2VDShuffle","0b00","0b00010"]},
+    "VUZPd16": {"ARM": ["N2VDShuffle","0b01","0b00010"]},
+    "VUZPq8": {"ARM": ["N2VQShuffle","0b00","0b00010"]},
+    "VUZPq16": {"ARM": ["N2VQShuffle","0b01","0b00010"]},
+    "VUZPq32": {"ARM": ["N2VQShuffle","0b10","0b00010"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUZPd8": {"ARM": ["N2VDShuffle","0b00","0b00010"]},
+    "VUZPd16": {"ARM": ["N2VDShuffle","0b01","0b00010"]},
+    "VUZPq8": {"ARM": ["N2VQShuffle","0b00","0b00010"]},
+    "VUZPq16": {"ARM": ["N2VQShuffle","0b01","0b00010"]},
+    "VUZPq32": {"ARM": ["N2VQShuffle","0b10","0b00010"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "STRD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "STRD": {"ARM": "STRD"},
+    "STRD_PRE": {"ARM": "STRD_PRE"},
+    "STRD_POST": {"ARM": "STRD_POST"}
+  },
+  "INPUTS": {
+    "STRD": {"ARM": [["GPR",64],["GPR",64],["addrmode3",0]]},
+    "STRD_PRE": {"ARM": [["GPR",64],["GPR",64],["addrmode3_pre",0]]},
+    "STRD_POST": {"ARM": [["GPR",64],["GPR",64],["addr_offset_none",0],["am3offset",0]]}
+  },
+  "OUTPUTS": {
+    "STRD": {"ARM": []},
+    "STRD_PRE": {"ARM": [["GPR",64]]},
+    "STRD_POST": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "STRD": {"ARM": ["AI3str","0b1111"]},
+    "STRD_PRE": {"ARM": ["AI3ldstidx","0b1111","0","1"]},
+    "STRD_POST": {"ARM": ["AI3ldstidx","0b1111","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "STRD": {"ARM": ["AI3str","0b1111"]},
+    "STRD_PRE": {"ARM": ["AI3ldstidx","0b1111","0","1"]},
+    "STRD_POST": {"ARM": ["AI3ldstidx","0b1111","0","0"]}
+  }
+}

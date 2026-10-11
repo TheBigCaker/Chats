@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ADDXCCC",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "ADDXCCC": {"Sparc": "ADDXCCC"}
+  },
+  "INPUTS": {
+    "ADDXCCC": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "ADDXCCC": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "ADDXCCC": {"Sparc": ["VISInst","0b000010011"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADDXCCC": {"Sparc": ["VISInst","0b000010011"]}
+  }
+}

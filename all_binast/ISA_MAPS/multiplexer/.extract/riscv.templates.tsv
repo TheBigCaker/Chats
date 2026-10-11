@@ -1,0 +1,643 @@
+RISCVExtension	9	|
+RISCVExtensionBitmask	2	|
+RISCVExperimentalExtension	8	|
+RISCVTuneFeature	8	|
+InstFormat	1	|
+RISCVVConstraint	2	|
+RISCVSMTConstraint	1	|
+RISCVOpcode	2	|
+EltDeps	2	|
+EEW	1	|
+AltFmtType	1	|
+RVInstCommon	6	|
+RVInst	6	|
+RVInst48	6	|
+RVInst64	6	|
+Pseudo	5	|
+PseudoQuietFCMP	1	GPR:$rd|Ty:$rs1, Ty:$rs2
+PseudoLoad	2	rdty:$rd|bare_symbol:$addr
+PseudoFloatLoad	2	GPR:$tmp, rdty:$rd|bare_symbol:$addr
+PseudoStore	2	GPR:$tmp|rsty:$rs, bare_symbol:$addr
+for	6	|
+RVInstR	7	|
+RVInstRAtomic	9	|
+RVInstRFrm	6	|
+RVInstR4	7	|
+RVInstR4Frm	6	|
+for	6	|
+RVInstI	6	|
+RVInstIShift	7	|
+RVInstIShiftW	7	|
+RVInstIUnary	7	|
+RVInstS	6	|
+RVInstB	6	|
+RVInstBIMM	6	|
+RVInstU	5	|
+RVInstJ	5	|
+DirectiveInsnR	3	|
+DirectiveInsnR4	3	|
+DirectiveInsnI	3	|
+DirectiveInsnS	3	|
+DirectiveInsnB	3	|
+DirectiveInsnU	3	|
+DirectiveInsnJ	3	|
+RISCVCOpcode	2	|
+RVInst16	6	|
+RVInst16CR	6	|
+RVInst16CI	6	|
+RVInst16CSS	6	|
+RVInst16CIW	6	|
+RVInst16CL	6	|
+RVInst16CS	6	|
+RVInst16CA	7	|
+RVInst16CB	6	|
+RVInst16CJ	6	|
+RVInst16CU	7	|
+RVInst16CLB	6	|
+RVInst16CLH	7	|
+RVInst16CSB	6	|
+RVInst16CSH	7	|
+DirectiveInsnCR	3	|
+DirectiveInsnCI	3	|
+DirectiveInsnCIW	3	|
+DirectiveInsnCSS	3	|
+DirectiveInsnCL	3	|
+DirectiveInsnCS	3	|
+DirectiveInsnCA	3	|
+DirectiveInsnCB	3	|
+DirectiveInsnCJ	3	|
+templates	1	|
+VTypeEncode	2	|
+SlideEncode	2	|
+HPEncode	2	|
+SMTVMADot	3	VRM2:$vd_wb|VRM2:$vd, VR:$vs1, VR:$vs2
+SMTVMADotSlide	4	VRM2:$vd_wb|VRM2:$vd, VRM2:$vs1, VR:$vs2
+SMTVMADotII	3	VRM2:$vd_wb|VRM2:$vd, VR:$vs1, VR:$vs2, SMT_INT:$vtype
+SMTVMADotSlideII	4	VRM2:$vd_wb|VRM2:$vd, VRM2:$vs1, VR:$vs2, SMT_I8:$vtype
+SMTVMADOTSP	4	VRM2:$vd_wb|VRM2:$vd, VRM2:$vs1, VR:$vs2, VR:$vmask, uimm2:$imm2, SMT_INT:$vtype
+SMTVMADOTHP	4	VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2, VR:$vmask, uimm3:$imm3, SMT_INT:$vtype
+SMTVFWMADOT	5	|
+SMTVPACK	6	|
+RISCVVFormat	1	|
+RISCVMOP	1	|
+RISCVLUMOP	1	|
+RISCVSUMOP	1	|
+RISCVWidth	1	|
+RVInstVSetiVLi	4	|
+RVInstVSetVLi	4	|
+RVInstVSetVL	4	|
+RVInstVBase	6	|
+RVInstVV	6	|
+RVInstVX	6	|
+RVInstIVI	5	|
+RVInstVUnary	7	|
+RVInstVUnaryRd	7	|
+RVInstVLoadBase	7	|
+RVInstVLU	7	|
+RVInstVLS	6	|
+RVInstVLX	7	|
+RVInstVStoreBase	7	|
+RVInstVSU	7	|
+RVInstVSS	6	|
+RVInstVSX	7	|
+RVInstET1	6	|
+RVInstET2	6	|
+RVInstET3	6	|
+RVInstET4	6	|
+RVInstET5	7	|
+RVInstET6	6	|
+RVInstET7	5	|
+RVInstET8	5	|
+RVInstET9	6	|
+RVInstET10	6	|
+RVInstET11	5	|
+RVInstET12	7	|
+RVInstET13	7	|
+RVInstET14	7	|
+RVSDNode	3	|
+ImmXLenAsmOperand	2	|
+ImmAsmOperand	3	|
+MemOperand	1	|
+SImmAsmOperand	2	|
+UImmAsmOperand	2	|
+BareSImmNLsb0AsmOperand	1	|
+OptionalMemOffsetAsmOperand	1	|
+RISCVOp	1	|
+RISCVUImmOp	1	|
+OptionalUImmLeafOp	1	|
+OptionalUImmLsbZeroOp	2	|
+RISCVSImmOp	1	|
+Simm12LoOp	1	|
+BareSImm13Lsb0MaybeSym	1	|
+UImm20OperandMaybeSym	1	|
+BranchCC_rri	2	|GPR:$rs1, GPR:$rs2, bare_simm13_lsb0:$imm12
+HLoad_r	3	GPR:$rd|GPRMemZeroOffset:$rs1
+HStore_rr	2	|GPR:$rs2, GPRMemZeroOffset:$rs1
+ALU_rr	4	GPR:$rd|GPR:$rs1, GPR:$rs2
+ALUW_rr	4	GPR:$rd|GPR:$rs1, GPR:$rs2
+Priv_rr	2	|GPR:$rs1, GPR:$rs2
+binop_oneuse	1	|
+unop_oneuse	1	|
+LongBccPseudo	5	|
+LongBcciPseudo	2	|GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20
+ReadSysReg	2	GPR:$rd|
+WriteSysReg	2	|GPR:$val
+WriteSysRegImm	2	|uimm5:$val
+SwapSysReg	2	GPR:$rd|GPR:$val
+SwapSysRegImm	2	GPR:$rd|uimm5:$val
+ClearSysReg	2	|GPR:$val
+ClearSysRegImm	2	|uimm5:$val
+SetSysReg	2	|GPR:$val
+SetSysRegImm	2	|uimm5:$val
+templates	4	GPR:$rd|GPRMemZeroOffset:$rs1
+relaxed_load	1	|
+acquiring_load	1	|
+seq_cst_load	1	|
+relaxed_store	1	|
+releasing_store	1	|
+seq_cst_store	1	|
+PseudoAMO	6	|
+PseudoMaskedAMO	7	|
+PseudoMaskedAMOMinMax	9	|
+PseudoMaskedAMOUMinUMax	8	|
+PseudoCmpXchg	7	|
+CStackLoad	4	cls:$rd|SPMem:$rs1, opnd:$imm
+CStackStore	4	|cls:$rs2, SPMem:$rs1, opnd:$imm
+Bcz	2	|GPRC:$rs1, bare_simm9_lsb0:$imm
+Shift_right	2	GPRC:$rd|GPRC:$rs1, uimmlog2xlen:$imm
+CA_ALU	3	GPRC:$rd_wb|GPRC:$rd, GPRC:$rs2
+ExtInfo	9	|
+FPALU_rr	5	rty:$rd|rty:$rs1, rty:$rs2
+FPALU_rr_frm	4	rty:$rd|rty:$rs1, rty:$rs2, frmarg:$frm
+FPUnaryOp_r	6	rdty:$rd|rs1ty:$rs1
+FPUnaryOp_r_frm	5	rdty:$rd|rs1ty:$rs1, frmarg:$frm
+FPUnaryOp_r_frmlegacy	5	rdty:$rd|rs1ty:$rs1, frmarglegacy:$frm
+FPCmp_rr	5	GPR:$rd|rty:$rs1, rty:$rs2
+PseudoFROUND	3	Ty:$rd|Ty:$rs1, Ty:$rs2, frmarg:$rm
+UImmPlus1AsmOperand	1	|
+templates	4	GPR:$rd|
+PLI_i	3	|imm:$imm10
+PLUI_i	2	|simm10_plui:$imm10
+RVPWideningBase	6	|
+RVPNarrowingBase	8	|
+RVPPairBase	7	|
+RVPPairBinaryBase_rr	6	GPRPairRV32:$rd|GPRPairRV32:$rs1, GPRPairRV32:$rs2
+RVPShift_ri	5	GPR:$rd|GPR:$rs1, ImmType:$shamt
+RVPShiftD_ri	5	|
+RVPShiftW_ri	5	|
+RVPShiftH_ri	5	|
+RVPShiftB_ri	4	|
+RVPWideningShift_ri	3	GPRPairRV32:$rd|GPR:$rs1, ImmType:$shamt
+RVPWideningShiftW_ri	2	|
+RVPWideningShiftH_ri	2	|
+RVPWideningShiftB_ri	2	|
+RVPNarrowingShiftW_ri	3	|
+RVPNarrowingShiftH_ri	3	|
+RVPNarrowingShiftB_ri	3	|
+RVPPairShift_ri	5	GPRPairRV32:$rd|GPRPairRV32:$rs1, ImmType:$shamt
+RVPPairShiftW_ri	4	|
+RVPPairShiftH_ri	4	|
+RVPPairShiftB_ri	3	|
+RVPNarrowingShift_rr	4	GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2
+RVPPairShift_rr	5	GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2
+RVPUnary_ri	4	GPR:$rd|GPR:$rs1
+RVPPairUnary_r	4	GPRPairRV32:$rd|GPRPairRV32:$rs1
+RVPBinaryScalar_rr	5	GPR:$rd|GPR:$rs1, GPR:$rs2
+RVPBinary_rr	6	GPR:$rd|GPR:$rs1, GPR:$rs2
+RVPWideningBinary_rr	4	GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2
+RVPNarrowingBinary_rr	3	GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2
+RVPPairBinary_rr	5	|
+RVPPairBinaryExchanged_rr	5	|
+RVPTernary_rrr	4	GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2
+RVPWideningTernary_rrr	3	GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2
+RVPPairLoadImm_i	4	GPRPairRV32:$rd|
+SFBLUI	7	|
+SFBLoad	8	|
+CSPSInst	3	SP:$rd|SP:$rs1
+VTypeIAsmOperand	1	|
+VTypeIOp	1	|
+of	6	|
+RISCVVXMemOpMC	4	|
+VWholeLoad	4	VRC:$vd|GPRMemZeroOffset:$rs1
+VUnitStrideMaskLoad	1	VR:$vd|GPRMemZeroOffset:$rs1
+VUnitStrideSegmentLoad	3	VR:$vd|GPRMemZeroOffset:$rs1, VMaskOp:$vm
+VUnitStrideSegmentLoadFF	3	VR:$vd|GPRMemZeroOffset:$rs1, VMaskOp:$vm
+VStridedSegmentLoad	3	VR:$vd|GPRMemZeroOffset:$rs1, GPR:$rs2, VMaskOp:$vm
+VIndexedSegmentLoad	4	VR:$vd|GPRMemZeroOffset:$rs1, VR:$vs2, VMaskOp:$vm
+VWholeStore	3	|VRC:$vs3, GPRMemZeroOffset:$rs1
+VUnitStrideMaskStore	1	|VR:$vs3, GPRMemZeroOffset:$rs1
+VUnitStrideSegmentStore	3	|VR:$vs3, GPRMemZeroOffset:$rs1, VMaskOp:$vm
+VStridedSegmentStore	3	|VR:$vs3, GPRMemZeroOffset:$rs1, GPR:$rs2, VMaskOp:$vm
+VIndexedSegmentStore	4	|VR:$vs3, GPRMemZeroOffset:$rs1, VR:$vs2, VMaskOp:$vm
+VALUmVV	3	VR:$vd|VR:$vs2, VR:$vs1, VMaskCarryInOp:$vm
+VMACVV	4	VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2, VMaskOp:$vm
+VALUVVNoVm	3	VR:$vd|VR:$vs2, VR:$vs1
+VALUmVX	3	VR:$vd|VR:$vs2, GPR:$rs1, VMaskCarryInOp:$vm
+VMACVX	4	VR:$vd_wb|VR:$vd, GPR:$rs1, VR:$vs2, VMaskOp:$vm
+VALUVXNoVm	3	VR:$vd|VR:$vs2, GPR:$rs1
+VALUmVI	3	VR:$vd|VR:$vs2, optype:$imm, VMaskCarryInOp:$vm
+VALUVINoVm	3	VR:$vd|VR:$vs2, optype:$imm
+VMACVF	4	VR:$vd_wb|VR:$vd, FPR32:$rs1, VR:$vs2, VMaskOp:$vm
+PseudoToVInst	1	|
+describes	8	|
+MxSet	1	|
+FPR_Info	1	|
+NFSet	1	|
+octuple_to_str	1	|
+SegRegClass	2	|
+VTypeInfo	6	|
+GroupVTypeInfo	7	|
+GetIntVTypeInfo	1	|
+MTypeInfo	3	|
+VTypeInfoToWide	2	|
+VTypeInfoToFraction	2	|
+holds	5	|
+RISCVMaskedPseudo	1	|
+RISCVVLE	5	|
+RISCVVSE	4	|
+RISCVVLX_VSX	5	|
+RISCVVLX_VSXTable	6	|
+RISCVVLXSEG	6	|
+RISCVVSSEG	5	|
+RISCVVSXSEG	6	|
+GetVRegNoV0	1	|
+GetVTypePredicates	1	|
+GetVTypeMinimalPredicates	1	|
+VPseudoUSLoadNoMask	3	RetClass:$rd|RetClass:$passthru, GPRMemZeroOffset:$rs1, AVL:$vl,                         sewop:$sew, vec_policy:$policy
+VPseudoUSLoadMask	2	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru,                         GPRMemZeroOffset:$rs1, VMV0:$vm, AVL:$vl, sew:$sew,                         vec_policy:$policy
+VPseudoUSLoadFFNoMask	2	RetClass:$rd, GPR:$vl_out|RetClass:$passthru, GPRMemZeroOffset:$rs1, AVL:$vl,                         sew:$sew, vec_policy:$policy
+VPseudoUSLoadFFMask	2	GetVRegNoV0<RetClass>.R:$rd, GPR:$vl_out|GetVRegNoV0<RetClass>.R:$passthru,                         GPRMemZeroOffset:$rs1, VMV0:$vm, AVL:$vl, sew:$sew,                         vec_policy:$policy
+VPseudoSLoadNoMask	2	RetClass:$rd|RetClass:$passthru, GPRMemZeroOffset:$rs1, GPR:$rs2,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoSLoadMask	2	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru,                         GPRMemZeroOffset:$rs1, GPR:$rs2, VMV0:$vm, AVL:$vl,                         sew:$sew, vec_policy:$policy
+VPseudoILoadNoMask	7	RetClass:$rd|RetClass:$passthru, GPRMemZeroOffset:$rs1, IdxClass:$rs2,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoILoadMask	7	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru,                         GPRMemZeroOffset:$rs1, IdxClass:$rs2, VMV0:$vm,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoUSStoreNoMask	3	|StClass:$rd, GPRMemZeroOffset:$rs1, AVL:$vl,                         sewop:$sew
+VPseudoUSStoreMask	2	|StClass:$rd, GPRMemZeroOffset:$rs1,                         VMV0:$vm, AVL:$vl, sew:$sew
+VPseudoSStoreNoMask	2	|StClass:$rd, GPRMemZeroOffset:$rs1, GPR:$rs2,                         AVL:$vl, sew:$sew
+VPseudoSStoreMask	2	|StClass:$rd, GPRMemZeroOffset:$rs1, GPR:$rs2,                         VMV0:$vm, AVL:$vl, sew:$sew
+VPseudoNullaryNoMask	1	RegClass:$rd|RegClass:$passthru,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoNullaryMask	1	GetVRegNoV0<RegClass>.R:$rd|GetVRegNoV0<RegClass>.R:$passthru,                         VMV0:$vm, AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoNullaryPseudoM	1	VR:$rd|AVL:$vl, sew_mask:$sew
+VPseudoUnaryNoMask	4	RetClass:$rd|RetClass:$passthru, OpClass:$rs2,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoUnaryNoMaskNoPolicy	4	RetClass:$rd|OpClass:$rs2, AVL:$vl, sew_mask:$sew
+VPseudoUnaryNoMaskRoundingMode	4	RetClass:$rd|RetClass:$passthru, OpClass:$rs2, vec_rm:$rm,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoUnaryMask	5	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru, OpClass:$rs2,                         VMV0:$vm, AVL:$vl, sewop:$sew, vec_policy:$policy
+VPseudoUnaryMaskRoundingMode	4	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru, OpClass:$rs2,                         VMV0:$vm, vec_rm:$rm,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoUnaryMask_NoExcept	3	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru, OpClass:$rs2,                   VMV0:$vm, AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoUnaryNoMaskGPROut	4	|
+VPseudoUnaryMaskGPROut	5	|
+VPseudoUnaryAnyMask	2	RetClass:$rd|RetClass:$passthru, Op1Class:$rs2,                         VR:$vm, AVL:$vl, sew:$sew
+VPseudoBinaryNoMask	6	RetClass:$rd|Op1Class:$rs2, Op2Class:$rs1, AVL:$vl, sewop:$sew
+VPseudoBinaryNoMaskPolicy	5	RetClass:$rd|RetClass:$passthru, Op1Class:$rs2, Op2Class:$rs1,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoBinaryNoMaskRoundingMode	6	RetClass:$rd|RetClass:$passthru, Op1Class:$rs2, Op2Class:$rs1,                         vec_rm:$rm, AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoBinaryMaskPolicyRoundingMode	6	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru,                         Op1Class:$rs2, Op2Class:$rs1,                         VMV0:$vm, vec_rm:$rm, AVL:$vl,                         sew:$sew, vec_policy:$policy
+VPseudoTiedBinaryNoMask	4	RetClass:$rd|RetClass:$rs2, Op2Class:$rs1, AVL:$vl, sew:$sew,                         vec_policy:$policy
+VPseudoTiedBinaryNoMaskRoundingMode	4	RetClass:$rd|RetClass:$rs2, Op2Class:$rs1,                         vec_rm:$rm,                         AVL:$vl, sew:$sew,                         vec_policy:$policy
+VPseudoIStoreNoMask	5	|StClass:$rd, GPRMemZeroOffset:$rs1, IdxClass:$rs2,                         AVL:$vl, sew:$sew
+VPseudoIStoreMask	5	|StClass:$rd, GPRMemZeroOffset:$rs1, IdxClass:$rs2,                         VMV0:$vm, AVL:$vl, sew:$sew
+VPseudoBinaryMaskPolicy	5	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru,                         Op1Class:$rs2, Op2Class:$rs1,                         VMV0:$vm, AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoReductionMaskPolicy	3	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru,                         Op1Class:$rs2, Op2Class:$rs1,                         VMV0:$vm, AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoReductionMaskPolicyRoundingMode	3	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru,                         Op1Class:$rs2, Op2Class:$rs1,                         VMV0:$vm,                         vec_rm:$rm,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoBinaryMOutMask	5	RetClass:$rd|RetClass:$passthru,                         Op1Class:$rs2, Op2Class:$rs1,                         VMV0:$vm, AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoTiedBinaryMask	4	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru,                         Op2Class:$rs1,                         VMV0:$vm, AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoTiedBinaryMaskRoundingMode	4	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru,                         Op2Class:$rs1,                         VMV0:$vm,                         vec_rm:$rm,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoBinaryCarry	7	RetClass:$rd|Op1Class:$rs2, Op2Class:$rs1,                            VMV0:$vm, AVL:$vl, sew:$sew
+VPseudoTiedBinaryCarryIn	5	RetClass:$rd|RetClass:$passthru, Op1Class:$rs2, Op2Class:$rs1,                         VMV0:$vm, AVL:$vl, sew:$sew
+VPseudoTernaryNoMaskWithPolicy	5	RetClass:$rd|RetClass:$rs3, Op1Class:$rs1, Op2Class:$rs2,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoTernaryNoMaskWithPolicyRoundingMode	5	RetClass:$rd|RetClass:$rs3, Op1Class:$rs1, Op2Class:$rs2,                         vec_rm:$rm, AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoUSSegLoadNoMask	3	RetClass:$rd|RetClass:$passthru, GPRMemZeroOffset:$rs1, AVL:$vl,                         sew:$sew, vec_policy:$policy
+VPseudoUSSegLoadMask	3	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru,                         GPRMemZeroOffset:$rs1, VMV0:$vm, AVL:$vl, sew:$sew,                         vec_policy:$policy
+VPseudoUSSegLoadFFNoMask	3	RetClass:$rd, GPR:$vl_out|RetClass:$passthru, GPRMemZeroOffset:$rs1, AVL:$vl,                         sew:$sew, vec_policy:$policy
+VPseudoUSSegLoadFFMask	3	GetVRegNoV0<RetClass>.R:$rd, GPR:$vl_out|GetVRegNoV0<RetClass>.R:$passthru,                         GPRMemZeroOffset:$rs1, VMV0:$vm, AVL:$vl, sew:$sew,                         vec_policy:$policy
+VPseudoSSegLoadNoMask	3	RetClass:$rd|RetClass:$passthru, GPRMemZeroOffset:$rs1, GPR:$offset,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoSSegLoadMask	3	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru,                         GPRMemZeroOffset:$rs1, GPR:$offset, VMV0:$vm,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoISegLoadNoMask	6	RetClass:$rd|RetClass:$passthru, GPRMemZeroOffset:$rs1,                         IdxClass:$offset, AVL:$vl, sew:$sew,                         vec_policy:$policy
+VPseudoISegLoadMask	6	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru,                         GPRMemZeroOffset:$rs1, IdxClass:$offset, VMV0:$vm,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoUSSegStoreNoMask	3	|ValClass:$rd, GPRMemZeroOffset:$rs1, AVL:$vl,                         sew:$sew
+VPseudoUSSegStoreMask	3	|ValClass:$rd, GPRMemZeroOffset:$rs1,                         VMV0:$vm, AVL:$vl, sew:$sew
+VPseudoSSegStoreNoMask	3	|ValClass:$rd, GPRMemZeroOffset:$rs1, GPR:$offset,                         AVL:$vl, sew:$sew
+VPseudoSSegStoreMask	3	|ValClass:$rd, GPRMemZeroOffset:$rs1, GPR: $offset,                         VMV0:$vm, AVL:$vl, sew:$sew
+VPseudoISegStoreNoMask	6	|ValClass:$rd, GPRMemZeroOffset:$rs1, IdxClass: $index,                         AVL:$vl, sew:$sew
+VPseudoISegStoreMask	6	|ValClass:$rd, GPRMemZeroOffset:$rs1, IdxClass: $index,                         VMV0:$vm, AVL:$vl, sew:$sew
+ETOpsR1R2S	3	|GPR:$rs2, GPRMemZeroOffset:$rs1
+RISCVNDSVLN	4	|
+NDSRVInstBB	2	|GPR:$rs1, uimmlog2xlen:$cimm, bare_simm11_lsb0:$imm10
+NDSRVInstBC	2	|GPR:$rs1, uimm7:$cimm, bare_simm11_lsb0:$imm10
+NDSRVInstBFO	2	GPR:$rd|GPR:$rs1, uimmlog2xlen:$msb, uimmlog2xlen:$lsb
+NDSRVInstRR	2	GPR:$rd|GPR:$rs1, GPR:$rs2
+NDSRVInstLEA	2	GPR:$rd|GPR:$rs2, GPR:$rs1
+NDSRVInstLBGP	2	GPR:$rd|simm18:$imm18
+NDSRVInstLHGP	2	GPR:$rd|simm18_lsb0:$imm17
+NDSRVInstLWGP	2	GPR:$rd|simm19_lsb00:$imm17
+NDSRVInstLDGP	2	GPR:$rd|simm20_lsb000:$imm17
+NDSRVInstSBGP	2	|GPR:$rs2, simm18:$imm18
+NDSRVInstSHGP	2	|GPR:$rs2, simm18_lsb0:$imm17
+NDSRVInstSWGP	2	|GPR:$rs2, simm19_lsb00:$imm17
+NDSRVInstSDGP	2	|GPR:$rs2, simm20_lsb000:$imm17
+NDSRVInstVSINTLN	2	VR:$vd|GPRMemZeroOffset:$rs1
+NDSRVInstVSINTCvt	2	VR:$vd|VR:$vs, VMaskOp:$vm
+NDSRVInstBFHCvt	5	rdty:$rd|rs2ty:$rs2
+NDSRVInstVFPMAD	2	VR:$vd|VR:$vs2, FPR32:$rs1, VMaskOp:$vm
+NDSRVInstVD4DOT	2	VR:$vd|VR:$vs1, VR:$vs2, VMaskOp:$vm
+NDSRVInstVBFHCvt	2	VR:$vd|VR:$vs2
+NDSRVInstVLN	2	VR:$vd|GPRMemZeroOffset:$rs1, VMaskOp:$vm
+VPseudoVLN8NoMask	2	RetClass:$rd|RetClass:$passthru,                         GPRMemZeroOffset:$rs1,                         AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoVLN8Mask	2	GetVRegNoV0<RetClass>.R:$rd|GetVRegNoV0<RetClass>.R:$passthru,                         GPRMemZeroOffset:$rs1,                         VMV0:$vm, AVL:$vl, sew:$sew, vec_policy:$policy
+CVInstBitManipRII	6	|
+CVBitManipR	2	GPR:$rd|GPR:$rs1
+CVInstMac	3	GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2
+CVInstMacMulN	5	|
+CVInstMacN	3	GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2, uimm5:$imm5
+CVInstAluRRI	3	GPR:$rd|GPR:$rs1, GPR:$rs2, uimm5:$imm5
+CVInstAluRRNR	3	GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2
+CVInstAluRI	3	GPR:$rd|GPR:$rs1, uimm5:$imm5
+CVInstAluR	3	GPR:$rd|GPR:$rs1
+CVInstSIMDRR	9	|
+CVInstSIMDRI	8	|
+CVSIMDRRWb	5	GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2
+CVSIMDRIWb	5	GPR:$rd_wb|GPR:$rd, GPR:$rs1, immtype:$imm6
+CVSIMDR	5	GPR:$rd|GPR:$rs1
+CVInstImmBranch	5	|
+CVLoad_ri_inc	2	GPR:$rd, GPR:$rs1_wb|BasePtr:$rs1, simm12:$imm12
+CVLoad_rr_inc	3	GPR:$rd, GPR:$rs1_wb|BasePtr:$rs1, GPR:$rs2
+CVStore_ri_inc	2	GPR:$rs1_wb|GPR:$rs2, GPR:$rs1, simm12:$imm12
+CVStore_rr_inc	3	GPR:$rs1_wb|GPR:$rs2, GPR:$rs1, GPR:$rs3
+CVStore_rr	3	|GPR:$rs2, (CVrr $rs1, $rs3
+LDPFormat	4	|
+LWPFormat	4	|
+SDPFormat	4	|
+SWPFormat	4	|
+Mips_prefetch_ri	4	|
+MIPSExtInst_ri	2	|
+VCIXType	2	|
+to	5	|uimm1:$funct6_lo1
+VCIXInfo	3	|
+for	1	|
+RVInstVCCustom2_X	1	|
+RVInstVCCustom2_V	1	|
+RVInstVCCustom2_I	1	|
+RVInstVCFCustom2_F	1	|
+SiFiveVMACCScheds	1	|
+CustomSiFiveVMACC	3	VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2
+CustomSiFiveVFNRCLIP	3	|
+VPseudoVC_X	2	|OpClass:$op1, payload5:$rs2, payload5:$rd,                         RS1Class:$rs1, AVL:$vl, sew:$sew
+VPseudoVC_XV	3	|OpClass:$op1, payload5:$rd, RS2Class:$rs2,                         RS1Class:$rs1, AVL:$vl, sew:$sew
+VPseudoVC_XVV	4	|OpClass:$op1, RDClass:$rd, RS2Class:$rs2, RS1Class:$rs1,                         AVL:$vl, sew:$sew
+VPseudoVC_V_X	3	RDClass:$rd|OpClass:$op1, payload5:$rs2, RS1Class:$rs1,                         AVL:$vl, sew:$sew
+VPseudoVC_V_XV	4	RDClass:$rd|OpClass:$op1, RS2Class:$rs2, RS1Class:$rs1,                         AVL:$vl, sew:$sew
+VPseudoVC_V_XVV	4	RDClass:$rd|OpClass:$op1, RDClass:$rs3, RS2Class:$rs2, RS1Class:$rs1,                         AVL:$vl, sew:$sew
+VFExpSchedSEWSet	3	|
+GetFTypeInfo	1	|
+SFInstSetSingle	5	|
+SFInstTileMemOp	6	|
+SFInstTileMoveOp	5	|
+SFInstMatmulF	4	|
+SFInstMatmulF8	6	|
+F8Encode	2	|
+SFInstMatmulI8	7	|
+I8Encode	2	|
+SFInstSetZero	4	|
+SFInstVtDiscard	1	|
+VPseudoSF_VTileLoad	6	|
+VPseudoSF_VTileStore	6	|
+VPseudoSF_VTileMove_V_T	5	|
+VPseudoSF_VTileMove_T_V	6	|
+VPseudoSF_MatMul	1	|mtd_class:$rd, VRM8:$vs2, VRM8:$vs1, GPRNoX0:$atm,                         GPRNoX0:$atn, GPRNoX0:$atk, sew:$sew,                         twiden:$twiden
+VPseudoSF_MatMul_FRM	1	|mtd_class:$rd, VRM8:$vs2, VRM8:$vs1, vec_rm:$rm,                         GPRNoX0:$atm, GPRNoX0:$atn, GPRNoX0:$atk, sew:$sew,                         twiden:$twiden
+templates	6	|
+THInstVdotVX	6	|
+THVdotALUrVV	4	VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2, VMaskOp:$vm
+THVdotALUrVX	4	VR:$vd_wb|VR:$vd, GPR:$rs1, VR:$vs2, VMaskOp:$vm
+THShiftALU_rri	2	GPR:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2
+THBitfieldExtract_rii	2	GPR:$rd|GPR:$rs1, uimmlog2xlen:$msb, uimmlog2xlen:$lsb
+THCondMov_rr	2	GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2
+THMulAccumulate_rr	2	GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2
+THLoadPair	3	GPR:$rd, GPR:$rs2|GPR:$rs1, uimm2:$uimm2, consttype:$const3or4
+THStorePair	3	|GPR:$rd, GPR:$rs2, GPR:$rs1, uimm2:$uimm2, consttype:$const3or4
+THCacheInst_r	2	|GPR:$rs1
+THCacheInst_rr	2	|GPR:$rs1, GPR:$rs2
+THCacheInst_void	2	|
+THLoadIndexed	3	Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2
+THLoadUpdate	2	GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2
+THStoreIndexed	3	|StTy:$rd, GPR:$rs1, GPR:$rs2, uimm2:$uimm2
+THStoreUpdate	2	GPR:$rs1_up|GPR:$rd, GPR:$rs1, simm5:$simm5, uimm2:$uimm2
+VTMaskedMove	2	GPR:$rd|GPR:$rs1, GPR:$rs2
+RVInstXqccmpCPPPFP	3	|reglist_s0:$rlist, immtype:$stackadj
+BareSImmNAsmOperand	1	|
+DirectiveInsnQC_EAI	3	|
+DirectiveInsnQC_EI	3	|
+DirectiveInsnQC_EB	3	|
+DirectiveInsnQC_EJ	3	|
+DirectiveInsnQC_ES	3	|
+QCILoad_ScaleIdx	2	GPR:$rd|BasePtr:$rs1, GPRNoX0:$rs2, uimm3:$shamt
+QCIStore_ScaleIdx	2	|GPR:$rd, BasePtr:$rs1, GPRNoX0:$rs2, uimm3:$shamt
+QCIRVInstR	2	GPRNoX0:$rd|GPRNoX0:$rs1
+QCIRVInstRRTied	3	GPRNoX0:$rd_wb|GPRNoX0:$rd, InTyRs1:$rs1, GPRNoX0:$rs2
+QCIBitManipRII	4	GPRNoX0:$rd|InTyRs1:$rs1, uimm5_plus1:$width, uimm5:$shamt
+QCIBitManipRIITied	4	GPRNoX0:$rd_wb|GPRNoX0:$rd,                   InTyRs1:$rs1, uimm5_plus1:$width, uimm5:$shamt
+QCIRVInstRI	3	GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyImm11:$imm11
+QCISELECTIICC	2	GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, simm5:$simm1, simm5:$simm2
+QCISELECTICC	2	GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, GPRNoX0:$rs2, simm5:$simm2
+QCISELECTCCI	2	GPRNoX0:$rd_wb|GPRNoX0:$rd, simm5:$imm, GPRNoX0:$rs2, GPRNoX0:$rs3
+QCISELECTICCI	2	GPRNoX0:$rd_wb|GPRNoX0:$rd, simm5:$imm, GPRNoX0:$rs2, simm5:$simm2
+QCILoadMultiple	3	GPRNoX0:$rd|GPR:$rs1, InTyRs2:$rs2, uimm7_lsb00:$imm
+QCIStoreMultiple	4	|InTyRd:$rd, GPR:$rs1, InTyRs2:$rs2, uimm7_lsb00:$imm
+QCILICC	4	GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyRs2:$rs2, simm5:$simm
+QCIMVCC	2	GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, GPRNoX0:$rs2, GPRNoX0:$rs3
+QCIMVCCI	3	GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, immType:$imm, GPRNoX0:$rs3
+QCI_RVInst16CB_BM	2	GPRC:$rd|GPRC:$rs1, uimmlog2xlennonzero:$shamt
+QCIRVInst16CI_RS1	2	|GPRNoX0:$rs1
+QCIBranchInst_rii	3	|GPRNoX0:$rs1, InTyImm5:$rs2, bare_simm13_lsb0:$imm12
+QCIBranchInst48_rii	3	|GPRNoX0:$rs1, InTyImm16:$imm16, bare_simm13_lsb0:$imm12
+QCIRVInst16CI_NONE	2	|
+QCIInt_IMM	2	|uimm10:$imm10
+QCISim_NONE	2	|
+QCISim_RS1	2	|GPR:$rs1
+QCISync_UIMM5	2	|uimm5:$imm5
+QCIRVInst16CBSYNC	2	|uimm5slist:$slist
+QCIRVInstEIBase	6	|
+QCIRVInstESBase	6	|
+QCIRVInstEAI	3	GPRNoX0:$rd_wb|GPRNoX0:$rd, bare_simm32:$imm
+QCIRVInst48EJ	2	|bare_simm32_lsb0:$imm31
+SFBQC_LI	7	|
+SFBQC_E_LI	7	|
+SFBQCLoad	8	|
+QKStackInst	5	|
+RVYInst2Op	6	rdOp:$rd|rs1Op:$rs1
+RVY_bndswi	1	YGPR:$rd|YGPR:$rs1, ybndsw_imm:$imm
+RVY_srli	1	GPR:$rd|YGPR:$rs1, uimm7_eq_xlen:$shamt
+WRSInst	2	|
+templates	4	GPR:$rd|GPRMemZeroOffset:$rs1
+SRL_r	4	|GPR:$rs2, GPRMemZeroOffset:$rs1
+templates	4	GPR:$rd|GPR:$rs1
+CLoadB_ri	2	GPRC:$rd|BasePtrC:$rs1, uimm2_optional:$imm
+CLoadH_ri	4	rty:$rd|BasePtrC:$rs1, uimm2_lsb0_optional:$imm
+CStoreB_rri	2	|GPRC:$rs2, BasePtrC:$rs1, uimm2_optional:$imm
+CStoreH_rri	4	|rty:$rs2, BasePtrC:$rs1, uimm2_lsb0_optional:$imm
+RVZcArith_r	2	GPRC:$rd_wb|GPRC:$rd
+RVInstZcCPPP	3	|reglist:$rlist, immtype:$stackadj
+CMOPInst	2	|
+FPFLI_r	5	rdty:$rd|loadfpimm:$imm
+FPUnaryOp_r_rtz	5	rdty:$rd|rs1ty:$rs1, rtzarg:$frm
+Branch_imm	2	|GPR:$rs1, imm5_zibi:$cimm, bare_simm13_lsb0:$imm12
+CBO_r	2	|GPRMemZeroOffset:$rs1
+Prefetch_ri	2	|BasePtr:$rs1, simm12_lsb00000:$imm12
+templates	3	|reg_class:$rs1
+RVInstIMopr	8	|
+RVInstRMoprr	8	|
+templates	2	GPR:$rd|GPR:$rs1, GPR:$rs2, byteselect:$bs
+RVKUnary_rnum	3	GPR:$rd|GPR:$rs1, rnum:$rnum
+definitions	3	VR:$vd_wb|VR:$vd, VRM8:$vs2, VR:$vs1, uimm6_lsb000:$ci, VMaskOp:$vm
+VDOT4AVV	3	VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1, VMaskOp:$vm
+VDOT4AVX	3	VR:$vd_wb|VR:$vd, VR:$vs2, GPR:$rs1, VMaskOp:$vm
+ZvdotVALUVV	3	VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1, VMaskOp:$vm
+QVRClass	1	|
+templates	2	|
+RVInstIVI_VROR	5	|
+ZvkALUVVNoVm	3	|
+ZvkALUVVNoVmTernary	3	VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1
+ZvkALUVINoVm	3	|
+ZvkALUVINoVmBinary	3	VR:$vd_wb|VR:$vd, VR:$vs2, optype:$imm
+ZvkALUVs2NoVmBinary	4	VR:$vd_wb|VR:$vd, VR:$vs2
+ZvkI32IntegerVectors	1	|
+ZvkMxSet	1	|
+VPseudoBinaryNoMask_Zvk	2	RetClass:$rd_wb|RetClass:$rd, OpClass:$rs2, AVL:$vl, sew:$sew, vec_policy:$policy
+VPseudoTernaryNoMask_Zvk	3	RetClass:$rd_wb|RetClass:$rd, Op1Class:$rs2, Op2Class:$rs1,                     AVL:$vl, sew:$sew, vec_policy:$policy
+VTileLoadBase	4	VR:$vd|
+VTileStoreBase	4	|
+VIMEMACVV	2	VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2
+VFMEMACVV	2	VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2
+VFMEMACScaleVV	2	VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2, VScaleOp:$vm
+VIFMEMACScaleVV	2	VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2, VScaleOp:$vm
+GenericTuneInfo	5	|
+RISCVTuneProcessorModel	4	|
+RISCVProfile	2	|
+RISCVExperimentalProfile	2	|
+RISCVReg	3	|
+RISCVRegWithSubRegs	4	|
+RISCVReg16	3	|
+RISCVReg32	1	|
+RISCVReg64	1	|
+RISCVReg128	1	|
+RISCVCapReg	3	|
+RISCVRegisterClass	3	|
+GPRRegisterClass	1	|
+FPRRegisterClass	3	|
+FPRCRegisterClass	3	|
+used	20	|
+NFList	1	|
+SubRegSet	2	|
+Andes45IsWorstCaseMX	2	|
+Andes45IsWorstCaseMXSEW	4	|
+Andes45GetCyclesLoadStore	1	|
+Andes45GetCyclesOnePerElement	2	|
+Andes45GetLMULValue	1	|
+Andes45GetCyclesDefault	1	|
+Andes45GetCyclesWidening	1	|
+Andes45GetLatencyDiv	1	|
+Andes45GetCyclesDiv	2	|
+Andes45GetCyclesNarrowing	1	|
+Andes45GetLatencyNarrowing	1	|
+Andes45GetFDivFactor	1	|
+Andes45GetFSqrtFactor	1	|
+Andes45GetReductionCycles	2	|
+Andes45GetReductionCyclesWidening	2	|
+Andes45GetFReductionCycles	2	|
+Andes45GetOrderedFReductionCycles	2	|
+Andes45GetFWReductionCycles	2	|
+Andes45GetOrderedFWReductionCycles	2	|
+SiFive7IsWorstCaseMX	2	|
+SiFive7IsWorstCaseMXSEW	4	|
+SiFive7GetCyclesDefault	1	|
+SiFive7GetCyclesNarrowing	1	|
+SiFive7GetCyclesVMask	1	|
+SiFive7GetMaskLoadStoreCycles	1	|
+SiFive7GetCyclesSegmentedSeg2	1	|
+SiFive7GetCyclesSegmented	4	|
+SiFive7GetCyclesOnePerElement	3	|
+SiFive7GetDivOrSqrtFactor	1	|
+SiFive7GetReductionCycles	3	|
+SiFive7GetOrderedReductionCycles	3	|
+isSingleDLEN	1	|
+SiFive7GetCyclesVRGatherVV	4	|
+SiFive7GetCyclesVCompress	4	|
+SiFive7GetSiFiveVFNRClipCycles	2	|
+SiFive7SchedMachineModel	1	|
+SiFive8VecIsWorstCaseMX	2	|
+SiFive8VecIsWorstCaseMXSEW	4	|
+SiFive8VecGetLMulCycles	1	|
+SiFive8VecGetVLMAX	2	|
+SiFive8VecStridedLdStLatency	2	|
+SiFive8VecSegmentedLdStCycles	3	|
+SiFiveP400SegmentedLdStCycles	3	|
+SiFiveP400VFReduceBaseCycles	1	|
+SiFiveP400AdvancedVFReduceCycles	2	|
+SiFiveP400SimpleVIReduceCycles	1	|
+SiFiveP400AdvancedVIReduceCycles	2	|
+SiFiveP400VSM3CCycles	1	|
+SiFiveP600IsWorstCaseMX	2	|
+SiFiveP600IsWorstCaseMXSEW	4	|
+SiFiveP600GetLMulCycles	1	|
+SiFiveP600GetVLMAX	2	|
+SiFiveP600StridedLdStLatency	2	|
+SiFiveP600SegmentedLdStCycles	3	|
+SiFiveP600VSM3CCycles	1	|
+SiFiveP600RVVMultiplier	1	|
+SiFiveP600VCryptoLatency	1	|
+SiFiveP600VFMinMaxReduction	2	|
+SiFiveP600VFUnorderedReduction	2	|
+SiFiveP600VFWidenUnorderedReduction	1	|
+SiFiveP600VFOrderedReduction	2	|
+SiFiveP600VIReductionLatency	1	|
+SiFiveP600VIMinMaxReductionLatency	2	|
+SiFiveP600VIMinMaxReductionCycles	2	|
+SiFiveP600VSlide1	1	|
+SiFiveP600VSlideI	1	|
+SiFiveP600VSlideXComplex	2	|
+SiFiveP600VPermutationComplex	1	|
+SiFiveP600VSHA2MSCycles	2	|
+SiFiveP800IsWorstCaseMX	2	|
+SiFiveP800IsWorstCaseMXSEW	4	|
+SiFiveP800GetLMulCycles	1	|
+SiFiveP800GetCyclesSegmented	2	|
+SiFiveP800VSM3CCycles	1	|
+Get2348Latency	1	|
+SMTX100IsWorstCaseMX	2	|
+SMTX100IsWorstCaseMXSEW	4	|
+SMTX100GetLMulCycles	1	|
+SMTX100GetVLMAX	2	|
+SMTX100SegmentedLdStCycles	3	|
+SMTX100GetVLDSLat	2	|
+GetLMULValue	2	|
+ConstValueUntilLMULThenDoubleBase	4	|
+ConstValueUntilLMULThenDouble	3	|
+ConstOneUntilMF4ThenDouble	1	|
+ConstOneUntilMF2ThenDouble	1	|
+ConstOneUntilM1ThenDouble	1	|
+Get4458Latency	1	|
+Get4588Latency	1	|
+Get461018Latency	1	|
+Get6678Latency	1	|
+SMX60IsWorstCaseMX	2	|
+SMX60IsWorstCaseMXSEW	4	|
+SMX60GetLMulCycles	1	|
+SMX60GetVLMAX	2	|
+SMX60SegmentedLdStCycles	3	|
+SyntacoreSchedModel	1	|
+AscalonIsWorstCaseMX	2	|
+AscalonIsWorstCaseMXSEW	4	|
+AscalonGetCyclesLMUL	2	|
+AscalonGetCyclesLMULFractional	2	|
+AscalonGetCyclesDefault	1	|
+AscalonGetCyclesNarrowing	1	|
+AscalonGetCyclesDivOrSqrt	2	|
+AscalonGetCyclesVRGatherVV	1	|
+AscalonGetCyclesStridedSegmented	2	|
+XSWriteStore	1	|
+SchedSEWSet	3	|
+LargestLMUL	1	|
+SmallestSEW	2	|
+LMULSchedWriteListImpl	2	|
+SysReg	3	|
+AltSysRegName	3	|
+DeprecatedSysRegName	3	|

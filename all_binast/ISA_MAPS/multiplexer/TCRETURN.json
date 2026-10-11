@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "TCRETURN",
+  "BACKENDS": ["ARM","PowerPC"],
+  "INDEX": {
+    "TCRETURNdi": {"ARM": "TCRETURNdi"},
+    "TCRETURNri": {"ARM": "TCRETURNri"},
+    "TCRETURNrinotr12": {"ARM": "TCRETURNrinotr12"},
+    "TCRETURNdi8": {"PowerPC": "TCRETURNdi8"},
+    "TCRETURNai8": {"PowerPC": "TCRETURNai8"},
+    "TCRETURNri8": {"PowerPC": "TCRETURNri8"}
+  },
+  "INPUTS": {
+    "TCRETURNdi": {"ARM": [["i32imm",32],["i32imm",32]]},
+    "TCRETURNri": {"ARM": [["tcGPR",0],["i32imm",32]]},
+    "TCRETURNrinotr12": {"ARM": [["tcGPRnotr12",0],["i32imm",32]]},
+    "TCRETURNdi8": {"PowerPC": [["calltarget",0],["i32imm",32]]},
+    "TCRETURNai8": {"PowerPC": [["abscalltarget",0],["i32imm",32]]},
+    "TCRETURNri8": {"PowerPC": [["CTRRC8",0],["i32imm",32]]}
+  },
+  "OUTPUTS": {
+    "TCRETURNdi": {"ARM": []},
+    "TCRETURNri": {"ARM": []},
+    "TCRETURNrinotr12": {"ARM": []},
+    "TCRETURNdi8": {"PowerPC": []},
+    "TCRETURNai8": {"PowerPC": []},
+    "TCRETURNri8": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "TCRETURNdi": {"ARM": ["PseudoInst"]},
+    "TCRETURNri": {"ARM": ["PseudoInst"]},
+    "TCRETURNrinotr12": {"ARM": ["PseudoInst"]},
+    "TCRETURNdi8": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "TCRETURNai8": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "TCRETURNri8": {"PowerPC": ["PPCEmitTimePseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "TCRETURNdi": {"ARM": ["PseudoInst"]},
+    "TCRETURNri": {"ARM": ["PseudoInst"]},
+    "TCRETURNrinotr12": {"ARM": ["PseudoInst"]},
+    "TCRETURNdi8": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "TCRETURNai8": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "TCRETURNri8": {"PowerPC": ["PPCEmitTimePseudo"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "IDPADD",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "IDPADD.v4s8": {"Mali": "IDPADD.v4s8"},
+    "IDPADD.v4u8": {"Mali": "IDPADD.v4u8"}
+  },
+  "INPUTS": {
+    "IDPADD.v4s8": {"Mali": []},
+    "IDPADD.v4u8": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "IDPADD.v4s8": {"Mali": [["R",32]]},
+    "IDPADD.v4u8": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "IDPADD.v4s8": {"Mali": ["Valhall_"]},
+    "IDPADD.v4u8": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "IDPADD.v4s8": {"Mali": ["Valhall_"]},
+    "IDPADD.v4u8": {"Mali": ["Valhall_"]}
+  }
+}

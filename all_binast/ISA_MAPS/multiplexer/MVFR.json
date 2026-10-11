@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "MVFR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MVFR2": {"ARM": "MVFR2"},
+    "MVFR1": {"ARM": "MVFR1"},
+    "MVFR0": {"ARM": "MVFR0"}
+  },
+  "INPUTS": {
+    "MVFR2": {"ARM": []},
+    "MVFR1": {"ARM": []},
+    "MVFR0": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "MVFR2": {"ARM": []},
+    "MVFR1": {"ARM": []},
+    "MVFR0": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "MVFR2": {"ARM": ["ARMReg","5"]},
+    "MVFR1": {"ARM": ["ARMReg","6"]},
+    "MVFR0": {"ARM": ["ARMReg","7"]}
+  },
+  "OUTPUT_BYTES": {
+    "MVFR2": {"ARM": ["ARMReg","5"]},
+    "MVFR1": {"ARM": ["ARMReg","6"]},
+    "MVFR0": {"ARM": ["ARMReg","7"]}
+  }
+}

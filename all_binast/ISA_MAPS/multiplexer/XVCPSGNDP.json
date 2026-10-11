@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVCPSGNDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVCPSGNDP": {"PowerPC": "XVCPSGNDP"}
+  },
+  "INPUTS": {
+    "XVCPSGNDP": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVCPSGNDP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVCPSGNDP": {"PowerPC": ["XX3Form","60","240"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVCPSGNDP": {"PowerPC": ["XX3Form","60","240"]}
+  }
+}

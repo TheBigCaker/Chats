@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SPSR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SPSR": {"ARM": "SPSR"}
+  },
+  "INPUTS": {
+    "SPSR": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SPSR": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SPSR": {"ARM": ["ARMReg","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SPSR": {"ARM": ["ARMReg","2"]}
+  }
+}

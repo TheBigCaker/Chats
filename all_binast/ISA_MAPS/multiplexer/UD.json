@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "UD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UDf": {"ARM": "UDf"},
+    "UDh": {"ARM": "UDh"},
+    "UD": {"ARM": "UD"}
+  },
+  "INPUTS": {
+    "UDf": {"ARM": []},
+    "UDh": {"ARM": []},
+    "UD": {"ARM": [["DPR",0]]}
+  },
+  "OUTPUTS": {
+    "UDf": {"ARM": []},
+    "UDh": {"ARM": []},
+    "UD": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "UDf": {"ARM": ["N2VDIntnp","0b10","0b11","1"]},
+    "UDh": {"ARM": ["N2VDIntnp","0b01","0b11","1"]},
+    "UD": {"ARM": ["ASuInp","0b11101","0b11","0b1100","0b01","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "UDf": {"ARM": ["N2VDIntnp","0b10","0b11","1"]},
+    "UDh": {"ARM": ["N2VDIntnp","0b01","0b11","1"]},
+    "UD": {"ARM": ["ASuInp","0b11101","0b11","0b1100","0b01","0"]}
+  }
+}

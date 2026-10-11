@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFMSLQI",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFMSLQI": {"ARM": "VFMSLQI"}
+  },
+  "INPUTS": {
+    "VFMSLQI": {"ARM": [["DPR:$Vn",0],["DPR_8:$Vm",0],["VectorIndex16:$idx",0]]}
+  },
+  "OUTPUTS": {
+    "VFMSLQI": {"ARM": [["QPR:$Vd",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFMSLQI": {"ARM": ["VFMQ","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFMSLQI": {"ARM": ["VFMQ","0b01"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TICK",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "TICK": {"Sparc": "TICK"}
+  },
+  "INPUTS": {
+    "TICK": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "TICK": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "TICK": {"Sparc": ["SparcCtrlReg","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "TICK": {"Sparc": ["SparcCtrlReg","4"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VNMULH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VNMULH": {"ARM": "VNMULH"}
+  },
+  "INPUTS": {
+    "VNMULH": {"ARM": [["HPR",0],["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VNMULH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VNMULH": {"ARM": ["AHbI","0b11100","0b10","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VNMULH": {"ARM": ["AHbI","0b11100","0b10","1","0"]}
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "FMV",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FMV_X_D": {"RISCV": "FMV_X_D"},
+    "FMV_D_X": {"RISCV": "FMV_D_X"},
+    "FMV_X_W": {"RISCV": "FMV_X_W"},
+    "FMV_W_X": {"RISCV": "FMV_W_X"},
+    "FMV_X_W_FPR64": {"RISCV": "FMV_X_W_FPR64"},
+    "FMV_X_H": {"RISCV": "FMV_X_H"},
+    "FMV_H_X": {"RISCV": "FMV_H_X"}
+  },
+  "INPUTS": {
+    "FMV_X_D": {"RISCV": [["rs1ty:$rs1",0]]},
+    "FMV_D_X": {"RISCV": [["rs1ty:$rs1",0]]},
+    "FMV_X_W": {"RISCV": [["rs1ty:$rs1",0]]},
+    "FMV_W_X": {"RISCV": [["rs1ty:$rs1",0]]},
+    "FMV_X_W_FPR64": {"RISCV": [["rs1ty:$rs1",0]]},
+    "FMV_X_H": {"RISCV": [["rs1ty:$rs1",0]]},
+    "FMV_H_X": {"RISCV": [["rs1ty:$rs1",0]]}
+  },
+  "OUTPUTS": {
+    "FMV_X_D": {"RISCV": [["rdty:$rd",0]]},
+    "FMV_D_X": {"RISCV": [["rdty:$rd",0]]},
+    "FMV_X_W": {"RISCV": [["rdty:$rd",0]]},
+    "FMV_W_X": {"RISCV": [["rdty:$rd",0]]},
+    "FMV_X_W_FPR64": {"RISCV": [["rdty:$rd",0]]},
+    "FMV_X_H": {"RISCV": [["rdty:$rd",0]]},
+    "FMV_H_X": {"RISCV": [["rdty:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "FMV_X_D": {"RISCV": ["FPUnaryOp_r","0b1110001","0b00000","0b000"]},
+    "FMV_D_X": {"RISCV": ["FPUnaryOp_r","0b1111001","0b00000","0b000"]},
+    "FMV_X_W": {"RISCV": ["FPUnaryOp_r","0b1110000","0b00000","0b000"]},
+    "FMV_W_X": {"RISCV": ["FPUnaryOp_r","0b1111000","0b00000","0b000"]},
+    "FMV_X_W_FPR64": {"RISCV": ["FPUnaryOp_r","0b1110000","0b00000","0b000"]},
+    "FMV_X_H": {"RISCV": ["FPUnaryOp_r","0b1110010","0b00000","0b000"]},
+    "FMV_H_X": {"RISCV": ["FPUnaryOp_r","0b1111010","0b00000","0b000"]}
+  },
+  "OUTPUT_BYTES": {
+    "FMV_X_D": {"RISCV": ["FPUnaryOp_r","0b1110001","0b00000","0b000"]},
+    "FMV_D_X": {"RISCV": ["FPUnaryOp_r","0b1111001","0b00000","0b000"]},
+    "FMV_X_W": {"RISCV": ["FPUnaryOp_r","0b1110000","0b00000","0b000"]},
+    "FMV_W_X": {"RISCV": ["FPUnaryOp_r","0b1111000","0b00000","0b000"]},
+    "FMV_X_W_FPR64": {"RISCV": ["FPUnaryOp_r","0b1110000","0b00000","0b000"]},
+    "FMV_X_H": {"RISCV": ["FPUnaryOp_r","0b1110010","0b00000","0b000"]},
+    "FMV_H_X": {"RISCV": ["FPUnaryOp_r","0b1111010","0b00000","0b000"]}
+  }
+}

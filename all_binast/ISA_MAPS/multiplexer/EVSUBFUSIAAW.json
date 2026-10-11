@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVSUBFUSIAAW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVSUBFUSIAAW": {"PowerPC": "EVSUBFUSIAAW"}
+  },
+  "INPUTS": {
+    "EVSUBFUSIAAW": {"PowerPC": [["sperc",0]]}
+  },
+  "OUTPUTS": {
+    "EVSUBFUSIAAW": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVSUBFUSIAAW": {"PowerPC": ["EVXForm_2","1218"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVSUBFUSIAAW": {"PowerPC": ["EVXForm_2","1218"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "FS_PREFIX": {"X86": "FS_PREFIX"}
+  },
+  "INPUTS": {
+    "FS_PREFIX": {"X86": []}
+  },
+  "OUTPUTS": {
+    "FS_PREFIX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "FS_PREFIX": {"X86": ["0x64"]}
+  },
+  "OUTPUT_BYTES": {
+    "FS_PREFIX": {"X86": ["0x64"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FMULD",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FMULD8SUX16": {"Sparc": "FMULD8SUX16"},
+    "FMULD8ULX16": {"Sparc": "FMULD8ULX16"}
+  },
+  "INPUTS": {
+    "FMULD8SUX16": {"Sparc": [["FPRegs",0],["FPRegs",0]]},
+    "FMULD8ULX16": {"Sparc": [["FPRegs",0],["FPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FMULD8SUX16": {"Sparc": [["DFPRegs",0]]},
+    "FMULD8ULX16": {"Sparc": [["DFPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FMULD8SUX16": {"Sparc": ["VISInstFormat","0b000111000"]},
+    "FMULD8ULX16": {"Sparc": ["VISInstFormat","0b000111001"]}
+  },
+  "OUTPUT_BYTES": {
+    "FMULD8SUX16": {"Sparc": ["VISInstFormat","0b000111000"]},
+    "FMULD8ULX16": {"Sparc": ["VISInstFormat","0b000111001"]}
+  }
+}

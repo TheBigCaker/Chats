@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULESB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMULESB": {"PowerPC": "VMULESB"}
+  },
+  "INPUTS": {
+    "VMULESB": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMULESB": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMULESB": {"PowerPC": ["VX1_Int_Ty2","776"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULESB": {"PowerPC": ["VX1_Int_Ty2","776"]}
+  }
+}

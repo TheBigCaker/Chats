@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "HI",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "HI0": {"Mips": "HI0"},
+    "HI1": {"Mips": "HI1"},
+    "HI2": {"Mips": "HI2"},
+    "HI3": {"Mips": "HI3"},
+    "HI32": {"Mips": "HI32"},
+    "HI32DSP": {"Mips": "HI32DSP"},
+    "HI64": {"Mips": "HI64"}
+  },
+  "INPUTS": {
+    "HI0": {"Mips": []},
+    "HI1": {"Mips": []},
+    "HI2": {"Mips": []},
+    "HI3": {"Mips": []},
+    "HI32": {"Mips": []},
+    "HI32DSP": {"Mips": []},
+    "HI64": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "HI0": {"Mips": []},
+    "HI1": {"Mips": []},
+    "HI2": {"Mips": []},
+    "HI3": {"Mips": []},
+    "HI32": {"Mips": []},
+    "HI32DSP": {"Mips": []},
+    "HI64": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "HI0": {"Mips": ["MipsReg","0"]},
+    "HI1": {"Mips": ["MipsReg","1"]},
+    "HI2": {"Mips": ["MipsReg","2"]},
+    "HI3": {"Mips": ["MipsReg","3"]},
+    "HI32": {"Mips": ["RegisterClass","32"]},
+    "HI32DSP": {"Mips": ["RegisterClass","32","0"]},
+    "HI64": {"Mips": ["RegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "HI0": {"Mips": ["MipsReg","0"]},
+    "HI1": {"Mips": ["MipsReg","1"]},
+    "HI2": {"Mips": ["MipsReg","2"]},
+    "HI3": {"Mips": ["MipsReg","3"]},
+    "HI32": {"Mips": ["RegisterClass","32"]},
+    "HI32DSP": {"Mips": ["RegisterClass","32","0"]},
+    "HI64": {"Mips": ["RegisterClass","64"]}
+  }
+}

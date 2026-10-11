@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NCLIPIU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "NCLIPIU": {"RISCV": "NCLIPIU"}
+  },
+  "INPUTS": {
+    "NCLIPIU": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "NCLIPIU": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "NCLIPIU": {"RISCV": ["RVPNarrowingShiftW_ri","0b010"]}
+  },
+  "OUTPUT_BYTES": {
+    "NCLIPIU": {"RISCV": ["RVPNarrowingShiftW_ri","0b010"]}
+  }
+}

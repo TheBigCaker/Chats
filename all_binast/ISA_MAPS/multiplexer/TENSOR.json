@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "TENSOR",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "TENSOR_SAVE": {"AMDGPU": "TENSOR_SAVE"},
+    "TENSOR_LOAD_TO_LDS_d2": {"AMDGPU": "TENSOR_LOAD_TO_LDS_d2"},
+    "TENSOR_STORE_FROM_LDS_d2": {"AMDGPU": "TENSOR_STORE_FROM_LDS_d2"},
+    "TENSORcnt": {"AMDGPU": "TENSORcnt"}
+  },
+  "INPUTS": {
+    "TENSOR_SAVE": {"AMDGPU": []},
+    "TENSOR_LOAD_TO_LDS_d2": {"AMDGPU": []},
+    "TENSOR_STORE_FROM_LDS_d2": {"AMDGPU": []},
+    "TENSORcnt": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "TENSOR_SAVE": {"AMDGPU": []},
+    "TENSOR_LOAD_TO_LDS_d2": {"AMDGPU": []},
+    "TENSOR_STORE_FROM_LDS_d2": {"AMDGPU": []},
+    "TENSORcnt": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "TENSOR_SAVE": {"AMDGPU": ["FLAT_Global_Tensor_Pseudo","1"]},
+    "TENSOR_LOAD_TO_LDS_d2": {"AMDGPU": ["VIMAGE_TENSOR_Pseudo","1"]},
+    "TENSOR_STORE_FROM_LDS_d2": {"AMDGPU": ["VIMAGE_TENSOR_Pseudo","1"]},
+    "TENSORcnt": {"AMDGPU": ["SIReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "TENSOR_SAVE": {"AMDGPU": ["FLAT_Global_Tensor_Pseudo","1"]},
+    "TENSOR_LOAD_TO_LDS_d2": {"AMDGPU": ["VIMAGE_TENSOR_Pseudo","1"]},
+    "TENSOR_STORE_FROM_LDS_d2": {"AMDGPU": ["VIMAGE_TENSOR_Pseudo","1"]},
+    "TENSORcnt": {"AMDGPU": ["SIReg","0"]}
+  }
+}

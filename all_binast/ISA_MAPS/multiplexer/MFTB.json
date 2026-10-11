@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MFTB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MFTB8": {"PowerPC": "MFTB8"}
+  },
+  "INPUTS": {
+    "MFTB8": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "MFTB8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MFTB8": {"PowerPC": ["XFXForm_1_ext","31","339","268"]}
+  },
+  "OUTPUT_BYTES": {
+    "MFTB8": {"PowerPC": ["XFXForm_1_ext","31","339","268"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ADDIC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "ADDIC8": {"PowerPC": "ADDIC8"}
+  },
+  "INPUTS": {
+    "ADDIC8": {"PowerPC": [["g8rc",0],["s16imm64",16]]}
+  },
+  "OUTPUTS": {
+    "ADDIC8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "ADDIC8": {"PowerPC": ["DForm_2","12"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADDIC8": {"PowerPC": ["DForm_2","12"]}
+  }
+}

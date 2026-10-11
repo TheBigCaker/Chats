@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "FROUNDNX",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FROUNDNX_S": {"RISCV": "FROUNDNX_S"},
+    "FROUNDNX_D": {"RISCV": "FROUNDNX_D"},
+    "FROUNDNX_H": {"RISCV": "FROUNDNX_H"},
+    "FROUNDNX_Q": {"RISCV": "FROUNDNX_Q"}
+  },
+  "INPUTS": {
+    "FROUNDNX_S": {"RISCV": [["rs1ty:$rs1",0],["frmarg:$frm",0]]},
+    "FROUNDNX_D": {"RISCV": [["rs1ty:$rs1",0],["frmarg:$frm",0]]},
+    "FROUNDNX_H": {"RISCV": [["rs1ty:$rs1",0],["frmarg:$frm",0]]},
+    "FROUNDNX_Q": {"RISCV": [["rs1ty:$rs1",0],["frmarg:$frm",0]]}
+  },
+  "OUTPUTS": {
+    "FROUNDNX_S": {"RISCV": [["rdty:$rd",0]]},
+    "FROUNDNX_D": {"RISCV": [["rdty:$rd",0]]},
+    "FROUNDNX_H": {"RISCV": [["rdty:$rd",0]]},
+    "FROUNDNX_Q": {"RISCV": [["rdty:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "FROUNDNX_S": {"RISCV": ["FPUnaryOp_r_frm","0b0100000","0b00101"]},
+    "FROUNDNX_D": {"RISCV": ["FPUnaryOp_r_frm","0b0100001","0b00101"]},
+    "FROUNDNX_H": {"RISCV": ["FPUnaryOp_r_frm","0b0100010","0b00101"]},
+    "FROUNDNX_Q": {"RISCV": ["FPUnaryOp_r_frm","0b0100011","0b00101"]}
+  },
+  "OUTPUT_BYTES": {
+    "FROUNDNX_S": {"RISCV": ["FPUnaryOp_r_frm","0b0100000","0b00101"]},
+    "FROUNDNX_D": {"RISCV": ["FPUnaryOp_r_frm","0b0100001","0b00101"]},
+    "FROUNDNX_H": {"RISCV": ["FPUnaryOp_r_frm","0b0100010","0b00101"]},
+    "FROUNDNX_Q": {"RISCV": ["FPUnaryOp_r_frm","0b0100011","0b00101"]}
+  }
+}

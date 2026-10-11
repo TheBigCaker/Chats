@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RNDNE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "RNDNE": {"AMDGPU": "RNDNE"}
+  },
+  "INPUTS": {
+    "RNDNE": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "RNDNE": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "RNDNE": {"AMDGPU": ["R600_1OP_Helper","0x13"]}
+  },
+  "OUTPUT_BYTES": {
+    "RNDNE": {"AMDGPU": ["R600_1OP_Helper","0x13"]}
+  }
+}

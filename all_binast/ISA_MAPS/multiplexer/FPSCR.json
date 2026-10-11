@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "FPSCR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "FPSCR": {"ARM": "FPSCR"},
+    "FPSCR_NZCV": {"ARM": "FPSCR_NZCV"},
+    "FPSCR_RM": {"ARM": "FPSCR_RM"}
+  },
+  "INPUTS": {
+    "FPSCR": {"ARM": []},
+    "FPSCR_NZCV": {"ARM": []},
+    "FPSCR_RM": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "FPSCR": {"ARM": []},
+    "FPSCR_NZCV": {"ARM": []},
+    "FPSCR_RM": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "FPSCR": {"ARM": ["ARMReg","3"]},
+    "FPSCR_NZCV": {"ARM": ["ARMReg","3"]},
+    "FPSCR_RM": {"ARM": ["ARMReg","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPSCR": {"ARM": ["ARMReg","3"]},
+    "FPSCR_NZCV": {"ARM": ["ARMReg","3"]},
+    "FPSCR_RM": {"ARM": ["ARMReg","3"]}
+  }
+}

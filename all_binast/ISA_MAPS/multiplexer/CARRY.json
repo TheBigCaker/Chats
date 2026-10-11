@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CARRY",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "CARRY": {"PowerPC": "CARRY"}
+  },
+  "INPUTS": {
+    "CARRY": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "CARRY": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "CARRY": {"PowerPC": ["SPR","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "CARRY": {"PowerPC": ["SPR","1"]}
+  }
+}

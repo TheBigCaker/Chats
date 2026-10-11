@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "XPERM",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "XPERM4": {"RISCV": "XPERM4"},
+    "XPERM8": {"RISCV": "XPERM8"}
+  },
+  "INPUTS": {
+    "XPERM4": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "XPERM8": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "XPERM4": {"RISCV": [["GPR:$rd",0]]},
+    "XPERM8": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "XPERM4": {"RISCV": ["ALU_rr","0b0010100","0b010"]},
+    "XPERM8": {"RISCV": ["ALU_rr","0b0010100","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "XPERM4": {"RISCV": ["ALU_rr","0b0010100","0b010"]},
+    "XPERM8": {"RISCV": ["ALU_rr","0b0010100","0b100"]}
+  }
+}

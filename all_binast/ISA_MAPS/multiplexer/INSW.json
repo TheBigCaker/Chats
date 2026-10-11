@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "INSW",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "INSW": {"X86": "INSW"}
+  },
+  "INPUTS": {
+    "INSW": {"X86": [["dstidx16",0]]}
+  },
+  "OUTPUTS": {
+    "INSW": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "INSW": {"X86": ["0x6D"]}
+  },
+  "OUTPUT_BYTES": {
+    "INSW": {"X86": ["0x6D"]}
+  }
+}

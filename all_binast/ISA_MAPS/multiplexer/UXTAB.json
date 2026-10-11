@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "UXTAB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UXTAB": {"ARM": "UXTAB"},
+    "UXTAB16": {"ARM": "UXTAB16"}
+  },
+  "INPUTS": {
+    "UXTAB": {"ARM": [["GPR:$Rn",0],["GPRnopc:$Rm",0],["rot_imm:$rot",0]]},
+    "UXTAB16": {"ARM": [["GPR:$Rn",0],["GPRnopc:$Rm",0],["rot_imm:$rot",0]]}
+  },
+  "OUTPUTS": {
+    "UXTAB": {"ARM": [["GPRnopc:$Rd",0]]},
+    "UXTAB16": {"ARM": [["GPRnopc:$Rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "UXTAB": {"ARM": ["AI_exta_rrot","0b01101110"]},
+    "UXTAB16": {"ARM": ["AI_exta_rrot_np","0b01101100"]}
+  },
+  "OUTPUT_BYTES": {
+    "UXTAB": {"ARM": ["AI_exta_rrot","0b01101110"]},
+    "UXTAB16": {"ARM": ["AI_exta_rrot_np","0b01101100"]}
+  }
+}

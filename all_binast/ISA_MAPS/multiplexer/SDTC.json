@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SDTC",
+  "BACKENDS": ["NVPTX"],
+  "INDEX": {
+    "SDTCallProfile": {"NVPTX": "SDTCallProfile"},
+    "SDTClusterLaunchControlQueryCancelIsCanceled": {"NVPTX": "SDTClusterLaunchControlQueryCancelIsCanceled"}
+  },
+  "INPUTS": {
+    "SDTCallProfile": {"NVPTX": []},
+    "SDTClusterLaunchControlQueryCancelIsCanceled": {"NVPTX": []}
+  },
+  "OUTPUTS": {
+    "SDTCallProfile": {"NVPTX": []},
+    "SDTClusterLaunchControlQueryCancelIsCanceled": {"NVPTX": []}
+  },
+  "INPUT_BYTES": {
+    "SDTCallProfile": {"NVPTX": ["SDTypeProfile","0","6"]},
+    "SDTClusterLaunchControlQueryCancelIsCanceled": {"NVPTX": ["SDTypeProfile","1","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTCallProfile": {"NVPTX": ["SDTypeProfile","0","6"]},
+    "SDTClusterLaunchControlQueryCancelIsCanceled": {"NVPTX": ["SDTypeProfile","1","2"]}
+  }
+}

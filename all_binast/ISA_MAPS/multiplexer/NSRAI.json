@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NSRAI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "NSRAI": {"RISCV": "NSRAI"}
+  },
+  "INPUTS": {
+    "NSRAI": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "NSRAI": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "NSRAI": {"RISCV": ["RVPNarrowingShiftW_ri","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "NSRAI": {"RISCV": ["RVPNarrowingShiftW_ri","0b100"]}
+  }
+}

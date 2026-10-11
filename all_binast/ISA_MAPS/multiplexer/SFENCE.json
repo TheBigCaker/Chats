@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "SFENCE",
+  "BACKENDS": ["X86","RISCV"],
+  "INDEX": {
+    "SFENCE": {"X86": "SFENCE"},
+    "SFENCE_W_INVAL": {"RISCV": "SFENCE_W_INVAL"},
+    "SFENCE_INVAL_IR": {"RISCV": "SFENCE_INVAL_IR"},
+    "SFENCE_VMA": {"RISCV": "SFENCE_VMA"}
+  },
+  "INPUTS": {
+    "SFENCE": {"X86": []},
+    "SFENCE_W_INVAL": {"RISCV": []},
+    "SFENCE_INVAL_IR": {"RISCV": []},
+    "SFENCE_VMA": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "SFENCE": {"X86": []},
+    "SFENCE_W_INVAL": {"RISCV": []},
+    "SFENCE_INVAL_IR": {"RISCV": []},
+    "SFENCE_VMA": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SFENCE": {"X86": ["0xAE"]},
+    "SFENCE_W_INVAL": {"RISCV": ["Priv","0b0001100"]},
+    "SFENCE_INVAL_IR": {"RISCV": ["Priv","0b0001100"]},
+    "SFENCE_VMA": {"RISCV": ["Priv_rr","0b0001001"]}
+  },
+  "OUTPUT_BYTES": {
+    "SFENCE": {"X86": ["0xAE"]},
+    "SFENCE_W_INVAL": {"RISCV": ["Priv","0b0001100"]},
+    "SFENCE_INVAL_IR": {"RISCV": ["Priv","0b0001100"]},
+    "SFENCE_VMA": {"RISCV": ["Priv_rr","0b0001001"]}
+  }
+}

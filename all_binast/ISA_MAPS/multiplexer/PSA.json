@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "PSA",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PSA_HX": {"RISCV": "PSA_HX"},
+    "PSA_WX": {"RISCV": "PSA_WX"},
+    "PSA_DHX": {"RISCV": "PSA_DHX"}
+  },
+  "INPUTS": {
+    "PSA_HX": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PSA_WX": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PSA_DHX": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PSA_HX": {"RISCV": [["GPR:$rd",0]]},
+    "PSA_WX": {"RISCV": [["GPR:$rd",0]]},
+    "PSA_DHX": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PSA_HX": {"RISCV": ["RVPBinary_rr","0b0000","0b10","0b110"]},
+    "PSA_WX": {"RISCV": ["RVPBinary_rr","0b0000","0b11","0b110"]},
+    "PSA_DHX": {"RISCV": ["RVPPairBinaryExchanged_rr","0b0000","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "PSA_HX": {"RISCV": ["RVPBinary_rr","0b0000","0b10","0b110"]},
+    "PSA_WX": {"RISCV": ["RVPBinary_rr","0b0000","0b11","0b110"]},
+    "PSA_DHX": {"RISCV": ["RVPPairBinaryExchanged_rr","0b0000","0b10"]}
+  }
+}

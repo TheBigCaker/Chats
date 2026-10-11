@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSADDDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSADDDP": {"PowerPC": "XSADDDP"}
+  },
+  "INPUTS": {
+    "XSADDDP": {"PowerPC": [["vsfrc",0],["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSADDDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSADDDP": {"PowerPC": ["XX3Form","60","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSADDDP": {"PowerPC": ["XX3Form","60","32"]}
+  }
+}

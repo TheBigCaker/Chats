@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "UH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UH": {"ARM": "UH"}
+  },
+  "INPUTS": {
+    "UH": {"ARM": [["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "UH": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "UH": {"ARM": ["AHuInp","0b11101","0b11","0b1100","0b01","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "UH": {"ARM": ["AHuInp","0b11101","0b11","0b1100","0b01","0"]}
+  }
+}

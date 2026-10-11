@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ONE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "ONE": {"AMDGPU": "ONE"},
+    "ONE_INT": {"AMDGPU": "ONE_INT"}
+  },
+  "INPUTS": {
+    "ONE": {"AMDGPU": []},
+    "ONE_INT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "ONE": {"AMDGPU": []},
+    "ONE_INT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "ONE": {"AMDGPU": ["R600Reg","249"]},
+    "ONE_INT": {"AMDGPU": ["R600Reg","250"]}
+  },
+  "OUTPUT_BYTES": {
+    "ONE": {"AMDGPU": ["R600Reg","249"]},
+    "ONE_INT": {"AMDGPU": ["R600Reg","250"]}
+  }
+}

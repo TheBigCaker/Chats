@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VDIVESQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VDIVESQ": {"PowerPC": "VDIVESQ"}
+  },
+  "INPUTS": {
+    "VDIVESQ": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VDIVESQ": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VDIVESQ": {"PowerPC": ["VXForm_1","779"]}
+  },
+  "OUTPUT_BYTES": {
+    "VDIVESQ": {"PowerPC": ["VXForm_1","779"]}
+  }
+}

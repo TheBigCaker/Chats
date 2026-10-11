@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "UADD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UADD16": {"ARM": "UADD16"},
+    "UADD8": {"ARM": "UADD8"}
+  },
+  "INPUTS": {
+    "UADD16": {"ARM": []},
+    "UADD8": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "UADD16": {"ARM": []},
+    "UADD8": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "UADD16": {"ARM": ["AAIIntrinsic","0b01100101","0b11110001"]},
+    "UADD8": {"ARM": ["AAIIntrinsic","0b01100101","0b11111001"]}
+  },
+  "OUTPUT_BYTES": {
+    "UADD16": {"ARM": ["AAIIntrinsic","0b01100101","0b11110001"]},
+    "UADD8": {"ARM": ["AAIIntrinsic","0b01100101","0b11111001"]}
+  }
+}

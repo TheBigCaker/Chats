@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SPELWZX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SPELWZX": {"PowerPC": "SPELWZX"}
+  },
+  "INPUTS": {
+    "SPELWZX": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "SPELWZX": {"PowerPC": [["spe4rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "SPELWZX": {"PowerPC": ["XForm_1","31","23"]}
+  },
+  "OUTPUT_BYTES": {
+    "SPELWZX": {"PowerPC": ["XForm_1","31","23"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "MSR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MSR": {"ARM": "MSR"},
+    "MSRi": {"ARM": "MSRi"},
+    "MSRbanked": {"ARM": "MSRbanked"}
+  },
+  "INPUTS": {
+    "MSR": {"ARM": [["msr_mask",0],["GPR",64]]},
+    "MSRi": {"ARM": [["msr_mask",0],["mod_imm",0]]},
+    "MSRbanked": {"ARM": [["banked_reg",0],["GPRnopc",0]]}
+  },
+  "OUTPUTS": {
+    "MSR": {"ARM": []},
+    "MSRi": {"ARM": []},
+    "MSRbanked": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "MSR": {"ARM": ["ABI","0b0001"]},
+    "MSRi": {"ARM": ["ABI","0b0011"]},
+    "MSRbanked": {"ARM": ["ABI","0b0001"]}
+  },
+  "OUTPUT_BYTES": {
+    "MSR": {"ARM": ["ABI","0b0001"]},
+    "MSRi": {"ARM": ["ABI","0b0011"]},
+    "MSRbanked": {"ARM": ["ABI","0b0001"]}
+  }
+}

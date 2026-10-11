@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSDIVQPO",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSDIVQPO": {"PowerPC": "XSDIVQPO"}
+  },
+  "INPUTS": {
+    "XSDIVQPO": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSDIVQPO": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSDIVQPO": {"PowerPC": ["X_VT5_VA5_VB5_Ro","63","548"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSDIVQPO": {"PowerPC": ["X_VT5_VA5_VB5_Ro","63","548"]}
+  }
+}

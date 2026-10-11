@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULOSB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMULOSB": {"PowerPC": "VMULOSB"}
+  },
+  "INPUTS": {
+    "VMULOSB": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMULOSB": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMULOSB": {"PowerPC": ["VX1_Int_Ty2","264"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULOSB": {"PowerPC": ["VX1_Int_Ty2","264"]}
+  }
+}

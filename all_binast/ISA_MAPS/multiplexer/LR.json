@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "LR",
+  "BACKENDS": ["AArch64","ARM","PowerPC"],
+  "INDEX": {
+    "LR": {"AArch64": "LR"},
+    "LR": {"ARM": "LR"},
+    "LR": {"PowerPC": "LR"},
+    "LR8": {"PowerPC": "LR8"},
+    "LR8RC": {"PowerPC": "LR8RC"}
+  },
+  "INPUTS": {
+    "LR": {"AArch64": []},
+    "LR": {"ARM": []},
+    "LR": {"PowerPC": []},
+    "LR8": {"PowerPC": []},
+    "LR8RC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "LR": {"AArch64": []},
+    "LR": {"ARM": []},
+    "LR": {"PowerPC": []},
+    "LR8": {"PowerPC": []},
+    "LR8RC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "LR": {"AArch64": ["AArch64Reg","30"]},
+    "LR": {"ARM": ["ARMReg","14"]},
+    "LR": {"PowerPC": ["SPR","8"]},
+    "LR8": {"PowerPC": ["SPR","8"]},
+    "LR8RC": {"PowerPC": ["PPCNonAllocatableRegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "LR": {"AArch64": ["AArch64Reg","30"]},
+    "LR": {"ARM": ["ARMReg","14"]},
+    "LR": {"PowerPC": ["SPR","8"]},
+    "LR8": {"PowerPC": ["SPR","8"]},
+    "LR8RC": {"PowerPC": ["PPCNonAllocatableRegisterClass","64"]}
+  }
+}

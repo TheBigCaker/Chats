@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PREDICATE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "PREDICATE_BIT": {"AMDGPU": "PREDICATE_BIT"}
+  },
+  "INPUTS": {
+    "PREDICATE_BIT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "PREDICATE_BIT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "PREDICATE_BIT": {"AMDGPU": ["R600Reg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "PREDICATE_BIT": {"AMDGPU": ["R600Reg","0"]}
+  }
+}

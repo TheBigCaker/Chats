@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSRDPIC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSRDPIC": {"PowerPC": "XSRDPIC"}
+  },
+  "INPUTS": {
+    "XSRDPIC": {"PowerPC": [["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSRDPIC": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSRDPIC": {"PowerPC": ["XX2Form","60","107"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSRDPIC": {"PowerPC": ["XX2Form","60","107"]}
+  }
+}

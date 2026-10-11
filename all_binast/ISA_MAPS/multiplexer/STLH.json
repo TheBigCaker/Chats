@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STLH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "STLH": {"ARM": "STLH"}
+  },
+  "INPUTS": {
+    "STLH": {"ARM": [["GPR",64],["addr_offset_none",0]]}
+  },
+  "OUTPUTS": {
+    "STLH": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "STLH": {"ARM": ["AIstrrel","0b11"]}
+  },
+  "OUTPUT_BYTES": {
+    "STLH": {"ARM": ["AIstrrel","0b11"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FQTOX",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FQTOX": {"Sparc": "FQTOX"}
+  },
+  "INPUTS": {
+    "FQTOX": {"Sparc": [["QFPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FQTOX": {"Sparc": [["DFPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FQTOX": {"Sparc": ["F3_3u","2","0b110100","0b010000011"]}
+  },
+  "OUTPUT_BYTES": {
+    "FQTOX": {"Sparc": ["F3_3u","2","0b110100","0b010000011"]}
+  }
+}

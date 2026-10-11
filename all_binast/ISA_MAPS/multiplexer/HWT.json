@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HWT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "HWTransVALU": {"AMDGPU": "HWTransVALU"}
+  },
+  "INPUTS": {
+    "HWTransVALU": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "HWTransVALU": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "HWTransVALU": {"AMDGPU": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "HWTransVALU": {"AMDGPU": ["ProcResource","1"]}
+  }
+}

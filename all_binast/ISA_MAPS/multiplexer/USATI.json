@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "USATI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "USATI_RV32": {"RISCV": "USATI_RV32"},
+    "USATI_RV64": {"RISCV": "USATI_RV64"}
+  },
+  "INPUTS": {
+    "USATI_RV32": {"RISCV": []},
+    "USATI_RV64": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "USATI_RV32": {"RISCV": []},
+    "USATI_RV64": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "USATI_RV32": {"RISCV": ["RVPShiftW_ri","0b010","0b100"]},
+    "USATI_RV64": {"RISCV": ["RVPShiftD_ri","0b010","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "USATI_RV32": {"RISCV": ["RVPShiftW_ri","0b010","0b100"]},
+    "USATI_RV64": {"RISCV": ["RVPShiftD_ri","0b010","0b100"]}
+  }
+}

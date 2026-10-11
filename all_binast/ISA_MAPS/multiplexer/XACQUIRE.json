@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XACQUIRE",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XACQUIRE_PREFIX": {"X86": "XACQUIRE_PREFIX"}
+  },
+  "INPUTS": {
+    "XACQUIRE_PREFIX": {"X86": []}
+  },
+  "OUTPUTS": {
+    "XACQUIRE_PREFIX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "XACQUIRE_PREFIX": {"X86": ["0xF2"]}
+  },
+  "OUTPUT_BYTES": {
+    "XACQUIRE_PREFIX": {"X86": ["0xF2"]}
+  }
+}

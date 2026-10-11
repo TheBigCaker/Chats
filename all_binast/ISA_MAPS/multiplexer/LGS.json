@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LGS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LGS16rm": {"X86": "LGS16rm"},
+    "LGS32rm": {"X86": "LGS32rm"}
+  },
+  "INPUTS": {
+    "LGS16rm": {"X86": [["opaquemem",0]]},
+    "LGS32rm": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "LGS16rm": {"X86": [["GR16",16]]},
+    "LGS32rm": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "LGS16rm": {"X86": ["0xb5"]},
+    "LGS32rm": {"X86": ["0xb5"]}
+  },
+  "OUTPUT_BYTES": {
+    "LGS16rm": {"X86": ["0xb5"]},
+    "LGS32rm": {"X86": ["0xb5"]}
+  }
+}

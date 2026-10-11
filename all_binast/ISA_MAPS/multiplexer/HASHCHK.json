@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HASHCHK",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "HASHCHK8": {"PowerPC": "HASHCHK8"}
+  },
+  "INPUTS": {
+    "HASHCHK8": {"PowerPC": [["g8rc",0],["(memrihash",0]]}
+  },
+  "OUTPUTS": {
+    "HASHCHK8": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "HASHCHK8": {"PowerPC": ["XForm_XD6_RA5_RB5","31","754"]}
+  },
+  "OUTPUT_BYTES": {
+    "HASHCHK8": {"PowerPC": ["XForm_XD6_RA5_RB5","31","754"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "KABOOM",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "KABOOM": {"Mali": "KABOOM"}
+  },
+  "INPUTS": {
+    "KABOOM": {"Mali": [["R32",32]]}
+  },
+  "OUTPUTS": {
+    "KABOOM": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "KABOOM": {"Mali": ["Bifrost_add","0xd7858","0xffff8"]}
+  },
+  "OUTPUT_BYTES": {
+    "KABOOM": {"Mali": ["Bifrost_add","0xd7858","0xffff8"]}
+  }
+}

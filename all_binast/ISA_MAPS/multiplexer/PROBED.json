@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "PROBED",
+  "BACKENDS": ["X86","RISCV","PowerPC"],
+  "INDEX": {
+    "PROBED_ALLOCA_32": {"X86": "PROBED_ALLOCA_32"},
+    "PROBED_ALLOCA_64": {"X86": "PROBED_ALLOCA_64"},
+    "PROBED_STACKALLOC": {"RISCV": "PROBED_STACKALLOC"},
+    "PROBED_STACKALLOC_RVV": {"RISCV": "PROBED_STACKALLOC_RVV"},
+    "PROBED_STACKALLOC_DYN": {"RISCV": "PROBED_STACKALLOC_DYN"},
+    "PROBED_ALLOCA_64": {"PowerPC": "PROBED_ALLOCA_64"},
+    "PROBED_STACKALLOC_64": {"PowerPC": "PROBED_STACKALLOC_64"}
+  },
+  "INPUTS": {
+    "PROBED_ALLOCA_32": {"X86": [["GR32",32]]},
+    "PROBED_ALLOCA_64": {"X86": [["GR64",64]]},
+    "PROBED_STACKALLOC": {"RISCV": [["GPR",64]]},
+    "PROBED_STACKALLOC_RVV": {"RISCV": [["GPR",64]]},
+    "PROBED_STACKALLOC_DYN": {"RISCV": [["GPR",64]]},
+    "PROBED_ALLOCA_64": {"PowerPC": [["g8rc",0],["memri",0]]},
+    "PROBED_STACKALLOC_64": {"PowerPC": [["i64imm",64]]}
+  },
+  "OUTPUTS": {
+    "PROBED_ALLOCA_32": {"X86": [["GR32",32]]},
+    "PROBED_ALLOCA_64": {"X86": [["GR64",64]]},
+    "PROBED_STACKALLOC": {"RISCV": []},
+    "PROBED_STACKALLOC_RVV": {"RISCV": []},
+    "PROBED_STACKALLOC_DYN": {"RISCV": []},
+    "PROBED_ALLOCA_64": {"PowerPC": [["g8rc",0]]},
+    "PROBED_STACKALLOC_64": {"PowerPC": [["g8rc",0],["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "PROBED_ALLOCA_32": {"X86": ["0"]},
+    "PROBED_ALLOCA_64": {"X86": ["0"]},
+    "PROBED_STACKALLOC": {"RISCV": []},
+    "PROBED_STACKALLOC_RVV": {"RISCV": []},
+    "PROBED_STACKALLOC_DYN": {"RISCV": []},
+    "PROBED_ALLOCA_64": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "PROBED_STACKALLOC_64": {"PowerPC": ["PPCEmitTimePseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "PROBED_ALLOCA_32": {"X86": ["0"]},
+    "PROBED_ALLOCA_64": {"X86": ["0"]},
+    "PROBED_STACKALLOC": {"RISCV": []},
+    "PROBED_STACKALLOC_RVV": {"RISCV": []},
+    "PROBED_STACKALLOC_DYN": {"RISCV": []},
+    "PROBED_ALLOCA_64": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "PROBED_STACKALLOC_64": {"PowerPC": ["PPCEmitTimePseudo"]}
+  }
+}

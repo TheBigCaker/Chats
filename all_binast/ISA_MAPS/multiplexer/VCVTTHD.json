@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCVTTHD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VCVTTHD": {"ARM": "VCVTTHD"}
+  },
+  "INPUTS": {
+    "VCVTTHD": {"ARM": [["SPR",0]]}
+  },
+  "OUTPUTS": {
+    "VCVTTHD": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCVTTHD": {"ARM": ["ADuI","0b11101","0b11","0b0010","0b11","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCVTTHD": {"ARM": ["ADuI","0b11101","0b11","0b0010","0b11","0"]}
+  }
+}

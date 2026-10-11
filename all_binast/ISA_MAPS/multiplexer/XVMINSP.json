@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVMINSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVMINSP": {"PowerPC": "XVMINSP"}
+  },
+  "INPUTS": {
+    "XVMINSP": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVMINSP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVMINSP": {"PowerPC": ["XX3Form","60","200"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVMINSP": {"PowerPC": ["XX3Form","60","200"]}
+  }
+}

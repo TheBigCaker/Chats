@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VPAIRE",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VPAIRE_VV": {"RISCV": "VPAIRE_VV"}
+  },
+  "INPUTS": {
+    "VPAIRE_VV": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VPAIRE_VV": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VPAIRE_VV": {"RISCV": ["VALUVV","0b001111"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPAIRE_VV": {"RISCV": ["VALUVV","0b001111"]}
+  }
+}

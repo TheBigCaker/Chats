@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FCONSTS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "FCONSTS": {"ARM": "FCONSTS"}
+  },
+  "INPUTS": {
+    "FCONSTS": {"ARM": [["vfp_f32imm",0]]}
+  },
+  "OUTPUTS": {
+    "FCONSTS": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "FCONSTS": {"ARM": ["VFPAI"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCONSTS": {"ARM": ["VFPAI"]}
+  }
+}

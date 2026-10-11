@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUSDOTD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VUSDOTD": {"ARM": "VUSDOTD"}
+  },
+  "INPUTS": {
+    "VUSDOTD": {"ARM": [["RegTy:$Vd",0],["RegTy:$Vn",0],["RegTy:$Vm",0]]}
+  },
+  "OUTPUTS": {
+    "VUSDOTD": {"ARM": [["RegTy:$dst",0]]}
+  },
+  "INPUT_BYTES": {
+    "VUSDOTD": {"ARM": ["VDOT","0","0","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUSDOTD": {"ARM": ["VDOT","0","0","1"]}
+  }
+}

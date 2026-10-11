@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NZCV",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "NZCV": {"AArch64": "NZCV"}
+  },
+  "INPUTS": {
+    "NZCV": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "NZCV": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "NZCV": {"AArch64": ["AArch64Reg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "NZCV": {"AArch64": ["AArch64Reg","0"]}
+  }
+}

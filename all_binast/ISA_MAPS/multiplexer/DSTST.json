@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "DSTST",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DSTST": {"PowerPC": "DSTST"},
+    "DSTST64": {"PowerPC": "DSTST64"}
+  },
+  "INPUTS": {
+    "DSTST": {"PowerPC": [["u5imm",5],["gprc",0],["gprc",0]]},
+    "DSTST64": {"PowerPC": [["u5imm",5],["g8rc",0],["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "DSTST": {"PowerPC": []},
+    "DSTST64": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "DSTST": {"PowerPC": ["DSS_Form","0","374"]},
+    "DSTST64": {"PowerPC": ["DSS_Form","0","374"]}
+  },
+  "OUTPUT_BYTES": {
+    "DSTST": {"PowerPC": ["DSS_Form","0","374"]},
+    "DSTST64": {"PowerPC": ["DSS_Form","0","374"]}
+  }
+}

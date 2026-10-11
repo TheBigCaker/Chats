@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "REX",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "REX64_PREFIX": {"X86": "REX64_PREFIX"}
+  },
+  "INPUTS": {
+    "REX64_PREFIX": {"X86": []}
+  },
+  "OUTPUTS": {
+    "REX64_PREFIX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "REX64_PREFIX": {"X86": ["0x48"]}
+  },
+  "OUTPUT_BYTES": {
+    "REX64_PREFIX": {"X86": ["0x48"]}
+  }
+}

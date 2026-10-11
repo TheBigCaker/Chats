@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ALLCLEAN",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "ALLCLEAN": {"Sparc": "ALLCLEAN"}
+  },
+  "INPUTS": {
+    "ALLCLEAN": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "ALLCLEAN": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "ALLCLEAN": {"Sparc": ["UA2005RegWin","0b00010"]}
+  },
+  "OUTPUT_BYTES": {
+    "ALLCLEAN": {"Sparc": ["UA2005RegWin","0b00010"]}
+  }
+}

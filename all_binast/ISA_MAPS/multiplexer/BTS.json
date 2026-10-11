@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "BTS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "BTS16rr": {"X86": "BTS16rr"},
+    "BTS32rr": {"X86": "BTS32rr"},
+    "BTS16mr": {"X86": "BTS16mr"},
+    "BTS32mr": {"X86": "BTS32mr"}
+  },
+  "INPUTS": {
+    "BTS16rr": {"X86": [["GR16",16],["GR16",16]]},
+    "BTS32rr": {"X86": [["GR32",32],["GR32",32]]},
+    "BTS16mr": {"X86": [["i16mem",0],["GR16",16]]},
+    "BTS32mr": {"X86": [["i32mem",0],["GR32",32]]}
+  },
+  "OUTPUTS": {
+    "BTS16rr": {"X86": [["GR16",16]]},
+    "BTS32rr": {"X86": [["GR32",32]]},
+    "BTS16mr": {"X86": []},
+    "BTS32mr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "BTS16rr": {"X86": ["0xAB"]},
+    "BTS32rr": {"X86": ["0xAB"]},
+    "BTS16mr": {"X86": ["0xAB"]},
+    "BTS32mr": {"X86": ["0xAB"]}
+  },
+  "OUTPUT_BYTES": {
+    "BTS16rr": {"X86": ["0xAB"]},
+    "BTS32rr": {"X86": ["0xAB"]},
+    "BTS16mr": {"X86": ["0xAB"]},
+    "BTS32mr": {"X86": ["0xAB"]}
+  }
+}

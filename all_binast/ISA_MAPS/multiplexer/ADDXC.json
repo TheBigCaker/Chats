@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ADDXC",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "ADDXC": {"Sparc": "ADDXC"}
+  },
+  "INPUTS": {
+    "ADDXC": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "ADDXC": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "ADDXC": {"Sparc": ["VISInst","0b000010001"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADDXC": {"Sparc": ["VISInst","0b000010001"]}
+  }
+}

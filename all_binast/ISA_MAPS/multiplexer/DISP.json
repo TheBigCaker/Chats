@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "DISP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DISPx02": {"PowerPC": "DISPx02"},
+    "DISPx13": {"PowerPC": "DISPx13"},
+    "DISPxab": {"PowerPC": "DISPxab"},
+    "DISPb01": {"PowerPC": "DISPb01"}
+  },
+  "INPUTS": {
+    "DISPx02": {"PowerPC": []},
+    "DISPx13": {"PowerPC": []},
+    "DISPxab": {"PowerPC": []},
+    "DISPb01": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "DISPx02": {"PowerPC": []},
+    "DISPx13": {"PowerPC": []},
+    "DISPxab": {"PowerPC": []},
+    "DISPb01": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "DISPx02": {"PowerPC": ["ProcResource","2"]},
+    "DISPx13": {"PowerPC": ["ProcResource","2"]},
+    "DISPxab": {"PowerPC": ["ProcResource","2"]},
+    "DISPb01": {"PowerPC": ["ProcResource","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "DISPx02": {"PowerPC": ["ProcResource","2"]},
+    "DISPx13": {"PowerPC": ["ProcResource","2"]},
+    "DISPxab": {"PowerPC": ["ProcResource","2"]},
+    "DISPb01": {"PowerPC": ["ProcResource","2"]}
+  }
+}

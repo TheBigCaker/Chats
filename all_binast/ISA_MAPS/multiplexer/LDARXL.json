@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LDARXL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LDARXL": {"PowerPC": "LDARXL"}
+  },
+  "INPUTS": {
+    "LDARXL": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LDARXL": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LDARXL": {"PowerPC": ["XForm_1","31","84"]}
+  },
+  "OUTPUT_BYTES": {
+    "LDARXL": {"PowerPC": ["XForm_1","31","84"]}
+  }
+}

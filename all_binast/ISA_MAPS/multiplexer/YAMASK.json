@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YAMASK",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YAMASK": {"RISCV": "YAMASK"}
+  },
+  "INPUTS": {
+    "YAMASK": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YAMASK": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YAMASK": {"RISCV": ["RVY_r_xx","0b00000"]}
+  },
+  "OUTPUT_BYTES": {
+    "YAMASK": {"RISCV": ["RVY_r_xx","0b00000"]}
+  }
+}

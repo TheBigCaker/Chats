@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFPM",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFPMiscFrm": {"ARM": "VFPMiscFrm"}
+  },
+  "INPUTS": {
+    "VFPMiscFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VFPMiscFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VFPMiscFrm": {"ARM": ["Format","24"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFPMiscFrm": {"ARM": ["Format","24"]}
+  }
+}

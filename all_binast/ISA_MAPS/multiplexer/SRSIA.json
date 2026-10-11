@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SRSIA",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SRSIA": {"ARM": "SRSIA"},
+    "SRSIA_UPD": {"ARM": "SRSIA_UPD"}
+  },
+  "INPUTS": {
+    "SRSIA": {"ARM": [["imm0_31:$mode",0]]},
+    "SRSIA_UPD": {"ARM": [["imm0_31:$mode",0]]}
+  },
+  "OUTPUTS": {
+    "SRSIA": {"ARM": []},
+    "SRSIA_UPD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SRSIA": {"ARM": ["SRSI","0"]},
+    "SRSIA_UPD": {"ARM": ["SRSI","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "SRSIA": {"ARM": ["SRSI","0"]},
+    "SRSIA_UPD": {"ARM": ["SRSI","1"]}
+  }
+}

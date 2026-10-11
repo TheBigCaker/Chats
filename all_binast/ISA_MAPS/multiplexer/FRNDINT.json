@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FRNDINT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "FRNDINT": {"X86": "FRNDINT"}
+  },
+  "INPUTS": {
+    "FRNDINT": {"X86": []}
+  },
+  "OUTPUTS": {
+    "FRNDINT": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "FRNDINT": {"X86": ["0xD9"]}
+  },
+  "OUTPUT_BYTES": {
+    "FRNDINT": {"X86": ["0xD9"]}
+  }
+}

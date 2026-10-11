@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SGT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SGT": {"AMDGPU": "SGT"}
+  },
+  "INPUTS": {
+    "SGT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SGT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SGT": {"AMDGPU": ["R600_2OP","0x09"]}
+  },
+  "OUTPUT_BYTES": {
+    "SGT": {"AMDGPU": ["R600_2OP","0x09"]}
+  }
+}

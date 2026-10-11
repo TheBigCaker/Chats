@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "VFWMADOT",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFWMADOT1": {"RISCV": "VFWMADOT1"},
+    "VFWMADOT2": {"RISCV": "VFWMADOT2"},
+    "VFWMADOT3": {"RISCV": "VFWMADOT3"}
+  },
+  "INPUTS": {
+    "VFWMADOT1": {"RISCV": []},
+    "VFWMADOT2": {"RISCV": []},
+    "VFWMADOT3": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VFWMADOT1": {"RISCV": []},
+    "VFWMADOT2": {"RISCV": []},
+    "VFWMADOT3": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VFWMADOT1": {"RISCV": ["VFWMADTSLIDE_INSN","0b101"]},
+    "VFWMADOT2": {"RISCV": ["VFWMADTSLIDE_INSN","0b110"]},
+    "VFWMADOT3": {"RISCV": ["VFWMADTSLIDE_INSN","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFWMADOT1": {"RISCV": ["VFWMADTSLIDE_INSN","0b101"]},
+    "VFWMADOT2": {"RISCV": ["VFWMADTSLIDE_INSN","0b110"]},
+    "VFWMADOT3": {"RISCV": ["VFWMADTSLIDE_INSN","0b111"]}
+  }
+}

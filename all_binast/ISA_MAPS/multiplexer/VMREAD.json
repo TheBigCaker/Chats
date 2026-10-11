@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "VMREAD",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMREAD64rr": {"X86": "VMREAD64rr"},
+    "VMREAD32rr": {"X86": "VMREAD32rr"},
+    "VMREAD64mr": {"X86": "VMREAD64mr"},
+    "VMREAD32mr": {"X86": "VMREAD32mr"}
+  },
+  "INPUTS": {
+    "VMREAD64rr": {"X86": [["GR64",64]]},
+    "VMREAD32rr": {"X86": [["GR32",32]]},
+    "VMREAD64mr": {"X86": [["i64mem",0],["GR64",64]]},
+    "VMREAD32mr": {"X86": [["i32mem",0],["GR32",32]]}
+  },
+  "OUTPUTS": {
+    "VMREAD64rr": {"X86": [["GR64",64]]},
+    "VMREAD32rr": {"X86": [["GR32",32]]},
+    "VMREAD64mr": {"X86": []},
+    "VMREAD32mr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMREAD64rr": {"X86": ["0x78"]},
+    "VMREAD32rr": {"X86": ["0x78"]},
+    "VMREAD64mr": {"X86": ["0x78"]},
+    "VMREAD32mr": {"X86": ["0x78"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMREAD64rr": {"X86": ["0x78"]},
+    "VMREAD32rr": {"X86": ["0x78"]},
+    "VMREAD64mr": {"X86": ["0x78"]},
+    "VMREAD32mr": {"X86": ["0x78"]}
+  }
+}

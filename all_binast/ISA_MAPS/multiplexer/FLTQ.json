@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "FLTQ",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FLTQ_S": {"RISCV": "FLTQ_S"},
+    "FLTQ_D": {"RISCV": "FLTQ_D"},
+    "FLTQ_H": {"RISCV": "FLTQ_H"},
+    "FLTQ_Q": {"RISCV": "FLTQ_Q"}
+  },
+  "INPUTS": {
+    "FLTQ_S": {"RISCV": [["rty:$rs1",0],["rty:$rs2",0]]},
+    "FLTQ_D": {"RISCV": [["rty:$rs1",0],["rty:$rs2",0]]},
+    "FLTQ_H": {"RISCV": [["rty:$rs1",0],["rty:$rs2",0]]},
+    "FLTQ_Q": {"RISCV": [["rty:$rs1",0],["rty:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "FLTQ_S": {"RISCV": [["GPR:$rd",0]]},
+    "FLTQ_D": {"RISCV": [["GPR:$rd",0]]},
+    "FLTQ_H": {"RISCV": [["GPR:$rd",0]]},
+    "FLTQ_Q": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "FLTQ_S": {"RISCV": ["FPCmp_rr","0b1010000","0b101"]},
+    "FLTQ_D": {"RISCV": ["FPCmp_rr","0b1010001","0b101"]},
+    "FLTQ_H": {"RISCV": ["FPCmp_rr","0b1010010","0b101"]},
+    "FLTQ_Q": {"RISCV": ["FPCmp_rr","0b1010011","0b101"]}
+  },
+  "OUTPUT_BYTES": {
+    "FLTQ_S": {"RISCV": ["FPCmp_rr","0b1010000","0b101"]},
+    "FLTQ_D": {"RISCV": ["FPCmp_rr","0b1010001","0b101"]},
+    "FLTQ_H": {"RISCV": ["FPCmp_rr","0b1010010","0b101"]},
+    "FLTQ_Q": {"RISCV": ["FPCmp_rr","0b1010011","0b101"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMSBF",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VMSBF_M": {"RISCV": "VMSBF_M"}
+  },
+  "INPUTS": {
+    "VMSBF_M": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VMSBF_M": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VMSBF_M": {"RISCV": ["VMSFS_MV_VS2","0b010100","0b00001"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMSBF_M": {"RISCV": ["VMSFS_MV_VS2","0b010100","0b00001"]}
+  }
+}

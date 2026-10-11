@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VRFIM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VRFIM": {"PowerPC": "VRFIM"}
+  },
+  "INPUTS": {
+    "VRFIM": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VRFIM": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VRFIM": {"PowerPC": ["VX2_Int_SP","714"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRFIM": {"PowerPC": ["VX2_Int_SP","714"]}
+  }
+}

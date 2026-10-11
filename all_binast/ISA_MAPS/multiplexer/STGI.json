@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STGI",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "STGI": {"X86": "STGI"}
+  },
+  "INPUTS": {
+    "STGI": {"X86": []}
+  },
+  "OUTPUTS": {
+    "STGI": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "STGI": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "STGI": {"X86": ["0x01"]}
+  }
+}

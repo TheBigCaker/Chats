@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VRFIZ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VRFIZ": {"PowerPC": "VRFIZ"}
+  },
+  "INPUTS": {
+    "VRFIZ": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VRFIZ": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VRFIZ": {"PowerPC": ["VX2_Int_SP","586"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRFIZ": {"PowerPC": ["VX2_Int_SP","586"]}
+  }
+}

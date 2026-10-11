@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NCLIP",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "NCLIP": {"RISCV": "NCLIP"}
+  },
+  "INPUTS": {
+    "NCLIP": {"RISCV": [["GPRPairRV32:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "NCLIP": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "NCLIP": {"RISCV": ["RVPNarrowingShift_rr","0b110","0b11"]}
+  },
+  "OUTPUT_BYTES": {
+    "NCLIP": {"RISCV": ["RVPNarrowingShift_rr","0b110","0b11"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DTSTSFIQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DTSTSFIQ": {"PowerPC": "DTSTSFIQ"}
+  },
+  "INPUTS": {
+    "DTSTSFIQ": {"PowerPC": [["u6imm",6],["fpairrc",0]]}
+  },
+  "OUTPUTS": {
+    "DTSTSFIQ": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "DTSTSFIQ": {"PowerPC": ["XForm_BF3_UIM6_FRB5","63","675"]}
+  },
+  "OUTPUT_BYTES": {
+    "DTSTSFIQ": {"PowerPC": ["XForm_BF3_UIM6_FRB5","63","675"]}
+  }
+}

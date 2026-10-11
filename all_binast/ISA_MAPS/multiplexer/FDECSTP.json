@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FDECSTP",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "FDECSTP": {"X86": "FDECSTP"}
+  },
+  "INPUTS": {
+    "FDECSTP": {"X86": []}
+  },
+  "OUTPUTS": {
+    "FDECSTP": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "FDECSTP": {"X86": ["0xD9"]}
+  },
+  "OUTPUT_BYTES": {
+    "FDECSTP": {"X86": ["0xD9"]}
+  }
+}

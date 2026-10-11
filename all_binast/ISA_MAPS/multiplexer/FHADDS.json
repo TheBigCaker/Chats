@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FHADDS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FHADDS": {"Sparc": "FHADDS"}
+  },
+  "INPUTS": {
+    "FHADDS": {"Sparc": [["FPRegs",0],["FPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FHADDS": {"Sparc": [["FPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FHADDS": {"Sparc": ["F3_3","0b10","0b110100","0b001100001"]}
+  },
+  "OUTPUT_BYTES": {
+    "FHADDS": {"Sparc": ["F3_3","0b10","0b110100","0b001100001"]}
+  }
+}

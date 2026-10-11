@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVZPQIL",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MOVZPQILo2PQIrr": {"X86": "MOVZPQILo2PQIrr"}
+  },
+  "INPUTS": {
+    "MOVZPQILo2PQIrr": {"X86": [["VR128",128]]}
+  },
+  "OUTPUTS": {
+    "MOVZPQILo2PQIrr": {"X86": [["VR128",128]]}
+  },
+  "INPUT_BYTES": {
+    "MOVZPQILo2PQIrr": {"X86": ["0x7E"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVZPQILo2PQIrr": {"X86": ["0x7E"]}
+  }
+}

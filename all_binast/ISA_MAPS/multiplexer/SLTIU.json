@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SLTIU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SLTIU": {"RISCV": "SLTIU"}
+  },
+  "INPUTS": {
+    "SLTIU": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SLTIU": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SLTIU": {"RISCV": ["ALU_ri","0b011"]}
+  },
+  "OUTPUT_BYTES": {
+    "SLTIU": {"RISCV": ["ALU_ri","0b011"]}
+  }
+}

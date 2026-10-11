@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PS",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "PS": {"AMDGPU": "PS"}
+  },
+  "INPUTS": {
+    "PS": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "PS": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "PS": {"AMDGPU": ["R600Reg","255"]}
+  },
+  "OUTPUT_BYTES": {
+    "PS": {"AMDGPU": ["R600Reg","255"]}
+  }
+}

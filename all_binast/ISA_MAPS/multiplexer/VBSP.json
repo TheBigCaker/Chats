@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VBSP",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VBSPd": {"ARM": "VBSPd"},
+    "VBSPq": {"ARM": "VBSPq"}
+  },
+  "INPUTS": {
+    "VBSPd": {"ARM": [["DPR",0],["DPR",0],["DPR",0]]},
+    "VBSPq": {"ARM": [["QPR",0],["QPR",0],["QPR",0]]}
+  },
+  "OUTPUTS": {
+    "VBSPd": {"ARM": [["DPR",0]]},
+    "VBSPq": {"ARM": [["QPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VBSPd": {"ARM": ["PseudoNeonI"]},
+    "VBSPq": {"ARM": ["PseudoNeonI"]}
+  },
+  "OUTPUT_BYTES": {
+    "VBSPd": {"ARM": ["PseudoNeonI"]},
+    "VBSPq": {"ARM": ["PseudoNeonI"]}
+  }
+}

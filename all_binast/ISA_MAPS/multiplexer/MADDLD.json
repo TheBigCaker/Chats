@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MADDLD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MADDLD": {"PowerPC": "MADDLD"},
+    "MADDLD8": {"PowerPC": "MADDLD8"}
+  },
+  "INPUTS": {
+    "MADDLD": {"PowerPC": [["gprc",0],["gprc",0],["gprc",0]]},
+    "MADDLD8": {"PowerPC": [["g8rc",0],["g8rc",0],["g8rc",0]]}
+  },
+  "OUTPUTS": {
+    "MADDLD": {"PowerPC": [["gprc",0]]},
+    "MADDLD8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MADDLD": {"PowerPC": ["VAForm_1a","51"]},
+    "MADDLD8": {"PowerPC": ["VAForm_1a","51"]}
+  },
+  "OUTPUT_BYTES": {
+    "MADDLD": {"PowerPC": ["VAForm_1a","51"]},
+    "MADDLD8": {"PowerPC": ["VAForm_1a","51"]}
+  }
+}

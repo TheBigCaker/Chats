@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PTRDISPREGS",
+  "BACKENDS": ["AVR"],
+  "INDEX": {
+    "PTRDISPREGS": {"AVR": "PTRDISPREGS"}
+  },
+  "INPUTS": {
+    "PTRDISPREGS": {"AVR": []}
+  },
+  "OUTPUTS": {
+    "PTRDISPREGS": {"AVR": []}
+  },
+  "INPUT_BYTES": {
+    "PTRDISPREGS": {"AVR": ["RegisterClass","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "PTRDISPREGS": {"AVR": ["RegisterClass","8"]}
+  }
+}

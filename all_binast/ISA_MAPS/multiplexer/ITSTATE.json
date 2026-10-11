@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ITSTATE",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "ITSTATE": {"ARM": "ITSTATE"}
+  },
+  "INPUTS": {
+    "ITSTATE": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "ITSTATE": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "ITSTATE": {"ARM": ["ARMReg","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "ITSTATE": {"ARM": ["ARMReg","4"]}
+  }
+}

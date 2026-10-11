@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DRET",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "DRET": {"RISCV": "DRET"}
+  },
+  "INPUTS": {
+    "DRET": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "DRET": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "DRET": {"RISCV": ["Priv","0b0111101"]}
+  },
+  "OUTPUT_BYTES": {
+    "DRET": {"RISCV": ["Priv","0b0111101"]}
+  }
+}

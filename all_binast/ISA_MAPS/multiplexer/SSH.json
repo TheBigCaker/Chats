@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SSH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SSH1SADD": {"RISCV": "SSH1SADD"}
+  },
+  "INPUTS": {
+    "SSH1SADD": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "SSH1SADD": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "SSH1SADD": {"RISCV": ["RVPBinary_rr","0b0110","0b01","0b010"]}
+  },
+  "OUTPUT_BYTES": {
+    "SSH1SADD": {"RISCV": ["RVPBinary_rr","0b0110","0b01","0b010"]}
+  }
+}

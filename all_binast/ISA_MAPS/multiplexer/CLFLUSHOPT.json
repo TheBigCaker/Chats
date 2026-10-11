@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CLFLUSHOPT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CLFLUSHOPT": {"X86": "CLFLUSHOPT"}
+  },
+  "INPUTS": {
+    "CLFLUSHOPT": {"X86": [["i8mem",0]]}
+  },
+  "OUTPUTS": {
+    "CLFLUSHOPT": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CLFLUSHOPT": {"X86": ["0xAE"]}
+  },
+  "OUTPUT_BYTES": {
+    "CLFLUSHOPT": {"X86": ["0xAE"]}
+  }
+}

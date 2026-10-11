@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SXTAH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SXTAH": {"ARM": "SXTAH"}
+  },
+  "INPUTS": {
+    "SXTAH": {"ARM": [["GPR:$Rn",0],["GPRnopc:$Rm",0],["rot_imm:$rot",0]]}
+  },
+  "OUTPUTS": {
+    "SXTAH": {"ARM": [["GPRnopc:$Rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "SXTAH": {"ARM": ["AI_exta_rrot","0b01101011"]}
+  },
+  "OUTPUT_BYTES": {
+    "SXTAH": {"ARM": ["AI_exta_rrot","0b01101011"]}
+  }
+}

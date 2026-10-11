@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WMMAR",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "WMMARegular": {"AMDGPU": "WMMARegular"}
+  },
+  "INPUTS": {
+    "WMMARegular": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "WMMARegular": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "WMMARegular": {"AMDGPU": ["WMMAType","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "WMMARegular": {"AMDGPU": ["WMMAType","0b00"]}
+  }
+}

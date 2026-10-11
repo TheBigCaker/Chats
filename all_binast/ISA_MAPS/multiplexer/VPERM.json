@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VPERM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VPERM": {"PowerPC": "VPERM"}
+  },
+  "INPUTS": {
+    "VPERM": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VPERM": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VPERM": {"PowerPC": ["VA1a_Int_Ty3","43"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPERM": {"PowerPC": ["VA1a_Int_Ty3","43"]}
+  }
+}

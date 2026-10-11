@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VLSTM",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VLSTM": {"ARM": "VLSTM"},
+    "VLSTM_T2": {"ARM": "VLSTM_T2"}
+  },
+  "INPUTS": {
+    "VLSTM": {"ARM": [["GPRnopc:$Rn",0],["pred:$p",0],["dpr_reglist:$regs",0]]},
+    "VLSTM_T2": {"ARM": [["GPRnopc:$Rn",0],["pred:$p",0],["dpr_reglist:$regs",0]]}
+  },
+  "OUTPUTS": {
+    "VLSTM": {"ARM": []},
+    "VLSTM_T2": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VLSTM": {"ARM": ["AXSI4FR","0","0"]},
+    "VLSTM_T2": {"ARM": ["AXSI4FR","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VLSTM": {"ARM": ["AXSI4FR","0","0"]},
+    "VLSTM_T2": {"ARM": ["AXSI4FR","1","0"]}
+  }
+}

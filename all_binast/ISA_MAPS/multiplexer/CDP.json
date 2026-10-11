@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "CDP",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "CDP": {"ARM": "CDP"},
+    "CDP2": {"ARM": "CDP2"}
+  },
+  "INPUTS": {
+    "CDP": {"ARM": [["p_imm",0],["imm0_15",0],["c_imm",0],["c_imm",0],["c_imm",0],["imm0_7",0]]},
+    "CDP2": {"ARM": [["p_imm",0],["imm0_15",0],["c_imm",0],["c_imm",0],["c_imm",0],["imm0_7",0]]}
+  },
+  "OUTPUTS": {
+    "CDP": {"ARM": []},
+    "CDP2": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "CDP": {"ARM": ["ABI","0b1110"]},
+    "CDP2": {"ARM": ["ABXI","0b1110"]}
+  },
+  "OUTPUT_BYTES": {
+    "CDP": {"ARM": ["ABI","0b1110"]},
+    "CDP2": {"ARM": ["ABXI","0b1110"]}
+  }
+}

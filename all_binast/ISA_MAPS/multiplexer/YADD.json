@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YADD",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YADD": {"RISCV": "YADD"}
+  },
+  "INPUTS": {
+    "YADD": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YADD": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YADD": {"RISCV": ["RVY_rr","0b0000011"]}
+  },
+  "OUTPUT_BYTES": {
+    "YADD": {"RISCV": ["RVY_rr","0b0000011"]}
+  }
+}

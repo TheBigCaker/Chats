@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "USUB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "USUB16": {"ARM": "USUB16"},
+    "USUB8": {"ARM": "USUB8"}
+  },
+  "INPUTS": {
+    "USUB16": {"ARM": []},
+    "USUB8": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "USUB16": {"ARM": []},
+    "USUB8": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "USUB16": {"ARM": ["AAIIntrinsic","0b01100101","0b11110111"]},
+    "USUB8": {"ARM": ["AAIIntrinsic","0b01100101","0b11111111"]}
+  },
+  "OUTPUT_BYTES": {
+    "USUB16": {"ARM": ["AAIIntrinsic","0b01100101","0b11110111"]},
+    "USUB8": {"ARM": ["AAIIntrinsic","0b01100101","0b11111111"]}
+  }
+}

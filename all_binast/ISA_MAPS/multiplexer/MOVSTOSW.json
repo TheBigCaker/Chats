@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVSTOSW",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "MOVSTOSW": {"Sparc": "MOVSTOSW"}
+  },
+  "INPUTS": {
+    "MOVSTOSW": {"Sparc": [["FPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "MOVSTOSW": {"Sparc": [["IntRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "MOVSTOSW": {"Sparc": ["VISInstFormat","0b100010011"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVSTOSW": {"Sparc": ["VISInstFormat","0b100010011"]}
+  }
+}

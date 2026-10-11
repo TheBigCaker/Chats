@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STQX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STQX_PSEUDO": {"PowerPC": "STQX_PSEUDO"}
+  },
+  "INPUTS": {
+    "STQX_PSEUDO": {"PowerPC": [["g8prc",0],["memrr",0]]}
+  },
+  "OUTPUTS": {
+    "STQX_PSEUDO": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STQX_PSEUDO": {"PowerPC": ["PPCCustomInserterPseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "STQX_PSEUDO": {"PowerPC": ["PPCCustomInserterPseudo"]}
+  }
+}

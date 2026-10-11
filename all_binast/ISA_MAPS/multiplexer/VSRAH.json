@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSRAH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSRAH": {"PowerPC": "VSRAH"}
+  },
+  "INPUTS": {
+    "VSRAH": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSRAH": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSRAH": {"PowerPC": ["VX1_Int_Ty","836"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSRAH": {"PowerPC": ["VX1_Int_Ty","836"]}
+  }
+}

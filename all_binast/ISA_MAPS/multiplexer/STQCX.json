@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STQCX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STQCX": {"PowerPC": "STQCX"}
+  },
+  "INPUTS": {
+    "STQCX": {"PowerPC": [["g8prc",0],["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "STQCX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STQCX": {"PowerPC": ["XForm_1_memOp","31","182"]}
+  },
+  "OUTPUT_BYTES": {
+    "STQCX": {"PowerPC": ["XForm_1_memOp","31","182"]}
+  }
+}

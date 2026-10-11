@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EXTRQ",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "EXTRQ": {"X86": "EXTRQ"}
+  },
+  "INPUTS": {
+    "EXTRQ": {"X86": [["VR128",128],["VR128",128]]}
+  },
+  "OUTPUTS": {
+    "EXTRQ": {"X86": [["VR128",128]]}
+  },
+  "INPUT_BYTES": {
+    "EXTRQ": {"X86": ["0x79"]}
+  },
+  "OUTPUT_BYTES": {
+    "EXTRQ": {"X86": ["0x79"]}
+  }
+}

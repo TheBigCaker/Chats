@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "DPR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "DPR": {"ARM": "DPR"},
+    "DPR_VFP2": {"ARM": "DPR_VFP2"},
+    "DPR_8": {"ARM": "DPR_8"}
+  },
+  "INPUTS": {
+    "DPR": {"ARM": []},
+    "DPR_VFP2": {"ARM": []},
+    "DPR_8": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "DPR": {"ARM": []},
+    "DPR_VFP2": {"ARM": []},
+    "DPR_8": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "DPR": {"ARM": ["RegisterClass","64","0"]},
+    "DPR_VFP2": {"ARM": ["RegisterClass","64"]},
+    "DPR_8": {"ARM": ["RegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "DPR": {"ARM": ["RegisterClass","64","0"]},
+    "DPR_VFP2": {"ARM": ["RegisterClass","64"]},
+    "DPR_8": {"ARM": ["RegisterClass","64"]}
+  }
+}

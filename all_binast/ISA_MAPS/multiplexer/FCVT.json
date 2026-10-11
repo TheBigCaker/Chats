@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FCVT",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FCVT_BF16_S": {"RISCV": "FCVT_BF16_S"},
+    "FCVT_S_BF16": {"RISCV": "FCVT_S_BF16"}
+  },
+  "INPUTS": {
+    "FCVT_BF16_S": {"RISCV": [["rs1ty:$rs1",0],["frmarg:$frm",0]]},
+    "FCVT_S_BF16": {"RISCV": [["rs1ty:$rs1",0],["frmarglegacy:$frm",0]]}
+  },
+  "OUTPUTS": {
+    "FCVT_BF16_S": {"RISCV": [["rdty:$rd",0]]},
+    "FCVT_S_BF16": {"RISCV": [["rdty:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "FCVT_BF16_S": {"RISCV": ["FPUnaryOp_r_frm","0b0100010","0b01000"]},
+    "FCVT_S_BF16": {"RISCV": ["FPUnaryOp_r_frmlegacy","0b0100000","0b00110"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCVT_BF16_S": {"RISCV": ["FPUnaryOp_r_frm","0b0100010","0b01000"]},
+    "FCVT_S_BF16": {"RISCV": ["FPUnaryOp_r_frmlegacy","0b0100000","0b00110"]}
+  }
+}

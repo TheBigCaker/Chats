@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BFI",
+  "BACKENDS": ["ARM","AMDGPU"],
+  "INDEX": {
+    "BFI": {"ARM": "BFI"},
+    "BFI_INT_eg": {"AMDGPU": "BFI_INT_eg"}
+  },
+  "INPUTS": {
+    "BFI": {"ARM": [["GPRnopc",0],["GPR",64],["bf_inv_mask_imm",0]]},
+    "BFI_INT_eg": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "BFI": {"ARM": [["GPRnopc",0]]},
+    "BFI_INT_eg": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "BFI": {"ARM": ["I","4"]},
+    "BFI_INT_eg": {"AMDGPU": ["R600_3OP","0x06"]}
+  },
+  "OUTPUT_BYTES": {
+    "BFI": {"ARM": ["I","4"]},
+    "BFI_INT_eg": {"AMDGPU": ["R600_3OP","0x06"]}
+  }
+}

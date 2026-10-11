@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DPO",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DPO": {"PowerPC": "DPO"}
+  },
+  "INPUTS": {
+    "DPO": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "DPO": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "DPO": {"PowerPC": ["ProcResource","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "DPO": {"PowerPC": ["ProcResource","2"]}
+  }
+}

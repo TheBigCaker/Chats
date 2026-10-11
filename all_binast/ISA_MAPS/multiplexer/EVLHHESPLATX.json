@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVLHHESPLATX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVLHHESPLATX": {"PowerPC": "EVLHHESPLATX"}
+  },
+  "INPUTS": {
+    "EVLHHESPLATX": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "EVLHHESPLATX": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVLHHESPLATX": {"PowerPC": ["EVXForm_1","776"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVLHHESPLATX": {"PowerPC": ["EVXForm_1","776"]}
+  }
+}

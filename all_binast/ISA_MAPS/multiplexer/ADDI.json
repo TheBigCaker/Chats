@@ -1,0 +1,59 @@
+{
+  "CATEGORY": "ADDI",
+  "BACKENDS": ["RISCV","PowerPC"],
+  "INDEX": {
+    "ADDI": {"RISCV": "ADDI"},
+    "ADDI8": {"PowerPC": "ADDI8"},
+    "ADDItocL8": {"PowerPC": "ADDItocL8"},
+    "ADDItoc8": {"PowerPC": "ADDItoc8"},
+    "ADDItlsgdL": {"PowerPC": "ADDItlsgdL"},
+    "ADDItlsgdLADDR": {"PowerPC": "ADDItlsgdLADDR"},
+    "ADDItlsldL": {"PowerPC": "ADDItlsldL"},
+    "ADDItlsldLADDR": {"PowerPC": "ADDItlsldLADDR"},
+    "ADDIdtprelL": {"PowerPC": "ADDIdtprelL"}
+  },
+  "INPUTS": {
+    "ADDI": {"RISCV": []},
+    "ADDI8": {"PowerPC": [["g8rc_nox0",0],["s16imm64",16]]},
+    "ADDItocL8": {"PowerPC": [["g8rc_nox0",0],["tocentry",0]]},
+    "ADDItoc8": {"PowerPC": [["g8rc_nox0",0],["tocentry",0]]},
+    "ADDItlsgdL": {"PowerPC": [["g8rc_nox0",0],["s16imm64",16]]},
+    "ADDItlsgdLADDR": {"PowerPC": [["g8rc_nox0",0],["s16imm64",16],["tlsgd",0]]},
+    "ADDItlsldL": {"PowerPC": [["g8rc_nox0",0],["s16imm64",16]]},
+    "ADDItlsldLADDR": {"PowerPC": [["g8rc_nox0",0],["s16imm64",16],["tlsgd",0]]},
+    "ADDIdtprelL": {"PowerPC": [["g8rc_nox0",0],["s16imm64",16]]}
+  },
+  "OUTPUTS": {
+    "ADDI": {"RISCV": []},
+    "ADDI8": {"PowerPC": [["g8rc",0]]},
+    "ADDItocL8": {"PowerPC": [["g8rc",0]]},
+    "ADDItoc8": {"PowerPC": [["g8rc",0]]},
+    "ADDItlsgdL": {"PowerPC": [["g8rc",0]]},
+    "ADDItlsgdLADDR": {"PowerPC": [["g8rc",0]]},
+    "ADDItlsldL": {"PowerPC": [["g8rc",0]]},
+    "ADDItlsldLADDR": {"PowerPC": [["g8rc",0]]},
+    "ADDIdtprelL": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "ADDI": {"RISCV": ["ALU_ri","0b000"]},
+    "ADDI8": {"PowerPC": ["DForm_2","14"]},
+    "ADDItocL8": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDItoc8": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDItlsgdL": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDItlsgdLADDR": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDItlsldL": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDItlsldLADDR": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDIdtprelL": {"PowerPC": ["PPCEmitTimePseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADDI": {"RISCV": ["ALU_ri","0b000"]},
+    "ADDI8": {"PowerPC": ["DForm_2","14"]},
+    "ADDItocL8": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDItoc8": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDItlsgdL": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDItlsgdLADDR": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDItlsldL": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDItlsldLADDR": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDIdtprelL": {"PowerPC": ["PPCEmitTimePseudo"]}
+  }
+}

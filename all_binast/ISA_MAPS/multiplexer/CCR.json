@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "CCR",
+  "BACKENDS": ["AArch64","ARM","Mips","AVR","AMDGPU"],
+  "INDEX": {
+    "CCR": {"AArch64": "CCR"},
+    "CCR": {"ARM": "CCR"},
+    "CCR": {"Mips": "CCR"},
+    "CCR": {"AVR": "CCR"},
+    "CCR_SGPR_64": {"AMDGPU": "CCR_SGPR_64"}
+  },
+  "INPUTS": {
+    "CCR": {"AArch64": []},
+    "CCR": {"ARM": []},
+    "CCR": {"Mips": []},
+    "CCR": {"AVR": []},
+    "CCR_SGPR_64": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "CCR": {"AArch64": []},
+    "CCR": {"ARM": []},
+    "CCR": {"Mips": []},
+    "CCR": {"AVR": []},
+    "CCR_SGPR_64": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "CCR": {"AArch64": ["RegisterClass","32"]},
+    "CCR": {"ARM": ["RegisterClass","32"]},
+    "CCR": {"Mips": ["RegisterClass","32","0"]},
+    "CCR": {"AVR": ["RegisterClass","8"]},
+    "CCR_SGPR_64": {"AMDGPU": ["SIRegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "CCR": {"AArch64": ["RegisterClass","32"]},
+    "CCR": {"ARM": ["RegisterClass","32"]},
+    "CCR": {"Mips": ["RegisterClass","32","0"]},
+    "CCR": {"AVR": ["RegisterClass","8"]},
+    "CCR_SGPR_64": {"AMDGPU": ["SIRegisterClass","32"]}
+  }
+}

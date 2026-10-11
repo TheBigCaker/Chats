@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STXSIWX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STXSIWX": {"PowerPC": "STXSIWX"}
+  },
+  "INPUTS": {
+    "STXSIWX": {"PowerPC": [["vsfrc",0],["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "STXSIWX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STXSIWX": {"PowerPC": ["XX1Form_memOp","31","140"]}
+  },
+  "OUTPUT_BYTES": {
+    "STXSIWX": {"PowerPC": ["XX1Form_memOp","31","140"]}
+  }
+}

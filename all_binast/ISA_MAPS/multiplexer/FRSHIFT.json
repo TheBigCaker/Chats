@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FRSHIFT",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FRSHIFT_DOUBLE.i32": {"Mali": "FRSHIFT_DOUBLE.i32"}
+  },
+  "INPUTS": {
+    "FRSHIFT_DOUBLE.i32": {"Mali": [["R32",32],["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "FRSHIFT_DOUBLE.i32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FRSHIFT_DOUBLE.i32": {"Mali": ["Bifrost_fma","0x33f000","0x7ff800"]}
+  },
+  "OUTPUT_BYTES": {
+    "FRSHIFT_DOUBLE.i32": {"Mali": ["Bifrost_fma","0x33f000","0x7ff800"]}
+  }
+}

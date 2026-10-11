@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ATEST",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "ATEST": {"Mali": "ATEST"},
+    "ATEST": {"Mali": "ATEST"}
+  },
+  "INPUTS": {
+    "ATEST": {"Mali": [["R32",32],["R32",32],["R32",32]]},
+    "ATEST": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "ATEST": {"Mali": [["R",32]]},
+    "ATEST": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "ATEST": {"Mali": ["Bifrost_add","0xc8f00","0xfff00"]},
+    "ATEST": {"Mali": ["Valhall_NONE"]}
+  },
+  "OUTPUT_BYTES": {
+    "ATEST": {"Mali": ["Bifrost_add","0xc8f00","0xfff00"]},
+    "ATEST": {"Mali": ["Valhall_NONE"]}
+  }
+}

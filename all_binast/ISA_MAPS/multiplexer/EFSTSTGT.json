@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFSTSTGT",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFSTSTGT": {"PowerPC": "EFSTSTGT"}
+  },
+  "INPUTS": {
+    "EFSTSTGT": {"PowerPC": [["sperc",0],["sperc",0]]}
+  },
+  "OUTPUTS": {
+    "EFSTSTGT": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFSTSTGT": {"PowerPC": ["EFXForm_3","732"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFSTSTGT": {"PowerPC": ["EFXForm_3","732"]}
+  }
+}

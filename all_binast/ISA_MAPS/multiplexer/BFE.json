@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BFE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "BFE_UINT_eg": {"AMDGPU": "BFE_UINT_eg"},
+    "BFE_INT_eg": {"AMDGPU": "BFE_INT_eg"}
+  },
+  "INPUTS": {
+    "BFE_UINT_eg": {"AMDGPU": []},
+    "BFE_INT_eg": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "BFE_UINT_eg": {"AMDGPU": []},
+    "BFE_INT_eg": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "BFE_UINT_eg": {"AMDGPU": ["R600_3OP","0x4"]},
+    "BFE_INT_eg": {"AMDGPU": ["R600_3OP","0x5"]}
+  },
+  "OUTPUT_BYTES": {
+    "BFE_UINT_eg": {"AMDGPU": ["R600_3OP","0x4"]},
+    "BFE_INT_eg": {"AMDGPU": ["R600_3OP","0x5"]}
+  }
+}

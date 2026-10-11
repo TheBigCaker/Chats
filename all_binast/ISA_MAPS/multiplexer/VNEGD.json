@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VNEGD",
+  "BACKENDS": ["ARM","PowerPC"],
+  "INDEX": {
+    "VNEGD": {"ARM": "VNEGD"},
+    "VNEGD": {"PowerPC": "VNEGD"}
+  },
+  "INPUTS": {
+    "VNEGD": {"ARM": [["DPR",0]]},
+    "VNEGD": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VNEGD": {"ARM": [["DPR",0]]},
+    "VNEGD": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VNEGD": {"ARM": ["ADuI","0b11101","0b11","0b0001","0b01","0"]},
+    "VNEGD": {"PowerPC": ["VX_VT5_EO5_VB5","1538","7"]}
+  },
+  "OUTPUT_BYTES": {
+    "VNEGD": {"ARM": ["ADuI","0b11101","0b11","0b0001","0b01","0"]},
+    "VNEGD": {"PowerPC": ["VX_VT5_EO5_VB5","1538","7"]}
+  }
+}

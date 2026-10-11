@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SDTM",
+  "BACKENDS": ["Mips","NVPTX"],
+  "INDEX": {
+    "SDTMipsLoadLR": {"Mips": "SDTMipsLoadLR"},
+    "SDTMulWide": {"NVPTX": "SDTMulWide"},
+    "SDTMoveParamProfile": {"NVPTX": "SDTMoveParamProfile"}
+  },
+  "INPUTS": {
+    "SDTMipsLoadLR": {"Mips": []},
+    "SDTMulWide": {"NVPTX": []},
+    "SDTMoveParamProfile": {"NVPTX": []}
+  },
+  "OUTPUTS": {
+    "SDTMipsLoadLR": {"Mips": []},
+    "SDTMulWide": {"NVPTX": []},
+    "SDTMoveParamProfile": {"NVPTX": []}
+  },
+  "INPUT_BYTES": {
+    "SDTMipsLoadLR": {"Mips": ["SDTypeProfile","1","2"]},
+    "SDTMulWide": {"NVPTX": ["SDTypeProfile","1","2"]},
+    "SDTMoveParamProfile": {"NVPTX": ["SDTypeProfile","1","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTMipsLoadLR": {"Mips": ["SDTypeProfile","1","2"]},
+    "SDTMulWide": {"NVPTX": ["SDTypeProfile","1","2"]},
+    "SDTMoveParamProfile": {"NVPTX": ["SDTypeProfile","1","1"]}
+  }
+}

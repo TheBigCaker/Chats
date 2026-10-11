@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TLSLDAIX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "TLSLDAIX8": {"PowerPC": "TLSLDAIX8"}
+  },
+  "INPUTS": {
+    "TLSLDAIX8": {"PowerPC": [["g8rc",0]]}
+  },
+  "OUTPUTS": {
+    "TLSLDAIX8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "TLSLDAIX8": {"PowerPC": ["PPCEmitTimePseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "TLSLDAIX8": {"PowerPC": ["PPCEmitTimePseudo"]}
+  }
+}

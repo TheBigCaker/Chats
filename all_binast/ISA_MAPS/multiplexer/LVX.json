@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LVX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LVX": {"PowerPC": "LVX"}
+  },
+  "INPUTS": {
+    "LVX": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LVX": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LVX": {"PowerPC": ["XForm_1_memOp","31","103"]}
+  },
+  "OUTPUT_BYTES": {
+    "LVX": {"PowerPC": ["XForm_1_memOp","31","103"]}
+  }
+}

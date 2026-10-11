@@ -1,0 +1,64 @@
+{
+  "CATEGORY": "TSV",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "TSV110UnitALU": {"AArch64": "TSV110UnitALU"},
+    "TSV110UnitAB": {"AArch64": "TSV110UnitAB"},
+    "TSV110UnitMDU": {"AArch64": "TSV110UnitMDU"},
+    "TSV110UnitFSU1": {"AArch64": "TSV110UnitFSU1"},
+    "TSV110UnitFSU2": {"AArch64": "TSV110UnitFSU2"},
+    "TSV110UnitLd0St": {"AArch64": "TSV110UnitLd0St"},
+    "TSV110UnitLd1": {"AArch64": "TSV110UnitLd1"},
+    "TSV110ReadCRC": {"AArch64": "TSV110ReadCRC"},
+    "TSV110ReadMAW": {"AArch64": "TSV110ReadMAW"},
+    "TSV110ReadMAQ": {"AArch64": "TSV110ReadMAQ"}
+  },
+  "INPUTS": {
+    "TSV110UnitALU": {"AArch64": []},
+    "TSV110UnitAB": {"AArch64": []},
+    "TSV110UnitMDU": {"AArch64": []},
+    "TSV110UnitFSU1": {"AArch64": []},
+    "TSV110UnitFSU2": {"AArch64": []},
+    "TSV110UnitLd0St": {"AArch64": []},
+    "TSV110UnitLd1": {"AArch64": []},
+    "TSV110ReadCRC": {"AArch64": []},
+    "TSV110ReadMAW": {"AArch64": []},
+    "TSV110ReadMAQ": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "TSV110UnitALU": {"AArch64": []},
+    "TSV110UnitAB": {"AArch64": []},
+    "TSV110UnitMDU": {"AArch64": []},
+    "TSV110UnitFSU1": {"AArch64": []},
+    "TSV110UnitFSU2": {"AArch64": []},
+    "TSV110UnitLd0St": {"AArch64": []},
+    "TSV110UnitLd1": {"AArch64": []},
+    "TSV110ReadCRC": {"AArch64": []},
+    "TSV110ReadMAW": {"AArch64": []},
+    "TSV110ReadMAQ": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "TSV110UnitALU": {"AArch64": ["ProcResource","1"]},
+    "TSV110UnitAB": {"AArch64": ["ProcResource","2"]},
+    "TSV110UnitMDU": {"AArch64": ["ProcResource","1"]},
+    "TSV110UnitFSU1": {"AArch64": ["ProcResource","1"]},
+    "TSV110UnitFSU2": {"AArch64": ["ProcResource","1"]},
+    "TSV110UnitLd0St": {"AArch64": ["ProcResource","1"]},
+    "TSV110UnitLd1": {"AArch64": ["ProcResource","1"]},
+    "TSV110ReadCRC": {"AArch64": ["SchedReadAdvance","1"]},
+    "TSV110ReadMAW": {"AArch64": ["SchedReadAdvance","2"]},
+    "TSV110ReadMAQ": {"AArch64": ["SchedReadAdvance","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "TSV110UnitALU": {"AArch64": ["ProcResource","1"]},
+    "TSV110UnitAB": {"AArch64": ["ProcResource","2"]},
+    "TSV110UnitMDU": {"AArch64": ["ProcResource","1"]},
+    "TSV110UnitFSU1": {"AArch64": ["ProcResource","1"]},
+    "TSV110UnitFSU2": {"AArch64": ["ProcResource","1"]},
+    "TSV110UnitLd0St": {"AArch64": ["ProcResource","1"]},
+    "TSV110UnitLd1": {"AArch64": ["ProcResource","1"]},
+    "TSV110ReadCRC": {"AArch64": ["SchedReadAdvance","1"]},
+    "TSV110ReadMAW": {"AArch64": ["SchedReadAdvance","2"]},
+    "TSV110ReadMAQ": {"AArch64": ["SchedReadAdvance","3"]}
+  }
+}

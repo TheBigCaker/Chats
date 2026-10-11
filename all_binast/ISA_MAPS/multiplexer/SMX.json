@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "SMX",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SMX60_LS": {"RISCV": "SMX60_LS"},
+    "SMX60_IEUA": {"RISCV": "SMX60_IEUA"},
+    "SMX60_IEUB": {"RISCV": "SMX60_IEUB"},
+    "SMX60_FP": {"RISCV": "SMX60_FP"},
+    "SMX60_VLS": {"RISCV": "SMX60_VLS"},
+    "SMX60_VIEU": {"RISCV": "SMX60_VIEU"},
+    "SMX60_VFP": {"RISCV": "SMX60_VFP"}
+  },
+  "INPUTS": {
+    "SMX60_LS": {"RISCV": []},
+    "SMX60_IEUA": {"RISCV": []},
+    "SMX60_IEUB": {"RISCV": []},
+    "SMX60_FP": {"RISCV": []},
+    "SMX60_VLS": {"RISCV": []},
+    "SMX60_VIEU": {"RISCV": []},
+    "SMX60_VFP": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SMX60_LS": {"RISCV": []},
+    "SMX60_IEUA": {"RISCV": []},
+    "SMX60_IEUB": {"RISCV": []},
+    "SMX60_FP": {"RISCV": []},
+    "SMX60_VLS": {"RISCV": []},
+    "SMX60_VIEU": {"RISCV": []},
+    "SMX60_VFP": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SMX60_LS": {"RISCV": ["ProcResource","2"]},
+    "SMX60_IEUA": {"RISCV": ["ProcResource","1"]},
+    "SMX60_IEUB": {"RISCV": ["ProcResource","1"]},
+    "SMX60_FP": {"RISCV": ["ProcResource","1"]},
+    "SMX60_VLS": {"RISCV": ["ProcResource","1"]},
+    "SMX60_VIEU": {"RISCV": ["ProcResource","1"]},
+    "SMX60_VFP": {"RISCV": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMX60_LS": {"RISCV": ["ProcResource","2"]},
+    "SMX60_IEUA": {"RISCV": ["ProcResource","1"]},
+    "SMX60_IEUB": {"RISCV": ["ProcResource","1"]},
+    "SMX60_FP": {"RISCV": ["ProcResource","1"]},
+    "SMX60_VLS": {"RISCV": ["ProcResource","1"]},
+    "SMX60_VIEU": {"RISCV": ["ProcResource","1"]},
+    "SMX60_VFP": {"RISCV": ["ProcResource","1"]}
+  }
+}

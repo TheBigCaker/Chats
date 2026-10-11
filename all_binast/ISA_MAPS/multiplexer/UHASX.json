@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "UHASX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UHASX": {"ARM": "UHASX"}
+  },
+  "INPUTS": {
+    "UHASX": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "UHASX": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "UHASX": {"ARM": ["AAIIntrinsic","0b01100111","0b11110011"]}
+  },
+  "OUTPUT_BYTES": {
+    "UHASX": {"ARM": ["AAIIntrinsic","0b01100111","0b11110011"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SGDT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SGDT16m": {"X86": "SGDT16m"},
+    "SGDT32m": {"X86": "SGDT32m"},
+    "SGDT64m": {"X86": "SGDT64m"}
+  },
+  "INPUTS": {
+    "SGDT16m": {"X86": [["opaquemem",0]]},
+    "SGDT32m": {"X86": [["opaquemem",0]]},
+    "SGDT64m": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "SGDT16m": {"X86": []},
+    "SGDT32m": {"X86": []},
+    "SGDT64m": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SGDT16m": {"X86": ["0x01"]},
+    "SGDT32m": {"X86": ["0x01"]},
+    "SGDT64m": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "SGDT16m": {"X86": ["0x01"]},
+    "SGDT32m": {"X86": ["0x01"]},
+    "SGDT64m": {"X86": ["0x01"]}
+  }
+}

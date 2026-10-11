@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BMOVPCB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "BMOVPCB_CALL": {"ARM": "BMOVPCB_CALL"}
+  },
+  "INPUTS": {
+    "BMOVPCB_CALL": {"ARM": [["arm_bl_target",0]]}
+  },
+  "OUTPUTS": {
+    "BMOVPCB_CALL": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "BMOVPCB_CALL": {"ARM": ["ARMPseudoInst","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "BMOVPCB_CALL": {"ARM": ["ARMPseudoInst","8"]}
+  }
+}

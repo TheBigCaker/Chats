@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "POPCNTD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "POPCNTD": {"PowerPC": "POPCNTD"}
+  },
+  "INPUTS": {
+    "POPCNTD": {"PowerPC": [["g8rc",0]]}
+  },
+  "OUTPUTS": {
+    "POPCNTD": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "POPCNTD": {"PowerPC": ["XForm_11","31","506"]}
+  },
+  "OUTPUT_BYTES": {
+    "POPCNTD": {"PowerPC": ["XForm_11","31","506"]}
+  }
+}

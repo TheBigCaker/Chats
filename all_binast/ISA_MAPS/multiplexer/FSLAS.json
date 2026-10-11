@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FSLAS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FSLAS16": {"Sparc": "FSLAS16"},
+    "FSLAS32": {"Sparc": "FSLAS32"}
+  },
+  "INPUTS": {
+    "FSLAS16": {"Sparc": []},
+    "FSLAS32": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FSLAS16": {"Sparc": []},
+    "FSLAS32": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FSLAS16": {"Sparc": ["VISInst","0b000101001"]},
+    "FSLAS32": {"Sparc": ["VISInst","0b000101101"]}
+  },
+  "OUTPUT_BYTES": {
+    "FSLAS16": {"Sparc": ["VISInst","0b000101001"]},
+    "FSLAS32": {"Sparc": ["VISInst","0b000101101"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BLTU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "BLTU": {"RISCV": "BLTU"}
+  },
+  "INPUTS": {
+    "BLTU": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0],["bare_simm13_lsb0:$imm12",0]]}
+  },
+  "OUTPUTS": {
+    "BLTU": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "BLTU": {"RISCV": ["BranchCC_rri","0b110"]}
+  },
+  "OUTPUT_BYTES": {
+    "BLTU": {"RISCV": ["BranchCC_rri","0b110"]}
+  }
+}

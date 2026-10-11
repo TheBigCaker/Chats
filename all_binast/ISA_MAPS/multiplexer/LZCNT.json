@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LZCNT",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "LZCNT": {"Sparc": "LZCNT"}
+  },
+  "INPUTS": {
+    "LZCNT": {"Sparc": [["I64Regs",0]]}
+  },
+  "OUTPUTS": {
+    "LZCNT": {"Sparc": [["I64Regs",0]]}
+  },
+  "INPUT_BYTES": {
+    "LZCNT": {"Sparc": ["VISInstFormat","0b000010111"]}
+  },
+  "OUTPUT_BYTES": {
+    "LZCNT": {"Sparc": ["VISInstFormat","0b000010111"]}
+  }
+}

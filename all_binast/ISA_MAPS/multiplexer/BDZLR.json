@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BDZLR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BDZLR8": {"PowerPC": "BDZLR8"}
+  },
+  "INPUTS": {
+    "BDZLR8": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "BDZLR8": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "BDZLR8": {"PowerPC": ["XLForm_2_ext","19","16","18","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "BDZLR8": {"PowerPC": ["XLForm_2_ext","19","16","18","0","0"]}
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "TLS",
+  "BACKENDS": ["X86","Sparc"],
+  "INDEX": {
+    "TLS_addr32": {"X86": "TLS_addr32"},
+    "TLS_base_addr32": {"X86": "TLS_base_addr32"},
+    "TLS_addr64": {"X86": "TLS_addr64"},
+    "TLS_base_addr64": {"X86": "TLS_base_addr64"},
+    "TLS_addrX32": {"X86": "TLS_addrX32"},
+    "TLS_base_addrX32": {"X86": "TLS_base_addrX32"},
+    "TLS_LDXrr": {"Sparc": "TLS_LDXrr"}
+  },
+  "INPUTS": {
+    "TLS_addr32": {"X86": [["i32mem",0]]},
+    "TLS_base_addr32": {"X86": [["i32mem",0]]},
+    "TLS_addr64": {"X86": [["i64mem",0]]},
+    "TLS_base_addr64": {"X86": [["i64mem",0]]},
+    "TLS_addrX32": {"X86": [["i32mem",0]]},
+    "TLS_base_addrX32": {"X86": [["i32mem",0]]},
+    "TLS_LDXrr": {"Sparc": [["(MEMrr",0]]}
+  },
+  "OUTPUTS": {
+    "TLS_addr32": {"X86": []},
+    "TLS_base_addr32": {"X86": []},
+    "TLS_addr64": {"X86": []},
+    "TLS_base_addr64": {"X86": []},
+    "TLS_addrX32": {"X86": []},
+    "TLS_base_addrX32": {"X86": []},
+    "TLS_LDXrr": {"Sparc": [["IntRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "TLS_addr32": {"X86": ["0"]},
+    "TLS_base_addr32": {"X86": ["0"]},
+    "TLS_addr64": {"X86": ["0"]},
+    "TLS_base_addr64": {"X86": ["0"]},
+    "TLS_addrX32": {"X86": ["0"]},
+    "TLS_base_addrX32": {"X86": ["0"]},
+    "TLS_LDXrr": {"Sparc": ["F3_1","3","0b001011"]}
+  },
+  "OUTPUT_BYTES": {
+    "TLS_addr32": {"X86": ["0"]},
+    "TLS_base_addr32": {"X86": ["0"]},
+    "TLS_addr64": {"X86": ["0"]},
+    "TLS_base_addr64": {"X86": ["0"]},
+    "TLS_addrX32": {"X86": ["0"]},
+    "TLS_base_addrX32": {"X86": ["0"]},
+    "TLS_LDXrr": {"Sparc": ["F3_1","3","0b001011"]}
+  }
+}

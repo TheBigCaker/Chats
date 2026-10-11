@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AESIMC",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "AESIMC": {"ARM": "AESIMC"}
+  },
+  "INPUTS": {
+    "AESIMC": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "AESIMC": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "AESIMC": {"ARM": ["AES","1","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "AESIMC": {"ARM": ["AES","1","1"]}
+  }
+}

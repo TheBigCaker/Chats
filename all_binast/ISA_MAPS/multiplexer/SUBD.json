@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SUBD",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SUBD": {"RISCV": "SUBD"}
+  },
+  "INPUTS": {
+    "SUBD": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SUBD": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SUBD": {"RISCV": ["RVPPairBinary_rr","0b1000","0b11"]}
+  },
+  "OUTPUT_BYTES": {
+    "SUBD": {"RISCV": ["RVPPairBinary_rr","0b1000","0b11"]}
+  }
+}

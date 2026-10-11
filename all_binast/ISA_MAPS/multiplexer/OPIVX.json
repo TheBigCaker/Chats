@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "OPIVX",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "OPIVX": {"RISCV": "OPIVX"}
+  },
+  "INPUTS": {
+    "OPIVX": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "OPIVX": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "OPIVX": {"RISCV": ["RISCVVFormat","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "OPIVX": {"RISCV": ["RISCVVFormat","0b100"]}
+  }
+}

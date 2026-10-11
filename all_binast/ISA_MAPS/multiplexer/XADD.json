@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "XADD",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XADD8rr": {"X86": "XADD8rr"},
+    "XADD16rr": {"X86": "XADD16rr"},
+    "XADD32rr": {"X86": "XADD32rr"},
+    "XADD8rm": {"X86": "XADD8rm"},
+    "XADD16rm": {"X86": "XADD16rm"},
+    "XADD32rm": {"X86": "XADD32rm"}
+  },
+  "INPUTS": {
+    "XADD8rr": {"X86": [["GR8",8],["GR8",8]]},
+    "XADD16rr": {"X86": [["GR16",16],["GR16",16]]},
+    "XADD32rr": {"X86": [["GR32",32],["GR32",32]]},
+    "XADD8rm": {"X86": [["GR8",8],["i8mem",0]]},
+    "XADD16rm": {"X86": [["GR16",16],["i16mem",0]]},
+    "XADD32rm": {"X86": [["GR32",32],["i32mem",0]]}
+  },
+  "OUTPUTS": {
+    "XADD8rr": {"X86": [["GR8",8],["GR8",8]]},
+    "XADD16rr": {"X86": [["GR16",16],["GR16",16]]},
+    "XADD32rr": {"X86": [["GR32",32],["GR32",32]]},
+    "XADD8rm": {"X86": [["GR8",8]]},
+    "XADD16rm": {"X86": [["GR16",16]]},
+    "XADD32rm": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "XADD8rr": {"X86": ["0xC0"]},
+    "XADD16rr": {"X86": ["0xC1"]},
+    "XADD32rr": {"X86": ["0xC1"]},
+    "XADD8rm": {"X86": ["0xC0"]},
+    "XADD16rm": {"X86": ["0xC1"]},
+    "XADD32rm": {"X86": ["0xC1"]}
+  },
+  "OUTPUT_BYTES": {
+    "XADD8rr": {"X86": ["0xC0"]},
+    "XADD16rr": {"X86": ["0xC1"]},
+    "XADD32rr": {"X86": ["0xC1"]},
+    "XADD8rm": {"X86": ["0xC0"]},
+    "XADD16rm": {"X86": ["0xC1"]},
+    "XADD32rm": {"X86": ["0xC1"]}
+  }
+}

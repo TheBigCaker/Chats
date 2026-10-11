@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SPESTWX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SPESTWX": {"PowerPC": "SPESTWX"}
+  },
+  "INPUTS": {
+    "SPESTWX": {"PowerPC": [["spe4rc",0],["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "SPESTWX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "SPESTWX": {"PowerPC": ["XForm_8","31","151"]}
+  },
+  "OUTPUT_BYTES": {
+    "SPESTWX": {"PowerPC": ["XForm_8","31","151"]}
+  }
+}

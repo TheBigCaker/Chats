@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FLOG",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FLOG_TABLE.f32": {"Mali": "FLOG_TABLE.f32"},
+    "FLOG_TABLE.f32": {"Mali": "FLOG_TABLE.f32"}
+  },
+  "INPUTS": {
+    "FLOG_TABLE.f32": {"Mali": [["R32",32]]},
+    "FLOG_TABLE.f32": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "FLOG_TABLE.f32": {"Mali": [["R",32]]},
+    "FLOG_TABLE.f32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FLOG_TABLE.f32": {"Mali": ["Bifrost_add"]},
+    "FLOG_TABLE.f32": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "FLOG_TABLE.f32": {"Mali": ["Bifrost_add"]},
+    "FLOG_TABLE.f32": {"Mali": ["Valhall_"]}
+  }
+}

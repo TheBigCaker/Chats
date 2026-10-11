@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MTTGPR",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MTTGPR": {"Mips": "MTTGPR"}
+  },
+  "INPUTS": {
+    "MTTGPR": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "OUTPUTS": {
+    "MTTGPR": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "INPUT_BYTES": {
+    "MTTGPR": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "MTTGPR": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

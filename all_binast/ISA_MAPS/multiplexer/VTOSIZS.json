@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VTOSIZS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VTOSIZS": {"ARM": "VTOSIZS"}
+  },
+  "INPUTS": {
+    "VTOSIZS": {"ARM": [["SPR",0]]}
+  },
+  "OUTPUTS": {
+    "VTOSIZS": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VTOSIZS": {"ARM": ["AVConv1InsS_Encode","0b11101","0b11","0b1101","0b1010"]}
+  },
+  "OUTPUT_BYTES": {
+    "VTOSIZS": {"ARM": ["AVConv1InsS_Encode","0b11101","0b11","0b1101","0b1010"]}
+  }
+}

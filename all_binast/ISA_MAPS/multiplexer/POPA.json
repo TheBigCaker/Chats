@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "POPA",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "POPA32": {"X86": "POPA32"},
+    "POPA16": {"X86": "POPA16"}
+  },
+  "INPUTS": {
+    "POPA32": {"X86": []},
+    "POPA16": {"X86": []}
+  },
+  "OUTPUTS": {
+    "POPA32": {"X86": []},
+    "POPA16": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "POPA32": {"X86": ["0x61"]},
+    "POPA16": {"X86": ["0x61"]}
+  },
+  "OUTPUT_BYTES": {
+    "POPA32": {"X86": ["0x61"]},
+    "POPA16": {"X86": ["0x61"]}
+  }
+}

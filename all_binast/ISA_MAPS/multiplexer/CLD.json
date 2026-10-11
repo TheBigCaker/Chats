@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CLD",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CLD": {"X86": "CLD"}
+  },
+  "INPUTS": {
+    "CLD": {"X86": []}
+  },
+  "OUTPUTS": {
+    "CLD": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CLD": {"X86": ["0xFC"]}
+  },
+  "OUTPUT_BYTES": {
+    "CLD": {"X86": ["0xFC"]}
+  }
+}

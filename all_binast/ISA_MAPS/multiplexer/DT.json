@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "DT",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "DTriple": {"ARM": "DTriple"},
+    "DTripleSpc": {"ARM": "DTripleSpc"}
+  },
+  "INPUTS": {
+    "DTriple": {"ARM": []},
+    "DTripleSpc": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "DTriple": {"ARM": []},
+    "DTripleSpc": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "DTriple": {"ARM": ["RegisterClass","64"]},
+    "DTripleSpc": {"ARM": ["RegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "DTriple": {"ARM": ["RegisterClass","64"]},
+    "DTripleSpc": {"ARM": ["RegisterClass","64"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSNMSUBASP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSNMSUBASP": {"PowerPC": "XSNMSUBASP"}
+  },
+  "INPUTS": {
+    "XSNMSUBASP": {"PowerPC": [["vssrc",0],["vssrc",0],["vssrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSNMSUBASP": {"PowerPC": [["vssrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSNMSUBASP": {"PowerPC": ["XX3Form","60","145"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSNMSUBASP": {"PowerPC": ["XX3Form","60","145"]}
+  }
+}

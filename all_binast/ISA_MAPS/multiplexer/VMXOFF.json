@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMXOFF",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMXOFF": {"X86": "VMXOFF"}
+  },
+  "INPUTS": {
+    "VMXOFF": {"X86": []}
+  },
+  "OUTPUTS": {
+    "VMXOFF": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMXOFF": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMXOFF": {"X86": ["0x01"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WRITE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "WRITE": {"AMDGPU": "WRITE"}
+  },
+  "INPUTS": {
+    "WRITE": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "WRITE": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "WRITE": {"AMDGPU": ["InstFlag","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "WRITE": {"AMDGPU": ["InstFlag","1"]}
+  }
+}

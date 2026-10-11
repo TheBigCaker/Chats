@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSRDPIP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSRDPIP": {"PowerPC": "XSRDPIP"}
+  },
+  "INPUTS": {
+    "XSRDPIP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSRDPIP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSRDPIP": {"PowerPC": ["XX2Form","60","105"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSRDPIP": {"PowerPC": ["XX2Form","60","105"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TPC",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "TPC": {"Sparc": "TPC"}
+  },
+  "INPUTS": {
+    "TPC": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "TPC": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "TPC": {"Sparc": ["SparcCtrlReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "TPC": {"Sparc": ["SparcCtrlReg","0"]}
+  }
+}

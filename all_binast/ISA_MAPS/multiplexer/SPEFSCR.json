@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SPEFSCR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SPEFSCR": {"PowerPC": "SPEFSCR"}
+  },
+  "INPUTS": {
+    "SPEFSCR": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "SPEFSCR": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "SPEFSCR": {"PowerPC": ["SPR","512"]}
+  },
+  "OUTPUT_BYTES": {
+    "SPEFSCR": {"PowerPC": ["SPR","512"]}
+  }
+}

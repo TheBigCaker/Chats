@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVRLWI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVRLWI": {"PowerPC": "EVRLWI"}
+  },
+  "INPUTS": {
+    "EVRLWI": {"PowerPC": [["sperc",0],["u5imm",5]]}
+  },
+  "OUTPUTS": {
+    "EVRLWI": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVRLWI": {"PowerPC": ["EVXForm_1","554"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVRLWI": {"PowerPC": ["EVXForm_1","554"]}
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "XS",
+  "BACKENDS": ["AArch64","RISCV"],
+  "INDEX": {
+    "XSeqPairsClass": {"AArch64": "XSeqPairsClass"},
+    "XS2ALU": {"RISCV": "XS2ALU"},
+    "XS2MDU": {"RISCV": "XS2MDU"},
+    "XS2MISC": {"RISCV": "XS2MISC"},
+    "XS2FMAC": {"RISCV": "XS2FMAC"},
+    "XS2FMISC": {"RISCV": "XS2FMISC"},
+    "XS2LD": {"RISCV": "XS2LD"},
+    "XS2ST": {"RISCV": "XS2ST"}
+  },
+  "INPUTS": {
+    "XSeqPairsClass": {"AArch64": []},
+    "XS2ALU": {"RISCV": []},
+    "XS2MDU": {"RISCV": []},
+    "XS2MISC": {"RISCV": []},
+    "XS2FMAC": {"RISCV": []},
+    "XS2FMISC": {"RISCV": []},
+    "XS2LD": {"RISCV": []},
+    "XS2ST": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "XSeqPairsClass": {"AArch64": []},
+    "XS2ALU": {"RISCV": []},
+    "XS2MDU": {"RISCV": []},
+    "XS2MISC": {"RISCV": []},
+    "XS2FMAC": {"RISCV": []},
+    "XS2FMISC": {"RISCV": []},
+    "XS2LD": {"RISCV": []},
+    "XS2ST": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "XSeqPairsClass": {"AArch64": ["RegisterClass","64"]},
+    "XS2ALU": {"RISCV": ["ProcResource","4"]},
+    "XS2MDU": {"RISCV": ["ProcResource","2"]},
+    "XS2MISC": {"RISCV": ["ProcResource","1"]},
+    "XS2FMAC": {"RISCV": ["ProcResource","4"]},
+    "XS2FMISC": {"RISCV": ["ProcResource","2"]},
+    "XS2LD": {"RISCV": ["ProcResource","2"]},
+    "XS2ST": {"RISCV": ["ProcResource","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSeqPairsClass": {"AArch64": ["RegisterClass","64"]},
+    "XS2ALU": {"RISCV": ["ProcResource","4"]},
+    "XS2MDU": {"RISCV": ["ProcResource","2"]},
+    "XS2MISC": {"RISCV": ["ProcResource","1"]},
+    "XS2FMAC": {"RISCV": ["ProcResource","4"]},
+    "XS2FMISC": {"RISCV": ["ProcResource","2"]},
+    "XS2LD": {"RISCV": ["ProcResource","2"]},
+    "XS2ST": {"RISCV": ["ProcResource","2"]}
+  }
+}

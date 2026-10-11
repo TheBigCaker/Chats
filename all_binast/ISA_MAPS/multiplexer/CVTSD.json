@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "CVTSD",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CVTSD2SSrm": {"X86": "CVTSD2SSrm"},
+    "CVTSD2SSrr_Int": {"X86": "CVTSD2SSrr_Int"},
+    "CVTSD2SSrm_Int": {"X86": "CVTSD2SSrm_Int"}
+  },
+  "INPUTS": {
+    "CVTSD2SSrm": {"X86": [["f64mem",0]]},
+    "CVTSD2SSrr_Int": {"X86": [["VR128",128],["VR128",128]]},
+    "CVTSD2SSrm_Int": {"X86": [["VR128",128],["sdmem",0]]}
+  },
+  "OUTPUTS": {
+    "CVTSD2SSrm": {"X86": [["FR32",32]]},
+    "CVTSD2SSrr_Int": {"X86": [["VR128",128]]},
+    "CVTSD2SSrm_Int": {"X86": [["VR128",128]]}
+  },
+  "INPUT_BYTES": {
+    "CVTSD2SSrm": {"X86": ["0x5A"]},
+    "CVTSD2SSrr_Int": {"X86": ["0x5A"]},
+    "CVTSD2SSrm_Int": {"X86": ["0x5A"]}
+  },
+  "OUTPUT_BYTES": {
+    "CVTSD2SSrm": {"X86": ["0x5A"]},
+    "CVTSD2SSrr_Int": {"X86": ["0x5A"]},
+    "CVTSD2SSrm_Int": {"X86": ["0x5A"]}
+  }
+}

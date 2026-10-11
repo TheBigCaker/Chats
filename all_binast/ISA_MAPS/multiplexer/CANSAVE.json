@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CANSAVE",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "CANSAVE": {"Sparc": "CANSAVE"}
+  },
+  "INPUTS": {
+    "CANSAVE": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "CANSAVE": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "CANSAVE": {"Sparc": ["SparcCtrlReg","10"]}
+  },
+  "OUTPUT_BYTES": {
+    "CANSAVE": {"Sparc": ["SparcCtrlReg","10"]}
+  }
+}

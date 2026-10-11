@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXV",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXV": {"PowerPC": "LXV"}
+  },
+  "INPUTS": {
+    "LXV": {"PowerPC": [["(memrix16",0]]}
+  },
+  "OUTPUTS": {
+    "LXV": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LXV": {"PowerPC": ["DQ_RD6_RS5_DQ12","61","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXV": {"PowerPC": ["DQ_RD6_RS5_DQ12","61","1"]}
+  }
+}

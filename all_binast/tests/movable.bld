@@ -1,0 +1,17 @@
+# a program with internal branches only, to prove the source RELOCATES.
+# It prints "reloc" and exits 0, looping once to exercise a backward branch.
+MOVZ_X 0 1 0              # x0 = 1 (stdout)
+ADRP_X 1 msg
+ADD_X_imm 1 1 msg@lo12
+MOVZ_X 2 6 0              # x2 = 6 (length)
+MOVZ_X 3 1 0              # x3 = 1 (loop counter)
+loop:
+MOVZ_X 8 64 0             # x8 = 64 (write)
+SVC 0
+SUBS_X_imm 3 3 1
+B_cond loop 1             # backward branch: NE -> loop (target, cond)
+MOVZ_X 0 0 0
+MOVZ_X 8 93 0
+SVC 0
+.align 2
+msg: .ascii "reloc\n"

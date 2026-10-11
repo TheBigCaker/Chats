@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "UMAAL",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UMAAL": {"ARM": "UMAAL"}
+  },
+  "INPUTS": {
+    "UMAAL": {"ARM": [["GPR",64],["GPR",64],["GPR",64],["GPR",64]]}
+  },
+  "OUTPUTS": {
+    "UMAAL": {"ARM": [["GPR",64],["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "UMAAL": {"ARM": ["AMul1I","0b0000010"]}
+  },
+  "OUTPUT_BYTES": {
+    "UMAAL": {"ARM": ["AMul1I","0b0000010"]}
+  }
+}

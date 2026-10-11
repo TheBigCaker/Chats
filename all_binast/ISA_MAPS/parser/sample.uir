@@ -1,0 +1,4 @@
+# Simple UIR program for AArch64
+.backend aarch64
+ADDG r0, r1
+RET

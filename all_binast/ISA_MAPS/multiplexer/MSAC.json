@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MSAC",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MSACtrl": {"Mips": "MSACtrl"}
+  },
+  "INPUTS": {
+    "MSACtrl": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "MSACtrl": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "MSACtrl": {"Mips": ["RegisterClass","32","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "MSACtrl": {"Mips": ["RegisterClass","32","8"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FEXPAND",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FEXPAND": {"Sparc": "FEXPAND"}
+  },
+  "INPUTS": {
+    "FEXPAND": {"Sparc": [["FPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FEXPAND": {"Sparc": [["DFPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FEXPAND": {"Sparc": ["VISInstFormat","0b001001101"]}
+  },
+  "OUTPUT_BYTES": {
+    "FEXPAND": {"Sparc": ["VISInstFormat","0b001001101"]}
+  }
+}

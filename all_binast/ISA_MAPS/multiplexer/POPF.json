@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "POPF",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "POPF16": {"X86": "POPF16"},
+    "POPF32": {"X86": "POPF32"},
+    "POPF64": {"X86": "POPF64"}
+  },
+  "INPUTS": {
+    "POPF16": {"X86": []},
+    "POPF32": {"X86": []},
+    "POPF64": {"X86": []}
+  },
+  "OUTPUTS": {
+    "POPF16": {"X86": []},
+    "POPF32": {"X86": []},
+    "POPF64": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "POPF16": {"X86": ["0x9D"]},
+    "POPF32": {"X86": ["0x9D"]},
+    "POPF64": {"X86": ["0x9D"]}
+  },
+  "OUTPUT_BYTES": {
+    "POPF16": {"X86": ["0x9D"]},
+    "POPF32": {"X86": ["0x9D"]},
+    "POPF64": {"X86": ["0x9D"]}
+  }
+}

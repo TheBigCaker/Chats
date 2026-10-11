@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DPE",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DPE": {"PowerPC": "DPE"}
+  },
+  "INPUTS": {
+    "DPE": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "DPE": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "DPE": {"PowerPC": ["ProcResource","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "DPE": {"PowerPC": ["ProcResource","2"]}
+  }
+}

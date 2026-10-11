@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSCCLRMD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VSCCLRMD": {"ARM": "VSCCLRMD"}
+  },
+  "INPUTS": {
+    "VSCCLRMD": {"ARM": [["pred",0],["fp_dreglist_with_vpr",0],["variable_ops",0]]}
+  },
+  "OUTPUTS": {
+    "VSCCLRMD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VSCCLRMD": {"ARM": ["VFPXI","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSCCLRMD": {"ARM": ["VFPXI","4"]}
+  }
+}

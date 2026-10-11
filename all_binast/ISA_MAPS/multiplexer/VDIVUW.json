@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VDIVUW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VDIVUW": {"PowerPC": "VDIVUW"}
+  },
+  "INPUTS": {
+    "VDIVUW": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VDIVUW": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VDIVUW": {"PowerPC": ["VXForm_1","139"]}
+  },
+  "OUTPUT_BYTES": {
+    "VDIVUW": {"PowerPC": ["VXForm_1","139"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BINV",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "BINV": {"RISCV": "BINV"}
+  },
+  "INPUTS": {
+    "BINV": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "BINV": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "BINV": {"RISCV": ["ALU_rr","0b0110100","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "BINV": {"RISCV": ["ALU_rr","0b0110100","0b001"]}
+  }
+}

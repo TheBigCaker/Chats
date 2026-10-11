@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFDCTSIDZ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFDCTSIDZ": {"PowerPC": "EFDCTSIDZ"}
+  },
+  "INPUTS": {
+    "EFDCTSIDZ": {"PowerPC": [["sperc",0]]}
+  },
+  "OUTPUTS": {
+    "EFDCTSIDZ": {"PowerPC": [["gprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFDCTSIDZ": {"PowerPC": ["EFXForm_2a","747"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFDCTSIDZ": {"PowerPC": ["EFXForm_2a","747"]}
+  }
+}

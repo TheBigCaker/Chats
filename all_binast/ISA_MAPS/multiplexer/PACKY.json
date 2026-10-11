@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PACKY",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PACKY": {"RISCV": "PACKY"}
+  },
+  "INPUTS": {
+    "PACKY": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PACKY": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PACKY": {"RISCV": ["RVY_rr","0b0000001"]}
+  },
+  "OUTPUT_BYTES": {
+    "PACKY": {"RISCV": ["RVY_rr","0b0000001"]}
+  }
+}

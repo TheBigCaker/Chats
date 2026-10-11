@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WRMSRLIST",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "WRMSRLIST": {"X86": "WRMSRLIST"}
+  },
+  "INPUTS": {
+    "WRMSRLIST": {"X86": []}
+  },
+  "OUTPUTS": {
+    "WRMSRLIST": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "WRMSRLIST": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "WRMSRLIST": {"X86": ["0x01"]}
+  }
+}

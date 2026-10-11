@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TBR",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "TBR": {"Sparc": "TBR"}
+  },
+  "INPUTS": {
+    "TBR": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "TBR": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "TBR": {"Sparc": ["SparcCtrlReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "TBR": {"Sparc": ["SparcCtrlReg","0"]}
+  }
+}

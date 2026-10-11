@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "QDADD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "QDADD": {"ARM": "QDADD"}
+  },
+  "INPUTS": {
+    "QDADD": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "QDADD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "QDADD": {"ARM": ["AAIRevOpr","0b00010100","0b00000101"]}
+  },
+  "OUTPUT_BYTES": {
+    "QDADD": {"ARM": ["AAIRevOpr","0b00010100","0b00000101"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MR": {"RISCV": "MR"},
+    "MR0": {"RISCV": "MR0"}
+  },
+  "INPUTS": {
+    "MR": {"RISCV": []},
+    "MR0": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "MR": {"RISCV": []},
+    "MR0": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "MR": {"RISCV": ["RISCVRegisterClass","8","1"]},
+    "MR0": {"RISCV": ["RISCVRegisterClass","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "MR": {"RISCV": ["RISCVRegisterClass","8","1"]},
+    "MR0": {"RISCV": ["RISCVRegisterClass","8"]}
+  }
+}

@@ -1,0 +1,9 @@
+
+# a tiny routine: forward branch, a loop with a backward branch, then ret
+movz_x_imm 0 0
+movz_x_imm 1 5
+add_x_x_imm 0 0 1
+sub_x_x_imm 1 1 1
+cbnz_x 1 here
+b here
+ret

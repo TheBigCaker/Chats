@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOPLDS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MOPLDStrided": {"RISCV": "MOPLDStrided"}
+  },
+  "INPUTS": {
+    "MOPLDStrided": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "MOPLDStrided": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "MOPLDStrided": {"RISCV": ["RISCVMOP","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOPLDStrided": {"RISCV": ["RISCVMOP","0b10"]}
+  }
+}

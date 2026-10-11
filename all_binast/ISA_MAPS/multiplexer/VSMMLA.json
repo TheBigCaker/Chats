@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSMMLA",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VSMMLA": {"ARM": "VSMMLA"}
+  },
+  "INPUTS": {
+    "VSMMLA": {"ARM": [["QPR:$Vd",0],["QPR:$Vn",0],["QPR:$Vm",0]]}
+  },
+  "OUTPUTS": {
+    "VSMMLA": {"ARM": [["QPR:$dst",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSMMLA": {"ARM": ["N3VMatMul","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSMMLA": {"ARM": ["N3VMatMul","0","0"]}
+  }
+}

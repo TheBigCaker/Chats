@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VINTERPM",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "VINTERPMods": {"AMDGPU": "VINTERPMods"},
+    "VINTERPModsHi": {"AMDGPU": "VINTERPModsHi"}
+  },
+  "INPUTS": {
+    "VINTERPMods": {"AMDGPU": []},
+    "VINTERPModsHi": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "VINTERPMods": {"AMDGPU": []},
+    "VINTERPModsHi": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "VINTERPMods": {"AMDGPU": ["ComplexPattern","2"]},
+    "VINTERPModsHi": {"AMDGPU": ["ComplexPattern","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "VINTERPMods": {"AMDGPU": ["ComplexPattern","2"]},
+    "VINTERPModsHi": {"AMDGPU": ["ComplexPattern","2"]}
+  }
+}

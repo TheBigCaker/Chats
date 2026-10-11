@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "PMSEQ",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PMSEQ_H": {"RISCV": "PMSEQ_H"},
+    "PMSEQ_B": {"RISCV": "PMSEQ_B"},
+    "PMSEQ_W": {"RISCV": "PMSEQ_W"},
+    "PMSEQ_DH": {"RISCV": "PMSEQ_DH"},
+    "PMSEQ_DW": {"RISCV": "PMSEQ_DW"},
+    "PMSEQ_DB": {"RISCV": "PMSEQ_DB"}
+  },
+  "INPUTS": {
+    "PMSEQ_H": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMSEQ_B": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMSEQ_W": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMSEQ_DH": {"RISCV": []},
+    "PMSEQ_DW": {"RISCV": []},
+    "PMSEQ_DB": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PMSEQ_H": {"RISCV": [["GPR:$rd",0]]},
+    "PMSEQ_B": {"RISCV": [["GPR:$rd",0]]},
+    "PMSEQ_W": {"RISCV": [["GPR:$rd",0]]},
+    "PMSEQ_DH": {"RISCV": []},
+    "PMSEQ_DW": {"RISCV": []},
+    "PMSEQ_DB": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PMSEQ_H": {"RISCV": ["RVPBinary_rr","0b1000","0b00","0b110"]},
+    "PMSEQ_B": {"RISCV": ["RVPBinary_rr","0b1000","0b10","0b110"]},
+    "PMSEQ_W": {"RISCV": ["RVPBinary_rr","0b1000","0b01","0b110"]},
+    "PMSEQ_DH": {"RISCV": ["RVPPairBinaryExchanged_rr","0b1000","0b00"]},
+    "PMSEQ_DW": {"RISCV": ["RVPPairBinaryExchanged_rr","0b1000","0b01"]},
+    "PMSEQ_DB": {"RISCV": ["RVPPairBinaryExchanged_rr","0b1000","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "PMSEQ_H": {"RISCV": ["RVPBinary_rr","0b1000","0b00","0b110"]},
+    "PMSEQ_B": {"RISCV": ["RVPBinary_rr","0b1000","0b10","0b110"]},
+    "PMSEQ_W": {"RISCV": ["RVPBinary_rr","0b1000","0b01","0b110"]},
+    "PMSEQ_DH": {"RISCV": ["RVPPairBinaryExchanged_rr","0b1000","0b00"]},
+    "PMSEQ_DW": {"RISCV": ["RVPPairBinaryExchanged_rr","0b1000","0b01"]},
+    "PMSEQ_DB": {"RISCV": ["RVPPairBinaryExchanged_rr","0b1000","0b10"]}
+  }
+}

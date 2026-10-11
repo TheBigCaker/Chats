@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DREGS",
+  "BACKENDS": ["AVR"],
+  "INDEX": {
+    "DREGS": {"AVR": "DREGS"}
+  },
+  "INPUTS": {
+    "DREGS": {"AVR": []}
+  },
+  "OUTPUTS": {
+    "DREGS": {"AVR": []}
+  },
+  "INPUT_BYTES": {
+    "DREGS": {"AVR": ["RegisterClass","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "DREGS": {"AVR": ["RegisterClass","8"]}
+  }
+}

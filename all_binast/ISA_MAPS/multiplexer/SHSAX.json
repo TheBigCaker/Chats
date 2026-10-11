@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SHSAX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SHSAX": {"ARM": "SHSAX"}
+  },
+  "INPUTS": {
+    "SHSAX": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SHSAX": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SHSAX": {"ARM": ["AAIIntrinsic","0b01100011","0b11110101"]}
+  },
+  "OUTPUT_BYTES": {
+    "SHSAX": {"ARM": ["AAIIntrinsic","0b01100011","0b11110101"]}
+  }
+}

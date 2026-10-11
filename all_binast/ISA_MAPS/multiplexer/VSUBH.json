@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSUBH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VSUBH": {"ARM": "VSUBH"}
+  },
+  "INPUTS": {
+    "VSUBH": {"ARM": [["HPR",0],["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VSUBH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSUBH": {"ARM": ["AHbI","0b11100","0b11","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSUBH": {"ARM": ["AHbI","0b11100","0b11","1","0"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "WZIP",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "WZIP8P": {"RISCV": "WZIP8P"},
+    "WZIP16P": {"RISCV": "WZIP16P"}
+  },
+  "INPUTS": {
+    "WZIP8P": {"RISCV": []},
+    "WZIP16P": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "WZIP8P": {"RISCV": []},
+    "WZIP16P": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "WZIP8P": {"RISCV": ["RVPWideningShift_rr","0b111","0b00"]},
+    "WZIP16P": {"RISCV": ["RVPWideningShift_rr","0b111","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "WZIP8P": {"RISCV": ["RVPWideningShift_rr","0b111","0b00"]},
+    "WZIP16P": {"RISCV": ["RVPWideningShift_rr","0b111","0b01"]}
+  }
+}

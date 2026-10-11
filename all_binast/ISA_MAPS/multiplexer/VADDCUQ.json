@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VADDCUQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VADDCUQ": {"PowerPC": "VADDCUQ"}
+  },
+  "INPUTS": {
+    "VADDCUQ": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VADDCUQ": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VADDCUQ": {"PowerPC": ["VX1_Int_Ty","320"]}
+  },
+  "OUTPUT_BYTES": {
+    "VADDCUQ": {"PowerPC": ["VX1_Int_Ty","320"]}
+  }
+}

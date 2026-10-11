@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMULH": {"ARM": "VMULH"}
+  },
+  "INPUTS": {
+    "VMULH": {"ARM": [["HPR",0],["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VMULH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMULH": {"ARM": ["AHbI","0b11100","0b10","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULH": {"ARM": ["AHbI","0b11100","0b10","0","0"]}
+  }
+}

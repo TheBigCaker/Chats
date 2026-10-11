@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SIDT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SIDT16m": {"X86": "SIDT16m"},
+    "SIDT32m": {"X86": "SIDT32m"},
+    "SIDT64m": {"X86": "SIDT64m"}
+  },
+  "INPUTS": {
+    "SIDT16m": {"X86": [["opaquemem",0]]},
+    "SIDT32m": {"X86": [["opaquemem",0]]},
+    "SIDT64m": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "SIDT16m": {"X86": []},
+    "SIDT32m": {"X86": []},
+    "SIDT64m": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SIDT16m": {"X86": ["0x01"]},
+    "SIDT32m": {"X86": ["0x01"]},
+    "SIDT64m": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "SIDT16m": {"X86": ["0x01"]},
+    "SIDT32m": {"X86": ["0x01"]},
+    "SIDT64m": {"X86": ["0x01"]}
+  }
+}

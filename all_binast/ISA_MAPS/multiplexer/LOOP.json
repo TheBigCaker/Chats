@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LOOP",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "LOOP_BREAK_EG": {"AMDGPU": "LOOP_BREAK_EG"},
+    "LOOP_BREAK_R600": {"AMDGPU": "LOOP_BREAK_R600"}
+  },
+  "INPUTS": {
+    "LOOP_BREAK_EG": {"AMDGPU": [["i32imm",32]]},
+    "LOOP_BREAK_R600": {"AMDGPU": [["i32imm",32]]}
+  },
+  "OUTPUTS": {
+    "LOOP_BREAK_EG": {"AMDGPU": []},
+    "LOOP_BREAK_R600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "LOOP_BREAK_EG": {"AMDGPU": ["CF_CLAUSE_EG","9"]},
+    "LOOP_BREAK_R600": {"AMDGPU": ["CF_CLAUSE_R600","9"]}
+  },
+  "OUTPUT_BYTES": {
+    "LOOP_BREAK_EG": {"AMDGPU": ["CF_CLAUSE_EG","9"]},
+    "LOOP_BREAK_R600": {"AMDGPU": ["CF_CLAUSE_R600","9"]}
+  }
+}

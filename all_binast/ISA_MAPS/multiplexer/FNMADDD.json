@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FNMADDD",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FNMADDD": {"Sparc": "FNMADDD"}
+  },
+  "INPUTS": {
+    "FNMADDD": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FNMADDD": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FNMADDD": {"Sparc": ["FourOp","0b110111","0b1110"]}
+  },
+  "OUTPUT_BYTES": {
+    "FNMADDD": {"Sparc": ["FourOp","0b110111","0b1110"]}
+  }
+}

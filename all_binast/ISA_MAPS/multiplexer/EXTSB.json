@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EXTSB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EXTSB8_32_64": {"PowerPC": "EXTSB8_32_64"}
+  },
+  "INPUTS": {
+    "EXTSB8_32_64": {"PowerPC": [["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "EXTSB8_32_64": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EXTSB8_32_64": {"PowerPC": ["XForm_11","31","954"]}
+  },
+  "OUTPUT_BYTES": {
+    "EXTSB8_32_64": {"PowerPC": ["XForm_11","31","954"]}
+  }
+}

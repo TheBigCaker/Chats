@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LBU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "LBU": {"RISCV": "LBU"}
+  },
+  "INPUTS": {
+    "LBU": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "LBU": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "LBU": {"RISCV": ["Load_ri","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "LBU": {"RISCV": ["Load_ri","0b100"]}
+  }
+}

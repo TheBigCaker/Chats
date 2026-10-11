@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "ICMPI",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "ICMPI.i32": {"Mali": "ICMPI.i32"},
+    "ICMPI.s32": {"Mali": "ICMPI.s32"},
+    "ICMPI.u32": {"Mali": "ICMPI.u32"}
+  },
+  "INPUTS": {
+    "ICMPI.i32": {"Mali": [["R32",32],["R32",32]]},
+    "ICMPI.s32": {"Mali": [["R32",32],["R32",32]]},
+    "ICMPI.u32": {"Mali": [["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "ICMPI.i32": {"Mali": [["R",32]]},
+    "ICMPI.s32": {"Mali": [["R",32]]},
+    "ICMPI.u32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "ICMPI.i32": {"Mali": ["Bifrost_add","0x7b900","0xffb80"]},
+    "ICMPI.s32": {"Mali": ["Bifrost_add","0x7b800","0xffb80"]},
+    "ICMPI.u32": {"Mali": ["Bifrost_add","0x7b880","0xffb80"]}
+  },
+  "OUTPUT_BYTES": {
+    "ICMPI.i32": {"Mali": ["Bifrost_add","0x7b900","0xffb80"]},
+    "ICMPI.s32": {"Mali": ["Bifrost_add","0x7b800","0xffb80"]},
+    "ICMPI.u32": {"Mali": ["Bifrost_add","0x7b880","0xffb80"]}
+  }
+}

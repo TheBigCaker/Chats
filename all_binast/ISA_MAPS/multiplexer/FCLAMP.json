@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FCLAMP",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FCLAMP.f32": {"Mali": "FCLAMP.f32"},
+    "FCLAMP.v2f16": {"Mali": "FCLAMP.v2f16"}
+  },
+  "INPUTS": {
+    "FCLAMP.f32": {"Mali": [["R32",32]]},
+    "FCLAMP.v2f16": {"Mali": [["R32",32]]}
+  },
+  "OUTPUTS": {
+    "FCLAMP.f32": {"Mali": [["R",32]]},
+    "FCLAMP.v2f16": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FCLAMP.f32": {"Mali": ["Bifrost_fma"]},
+    "FCLAMP.v2f16": {"Mali": ["Bifrost_fma"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCLAMP.f32": {"Mali": ["Bifrost_fma"]},
+    "FCLAMP.v2f16": {"Mali": ["Bifrost_fma"]}
+  }
+}

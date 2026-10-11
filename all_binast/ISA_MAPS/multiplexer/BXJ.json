@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BXJ",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "BXJ": {"ARM": "BXJ"}
+  },
+  "INPUTS": {
+    "BXJ": {"ARM": [["GPR",64]]}
+  },
+  "OUTPUTS": {
+    "BXJ": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "BXJ": {"ARM": ["ABI","0b0001"]}
+  },
+  "OUTPUT_BYTES": {
+    "BXJ": {"ARM": ["ABI","0b0001"]}
+  }
+}

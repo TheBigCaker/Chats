@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "POPES",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "POPES16": {"X86": "POPES16"},
+    "POPES32": {"X86": "POPES32"}
+  },
+  "INPUTS": {
+    "POPES16": {"X86": []},
+    "POPES32": {"X86": []}
+  },
+  "OUTPUTS": {
+    "POPES16": {"X86": []},
+    "POPES32": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "POPES16": {"X86": ["0x07"]},
+    "POPES32": {"X86": ["0x07"]}
+  },
+  "OUTPUT_BYTES": {
+    "POPES16": {"X86": ["0x07"]},
+    "POPES32": {"X86": ["0x07"]}
+  }
+}

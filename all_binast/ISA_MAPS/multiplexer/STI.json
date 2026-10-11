@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STI",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "STI": {"X86": "STI"}
+  },
+  "INPUTS": {
+    "STI": {"X86": []}
+  },
+  "OUTPUTS": {
+    "STI": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "STI": {"X86": ["0xFB"]}
+  },
+  "OUTPUT_BYTES": {
+    "STI": {"X86": ["0xFB"]}
+  }
+}

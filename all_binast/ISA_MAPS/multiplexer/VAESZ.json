@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VAESZ",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VAESZ_VS": {"RISCV": "VAESZ_VS"}
+  },
+  "INPUTS": {
+    "VAESZ_VS": {"RISCV": [["VR:$vd",0],["VR:$vs2",0]]}
+  },
+  "OUTPUTS": {
+    "VAESZ_VS": {"RISCV": [["VR:$vd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "VAESZ_VS": {"RISCV": ["ZvkALUVs2NoVmBinary","0b101001","0b00111"]}
+  },
+  "OUTPUT_BYTES": {
+    "VAESZ_VS": {"RISCV": ["ZvkALUVs2NoVmBinary","0b101001","0b00111"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ZAH",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "ZAH0": {"AArch64": "ZAH0"},
+    "ZAH1": {"AArch64": "ZAH1"}
+  },
+  "INPUTS": {
+    "ZAH0": {"AArch64": []},
+    "ZAH1": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "ZAH0": {"AArch64": []},
+    "ZAH1": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "ZAH0": {"AArch64": ["AArch64Reg","0"]},
+    "ZAH1": {"AArch64": ["AArch64Reg","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZAH0": {"AArch64": ["AArch64Reg","0"]},
+    "ZAH1": {"AArch64": ["AArch64Reg","1"]}
+  }
+}

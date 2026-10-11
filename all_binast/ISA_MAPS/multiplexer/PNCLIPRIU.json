@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PNCLIPRIU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PNCLIPRIU_B": {"RISCV": "PNCLIPRIU_B"},
+    "PNCLIPRIU_H": {"RISCV": "PNCLIPRIU_H"}
+  },
+  "INPUTS": {
+    "PNCLIPRIU_B": {"RISCV": []},
+    "PNCLIPRIU_H": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PNCLIPRIU_B": {"RISCV": []},
+    "PNCLIPRIU_H": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PNCLIPRIU_B": {"RISCV": ["RVPNarrowingShiftB_ri","0b011"]},
+    "PNCLIPRIU_H": {"RISCV": ["RVPNarrowingShiftH_ri","0b011"]}
+  },
+  "OUTPUT_BYTES": {
+    "PNCLIPRIU_B": {"RISCV": ["RVPNarrowingShiftB_ri","0b011"]},
+    "PNCLIPRIU_H": {"RISCV": ["RVPNarrowingShiftH_ri","0b011"]}
+  }
+}

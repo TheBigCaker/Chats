@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "POPDS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "POPDS16": {"X86": "POPDS16"},
+    "POPDS32": {"X86": "POPDS32"}
+  },
+  "INPUTS": {
+    "POPDS16": {"X86": []},
+    "POPDS32": {"X86": []}
+  },
+  "OUTPUTS": {
+    "POPDS16": {"X86": []},
+    "POPDS32": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "POPDS16": {"X86": ["0x1F"]},
+    "POPDS32": {"X86": ["0x1F"]}
+  },
+  "OUTPUT_BYTES": {
+    "POPDS16": {"X86": ["0x1F"]},
+    "POPDS32": {"X86": ["0x1F"]}
+  }
+}

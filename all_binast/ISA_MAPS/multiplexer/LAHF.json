@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LAHF",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LAHF": {"X86": "LAHF"}
+  },
+  "INPUTS": {
+    "LAHF": {"X86": []}
+  },
+  "OUTPUTS": {
+    "LAHF": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "LAHF": {"X86": ["0x9F"]}
+  },
+  "OUTPUT_BYTES": {
+    "LAHF": {"X86": ["0x9F"]}
+  }
+}

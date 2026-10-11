@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUHTOD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VUHTOD": {"ARM": "VUHTOD"}
+  },
+  "INPUTS": {
+    "VUHTOD": {"ARM": [["DPR",0],["fbits16",0]]}
+  },
+  "OUTPUTS": {
+    "VUHTOD": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VUHTOD": {"ARM": ["AVConv1XInsD_Encode","0b11101","0b11","0b1011","0b1011","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUHTOD": {"ARM": ["AVConv1XInsD_Encode","0b11101","0b11","0b1011","0b1011","0"]}
+  }
+}

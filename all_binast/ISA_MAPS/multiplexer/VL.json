@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VL",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VL": {"RISCV": "VL"},
+    "VL": {"RISCV": "VL"}
+  },
+  "INPUTS": {
+    "VL": {"RISCV": []},
+    "VL": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VL": {"RISCV": []},
+    "VL": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VL": {"RISCV": ["RISCVReg","0"]},
+    "VL": {"RISCV": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VL": {"RISCV": ["RISCVReg","0"]},
+    "VL": {"RISCV": ["ProcResource","1"]}
+  }
+}

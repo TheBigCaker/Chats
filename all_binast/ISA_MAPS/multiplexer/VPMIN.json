@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "VPMIN",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VPMINs8": {"ARM": "VPMINs8"},
+    "VPMINs16": {"ARM": "VPMINs16"},
+    "VPMINs32": {"ARM": "VPMINs32"},
+    "VPMINu8": {"ARM": "VPMINu8"},
+    "VPMINu16": {"ARM": "VPMINu16"},
+    "VPMINu32": {"ARM": "VPMINu32"},
+    "VPMINf": {"ARM": "VPMINf"},
+    "VPMINh": {"ARM": "VPMINh"}
+  },
+  "INPUTS": {
+    "VPMINs8": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMINs16": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMINs32": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMINu8": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMINu16": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMINu32": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMINf": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMINh": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]}
+  },
+  "OUTPUTS": {
+    "VPMINs8": {"ARM": [["DPR:$Vd",0]]},
+    "VPMINs16": {"ARM": [["DPR:$Vd",0]]},
+    "VPMINs32": {"ARM": [["DPR:$Vd",0]]},
+    "VPMINu8": {"ARM": [["DPR:$Vd",0]]},
+    "VPMINu16": {"ARM": [["DPR:$Vd",0]]},
+    "VPMINu32": {"ARM": [["DPR:$Vd",0]]},
+    "VPMINf": {"ARM": [["DPR:$Vd",0]]},
+    "VPMINh": {"ARM": [["DPR:$Vd",0]]}
+  },
+  "INPUT_BYTES": {
+    "VPMINs8": {"ARM": ["N3VDInt","0","0","0b00","0b1010","1","0"]},
+    "VPMINs16": {"ARM": ["N3VDInt","0","0","0b01","0b1010","1","0"]},
+    "VPMINs32": {"ARM": ["N3VDInt","0","0","0b10","0b1010","1","0"]},
+    "VPMINu8": {"ARM": ["N3VDInt","1","0","0b00","0b1010","1","0"]},
+    "VPMINu16": {"ARM": ["N3VDInt","1","0","0b01","0b1010","1","0"]},
+    "VPMINu32": {"ARM": ["N3VDInt","1","0","0b10","0b1010","1","0"]},
+    "VPMINf": {"ARM": ["N3VDInt","1","0","0b10","0b1111","0","0"]},
+    "VPMINh": {"ARM": ["N3VDInt","1","0","0b11","0b1111","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPMINs8": {"ARM": ["N3VDInt","0","0","0b00","0b1010","1","0"]},
+    "VPMINs16": {"ARM": ["N3VDInt","0","0","0b01","0b1010","1","0"]},
+    "VPMINs32": {"ARM": ["N3VDInt","0","0","0b10","0b1010","1","0"]},
+    "VPMINu8": {"ARM": ["N3VDInt","1","0","0b00","0b1010","1","0"]},
+    "VPMINu16": {"ARM": ["N3VDInt","1","0","0b01","0b1010","1","0"]},
+    "VPMINu32": {"ARM": ["N3VDInt","1","0","0b10","0b1010","1","0"]},
+    "VPMINf": {"ARM": ["N3VDInt","1","0","0b10","0b1111","0","0"]},
+    "VPMINh": {"ARM": ["N3VDInt","1","0","0b11","0b1111","0","0"]}
+  }
+}

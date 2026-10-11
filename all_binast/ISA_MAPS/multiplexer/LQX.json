@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LQX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LQX_PSEUDO": {"PowerPC": "LQX_PSEUDO"}
+  },
+  "INPUTS": {
+    "LQX_PSEUDO": {"PowerPC": [["memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LQX_PSEUDO": {"PowerPC": [["g8prc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LQX_PSEUDO": {"PowerPC": ["PPCCustomInserterPseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "LQX_PSEUDO": {"PowerPC": ["PPCCustomInserterPseudo"]}
+  }
+}

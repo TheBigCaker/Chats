@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MSAM",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MSAModify": {"Mips": "MSAModify"},
+    "MSAMap": {"Mips": "MSAMap"}
+  },
+  "INPUTS": {
+    "MSAModify": {"Mips": []},
+    "MSAMap": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "MSAModify": {"Mips": []},
+    "MSAMap": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "MSAModify": {"Mips": ["MipsReg","4"]},
+    "MSAMap": {"Mips": ["MipsReg","6"]}
+  },
+  "OUTPUT_BYTES": {
+    "MSAModify": {"Mips": ["MipsReg","4"]},
+    "MSAMap": {"Mips": ["MipsReg","6"]}
+  }
+}

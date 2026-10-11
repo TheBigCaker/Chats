@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EON",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "EON_ZZZ": {"AArch64": "EON_ZZZ"}
+  },
+  "INPUTS": {
+    "EON_ZZZ": {"AArch64": [["ZPR64",64],["ZPR64",64]]}
+  },
+  "OUTPUTS": {
+    "EON_ZZZ": {"AArch64": [["ZPR64",64]]}
+  },
+  "INPUT_BYTES": {
+    "EON_ZZZ": {"AArch64": []}
+  },
+  "OUTPUT_BYTES": {
+    "EON_ZZZ": {"AArch64": []}
+  }
+}

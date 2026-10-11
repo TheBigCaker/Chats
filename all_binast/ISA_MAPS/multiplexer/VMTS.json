@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMTS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VMTS_V": {"RISCV": "VMTS_V"}
+  },
+  "INPUTS": {
+    "VMTS_V": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VMTS_V": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VMTS_V": {"RISCV": ["VTileStore","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMTS_V": {"RISCV": ["VTileStore","0b00"]}
+  }
+}

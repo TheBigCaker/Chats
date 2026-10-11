@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "APERTURE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "APERTURE_Class": {"AMDGPU": "APERTURE_Class"}
+  },
+  "INPUTS": {
+    "APERTURE_Class": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "APERTURE_Class": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "APERTURE_Class": {"AMDGPU": ["SIRegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "APERTURE_Class": {"AMDGPU": ["SIRegisterClass","32"]}
+  }
+}

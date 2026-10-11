@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BRINC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BRINC": {"PowerPC": "BRINC"}
+  },
+  "INPUTS": {
+    "BRINC": {"PowerPC": [["gprc",0],["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "BRINC": {"PowerPC": [["gprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "BRINC": {"PowerPC": ["EVXForm_1","527"]}
+  },
+  "OUTPUT_BYTES": {
+    "BRINC": {"PowerPC": ["EVXForm_1","527"]}
+  }
+}

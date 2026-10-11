@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ZT",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "ZT0": {"AArch64": "ZT0"}
+  },
+  "INPUTS": {
+    "ZT0": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "ZT0": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "ZT0": {"AArch64": ["AArch64Reg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZT0": {"AArch64": ["AArch64Reg","0"]}
+  }
+}

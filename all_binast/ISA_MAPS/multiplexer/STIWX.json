@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STIWX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STIWX": {"PowerPC": "STIWX"}
+  },
+  "INPUTS": {
+    "STIWX": {"PowerPC": [["vsfrc",0],["memrr",0]]}
+  },
+  "OUTPUTS": {
+    "STIWX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STIWX": {"PowerPC": ["PseudoXFormMemOp"]}
+  },
+  "OUTPUT_BYTES": {
+    "STIWX": {"PowerPC": ["PseudoXFormMemOp"]}
+  }
+}

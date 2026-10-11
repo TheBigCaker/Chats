@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVA",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "MOVA_INT_eg": {"AMDGPU": "MOVA_INT_eg"}
+  },
+  "INPUTS": {
+    "MOVA_INT_eg": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "MOVA_INT_eg": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "MOVA_INT_eg": {"AMDGPU": ["R600_1OP","0xCC"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVA_INT_eg": {"AMDGPU": ["R600_1OP","0xCC"]}
+  }
+}

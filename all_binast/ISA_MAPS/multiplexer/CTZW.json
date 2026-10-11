@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CTZW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "CTZW": {"RISCV": "CTZW"}
+  },
+  "INPUTS": {
+    "CTZW": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "CTZW": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "CTZW": {"RISCV": ["UnaryW_r","0b011000000001","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "CTZW": {"RISCV": ["UnaryW_r","0b011000000001","0b001"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YEQ",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YEQ": {"RISCV": "YEQ"}
+  },
+  "INPUTS": {
+    "YEQ": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YEQ": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YEQ": {"RISCV": ["RVY_rr","0b0000110"]}
+  },
+  "OUTPUT_BYTES": {
+    "YEQ": {"RISCV": ["RVY_rr","0b0000110"]}
+  }
+}

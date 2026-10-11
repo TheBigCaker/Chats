@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BDZ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BDZ8": {"PowerPC": "BDZ8"}
+  },
+  "INPUTS": {
+    "BDZ8": {"PowerPC": [["condbrtarget",0]]}
+  },
+  "OUTPUTS": {
+    "BDZ8": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "BDZ8": {"PowerPC": ["BForm_1","16","18","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "BDZ8": {"PowerPC": ["BForm_1","16","18","0","0"]}
+  }
+}

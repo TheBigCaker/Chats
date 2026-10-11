@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSUBD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VSUBD": {"ARM": "VSUBD"}
+  },
+  "INPUTS": {
+    "VSUBD": {"ARM": [["DPR",0],["DPR",0]]}
+  },
+  "OUTPUTS": {
+    "VSUBD": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSUBD": {"ARM": ["ADbI","0b11100","0b11","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSUBD": {"ARM": ["ADbI","0b11100","0b11","1","0"]}
+  }
+}

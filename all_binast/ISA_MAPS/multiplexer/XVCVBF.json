@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVCVBF",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVCVBF16SPN": {"PowerPC": "XVCVBF16SPN"}
+  },
+  "INPUTS": {
+    "XVCVBF16SPN": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XVCVBF16SPN": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XVCVBF16SPN": {"PowerPC": ["XX2_XT6_XO5_XB6","60","16","475"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVCVBF16SPN": {"PowerPC": ["XX2_XT6_XO5_XB6","60","16","475"]}
+  }
+}

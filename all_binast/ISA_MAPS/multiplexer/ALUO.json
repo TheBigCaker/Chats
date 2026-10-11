@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ALUO",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "ALUO": {"PowerPC": "ALUO"}
+  },
+  "INPUTS": {
+    "ALUO": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "ALUO": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "ALUO": {"PowerPC": ["ProcResource","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "ALUO": {"PowerPC": ["ProcResource","2"]}
+  }
+}

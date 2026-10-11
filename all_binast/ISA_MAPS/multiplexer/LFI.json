@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "LFI",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "LFI_AM_Ui": {"AArch64": "LFI_AM_Ui"},
+    "LFI_AM_RoW": {"AArch64": "LFI_AM_RoW"},
+    "LFI_AM_RoX": {"AArch64": "LFI_AM_RoX"},
+    "LFI_AM_Pre": {"AArch64": "LFI_AM_Pre"},
+    "LFI_AM_Post": {"AArch64": "LFI_AM_Post"}
+  },
+  "INPUTS": {
+    "LFI_AM_Ui": {"AArch64": []},
+    "LFI_AM_RoW": {"AArch64": []},
+    "LFI_AM_RoX": {"AArch64": []},
+    "LFI_AM_Pre": {"AArch64": []},
+    "LFI_AM_Post": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "LFI_AM_Ui": {"AArch64": []},
+    "LFI_AM_RoW": {"AArch64": []},
+    "LFI_AM_RoX": {"AArch64": []},
+    "LFI_AM_Pre": {"AArch64": []},
+    "LFI_AM_Post": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "LFI_AM_Ui": {"AArch64": ["LFIAddrMode","0"]},
+    "LFI_AM_RoW": {"AArch64": ["LFIAddrMode","1"]},
+    "LFI_AM_RoX": {"AArch64": ["LFIAddrMode","2"]},
+    "LFI_AM_Pre": {"AArch64": ["LFIAddrMode","3"]},
+    "LFI_AM_Post": {"AArch64": ["LFIAddrMode","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "LFI_AM_Ui": {"AArch64": ["LFIAddrMode","0"]},
+    "LFI_AM_RoW": {"AArch64": ["LFIAddrMode","1"]},
+    "LFI_AM_RoX": {"AArch64": ["LFIAddrMode","2"]},
+    "LFI_AM_Pre": {"AArch64": ["LFIAddrMode","3"]},
+    "LFI_AM_Post": {"AArch64": ["LFIAddrMode","4"]}
+  }
+}

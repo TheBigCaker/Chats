@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LHZ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LHZ8": {"PowerPC": "LHZ8"}
+  },
+  "INPUTS": {
+    "LHZ8": {"PowerPC": [["(memri",0]]}
+  },
+  "OUTPUTS": {
+    "LHZ8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LHZ8": {"PowerPC": ["DForm_1","40"]}
+  },
+  "OUTPUT_BYTES": {
+    "LHZ8": {"PowerPC": ["DForm_1","40"]}
+  }
+}

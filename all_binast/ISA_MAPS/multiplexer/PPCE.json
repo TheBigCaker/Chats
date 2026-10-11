@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "PPCE",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "PPCE500Itineraries": {"PowerPC": "PPCE500Itineraries"},
+    "PPCE500mcItineraries": {"PowerPC": "PPCE500mcItineraries"},
+    "PPCE5500Itineraries": {"PowerPC": "PPCE5500Itineraries"}
+  },
+  "INPUTS": {
+    "PPCE500Itineraries": {"PowerPC": []},
+    "PPCE500mcItineraries": {"PowerPC": []},
+    "PPCE5500Itineraries": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "PPCE500Itineraries": {"PowerPC": []},
+    "PPCE500mcItineraries": {"PowerPC": []},
+    "PPCE5500Itineraries": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "PPCE500Itineraries": {"PowerPC": ["ProcessorItineraries","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"]},
+    "PPCE500mcItineraries": {"PowerPC": ["ProcessorItineraries","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"]},
+    "PPCE5500Itineraries": {"PowerPC": ["ProcessorItineraries","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "PPCE500Itineraries": {"PowerPC": ["ProcessorItineraries","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"]},
+    "PPCE500mcItineraries": {"PowerPC": ["ProcessorItineraries","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"]},
+    "PPCE5500Itineraries": {"PowerPC": ["ProcessorItineraries","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMINUH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMINUH": {"PowerPC": "VMINUH"}
+  },
+  "INPUTS": {
+    "VMINUH": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMINUH": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMINUH": {"PowerPC": ["VX1_Int_Ty","578"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMINUH": {"PowerPC": ["VX1_Int_Ty","578"]}
+  }
+}

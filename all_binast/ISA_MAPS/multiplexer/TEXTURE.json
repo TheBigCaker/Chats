@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TEXTURE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "TEXTURE_FETCH_Type": {"AMDGPU": "TEXTURE_FETCH_Type"}
+  },
+  "INPUTS": {
+    "TEXTURE_FETCH_Type": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "TEXTURE_FETCH_Type": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "TEXTURE_FETCH_Type": {"AMDGPU": ["SDTypeProfile","1","19"]}
+  },
+  "OUTPUT_BYTES": {
+    "TEXTURE_FETCH_Type": {"AMDGPU": ["SDTypeProfile","1","19"]}
+  }
+}

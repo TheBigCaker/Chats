@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSMINDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSMINDP": {"PowerPC": "XSMINDP"}
+  },
+  "INPUTS": {
+    "XSMINDP": {"PowerPC": [["vsfrc",0],["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSMINDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSMINDP": {"PowerPC": ["XX3Form","60","168"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSMINDP": {"PowerPC": ["XX3Form","60","168"]}
+  }
+}

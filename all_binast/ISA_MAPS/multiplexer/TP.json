@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TP",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "TPsoft": {"ARM": "TPsoft"}
+  },
+  "INPUTS": {
+    "TPsoft": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "TPsoft": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "TPsoft": {"ARM": ["ARMPseudoInst","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "TPsoft": {"ARM": ["ARMPseudoInst","4"]}
+  }
+}

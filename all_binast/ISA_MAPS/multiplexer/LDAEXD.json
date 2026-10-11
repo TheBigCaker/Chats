@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LDAEXD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "LDAEXD": {"ARM": "LDAEXD"}
+  },
+  "INPUTS": {
+    "LDAEXD": {"ARM": [["addr_offset_none",0]]}
+  },
+  "OUTPUTS": {
+    "LDAEXD": {"ARM": [["GPRPairOp",0]]}
+  },
+  "INPUT_BYTES": {
+    "LDAEXD": {"ARM": ["AIldaex","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "LDAEXD": {"ARM": ["AIldaex","0b01"]}
+  }
+}

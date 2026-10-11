@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LIWAX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LIWAX": {"PowerPC": "LIWAX"}
+  },
+  "INPUTS": {
+    "LIWAX": {"PowerPC": [["memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LIWAX": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LIWAX": {"PowerPC": ["PseudoXFormMemOp"]}
+  },
+  "OUTPUT_BYTES": {
+    "LIWAX": {"PowerPC": ["PseudoXFormMemOp"]}
+  }
+}

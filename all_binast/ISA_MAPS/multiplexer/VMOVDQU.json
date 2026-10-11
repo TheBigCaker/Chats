@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VMOVDQU",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMOVDQUrm": {"X86": "VMOVDQUrm"},
+    "VMOVDQUmr": {"X86": "VMOVDQUmr"}
+  },
+  "INPUTS": {
+    "VMOVDQUrm": {"X86": [["i128mem",0]]},
+    "VMOVDQUmr": {"X86": [["i128mem",0],["VR128",128]]}
+  },
+  "OUTPUTS": {
+    "VMOVDQUrm": {"X86": [["VR128",128]]},
+    "VMOVDQUmr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMOVDQUrm": {"X86": ["0x6F"]},
+    "VMOVDQUmr": {"X86": ["0x7F"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMOVDQUrm": {"X86": ["0x6F"]},
+    "VMOVDQUmr": {"X86": ["0x7F"]}
+  }
+}

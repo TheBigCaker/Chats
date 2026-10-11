@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VCNT",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VCNTd": {"ARM": "VCNTd"},
+    "VCNTq": {"ARM": "VCNTq"}
+  },
+  "INPUTS": {
+    "VCNTd": {"ARM": []},
+    "VCNTq": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VCNTd": {"ARM": []},
+    "VCNTq": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VCNTd": {"ARM": ["N2VDInt","0b11","0b11","0b00","0b00","0b01010","0"]},
+    "VCNTq": {"ARM": ["N2VQInt","0b11","0b11","0b00","0b00","0b01010","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCNTd": {"ARM": ["N2VDInt","0b11","0b11","0b00","0b00","0b01010","0"]},
+    "VCNTq": {"ARM": ["N2VQInt","0b11","0b11","0b00","0b00","0b01010","0"]}
+  }
+}

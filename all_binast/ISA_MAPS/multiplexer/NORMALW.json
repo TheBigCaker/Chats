@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NORMALW",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "NORMALW": {"Sparc": "NORMALW"}
+  },
+  "INPUTS": {
+    "NORMALW": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "NORMALW": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "NORMALW": {"Sparc": ["UA2005RegWin","0b00100"]}
+  },
+  "OUTPUT_BYTES": {
+    "NORMALW": {"Sparc": ["UA2005RegWin","0b00100"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "AMDGPUI",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "AMDGPUIntPackOp": {"AMDGPU": "AMDGPUIntPackOp"},
+    "AMDGPUIfOp": {"AMDGPU": "AMDGPUIfOp"},
+    "AMDGPUIfBreakOp": {"AMDGPU": "AMDGPUIfBreakOp"}
+  },
+  "INPUTS": {
+    "AMDGPUIntPackOp": {"AMDGPU": []},
+    "AMDGPUIfOp": {"AMDGPU": []},
+    "AMDGPUIfBreakOp": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "AMDGPUIntPackOp": {"AMDGPU": []},
+    "AMDGPUIfOp": {"AMDGPU": []},
+    "AMDGPUIfBreakOp": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "AMDGPUIntPackOp": {"AMDGPU": ["SDTypeProfile","1","2"]},
+    "AMDGPUIfOp": {"AMDGPU": ["SDTypeProfile","1","2"]},
+    "AMDGPUIfBreakOp": {"AMDGPU": ["SDTypeProfile","1","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "AMDGPUIntPackOp": {"AMDGPU": ["SDTypeProfile","1","2"]},
+    "AMDGPUIfOp": {"AMDGPU": ["SDTypeProfile","1","2"]},
+    "AMDGPUIfBreakOp": {"AMDGPU": ["SDTypeProfile","1","2"]}
+  }
+}

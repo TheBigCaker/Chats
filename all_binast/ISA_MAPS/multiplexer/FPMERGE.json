@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FPMERGE",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FPMERGE": {"Sparc": "FPMERGE"}
+  },
+  "INPUTS": {
+    "FPMERGE": {"Sparc": [["FPRegs",0],["FPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FPMERGE": {"Sparc": [["DFPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FPMERGE": {"Sparc": ["VISInstFormat","0b001001011"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPMERGE": {"Sparc": ["VISInstFormat","0b001001011"]}
+  }
+}

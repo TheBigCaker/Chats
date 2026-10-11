@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMOVHR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMOVHR": {"ARM": "VMOVHR"}
+  },
+  "INPUTS": {
+    "VMOVHR": {"ARM": [["rGPR",0]]}
+  },
+  "OUTPUTS": {
+    "VMOVHR": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMOVHR": {"ARM": ["AVConv4I","0b11100000","0b1001"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMOVHR": {"ARM": ["AVConv4I","0b11100000","0b1001"]}
+  }
+}

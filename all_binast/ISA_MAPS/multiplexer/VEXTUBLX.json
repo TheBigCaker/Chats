@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VEXTUBLX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VEXTUBLX": {"PowerPC": "VEXTUBLX"}
+  },
+  "INPUTS": {
+    "VEXTUBLX": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VEXTUBLX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VEXTUBLX": {"PowerPC": ["VX1_RT5_RA5_VB5","1549"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEXTUBLX": {"PowerPC": ["VX1_RT5_RA5_VB5","1549"]}
+  }
+}

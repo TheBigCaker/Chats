@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "CASXA",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "CASXArr": {"Sparc": "CASXArr"},
+    "CASXAri": {"Sparc": "CASXAri"}
+  },
+  "INPUTS": {
+    "CASXArr": {"Sparc": [["I64Regs",0],["I64Regs",0],["I64Regs",0],["ASITag",0]]},
+    "CASXAri": {"Sparc": [["I64Regs",0],["I64Regs",0],["I64Regs",0]]}
+  },
+  "OUTPUTS": {
+    "CASXArr": {"Sparc": [["I64Regs",0]]},
+    "CASXAri": {"Sparc": [["I64Regs",0]]}
+  },
+  "INPUT_BYTES": {
+    "CASXArr": {"Sparc": ["F3_1_asi","3","0b111110"]},
+    "CASXAri": {"Sparc": ["F3_1_cas_asi","3","0b111110"]}
+  },
+  "OUTPUT_BYTES": {
+    "CASXArr": {"Sparc": ["F3_1_asi","3","0b111110"]},
+    "CASXAri": {"Sparc": ["F3_1_cas_asi","3","0b111110"]}
+  }
+}

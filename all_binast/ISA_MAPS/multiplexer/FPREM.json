@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FPREM",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "FPREM1": {"X86": "FPREM1"},
+    "FPREM": {"X86": "FPREM"}
+  },
+  "INPUTS": {
+    "FPREM1": {"X86": []},
+    "FPREM": {"X86": []}
+  },
+  "OUTPUTS": {
+    "FPREM1": {"X86": []},
+    "FPREM": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "FPREM1": {"X86": ["0xD9"]},
+    "FPREM": {"X86": ["0xD9"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPREM1": {"X86": ["0xD9"]},
+    "FPREM": {"X86": ["0xD9"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VFQMMACC",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFQMMACC_VV": {"RISCV": "VFQMMACC_VV"},
+    "VFQMMACC_VV_SCALE": {"RISCV": "VFQMMACC_VV_SCALE"}
+  },
+  "INPUTS": {
+    "VFQMMACC_VV": {"RISCV": [["VR:$vd",0],["VR:$vs1",0],["VR:$vs2",0]]},
+    "VFQMMACC_VV_SCALE": {"RISCV": [["VR:$vd",0],["VR:$vs1",0],["VR:$vs2",0],["VScaleOp:$vm",0]]}
+  },
+  "OUTPUTS": {
+    "VFQMMACC_VV": {"RISCV": [["VR:$vd_wb",0]]},
+    "VFQMMACC_VV_SCALE": {"RISCV": [["VR:$vd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFQMMACC_VV": {"RISCV": ["VFMEMACVV","0b010110"]},
+    "VFQMMACC_VV_SCALE": {"RISCV": ["VFMEMACScaleVV","0b010110"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFQMMACC_VV": {"RISCV": ["VFMEMACVV","0b010110"]},
+    "VFQMMACC_VV_SCALE": {"RISCV": ["VFMEMACScaleVV","0b010110"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MTTDSP",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MTTDSP": {"Mips": "MTTDSP"}
+  },
+  "INPUTS": {
+    "MTTDSP": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "OUTPUTS": {
+    "MTTDSP": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "MTTDSP": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "MTTDSP": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

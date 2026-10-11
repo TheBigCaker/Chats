@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "APSR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "APSR": {"ARM": "APSR"},
+    "APSR_NZCV": {"ARM": "APSR_NZCV"}
+  },
+  "INPUTS": {
+    "APSR": {"ARM": []},
+    "APSR_NZCV": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "APSR": {"ARM": []},
+    "APSR_NZCV": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "APSR": {"ARM": ["ARMReg","15"]},
+    "APSR_NZCV": {"ARM": ["ARMReg","15"]}
+  },
+  "OUTPUT_BYTES": {
+    "APSR": {"ARM": ["ARMReg","15"]},
+    "APSR_NZCV": {"ARM": ["ARMReg","15"]}
+  }
+}

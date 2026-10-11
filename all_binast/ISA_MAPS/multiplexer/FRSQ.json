@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "FRSQ",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FRSQ.f16": {"Mali": "FRSQ.f16"},
+    "FRSQ.f32": {"Mali": "FRSQ.f32"},
+    "FRSQ_APPROX.f32": {"Mali": "FRSQ_APPROX.f32"},
+    "FRSQ.f32": {"Mali": "FRSQ.f32"},
+    "FRSQ.f16": {"Mali": "FRSQ.f16"},
+    "FRSQ_APPROX.f32": {"Mali": "FRSQ_APPROX.f32"}
+  },
+  "INPUTS": {
+    "FRSQ.f16": {"Mali": [["R32",32]]},
+    "FRSQ.f32": {"Mali": [["R32",32]]},
+    "FRSQ_APPROX.f32": {"Mali": [["R32",32]]},
+    "FRSQ.f32": {"Mali": []},
+    "FRSQ.f16": {"Mali": []},
+    "FRSQ_APPROX.f32": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "FRSQ.f16": {"Mali": [["R",32]]},
+    "FRSQ.f32": {"Mali": [["R",32]]},
+    "FRSQ_APPROX.f32": {"Mali": [["R",32]]},
+    "FRSQ.f32": {"Mali": [["R",32]]},
+    "FRSQ.f16": {"Mali": [["R",32]]},
+    "FRSQ_APPROX.f32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FRSQ.f16": {"Mali": ["Bifrost_add","0x67280","0xffec0"]},
+    "FRSQ.f32": {"Mali": ["Bifrost_add","0x66100","0xfffa0"]},
+    "FRSQ_APPROX.f32": {"Mali": ["Bifrost_add"]},
+    "FRSQ.f32": {"Mali": ["Valhall_"]},
+    "FRSQ.f16": {"Mali": ["Valhall_"]},
+    "FRSQ_APPROX.f32": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "FRSQ.f16": {"Mali": ["Bifrost_add","0x67280","0xffec0"]},
+    "FRSQ.f32": {"Mali": ["Bifrost_add","0x66100","0xfffa0"]},
+    "FRSQ_APPROX.f32": {"Mali": ["Bifrost_add"]},
+    "FRSQ.f32": {"Mali": ["Valhall_"]},
+    "FRSQ.f16": {"Mali": ["Valhall_"]},
+    "FRSQ_APPROX.f32": {"Mali": ["Valhall_"]}
+  }
+}

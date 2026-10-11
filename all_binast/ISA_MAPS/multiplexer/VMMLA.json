@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMMLA",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMMLA": {"ARM": "VMMLA"}
+  },
+  "INPUTS": {
+    "VMMLA": {"ARM": [["RegTy:$Vd",0],["RegTy:$Vn",0],["RegTy:$Vm",0]]}
+  },
+  "OUTPUTS": {
+    "VMMLA": {"ARM": [["RegTy:$dst",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMMLA": {"ARM": ["BF16MM","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMMLA": {"ARM": ["BF16MM","1"]}
+  }
+}

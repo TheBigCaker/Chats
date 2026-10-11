@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MULW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MULW": {"RISCV": "MULW"}
+  },
+  "INPUTS": {
+    "MULW": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "MULW": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "MULW": {"RISCV": ["ALUW_rr","0b0000001","0b000"]}
+  },
+  "OUTPUT_BYTES": {
+    "MULW": {"RISCV": ["ALUW_rr","0b0000001","0b000"]}
+  }
+}

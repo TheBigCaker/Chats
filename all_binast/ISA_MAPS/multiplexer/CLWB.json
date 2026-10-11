@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CLWB",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CLWB": {"X86": "CLWB"}
+  },
+  "INPUTS": {
+    "CLWB": {"X86": [["i8mem",0]]}
+  },
+  "OUTPUTS": {
+    "CLWB": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CLWB": {"X86": ["0xAE"]}
+  },
+  "OUTPUT_BYTES": {
+    "CLWB": {"X86": ["0xAE"]}
+  }
+}

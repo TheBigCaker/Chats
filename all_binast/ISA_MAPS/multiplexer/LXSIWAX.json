@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXSIWAX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXSIWAX": {"PowerPC": "LXSIWAX"}
+  },
+  "INPUTS": {
+    "LXSIWAX": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LXSIWAX": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LXSIWAX": {"PowerPC": ["XX1Form_memOp","31","76"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXSIWAX": {"PowerPC": ["XX1Form_memOp","31","76"]}
+  }
+}

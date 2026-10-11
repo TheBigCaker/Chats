@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WBNOINVD",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "WBNOINVD": {"X86": "WBNOINVD"}
+  },
+  "INPUTS": {
+    "WBNOINVD": {"X86": []}
+  },
+  "OUTPUTS": {
+    "WBNOINVD": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "WBNOINVD": {"X86": ["0x09"]}
+  },
+  "OUTPUT_BYTES": {
+    "WBNOINVD": {"X86": ["0x09"]}
+  }
+}

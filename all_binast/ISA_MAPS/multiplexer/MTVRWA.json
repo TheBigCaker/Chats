@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MTVRWA",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MTVRWA": {"PowerPC": "MTVRWA"}
+  },
+  "INPUTS": {
+    "MTVRWA": {"PowerPC": [["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "MTVRWA": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MTVRWA": {"PowerPC": ["XX1_RS6_RD5_XO","31","211"]}
+  },
+  "OUTPUT_BYTES": {
+    "MTVRWA": {"PowerPC": ["XX1_RS6_RD5_XO","31","211"]}
+  }
+}

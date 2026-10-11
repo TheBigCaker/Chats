@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DTSTEXQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DTSTEXQ": {"PowerPC": "DTSTEXQ"}
+  },
+  "INPUTS": {
+    "DTSTEXQ": {"PowerPC": [["fpairrc",0],["fpairrc",0]]}
+  },
+  "OUTPUTS": {
+    "DTSTEXQ": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "DTSTEXQ": {"PowerPC": ["XForm_17","63","162"]}
+  },
+  "OUTPUT_BYTES": {
+    "DTSTEXQ": {"PowerPC": ["XForm_17","63","162"]}
+  }
+}

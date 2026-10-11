@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ARML",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "ARMLocalRecover": {"ARM": "ARMLocalRecover"}
+  },
+  "INPUTS": {
+    "ARMLocalRecover": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "ARMLocalRecover": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "ARMLocalRecover": {"ARM": ["SDNode","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "ARMLocalRecover": {"ARM": ["SDNode","1"]}
+  }
+}

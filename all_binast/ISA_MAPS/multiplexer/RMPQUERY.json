@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RMPQUERY",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "RMPQUERY": {"X86": "RMPQUERY"}
+  },
+  "INPUTS": {
+    "RMPQUERY": {"X86": []}
+  },
+  "OUTPUTS": {
+    "RMPQUERY": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "RMPQUERY": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "RMPQUERY": {"X86": ["0x01"]}
+  }
+}

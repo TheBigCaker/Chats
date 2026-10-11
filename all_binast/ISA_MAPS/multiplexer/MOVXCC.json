@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MOVXCC",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "MOVXCCrr": {"Sparc": "MOVXCCrr"},
+    "MOVXCCri": {"Sparc": "MOVXCCri"}
+  },
+  "INPUTS": {
+    "MOVXCCrr": {"Sparc": [["IntRegs",0],["IntRegs",0],["CCOp",0]]},
+    "MOVXCCri": {"Sparc": [["i32imm",32],["IntRegs",0],["CCOp",0]]}
+  },
+  "OUTPUTS": {
+    "MOVXCCrr": {"Sparc": [["IntRegs",0]]},
+    "MOVXCCri": {"Sparc": [["IntRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "MOVXCCrr": {"Sparc": ["F4_1","0b101100"]},
+    "MOVXCCri": {"Sparc": ["F4_2","0b101100"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVXCCrr": {"Sparc": ["F4_1","0b101100"]},
+    "MOVXCCri": {"Sparc": ["F4_2","0b101100"]}
+  }
+}

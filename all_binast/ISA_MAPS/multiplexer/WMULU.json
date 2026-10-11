@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WMULU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "WMULU": {"RISCV": "WMULU"}
+  },
+  "INPUTS": {
+    "WMULU": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "WMULU": {"RISCV": [["GPRPairRV32:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "WMULU": {"RISCV": ["RVPWideningBinary_rr","0b0110","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "WMULU": {"RISCV": ["RVPWideningBinary_rr","0b0110","0b01"]}
+  }
+}

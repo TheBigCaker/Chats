@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VEXTDUHVLX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VEXTDUHVLX": {"PowerPC": "VEXTDUHVLX"}
+  },
+  "INPUTS": {
+    "VEXTDUHVLX": {"PowerPC": [["vrrc",0],["vrrc",0],["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "VEXTDUHVLX": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VEXTDUHVLX": {"PowerPC": ["VAForm_1a","26"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEXTDUHVLX": {"PowerPC": ["VAForm_1a","26"]}
+  }
+}

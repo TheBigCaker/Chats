@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DCMPU",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DCMPU": {"PowerPC": "DCMPU"}
+  },
+  "INPUTS": {
+    "DCMPU": {"PowerPC": [["f8rc",0],["f8rc",0]]}
+  },
+  "OUTPUTS": {
+    "DCMPU": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "DCMPU": {"PowerPC": ["XForm_17","59","642"]}
+  },
+  "OUTPUT_BYTES": {
+    "DCMPU": {"PowerPC": ["XForm_17","59","642"]}
+  }
+}

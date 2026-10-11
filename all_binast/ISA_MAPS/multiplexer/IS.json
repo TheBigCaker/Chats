@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "IS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "IS_NOT_ALTFMT": {"RISCV": "IS_NOT_ALTFMT"},
+    "IS_ALTFMT": {"RISCV": "IS_ALTFMT"}
+  },
+  "INPUTS": {
+    "IS_NOT_ALTFMT": {"RISCV": []},
+    "IS_ALTFMT": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "IS_NOT_ALTFMT": {"RISCV": []},
+    "IS_ALTFMT": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "IS_NOT_ALTFMT": {"RISCV": ["AltFmtType","1"]},
+    "IS_ALTFMT": {"RISCV": ["AltFmtType","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "IS_NOT_ALTFMT": {"RISCV": ["AltFmtType","1"]},
+    "IS_ALTFMT": {"RISCV": ["AltFmtType","2"]}
+  }
+}

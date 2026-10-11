@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MQQQQPRS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MQQQQPRStore": {"ARM": "MQQQQPRStore"}
+  },
+  "INPUTS": {
+    "MQQQQPRStore": {"ARM": [["MQQQQPR",0],["GPRnopc",0]]}
+  },
+  "OUTPUTS": {
+    "MQQQQPRStore": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "MQQQQPRStore": {"ARM": ["t2PseudoInst","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "MQQQQPRStore": {"ARM": ["t2PseudoInst","4"]}
+  }
+}

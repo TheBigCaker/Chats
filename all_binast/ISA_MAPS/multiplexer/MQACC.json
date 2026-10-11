@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "MQACC",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MQACC_H01": {"RISCV": "MQACC_H01"},
+    "MQACC_W01": {"RISCV": "MQACC_W01"},
+    "MQACC_H00": {"RISCV": "MQACC_H00"},
+    "MQACC_H11": {"RISCV": "MQACC_H11"},
+    "MQACC_W00": {"RISCV": "MQACC_W00"},
+    "MQACC_W11": {"RISCV": "MQACC_W11"}
+  },
+  "INPUTS": {
+    "MQACC_H01": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "MQACC_W01": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "MQACC_H00": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "MQACC_H11": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "MQACC_W00": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "MQACC_W11": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "MQACC_H01": {"RISCV": [["GPR:$rd_wb",0]]},
+    "MQACC_W01": {"RISCV": [["GPR:$rd_wb",0]]},
+    "MQACC_H00": {"RISCV": [["GPR:$rd_wb",0]]},
+    "MQACC_H11": {"RISCV": [["GPR:$rd_wb",0]]},
+    "MQACC_W00": {"RISCV": [["GPR:$rd_wb",0]]},
+    "MQACC_W11": {"RISCV": [["GPR:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "MQACC_H01": {"RISCV": ["RVPTernary_rrr","0b1111","0b00","0b101"]},
+    "MQACC_W01": {"RISCV": ["RVPTernary_rrr","0b1111","0b01","0b101"]},
+    "MQACC_H00": {"RISCV": ["RVPTernary_rrr","0b1101","0b00","0b111"]},
+    "MQACC_H11": {"RISCV": ["RVPTernary_rrr","0b1111","0b00","0b111"]},
+    "MQACC_W00": {"RISCV": ["RVPTernary_rrr","0b1101","0b01","0b111"]},
+    "MQACC_W11": {"RISCV": ["RVPTernary_rrr","0b1111","0b01","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "MQACC_H01": {"RISCV": ["RVPTernary_rrr","0b1111","0b00","0b101"]},
+    "MQACC_W01": {"RISCV": ["RVPTernary_rrr","0b1111","0b01","0b101"]},
+    "MQACC_H00": {"RISCV": ["RVPTernary_rrr","0b1101","0b00","0b111"]},
+    "MQACC_H11": {"RISCV": ["RVPTernary_rrr","0b1111","0b00","0b111"]},
+    "MQACC_W00": {"RISCV": ["RVPTernary_rrr","0b1101","0b01","0b111"]},
+    "MQACC_W11": {"RISCV": ["RVPTernary_rrr","0b1111","0b01","0b111"]}
+  }
+}

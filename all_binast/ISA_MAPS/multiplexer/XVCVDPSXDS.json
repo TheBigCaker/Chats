@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVCVDPSXDS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVCVDPSXDS": {"PowerPC": "XVCVDPSXDS"}
+  },
+  "INPUTS": {
+    "XVCVDPSXDS": {"PowerPC": [["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVCVDPSXDS": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVCVDPSXDS": {"PowerPC": ["XX2Form","60","472"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVCVDPSXDS": {"PowerPC": ["XX2Form","60","472"]}
+  }
+}

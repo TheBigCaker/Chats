@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LUTI",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "LUTI4_4ZZT2Z": {"AArch64": "LUTI4_4ZZT2Z"},
+    "LUTI4_S_4ZZT2Z": {"AArch64": "LUTI4_S_4ZZT2Z"}
+  },
+  "INPUTS": {
+    "LUTI4_4ZZT2Z": {"AArch64": [["ZTR:$ZTt",0],["ZZ_mul_r:$Zn",0]]},
+    "LUTI4_S_4ZZT2Z": {"AArch64": [["ZTR:$ZTt",0],["ZZ_mul_r:$Zn",0]]}
+  },
+  "OUTPUTS": {
+    "LUTI4_4ZZT2Z": {"AArch64": [["ZZZZ_b_mul_r:$Zd",0]]},
+    "LUTI4_S_4ZZT2Z": {"AArch64": [["ZZZZ_b_strided:$Zd",0]]}
+  },
+  "INPUT_BYTES": {
+    "LUTI4_4ZZT2Z": {"AArch64": ["sme2_luti4_vector_vg4","0b00","0b00"]},
+    "LUTI4_S_4ZZT2Z": {"AArch64": ["sme2_luti4_vector_vg4_strided","0b00","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "LUTI4_4ZZT2Z": {"AArch64": ["sme2_luti4_vector_vg4","0b00","0b00"]},
+    "LUTI4_S_4ZZT2Z": {"AArch64": ["sme2_luti4_vector_vg4_strided","0b00","0b00"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DMULM",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "DMULMacro": {"Mips": "DMULMacro"}
+  },
+  "INPUTS": {
+    "DMULMacro": {"Mips": [["GPR64Opnd",64],["GPR64Opnd",64],["GPR64Opnd",64]]}
+  },
+  "OUTPUTS": {
+    "DMULMacro": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "DMULMacro": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "DMULMacro": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

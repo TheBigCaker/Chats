@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XTEST",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XTEST": {"X86": "XTEST"}
+  },
+  "INPUTS": {
+    "XTEST": {"X86": []}
+  },
+  "OUTPUTS": {
+    "XTEST": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "XTEST": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "XTEST": {"X86": ["0x01"]}
+  }
+}

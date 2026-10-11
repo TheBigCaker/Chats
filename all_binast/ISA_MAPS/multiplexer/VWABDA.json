@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VWABDA",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VWABDA_VV": {"RISCV": "VWABDA_VV"}
+  },
+  "INPUTS": {
+    "VWABDA_VV": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VWABDA_VV": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VWABDA_VV": {"RISCV": ["VALUVV","0b010101"]}
+  },
+  "OUTPUT_BYTES": {
+    "VWABDA_VV": {"RISCV": ["VALUVV","0b010101"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SLBIEG",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SLBIEG": {"PowerPC": "SLBIEG"}
+  },
+  "INPUTS": {
+    "SLBIEG": {"PowerPC": [["gprc",0],["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "SLBIEG": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "SLBIEG": {"PowerPC": ["XForm_26","31","466"]}
+  },
+  "OUTPUT_BYTES": {
+    "SLBIEG": {"PowerPC": ["XForm_26","31","466"]}
+  }
+}

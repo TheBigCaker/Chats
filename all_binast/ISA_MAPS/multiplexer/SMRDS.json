@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SMRDS",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SMRDSgpr": {"AMDGPU": "SMRDSgpr"},
+    "SMRDSgprImm": {"AMDGPU": "SMRDSgprImm"}
+  },
+  "INPUTS": {
+    "SMRDSgpr": {"AMDGPU": []},
+    "SMRDSgprImm": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SMRDSgpr": {"AMDGPU": []},
+    "SMRDSgprImm": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SMRDSgpr": {"AMDGPU": ["ComplexPattern","3"]},
+    "SMRDSgprImm": {"AMDGPU": ["ComplexPattern","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMRDSgpr": {"AMDGPU": ["ComplexPattern","3"]},
+    "SMRDSgprImm": {"AMDGPU": ["ComplexPattern","4"]}
+  }
+}

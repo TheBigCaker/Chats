@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BCDSR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BCDSR_rec": {"PowerPC": "BCDSR_rec"}
+  },
+  "INPUTS": {
+    "BCDSR_rec": {"PowerPC": [["vrrc:$VA",0],["vrrc:$VB",0],["u1imm:$PS",1]]}
+  },
+  "OUTPUTS": {
+    "BCDSR_rec": {"PowerPC": [["vrrc:$VD",0]]}
+  },
+  "INPUT_BYTES": {
+    "BCDSR_rec": {"PowerPC": ["VX_VT5_VA5_VB5_PS1_XO9_o","449"]}
+  },
+  "OUTPUT_BYTES": {
+    "BCDSR_rec": {"PowerPC": ["VX_VT5_VA5_VB5_PS1_XO9_o","449"]}
+  }
+}

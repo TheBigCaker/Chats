@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AV",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "AV_32": {"AMDGPU": "AV_32"}
+  },
+  "INPUTS": {
+    "AV_32": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "AV_32": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "AV_32": {"AMDGPU": ["SIRegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "AV_32": {"AMDGPU": ["SIRegisterClass","32"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "GDOP",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "GDOP_LDXrr": {"Sparc": "GDOP_LDXrr"}
+  },
+  "INPUTS": {
+    "GDOP_LDXrr": {"Sparc": [["(MEMrr",0]]}
+  },
+  "OUTPUTS": {
+    "GDOP_LDXrr": {"Sparc": [["I64Regs",0]]}
+  },
+  "INPUT_BYTES": {
+    "GDOP_LDXrr": {"Sparc": ["F3_1","3","0b001011"]}
+  },
+  "OUTPUT_BYTES": {
+    "GDOP_LDXrr": {"Sparc": ["F3_1","3","0b001011"]}
+  }
+}

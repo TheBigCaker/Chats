@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "HWR",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "HWR0": {"Mips": "HWR0"},
+    "HWR1": {"Mips": "HWR1"},
+    "HWR2": {"Mips": "HWR2"},
+    "HWR3": {"Mips": "HWR3"},
+    "HWRegs": {"Mips": "HWRegs"}
+  },
+  "INPUTS": {
+    "HWR0": {"Mips": []},
+    "HWR1": {"Mips": []},
+    "HWR2": {"Mips": []},
+    "HWR3": {"Mips": []},
+    "HWRegs": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "HWR0": {"Mips": []},
+    "HWR1": {"Mips": []},
+    "HWR2": {"Mips": []},
+    "HWR3": {"Mips": []},
+    "HWRegs": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "HWR0": {"Mips": ["MipsReg","0"]},
+    "HWR1": {"Mips": ["MipsReg","1"]},
+    "HWR2": {"Mips": ["MipsReg","2"]},
+    "HWR3": {"Mips": ["MipsReg","3"]},
+    "HWRegs": {"Mips": ["RegisterClass","32","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "HWR0": {"Mips": ["MipsReg","0"]},
+    "HWR1": {"Mips": ["MipsReg","1"]},
+    "HWR2": {"Mips": ["MipsReg","2"]},
+    "HWR3": {"Mips": ["MipsReg","3"]},
+    "HWRegs": {"Mips": ["RegisterClass","32","0"]}
+  }
+}

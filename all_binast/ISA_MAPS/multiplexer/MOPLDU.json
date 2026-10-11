@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOPLDU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MOPLDUnitStride": {"RISCV": "MOPLDUnitStride"}
+  },
+  "INPUTS": {
+    "MOPLDUnitStride": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "MOPLDUnitStride": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "MOPLDUnitStride": {"RISCV": ["RISCVMOP","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOPLDUnitStride": {"RISCV": ["RISCVMOP","0b00"]}
+  }
+}

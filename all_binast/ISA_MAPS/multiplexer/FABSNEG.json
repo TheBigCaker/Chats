@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FABSNEG",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FABSNEG.f32": {"Mali": "FABSNEG.f32"},
+    "FABSNEG.v2f16": {"Mali": "FABSNEG.v2f16"}
+  },
+  "INPUTS": {
+    "FABSNEG.f32": {"Mali": [["R32",32]]},
+    "FABSNEG.v2f16": {"Mali": [["R32",32]]}
+  },
+  "OUTPUTS": {
+    "FABSNEG.f32": {"Mali": [["R",32]]},
+    "FABSNEG.v2f16": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FABSNEG.f32": {"Mali": ["Bifrost_fma"]},
+    "FABSNEG.v2f16": {"Mali": ["Bifrost_fma"]}
+  },
+  "OUTPUT_BYTES": {
+    "FABSNEG.f32": {"Mali": ["Bifrost_fma"]},
+    "FABSNEG.v2f16": {"Mali": ["Bifrost_fma"]}
+  }
+}

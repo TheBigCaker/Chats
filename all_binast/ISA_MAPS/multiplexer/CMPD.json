@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CMPD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "CMPD": {"PowerPC": "CMPD"}
+  },
+  "INPUTS": {
+    "CMPD": {"PowerPC": [["g8rc",0],["g8rc",0]]}
+  },
+  "OUTPUTS": {
+    "CMPD": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "CMPD": {"PowerPC": ["XForm_16_ext","31","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "CMPD": {"PowerPC": ["XForm_16_ext","31","0"]}
+  }
+}

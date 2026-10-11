@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "QPR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "QPR": {"ARM": "QPR"},
+    "QPR_VFP2": {"ARM": "QPR_VFP2"},
+    "QPR_8": {"ARM": "QPR_8"}
+  },
+  "INPUTS": {
+    "QPR": {"ARM": []},
+    "QPR_VFP2": {"ARM": []},
+    "QPR_8": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "QPR": {"ARM": []},
+    "QPR_VFP2": {"ARM": []},
+    "QPR_8": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "QPR": {"ARM": ["RegisterClass","128","0"]},
+    "QPR_VFP2": {"ARM": ["RegisterClass","128"]},
+    "QPR_8": {"ARM": ["RegisterClass","128"]}
+  },
+  "OUTPUT_BYTES": {
+    "QPR": {"ARM": ["RegisterClass","128","0"]},
+    "QPR_VFP2": {"ARM": ["RegisterClass","128"]},
+    "QPR_8": {"ARM": ["RegisterClass","128"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BCCCTR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BCCCTR8": {"PowerPC": "BCCCTR8"}
+  },
+  "INPUTS": {
+    "BCCCTR8": {"PowerPC": [["(pred",0]]}
+  },
+  "OUTPUTS": {
+    "BCCCTR8": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "BCCCTR8": {"PowerPC": ["XLForm_2_br","19","528","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "BCCCTR8": {"PowerPC": ["XLForm_2_br","19","528","0"]}
+  }
+}

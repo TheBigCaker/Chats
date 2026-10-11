@@ -1,0 +1,793 @@
+FMVExtension	2	|
+Extension	6	|
+ExtensionWithMArch	6	|
+Architecture64	6	|
+relaxed_load	1	|
+acquiring_load	1	|
+seq_cst_load	1	|
+releasing_store	1	|
+relaxed_store	1	|
+to	1	|
+VTPair	2	|
+Format	1	|
+DestructiveInstTypeEnum	1	|
+FalseLanesEnum	1	|
+SMEMatrixTypeEnum	1	|
+AArch64Inst	2	|
+Pseudo	4	|
+EncodedI	2	|
+I	6	|
+ArithmeticShifterOperand	1	|
+LogicalShifterOperand	1	|
+UImmScaledMemoryIndexed	2	|
+SImmScaledMemoryIndexed	2	|
+SImmOperand	1	|
+AsmImmRange	2	|
+BranchTarget	1	|
+PCRelLabel	1	|
+fixedpoint_i32	1	|
+fixedpoint_i64	1	|
+fixedpoint_recip_i32	1	|
+fixedpoint_recip_i64	1	|
+arith_shift	2	|
+arith_shifted_reg	3	|
+logical_shift	1	|
+logical_shifted_reg	3	|
+addsub_shifted_imm	1	|
+addsub_shifted_imm_neg	1	|
+neg_addsub_shifted_imm	1	|
+arith_extended_reg32	1	|
+arith_extended_reg32to64	1	|
+AsmVectorIndex	3	|
+AsmVectorIndexOpnd	2	|
+UImmScaledMemoryIndexedRange	3	|
+BaseSystemI	6	|
+SimpleSystemI	5	|
+RtSystemI	6	|
+assumes	4	|GPR64:$Rt
+HintI	1	|imm0_127:$imm
+HintE	1	|hinte_uimm16:$imm16
+CRmSystemI	4	|crmtype:$CRm
+SystemNoOperands	3	|
+MRSI	6	|
+MSRI	7	|
+PstateWriteSimple	3	|
+SystemXtI	1	|imm32_0_7:$op1, sys_cr_op:$Cn, sys_cr_op:$Cm, imm32_0_7:$op2,             GPR64:$Rt
+SystemLXtI	2	|GPR64:$Rt, imm0_7:$op1, sys_cr_op:$Cn, sys_cr_op:$Cm, imm0_7:$op2
+BaseBranchReg	6	|
+BranchReg	3	|GPR64:$Rn
+SpecialReturn	2	|
+RCPCLoad	3	RC:$Rt|GPR64sp0:$Rn
+AuthBase	6	|
+AuthBranchTwoOperands	3	|GPR64:$Rn, GPR64sp:$Rm
+AuthOneOperand	3	|GPR64:$Rn
+AuthReturn	3	|
+BaseAuthLoad	7	|
+BranchCond	2	|ccode:$cond, am_brcond:$target
+BaseCmpBranch	4	|regtype:$Rt, am_brcond:$target
+BaseTestBranch	5	|regtype:$Rt, immtype:$bit_off, am_tbrcond:$target
+BImm	4	|
+BaseOneOperandData	7	regtype:$Rd|regtype:$Rn
+SignAuthOneData	4	GPR64:$dst|GPR64:$Rd, GPR64sp:$Rn
+SignAuthZero	4	GPR64:$dst|GPR64:$Rd
+SignAuthTwoOperand	3	GPR64:$Rd|GPR64:$Rn, GPR64sp:$Rm
+ClearAuth	2	GPR64:$Rd|GPR64:$Rn
+SignAuthFixedRegs	3	|
+SignAuthPCRel	2	|am_pauth_pcrel:$label
+SignAuthOneReg	3	|GPR64:$Rn
+SignAuthReturnPCRel	3	|am_pauth_pcrel:$label
+SignAuthReturnReg	2	|GPR64common:$Rm
+for	5	|
+FlagRotate	3	|
+BaseBaseAddSubCarry	4	regtype:$Rd|regtype:$Rn, regtype:$Rm
+BaseAddSubCarrySetFlags	4	|
+BaseTwoOperandRegReg	8	regtype:$Rd|in1regtype:$Rn, in2regtype:$Rm
+BaseDiv	5	|
+BaseShift	5	|
+BaseMulAccum	6	addtype:$Rd|multype:$Rn, multype:$Rm, addtype:$Ra
+WideMulAccum	5	|
+MulHi	3	GPR64:$Rd|GPR64:$Rn, GPR64:$Rm
+BaseCRC32	6	GPR32:$Rd|GPR32:$Rn, StreamReg:$Rm
+ADRI	4	GPR64:$Xd|adr:$label
+BaseMoveImmediate	4	regtype:$Rd|movimm32_imm:$imm, shifter:$shift
+BaseInsertImmediate	4	regtype:$Rd|regtype:$src, movimm32_imm:$imm, shifter:$shift
+BaseAddSubImm	7	dstRegtype:$Rd|
+AddSubImmShift	7	|srcRegtype:$Rn, immtype:$imm
+BaseAddSubSReg	6	regtype:$Rd|regtype:$Rn, (shifted_regtype $Rm, $shift
+BaseAddSubEReg	7	dstRegtype:$Rd|src1Regtype:$Rn, (src2Regtype $Rm, $extend
+BaseAddSubEReg64	7	dstRegtype:$Rd|src1Regtype:$Rn, src2Regtype:$Rm, ext_op:$ext
+AddSubG	3	|GPR64sp:$Rn, uimm6s16:$imm6, imm0_15:$imm4
+BaseExtractImm	4	regtype:$Rd|regtype:$Rn, regtype:$Rm, imm_type:$imm
+BaseBitfieldImm	4	regtype:$Rd|regtype:$Rn, imm_type:$immr, imm_type:$imms
+BaseBitfieldImmWith2RegArgs	4	regtype:$Rd|regtype:$src, regtype:$Rn, imm_type:$immr,                              imm_type:$imms
+BaseLogicalImm	6	dregtype:$Rd|sregtype:$Rn, imm_type:$imm
+BaseLogicalSReg	6	regtype:$Rd|regtype:$Rn, (shifted_regtype $Rm, $shift
+BaseCondComparisonImm	5	|regtype:$Rn, immtype:$imm, imm32_0_15:$nzcv, ccode:$cond
+BaseCondComparisonReg	4	|regtype:$Rn, regtype:$Rm, imm32_0_15:$nzcv, ccode:$cond
+BaseCondSelect	4	regtype:$Rd|regtype:$Rn, regtype:$Rm, ccode:$cond
+BaseCondSelectOp	5	regtype:$Rd|regtype:$Rn, regtype:$Rm, ccode:$cond
+UImm12OffsetOperand	1	|
+uimm12_scaled	1	|
+BaseLoadStoreUI	7	|
+LoadLiteral	5	regtype:$Rt|am_ldrlit:$label
+PrefetchLiteral	4	|prfop:$Rt, am_ldrlit:$label
+MemExtendOperand	2	|
+ro_extend	3	|
+ROAddrMode	4	|
+LoadStore8RO	7	|
+LoadStore16RO	7	|
+LoadStore32RO	7	|
+LoadStore64RO	7	|
+LoadStore128RO	7	|
+BasePrefetchRO	7	|
+BaseLoadStoreUnscale	7	|
+BaseLoadStoreUnprivileged	6	|
+BaseLoadStorePreIdx	8	|
+BaseLoadStorePostIdx	8	|
+BaseLoadStorePairOffset	6	|
+BaseLoadStoreAcquirePairOffset	5	|
+BaseLoadStorePairPreIdx	6	|
+BaseLoadStorePairPostIdx	6	|
+BaseLoadStorePairNoAlloc	6	|
+BaseLoadStorePairNoAllocLSUI	6	|
+BaseLoadStoreExclusive	9	|
+LoadStoreExclusiveSimple	9	|
+LoadExclusivePair	7	regtype:$Rt, regtype:$Rt2|GPR64sp0:$Rn
+BaseLoadStoreExclusiveLSUI	7	|
+LoadExclusiveLSUI	5	regtype:$Rt|GPR64sp0:$Rn
+StoreExclusiveLSUI	5	GPR32:$Ws|regtype:$Rt, GPR64sp0:$Rn
+BaseLoadUnprivilegedLSUI	4	|
+BaseStoreUnprivilegedLSUI	4	|
+StoreExclusive	7	GPR32:$Ws|regtype:$Rt, GPR64sp0:$Rn
+StoreExclusivePair	7	GPR32:$Ws|regtype:$Rt, regtype:$Rt2, GPR64sp0:$Rn
+BaseMemTag	7	|
+MemTagVector	5	|
+MemTagLoad	2	GPR64:$wback|GPR64:$Rt, GPR64sp:$Rn, simm9s16:$offset
+BaseMemTagStore	7	|
+ExceptionGeneration	4	|timm32_0_65535:$imm
+UDFType	2	|uimm16:$imm
+BaseFPToIntegerUnscaled	7	dstType:$Rd|srcType:$Rn
+BaseFPToInteger	8	dstType:$Rd|srcType:$Rn, immType:$scale
+BaseIntegerToFP	7	dstType:$Rd|srcType:$Rn, immType:$scale
+BaseIntegerToFPUnscaled	7	dstType:$Rd|srcType:$Rn
+BaseUnscaledConversion	5	dstType:$Rd|srcType:$Rn
+BaseUnscaledConversionToHigh	6	dstType:$Rd|srcType:$Rn, VectorIndex1:$idx
+BaseUnscaledConversionFromHigh	6	dstType:$Rd|srcType:$Rn, VectorIndex1:$idx
+BaseFPConversion	6	dstType:$Rd|srcType:$Rn
+BaseSingleOperandFPData	5	regtype:$Rd|regtype:$Rn
+BaseTwoOperandFPData	4	regtype:$Rd|regtype:$Rn, regtype:$Rm
+BaseThreeOperandFPData	5	regtype:$Rd|regtype:$Rn, regtype:$Rm, regtype: $Ra
+BaseOneOperandFPComparison	4	|regtype:$Rn
+BaseTwoOperandFPComparison	4	|regtype:$Rn, regtype:$Rm
+BaseFPCondComparison	4	|regtype:$Rn, regtype:$Rm, imm32_0_15:$nzcv, ccode:$cond
+BaseFPCondSelect	3	regtype:$Rd|regtype:$Rn, regtype:$Rm, ccode:$cond
+BaseFPMoveImmediate	3	regtype:$Rd|fpimmtype:$imm
+BaseSIMDThreeSameVector	8	regtype:$Rd|regtype:$Rn, regtype:$Rm
+BaseSIMDThreeSameVectorTied	8	regtype:$dst|regtype:$Rd, regtype:$Rn, regtype:$Rm
+BaseSIMDThreeSameVectorDot	11	|
+BaseSIMDThreeSameVectorFML	11	|
+BaseSIMDThreeVectors	9	regtype1:$Rd|regtype2:$Rn, regtype2:$Rm
+BaseSIMDTwoSameVector	10	regtype:$Rd|regtype:$Rn
+BaseSIMDTwoSameVectorTied	10	regtype:$dst|regtype:$Rd, regtype:$Rn
+BaseSIMDVectorLShiftLongBySize	7	V128:$Rd|regtype:$Rn
+BaseSIMDMixedTwoVector	10	outreg:$Rd|inreg:$Rn
+BaseSIMDMixedTwoVectorTied	10	outreg:$dst|outreg:$Rd, inreg:$Rn
+BaseSIMDCmpTwoVector	12	regtype:$Rd|regtype:$Rn
+BaseSIMDFPCvtTwoVector	10	outtype:$Rd|intype:$Rn
+BaseSIMDFPCvtTwoVectorTied	10	outtype:$dst|outtype:$Rd, intype:$Rn
+BaseSIMDDifferentThreeVector	11	outtype:$Rd|intype1:$Rn, intype2:$Rm
+BaseSIMDDifferentThreeVectorTied	11	outtype:$dst|outtype:$Rd, intype1:$Rn, intype2:$Rm
+BaseSIMDBitwiseExtract	5	regtype:$Rd|regtype:$Rn, regtype:$Rm, i32imm:$imm
+BaseSIMDZipVector	7	regtype:$Rd|regtype:$Rn, regtype:$Rm
+BaseSIMDThreeScalar	6	regtype:$Rd|regtype:$Rn, regtype:$Rm
+BaseSIMDThreeScalarTied	8	|
+BaseSIMDThreeScalarMixed	8	|
+BaseSIMDTwoScalar	8	regtype:$Rd|regtype2:$Rn
+BaseSIMDTwoScalarTied	7	regtype:$dst|regtype:$Rd, regtype2:$Rn
+BaseSIMDCmpTwoScalar	7	regtype:$Rd|regtype:$Rn
+SIMDInexactCvtTwoScalar	2	FPR32:$Rd|FPR64:$Rn
+BaseSIMDPairwiseScalar	7	regtype:$Rd|vectype:$Rn
+BaseSIMDAcrossLanes	9	regtype:$Rd|vectype:$Rn
+BaseSIMDInsDup	8	|
+SIMDDupFromMain	6	vecreg:$Rd|regtype:$Rn
+SIMDDupFromElement	8	vecreg:$Rd|V128:$Rn, idxtype:$idx
+SIMDDup64FromElement	8	|
+SIMDDup32FromElement	4	|
+SIMDDup16FromElement	4	|
+SIMDDup8FromElement	4	|
+BaseSIMDMov	7	regtype:$Rd|V128:$Rn, idxtype:$idx
+SIMDInsFromMain	4	V128:$dst|V128:$Rd, idxtype:$idx, regtype:$Rn
+BaseSIMDTableLookup	7	vectype:$Vd|listtype:$Vn, vectype:$Vm
+BaseSIMDTableLookupTied	7	vectype:$dst|vectype:$Vd, listtype:$Vn, vectype:$Vm
+BaseSIMDTableLookupIndexed	6	V128:$Rd|listtype:$Rn, V128:$Rm, idx_type:$idx
+BaseSIMDScalarDUP	5	regtype:$dst|vectype:$src, idxtype:$idx
+BaseSIMDModifiedImm	9	|
+BaseSIMDModifiedImmVector	10	vectype:$Rd|immtype:$imm8
+BaseSIMDModifiedImmVectorTied	9	vectype:$dst|vectype:$Rd, immtype:$imm8
+BaseSIMDModifiedImmVectorShift	7	|logical_vec_shift:$shift
+BaseSIMDModifiedImmVectorShiftTied	7	|logical_vec_shift:$shift
+BaseSIMDModifiedImmVectorShiftHalf	7	|logical_vec_hw_shift:$shift
+BaseSIMDModifiedImmVectorShiftHalfTied	7	|logical_vec_hw_shift:$shift
+SIMDModifiedImmMoveMSL	7	|move_vec_shift:$shift
+SIMDModifiedImmVectorNoShift	9	|
+SIMDModifiedImmScalarNoShift	5	FPR64:$Rd|simdimmtype10:$imm8
+BaseSIMDIndexed	15	dst_reg:$Rd|lhs_reg:$Rn, rhs_reg:$Rm, vec_idx:$idx
+BaseSIMDIndexedTied	15	dst_reg:$dst|dst_reg:$Rd, lhs_reg:$Rn, rhs_reg:$Rm, vec_idx:$idx
+BaseSIMDThreeSameVectorBFDot	8	|
+SIMDBF16MLAL	3	|
+SIMDBF16MLALIndex	3	V128:$dst|V128:$Rd, V128:$Rn, V128_lo:$Rm, VectorIndexH:$idx
+SIMDThreeSameVectorBF16MatrixMul	1	|
+BF16ToSinglePrecision	1	FPR16:$Rd|FPR32:$Rn
+BaseSIMDThreeSameVectorIndexB	8	|
+SIMDThreeSameVectorMatMul	4	|
+BaseSIMDThreeSameVectorIndexS	13	|
+BaseSIMDThreeSameVectorIndexH	14	|
+BaseSIMDScalarShift	8	regtype1:$Rd|regtype2:$Rn, immtype:$imm
+BaseSIMDScalarShiftTied	8	regtype1:$dst|regtype1:$Rd, regtype2:$Rn, immtype:$imm
+BaseSIMDVectorShift	11	dst_reg:$Rd|src_reg:$Rn, immtype:$imm
+BaseSIMDVectorShiftTied	11	vectype1:$dst|vectype1:$Rd, vectype2:$Rn, immtype:$imm
+BaseSIMDLdSt	8	|
+BaseSIMDLdStPost	7	|
+BaseSIMDLdStSingle	9	|
+BaseSIMDLdStSingleTied	9	|
+BaseSIMDLdR	7	listtype:$Vt|GPR64sp:$Rn
+BaseSIMDLdRPost	8	GPR64sp:$wback, listtype:$Vt|GPR64sp:$Rn, GPR64pi:$Xm
+SIMDLdStSingleB	7	|
+SIMDLdStSingleBTied	7	|
+SIMDLdStSingleBPost	6	|
+SIMDLdStSingleBTiedPost	6	|
+SIMDLdStSingleH	8	|
+SIMDLdStSingleHTied	8	|
+SIMDLdStSingleHPost	7	|
+SIMDLdStSingleHTiedPost	7	|
+SIMDLdStSingleS	8	|
+SIMDLdStSingleSTied	8	|
+SIMDLdStSingleSPost	7	|
+SIMDLdStSingleSTiedPost	7	|
+SIMDLdStSingleD	8	|
+SIMDLdStSingleDTied	8	|
+SIMDLdStSingleDPost	7	|
+SIMDLdStSingleDTiedPost	7	|
+BaseSIMDThreeSameVectorTiedR0	8	|
+ComplexRotationOperand	3	|
+BaseSIMDThreeSameVectorComplex	9	regtype:$Rd|regtype:$Rn, regtype:$Rm, rottype:$rot
+BaseSIMDThreeSameVectorTiedComplex	9	regtype:$dst|regtype:$Rd, regtype:$Rn, regtype:$Rm, rottype:$rot
+BaseSIMDIndexedTiedComplex	17	dst_reg:$dst|dst_reg:$Rd, lhs_reg:$Rn, rhs_reg:$Rm, vec_idx:$idx, rottype:$rot
+AESBase	6	|
+SHA3OpTiedInst	6	|
+SHA2OpInst	7	|
+BaseCryptoV82	6	|
+CryptoRRTied	4	V128:$Vdst|V128:$Vd, V128:$Vn
+CryptoRRR	7	|
+CryptoRRRR	3	V128:$Vd|V128:$Vn, V128:$Vm, V128:$Va
+CryptoRRRR_16B	2	|
+CryptoRRRR_4S	2	|
+CryptoRRRi6	1	V128:$Vd|V128:$Vn, V128:$Vm, uimm6:$imm
+CryptoRRRi2Tied	3	V128:$Vdst|V128:$Vd, V128:$Vn, V128:$Vm, VectorIndexS:$imm
+BaseCASEncoding	6	|
+BaseCAS	3	RC:$out|RC:$Rs, RC:$Rt, GPR64sp:$Rn
+BaseCASP	3	RC:$out|RC:$Rs, RC:$Rt, GPR64sp:$Rn
+BaseCASTEncoding	5	|
+BaseSWP	3	RC:$Rt|RC:$Rs, GPR64sp:$Rn
+BaseSWPLSUI	2	RC:$Rt|RC:$Rs, GPR64sp:$Rn
+BaseLDOPregister	4	RC:$Rt|RC:$Rs, GPR64sp:$Rn
+BaseLDOPregisterLSUI	3	RC:$Rt|RC:$Rs, GPR64sp:$Rn
+LoadStore64B_base	6	|
+LoadStore64B	5	|
+Store64BV	3	GPR64:$Rs|GPR64x8:$Rt, GPR64sp:$Rn
+MOPSMemoryCopyMoveBase	5	GPR64common:$Rd_wb, GPR64common:$Rs_wb, GPR64:$Rn_wb|GPR64common:$Rd, GPR64common:$Rs, GPR64:$Rn
+MOPSMemorySetBase	8	GPR64common:$Rd_wb, GPR64:$Rn_wb|
+MOPSMemorySet	5	|GPR64common:$Rd, GPR64:$Rn, GPR64:$Rm
+MOPSMemorySetTagging	5	|GPR64common:$Rd, GPR64:$Rn, GPR64:$Rm
+MOPSGoMemorySetTagging	5	|GPR64common:$Rd, GPR64:$Rn
+BaseTwoOperandRegImm	8	regtype:$Rd|regtype:$Rn, immtype:$imm
+BaseComparisonOpReg	6	|
+BaseComparisonOpImm	7	|
+BaseLRCPC3	8	|
+BaseLRCPC3IntegerLoadStorePair	8	|
+BaseLRCPC3IntegerLoadStore	7	|
+LRCPC3NEONLdStSingle	5	|
+BaseRCWCASEncoding	3	|
+BaseRCWOPEncoding	1	GPR64:$Rt|GPR64:$Rs, GPR64sp:$Rn
+BaseRCWOPPEncoding	1	GPR64common:$Rt_wb, GPR64common:$Rt2_wb|GPR64common:$Rt, GPR64common:$Rt2, GPR64sp:$Rn
+LSE128Base	4	GPR64common:$Rt_wb, GPR64common:$Rt2_wb|GPR64common:$Rt, GPR64common:$Rt2, GPR64sp:$Rn
+RtSystemI128	6	|
+BaseSYSPEncoding	5	|
+BaseAddSubCPA	2	GPR64sp:$Rd|GPR64sp:$Rn, GPR64:$Rm, lsl_imm3_shift_operand:$shift_imm
+MulAccumCPA	2	|
+BaseCmpBranchRegister	5	|regtype:$Rt, regtype:$Rm, am_brcmpcond:$target
+BaseCmpBranchImmediate	5	|regtype:$Rt, imm_ty:$imm, am_brcmpcond:$target
+CmpBranchRegisterPseudo	1	|ccode:$Cond, regtype:$Rt, regtype:$Rm, am_brcmpcond:$Target
+CmpBranchImmediatePseudo	2	|ccode:$Cond, regtype:$Rt, imtype:$Imm, am_brcmpcond:$Target
+BaseAtomicFPLoad	5	regtype:$Rt|regtype:$Rs, GPR64sp:$Rn
+BaseAtomicFPStore	5	|regtype:$Rs, GPR64sp:$Rn
+BaseSIMDThreeSameVectorFP8MatrixMul	4	|
+TCHANGERegInst	2	GPR64:$Xd|GPR64:$Xn, TIndexhint_op:$nb
+TCHANGEImmInst	2	GPR64:$Xd|imm0_127:$imm, TIndexhint_op:$nb
+TENTERInst	1	|imm0_127:$imm, TIndexhint_op:$nb
+TEXITInst	1	|TIndexhint_op:$nb
+GCSNoOp	2	|
+GCSRtIn	4	|GPR64:$Rt
+GCSRtOut	4	GPR64:$Rt|GPR64:$src
+GCSSt	2	|GPR64:$Rt, GPR64sp:$Rn
+BaseSIMDSUDOTIndex	7	|
+SImm9OffsetOperand	1	|
+LFIAddrMode	1	|
+LFIVariant	4	|
+PairVariant	4	|
+SIMDPost	3	|
+MemInfo	6	|
+ScalarMemFam	2	|
+PairFam	2	|
+SIMDPostFam	2	|
+AArch64Reg	4	|
+TypedVecListAsmOperand	4	|
+FPRAsmOperand	1	|
+ElementSizeEnum	1	|
+SVERegOp	4	|
+ZPRRegOp	4	|
+PPRClass	3	|
+PPRAsmOperand	3	|
+PPRRegOp	4	|
+PNRClass	2	|
+PNRAsmOperand	3	|
+PNRRegOp	4	|
+PNRP8to15RegOp	4	|
+PPRorPNRClass	10	|
+PPRorPNRAsmOperand	3	|
+PPRVectorList	2	|
+PPRVectorListMul	2	|
+PPR2MulRegOp	3	|
+ZPRClass	3	|
+ZPRAsmOperand	3	|
+ZPRMul2_MinToMaxRegOp	6	|
+FPRasZPR	1	|
+FPRasZPROperand	1	|
+ZPRVectorList	2	|
+ZPRVectorListInRange	6	|
+ZPRVectorListStrided	3	|
+ZPRExtendAsmOperand	4	|
+ZPRExtendRegisterOperand	6	|
+GPR64ShiftExtendAsmOperand	3	|
+GPR64ExtendRegisterOperand	3	|
+MatrixTileAsmOperand	2	|
+MatrixTileOperand	2	|
+MatrixTileVectorAsmOperand	3	|
+MatrixTileVectorOperand	3	|
+MatrixAsmOperand	2	|
+MatrixOperand	2	|
+MatrixTileListAsmOperand	1	|
+CortexA320Write	2	|
+CortexA320MCWrite	3	|
+CortexA320MC_RC0Write	2	|
+CortexA320Write_PAC_B	1	|
+CortexA320VSt	1	|
+CortexA510Write	2	|
+CortexA510MCWrite	3	|
+CortexA510MC_RC0Write	2	|
+A510Write_PAC_B	1	|
+CortexA510VSt	1	|
+CortexA55WriteVd	2	|
+CortexA55WriteVq	2	|
+C1NanoWriteVMACBypass	1	|
+C1NanoCMEWrite	2	|
+C1NanoCMEWriteRC	3	|
+C1NanoWrite	2	|
+of	1	|
+C1UCMEWrite	2	|
+C1UCMEWriteRC	3	|
+AT	5	|
+DB	2	|
+DBnXS	3	|
+DC	5	|
+IC	6	|
+ISB	2	|
+PRFM	6	|
+SVEPRFM	2	|
+RPRFM	3	|
+SVEPREDPAT	2	|
+SVEVECLENSPECIFIER	2	|
+ExactFPImm	3	|
+PStateImm0_15	3	|
+PStateImm0_1	4	|
+SVCR	2	|
+TIndex	2	|
+RegValue	6	|
+TLBIPEntry	6	|
+TLBI	6	|
+SysReg	6	|
+RWSysReg	6	|
+ROSysReg	6	|
+WOSysReg	6	|
+GIC	6	|
+GSB	5	|
+GICR	5	|
+PLBIEntry	6	|
+SMEPseudo2Instr	2	|
+sme_outer_product_pseudo	2	|i32imm:$tile, PPR3bAny:$pn, PPR3bAny:$pm,                           zpr_ty:$zn, zpr_ty:$zm
+sme_sparse_outer_product_pseudo	3	|i32imm:$tile, zn_ty:$zn, zm_ty:$zm, ZK:$zk, i32imm:$idx
+sme2_quarter_tile_outer_product_pseudo	3	|i32imm:$tile,                           zn_ty:$zn, zm_ty:$zm
+sme2_za_array_2op_multi_single_pseudo	5	|MatrixIndexGPR32Op8_11:$Rv, index_ty:$imm3, multi_vector_ty:$Zn, zpr_ty:$Zm
+sme2_za_array_2op_multi_multi_pseudo	4	|MatrixIndexGPR32Op8_11:$Rv, index_ty:$imm3, multi_vector_ty:$Zn, multi_vector_ty:$Zm
+sme2_za_array_2op_multi_index_pseudo	6	|MatrixIndexGPR32Op8_11:$Rv, index_ty:$imm3, multi_vector_ty:$Zn, zpr_ty:$Zm, imm_ty:$i
+sme2_move_to_za_pseudo	4	|MatrixIndexGPR32Op8_11:$Rs, imm_ty:$imm, multi_vector_ty:$Zn
+sme2_move_to_tile_pseudo	5	|tile_imm:$tile, MatrixIndexGPR32Op12_15:$Rs, imm_ty:$imm, multi_vector_ty:$Zn
+sem2p1_zero_matrix_pseudo	3	|MatrixIndexGPR32Op8_11:$Rs, index_ty:$imm
+sme2_movez_to_tile_pseudo	5	vector_ty:$Zn|tile_imm:$tile, MatrixIndexGPR32Op12_15:$Rs, imm_ty:$imm
+sme2_movaz_array_to_tile_pseudo	4	multi_vector_ty:$Zd|MatrixIndexGPR32Op8_11:$Rv, index_ty:$imm3
+sme_fp_outer_product_inst	6	za_ty:$ZAda|za_ty:$_ZAda, PPR3bAny:$Pn, PPR3bAny:$Pm, zpr_ty:$Zn, zpr_ty:$Zm
+sme_int_outer_product_inst	6	za_ty:$ZAda|za_ty:$_ZAda, PPR3bAny:$Pn, PPR3bAny:$Pm, zpr_ty:$Zn, zpr_ty:$Zm
+sme_outer_product_widening_inst	3	TileOp32:$ZAda|TileOp32:$_ZAda, PPR3bAny:$Pn, PPR3bAny:$Pm, zpr_ty:$Zn, zpr_ty:$Zm
+sme_quarter_outer_product_i64	6	TileOp64:$ZAda|TileOp64:$_ZAda, zn_ty:$Zn, zm_ty:$Zm
+sme_quarter_outer_product_i8_i32	6	TileOp32:$ZAda|TileOp32:$_ZAda, zn_ty:$Zn, zm_ty:$Zm
+sme_quarter_outer_product_i16_i32	7	TileOp32:$ZAda|TileOp32:$_ZAda, zn_ty:$Zn, zm_ty:$Zm
+sme_add_vector_to_tile_inst	5	tile_ty:$ZAda|tile_ty:$_ZAda, PPR3bAny:$Pn, PPR3bAny:$Pm, zpr_ty:$Zn
+sme_add_vector_to_tile_pseudo	2	|i32imm:$tile, PPR3bAny:$Pn, PPR3bAny:$Pm, zpr_ty:$Zn
+sme_mem_ld_ss_base	7	|
+sme_mem_st_ss_base	6	|
+sme_spill_fill_base	4	|
+sme_vector_to_tile_base	7	|
+sme_vector_to_tile_inst	7	tile_ty:$ZAd|tile_ty:$_ZAd, MatrixIndexGPR32Op12_15:$Rv, imm_ty:$imm, PPR3bAny:$Pg, zpr_ty:$Zn
+sme_mova_insert_pseudo	1	|i32imm:$tile, MatrixIndexGPR32Op12_15:$idx,                           i32imm:$imm, PPR3bAny:$pg, ZPRAny:$zn
+sme_tile_to_vector_base	7	|
+sme_tile_to_vector_inst	7	zpr_ty:$Zd|zpr_ty:$_Zd, PPR3bAny:$Pg, tile_ty:$ZAn, MatrixIndexGPR32Op12_15:$Rv, imm_ty:$imm
+sme_zero_inst	1	|MatrixTileList:$imm
+sve2_int_perm_revd	1	ZPR128:$Zd|ZPR128:$_Zd, PPR3bAny:$Pg, ZPR128:$Zn
+sve2_clamp	4	zpr_ty:$Zd|zpr_ty:$_Zd, zpr_ty:$Zn, zpr_ty:$Zm
+sve2_int_perm_sel_p	3	PPRorPNRAny:$Pd|PPRorPNRAny:$Pn, ppr_ty:$Pm,                             MatrixIndexGPR32Op12_15:$Rv, imm_ty:$imm
+sme2_dot_mla_add_sub_array_vg24_single	5	matrix_ty:$ZAd|matrix_ty:$_ZAd, MatrixIndexGPR32Op8_11:$Rv,        sme_elm_idx0_7:$imm3, multi_vector_ty:$Zn, zpr_ty:$Zm
+sme2_dot_mla_add_sub_array_vg2_multi	4	matrix_ty:$ZAd|matrix_ty:$_ZAd, MatrixIndexGPR32Op8_11:$Rv,        sme_elm_idx0_7:$imm3, multi_vector_ty:$Zn, multi_vector_ty:$Zm
+sme2_dot_mla_add_sub_array_vg4_multi	4	matrix_ty:$ZAd|matrix_ty:$_ZAd, MatrixIndexGPR32Op8_11:$Rv,         sme_elm_idx0_7:$imm3, multi_vector_ty:$Zn, multi_vector_ty:$Zm
+sme2_multivec_accum_add_sub	6	matrix_ty:$ZAdn|matrix_ty:$_ZAdn, MatrixIndexGPR32Op8_11:$Rv, sme_elm_idx0_7:$imm3, vector_ty:$Zm
+sme2_multivec_accum_add_sub_vg2	5	|
+sme2_multivec_accum_add_sub_vg4	5	|
+sme2_sve_destructive_vector_vg2_single	5	vector_ty:$Zdn|vector_ty:$_Zdn, zpr_ty:$Zm
+sme2_sve_destructive_vector_vg4_single	5	vector_ty:$Zdn|vector_ty:$_Zdn, zpr_ty:$Zm
+sme2_sve_destructive_vector_vg2_multi	4	vector_ty:$Zdn|vector_ty:$_Zdn, vector_ty:$Zm
+sme2_sve_destructive_vector_vg4_multi	4	vector_ty:$Zdn|vector_ty:$_Zdn, vector_ty:$Zm
+sme2_mla_long_array_index_base	6	MatrixOp32:$ZAda|MatrixOp32:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, index_ty:$imm, multi_vector_ty:$Zn, ZPR4b16:$Zm, VectorIndexH32b_timm:$i3
+sme2_mla_long_array_vg2_index	3	|
+sme2_mla_long_array_vg4_index	3	|
+sme2_mla_long_array	8	matrix_ty:$ZAda|matrix_ty:$_ZAda, MatrixIndexGPR32Op8_11:$Rv,        index_ty:$imm, first_vector_ty:$Zn, second_vector_ty:$Zm
+sme2_mla_long_array_single_16b	1	|
+sme2_mla_long_array_vg24_single	9	|
+sme2_mla_long_array_vg2_multi	5	|
+sme2_mla_long_array_vg4_multi	5	|
+sme2_frint_cvt_vg2_multi	5	first_ty:$Zd|second_ty:$Zn
+sme2_frint_zip_cvt_vg4_multi	5	first_ty:$Zd|second_ty:$Zn
+sme2_cvt_vg2_single	4	first_ty:$Zd|second_ty:$Zn
+sme2_cvt_unpk_vector_vg2	6	first_ty:$Zd|second_ty:$Zn
+sme2_cvt_vg4_single	6	first_ty:$Zd|second_ty:$Zn
+sme2_unpk_vector_vg4	5	first_ty:$Zd|second_ty:$Zn
+sme2_clamp_vector_vg24_multi	6	multi_vector_ty:$Zd|multi_vector_ty:$_Zd, vector_ty:$Zn, vector_ty:$Zm
+sme2_clamp_vector_vg2_multi	6	|
+sme2_clamp_vector_vg4_multi	6	|
+sme2_zip_vector_vg2	6	multi_vector_ty:$Zd|vector_ty:$Zn, vector_ty:$Zm
+sme2_multi_vec_array_vg2_index	7	matrix_ty:$ZAda|matrix_ty:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, sme_elm_idx0_7:$imm3,          multi_vector_ty:$Zn, vector_ty:$Zm, index_ty:$i
+sme2_fp8_multi_vec_array_vg4_index	2	|
+sme2_multi_vec_array_vg2_index_64b	4	MatrixOp64:$ZAda|MatrixOp64:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, sme_elm_idx0_7:$imm3,          multi_vector_ty:$Zn, vector_ty:$Zm, VectorIndexD32b_timm:$i1
+sme2_multi_vec_array_vg4_index	7	matrix_ty:$ZAda|matrix_ty:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, sme_elm_idx0_7:$imm3,          multi_vector_ty:$Zn, vector_ty:$Zm, index_ty:$i
+sme2_multi_vec_array_vg4_index_64b	4	MatrixOp64:$ZAda|MatrixOp64:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, sme_elm_idx0_7:$imm3,          multi_vector_ty:$Zn, vector_ty:$Zm, VectorIndexD32b_timm:$i1
+sme2_fp8_fmlal_vg24_index_za16	5	MatrixOp16:$ZAda|MatrixOp16:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, uimm2s2range:$imm2,          multi_vector_ty:$Zn, ZPR4b8:$Zm, VectorIndexB32b_timm:$i
+sme2_fp8_fmlal_index_za16	3	MatrixOp16:$ZAda|MatrixOp16:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, uimm3s2range:$imm3, ZPR8:$Zn, ZPR4b8:$Zm, VectorIndexB32b_timm:$i
+sme2_mla_ll_array_index_32b	3	MatrixOp32:$ZAda|MatrixOp32:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, uimm2s4range:$imm2, ZPR8:$Zn, ZPR4b8:$Zm, VectorIndexB32b_timm:$i
+sme2_mla_ll_array_index_64b	2	MatrixOp64:$ZAda|MatrixOp64:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, uimm2s4range:$imm2, ZPR16:$Zn, ZPR4b16:$Zm, VectorIndexH32b_timm:$i
+sme2_mla_ll_array_vg24_index_32b	5	MatrixOp32:$ZAda|MatrixOp32:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, uimm1s4range:$imm,              vector_ty:$Zn, ZPR4b8:$Zm, VectorIndexB32b_timm:$i
+sme2_mla_ll_array_vg24_index_64b	4	MatrixOp64:$ZAda|MatrixOp64:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, uimm1s4range:$imm,              vector_ty:$Zn, ZPR4b16:$Zm, VectorIndexH32b_timm:$i
+sme2_mla_ll_array_single	5	matrix_ty:$ZAda|matrix_ty:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, uimm2s4range:$imm,              vector_ty:$Zn, zpr_ty:$Zm
+sme2_mla_ll_array_vg24_single	5	matrix_ty:$ZAda|matrix_ty:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, uimm1s4range:$imm,              vector_ty:$Zn, zpr_ty:$Zm
+sme2_mla_ll_array_vg2_multi	4	matrix_ty:$ZAda|matrix_ty:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, uimm1s4range:$imm,              vector_ty:$Zn, vector_ty:$Zm
+sme2_mla_ll_array_vg4_multi	4	matrix_ty:$ZAda|matrix_ty:$_ZAda, MatrixIndexGPR32Op8_11:$Rv, uimm1s4range:$imm,              vector_ty:$Zn, vector_ty:$Zm
+sme_int_sparse_outer_product_i16	4	TileOp16:$ZAda|TileOp16:$_ZAda, zn_ty:$Zn, zm_ty:$Zm, ZK:$Zk, VectorIndexS32b:$imm
+sme_int_sparse_outer_product_i32	4	TileOp32:$ZAda|TileOp32:$_ZAda, zn_ty:$Zn, zm_ty:$Zm, ZK:$Zk, VectorIndexS32b:$imm
+sme2_zero_zt	2	ZTR:$ZT|
+sme2_spill_fill_vector	2	|ZTR:$ZTt, GPR64sp:$Rn
+sme2_movt_zt_to_scalar	2	GPR64:$Rt|ZTR:$ZTt, uimm3s8:$imm3
+sme2_movt_scalar_to_zt	2	ZTR:$ZTt|uimm3s8:$imm3, GPR64:$Rt
+sme2_movt_zt_to_zt	2	ZTR:$ZTt|sme_elm_idx0_3:$off2, ZPRAny:$Zt
+sme2_luti_vector_index	5	vector_ty:$Zd|ZTR:$ZTt, ZPRAny:$Zn, index_ty:$i
+sme2_luti2_vector_index	3	|
+sme2_luti4_vector_index	3	|
+sme2_luti_vector_vg2_index	5	vector_ty:$Zd|ZTR:$ZTt, ZPRAny:$Zn, index_ty:$i
+sme2_luti2_vector_vg2_index	3	|
+sme2_luti4_vector_vg2_index	3	|
+sme2_luti_vector_vg4_index	5	vector_ty:$Zd|ZTR:$ZTt, ZPRAny:$Zn, index_ty:$i
+sme2_luti2_vector_vg4_index	3	|
+sme2_luti4_vector_vg4_index	3	|
+sme2_lut_single	1	ZPR8:$Zd|ZTR:$ZTt, ZPRAny:$Zn
+sme2_luti6_zt_base	2	zd_ty:$Zd|ZTR:$ZTt, ZZZ_Any_3b:$Zn
+sme2_luti6_zt_consecutive	1	|
+sme2_luti6_zt_strided	1	|
+sme2_luti6_vector_vg4_base	2	zd_ty:$Zd|ZZ_h:$Zn, ZZ_Any:$Zm, VectorIndexD:$i1
+sme2_luti6_vector_vg4_consecutive	1	|
+sme2_luti6_vector_vg4_strided	1	|
+sme2_mova_vec_to_tile_vg2_multi_base	6	tile_ty:$ZAd|tile_ty:$_ZAd, MatrixIndexGPR32Op12_15:$Rs, index_ty:$imm, vector_ty:$Zn
+sme2_mova_vec_to_tile_vg4_multi_base	7	tile_ty:$ZAd|tile_ty:$_ZAd, MatrixIndexGPR32Op12_15:$Rs, index_ty:$imm,             vector_ty:$Zn
+sme2_mova_vec_to_array_vg24_multi	5	array_ty:$ZAd|array_ty:$_ZAd, MatrixIndexGPR32Op8_11:$Rs, sme_elm_idx0_7:$imm,             vector_ty:$Zn
+sme2_mova_tile_to_vec_vg2_multi_base	7	vector_ty:$Zd, tile_ty:$_ZAn|tile_ty:$ZAn, MatrixIndexGPR32Op12_15:$Rs, index_ty:$imm
+sme2_mova_tile_to_vec_vg4_multi_base	7	vector_ty:$Zd, tile_ty:$_ZAn|tile_ty:$ZAn, MatrixIndexGPR32Op12_15:$Rs, index_ty:$imm
+sme2_mova_array_to_vec_vg24_multi	5	vector_ty:$Zd, array_ty:$_ZAn|array_ty:$ZAn, MatrixIndexGPR32Op8_11:$Rs, sme_elm_idx0_7:$imm
+sme2_sat_shift_vector_vg2	3	ZPR16:$Zd|ZZ_s_mul_r:$Zn, vecshiftR16:$imm4
+sme2_sat_shift_vector_vg4	6	zpr_ty:$Zd|vector_ty:$Zn, imm_ty:$imm
+sme2_sel_vector_vg24	4	vector_ty:$Zd|PNRAny_p8to15:$PNg, vector_ty:$Zn, vector_ty:$Zm
+sme2_sel_vector_vg2	3	|
+sme2_sel_vector_vg4	3	|
+sme2_ld_vector_vg2_multi_scalar_scalar	5	multi_vector_ty:$Zt|PNRAny_p8to15:$PNg, GPR64sp:$Rn, gpr_ty:$Rm
+sme2_ld_vector_vg4_multi_scalar_scalar	5	multi_vector_ty:$Zt|PNRAny_p8to15:$PNg, GPR64sp:$Rn, gpr_ty:$Rm
+sme2_ld_vector_vg24_multi_scalar_immediate	6	multi_vector_ty:$Zt|PNRAny_p8to15:$PNg, GPR64sp:$Rn, index_ty:$imm4
+sme2_st_vector_vg2_multi_scalar_scalar	5	|multi_vector_ty:$Zt, PNRAny_p8to15:$PNg, GPR64sp:$Rn, gpr_ty:$Rm
+sme2_st_vector_vg4_multi_scalar_scalar	5	|multi_vector_ty:$Zt, PNRAny_p8to15:$PNg, GPR64sp:$Rn, gpr_ty:$Rm
+sme2_st_vector_vg24_multi_scalar_immediate	6	|multi_vector_ty:$Zt, PNRAny_p8to15:$PNg, GPR64sp:$Rn, index_ty:$imm4
+sme2p1_movaz_tile_to_vec_base	7	vector_ty:$Zd, tile_ty:$ZAn|tile_ty:$_ZAn, MatrixIndexGPR32Op12_15:$Rs, index_ty:$imm
+sme2p1_zero_matrix	4	MatrixOp64:$ZAd|MatrixOp64:$_ZAd, MatrixIndexGPR32Op8_11:$Rv, index_ty:$imm
+sme2p1_luti_vector_vg2_index	5	vector_ty:$Zd|ZTR:$ZTt, ZPRAny:$Zn, index_ty:$i
+sme2p1_luti2_vector_vg2_index	4	|
+sme2p1_luti4_vector_vg2_index	4	|
+sme2p1_luti_vector_vg4_index	5	vector_ty:$Zd|ZTR:$ZTt, ZPRAny:$Zn, index_ty:$i
+sme2p1_luti2_vector_vg4_index	4	|
+sme2p1_luti4_vector_vg4_index	4	|
+sme2_luti4_vector_vg4	3	ZZZZ_b_mul_r:$Zd|ZTR:$ZTt, ZZ_mul_r:$Zn
+sme2_luti4_vector_vg4_strided	3	ZZZZ_b_strided:$Zd|ZTR:$ZTt, ZZ_mul_r:$Zn
+sme2_bf16_fp32_quarter_tile_outer_product	6	TileOp32:$ZAda|TileOp32:$_ZAda, zn_ty:$Zn, zm_ty:$Zm
+sme2_multi2_fmul_sm	4	vector_ty:$Zd|vector_ty:$Zn, zpr_ty:$Zm
+sme2_multi4_fmul_sm	4	vector_ty:$Zd|vector_ty:$Zn, zpr_ty:$Zm
+sme2_multi2_fmul_mm	3	vector_ty:$Zd|vector_ty:$Zn, vector_ty:$Zm
+sme2_multi4_fmul_mm	3	vector_ty:$Zd|vector_ty:$Zn, vector_ty:$Zm
+sme2_fp16_quarter_tile_outer_product	6	TileOp16:$ZAda|TileOp16:$_ZAda, zn_ty:$Zn, zm_ty:$Zm
+sme2_fp8_fp32_quarter_tile_outer_product	5	TileOp32:$ZAda|TileOp32:$_ZAda, zn_ty:$Zn, zm_ty:$Zm
+sme2_bf16_fp16_quarter_tile_outer_product	6	TileOp16:$ZAda|TileOp16:$_ZAda, zn_ty:$Zn, zm_ty:$Zm
+sme2_fp32_quarter_tile_outer_product	6	TileOp32:$ZAda|TileOp32:$_ZAda, zn_ty:$Zn, zm_ty:$Zm
+sme2_fp64_quarter_tile_outer_product	6	TileOp64:$ZAda|TileOp64:$_ZAda, zn_ty:$Zn, zm_ty:$Zm
+sme2_fp16_fp32_quarter_tile_outer_product	6	TileOp32:$ZAda|TileOp32:$_ZAda, zn_ty:$Zn, zm_ty:$Zm
+sme2_fp8_fp16_quarter_tile_outer_product	5	TileOp16:$ZAda|TileOp16:$_ZAda, zn_ty:$Zn, zm_ty:$Zm
+to	1	|
+to	1	|
+SVELogicalImmOperand	1	|
+SVEPreferredLogicalImmOperand	1	|
+SVELogicalImmNotOperand	1	|
+SVEShiftedImmOperand	3	|
+imm8_opt_lsl	3	|
+SVEExactFPImm	3	|
+SVEExactFPImmOperand	3	|
+sve_int_ptrue	6	pprty:$Pd|sve_pred_enum:$pattern
+SVEPseudo2Instr	2	|
+SVEInstr2Rev	3	|
+PredTwoOpPseudo	3	zprty:$Zd|PPR3bAny:$Pg, zprty:$Zs1, zprty:$Zs2
+PredTwoOpImmPseudo	4	zprty:$Zd|PPR3bAny:$Pg, zprty:$Zs1, immty:$imm
+PredThreeOpPseudo	3	zprty:$Zd|PPR3bAny:$Pg, zprty:$Zs1, zprty:$Zs2, zprty:$Zs3
+UnpredRegImmPseudo	2	zprty:$Zd|zprty:$Zs, immty:$imm
+UnpredTwoOpImmPseudo	3	zprty:$Zd|zprty:$Zs1, immty:$imm
+PredOneOpPassthruPseudo	4	zprty:$Zd|zprty:$Passthru, PPR3bAny:$Pg, zprty:$Zs
+sve_int_pfalse	2	PPRorPNR8:$Pd|
+sve_int_ptest	3	|PPRAny:$Pg, PPR8:$Pn
+sve_int_pfirst_next	4	pprty:$Pdn|PPRAny:$Pg, pprty:$_Pdn
+sve_int_count_r	6	dty:$Rdn|pprty:$Pg, sty:$_Rdn
+sve_int_count_v	5	zprty:$Zdn|zprty:$_Zdn, pprty:$Pm
+sve_int_pcount_pred	4	GPR64:$Rd|PPRAny:$Pg, pprty:$Pn
+sve_int_count	2	GPR64:$Rd|sve_pred_enum:$pattern, sve_incdec_imm:$imm4
+sve_int_countvlv	3	zprty:$Zdn|zprty:$_Zdn, sve_pred_enum:$pattern, sve_incdec_imm:$imm4
+sve_int_pred_pattern_a	2	GPR64:$Rdn|GPR64:$_Rdn, sve_pred_enum:$pattern, sve_incdec_imm:$imm4
+sve_int_pred_pattern_b	4	dt:$Rdn|st:$_Rdn, sve_pred_enum:$pattern, sve_incdec_imm:$imm4
+sve_int_perm_dup_r	6	zprty:$Zd|srcRegType:$Rn
+sve_int_perm_dup_i	4	zprty:$Zd|zprty:$Zn, immtype:$idx
+sve_int_perm_tbl	5	zprty:$Zd|VecList:$Zn, zprty:$Zm
+sve2_int_perm_tbx	4	zprty:$Zd|zprty:$_Zd, zprty:$Zn, zprty:$Zm
+sve_int_perm_reverse_z	3	zprty:$Zd|zprty:$Zn
+sve_int_perm_reverse_p	4	pprty:$Pd|pprty:$Pn
+sve_int_perm_unpk	5	zprty1:$Zd|zprty2:$Zn
+sve_int_perm_insrs	4	zprty:$Zdn|zprty:$_Zdn, srcRegType:$Rm
+sve_int_perm_insrv	4	zprty:$Zdn|zprty:$_Zdn, srcOpType:$Vm
+sve_int_perm_extract_i	1	ZPR8:$Zdn|ZPR8:$_Zdn, ZPR8:$Zm, imm0_255:$imm8
+sve2_int_perm_extract_i_cons	1	ZPR8:$Zd|ZZ_b:$Zn, imm0_255:$imm8
+sve_int_sel_vvv	3	zprty:$Zd|PPRAny:$Pg, zprty:$Zn, zprty:$Zm
+sve_int_pred_log	2	PPRorPNR8:$Pd|PPRorPNRAny:$Pg, PPRorPNR8:$Pn, PPRorPNR8:$Pm
+sve_int_log_imm	2	ZPR64:$Zdn|ZPR64:$_Zdn, logical_imm64:$imms13
+sve_int_dup_mask_imm	1	ZPR64:$Zd|logical_imm64:$imms
+sve_int_bin_cons_arit_0	4	zprty:$Zd|zprty:$Zn, zprty:$Zm
+sve_fp_2op_i_p_zds	5	zprty:$Zdn|PPR3bAny:$Pg, zprty:$_Zdn, imm_ty:$i1
+sve_fp_2op_p_zds	4	zprty:$Zdn|PPR3bAny:$Pg, zprty:$_Zdn, zprty:$Zm
+sve_fp_ftmad	3	zprty:$Zdn|zprty:$_Zdn, zprty:$Zm, timm32_0_7:$imm3
+sve_fp_3op_u_zd	4	zprty:$Zd|zprty:$Zn, zprty:$Zm
+sve_fp_3op_p_zds_a	4	zprty:$Zda|PPR3bAny:$Pg, zprty:$_Zda, zprty:$Zn, zprty:$Zm
+sve_fp_3op_p_zds_b	4	zprty:$Zdn|PPR3bAny:$Pg, zprty:$_Zdn, zprty:$Zm, zprty:$Za
+sve_fp_fma_by_indexed_elem	6	zprty1:$Zda|zprty1:$_Zda, zprty1:$Zn, zprty2:$Zm, itype:$iop
+sve_fp_fmul_by_indexed_elem	6	zprty:$Zd|zprty:$Zn, zprty2:$Zm, itype:$iop
+sve_fp_fcmla	3	zprty:$Zda|PPR3bAny:$Pg, zprty:$_Zda, zprty:$Zn, zprty:$Zm,                         complexrotateop:$imm
+sve_fp_fcmla_by_indexed_elem	5	zprty:$Zda|zprty:$_Zda, zprty:$Zn, zprty2:$Zm, itype:$iop,                         complexrotateop:$imm
+sve_fp_fcadd	3	zprty:$Zdn|PPR3bAny:$Pg, zprty:$_Zdn, zprty:$Zm,                         complexrotateopodd:$imm
+sve2_fp_convert_precision	6	zprty1:$Zd|zprty1:$_Zd, PPR3bAny:$Pg, zprty2:$Zn
+sve2_fp_pairwise_pred	4	zprty:$Zdn|PPR3bAny:$Pg, zprty:$_Zdn, zprty:$Zm
+sve2_fp_mla_long_by_indexed_elem	2	ZPR32:$Zda|ZPR32:$_Zda, ZPR16:$Zn, ZPR3b16:$Zm,                         VectorIndexH32b:$iop
+sve2_fp_mla_long	2	ZPR32:$Zda|ZPR32:$_Zda, ZPR16:$Zn, ZPR16:$Zm
+sve_int_arith_vl	3	GPR64sp:$Rd|GPR64sp:$Rn, simm6_32b:$imm6
+sve_int_read_vl_a	4	GPR64:$Rd|simm6_32b:$imm6
+sve_int_perm_bin_perm_zz	4	zprty:$Zd|zprty:$Zn, zprty:$Zm
+sve_fp_2op_p_zd	5	o_zprtype:$Zd|i_zprtype:$_Zd, PPR3bAny:$Pg, i_zprtype:$Zn
+sve_fp_2op_u_zd	4	zprty:$Zd|zprty:$Zn
+sve_fp_z2op_p_zd	4	o_zprtype:$Zd|PPR3bAny:$Pg, i_zprtype:$Zn
+sve_int_bin_pred_arit_log	5	zprty:$Zdn|PPR3bAny:$Pg, zprty:$_Zdn, zprty:$Zm
+sve_int_mladdsub_vvv_pred	4	zprty:$Zdn|PPR3bAny:$Pg, zprty:$_Zdn, zprty:$Zm, zprty:$Za
+sve_int_mlas_vvv_pred	4	zprty:$Zda|PPR3bAny:$Pg, zprty:$_Zda, zprty:$Zn, zprty:$Zm
+for	1	|
+sve2_int_mla	5	zprty1:$Zda|zprty1:$_Zda, zprty2:$Zn, zprty2:$Zm
+sve2_int_mla_by_indexed_elem	7	zprty1:$Zda|zprty1:$_Zda, zprty2:$Zn, zprty3:$Zm, itype:$iop
+sve_intx_dot	6	zprty1:$Zda|zprty1:$_Zda, zprty2:$Zn, zprty2:$Zm
+sve_intx_dot_by_indexed_elem	6	zprty1:$Zda|zprty1:$_Zda, zprty2:$Zn, zprty3:$Zm, itype:$iop
+sve_intx_dot_by_indexed_elem_x	2	|
+sve2_complex_int_arith	5	zprty1:$Zda|zprty1:$_Zda, zprty2:$Zn, zprty2:$Zm,                          complexrotateop:$rot
+sve2_complex_int_arith_indexed	7	zprty1:$Zda|zprty1:$_Zda, zprty2:$Zn, zprty3:$Zm, itype:$iop,                          complexrotateop:$rot
+sve2_int_mul	4	zprty:$Zd|zprty:$Zn, zprty:$Zm
+sve2_int_mul_by_indexed_elem	7	zprty1:$Zd|zprty2:$Zn, zprty3:$Zm, itype:$iop
+sve2_int_arith_pred	4	zprty:$Zdn|PPR3bAny:$Pg, zprty:$_Zdn, zprty:$Zm
+sve2_int_sadd_long_accum_pairwise	5	zprty1:$Zda|PPR3bAny:$Pg, zprty1:$_Zda, zprty2:$Zn
+sve2_int_un_pred_arit	4	zprty:$Zd|zprty:$_Zd, PPR3bAny:$Pg, zprty:$Zn
+sve2_int_un_pred_arit_z	4	zprty:$Zd|PPR3bAny:$Pg, zprty:$Zn
+sve2_wide_int_arith	6	zprty1:$Zd|zprty2:$Zn, zprty3:$Zm
+sve2_misc	5	zprty1:$Zd|zprty2:$Zn, zprty2:$Zm
+sve2_bitwise_xor_interleaved	5	zprty1:$Zd|zprty1:$_Zd, zprty2:$Zn, zprty2:$Zm
+sve2_bitwise_shift_left_long	6	zprty1:$Zd|zprty2:$Zn, immtype:$imm
+sve2_int_bin_shift_imm	5	zprty:$Zd|zprty:$_Zd, zprty:$Zn, immtype:$imm
+sve2_int_bin_accum_shift_imm	5	zprty:$Zda|zprty:$_Zda, zprty:$Zn, immtype:$imm
+sve2_int_cadd	4	zprty:$Zdn|zprty:$_Zdn, zprty:$Zm, complexrotateopodd:$rot
+sve2_int_absdiff_accum	5	zprty1:$Zda|zprty1:$_Zda, zprty2:$Zn, zprty2:$Zm
+sve2_int_bin_shift_imm_narrow_bottom	6	zprty1:$Zd|zprty2:$Zn, immtype:$imm
+sve2_int_bin_shift_imm_narrow_top	6	zprty1:$Zd|zprty1:$_Zd, zprty2:$Zn, immtype:$imm
+sve2_int_addsub_narrow_high_bottom	5	zprty1:$Zd|zprty2:$Zn, zprty2:$Zm
+sve2_int_addsub_narrow_high_top	5	zprty1:$Zd|zprty1:$_Zd, zprty2:$Zn, zprty2:$Zm
+sve2_int_sat_extract_narrow_bottom	5	zprty1:$Zd|zprty2:$Zn
+sve2_int_sat_extract_narrow_top	5	zprty1:$Zd|zprty1:$_Zd, zprty2:$Zn
+sve_int_un_pred_arit	4	zprty:$Zd|zprty:$_Zd, PPR3bAny:$Pg, zprty:$Zn
+sve_int_un_pred_arit_z	4	zprty:$Zd|PPR3bAny:$Pg, zprty:$Zn
+sve_int_dup_imm	4	zprty:$Zd|immtype:$imm
+sve_int_dup_fpimm	4	zprty:$Zd|fpimmtype:$imm8
+sve_int_arith_imm0	5	zprty:$Zdn|zprty:$_Zdn, immtype:$imm
+sve_int_arith_imm	5	zprty:$Zdn|zprty:$_Zdn, immtype:$imm
+sve_int_bin_cons_log	2	ZPR64:$Zd|ZPR64:$Zn, ZPR64:$Zm
+sve2_int_bitwise_ternary_op_d	2	ZPR64:$Zdn|ZPR64:$_Zdn, ZPR64:$Zm, ZPR64:$Zk
+sve2_int_rotate_right_imm	4	zprty:$Zdn|zprty:$_Zdn, zprty:$Zm, immtype:$imm
+sve_int_dup_fpimm_pred	4	zprty:$Zd|zprty:$_Zd, PPRAny:$Pg, fpimmtype:$imm8
+sve_int_dup_imm_pred	6	zprty:$Zd|
+sve_int_cmp	7	pprty:$Pd|PPR3bAny:$Pg, zprty1:$Zn, zprty2:$Zm
+sve_int_scmp_vi	6	pprty:$Pd|PPR3bAny:$Pg, zprty:$Zn, immtype:$imm5
+sve_int_ucmp_vi	6	pprty:$Pd|PPR3bAny:$Pg, zprty:$Zn, immtype:$imm7
+sve_int_cterm	4	|rt:$Rn, rt:$Rm
+sve_int_while_rr	5	pprty:$Pd|gprty:$Rn, gprty:$Rm
+sve2_int_while_rr	4	pprty:$Pd|GPR64:$Rn, GPR64:$Rm
+sve_fp_fast_red	5	dstOpType:$Vd|PPR3bAny:$Pg, zprty:$Zn
+sve_fp_2op_p_vd	5	dstOpType:$Vdn|PPR3bAny:$Pg, dstOpType:$_Vdn, zprty:$Zm
+sve_fp_3op_p_pd	5	pprty:$Pd|PPR3bAny:$Pg, zprty:$Zn, zprty:$Zm
+sve_fp_2op_p_pd	5	pprty:$Pd|PPR3bAny:$Pg, zprty:$Zn
+sve_int_index_ii	4	zprty:$Zd|imm_ty:$imm5, imm_ty:$imm5b
+sve_int_index_ir	5	zprty:$Zd|imm_ty:$imm5, srcRegType:$Rm
+sve_int_index_ri	5	zprty:$Zd|srcRegType:$Rn, imm_ty:$imm5
+sve_int_index_rr	4	zprty:$Zd|srcRegType:$Rn, srcRegType:$Rm
+sve_int_bin_pred_shift_imm	5	zprty:$Zdn|PPR3bAny:$Pg, zprty:$_Zdn, immtype:$imm
+sve_int_bin_pred_shift	6	zprty:$Zdn|PPR3bAny:$Pg, zprty:$_Zdn, zprty2:$Zm
+sve_int_bin_cons_shift_wide	4	zprty:$Zd|zprty:$Zn, ZPR64:$Zm
+sve_int_bin_cons_shift_imm	5	zprty:$Zd|zprty:$Zn, immtype:$imm
+sve_mem_cst_si	5	|VecList:$Zt, PPR3bAny:$Pg, GPR64sp:$Rn, simm4s1:$imm4
+sve_mem_est_si	5	|VecList:$Zt, PPR3bAny:$Pg, GPR64sp:$Rn, immtype:$imm4
+sve_mem_128b_est_si	4	|VecList:$Zt, PPR3bAny:$Pg, GPR64sp:$Rn, immtype:$imm4
+sve_mem_est_ss	5	|VecList:$Zt, PPR3bAny:$Pg, GPR64sp:$Rn, gprty:$Rm
+sve_mem_128b_est_ss	4	|VecList:$Zt, PPR3bAny:$Pg, GPR64sp:$Rn, gprty:$Rm
+sve_mem_cst_ss_base	5	|listty:$Zt, PPR3bAny:$Pg, GPR64sp:$Rn, gprty:$Rm
+sve_mem_cstnt_si	4	|VecList:$Zt, PPR3bAny:$Pg, GPR64sp:$Rn, simm4s1:$imm4
+sve_mem_cstnt_ss_base	5	|listty:$Zt, PPR3bAny:$Pg, GPR64sp:$Rn, gprty:$Rm
+sve2_mem_sstnt_vs_base	4	|listty:$Zt, PPR3bAny:$Pg, zprty:$Zn, GPR64:$Rm
+sve_mem_sst_sv	6	|VecList:$Zt, PPR3bAny:$Pg, GPR64sp:$Rn, zprext:$Zm
+sve_mem_sst_sv2	4	|Z_d:$Zt, PPR3bAny:$Pg, GPR64sp:$Rn, zprext:$Zm
+sve_mem_sst_vi	5	|VecList:$Zt, PPR3bAny:$Pg, zprty:$Zn, imm_ty:$imm5
+sve_mem_z_spill	1	|ZPRAny:$Zt, GPR64sp:$Rn, simm9:$imm9
+sve_mem_p_spill	1	|PPRorPNRAny:$Pt, GPR64sp:$Rn, simm9:$imm9
+sve_int_perm_bin_perm_pp	5	pprty:$Pd|pprty:$Pn, pprty:$Pm
+sve_int_perm_punpk	2	PPR16:$Pd|PPR8:$Pn
+sve_int_rdffr_pred	3	PPR8:$Pd|PPRAny:$Pg
+sve_int_rdffr_unpred	2	PPR8:$Pd|
+sve_int_wrffr	2	|PPR8:$Pn
+sve_int_setffr	2	|
+sve_int_perm_clast_rz	5	rt:$Rdn|PPR3bAny:$Pg, rt:$_Rdn, zprty:$Zm
+sve_int_perm_clast_vz	5	rt:$Vdn|PPR3bAny:$Pg, rt:$_Vdn, zprty:$Zm
+sve_int_perm_clast_zz	4	zprty:$Zdn|PPR3bAny:$Pg, zprty:$_Zdn, zprty:$Zm
+sve_int_perm_last_r	5	resultRegType:$Rd|PPR3bAny:$Pg, zprty:$Zn
+sve_int_perm_last_v	5	dstRegtype:$Vd|PPR3bAny:$Pg, zprty:$Zn
+sve_int_perm_splice	3	zprty:$Zdn|PPR3bAny:$Pg, zprty:$_Zdn, zprty:$Zm
+sve2_int_perm_splice_cons	4	zprty:$Zd|PPR3bAny:$Pg, VecList:$Zn
+sve2_int_perm_expand	3	zprty:$Zd|PPR3bAny:$Pg, zprty:$Zn
+sve_int_perm_rev	4	zprty:$Zd|zprty:$_Zd, PPR3bAny:$Pg, zprty:$Zn
+sve_int_perm_rev_z	4	zprty:$Zd|PPR3bAny:$Pg, zprty:$Zn
+sve_int_perm_cpy_r	4	zprty:$Zd|zprty:$_Zd, PPR3bAny:$Pg, srcRegType:$Rn
+sve_int_perm_cpy_v	4	zprty:$Zd|zprty:$_Zd, PPR3bAny:$Pg, srcRegtype:$Vn
+sve_int_perm_compact	3	zprty:$Zd|PPR3bAny:$Pg, zprty:$Zn
+sve_mem_cld_si_base	5	VecList:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, simm4s1:$imm4
+sve_mem_cldnt_si_base	4	VecList:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, simm4s1:$imm4
+sve_mem_cldnt_ss_base	5	VecList:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, gprty:$Rm
+sve_mem_ldqr_si	3	VecList:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, simm4s16:$imm4
+sve_mem_ldqr_ss	4	VecList:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, gprty:$Rm
+sve_mem_ld_dup	6	VecList:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, immtype:$imm6
+sve_mem_cld_ss_base	6	VecList:$Zt|
+sve_mem_eld_si	5	VecList:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, immtype:$imm4
+sve_mem_eld_ss	5	VecList:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, gprty:$Rm
+sve_mem_32b_gld_sv	5	Z_s:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, zprext:$Zm
+sve_mem_32b_gld_vi	3	Z_s:$Zt|PPR3bAny:$Pg, ZPR32:$Zn, imm_ty:$imm5
+sve_mem_prfm_si	2	|sve_prfop:$prfop, PPR3bAny:$Pg, GPR64sp:$Rn, simm6s1:$imm6
+sve_mem_prfm_ss	3	|sve_prfop:$prfop, PPR3bAny:$Pg, GPR64sp:$Rn, gprty:$Rm
+sve_mem_32b_prfm_sv	4	|sve_prfop:$prfop, PPR3bAny:$Pg, GPR64sp:$Rn, zprext:$Zm
+sve_mem_32b_prfm_vi	3	|sve_prfop:$prfop, PPR3bAny:$Pg, ZPR32:$Zn, imm_ty:$imm5
+sve_mem_z_fill	1	ZPRAny:$Zt|GPR64sp:$Rn, simm9:$imm9
+sve_mem_p_fill	1	PPRorPNRAny:$Pt|GPR64sp:$Rn, simm9:$imm9
+sve2_mem_gldnt_vs_base	4	VecList:$Zt|
+sve_mem_64b_gld_sv	6	Z_d:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, zprext:$Zm
+sve_mem_64b_gld_vi	3	Z_d:$Zt|PPR3bAny:$Pg, ZPR64:$Zn, imm_ty:$imm5
+sve_mem_64b_prfm_sv	5	|sve_prfop:$prfop, PPR3bAny:$Pg, GPR64sp:$Rn, zprext:$Zm
+sve_mem_64b_prfm_vi	3	|sve_prfop:$prfop, PPR3bAny:$Pg, ZPR64:$Zn, imm_ty:$imm5
+sve_int_bin_cons_misc_0_a	5	zprty:$Zd|zprty:$Zn, zprext:$Zm
+sve_int_bin_cons_misc_0_b	3	zprty:$Zd|zprty:$Zn, zprty:$Zm
+sve_int_bin_cons_misc_0_c	3	zprty:$Zd|zprty:$Zn
+sve_int_reduce	6	dstOpType:$Vd|PPR3bAny:$Pg, zprty:$Zn
+sve_int_movprfx_pred	6	zprty:$Zd|
+sve_int_brkp	2	PPR8:$Pd|PPRAny:$Pg, PPR8:$Pn, PPR8:$Pm
+sve_int_brkn	2	PPR8:$Pdm|PPRAny:$Pg, PPR8:$Pn, PPR8:$_Pdm
+sve_int_break	4	PPR8:$Pd|
+sve2_char_match	5	pprty:$Pd|PPR3bAny:$Pg, zprty:$Zn, zprty:$Zm
+sve2_hist_gen_segment	2	ZPR8:$Zd|ZPR8:$Zn, ZPR8:$Zm
+sve2_hist_gen_vector	3	zprty:$Zd|PPR3bAny:$Pg, zprty:$Zn, zprty:$Zm
+sve2_crypto_cons_bin_op	3	zprty:$Zd|zprty:$Zn, zprty:$Zm
+sve2_crypto_des_bin_op	5	zprty:$Zdn|zprty:$_Zdn, zprty:$Zm
+sve2_crypto_unary_op	3	zprty:$Zdn|zprty:$_Zdn
+sve_crypto_binary_multi2	2	ZZ_b_mul_r:$Zdn|ZZ_b_mul_r:$_Zdn, ZPR128:$Zm, VectorIndexS32b_timm:$imm2
+sve_crypto_binary_multi4	2	ZZZZ_b_mul_r:$Zdn|ZZZZ_b_mul_r:$_Zdn, ZPR128:$Zm, VectorIndexS32b_timm:$imm2
+sve_crypto_pmlal_multi	1	ZZ_q_mul_r:$Zda|ZZ_q_mul_r:$_Zda, ZPR64:$Zn, ZPR64:$Zm
+sve_crypto_pmull_multi	1	ZZ_q_mul_r:$Zd|ZPR64:$Zn, ZPR64:$Zm
+sve_float_dot	5	dst_ty:$Zda|dst_ty:$_Zda, src_ty:$Zn, src_ty:$Zm
+sve_float_dot_indexed	6	dst_ty:$Zda|dst_ty:$_Zda, src1_ty:$Zn, src2_ty:$Zm, iop_ty:$iop
+sve_int_matmul	2	ZPR32:$Zda|ZPR32:$_Zda, ZPR8:$Zn, ZPR8:$Zm
+sve_int_dot_mixed	1	ZPR32:$Zda|ZPR32:$_Zda, ZPR8:$Zn, ZPR8:$Zm
+sve_int_dot_mixed_indexed	2	ZPR32:$Zda|ZPR32:$_Zda, ZPR8:$Zn, ZPR3b8:$Zm, VectorIndexS32b:$idx
+sve_fp_matrix_mla	4	zda_ty:$Zda|zda_ty:$_Zda, reg_ty:$Zn, reg_ty:$Zm
+sve_mem_ldor_si	3	VecList:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, simm4s32:$imm4
+sve_mem_ldor_ss	4	VecList:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, gprty:$Rm
+sve_int_perm_bin_perm_128_zz	3	ZPR128:$Zd|ZPR128:$Zn, ZPR128:$Zm
+sve_fp_clamp	3	zpr_ty:$Zd|zpr_ty:$_Zd, zpr_ty:$Zn, zpr_ty:$Zm
+sve2p1_two_way_dot_vvi	2	ZPR32:$Zda|ZPR32:$_Zda, ZPR16:$Zn, ZPR3b16:$Zm, VectorIndexS32b:$i2
+sve2p1_ptrue_pn	4	pnrty:$PNd|
+sve2p1_pred_as_ctr_to_mask_base	5	pprty:$Pd|PNRAny_p8to15:$PNn, idxty:$index
+sve2p1_pred_as_ctr_to_mask	3	|
+sve2p1_pred_as_ctr_to_mask_pair	3	|
+sve2p1_multi_vec_extract_narrow	3	ZPR16:$Zd|ZZ_s_mul_r:$Zn
+sve_multi_vec_shift_narrow	6	ZdRC:$Zd|ZSrcOp:$Zn, immtype:$imm
+sve2p1_mem_cld_ss_2z	5	vector_ty:$Zt|PNRAny_p8to15:$PNg, GPR64sp:$Rn, gpr_ty:$Rm
+sve2p1_mem_cld_si_2z	4	vector_ty:$Zt|PNRAny_p8to15:$PNg, GPR64sp:$Rn, simm4s2:$imm4
+sve2p1_mem_cld_ss_4z	5	vector_ty:$Zt|PNRAny_p8to15:$PNg, GPR64sp:$Rn, gpr_ty:$Rm
+sve2p1_mem_cld_si_4z	4	vector_ty:$Zt|PNRAny_p8to15:$PNg, GPR64sp:$Rn, simm4s4:$imm4
+sve2p1_mem_cst_ss_2z	5	|vector_ty:$Zt, PNRAny_p8to15:$PNg, GPR64sp:$Rn, gpr_ty:$Rm
+sve2p1_mem_cst_si_2z	4	|vector_ty:$Zt, PNRAny_p8to15:$PNg, GPR64sp:$Rn, simm4s2:$imm4
+sve2p1_mem_cst_ss_4z	5	|vector_ty:$Zt, PNRAny_p8to15:$PNg, GPR64sp:$Rn, gpr_ty:$Rm
+sve2p1_mem_cst_si_4z	4	|vector_ty:$Zt, PNRAny_p8to15:$PNg, GPR64sp:$Rn, simm4s4:$imm4
+sve2p1_pcount_pn	4	GPR64:$Rd|pnrty:$PNn, sve_vec_len_specifier_enum:$vl
+sve2p1_int_while_rr_pn	4	pnrty:$PNd|GPR64:$Rn, GPR64:$Rm, sve_vec_len_specifier_enum:$vl
+sve2p1_int_while_rr_pair	4	ppr_ty:$Pd|GPR64:$Rn, GPR64:$Rm
+sve_mem_128b_gld_64_unscaled	1	Z_q:$Zt|PPR3bAny:$Pg, ZPR64:$Zn, GPR64:$Rm
+sve_mem_sst_128b_64_unscaled	1	|Z_q:$Zt, PPR3bAny:$Pg, ZPR64:$Zn, GPR64:$Rm
+sve_mem_128b_cld_si	2	Z_q:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, simm4s1:$imm4
+sve_mem_128b_cld_ss	3	Z_q:$Zt|PPR3bAny:$Pg, GPR64sp:$Rn, gprsh_ty:$Rm
+sve2p1_fp_reduction_q	5	V128:$Vd|PPR3bAny:$Pg, zpr_ty:$Zn
+sve2p1_dupq	4	zprty:$Zd|zprty:$Zn, itype:$index
+sve2p1_extq	1	ZPR8:$Zdn|ZPR8:$_Zdn, ZPR8:$Zm, timm32_0_15:$imm4
+sve2p1_vector_to_pred	4	ppr_ty:$Pd|ZPRAny:$Zn, itype:$index
+sve2p1_pred_to_vector	4	ZPRAny:$Zd|ZPRAny:$_Zd, itype:$index, ppr_ty:$Pn
+sve2p1_int_reduce_q	5	V128:$Vd|PPR3bAny:$Pg, zpr_ty:$Zn
+sve2p1_permute_vec_elems_q	5	zpr_ty:$Zd|src1_ty:$Zn, zpr_ty:$Zm
+sve2_fp8_cvt_single	5	dst_ty:$Zd|src_ty:$Zn
+sve2_fp8_down_cvt_single	4	dst_ty:$Zd|src_ty:$Zn
+sve2_fp8_down_cvt_single_top	3	ZPR8:$Zd|ZPR8:$_Zd, src_ty:$Zn
+sve2_fp8_mla_long_by_indexed_elem	2	ZPR16:$Zda|ZPR16:$_Zda, ZPR8:$Zn, ZPR3b8:$Zm, VectorIndexB32b:$imm4
+sve2_fp8_mla	3	dst_ty:$Zda|dst_ty:$_Zda, ZPR8:$Zn, ZPR8:$Zm
+sve2_fp8_mla_long_long_by_indexed_elem	2	ZPR32:$Zda|ZPR32:$_Zda, ZPR8:$Zn, ZPR3b8:$Zm, VectorIndexB32b:$imm4
+sve2_fp8_mmla	3	dst_ty:$Zda|dst_ty:$_Zda, ZPR8:$Zn, ZPR8:$Zm
+sve_fp8_dot_indexed	4	dst_ty:$Zda|dst_ty:$_Zda, ZPR8:$Zn, ZPR3b8:$Zm, iop_ty:$iop
+sve2_lut_vector_index	5	zd_ty:$Zd|zn_ty:$Zn, ZPRAny:$Zm, idx_ty:$idx
+sve2_luti6_vector	1	ZPR8:$Zd|ZZ_b:$Zn, ZPRAny:$Zm
+sve_int_mad_cpa	1	ZPR64:$Zdn|ZPR64:$_Zdn, ZPR64:$Zm, ZPR64:$Za
+sve_int_mla_cpa	1	|
+sve2_fp_to_int_downcvt	5	ZdRC:$Zd|ZSrcOp:$Zn
+sve2_int_to_fp_upcvt	5	ZdRC:$Zd|ZnRC:$Zn

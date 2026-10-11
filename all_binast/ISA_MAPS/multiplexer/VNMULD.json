@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VNMULD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VNMULD": {"ARM": "VNMULD"}
+  },
+  "INPUTS": {
+    "VNMULD": {"ARM": [["DPR",0],["DPR",0]]}
+  },
+  "OUTPUTS": {
+    "VNMULD": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VNMULD": {"ARM": ["ADbI","0b11100","0b10","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VNMULD": {"ARM": ["ADbI","0b11100","0b10","1","0"]}
+  }
+}

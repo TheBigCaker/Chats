@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CYCLE",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "CYCLE": {"RISCV": "CYCLE"}
+  },
+  "INPUTS": {
+    "CYCLE": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "CYCLE": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "CYCLE": {"RISCV": ["SysReg","0xC00"]}
+  },
+  "OUTPUT_BYTES": {
+    "CYCLE": {"RISCV": ["SysReg","0xC00"]}
+  }
+}

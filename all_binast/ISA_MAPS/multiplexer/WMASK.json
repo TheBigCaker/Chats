@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "WMASK",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "WMASK": {"Mali": "WMASK"},
+    "WMASK": {"Mali": "WMASK"}
+  },
+  "INPUTS": {
+    "WMASK": {"Mali": [["R32",32]]},
+    "WMASK": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "WMASK": {"Mali": [["R",32]]},
+    "WMASK": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "WMASK": {"Mali": ["Bifrost_add","0x3d700","0xfffc0"]},
+    "WMASK": {"Mali": ["Valhall_CVT"]}
+  },
+  "OUTPUT_BYTES": {
+    "WMASK": {"Mali": ["Bifrost_add","0x3d700","0xfffc0"]},
+    "WMASK": {"Mali": ["Valhall_CVT"]}
+  }
+}

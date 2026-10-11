@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSMAXCQP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSMAXCQP": {"PowerPC": "XSMAXCQP"}
+  },
+  "INPUTS": {
+    "XSMAXCQP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSMAXCQP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSMAXCQP": {"PowerPC": ["X_VT5_VA5_VB5","63","676"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSMAXCQP": {"PowerPC": ["X_VT5_VA5_VB5","63","676"]}
+  }
+}

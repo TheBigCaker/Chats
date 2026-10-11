@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CALL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BLR8": {"PowerPC": "BLR8"}
+  },
+  "INPUTS": {
+    "BLR8": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "BLR8": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "BLR8": {"PowerPC": ["XLForm_2_ext","19","16","20","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "BLR8": {"PowerPC": ["XLForm_2_ext","19","16","20","0","0"]}
+  }
+}

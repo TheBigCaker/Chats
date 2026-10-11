@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MFSPR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MFSPR8": {"PowerPC": "MFSPR8"}
+  },
+  "INPUTS": {
+    "MFSPR8": {"PowerPC": [["i32imm",32]]}
+  },
+  "OUTPUTS": {
+    "MFSPR8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MFSPR8": {"PowerPC": ["XFXForm_1","31","339"]}
+  },
+  "OUTPUT_BYTES": {
+    "MFSPR8": {"PowerPC": ["XFXForm_1","31","339"]}
+  }
+}

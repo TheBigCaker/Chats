@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MFOCRF",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MFOCRF8": {"PowerPC": "MFOCRF8"}
+  },
+  "INPUTS": {
+    "MFOCRF8": {"PowerPC": [["crbitm",0]]}
+  },
+  "OUTPUTS": {
+    "MFOCRF8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MFOCRF8": {"PowerPC": ["XFXForm_5a","31","19"]}
+  },
+  "OUTPUT_BYTES": {
+    "MFOCRF8": {"PowerPC": ["XFXForm_5a","31","19"]}
+  }
+}

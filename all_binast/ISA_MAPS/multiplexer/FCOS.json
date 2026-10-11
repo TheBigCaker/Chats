@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "FCOS",
+  "BACKENDS": ["X86","Mali"],
+  "INDEX": {
+    "FCOS": {"X86": "FCOS"},
+    "FCOS_TABLE.u6": {"Mali": "FCOS_TABLE.u6"},
+    "FCOS_TABLE.u6": {"Mali": "FCOS_TABLE.u6"}
+  },
+  "INPUTS": {
+    "FCOS": {"X86": []},
+    "FCOS_TABLE.u6": {"Mali": [["R32",32]]},
+    "FCOS_TABLE.u6": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "FCOS": {"X86": []},
+    "FCOS_TABLE.u6": {"Mali": [["R",32]]},
+    "FCOS_TABLE.u6": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FCOS": {"X86": ["0xD9"]},
+    "FCOS_TABLE.u6": {"Mali": ["Bifrost_add","0x67a88","0xfffe8"]},
+    "FCOS_TABLE.u6": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCOS": {"X86": ["0xD9"]},
+    "FCOS_TABLE.u6": {"Mali": ["Bifrost_add","0x67a88","0xfffe8"]},
+    "FCOS_TABLE.u6": {"Mali": ["Valhall_"]}
+  }
+}

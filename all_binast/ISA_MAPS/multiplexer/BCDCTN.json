@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BCDCTN",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BCDCTN_rec": {"PowerPC": "BCDCTN_rec"}
+  },
+  "INPUTS": {
+    "BCDCTN_rec": {"PowerPC": [["vrrc:$VB",0]]}
+  },
+  "OUTPUTS": {
+    "BCDCTN_rec": {"PowerPC": [["vrrc:$VD",0]]}
+  },
+  "INPUT_BYTES": {
+    "BCDCTN_rec": {"PowerPC": ["VX_VT5_EO5_VB5_XO9_o","5","385"]}
+  },
+  "OUTPUT_BYTES": {
+    "BCDCTN_rec": {"PowerPC": ["VX_VT5_EO5_VB5_XO9_o","5","385"]}
+  }
+}

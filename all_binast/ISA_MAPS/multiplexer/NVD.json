@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NVD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "NVDupLnFrm": {"ARM": "NVDupLnFrm"}
+  },
+  "INPUTS": {
+    "NVDupLnFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "NVDupLnFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "NVDupLnFrm": {"ARM": ["Format","34"]}
+  },
+  "OUTPUT_BYTES": {
+    "NVDupLnFrm": {"ARM": ["Format","34"]}
+  }
+}

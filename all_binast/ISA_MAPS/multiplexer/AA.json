@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "AA",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "AArch64_smstart": {"AArch64": "AArch64_smstart"},
+    "AArch64_smstop": {"AArch64": "AArch64_smstop"},
+    "AArch64_cond_smstart": {"AArch64": "AArch64_cond_smstart"},
+    "AArch64_cond_smstop": {"AArch64": "AArch64_cond_smstop"},
+    "AArch64_restore_zt": {"AArch64": "AArch64_restore_zt"},
+    "AArch64_save_zt": {"AArch64": "AArch64_save_zt"}
+  },
+  "INPUTS": {
+    "AArch64_smstart": {"AArch64": []},
+    "AArch64_smstop": {"AArch64": []},
+    "AArch64_cond_smstart": {"AArch64": []},
+    "AArch64_cond_smstop": {"AArch64": []},
+    "AArch64_restore_zt": {"AArch64": []},
+    "AArch64_save_zt": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "AArch64_smstart": {"AArch64": []},
+    "AArch64_smstop": {"AArch64": []},
+    "AArch64_cond_smstart": {"AArch64": []},
+    "AArch64_cond_smstop": {"AArch64": []},
+    "AArch64_restore_zt": {"AArch64": []},
+    "AArch64_save_zt": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "AArch64_smstart": {"AArch64": ["SDNode","1"]},
+    "AArch64_smstop": {"AArch64": ["SDNode","1"]},
+    "AArch64_cond_smstart": {"AArch64": ["SDNode","3"]},
+    "AArch64_cond_smstop": {"AArch64": ["SDNode","3"]},
+    "AArch64_restore_zt": {"AArch64": ["SDNode","2"]},
+    "AArch64_save_zt": {"AArch64": ["SDNode","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "AArch64_smstart": {"AArch64": ["SDNode","1"]},
+    "AArch64_smstop": {"AArch64": ["SDNode","1"]},
+    "AArch64_cond_smstart": {"AArch64": ["SDNode","3"]},
+    "AArch64_cond_smstop": {"AArch64": ["SDNode","3"]},
+    "AArch64_restore_zt": {"AArch64": ["SDNode","2"]},
+    "AArch64_save_zt": {"AArch64": ["SDNode","2"]}
+  }
+}

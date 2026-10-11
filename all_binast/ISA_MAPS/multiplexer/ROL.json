@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ROL",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "ROL": {"RISCV": "ROL"}
+  },
+  "INPUTS": {
+    "ROL": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "ROL": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "ROL": {"RISCV": ["ALU_rr","0b0110000","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "ROL": {"RISCV": ["ALU_rr","0b0110000","0b001"]}
+  }
+}

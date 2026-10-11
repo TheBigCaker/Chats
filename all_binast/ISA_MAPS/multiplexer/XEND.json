@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XEND",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XEND": {"X86": "XEND"}
+  },
+  "INPUTS": {
+    "XEND": {"X86": []}
+  },
+  "OUTPUTS": {
+    "XEND": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "XEND": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "XEND": {"X86": ["0x01"]}
+  }
+}

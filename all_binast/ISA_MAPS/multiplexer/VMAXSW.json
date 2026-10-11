@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMAXSW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMAXSW": {"PowerPC": "VMAXSW"}
+  },
+  "INPUTS": {
+    "VMAXSW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMAXSW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMAXSW": {"PowerPC": ["VX1_Int_Ty","386"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMAXSW": {"PowerPC": ["VX1_Int_Ty","386"]}
+  }
+}

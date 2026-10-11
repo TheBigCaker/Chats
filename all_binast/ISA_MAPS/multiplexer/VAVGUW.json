@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VAVGUW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VAVGUW": {"PowerPC": "VAVGUW"}
+  },
+  "INPUTS": {
+    "VAVGUW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VAVGUW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VAVGUW": {"PowerPC": ["VX1_Int_Ty","1154"]}
+  },
+  "OUTPUT_BYTES": {
+    "VAVGUW": {"PowerPC": ["VX1_Int_Ty","1154"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMADDFP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMADDFP": {"PowerPC": "VMADDFP"}
+  },
+  "INPUTS": {
+    "VMADDFP": {"PowerPC": [["vrrc",0],["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMADDFP": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMADDFP": {"PowerPC": ["VAForm_1","46"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMADDFP": {"PowerPC": ["VAForm_1","46"]}
+  }
+}

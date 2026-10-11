@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SRARI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SRARI_RV32": {"RISCV": "SRARI_RV32"},
+    "SRARI_RV64": {"RISCV": "SRARI_RV64"}
+  },
+  "INPUTS": {
+    "SRARI_RV32": {"RISCV": []},
+    "SRARI_RV64": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SRARI_RV32": {"RISCV": []},
+    "SRARI_RV64": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SRARI_RV32": {"RISCV": ["RVPShiftW_ri","0b101","0b100"]},
+    "SRARI_RV64": {"RISCV": ["RVPShiftD_ri","0b101","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "SRARI_RV32": {"RISCV": ["RVPShiftW_ri","0b101","0b100"]},
+    "SRARI_RV64": {"RISCV": ["RVPShiftD_ri","0b101","0b100"]}
+  }
+}

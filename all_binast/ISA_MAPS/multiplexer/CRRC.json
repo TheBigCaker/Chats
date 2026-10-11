@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CRRC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "CRRC": {"PowerPC": "CRRC"}
+  },
+  "INPUTS": {
+    "CRRC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "CRRC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "CRRC": {"PowerPC": ["PPCRegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "CRRC": {"PowerPC": ["PPCRegisterClass","32"]}
+  }
+}

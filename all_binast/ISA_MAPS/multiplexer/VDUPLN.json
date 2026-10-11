@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "VDUPLN",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VDUPLN16d": {"ARM": "VDUPLN16d"},
+    "VDUPLN32d": {"ARM": "VDUPLN32d"},
+    "VDUPLN16q": {"ARM": "VDUPLN16q"},
+    "VDUPLN32q": {"ARM": "VDUPLN32q"}
+  },
+  "INPUTS": {
+    "VDUPLN16d": {"ARM": []},
+    "VDUPLN32d": {"ARM": []},
+    "VDUPLN16q": {"ARM": []},
+    "VDUPLN32q": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VDUPLN16d": {"ARM": []},
+    "VDUPLN32d": {"ARM": []},
+    "VDUPLN16q": {"ARM": []},
+    "VDUPLN32q": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VDUPLN16d": {"ARM": ["VDUPLND","1"]},
+    "VDUPLN32d": {"ARM": ["VDUPLND","1","0"]},
+    "VDUPLN16q": {"ARM": ["VDUPLNQ","1"]},
+    "VDUPLN32q": {"ARM": ["VDUPLNQ","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VDUPLN16d": {"ARM": ["VDUPLND","1"]},
+    "VDUPLN32d": {"ARM": ["VDUPLND","1","0"]},
+    "VDUPLN16q": {"ARM": ["VDUPLNQ","1"]},
+    "VDUPLN32q": {"ARM": ["VDUPLNQ","1","0"]}
+  }
+}

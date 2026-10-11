@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFNMAS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFNMAS": {"ARM": "VFNMAS"}
+  },
+  "INPUTS": {
+    "VFNMAS": {"ARM": [["SPR",0],["SPR",0],["SPR",0]]}
+  },
+  "OUTPUTS": {
+    "VFNMAS": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFNMAS": {"ARM": ["ASbI","0b11101","0b01","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFNMAS": {"ARM": ["ASbI","0b11101","0b01","1","0"]}
+  }
+}

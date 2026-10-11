@@ -1,0 +1,69 @@
+{
+  "CATEGORY": "PNR",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "PNR": {"AArch64": "PNR"},
+    "PNR_3b": {"AArch64": "PNR_3b"},
+    "PNR_p8to15": {"AArch64": "PNR_p8to15"},
+    "PNR8": {"AArch64": "PNR8"},
+    "PNR16": {"AArch64": "PNR16"},
+    "PNR32": {"AArch64": "PNR32"},
+    "PNR64": {"AArch64": "PNR64"},
+    "PNR8_p8to15": {"AArch64": "PNR8_p8to15"},
+    "PNR16_p8to15": {"AArch64": "PNR16_p8to15"},
+    "PNR32_p8to15": {"AArch64": "PNR32_p8to15"},
+    "PNR64_p8to15": {"AArch64": "PNR64_p8to15"}
+  },
+  "INPUTS": {
+    "PNR": {"AArch64": []},
+    "PNR_3b": {"AArch64": []},
+    "PNR_p8to15": {"AArch64": []},
+    "PNR8": {"AArch64": []},
+    "PNR16": {"AArch64": []},
+    "PNR32": {"AArch64": []},
+    "PNR64": {"AArch64": []},
+    "PNR8_p8to15": {"AArch64": []},
+    "PNR16_p8to15": {"AArch64": []},
+    "PNR32_p8to15": {"AArch64": []},
+    "PNR64_p8to15": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "PNR": {"AArch64": []},
+    "PNR_3b": {"AArch64": []},
+    "PNR_p8to15": {"AArch64": []},
+    "PNR8": {"AArch64": []},
+    "PNR16": {"AArch64": []},
+    "PNR32": {"AArch64": []},
+    "PNR64": {"AArch64": []},
+    "PNR8_p8to15": {"AArch64": []},
+    "PNR16_p8to15": {"AArch64": []},
+    "PNR32_p8to15": {"AArch64": []},
+    "PNR64_p8to15": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "PNR": {"AArch64": ["PNRClass","0","15"]},
+    "PNR_3b": {"AArch64": ["PNRClass","0","7"]},
+    "PNR_p8to15": {"AArch64": ["PNRClass","8","15"]},
+    "PNR8": {"AArch64": ["PNRRegOp","8"]},
+    "PNR16": {"AArch64": ["PNRRegOp","16"]},
+    "PNR32": {"AArch64": ["PNRRegOp","32"]},
+    "PNR64": {"AArch64": ["PNRRegOp","64"]},
+    "PNR8_p8to15": {"AArch64": ["PNRP8to15RegOp","8"]},
+    "PNR16_p8to15": {"AArch64": ["PNRP8to15RegOp","16"]},
+    "PNR32_p8to15": {"AArch64": ["PNRP8to15RegOp","32"]},
+    "PNR64_p8to15": {"AArch64": ["PNRP8to15RegOp","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "PNR": {"AArch64": ["PNRClass","0","15"]},
+    "PNR_3b": {"AArch64": ["PNRClass","0","7"]},
+    "PNR_p8to15": {"AArch64": ["PNRClass","8","15"]},
+    "PNR8": {"AArch64": ["PNRRegOp","8"]},
+    "PNR16": {"AArch64": ["PNRRegOp","16"]},
+    "PNR32": {"AArch64": ["PNRRegOp","32"]},
+    "PNR64": {"AArch64": ["PNRRegOp","64"]},
+    "PNR8_p8to15": {"AArch64": ["PNRP8to15RegOp","8"]},
+    "PNR16_p8to15": {"AArch64": ["PNRP8to15RegOp","16"]},
+    "PNR32_p8to15": {"AArch64": ["PNRP8to15RegOp","32"]},
+    "PNR64_p8to15": {"AArch64": ["PNRP8to15RegOp","64"]}
+  }
+}

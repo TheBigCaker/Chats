@@ -1,0 +1,64 @@
+{
+  "CATEGORY": "MOVZX",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MOVZX16rr8": {"X86": "MOVZX16rr8"},
+    "MOVZX16rm8": {"X86": "MOVZX16rm8"},
+    "MOVZX32rr8": {"X86": "MOVZX32rr8"},
+    "MOVZX32rm8": {"X86": "MOVZX32rm8"},
+    "MOVZX32rr16": {"X86": "MOVZX32rr16"},
+    "MOVZX32rm16": {"X86": "MOVZX32rm16"},
+    "MOVZX16rr16": {"X86": "MOVZX16rr16"},
+    "MOVZX16rm16": {"X86": "MOVZX16rm16"},
+    "MOVZX32rr8_NOREX": {"X86": "MOVZX32rr8_NOREX"},
+    "MOVZX32rm8_NOREX": {"X86": "MOVZX32rm8_NOREX"}
+  },
+  "INPUTS": {
+    "MOVZX16rr8": {"X86": [["GR8",8]]},
+    "MOVZX16rm8": {"X86": [["i8mem",0]]},
+    "MOVZX32rr8": {"X86": [["GR8",8]]},
+    "MOVZX32rm8": {"X86": [["i8mem",0]]},
+    "MOVZX32rr16": {"X86": [["GR16",16]]},
+    "MOVZX32rm16": {"X86": [["i16mem",0]]},
+    "MOVZX16rr16": {"X86": [["GR16",16]]},
+    "MOVZX16rm16": {"X86": [["i16mem",0]]},
+    "MOVZX32rr8_NOREX": {"X86": [["GR8_NOREX",8]]},
+    "MOVZX32rm8_NOREX": {"X86": [["i8mem_NOREX",0]]}
+  },
+  "OUTPUTS": {
+    "MOVZX16rr8": {"X86": [["GR16",16]]},
+    "MOVZX16rm8": {"X86": [["GR16",16]]},
+    "MOVZX32rr8": {"X86": [["GR32",32]]},
+    "MOVZX32rm8": {"X86": [["GR32",32]]},
+    "MOVZX32rr16": {"X86": [["GR32",32]]},
+    "MOVZX32rm16": {"X86": [["GR32",32]]},
+    "MOVZX16rr16": {"X86": [["GR16",16]]},
+    "MOVZX16rm16": {"X86": [["GR16",16]]},
+    "MOVZX32rr8_NOREX": {"X86": [["GR32_NOREX",32]]},
+    "MOVZX32rm8_NOREX": {"X86": [["GR32_NOREX",32]]}
+  },
+  "INPUT_BYTES": {
+    "MOVZX16rr8": {"X86": ["0xB6"]},
+    "MOVZX16rm8": {"X86": ["0xB6"]},
+    "MOVZX32rr8": {"X86": ["0xB6"]},
+    "MOVZX32rm8": {"X86": ["0xB6"]},
+    "MOVZX32rr16": {"X86": ["0xB7"]},
+    "MOVZX32rm16": {"X86": ["0xB7"]},
+    "MOVZX16rr16": {"X86": ["0xB7"]},
+    "MOVZX16rm16": {"X86": ["0xB7"]},
+    "MOVZX32rr8_NOREX": {"X86": ["0xB6"]},
+    "MOVZX32rm8_NOREX": {"X86": ["0xB6"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVZX16rr8": {"X86": ["0xB6"]},
+    "MOVZX16rm8": {"X86": ["0xB6"]},
+    "MOVZX32rr8": {"X86": ["0xB6"]},
+    "MOVZX32rm8": {"X86": ["0xB6"]},
+    "MOVZX32rr16": {"X86": ["0xB7"]},
+    "MOVZX32rm16": {"X86": ["0xB7"]},
+    "MOVZX16rr16": {"X86": ["0xB7"]},
+    "MOVZX16rm16": {"X86": ["0xB7"]},
+    "MOVZX32rr8_NOREX": {"X86": ["0xB6"]},
+    "MOVZX32rm8_NOREX": {"X86": ["0xB6"]}
+  }
+}

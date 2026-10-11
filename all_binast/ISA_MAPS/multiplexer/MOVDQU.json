@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "MOVDQU",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MOVDQUrr": {"X86": "MOVDQUrr"},
+    "MOVDQUrr_REV": {"X86": "MOVDQUrr_REV"},
+    "MOVDQUrm": {"X86": "MOVDQUrm"},
+    "MOVDQUmr": {"X86": "MOVDQUmr"}
+  },
+  "INPUTS": {
+    "MOVDQUrr": {"X86": [["VR128",128]]},
+    "MOVDQUrr_REV": {"X86": [["VR128",128]]},
+    "MOVDQUrm": {"X86": [["i128mem",0]]},
+    "MOVDQUmr": {"X86": [["i128mem",0],["VR128",128]]}
+  },
+  "OUTPUTS": {
+    "MOVDQUrr": {"X86": [["VR128",128]]},
+    "MOVDQUrr_REV": {"X86": [["VR128",128]]},
+    "MOVDQUrm": {"X86": [["VR128",128]]},
+    "MOVDQUmr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "MOVDQUrr": {"X86": ["0x6F"]},
+    "MOVDQUrr_REV": {"X86": ["0x7F"]},
+    "MOVDQUrm": {"X86": ["0x6F"]},
+    "MOVDQUmr": {"X86": ["0x7F"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVDQUrr": {"X86": ["0x6F"]},
+    "MOVDQUrr_REV": {"X86": ["0x7F"]},
+    "MOVDQUrm": {"X86": ["0x6F"]},
+    "MOVDQUmr": {"X86": ["0x7F"]}
+  }
+}

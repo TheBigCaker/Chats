@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SAHF",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SAHF": {"X86": "SAHF"}
+  },
+  "INPUTS": {
+    "SAHF": {"X86": []}
+  },
+  "OUTPUTS": {
+    "SAHF": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SAHF": {"X86": ["0x9E"]}
+  },
+  "OUTPUT_BYTES": {
+    "SAHF": {"X86": ["0x9E"]}
+  }
+}

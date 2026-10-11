@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FPINST",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "FPINST": {"ARM": "FPINST"},
+    "FPINST2": {"ARM": "FPINST2"}
+  },
+  "INPUTS": {
+    "FPINST": {"ARM": []},
+    "FPINST2": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "FPINST": {"ARM": []},
+    "FPINST2": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "FPINST": {"ARM": ["ARMReg","9"]},
+    "FPINST2": {"ARM": ["ARMReg","10"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPINST": {"ARM": ["ARMReg","9"]},
+    "FPINST2": {"ARM": ["ARMReg","10"]}
+  }
+}

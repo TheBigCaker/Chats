@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VQWDOTAS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VQWDOTAS_VV": {"RISCV": "VQWDOTAS_VV"}
+  },
+  "INPUTS": {
+    "VQWDOTAS_VV": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["VR:$vs1",0],["VMaskOp:$vm",0]]}
+  },
+  "OUTPUTS": {
+    "VQWDOTAS_VV": {"RISCV": [["VR:$vd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "VQWDOTAS_VV": {"RISCV": ["ZvdotVALUVV","0b100111"]}
+  },
+  "OUTPUT_BYTES": {
+    "VQWDOTAS_VV": {"RISCV": ["ZvdotVALUVV","0b100111"]}
+  }
+}

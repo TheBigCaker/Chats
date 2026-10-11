@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "PMAXU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PMAXU_H": {"RISCV": "PMAXU_H"},
+    "PMAXU_B": {"RISCV": "PMAXU_B"},
+    "PMAXU_W": {"RISCV": "PMAXU_W"},
+    "PMAXU_DH": {"RISCV": "PMAXU_DH"},
+    "PMAXU_DW": {"RISCV": "PMAXU_DW"},
+    "PMAXU_DB": {"RISCV": "PMAXU_DB"}
+  },
+  "INPUTS": {
+    "PMAXU_H": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMAXU_B": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMAXU_W": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMAXU_DH": {"RISCV": []},
+    "PMAXU_DW": {"RISCV": []},
+    "PMAXU_DB": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PMAXU_H": {"RISCV": [["GPR:$rd",0]]},
+    "PMAXU_B": {"RISCV": [["GPR:$rd",0]]},
+    "PMAXU_W": {"RISCV": [["GPR:$rd",0]]},
+    "PMAXU_DH": {"RISCV": []},
+    "PMAXU_DW": {"RISCV": []},
+    "PMAXU_DB": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PMAXU_H": {"RISCV": ["RVPBinary_rr","0b1111","0b00","0b110"]},
+    "PMAXU_B": {"RISCV": ["RVPBinary_rr","0b1111","0b10","0b110"]},
+    "PMAXU_W": {"RISCV": ["RVPBinary_rr","0b1111","0b01","0b110"]},
+    "PMAXU_DH": {"RISCV": ["RVPPairBinaryExchanged_rr","0b1111","0b00"]},
+    "PMAXU_DW": {"RISCV": ["RVPPairBinaryExchanged_rr","0b1111","0b01"]},
+    "PMAXU_DB": {"RISCV": ["RVPPairBinaryExchanged_rr","0b1111","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "PMAXU_H": {"RISCV": ["RVPBinary_rr","0b1111","0b00","0b110"]},
+    "PMAXU_B": {"RISCV": ["RVPBinary_rr","0b1111","0b10","0b110"]},
+    "PMAXU_W": {"RISCV": ["RVPBinary_rr","0b1111","0b01","0b110"]},
+    "PMAXU_DH": {"RISCV": ["RVPPairBinaryExchanged_rr","0b1111","0b00"]},
+    "PMAXU_DW": {"RISCV": ["RVPPairBinaryExchanged_rr","0b1111","0b01"]},
+    "PMAXU_DB": {"RISCV": ["RVPPairBinaryExchanged_rr","0b1111","0b10"]}
+  }
+}

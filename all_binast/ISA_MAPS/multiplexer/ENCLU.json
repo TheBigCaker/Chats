@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ENCLU",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "ENCLU": {"X86": "ENCLU"}
+  },
+  "INPUTS": {
+    "ENCLU": {"X86": []}
+  },
+  "OUTPUTS": {
+    "ENCLU": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "ENCLU": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "ENCLU": {"X86": ["0x01"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "DOT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "DOT4_eg": {"AMDGPU": "DOT4_eg"},
+    "DOT4": {"AMDGPU": "DOT4"},
+    "DOT4_r600": {"AMDGPU": "DOT4_r600"}
+  },
+  "INPUTS": {
+    "DOT4_eg": {"AMDGPU": []},
+    "DOT4": {"AMDGPU": []},
+    "DOT4_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "DOT4_eg": {"AMDGPU": []},
+    "DOT4": {"AMDGPU": []},
+    "DOT4_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "DOT4_eg": {"AMDGPU": ["DOT4_Common","0xBE"]},
+    "DOT4": {"AMDGPU": ["SDNode","8"]},
+    "DOT4_r600": {"AMDGPU": ["DOT4_Common","0x50"]}
+  },
+  "OUTPUT_BYTES": {
+    "DOT4_eg": {"AMDGPU": ["DOT4_Common","0xBE"]},
+    "DOT4": {"AMDGPU": ["SDNode","8"]},
+    "DOT4_r600": {"AMDGPU": ["DOT4_Common","0x50"]}
+  }
+}

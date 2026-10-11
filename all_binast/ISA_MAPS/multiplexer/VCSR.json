@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCSR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VCSR": {"RISCV": "VCSR"}
+  },
+  "INPUTS": {
+    "VCSR": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VCSR": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VCSR": {"RISCV": ["RISCVRegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCSR": {"RISCV": ["RISCVRegisterClass","32"]}
+  }
+}

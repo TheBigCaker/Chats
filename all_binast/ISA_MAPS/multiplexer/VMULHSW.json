@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULHSW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMULHSW": {"PowerPC": "VMULHSW"}
+  },
+  "INPUTS": {
+    "VMULHSW": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMULHSW": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMULHSW": {"PowerPC": ["VXForm_1","905"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULHSW": {"PowerPC": ["VXForm_1","905"]}
+  }
+}

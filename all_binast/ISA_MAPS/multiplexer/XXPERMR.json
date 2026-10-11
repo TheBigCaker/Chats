@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XXPERMR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXPERMR": {"PowerPC": "XXPERMR"}
+  },
+  "INPUTS": {
+    "XXPERMR": {"PowerPC": [["vsrc",0],["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XXPERMR": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XXPERMR": {"PowerPC": ["XX3Form","60","58"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXPERMR": {"PowerPC": ["XX3Form","60","58"]}
+  }
+}

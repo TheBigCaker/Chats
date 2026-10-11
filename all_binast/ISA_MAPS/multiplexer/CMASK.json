@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "CMASK",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "CMASK8": {"Sparc": "CMASK8"},
+    "CMASK16": {"Sparc": "CMASK16"},
+    "CMASK32": {"Sparc": "CMASK32"}
+  },
+  "INPUTS": {
+    "CMASK8": {"Sparc": [["I64Regs",0]]},
+    "CMASK16": {"Sparc": [["I64Regs",0]]},
+    "CMASK32": {"Sparc": [["I64Regs",0]]}
+  },
+  "OUTPUTS": {
+    "CMASK8": {"Sparc": []},
+    "CMASK16": {"Sparc": []},
+    "CMASK32": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "CMASK8": {"Sparc": ["VISInstFormat","0b000011011"]},
+    "CMASK16": {"Sparc": ["VISInstFormat","0b000011101"]},
+    "CMASK32": {"Sparc": ["VISInstFormat","0b000011111"]}
+  },
+  "OUTPUT_BYTES": {
+    "CMASK8": {"Sparc": ["VISInstFormat","0b000011011"]},
+    "CMASK16": {"Sparc": ["VISInstFormat","0b000011101"]},
+    "CMASK32": {"Sparc": ["VISInstFormat","0b000011111"]}
+  }
+}

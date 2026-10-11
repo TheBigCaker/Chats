@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "REMUW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "REMUW": {"RISCV": "REMUW"}
+  },
+  "INPUTS": {
+    "REMUW": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "REMUW": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "REMUW": {"RISCV": ["ALUW_rr","0b0000001","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "REMUW": {"RISCV": ["ALUW_rr","0b0000001","0b111"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LCMPXCHG",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LCMPXCHG8B": {"X86": "LCMPXCHG8B"}
+  },
+  "INPUTS": {
+    "LCMPXCHG8B": {"X86": [["i64mem",0]]}
+  },
+  "OUTPUTS": {
+    "LCMPXCHG8B": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "LCMPXCHG8B": {"X86": ["0xC7"]}
+  },
+  "OUTPUT_BYTES": {
+    "LCMPXCHG8B": {"X86": ["0xC7"]}
+  }
+}

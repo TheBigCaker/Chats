@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VPR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VPR": {"ARM": "VPR"}
+  },
+  "INPUTS": {
+    "VPR": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VPR": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VPR": {"ARM": ["ARMReg","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPR": {"ARM": ["ARMReg","64"]}
+  }
+}

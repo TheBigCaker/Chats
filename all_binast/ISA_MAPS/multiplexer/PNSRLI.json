@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PNSRLI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PNSRLI_B": {"RISCV": "PNSRLI_B"},
+    "PNSRLI_H": {"RISCV": "PNSRLI_H"}
+  },
+  "INPUTS": {
+    "PNSRLI_B": {"RISCV": []},
+    "PNSRLI_H": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PNSRLI_B": {"RISCV": []},
+    "PNSRLI_H": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PNSRLI_B": {"RISCV": ["RVPNarrowingShiftB_ri","0b000"]},
+    "PNSRLI_H": {"RISCV": ["RVPNarrowingShiftH_ri","0b000"]}
+  },
+  "OUTPUT_BYTES": {
+    "PNSRLI_B": {"RISCV": ["RVPNarrowingShiftB_ri","0b000"]},
+    "PNSRLI_H": {"RISCV": ["RVPNarrowingShiftH_ri","0b000"]}
+  }
+}

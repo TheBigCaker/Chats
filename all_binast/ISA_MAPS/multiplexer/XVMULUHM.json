@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVMULUHM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVMULUHM": {"PowerPC": "XVMULUHM"}
+  },
+  "INPUTS": {
+    "XVMULUHM": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVMULUHM": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVMULUHM": {"PowerPC": ["XX3Form_XTAB6","60","171"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVMULUHM": {"PowerPC": ["XX3Form_XTAB6","60","171"]}
+  }
+}

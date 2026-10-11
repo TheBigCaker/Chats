@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "FLT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "FLT32_TO_FLT16": {"AMDGPU": "FLT32_TO_FLT16"},
+    "FLT16_TO_FLT32": {"AMDGPU": "FLT16_TO_FLT32"},
+    "FLT_TO_INT_eg": {"AMDGPU": "FLT_TO_INT_eg"},
+    "FLT_TO_UINT_eg": {"AMDGPU": "FLT_TO_UINT_eg"},
+    "FLT_TO_INT_r600": {"AMDGPU": "FLT_TO_INT_r600"},
+    "FLT_TO_UINT_r600": {"AMDGPU": "FLT_TO_UINT_r600"}
+  },
+  "INPUTS": {
+    "FLT32_TO_FLT16": {"AMDGPU": []},
+    "FLT16_TO_FLT32": {"AMDGPU": []},
+    "FLT_TO_INT_eg": {"AMDGPU": []},
+    "FLT_TO_UINT_eg": {"AMDGPU": []},
+    "FLT_TO_INT_r600": {"AMDGPU": []},
+    "FLT_TO_UINT_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "FLT32_TO_FLT16": {"AMDGPU": []},
+    "FLT16_TO_FLT32": {"AMDGPU": []},
+    "FLT_TO_INT_eg": {"AMDGPU": []},
+    "FLT_TO_UINT_eg": {"AMDGPU": []},
+    "FLT_TO_INT_r600": {"AMDGPU": []},
+    "FLT_TO_UINT_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "FLT32_TO_FLT16": {"AMDGPU": ["R600_1OP_Helper","0xA2"]},
+    "FLT16_TO_FLT32": {"AMDGPU": ["R600_1OP_Helper","0xA3"]},
+    "FLT_TO_INT_eg": {"AMDGPU": ["FLT_TO_INT_Common","0x50"]},
+    "FLT_TO_UINT_eg": {"AMDGPU": ["FLT_TO_UINT_Common","0x9A"]},
+    "FLT_TO_INT_r600": {"AMDGPU": ["FLT_TO_INT_Common","0x6b"]},
+    "FLT_TO_UINT_r600": {"AMDGPU": ["FLT_TO_UINT_Common","0x79"]}
+  },
+  "OUTPUT_BYTES": {
+    "FLT32_TO_FLT16": {"AMDGPU": ["R600_1OP_Helper","0xA2"]},
+    "FLT16_TO_FLT32": {"AMDGPU": ["R600_1OP_Helper","0xA3"]},
+    "FLT_TO_INT_eg": {"AMDGPU": ["FLT_TO_INT_Common","0x50"]},
+    "FLT_TO_UINT_eg": {"AMDGPU": ["FLT_TO_UINT_Common","0x9A"]},
+    "FLT_TO_INT_r600": {"AMDGPU": ["FLT_TO_INT_Common","0x6b"]},
+    "FLT_TO_UINT_r600": {"AMDGPU": ["FLT_TO_UINT_Common","0x79"]}
+  }
+}

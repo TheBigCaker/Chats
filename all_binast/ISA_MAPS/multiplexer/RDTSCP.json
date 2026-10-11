@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RDTSCP",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "RDTSCP": {"X86": "RDTSCP"}
+  },
+  "INPUTS": {
+    "RDTSCP": {"X86": []}
+  },
+  "OUTPUTS": {
+    "RDTSCP": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "RDTSCP": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "RDTSCP": {"X86": ["0x01"]}
+  }
+}

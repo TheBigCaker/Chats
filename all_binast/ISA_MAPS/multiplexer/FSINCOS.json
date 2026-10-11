@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "FSINCOS",
+  "BACKENDS": ["X86","Mali"],
+  "INDEX": {
+    "FSINCOS": {"X86": "FSINCOS"},
+    "FSINCOS_OFFSET.u6": {"Mali": "FSINCOS_OFFSET.u6"},
+    "FSINCOS_OFFSET.u6": {"Mali": "FSINCOS_OFFSET.u6"}
+  },
+  "INPUTS": {
+    "FSINCOS": {"X86": []},
+    "FSINCOS_OFFSET.u6": {"Mali": [["R32",32]]},
+    "FSINCOS_OFFSET.u6": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "FSINCOS": {"X86": []},
+    "FSINCOS_OFFSET.u6": {"Mali": [["R",32]]},
+    "FSINCOS_OFFSET.u6": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FSINCOS": {"X86": ["0xD9"]},
+    "FSINCOS_OFFSET.u6": {"Mali": ["Bifrost_add","0x67aa0","0xffff0"]},
+    "FSINCOS_OFFSET.u6": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "FSINCOS": {"X86": ["0xD9"]},
+    "FSINCOS_OFFSET.u6": {"Mali": ["Bifrost_add","0x67aa0","0xffff0"]},
+    "FSINCOS_OFFSET.u6": {"Mali": ["Valhall_"]}
+  }
+}

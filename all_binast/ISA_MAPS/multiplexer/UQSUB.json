@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "UQSUB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UQSUB16": {"ARM": "UQSUB16"},
+    "UQSUB8": {"ARM": "UQSUB8"}
+  },
+  "INPUTS": {
+    "UQSUB16": {"ARM": []},
+    "UQSUB8": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "UQSUB16": {"ARM": []},
+    "UQSUB8": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "UQSUB16": {"ARM": ["AAIIntrinsic","0b01100110","0b11110111"]},
+    "UQSUB8": {"ARM": ["AAIIntrinsic","0b01100110","0b11111111"]}
+  },
+  "OUTPUT_BYTES": {
+    "UQSUB16": {"ARM": ["AAIIntrinsic","0b01100110","0b11110111"]},
+    "UQSUB8": {"ARM": ["AAIIntrinsic","0b01100110","0b11111111"]}
+  }
+}

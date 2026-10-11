@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VPAIRO",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VPAIRO_VV": {"RISCV": "VPAIRO_VV"}
+  },
+  "INPUTS": {
+    "VPAIRO_VV": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VPAIRO_VV": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VPAIRO_VV": {"RISCV": ["VALUVV","0b001111"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPAIRO_VV": {"RISCV": ["VALUVV","0b001111"]}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "PLA",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "PLA8": {"PowerPC": "PLA8"},
+    "PLA8pc": {"PowerPC": "PLA8pc"},
+    "PLA": {"PowerPC": "PLA"},
+    "PLApc": {"PowerPC": "PLApc"}
+  },
+  "INPUTS": {
+    "PLA8": {"PowerPC": [["g8rc_nox0",0],["s34imm64",34]]},
+    "PLA8pc": {"PowerPC": [["s34imm64_pcrel",34]]},
+    "PLA": {"PowerPC": [["gprc_nor0",0],["s34imm64",34]]},
+    "PLApc": {"PowerPC": [["s34imm64_pcrel",34]]}
+  },
+  "OUTPUTS": {
+    "PLA8": {"PowerPC": [["g8rc",0]]},
+    "PLA8pc": {"PowerPC": [["g8rc",0]]},
+    "PLA": {"PowerPC": [["gprc",0]]},
+    "PLApc": {"PowerPC": [["gprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "PLA8": {"PowerPC": ["MLS_DForm_SI34_RT5","14"]},
+    "PLA8pc": {"PowerPC": ["MLS_DForm_SI34_RT5","14"]},
+    "PLA": {"PowerPC": ["MLS_DForm_SI34_RT5","14"]},
+    "PLApc": {"PowerPC": ["MLS_DForm_SI34_RT5","14"]}
+  },
+  "OUTPUT_BYTES": {
+    "PLA8": {"PowerPC": ["MLS_DForm_SI34_RT5","14"]},
+    "PLA8pc": {"PowerPC": ["MLS_DForm_SI34_RT5","14"]},
+    "PLA": {"PowerPC": ["MLS_DForm_SI34_RT5","14"]},
+    "PLApc": {"PowerPC": ["MLS_DForm_SI34_RT5","14"]}
+  }
+}

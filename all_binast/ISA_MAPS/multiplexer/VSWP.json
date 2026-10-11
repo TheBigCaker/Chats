@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VSWP",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VSWPd": {"ARM": "VSWPd"},
+    "VSWPq": {"ARM": "VSWPq"}
+  },
+  "INPUTS": {
+    "VSWPd": {"ARM": [["DPR",0],["DPR",0]]},
+    "VSWPq": {"ARM": [["QPR",0],["QPR",0]]}
+  },
+  "OUTPUTS": {
+    "VSWPd": {"ARM": [["DPR",0],["DPR",0]]},
+    "VSWPq": {"ARM": [["QPR",0],["QPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSWPd": {"ARM": ["N2VX","0b11","0b11","0b00","0b10","0b00000","0","0"]},
+    "VSWPq": {"ARM": ["N2VX","0b11","0b11","0b00","0b10","0b00000","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSWPd": {"ARM": ["N2VX","0b11","0b11","0b00","0b10","0b00000","0","0"]},
+    "VSWPq": {"ARM": ["N2VX","0b11","0b11","0b00","0b10","0b00000","1","0"]}
+  }
+}

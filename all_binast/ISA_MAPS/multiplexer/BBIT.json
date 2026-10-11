@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BBIT",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "BBIT032": {"Mips": "BBIT032"},
+    "BBIT132": {"Mips": "BBIT132"}
+  },
+  "INPUTS": {
+    "BBIT032": {"Mips": [["RO:$rs",0],["ImmOp:$p",0],["opnd:$offset",0]]},
+    "BBIT132": {"Mips": [["RO:$rs",0],["ImmOp:$p",0],["opnd:$offset",0]]}
+  },
+  "OUTPUTS": {
+    "BBIT032": {"Mips": []},
+    "BBIT132": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "BBIT032": {"Mips": ["CBranchBitNum","0x100000000"]},
+    "BBIT132": {"Mips": ["CBranchBitNum","0x100000000"]}
+  },
+  "OUTPUT_BYTES": {
+    "BBIT032": {"Mips": ["CBranchBitNum","0x100000000"]},
+    "BBIT132": {"Mips": ["CBranchBitNum","0x100000000"]}
+  }
+}

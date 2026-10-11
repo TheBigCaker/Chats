@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FMADDS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FMADDS": {"Sparc": "FMADDS"}
+  },
+  "INPUTS": {
+    "FMADDS": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FMADDS": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FMADDS": {"Sparc": ["FourOp","0b110111","0b0001"]}
+  },
+  "OUTPUT_BYTES": {
+    "FMADDS": {"Sparc": ["FourOp","0b110111","0b0001"]}
+  }
+}

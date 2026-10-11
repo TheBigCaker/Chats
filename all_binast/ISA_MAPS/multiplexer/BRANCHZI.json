@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BRANCHZI",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "BRANCHZI": {"Mali": "BRANCHZI"},
+    "BRANCHZI": {"Mali": "BRANCHZI"}
+  },
+  "INPUTS": {
+    "BRANCHZI": {"Mali": [["R32",32],["R32",32]]},
+    "BRANCHZI": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "BRANCHZI": {"Mali": [["R",32]]},
+    "BRANCHZI": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "BRANCHZI": {"Mali": ["Bifrost_add"]},
+    "BRANCHZI": {"Mali": ["Valhall_CVT"]}
+  },
+  "OUTPUT_BYTES": {
+    "BRANCHZI": {"Mali": ["Bifrost_add"]},
+    "BRANCHZI": {"Mali": ["Valhall_CVT"]}
+  }
+}

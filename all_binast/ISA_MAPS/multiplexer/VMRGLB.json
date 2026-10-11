@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMRGLB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMRGLB": {"PowerPC": "VMRGLB"}
+  },
+  "INPUTS": {
+    "VMRGLB": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMRGLB": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMRGLB": {"PowerPC": ["VXForm_1","268"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMRGLB": {"PowerPC": ["VXForm_1","268"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVRSPIP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVRSPIP": {"PowerPC": "XVRSPIP"}
+  },
+  "INPUTS": {
+    "XVRSPIP": {"PowerPC": [["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVRSPIP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVRSPIP": {"PowerPC": ["XX2Form","60","169"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVRSPIP": {"PowerPC": ["XX2Form","60","169"]}
+  }
+}

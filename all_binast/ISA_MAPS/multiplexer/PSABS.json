@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "PSABS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PSABS_H": {"RISCV": "PSABS_H"},
+    "PSABS_B": {"RISCV": "PSABS_B"},
+    "PSABS_DH": {"RISCV": "PSABS_DH"},
+    "PSABS_DB": {"RISCV": "PSABS_DB"}
+  },
+  "INPUTS": {
+    "PSABS_H": {"RISCV": [["GPR:$rs1",0]]},
+    "PSABS_B": {"RISCV": [["GPR:$rs1",0]]},
+    "PSABS_DH": {"RISCV": [["GPRPairRV32:$rs1",0]]},
+    "PSABS_DB": {"RISCV": [["GPRPairRV32:$rs1",0]]}
+  },
+  "OUTPUTS": {
+    "PSABS_H": {"RISCV": [["GPR:$rd",0]]},
+    "PSABS_B": {"RISCV": [["GPR:$rd",0]]},
+    "PSABS_DH": {"RISCV": [["GPRPairRV32:$rd",0]]},
+    "PSABS_DB": {"RISCV": [["GPRPairRV32:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "PSABS_H": {"RISCV": ["RVPUnary_ri","0b00","0b00111"]},
+    "PSABS_B": {"RISCV": ["RVPUnary_ri","0b10","0b00111"]},
+    "PSABS_DH": {"RISCV": ["RVPPairUnary_r","0b00","0b00111"]},
+    "PSABS_DB": {"RISCV": ["RVPPairUnary_r","0b10","0b00111"]}
+  },
+  "OUTPUT_BYTES": {
+    "PSABS_H": {"RISCV": ["RVPUnary_ri","0b00","0b00111"]},
+    "PSABS_B": {"RISCV": ["RVPUnary_ri","0b10","0b00111"]},
+    "PSABS_DH": {"RISCV": ["RVPPairUnary_r","0b00","0b00111"]},
+    "PSABS_DB": {"RISCV": ["RVPPairUnary_r","0b10","0b00111"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "DADD",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "DADD": {"Mips": "DADD"},
+    "DADDu": {"Mips": "DADDu"}
+  },
+  "INPUTS": {
+    "DADD": {"Mips": [["RO:$rs",0],["RO:$rt",0]]},
+    "DADDu": {"Mips": [["RO:$rs",0],["RO:$rt",0]]}
+  },
+  "OUTPUTS": {
+    "DADD": {"Mips": [["RO:$rd",0]]},
+    "DADDu": {"Mips": [["RO:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "DADD": {"Mips": ["ArithLogicR","1"]},
+    "DADDu": {"Mips": ["ArithLogicR","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "DADD": {"Mips": ["ArithLogicR","1"]},
+    "DADDu": {"Mips": ["ArithLogicR","1"]}
+  }
+}

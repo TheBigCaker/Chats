@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PUSHCS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PUSHCS16": {"X86": "PUSHCS16"},
+    "PUSHCS32": {"X86": "PUSHCS32"}
+  },
+  "INPUTS": {
+    "PUSHCS16": {"X86": []},
+    "PUSHCS32": {"X86": []}
+  },
+  "OUTPUTS": {
+    "PUSHCS16": {"X86": []},
+    "PUSHCS32": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PUSHCS16": {"X86": ["0x0E"]},
+    "PUSHCS32": {"X86": ["0x0E"]}
+  },
+  "OUTPUT_BYTES": {
+    "PUSHCS16": {"X86": ["0x0E"]},
+    "PUSHCS32": {"X86": ["0x0E"]}
+  }
+}

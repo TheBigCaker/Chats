@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ADDRGA",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "ADDRGA_CONST_OFFSET": {"AMDGPU": "ADDRGA_CONST_OFFSET"},
+    "ADDRGA_VAR_OFFSET": {"AMDGPU": "ADDRGA_VAR_OFFSET"}
+  },
+  "INPUTS": {
+    "ADDRGA_CONST_OFFSET": {"AMDGPU": []},
+    "ADDRGA_VAR_OFFSET": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "ADDRGA_CONST_OFFSET": {"AMDGPU": []},
+    "ADDRGA_VAR_OFFSET": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "ADDRGA_CONST_OFFSET": {"AMDGPU": ["ComplexPattern","1"]},
+    "ADDRGA_VAR_OFFSET": {"AMDGPU": ["ComplexPattern","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADDRGA_CONST_OFFSET": {"AMDGPU": ["ComplexPattern","1"]},
+    "ADDRGA_VAR_OFFSET": {"AMDGPU": ["ComplexPattern","2"]}
+  }
+}

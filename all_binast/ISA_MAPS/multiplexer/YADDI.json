@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YADDI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YADDI": {"RISCV": "YADDI"}
+  },
+  "INPUTS": {
+    "YADDI": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YADDI": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YADDI": {"RISCV": ["RVY_ri","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "YADDI": {"RISCV": ["RVY_ri","0b100"]}
+  }
+}

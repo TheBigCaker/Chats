@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCMPH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VCMPH": {"ARM": "VCMPH"}
+  },
+  "INPUTS": {
+    "VCMPH": {"ARM": [["HPR",0],["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VCMPH": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VCMPH": {"ARM": ["AHuI","0b11101","0b11","0b0100","0b01","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCMPH": {"ARM": ["AHuI","0b11101","0b11","0b0100","0b01","0"]}
+  }
+}

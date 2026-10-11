@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFRSQRT",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFRSQRT7_V": {"RISCV": "VFRSQRT7_V"}
+  },
+  "INPUTS": {
+    "VFRSQRT7_V": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VFRSQRT7_V": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VFRSQRT7_V": {"RISCV": ["VRCP_FV_VS2","0b010011","0b00100"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFRSQRT7_V": {"RISCV": ["VRCP_FV_VS2","0b010011","0b00100"]}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "VCVTSD",
+  "BACKENDS": ["X86","ARM"],
+  "INDEX": {
+    "VCVTSD2SSrm": {"X86": "VCVTSD2SSrm"},
+    "VCVTSD2SSrr_Int": {"X86": "VCVTSD2SSrr_Int"},
+    "VCVTSD2SSrm_Int": {"X86": "VCVTSD2SSrm_Int"},
+    "VCVTSD": {"ARM": "VCVTSD"}
+  },
+  "INPUTS": {
+    "VCVTSD2SSrm": {"X86": [["FR32",32],["f64mem",0]]},
+    "VCVTSD2SSrr_Int": {"X86": [["VR128",128],["VR128",128]]},
+    "VCVTSD2SSrm_Int": {"X86": [["VR128",128],["sdmem",0]]},
+    "VCVTSD": {"ARM": [["DPR",0]]}
+  },
+  "OUTPUTS": {
+    "VCVTSD2SSrm": {"X86": [["FR32",32]]},
+    "VCVTSD2SSrr_Int": {"X86": [["VR128",128]]},
+    "VCVTSD2SSrm_Int": {"X86": [["VR128",128]]},
+    "VCVTSD": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCVTSD2SSrm": {"X86": ["0x5A"]},
+    "VCVTSD2SSrr_Int": {"X86": ["0x5A"]},
+    "VCVTSD2SSrm_Int": {"X86": ["0x5A"]},
+    "VCVTSD": {"ARM": ["VFPAI"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCVTSD2SSrm": {"X86": ["0x5A"]},
+    "VCVTSD2SSrr_Int": {"X86": ["0x5A"]},
+    "VCVTSD2SSrm_Int": {"X86": ["0x5A"]},
+    "VCVTSD": {"ARM": ["VFPAI"]}
+  }
+}

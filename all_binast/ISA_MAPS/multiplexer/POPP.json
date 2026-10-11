@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "POPP",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "POPP64r": {"X86": "POPP64r"}
+  },
+  "INPUTS": {
+    "POPP64r": {"X86": []}
+  },
+  "OUTPUTS": {
+    "POPP64r": {"X86": [["GR64",64]]}
+  },
+  "INPUT_BYTES": {
+    "POPP64r": {"X86": ["0x58"]}
+  },
+  "OUTPUT_BYTES": {
+    "POPP64r": {"X86": ["0x58"]}
+  }
+}

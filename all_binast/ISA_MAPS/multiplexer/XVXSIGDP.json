@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVXSIGDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVXSIGDP": {"PowerPC": "XVXSIGDP"}
+  },
+  "INPUTS": {
+    "XVXSIGDP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XVXSIGDP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XVXSIGDP": {"PowerPC": ["XX2_XT6_XO5_XB6","60","1","475"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVXSIGDP": {"PowerPC": ["XX2_XT6_XO5_XB6","60","1","475"]}
+  }
+}

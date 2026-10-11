@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BOUNDS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "BOUNDS16rm": {"X86": "BOUNDS16rm"},
+    "BOUNDS32rm": {"X86": "BOUNDS32rm"}
+  },
+  "INPUTS": {
+    "BOUNDS16rm": {"X86": [["i16mem",0]]},
+    "BOUNDS32rm": {"X86": [["i32mem",0]]}
+  },
+  "OUTPUTS": {
+    "BOUNDS16rm": {"X86": [["GR16",16]]},
+    "BOUNDS32rm": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "BOUNDS16rm": {"X86": ["0x62"]},
+    "BOUNDS32rm": {"X86": ["0x62"]}
+  },
+  "OUTPUT_BYTES": {
+    "BOUNDS16rm": {"X86": ["0x62"]},
+    "BOUNDS32rm": {"X86": ["0x62"]}
+  }
+}

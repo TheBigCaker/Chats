@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MTLR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MTLR8": {"PowerPC": "MTLR8"}
+  },
+  "INPUTS": {
+    "MTLR8": {"PowerPC": [["g8rc",0]]}
+  },
+  "OUTPUTS": {
+    "MTLR8": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "MTLR8": {"PowerPC": ["XFXForm_1_ext","31","467","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "MTLR8": {"PowerPC": ["XFXForm_1_ext","31","467","8"]}
+  }
+}

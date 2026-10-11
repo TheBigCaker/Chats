@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MTTHI",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MTTHI": {"Mips": "MTTHI"}
+  },
+  "INPUTS": {
+    "MTTHI": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "OUTPUTS": {
+    "MTTHI": {"Mips": [["ACC64DSPOpnd",0]]}
+  },
+  "INPUT_BYTES": {
+    "MTTHI": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "MTTHI": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

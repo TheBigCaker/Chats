@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVRLW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVRLW": {"PowerPC": "XVRLW"}
+  },
+  "INPUTS": {
+    "XVRLW": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVRLW": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVRLW": {"PowerPC": ["XX3Form_XTAB6","60","184"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVRLW": {"PowerPC": ["XX3Form_XTAB6","60","184"]}
+  }
+}

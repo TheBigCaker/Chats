@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STW8": {"PowerPC": "STW8"}
+  },
+  "INPUTS": {
+    "STW8": {"PowerPC": [["g8rc",0],["(memri",0]]}
+  },
+  "OUTPUTS": {
+    "STW8": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STW8": {"PowerPC": ["DForm_1","36"]}
+  },
+  "OUTPUT_BYTES": {
+    "STW8": {"PowerPC": ["DForm_1","36"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PVALIDATE",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PVALIDATE64": {"X86": "PVALIDATE64"},
+    "PVALIDATE32": {"X86": "PVALIDATE32"}
+  },
+  "INPUTS": {
+    "PVALIDATE64": {"X86": []},
+    "PVALIDATE32": {"X86": []}
+  },
+  "OUTPUTS": {
+    "PVALIDATE64": {"X86": []},
+    "PVALIDATE32": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PVALIDATE64": {"X86": ["0x01"]},
+    "PVALIDATE32": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "PVALIDATE64": {"X86": ["0x01"]},
+    "PVALIDATE32": {"X86": ["0x01"]}
+  }
+}

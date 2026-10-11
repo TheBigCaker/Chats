@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVNABSDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVNABSDP": {"PowerPC": "XVNABSDP"}
+  },
+  "INPUTS": {
+    "XVNABSDP": {"PowerPC": [["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVNABSDP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVNABSDP": {"PowerPC": ["XX2Form","60","489"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVNABSDP": {"PowerPC": ["XX2Form","60","489"]}
+  }
+}

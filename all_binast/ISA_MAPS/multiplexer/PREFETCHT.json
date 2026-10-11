@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "PREFETCHT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PREFETCHT0": {"X86": "PREFETCHT0"},
+    "PREFETCHT1": {"X86": "PREFETCHT1"},
+    "PREFETCHT2": {"X86": "PREFETCHT2"}
+  },
+  "INPUTS": {
+    "PREFETCHT0": {"X86": [["i8mem",0]]},
+    "PREFETCHT1": {"X86": [["i8mem",0]]},
+    "PREFETCHT2": {"X86": [["i8mem",0]]}
+  },
+  "OUTPUTS": {
+    "PREFETCHT0": {"X86": []},
+    "PREFETCHT1": {"X86": []},
+    "PREFETCHT2": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PREFETCHT0": {"X86": ["0x18"]},
+    "PREFETCHT1": {"X86": ["0x18"]},
+    "PREFETCHT2": {"X86": ["0x18"]}
+  },
+  "OUTPUT_BYTES": {
+    "PREFETCHT0": {"X86": ["0x18"]},
+    "PREFETCHT1": {"X86": ["0x18"]},
+    "PREFETCHT2": {"X86": ["0x18"]}
+  }
+}

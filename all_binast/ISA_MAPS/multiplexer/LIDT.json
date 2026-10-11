@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "LIDT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LIDT16m": {"X86": "LIDT16m"},
+    "LIDT32m": {"X86": "LIDT32m"},
+    "LIDT64m": {"X86": "LIDT64m"}
+  },
+  "INPUTS": {
+    "LIDT16m": {"X86": [["opaquemem",0]]},
+    "LIDT32m": {"X86": [["opaquemem",0]]},
+    "LIDT64m": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "LIDT16m": {"X86": []},
+    "LIDT32m": {"X86": []},
+    "LIDT64m": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "LIDT16m": {"X86": ["0x01"]},
+    "LIDT32m": {"X86": ["0x01"]},
+    "LIDT64m": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "LIDT16m": {"X86": ["0x01"]},
+    "LIDT32m": {"X86": ["0x01"]},
+    "LIDT64m": {"X86": ["0x01"]}
+  }
+}

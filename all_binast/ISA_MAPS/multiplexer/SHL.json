@@ -1,0 +1,64 @@
+{
+  "CATEGORY": "SHL",
+  "BACKENDS": ["X86","ARM","RISCV","Mips"],
+  "INDEX": {
+    "LSL16rm": {"X86": "LSL16rm"},
+    "LSL16rr": {"X86": "LSL16rr"},
+    "LSL32rm": {"X86": "LSL32rm"},
+    "LSL32rr": {"X86": "LSL32rr"},
+    "LSLi": {"ARM": "LSLi"},
+    "LSLr": {"ARM": "LSLr"},
+    "SLL": {"RISCV": "SLL"},
+    "SHL": {"RISCV": "SHL"},
+    "SLL64_32": {"Mips": "SLL64_32"},
+    "SLL64_64": {"Mips": "SLL64_64"}
+  },
+  "INPUTS": {
+    "LSL16rm": {"X86": [["i16mem",0]]},
+    "LSL16rr": {"X86": [["GR16orGR32orGR64",16]]},
+    "LSL32rm": {"X86": [["i16mem",0]]},
+    "LSL32rr": {"X86": [["GR16orGR32orGR64",16]]},
+    "LSLi": {"ARM": [["GPR",64],["GPR",64],["imm0_31",0],["pred",0],["cc_out",0]]},
+    "LSLr": {"ARM": [["GPRnopc",0],["GPRnopc",0],["GPRnopc",0],["pred",0],["cc_out",0]]},
+    "SLL": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "SHL": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "SLL64_32": {"Mips": [["GPR32",32]]},
+    "SLL64_64": {"Mips": [["GPR64",64]]}
+  },
+  "OUTPUTS": {
+    "LSL16rm": {"X86": [["GR16",16]]},
+    "LSL16rr": {"X86": [["GR16",16]]},
+    "LSL32rm": {"X86": [["GR32",32]]},
+    "LSL32rr": {"X86": [["GR32",32]]},
+    "LSLi": {"ARM": []},
+    "LSLr": {"ARM": []},
+    "SLL": {"RISCV": [["GPR:$rd",0]]},
+    "SHL": {"RISCV": [["GPR:$rd",0]]},
+    "SLL64_32": {"Mips": [["GPR64",64]]},
+    "SLL64_64": {"Mips": [["GPR64",64]]}
+  },
+  "INPUT_BYTES": {
+    "LSL16rm": {"X86": ["0x03"]},
+    "LSL16rr": {"X86": ["0x03"]},
+    "LSL32rm": {"X86": ["0x03"]},
+    "LSL32rr": {"X86": ["0x03"]},
+    "LSLi": {"ARM": ["ARMAsmPseudo"]},
+    "LSLr": {"ARM": ["ARMAsmPseudo"]},
+    "SLL": {"RISCV": ["ALU_rr","0b0000000","0b001"]},
+    "SHL": {"RISCV": ["RVPBinaryScalar_rr","0b010","0b11","0b010"]},
+    "SLL64_32": {"Mips": ["FR","0x0","0x00"]},
+    "SLL64_64": {"Mips": ["FR","0x0","0x00"]}
+  },
+  "OUTPUT_BYTES": {
+    "LSL16rm": {"X86": ["0x03"]},
+    "LSL16rr": {"X86": ["0x03"]},
+    "LSL32rm": {"X86": ["0x03"]},
+    "LSL32rr": {"X86": ["0x03"]},
+    "LSLi": {"ARM": ["ARMAsmPseudo"]},
+    "LSLr": {"ARM": ["ARMAsmPseudo"]},
+    "SLL": {"RISCV": ["ALU_rr","0b0000000","0b001"]},
+    "SHL": {"RISCV": ["RVPBinaryScalar_rr","0b010","0b11","0b010"]},
+    "SLL64_32": {"Mips": ["FR","0x0","0x00"]},
+    "SLL64_64": {"Mips": ["FR","0x0","0x00"]}
+  }
+}

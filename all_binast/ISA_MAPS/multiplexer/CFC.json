@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CFC",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "CFC2_MM": {"Mips": "CFC2_MM"}
+  },
+  "INPUTS": {
+    "CFC2_MM": {"Mips": [["COP2Opnd",0]]}
+  },
+  "OUTPUTS": {
+    "CFC2_MM": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "INPUT_BYTES": {
+    "CFC2_MM": {"Mips": ["InstSE"]}
+  },
+  "OUTPUT_BYTES": {
+    "CFC2_MM": {"Mips": ["InstSE"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "GPRO",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "GPROutgoingArg": {"Sparc": "GPROutgoingArg"}
+  },
+  "INPUTS": {
+    "GPROutgoingArg": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "GPROutgoingArg": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "GPROutgoingArg": {"Sparc": ["RegisterClass","32","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "GPROutgoingArg": {"Sparc": ["RegisterClass","32","0"]}
+  }
+}

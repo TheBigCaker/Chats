@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SMEMO",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SMEMOffset": {"AMDGPU": "SMEMOffset"},
+    "SMEMOffsetMod": {"AMDGPU": "SMEMOffsetMod"}
+  },
+  "INPUTS": {
+    "SMEMOffset": {"AMDGPU": []},
+    "SMEMOffsetMod": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SMEMOffset": {"AMDGPU": []},
+    "SMEMOffsetMod": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SMEMOffset": {"AMDGPU": ["ImmOperand","1"]},
+    "SMEMOffsetMod": {"AMDGPU": ["NamedIntOperand","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMEMOffset": {"AMDGPU": ["ImmOperand","1"]},
+    "SMEMOffsetMod": {"AMDGPU": ["NamedIntOperand","0"]}
+  }
+}

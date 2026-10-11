@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVLHHOUSPLAT",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVLHHOUSPLAT": {"PowerPC": "EVLHHOUSPLAT"}
+  },
+  "INPUTS": {
+    "EVLHHOUSPLAT": {"PowerPC": [["(spe2dis",0]]}
+  },
+  "OUTPUTS": {
+    "EVLHHOUSPLAT": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVLHHOUSPLAT": {"PowerPC": ["EVXForm_D","781"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVLHHOUSPLAT": {"PowerPC": ["EVXForm_D","781"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CLDEMOTE",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CLDEMOTE": {"X86": "CLDEMOTE"}
+  },
+  "INPUTS": {
+    "CLDEMOTE": {"X86": [["i8mem",0]]}
+  },
+  "OUTPUTS": {
+    "CLDEMOTE": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CLDEMOTE": {"X86": ["0x1C"]}
+  },
+  "OUTPUT_BYTES": {
+    "CLDEMOTE": {"X86": ["0x1C"]}
+  }
+}

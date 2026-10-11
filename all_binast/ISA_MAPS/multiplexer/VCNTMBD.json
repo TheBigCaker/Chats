@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCNTMBD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCNTMBD": {"PowerPC": "VCNTMBD"}
+  },
+  "INPUTS": {
+    "VCNTMBD": {"PowerPC": [["vrrc",0],["u1imm",1]]}
+  },
+  "OUTPUTS": {
+    "VCNTMBD": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCNTMBD": {"PowerPC": ["VXForm_RD5_MP_VB5","1602","15"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCNTMBD": {"PowerPC": ["VXForm_RD5_MP_VB5","1602","15"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "STWXTLS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STWXTLS": {"PowerPC": "STWXTLS"},
+    "STWXTLS_32": {"PowerPC": "STWXTLS_32"},
+    "STWXTLS_": {"PowerPC": "STWXTLS_"}
+  },
+  "INPUTS": {
+    "STWXTLS": {"PowerPC": [["g8rc",0],["ptr_rc_nor0",0],["tlsreg",0]]},
+    "STWXTLS_32": {"PowerPC": [["gprc",0],["ptr_rc_nor0",0],["tlsreg",0]]},
+    "STWXTLS_": {"PowerPC": [["g8rc",0],["ptr_rc_nor0",0],["tlsreg",0]]}
+  },
+  "OUTPUTS": {
+    "STWXTLS": {"PowerPC": []},
+    "STWXTLS_32": {"PowerPC": []},
+    "STWXTLS_": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STWXTLS": {"PowerPC": ["XForm_8","31","151"]},
+    "STWXTLS_32": {"PowerPC": ["XForm_8","31","151"]},
+    "STWXTLS_": {"PowerPC": ["XForm_8","31","151"]}
+  },
+  "OUTPUT_BYTES": {
+    "STWXTLS": {"PowerPC": ["XForm_8","31","151"]},
+    "STWXTLS_32": {"PowerPC": ["XForm_8","31","151"]},
+    "STWXTLS_": {"PowerPC": ["XForm_8","31","151"]}
+  }
+}

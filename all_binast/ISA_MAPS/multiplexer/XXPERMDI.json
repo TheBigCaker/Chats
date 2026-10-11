@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "XXPERMDI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXPERMDI": {"PowerPC": "XXPERMDI"},
+    "XXPERMDIs": {"PowerPC": "XXPERMDIs"}
+  },
+  "INPUTS": {
+    "XXPERMDI": {"PowerPC": [["vsrc",0],["vsrc",0],["u2imm",2]]},
+    "XXPERMDIs": {"PowerPC": [["vsfrc",0],["u2imm",2]]}
+  },
+  "OUTPUTS": {
+    "XXPERMDI": {"PowerPC": [["vsrc",0]]},
+    "XXPERMDIs": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XXPERMDI": {"PowerPC": ["XX3Form_2","60","10"]},
+    "XXPERMDIs": {"PowerPC": ["XX3Form_2s","60","10"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXPERMDI": {"PowerPC": ["XX3Form_2","60","10"]},
+    "XXPERMDIs": {"PowerPC": ["XX3Form_2s","60","10"]}
+  }
+}

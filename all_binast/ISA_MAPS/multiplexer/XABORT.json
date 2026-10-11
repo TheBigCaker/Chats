@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XABORT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XABORT_DEF": {"X86": "XABORT_DEF"}
+  },
+  "INPUTS": {
+    "XABORT_DEF": {"X86": []}
+  },
+  "OUTPUTS": {
+    "XABORT_DEF": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "XABORT_DEF": {"X86": ["0"]}
+  },
+  "OUTPUT_BYTES": {
+    "XABORT_DEF": {"X86": ["0"]}
+  }
+}

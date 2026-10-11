@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "MMUL",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "MMUL.v4s8": {"Mali": "MMUL.v4s8"},
+    "MMUL.v4u8": {"Mali": "MMUL.v4u8"},
+    "MMUL.f32": {"Mali": "MMUL.f32"},
+    "MMUL.v2f16": {"Mali": "MMUL.v2f16"}
+  },
+  "INPUTS": {
+    "MMUL.v4s8": {"Mali": []},
+    "MMUL.v4u8": {"Mali": []},
+    "MMUL.f32": {"Mali": []},
+    "MMUL.v2f16": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "MMUL.v4s8": {"Mali": [["R",32]]},
+    "MMUL.v4u8": {"Mali": [["R",32]]},
+    "MMUL.f32": {"Mali": [["R",32]]},
+    "MMUL.v2f16": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "MMUL.v4s8": {"Mali": ["Valhall_"]},
+    "MMUL.v4u8": {"Mali": ["Valhall_"]},
+    "MMUL.f32": {"Mali": ["Valhall_"]},
+    "MMUL.v2f16": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "MMUL.v4s8": {"Mali": ["Valhall_"]},
+    "MMUL.v4u8": {"Mali": ["Valhall_"]},
+    "MMUL.f32": {"Mali": ["Valhall_"]},
+    "MMUL.v2f16": {"Mali": ["Valhall_"]}
+  }
+}

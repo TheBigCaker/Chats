@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVPRFX",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "MOVPRFX_ZZ": {"AArch64": "MOVPRFX_ZZ"}
+  },
+  "INPUTS": {
+    "MOVPRFX_ZZ": {"AArch64": [["zprty:$Zn",0]]}
+  },
+  "OUTPUTS": {
+    "MOVPRFX_ZZ": {"AArch64": [["zprty:$Zd",0]]}
+  },
+  "INPUT_BYTES": {
+    "MOVPRFX_ZZ": {"AArch64": ["sve_int_bin_cons_misc_0_c","0b00000001"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVPRFX_ZZ": {"AArch64": ["sve_int_bin_cons_misc_0_c","0b00000001"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BCDCPSGN",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BCDCPSGN_rec": {"PowerPC": "BCDCPSGN_rec"}
+  },
+  "INPUTS": {
+    "BCDCPSGN_rec": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "BCDCPSGN_rec": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "BCDCPSGN_rec": {"PowerPC": ["VX1_VT5_VA5_VB5","833"]}
+  },
+  "OUTPUT_BYTES": {
+    "BCDCPSGN_rec": {"PowerPC": ["VX1_VT5_VA5_VB5","833"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "COLLECT",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "COLLECT.i32": {"Mali": "COLLECT.i32"}
+  },
+  "INPUTS": {
+    "COLLECT.i32": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "COLLECT.i32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "COLLECT.i32": {"Mali": ["Bifrost_add/"]}
+  },
+  "OUTPUT_BYTES": {
+    "COLLECT.i32": {"Mali": ["Bifrost_add/"]}
+  }
+}

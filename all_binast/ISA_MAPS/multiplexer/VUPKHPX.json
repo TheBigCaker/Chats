@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUPKHPX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VUPKHPX": {"PowerPC": "VUPKHPX"}
+  },
+  "INPUTS": {
+    "VUPKHPX": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VUPKHPX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VUPKHPX": {"PowerPC": ["VX2_Int_Ty2","846"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUPKHPX": {"PowerPC": ["VX2_Int_Ty2","846"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SRSDA",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SRSDA": {"ARM": "SRSDA"},
+    "SRSDA_UPD": {"ARM": "SRSDA_UPD"}
+  },
+  "INPUTS": {
+    "SRSDA": {"ARM": [["imm0_31:$mode",0]]},
+    "SRSDA_UPD": {"ARM": [["imm0_31:$mode",0]]}
+  },
+  "OUTPUTS": {
+    "SRSDA": {"ARM": []},
+    "SRSDA_UPD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SRSDA": {"ARM": ["SRSI","0"]},
+    "SRSDA_UPD": {"ARM": ["SRSI","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "SRSDA": {"ARM": ["SRSI","0"]},
+    "SRSDA_UPD": {"ARM": ["SRSI","1"]}
+  }
+}

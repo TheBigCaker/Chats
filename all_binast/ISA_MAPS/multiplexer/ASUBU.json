@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ASUBU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "ASUBU": {"RISCV": "ASUBU"}
+  },
+  "INPUTS": {
+    "ASUBU": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "ASUBU": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "ASUBU": {"RISCV": ["RVPBinary_rr","0b1111","0b01","0b000"]}
+  },
+  "OUTPUT_BYTES": {
+    "ASUBU": {"RISCV": ["RVPBinary_rr","0b1111","0b01","0b000"]}
+  }
+}

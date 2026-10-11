@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSITOH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VSITOH": {"ARM": "VSITOH"}
+  },
+  "INPUTS": {
+    "VSITOH": {"ARM": [["SPR",0]]}
+  },
+  "OUTPUTS": {
+    "VSITOH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSITOH": {"ARM": ["AVConv1IHs_Encode","0b11101","0b11","0b1000","0b1001"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSITOH": {"ARM": ["AVConv1IHs_Encode","0b11101","0b11","0b1000","0b1001"]}
+  }
+}

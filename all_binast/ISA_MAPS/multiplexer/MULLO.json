@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "MULLO",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "MULLO_INT_eg": {"AMDGPU": "MULLO_INT_eg"},
+    "MULLO_UINT_eg": {"AMDGPU": "MULLO_UINT_eg"},
+    "MULLO_INT_r600": {"AMDGPU": "MULLO_INT_r600"},
+    "MULLO_UINT_r600": {"AMDGPU": "MULLO_UINT_r600"}
+  },
+  "INPUTS": {
+    "MULLO_INT_eg": {"AMDGPU": []},
+    "MULLO_UINT_eg": {"AMDGPU": []},
+    "MULLO_INT_r600": {"AMDGPU": []},
+    "MULLO_UINT_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "MULLO_INT_eg": {"AMDGPU": []},
+    "MULLO_UINT_eg": {"AMDGPU": []},
+    "MULLO_INT_r600": {"AMDGPU": []},
+    "MULLO_UINT_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "MULLO_INT_eg": {"AMDGPU": ["MULLO_INT_Common","0x8F"]},
+    "MULLO_UINT_eg": {"AMDGPU": ["MULLO_UINT_Common","0x91"]},
+    "MULLO_INT_r600": {"AMDGPU": ["MULLO_INT_Common","0x73"]},
+    "MULLO_UINT_r600": {"AMDGPU": ["MULLO_UINT_Common","0x75"]}
+  },
+  "OUTPUT_BYTES": {
+    "MULLO_INT_eg": {"AMDGPU": ["MULLO_INT_Common","0x8F"]},
+    "MULLO_UINT_eg": {"AMDGPU": ["MULLO_UINT_Common","0x91"]},
+    "MULLO_INT_r600": {"AMDGPU": ["MULLO_INT_Common","0x73"]},
+    "MULLO_UINT_r600": {"AMDGPU": ["MULLO_UINT_Common","0x75"]}
+  }
+}

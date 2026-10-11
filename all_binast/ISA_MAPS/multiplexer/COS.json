@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "COS",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "COS_eg": {"AMDGPU": "COS_eg"},
+    "COS_HW": {"AMDGPU": "COS_HW"},
+    "COS_r600": {"AMDGPU": "COS_r600"}
+  },
+  "INPUTS": {
+    "COS_eg": {"AMDGPU": []},
+    "COS_HW": {"AMDGPU": []},
+    "COS_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "COS_eg": {"AMDGPU": []},
+    "COS_HW": {"AMDGPU": []},
+    "COS_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "COS_eg": {"AMDGPU": ["COS_Common","0x8E"]},
+    "COS_HW": {"AMDGPU": ["SDNode","1"]},
+    "COS_r600": {"AMDGPU": ["COS_Common","0x6F"]}
+  },
+  "OUTPUT_BYTES": {
+    "COS_eg": {"AMDGPU": ["COS_Common","0x8E"]},
+    "COS_HW": {"AMDGPU": ["SDNode","1"]},
+    "COS_r600": {"AMDGPU": ["COS_Common","0x6F"]}
+  }
+}

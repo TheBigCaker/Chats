@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STXVPX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STXVPX": {"PowerPC": "STXVPX"}
+  },
+  "INPUTS": {
+    "STXVPX": {"PowerPC": [["vsrprc",0],["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "STXVPX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STXVPX": {"PowerPC": ["XForm_XTp5_RAB5","31","461"]}
+  },
+  "OUTPUT_BYTES": {
+    "STXVPX": {"PowerPC": ["XForm_XTp5_RAB5","31","461"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "QFPR",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "QFPRegs": {"Sparc": "QFPRegs"}
+  },
+  "INPUTS": {
+    "QFPRegs": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "QFPRegs": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "QFPRegs": {"Sparc": ["RegisterClass","128","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "QFPRegs": {"Sparc": ["RegisterClass","128","0"]}
+  }
+}

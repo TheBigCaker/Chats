@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "INVEPT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "INVEPT32": {"X86": "INVEPT32"},
+    "INVEPT64": {"X86": "INVEPT64"},
+    "INVEPT64_EVEX": {"X86": "INVEPT64_EVEX"}
+  },
+  "INPUTS": {
+    "INVEPT32": {"X86": [["GR32",32],["i128mem",0]]},
+    "INVEPT64": {"X86": [["GR64",64],["i128mem",0]]},
+    "INVEPT64_EVEX": {"X86": [["GR64",64],["i128mem",0]]}
+  },
+  "OUTPUTS": {
+    "INVEPT32": {"X86": []},
+    "INVEPT64": {"X86": []},
+    "INVEPT64_EVEX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "INVEPT32": {"X86": ["0x80"]},
+    "INVEPT64": {"X86": ["0x80"]},
+    "INVEPT64_EVEX": {"X86": ["0xF0"]}
+  },
+  "OUTPUT_BYTES": {
+    "INVEPT32": {"X86": ["0x80"]},
+    "INVEPT64": {"X86": ["0x80"]},
+    "INVEPT64_EVEX": {"X86": ["0xF0"]}
+  }
+}

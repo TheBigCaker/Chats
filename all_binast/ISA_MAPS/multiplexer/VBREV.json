@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VBREV",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VBREV_V": {"RISCV": "VBREV_V"},
+    "VBREV8_V": {"RISCV": "VBREV8_V"}
+  },
+  "INPUTS": {
+    "VBREV_V": {"RISCV": []},
+    "VBREV8_V": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VBREV_V": {"RISCV": []},
+    "VBREV8_V": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VBREV_V": {"RISCV": ["VALUVs2","0b010010","0b01010"]},
+    "VBREV8_V": {"RISCV": ["VALUVs2","0b010010","0b01000"]}
+  },
+  "OUTPUT_BYTES": {
+    "VBREV_V": {"RISCV": ["VALUVs2","0b010010","0b01010"]},
+    "VBREV8_V": {"RISCV": ["VALUVs2","0b010010","0b01000"]}
+  }
+}

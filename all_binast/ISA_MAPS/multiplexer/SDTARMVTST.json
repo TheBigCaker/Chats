@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SDTARMVTST",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SDTARMVTST": {"ARM": "SDTARMVTST"}
+  },
+  "INPUTS": {
+    "SDTARMVTST": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SDTARMVTST": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SDTARMVTST": {"ARM": ["SDTypeProfile","1","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTARMVTST": {"ARM": ["SDTypeProfile","1","2"]}
+  }
+}

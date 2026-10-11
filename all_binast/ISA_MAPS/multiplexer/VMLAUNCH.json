@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMLAUNCH",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMLAUNCH": {"X86": "VMLAUNCH"}
+  },
+  "INPUTS": {
+    "VMLAUNCH": {"X86": []}
+  },
+  "OUTPUTS": {
+    "VMLAUNCH": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMLAUNCH": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMLAUNCH": {"X86": ["0x01"]}
+  }
+}

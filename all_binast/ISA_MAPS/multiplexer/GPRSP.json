@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "GPRSP",
+  "BACKENDS": ["AVR"],
+  "INDEX": {
+    "GPRSP": {"AVR": "GPRSP"}
+  },
+  "INPUTS": {
+    "GPRSP": {"AVR": []}
+  },
+  "OUTPUTS": {
+    "GPRSP": {"AVR": []}
+  },
+  "INPUT_BYTES": {
+    "GPRSP": {"AVR": ["RegisterClass","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "GPRSP": {"AVR": ["RegisterClass","8"]}
+  }
+}

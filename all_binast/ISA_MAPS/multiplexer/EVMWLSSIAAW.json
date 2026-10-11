@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVMWLSSIAAW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVMWLSSIAAW": {"PowerPC": "EVMWLSSIAAW"}
+  },
+  "INPUTS": {
+    "EVMWLSSIAAW": {"PowerPC": [["sperc",0],["sperc",0]]}
+  },
+  "OUTPUTS": {
+    "EVMWLSSIAAW": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVMWLSSIAAW": {"PowerPC": ["EVXForm_1","1345"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVMWLSSIAAW": {"PowerPC": ["EVXForm_1","1345"]}
+  }
+}

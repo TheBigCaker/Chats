@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "MRS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MRS": {"ARM": "MRS"},
+    "MRSsys": {"ARM": "MRSsys"},
+    "MRSbanked": {"ARM": "MRSbanked"}
+  },
+  "INPUTS": {
+    "MRS": {"ARM": []},
+    "MRSsys": {"ARM": []},
+    "MRSbanked": {"ARM": [["banked_reg",0]]}
+  },
+  "OUTPUTS": {
+    "MRS": {"ARM": [["GPRnopc",0]]},
+    "MRSsys": {"ARM": [["GPRnopc",0]]},
+    "MRSbanked": {"ARM": [["GPRnopc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MRS": {"ARM": ["ABI","0b0001"]},
+    "MRSsys": {"ARM": ["ABI","0b0001"]},
+    "MRSbanked": {"ARM": ["ABI","0b0001"]}
+  },
+  "OUTPUT_BYTES": {
+    "MRS": {"ARM": ["ABI","0b0001"]},
+    "MRSsys": {"ARM": ["ABI","0b0001"]},
+    "MRSbanked": {"ARM": ["ABI","0b0001"]}
+  }
+}

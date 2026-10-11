@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "DSR",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "DSRemMacro": {"Mips": "DSRemMacro"},
+    "DSRemIMacro": {"Mips": "DSRemIMacro"}
+  },
+  "INPUTS": {
+    "DSRemMacro": {"Mips": [["GPR64Opnd",64],["GPR64Opnd",64]]},
+    "DSRemIMacro": {"Mips": [["GPR64Opnd",64],["simm32_relaxed",0]]}
+  },
+  "OUTPUTS": {
+    "DSRemMacro": {"Mips": [["GPR64Opnd",64]]},
+    "DSRemIMacro": {"Mips": [["GPR64Opnd",64]]}
+  },
+  "INPUT_BYTES": {
+    "DSRemMacro": {"Mips": ["MipsAsmPseudoInst"]},
+    "DSRemIMacro": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "DSRemMacro": {"Mips": ["MipsAsmPseudoInst"]},
+    "DSRemIMacro": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

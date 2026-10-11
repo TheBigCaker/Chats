@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PREPARE",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "PREPARE_PROBED_ALLOCA_64": {"PowerPC": "PREPARE_PROBED_ALLOCA_64"},
+    "PREPARE_PROBED_ALLOCA_NEGSIZE_SAME_REG_64": {"PowerPC": "PREPARE_PROBED_ALLOCA_NEGSIZE_SAME_REG_64"}
+  },
+  "INPUTS": {
+    "PREPARE_PROBED_ALLOCA_64": {"PowerPC": [["g8rc",0],["memri",0]]},
+    "PREPARE_PROBED_ALLOCA_NEGSIZE_SAME_REG_64": {"PowerPC": [["g8rc",0],["memri",0]]}
+  },
+  "OUTPUTS": {
+    "PREPARE_PROBED_ALLOCA_64": {"PowerPC": [["g8rc",0],["g8rc",0]]},
+    "PREPARE_PROBED_ALLOCA_NEGSIZE_SAME_REG_64": {"PowerPC": [["g8rc",0],["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "PREPARE_PROBED_ALLOCA_64": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "PREPARE_PROBED_ALLOCA_NEGSIZE_SAME_REG_64": {"PowerPC": ["PPCEmitTimePseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "PREPARE_PROBED_ALLOCA_64": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "PREPARE_PROBED_ALLOCA_NEGSIZE_SAME_REG_64": {"PowerPC": ["PPCEmitTimePseudo"]}
+  }
+}

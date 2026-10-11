@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "QDSUB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "QDSUB": {"ARM": "QDSUB"}
+  },
+  "INPUTS": {
+    "QDSUB": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "QDSUB": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "QDSUB": {"ARM": ["AAIRevOpr","0b00010110","0b00000101"]}
+  },
+  "OUTPUT_BYTES": {
+    "QDSUB": {"ARM": ["AAIRevOpr","0b00010110","0b00000101"]}
+  }
+}

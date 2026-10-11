@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "AESD",
+  "BACKENDS": ["AArch64","ARM"],
+  "INDEX": {
+    "AESD_ZZZ_B": {"AArch64": "AESD_ZZZ_B"},
+    "AESD_2ZZI_B": {"AArch64": "AESD_2ZZI_B"},
+    "AESD_4ZZI_B": {"AArch64": "AESD_4ZZI_B"},
+    "AESD": {"ARM": "AESD"}
+  },
+  "INPUTS": {
+    "AESD_ZZZ_B": {"AArch64": [["zprty:$_Zdn",0],["zprty:$Zm",0]]},
+    "AESD_2ZZI_B": {"AArch64": [["ZZ_b_mul_r:$_Zdn",0],["ZPR128:$Zm",128],["VectorIndexS32b_timm:$imm2",0]]},
+    "AESD_4ZZI_B": {"AArch64": [["ZZZZ_b_mul_r:$_Zdn",0],["ZPR128:$Zm",128],["VectorIndexS32b_timm:$imm2",0]]},
+    "AESD": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "AESD_ZZZ_B": {"AArch64": [["zprty:$Zdn",0]]},
+    "AESD_2ZZI_B": {"AArch64": [["ZZ_b_mul_r:$Zdn",0]]},
+    "AESD_4ZZI_B": {"AArch64": [["ZZZZ_b_mul_r:$Zdn",0]]},
+    "AESD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "AESD_ZZZ_B": {"AArch64": ["sve2_crypto_des_bin_op","0b01"]},
+    "AESD_2ZZI_B": {"AArch64": ["sve_crypto_binary_multi2","0b010"]},
+    "AESD_4ZZI_B": {"AArch64": ["sve_crypto_binary_multi4","0b0100"]},
+    "AESD": {"ARM": ["AES2Op","0","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "AESD_ZZZ_B": {"AArch64": ["sve2_crypto_des_bin_op","0b01"]},
+    "AESD_2ZZI_B": {"AArch64": ["sve_crypto_binary_multi2","0b010"]},
+    "AESD_4ZZI_B": {"AArch64": ["sve_crypto_binary_multi4","0b0100"]},
+    "AESD": {"ARM": ["AES2Op","0","1"]}
+  }
+}

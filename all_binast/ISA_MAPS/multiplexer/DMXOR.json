@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DMXOR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DMXOR": {"PowerPC": "DMXOR"}
+  },
+  "INPUTS": {
+    "DMXOR": {"PowerPC": [["dmr",0],["dmr",0]]}
+  },
+  "OUTPUTS": {
+    "DMXOR": {"PowerPC": [["dmr",0]]}
+  },
+  "INPUT_BYTES": {
+    "DMXOR": {"PowerPC": ["XForm_ATB3","31","7","177"]}
+  },
+  "OUTPUT_BYTES": {
+    "DMXOR": {"PowerPC": ["XForm_ATB3","31","7","177"]}
+  }
+}

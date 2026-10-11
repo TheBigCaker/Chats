@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AR",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "AR_X": {"AMDGPU": "AR_X"}
+  },
+  "INPUTS": {
+    "AR_X": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "AR_X": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "AR_X": {"AMDGPU": ["R600Reg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "AR_X": {"AMDGPU": ["R600Reg","0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STLEXB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "STLEXB": {"ARM": "STLEXB"}
+  },
+  "INPUTS": {
+    "STLEXB": {"ARM": [["GPR",64],["addr_offset_none",0]]}
+  },
+  "OUTPUTS": {
+    "STLEXB": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "STLEXB": {"ARM": ["AIstlex","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "STLEXB": {"ARM": ["AIstlex","0b10"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SLX",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SLX": {"RISCV": "SLX"}
+  },
+  "INPUTS": {
+    "SLX": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "SLX": {"RISCV": [["GPR:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "SLX": {"RISCV": ["RVPTernary_rrr","0b0001","0b11","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "SLX": {"RISCV": ["RVPTernary_rrr","0b0001","0b11","0b001"]}
+  }
+}

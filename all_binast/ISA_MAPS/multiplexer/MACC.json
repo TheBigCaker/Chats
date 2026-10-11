@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "MACC",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MACC_H01": {"RISCV": "MACC_H01"},
+    "MACC_W01": {"RISCV": "MACC_W01"},
+    "MACC_H00": {"RISCV": "MACC_H00"},
+    "MACC_H11": {"RISCV": "MACC_H11"},
+    "MACC_W00": {"RISCV": "MACC_W00"},
+    "MACC_W11": {"RISCV": "MACC_W11"}
+  },
+  "INPUTS": {
+    "MACC_H01": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "MACC_W01": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "MACC_H00": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "MACC_H11": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "MACC_W00": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "MACC_W11": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "MACC_H01": {"RISCV": [["GPR:$rd_wb",0]]},
+    "MACC_W01": {"RISCV": [["GPR:$rd_wb",0]]},
+    "MACC_H00": {"RISCV": [["GPR:$rd_wb",0]]},
+    "MACC_H11": {"RISCV": [["GPR:$rd_wb",0]]},
+    "MACC_W00": {"RISCV": [["GPR:$rd_wb",0]]},
+    "MACC_W11": {"RISCV": [["GPR:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "MACC_H01": {"RISCV": ["RVPTernary_rrr","0b0011","0b01","0b001"]},
+    "MACC_W01": {"RISCV": ["RVPTernary_rrr","0b0011","0b11","0b001"]},
+    "MACC_H00": {"RISCV": ["RVPTernary_rrr","0b0001","0b01","0b011"]},
+    "MACC_H11": {"RISCV": ["RVPTernary_rrr","0b0011","0b01","0b011"]},
+    "MACC_W00": {"RISCV": ["RVPTernary_rrr","0b0001","0b11","0b011"]},
+    "MACC_W11": {"RISCV": ["RVPTernary_rrr","0b0011","0b11","0b011"]}
+  },
+  "OUTPUT_BYTES": {
+    "MACC_H01": {"RISCV": ["RVPTernary_rrr","0b0011","0b01","0b001"]},
+    "MACC_W01": {"RISCV": ["RVPTernary_rrr","0b0011","0b11","0b001"]},
+    "MACC_H00": {"RISCV": ["RVPTernary_rrr","0b0001","0b01","0b011"]},
+    "MACC_H11": {"RISCV": ["RVPTernary_rrr","0b0011","0b01","0b011"]},
+    "MACC_W00": {"RISCV": ["RVPTernary_rrr","0b0001","0b11","0b011"]},
+    "MACC_W11": {"RISCV": ["RVPTernary_rrr","0b0011","0b11","0b011"]}
+  }
+}

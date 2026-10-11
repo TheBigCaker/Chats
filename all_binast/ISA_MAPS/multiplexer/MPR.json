@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "MPR",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "MPR": {"AArch64": "MPR"},
+    "MPR8": {"AArch64": "MPR8"},
+    "MPR16": {"AArch64": "MPR16"},
+    "MPR32": {"AArch64": "MPR32"},
+    "MPR64": {"AArch64": "MPR64"},
+    "MPR128": {"AArch64": "MPR128"}
+  },
+  "INPUTS": {
+    "MPR": {"AArch64": []},
+    "MPR8": {"AArch64": []},
+    "MPR16": {"AArch64": []},
+    "MPR32": {"AArch64": []},
+    "MPR64": {"AArch64": []},
+    "MPR128": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "MPR": {"AArch64": []},
+    "MPR8": {"AArch64": []},
+    "MPR16": {"AArch64": []},
+    "MPR32": {"AArch64": []},
+    "MPR64": {"AArch64": []},
+    "MPR128": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "MPR": {"AArch64": ["RegisterClass","2048"]},
+    "MPR8": {"AArch64": ["RegisterClass","2048","0"]},
+    "MPR16": {"AArch64": ["RegisterClass","1024","0"]},
+    "MPR32": {"AArch64": ["RegisterClass","512","0"]},
+    "MPR64": {"AArch64": ["RegisterClass","256","0"]},
+    "MPR128": {"AArch64": ["RegisterClass","128","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "MPR": {"AArch64": ["RegisterClass","2048"]},
+    "MPR8": {"AArch64": ["RegisterClass","2048","0"]},
+    "MPR16": {"AArch64": ["RegisterClass","1024","0"]},
+    "MPR32": {"AArch64": ["RegisterClass","512","0"]},
+    "MPR64": {"AArch64": ["RegisterClass","256","0"]},
+    "MPR128": {"AArch64": ["RegisterClass","128","0"]}
+  }
+}

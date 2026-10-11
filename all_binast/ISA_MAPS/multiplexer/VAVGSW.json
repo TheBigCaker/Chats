@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VAVGSW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VAVGSW": {"PowerPC": "VAVGSW"}
+  },
+  "INPUTS": {
+    "VAVGSW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VAVGSW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VAVGSW": {"PowerPC": ["VX1_Int_Ty","1410"]}
+  },
+  "OUTPUT_BYTES": {
+    "VAVGSW": {"PowerPC": ["VX1_Int_Ty","1410"]}
+  }
+}

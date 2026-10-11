@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMRGHW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMRGHW": {"PowerPC": "VMRGHW"}
+  },
+  "INPUTS": {
+    "VMRGHW": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMRGHW": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMRGHW": {"PowerPC": ["VXForm_1","140"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMRGHW": {"PowerPC": ["VXForm_1","140"]}
+  }
+}

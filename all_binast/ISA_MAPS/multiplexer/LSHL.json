@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LSHL",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "LSHL_eg": {"AMDGPU": "LSHL_eg"},
+    "LSHL_r600": {"AMDGPU": "LSHL_r600"}
+  },
+  "INPUTS": {
+    "LSHL_eg": {"AMDGPU": []},
+    "LSHL_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "LSHL_eg": {"AMDGPU": []},
+    "LSHL_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "LSHL_eg": {"AMDGPU": ["LSHL_Common","0x17"]},
+    "LSHL_r600": {"AMDGPU": ["LSHL_Common","0x72"]}
+  },
+  "OUTPUT_BYTES": {
+    "LSHL_eg": {"AMDGPU": ["LSHL_Common","0x17"]},
+    "LSHL_r600": {"AMDGPU": ["LSHL_Common","0x72"]}
+  }
+}

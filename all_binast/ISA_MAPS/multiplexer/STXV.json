@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STXV",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STXV": {"PowerPC": "STXV"}
+  },
+  "INPUTS": {
+    "STXV": {"PowerPC": [["vsrc",0],["(memrix16",0]]}
+  },
+  "OUTPUTS": {
+    "STXV": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STXV": {"PowerPC": ["DQ_RD6_RS5_DQ12","61","5"]}
+  },
+  "OUTPUT_BYTES": {
+    "STXV": {"PowerPC": ["DQ_RD6_RS5_DQ12","61","5"]}
+  }
+}

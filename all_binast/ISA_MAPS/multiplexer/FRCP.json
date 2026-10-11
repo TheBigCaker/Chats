@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "FRCP",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FRCP.f16": {"Mali": "FRCP.f16"},
+    "FRCP.f32": {"Mali": "FRCP.f32"},
+    "FRCP_APPROX.f32": {"Mali": "FRCP_APPROX.f32"},
+    "FRCP.f32": {"Mali": "FRCP.f32"},
+    "FRCP.f16": {"Mali": "FRCP.f16"},
+    "FRCP_APPROX.f32": {"Mali": "FRCP_APPROX.f32"}
+  },
+  "INPUTS": {
+    "FRCP.f16": {"Mali": [["R32",32]]},
+    "FRCP.f32": {"Mali": [["R32",32]]},
+    "FRCP_APPROX.f32": {"Mali": [["R32",32]]},
+    "FRCP.f32": {"Mali": []},
+    "FRCP.f16": {"Mali": []},
+    "FRCP_APPROX.f32": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "FRCP.f16": {"Mali": [["R",32]]},
+    "FRCP.f32": {"Mali": [["R",32]]},
+    "FRCP_APPROX.f32": {"Mali": [["R",32]]},
+    "FRCP.f32": {"Mali": [["R",32]]},
+    "FRCP.f16": {"Mali": [["R",32]]},
+    "FRCP_APPROX.f32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FRCP.f16": {"Mali": ["Bifrost_add","0x67080","0xffec0"]},
+    "FRCP.f32": {"Mali": ["Bifrost_add","0x66000","0xfffa0"]},
+    "FRCP_APPROX.f32": {"Mali": ["Bifrost_add"]},
+    "FRCP.f32": {"Mali": ["Valhall_"]},
+    "FRCP.f16": {"Mali": ["Valhall_"]},
+    "FRCP_APPROX.f32": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "FRCP.f16": {"Mali": ["Bifrost_add","0x67080","0xffec0"]},
+    "FRCP.f32": {"Mali": ["Bifrost_add","0x66000","0xfffa0"]},
+    "FRCP_APPROX.f32": {"Mali": ["Bifrost_add"]},
+    "FRCP.f32": {"Mali": ["Valhall_"]},
+    "FRCP.f16": {"Mali": ["Valhall_"]},
+    "FRCP_APPROX.f32": {"Mali": ["Valhall_"]}
+  }
+}

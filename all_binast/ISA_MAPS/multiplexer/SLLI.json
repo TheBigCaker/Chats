@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SLLI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SLLI": {"RISCV": "SLLI"},
+    "SLLI_UW": {"RISCV": "SLLI_UW"}
+  },
+  "INPUTS": {
+    "SLLI": {"RISCV": []},
+    "SLLI_UW": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SLLI": {"RISCV": []},
+    "SLLI_UW": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SLLI": {"RISCV": ["Shift_ri","0b00000","0b001"]},
+    "SLLI_UW": {"RISCV": ["RVBShift_ri","0b00001","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "SLLI": {"RISCV": ["Shift_ri","0b00000","0b001"]},
+    "SLLI_UW": {"RISCV": ["RVBShift_ri","0b00001","0b001"]}
+  }
+}

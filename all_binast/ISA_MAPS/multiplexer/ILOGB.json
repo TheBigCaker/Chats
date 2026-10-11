@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ILOGB",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "ILOGB.f32": {"Mali": "ILOGB.f32"},
+    "ILOGB.v2f16": {"Mali": "ILOGB.v2f16"}
+  },
+  "INPUTS": {
+    "ILOGB.f32": {"Mali": [["R32",32]]},
+    "ILOGB.v2f16": {"Mali": [["R32",32]]}
+  },
+  "OUTPUTS": {
+    "ILOGB.f32": {"Mali": [["R",32]]},
+    "ILOGB.v2f16": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "ILOGB.f32": {"Mali": ["Bifrost_add","0x3d9e0","0xfffe0"]},
+    "ILOGB.v2f16": {"Mali": ["Bifrost_add","0x3d9c0","0xfffe0"]}
+  },
+  "OUTPUT_BYTES": {
+    "ILOGB.f32": {"Mali": ["Bifrost_add","0x3d9e0","0xfffe0"]},
+    "ILOGB.v2f16": {"Mali": ["Bifrost_add","0x3d9c0","0xfffe0"]}
+  }
+}

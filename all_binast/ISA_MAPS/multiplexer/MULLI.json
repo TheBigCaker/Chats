@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MULLI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MULLI8": {"PowerPC": "MULLI8"}
+  },
+  "INPUTS": {
+    "MULLI8": {"PowerPC": [["g8rc",0],["s16imm64",16]]}
+  },
+  "OUTPUTS": {
+    "MULLI8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MULLI8": {"PowerPC": ["DForm_2","7"]}
+  },
+  "OUTPUT_BYTES": {
+    "MULLI8": {"PowerPC": ["DForm_2","7"]}
+  }
+}

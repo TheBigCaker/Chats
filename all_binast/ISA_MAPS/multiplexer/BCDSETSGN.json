@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BCDSETSGN",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BCDSETSGN_rec": {"PowerPC": "BCDSETSGN_rec"}
+  },
+  "INPUTS": {
+    "BCDSETSGN_rec": {"PowerPC": [["vrrc:$VB",0],["u1imm:$PS",1]]}
+  },
+  "OUTPUTS": {
+    "BCDSETSGN_rec": {"PowerPC": [["vrrc:$VD",0]]}
+  },
+  "INPUT_BYTES": {
+    "BCDSETSGN_rec": {"PowerPC": ["VX_VT5_EO5_VB5_PS1_XO9_o","31","385"]}
+  },
+  "OUTPUT_BYTES": {
+    "BCDSETSGN_rec": {"PowerPC": ["VX_VT5_EO5_VB5_PS1_XO9_o","31","385"]}
+  }
+}

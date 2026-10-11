@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "RFEIA",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "RFEIA": {"ARM": "RFEIA"},
+    "RFEIA_UPD": {"ARM": "RFEIA_UPD"}
+  },
+  "INPUTS": {
+    "RFEIA": {"ARM": [["GPR:$Rn",0]]},
+    "RFEIA_UPD": {"ARM": [["GPR:$Rn",0]]}
+  },
+  "OUTPUTS": {
+    "RFEIA": {"ARM": []},
+    "RFEIA_UPD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "RFEIA": {"ARM": ["RFEI","0"]},
+    "RFEIA_UPD": {"ARM": ["RFEI","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "RFEIA": {"ARM": ["RFEI","0"]},
+    "RFEIA_UPD": {"ARM": ["RFEI","1"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "DISCARD",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "DISCARD.f32": {"Mali": "DISCARD.f32"},
+    "DISCARD.b32": {"Mali": "DISCARD.b32"},
+    "DISCARD.f32": {"Mali": "DISCARD.f32"}
+  },
+  "INPUTS": {
+    "DISCARD.f32": {"Mali": [["R32",32],["R32",32]]},
+    "DISCARD.b32": {"Mali": [["R32",32]]},
+    "DISCARD.f32": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "DISCARD.f32": {"Mali": [["R",32]]},
+    "DISCARD.b32": {"Mali": [["R",32]]},
+    "DISCARD.f32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "DISCARD.f32": {"Mali": ["Bifrost_add","0xc8800","0xff800"]},
+    "DISCARD.b32": {"Mali": ["Bifrost_add"]},
+    "DISCARD.f32": {"Mali": ["Valhall_CVT"]}
+  },
+  "OUTPUT_BYTES": {
+    "DISCARD.f32": {"Mali": ["Bifrost_add","0xc8800","0xff800"]},
+    "DISCARD.b32": {"Mali": ["Bifrost_add"]},
+    "DISCARD.f32": {"Mali": ["Valhall_CVT"]}
+  }
+}

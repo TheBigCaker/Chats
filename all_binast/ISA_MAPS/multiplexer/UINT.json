@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "UINT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "UINT_TO_FLT_eg": {"AMDGPU": "UINT_TO_FLT_eg"},
+    "UINT_TO_FLT_r600": {"AMDGPU": "UINT_TO_FLT_r600"}
+  },
+  "INPUTS": {
+    "UINT_TO_FLT_eg": {"AMDGPU": []},
+    "UINT_TO_FLT_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "UINT_TO_FLT_eg": {"AMDGPU": []},
+    "UINT_TO_FLT_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "UINT_TO_FLT_eg": {"AMDGPU": ["UINT_TO_FLT_Common","0x9C"]},
+    "UINT_TO_FLT_r600": {"AMDGPU": ["UINT_TO_FLT_Common","0x6d"]}
+  },
+  "OUTPUT_BYTES": {
+    "UINT_TO_FLT_eg": {"AMDGPU": ["UINT_TO_FLT_Common","0x9C"]},
+    "UINT_TO_FLT_r600": {"AMDGPU": ["UINT_TO_FLT_Common","0x6d"]}
+  }
+}

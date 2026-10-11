@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FMEAN",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FMEAN16": {"Sparc": "FMEAN16"}
+  },
+  "INPUTS": {
+    "FMEAN16": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FMEAN16": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FMEAN16": {"Sparc": ["VISInst","0b001000000"]}
+  },
+  "OUTPUT_BYTES": {
+    "FMEAN16": {"Sparc": ["VISInst","0b001000000"]}
+  }
+}

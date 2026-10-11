@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "CM",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "CM_MVA01S": {"RISCV": "CM_MVA01S"},
+    "CM_MVSA01": {"RISCV": "CM_MVSA01"},
+    "CM_PUSH": {"RISCV": "CM_PUSH"},
+    "CM_POPRET": {"RISCV": "CM_POPRET"},
+    "CM_POPRETZ": {"RISCV": "CM_POPRETZ"},
+    "CM_POP": {"RISCV": "CM_POP"},
+    "CM_JT": {"RISCV": "CM_JT"},
+    "CM_JALT": {"RISCV": "CM_JALT"}
+  },
+  "INPUTS": {
+    "CM_MVA01S": {"RISCV": [["SR07",7],["SR07",7]]},
+    "CM_MVSA01": {"RISCV": []},
+    "CM_PUSH": {"RISCV": [["reglist:$rlist",0],["immtype:$stackadj",0]]},
+    "CM_POPRET": {"RISCV": [["reglist:$rlist",0],["immtype:$stackadj",0]]},
+    "CM_POPRETZ": {"RISCV": [["reglist:$rlist",0],["immtype:$stackadj",0]]},
+    "CM_POP": {"RISCV": [["reglist:$rlist",0],["immtype:$stackadj",0]]},
+    "CM_JT": {"RISCV": [["uimm5",0]]},
+    "CM_JALT": {"RISCV": [["uimm8ge32",0]]}
+  },
+  "OUTPUTS": {
+    "CM_MVA01S": {"RISCV": []},
+    "CM_MVSA01": {"RISCV": [["SR07",7],["SR07",7]]},
+    "CM_PUSH": {"RISCV": []},
+    "CM_POPRET": {"RISCV": []},
+    "CM_POPRETZ": {"RISCV": []},
+    "CM_POP": {"RISCV": []},
+    "CM_JT": {"RISCV": []},
+    "CM_JALT": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "CM_MVA01S": {"RISCV": ["RVInst16CA","0b101011","0b11"]},
+    "CM_MVSA01": {"RISCV": ["RVInst16CA","0b101011","0b01"]},
+    "CM_PUSH": {"RISCV": ["RVInstZcCPPP","0b11000"]},
+    "CM_POPRET": {"RISCV": ["RVInstZcCPPP","0b11110"]},
+    "CM_POPRETZ": {"RISCV": ["RVInstZcCPPP","0b11100"]},
+    "CM_POP": {"RISCV": ["RVInstZcCPPP","0b11010"]},
+    "CM_JT": {"RISCV": ["RVInst16CJ","0b101"]},
+    "CM_JALT": {"RISCV": ["RVInst16CJ","0b101"]}
+  },
+  "OUTPUT_BYTES": {
+    "CM_MVA01S": {"RISCV": ["RVInst16CA","0b101011","0b11"]},
+    "CM_MVSA01": {"RISCV": ["RVInst16CA","0b101011","0b01"]},
+    "CM_PUSH": {"RISCV": ["RVInstZcCPPP","0b11000"]},
+    "CM_POPRET": {"RISCV": ["RVInstZcCPPP","0b11110"]},
+    "CM_POPRETZ": {"RISCV": ["RVInstZcCPPP","0b11100"]},
+    "CM_POP": {"RISCV": ["RVInstZcCPPP","0b11010"]},
+    "CM_JT": {"RISCV": ["RVInst16CJ","0b101"]},
+    "CM_JALT": {"RISCV": ["RVInst16CJ","0b101"]}
+  }
+}

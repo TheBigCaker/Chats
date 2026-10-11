@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMHRADDSHS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMHRADDSHS": {"PowerPC": "VMHRADDSHS"}
+  },
+  "INPUTS": {
+    "VMHRADDSHS": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMHRADDSHS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMHRADDSHS": {"PowerPC": ["VA1a_Int_Ty","33"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMHRADDSHS": {"PowerPC": ["VA1a_Int_Ty","33"]}
+  }
+}

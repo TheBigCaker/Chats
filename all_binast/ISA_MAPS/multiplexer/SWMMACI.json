@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SWMMACI",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SWMMACIndex8": {"AMDGPU": "SWMMACIndex8"},
+    "SWMMACIndex16": {"AMDGPU": "SWMMACIndex16"},
+    "SWMMACIndex32": {"AMDGPU": "SWMMACIndex32"}
+  },
+  "INPUTS": {
+    "SWMMACIndex8": {"AMDGPU": []},
+    "SWMMACIndex16": {"AMDGPU": []},
+    "SWMMACIndex32": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SWMMACIndex8": {"AMDGPU": []},
+    "SWMMACIndex16": {"AMDGPU": []},
+    "SWMMACIndex32": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SWMMACIndex8": {"AMDGPU": ["ComplexPattern","2"]},
+    "SWMMACIndex16": {"AMDGPU": ["ComplexPattern","2"]},
+    "SWMMACIndex32": {"AMDGPU": ["ComplexPattern","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SWMMACIndex8": {"AMDGPU": ["ComplexPattern","2"]},
+    "SWMMACIndex16": {"AMDGPU": ["ComplexPattern","2"]},
+    "SWMMACIndex32": {"AMDGPU": ["ComplexPattern","2"]}
+  }
+}

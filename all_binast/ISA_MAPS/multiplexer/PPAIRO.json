@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "PPAIRO",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PPAIRO_B": {"RISCV": "PPAIRO_B"},
+    "PPAIRO_H": {"RISCV": "PPAIRO_H"},
+    "PPAIRO_W": {"RISCV": "PPAIRO_W"},
+    "PPAIRO_DB": {"RISCV": "PPAIRO_DB"},
+    "PPAIRO_DH": {"RISCV": "PPAIRO_DH"}
+  },
+  "INPUTS": {
+    "PPAIRO_B": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PPAIRO_H": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PPAIRO_W": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PPAIRO_DB": {"RISCV": []},
+    "PPAIRO_DH": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PPAIRO_B": {"RISCV": [["GPR:$rd",0]]},
+    "PPAIRO_H": {"RISCV": [["GPR:$rd",0]]},
+    "PPAIRO_W": {"RISCV": [["GPR:$rd",0]]},
+    "PPAIRO_DB": {"RISCV": []},
+    "PPAIRO_DH": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PPAIRO_B": {"RISCV": ["RVPBinary_rr","0b0110","0b00","0b100"]},
+    "PPAIRO_H": {"RISCV": ["RVPBinary_rr","0b0110","0b01","0b100"]},
+    "PPAIRO_W": {"RISCV": ["RVPBinary_rr","0b0110","0b11","0b100"]},
+    "PPAIRO_DB": {"RISCV": ["RVPPairBinaryPack_rr","0b011","0b00"]},
+    "PPAIRO_DH": {"RISCV": ["RVPPairBinaryPack_rr","0b011","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "PPAIRO_B": {"RISCV": ["RVPBinary_rr","0b0110","0b00","0b100"]},
+    "PPAIRO_H": {"RISCV": ["RVPBinary_rr","0b0110","0b01","0b100"]},
+    "PPAIRO_W": {"RISCV": ["RVPBinary_rr","0b0110","0b11","0b100"]},
+    "PPAIRO_DB": {"RISCV": ["RVPPairBinaryPack_rr","0b011","0b00"]},
+    "PPAIRO_DH": {"RISCV": ["RVPPairBinaryPack_rr","0b011","0b01"]}
+  }
+}

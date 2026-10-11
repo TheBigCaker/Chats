@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VCMPGTUQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCMPGTUQ": {"PowerPC": "VCMPGTUQ"},
+    "VCMPGTUQ_rec": {"PowerPC": "VCMPGTUQ_rec"}
+  },
+  "INPUTS": {
+    "VCMPGTUQ": {"PowerPC": []},
+    "VCMPGTUQ_rec": {"PowerPC": [["vrrc:$VA",0],["vrrc:$VB",0]]}
+  },
+  "OUTPUTS": {
+    "VCMPGTUQ": {"PowerPC": []},
+    "VCMPGTUQ_rec": {"PowerPC": [["vrrc:$VD",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCMPGTUQ": {"PowerPC": ["VCMP","647"]},
+    "VCMPGTUQ_rec": {"PowerPC": ["VCMP_rec","647"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCMPGTUQ": {"PowerPC": ["VCMP","647"]},
+    "VCMPGTUQ_rec": {"PowerPC": ["VCMP_rec","647"]}
+  }
+}

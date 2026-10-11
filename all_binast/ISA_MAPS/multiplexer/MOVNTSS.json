@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVNTSS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MOVNTSS": {"X86": "MOVNTSS"}
+  },
+  "INPUTS": {
+    "MOVNTSS": {"X86": [["f32mem",0],["VR128",128]]}
+  },
+  "OUTPUTS": {
+    "MOVNTSS": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "MOVNTSS": {"X86": ["0x2B"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVNTSS": {"X86": ["0x2B"]}
+  }
+}

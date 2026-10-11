@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MADDU",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MADDU_MM": {"Mips": "MADDU_MM"}
+  },
+  "INPUTS": {
+    "MADDU_MM": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "MADDU_MM": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "MADDU_MM": {"Mips": ["MMRel","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "MADDU_MM": {"Mips": ["MMRel","1"]}
+  }
+}

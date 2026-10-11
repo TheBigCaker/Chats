@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSRAQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSRAQ": {"PowerPC": "VSRAQ"}
+  },
+  "INPUTS": {
+    "VSRAQ": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSRAQ": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSRAQ": {"PowerPC": ["VX1_VT5_VA5_VB5","773"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSRAQ": {"PowerPC": ["VX1_VT5_VA5_VB5","773"]}
+  }
+}

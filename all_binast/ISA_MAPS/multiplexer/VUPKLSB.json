@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUPKLSB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VUPKLSB": {"PowerPC": "VUPKLSB"}
+  },
+  "INPUTS": {
+    "VUPKLSB": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VUPKLSB": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VUPKLSB": {"PowerPC": ["VX2_Int_Ty2","654"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUPKLSB": {"PowerPC": ["VX2_Int_Ty2","654"]}
+  }
+}

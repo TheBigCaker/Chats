@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FNSTSW",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "FNSTSW16r": {"X86": "FNSTSW16r"}
+  },
+  "INPUTS": {
+    "FNSTSW16r": {"X86": []}
+  },
+  "OUTPUTS": {
+    "FNSTSW16r": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "FNSTSW16r": {"X86": ["0xDF"]}
+  },
+  "OUTPUT_BYTES": {
+    "FNSTSW16r": {"X86": ["0xDF"]}
+  }
+}

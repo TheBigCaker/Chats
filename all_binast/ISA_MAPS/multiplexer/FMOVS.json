@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FMOVS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FMOVS_XCC": {"Sparc": "FMOVS_XCC"}
+  },
+  "INPUTS": {
+    "FMOVS_XCC": {"Sparc": [["FPRegs",0],["FPRegs",0],["CCOp",0]]}
+  },
+  "OUTPUTS": {
+    "FMOVS_XCC": {"Sparc": [["FPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FMOVS_XCC": {"Sparc": ["F4_3","0b110101","0b000001"]}
+  },
+  "OUTPUT_BYTES": {
+    "FMOVS_XCC": {"Sparc": ["F4_3","0b110101","0b000001"]}
+  }
+}

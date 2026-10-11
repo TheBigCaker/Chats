@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DYNAREAOFFSET",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DYNAREAOFFSET8": {"PowerPC": "DYNAREAOFFSET8"}
+  },
+  "INPUTS": {
+    "DYNAREAOFFSET8": {"PowerPC": [["memri",0]]}
+  },
+  "OUTPUTS": {
+    "DYNAREAOFFSET8": {"PowerPC": [["i64imm",64]]}
+  },
+  "INPUT_BYTES": {
+    "DYNAREAOFFSET8": {"PowerPC": ["PPCEmitTimePseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "DYNAREAOFFSET8": {"PowerPC": ["PPCEmitTimePseudo"]}
+  }
+}

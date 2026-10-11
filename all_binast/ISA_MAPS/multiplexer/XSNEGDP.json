@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSNEGDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSNEGDP": {"PowerPC": "XSNEGDP"}
+  },
+  "INPUTS": {
+    "XSNEGDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSNEGDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSNEGDP": {"PowerPC": ["XX2Form","60","377"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSNEGDP": {"PowerPC": ["XX2Form","60","377"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AAS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "AAS": {"X86": "AAS"}
+  },
+  "INPUTS": {
+    "AAS": {"X86": []}
+  },
+  "OUTPUTS": {
+    "AAS": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "AAS": {"X86": ["0x3F"]}
+  },
+  "OUTPUT_BYTES": {
+    "AAS": {"X86": ["0x3F"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LDXTLS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LDXTLS": {"PowerPC": "LDXTLS"},
+    "LDXTLS_": {"PowerPC": "LDXTLS_"}
+  },
+  "INPUTS": {
+    "LDXTLS": {"PowerPC": [["ptr_rc_nor0",0],["tlsreg",0]]},
+    "LDXTLS_": {"PowerPC": [["ptr_rc_nor0",0],["tlsreg",0]]}
+  },
+  "OUTPUTS": {
+    "LDXTLS": {"PowerPC": [["g8rc",0]]},
+    "LDXTLS_": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LDXTLS": {"PowerPC": ["XForm_1","31","21"]},
+    "LDXTLS_": {"PowerPC": ["XForm_1","31","21"]}
+  },
+  "OUTPUT_BYTES": {
+    "LDXTLS": {"PowerPC": ["XForm_1","31","21"]},
+    "LDXTLS_": {"PowerPC": ["XForm_1","31","21"]}
+  }
+}

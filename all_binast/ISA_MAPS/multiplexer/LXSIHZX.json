@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXSIHZX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXSIHZX": {"PowerPC": "LXSIHZX"}
+  },
+  "INPUTS": {
+    "LXSIHZX": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "LXSIHZX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "LXSIHZX": {"PowerPC": ["X_XT6_RA5_RB5","31","813"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXSIHZX": {"PowerPC": ["X_XT6_RA5_RB5","31","813"]}
+  }
+}

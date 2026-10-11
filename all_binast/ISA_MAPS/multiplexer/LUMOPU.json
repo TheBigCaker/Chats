@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "LUMOPU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "LUMOPUnitStride": {"RISCV": "LUMOPUnitStride"},
+    "LUMOPUnitStrideMask": {"RISCV": "LUMOPUnitStrideMask"},
+    "LUMOPUnitStrideWholeReg": {"RISCV": "LUMOPUnitStrideWholeReg"},
+    "LUMOPUnitStrideFF": {"RISCV": "LUMOPUnitStrideFF"}
+  },
+  "INPUTS": {
+    "LUMOPUnitStride": {"RISCV": []},
+    "LUMOPUnitStrideMask": {"RISCV": []},
+    "LUMOPUnitStrideWholeReg": {"RISCV": []},
+    "LUMOPUnitStrideFF": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "LUMOPUnitStride": {"RISCV": []},
+    "LUMOPUnitStrideMask": {"RISCV": []},
+    "LUMOPUnitStrideWholeReg": {"RISCV": []},
+    "LUMOPUnitStrideFF": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "LUMOPUnitStride": {"RISCV": ["RISCVLUMOP","0b00000"]},
+    "LUMOPUnitStrideMask": {"RISCV": ["RISCVLUMOP","0b01011"]},
+    "LUMOPUnitStrideWholeReg": {"RISCV": ["RISCVLUMOP","0b01000"]},
+    "LUMOPUnitStrideFF": {"RISCV": ["RISCVLUMOP","0b10000"]}
+  },
+  "OUTPUT_BYTES": {
+    "LUMOPUnitStride": {"RISCV": ["RISCVLUMOP","0b00000"]},
+    "LUMOPUnitStrideMask": {"RISCV": ["RISCVLUMOP","0b01011"]},
+    "LUMOPUnitStrideWholeReg": {"RISCV": ["RISCVLUMOP","0b01000"]},
+    "LUMOPUnitStrideFF": {"RISCV": ["RISCVLUMOP","0b10000"]}
+  }
+}

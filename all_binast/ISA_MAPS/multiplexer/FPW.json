@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FPW",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "FPWithVPR": {"ARM": "FPWithVPR"}
+  },
+  "INPUTS": {
+    "FPWithVPR": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "FPWithVPR": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "FPWithVPR": {"ARM": ["RegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPWithVPR": {"ARM": ["RegisterClass","32"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CWP",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "CWP": {"Sparc": "CWP"}
+  },
+  "INPUTS": {
+    "CWP": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "CWP": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "CWP": {"Sparc": ["SparcCtrlReg","9"]}
+  },
+  "OUTPUT_BYTES": {
+    "CWP": {"Sparc": ["SparcCtrlReg","9"]}
+  }
+}

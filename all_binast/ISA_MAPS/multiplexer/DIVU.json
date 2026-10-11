@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DIVU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "DIVU": {"RISCV": "DIVU"}
+  },
+  "INPUTS": {
+    "DIVU": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "DIVU": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "DIVU": {"RISCV": ["ALU_rr","0b0000001","0b101"]}
+  },
+  "OUTPUT_BYTES": {
+    "DIVU": {"RISCV": ["ALU_rr","0b0000001","0b101"]}
+  }
+}

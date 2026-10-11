@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MTTLO",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MTTLO": {"Mips": "MTTLO"}
+  },
+  "INPUTS": {
+    "MTTLO": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "OUTPUTS": {
+    "MTTLO": {"Mips": [["ACC64DSPOpnd",0]]}
+  },
+  "INPUT_BYTES": {
+    "MTTLO": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "MTTLO": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "RECIP",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "RECIP_IEEE_eg": {"AMDGPU": "RECIP_IEEE_eg"},
+    "RECIP_UINT_eg": {"AMDGPU": "RECIP_UINT_eg"},
+    "RECIP_CLAMPED_eg": {"AMDGPU": "RECIP_CLAMPED_eg"},
+    "RECIP_CLAMPED_r600": {"AMDGPU": "RECIP_CLAMPED_r600"},
+    "RECIP_IEEE_r600": {"AMDGPU": "RECIP_IEEE_r600"},
+    "RECIP_UINT_r600": {"AMDGPU": "RECIP_UINT_r600"}
+  },
+  "INPUTS": {
+    "RECIP_IEEE_eg": {"AMDGPU": []},
+    "RECIP_UINT_eg": {"AMDGPU": []},
+    "RECIP_CLAMPED_eg": {"AMDGPU": []},
+    "RECIP_CLAMPED_r600": {"AMDGPU": []},
+    "RECIP_IEEE_r600": {"AMDGPU": []},
+    "RECIP_UINT_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "RECIP_IEEE_eg": {"AMDGPU": []},
+    "RECIP_UINT_eg": {"AMDGPU": []},
+    "RECIP_CLAMPED_eg": {"AMDGPU": []},
+    "RECIP_CLAMPED_r600": {"AMDGPU": []},
+    "RECIP_IEEE_r600": {"AMDGPU": []},
+    "RECIP_UINT_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "RECIP_IEEE_eg": {"AMDGPU": ["RECIP_IEEE_Common","0x86"]},
+    "RECIP_UINT_eg": {"AMDGPU": ["RECIP_UINT_Common","0x94"]},
+    "RECIP_CLAMPED_eg": {"AMDGPU": ["RECIP_CLAMPED_Common","0x84"]},
+    "RECIP_CLAMPED_r600": {"AMDGPU": ["RECIP_CLAMPED_Common","0x64"]},
+    "RECIP_IEEE_r600": {"AMDGPU": ["RECIP_IEEE_Common","0x66"]},
+    "RECIP_UINT_r600": {"AMDGPU": ["RECIP_UINT_Common","0x78"]}
+  },
+  "OUTPUT_BYTES": {
+    "RECIP_IEEE_eg": {"AMDGPU": ["RECIP_IEEE_Common","0x86"]},
+    "RECIP_UINT_eg": {"AMDGPU": ["RECIP_UINT_Common","0x94"]},
+    "RECIP_CLAMPED_eg": {"AMDGPU": ["RECIP_CLAMPED_Common","0x84"]},
+    "RECIP_CLAMPED_r600": {"AMDGPU": ["RECIP_CLAMPED_Common","0x64"]},
+    "RECIP_IEEE_r600": {"AMDGPU": ["RECIP_IEEE_Common","0x66"]},
+    "RECIP_UINT_r600": {"AMDGPU": ["RECIP_UINT_Common","0x78"]}
+  }
+}

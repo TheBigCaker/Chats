@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VPMSUMW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VPMSUMW": {"PowerPC": "VPMSUMW"}
+  },
+  "INPUTS": {
+    "VPMSUMW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VPMSUMW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VPMSUMW": {"PowerPC": ["VX1_Int_Ty","1160"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPMSUMW": {"PowerPC": ["VX1_Int_Ty","1160"]}
+  }
+}

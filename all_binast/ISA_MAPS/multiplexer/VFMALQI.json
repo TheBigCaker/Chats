@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFMALQI",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFMALQI": {"ARM": "VFMALQI"}
+  },
+  "INPUTS": {
+    "VFMALQI": {"ARM": [["DPR:$Vn",0],["DPR_8:$Vm",0],["VectorIndex16:$idx",0]]}
+  },
+  "OUTPUTS": {
+    "VFMALQI": {"ARM": [["QPR:$Vd",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFMALQI": {"ARM": ["VFMQ","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFMALQI": {"ARM": ["VFMQ","0b00"]}
+  }
+}

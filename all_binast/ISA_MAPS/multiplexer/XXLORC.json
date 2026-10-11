@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XXLORC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXLORC": {"PowerPC": "XXLORC"}
+  },
+  "INPUTS": {
+    "XXLORC": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XXLORC": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XXLORC": {"PowerPC": ["XX3Form","60","170"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXLORC": {"PowerPC": ["XX3Form","60","170"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "UQASX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UQASX": {"ARM": "UQASX"}
+  },
+  "INPUTS": {
+    "UQASX": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "UQASX": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "UQASX": {"ARM": ["AAIIntrinsic","0b01100110","0b11110011"]}
+  },
+  "OUTPUT_BYTES": {
+    "UQASX": {"ARM": ["AAIIntrinsic","0b01100110","0b11110011"]}
+  }
+}

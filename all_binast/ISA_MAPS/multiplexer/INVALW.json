@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "INVALW",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "INVALW": {"Sparc": "INVALW"}
+  },
+  "INPUTS": {
+    "INVALW": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "INVALW": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "INVALW": {"Sparc": ["UA2005RegWin","0b00101"]}
+  },
+  "OUTPUT_BYTES": {
+    "INVALW": {"Sparc": ["UA2005RegWin","0b00101"]}
+  }
+}

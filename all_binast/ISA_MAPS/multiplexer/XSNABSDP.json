@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "XSNABSDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSNABSDP": {"PowerPC": "XSNABSDP"},
+    "XSNABSDPs": {"PowerPC": "XSNABSDPs"}
+  },
+  "INPUTS": {
+    "XSNABSDP": {"PowerPC": [["vsfrc",0]]},
+    "XSNABSDPs": {"PowerPC": [["vssrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSNABSDP": {"PowerPC": [["vsfrc",0]]},
+    "XSNABSDPs": {"PowerPC": [["vssrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSNABSDP": {"PowerPC": ["XX2Form","60","361"]},
+    "XSNABSDPs": {"PowerPC": ["XX2Form","60","361"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSNABSDP": {"PowerPC": ["XX2Form","60","361"]},
+    "XSNABSDPs": {"PowerPC": ["XX2Form","60","361"]}
+  }
+}

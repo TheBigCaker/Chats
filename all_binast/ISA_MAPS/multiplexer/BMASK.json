@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BMASK",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "BMASK": {"Sparc": "BMASK"}
+  },
+  "INPUTS": {
+    "BMASK": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "BMASK": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "BMASK": {"Sparc": ["VISInst","0b000011001"]}
+  },
+  "OUTPUT_BYTES": {
+    "BMASK": {"Sparc": ["VISInst","0b000011001"]}
+  }
+}

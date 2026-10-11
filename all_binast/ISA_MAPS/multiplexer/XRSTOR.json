@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XRSTOR",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XRSTOR": {"X86": "XRSTOR"}
+  },
+  "INPUTS": {
+    "XRSTOR": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "XRSTOR": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "XRSTOR": {"X86": ["0xAE"]}
+  },
+  "OUTPUT_BYTES": {
+    "XRSTOR": {"X86": ["0xAE"]}
+  }
+}

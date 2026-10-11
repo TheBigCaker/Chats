@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "LGDT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LGDT16m": {"X86": "LGDT16m"},
+    "LGDT32m": {"X86": "LGDT32m"},
+    "LGDT64m": {"X86": "LGDT64m"}
+  },
+  "INPUTS": {
+    "LGDT16m": {"X86": [["opaquemem",0]]},
+    "LGDT32m": {"X86": [["opaquemem",0]]},
+    "LGDT64m": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "LGDT16m": {"X86": []},
+    "LGDT32m": {"X86": []},
+    "LGDT64m": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "LGDT16m": {"X86": ["0x01"]},
+    "LGDT32m": {"X86": ["0x01"]},
+    "LGDT64m": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "LGDT16m": {"X86": ["0x01"]},
+    "LGDT32m": {"X86": ["0x01"]},
+    "LGDT64m": {"X86": ["0x01"]}
+  }
+}

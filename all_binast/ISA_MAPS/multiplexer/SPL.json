@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SPL",
+  "BACKENDS": ["AVR"],
+  "INDEX": {
+    "SPL": {"AVR": "SPL"}
+  },
+  "INPUTS": {
+    "SPL": {"AVR": []}
+  },
+  "OUTPUTS": {
+    "SPL": {"AVR": []}
+  },
+  "INPUT_BYTES": {
+    "SPL": {"AVR": ["AVRReg","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "SPL": {"AVR": ["AVRReg","32"]}
+  }
+}

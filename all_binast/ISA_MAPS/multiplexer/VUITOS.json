@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUITOS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VUITOS": {"ARM": "VUITOS"}
+  },
+  "INPUTS": {
+    "VUITOS": {"ARM": [["SPR",0]]}
+  },
+  "OUTPUTS": {
+    "VUITOS": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VUITOS": {"ARM": ["AVConv1InSs_Encode","0b11101","0b11","0b1000","0b1010"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUITOS": {"ARM": ["AVConv1InSs_Encode","0b11101","0b11","0b1000","0b1010"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CMPSW",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CMPSW": {"X86": "CMPSW"}
+  },
+  "INPUTS": {
+    "CMPSW": {"X86": [["dstidx16",0],["srcidx16",0]]}
+  },
+  "OUTPUTS": {
+    "CMPSW": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CMPSW": {"X86": ["0xA7"]}
+  },
+  "OUTPUT_BYTES": {
+    "CMPSW": {"X86": ["0xA7"]}
+  }
+}

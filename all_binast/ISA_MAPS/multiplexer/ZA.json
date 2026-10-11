@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ZA",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "ZA": {"AArch64": "ZA"}
+  },
+  "INPUTS": {
+    "ZA": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "ZA": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "ZA": {"AArch64": ["AArch64Reg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZA": {"AArch64": ["AArch64Reg","0"]}
+  }
+}

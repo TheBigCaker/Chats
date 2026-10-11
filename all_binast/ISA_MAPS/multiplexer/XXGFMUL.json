@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XXGFMUL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXGFMUL128": {"PowerPC": "XXGFMUL128"}
+  },
+  "INPUTS": {
+    "XXGFMUL128": {"PowerPC": [["vsrc",0],["vsrc",0],["u1imm",1]]}
+  },
+  "OUTPUTS": {
+    "XXGFMUL128": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XXGFMUL128": {"PowerPC": ["XX3Form_XTAB6_P1","26"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXGFMUL128": {"PowerPC": ["XX3Form_XTAB6_P1","26"]}
+  }
+}

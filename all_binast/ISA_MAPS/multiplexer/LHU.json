@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LHU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "LHU": {"RISCV": "LHU"}
+  },
+  "INPUTS": {
+    "LHU": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "LHU": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "LHU": {"RISCV": ["Load_ri","0b101"]}
+  },
+  "OUTPUT_BYTES": {
+    "LHU": {"RISCV": ["Load_ri","0b101"]}
+  }
+}

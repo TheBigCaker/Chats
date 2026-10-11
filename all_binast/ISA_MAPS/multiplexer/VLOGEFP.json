@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VLOGEFP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VLOGEFP": {"PowerPC": "VLOGEFP"}
+  },
+  "INPUTS": {
+    "VLOGEFP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VLOGEFP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VLOGEFP": {"PowerPC": ["VX2_Int_SP","458"]}
+  },
+  "OUTPUT_BYTES": {
+    "VLOGEFP": {"PowerPC": ["VX2_Int_SP","458"]}
+  }
+}

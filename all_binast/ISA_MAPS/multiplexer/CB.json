@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CB",
+  "BACKENDS": ["NVPTX"],
+  "INDEX": {
+    "CBranch": {"NVPTX": "CBranch"}
+  },
+  "INPUTS": {
+    "CBranch": {"NVPTX": [["B1",0],["brtarget",0],["BranchFlag",0]]}
+  },
+  "OUTPUTS": {
+    "CBranch": {"NVPTX": []}
+  },
+  "INPUT_BYTES": {
+    "CBranch": {"NVPTX": ["NVPTXInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "CBranch": {"NVPTX": ["NVPTXInst"]}
+  }
+}

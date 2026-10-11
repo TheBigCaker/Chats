@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FCHKSM",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FCHKSM16": {"Sparc": "FCHKSM16"}
+  },
+  "INPUTS": {
+    "FCHKSM16": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FCHKSM16": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FCHKSM16": {"Sparc": ["VISInst","0b001000100"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCHKSM16": {"Sparc": ["VISInst","0b001000100"]}
+  }
+}

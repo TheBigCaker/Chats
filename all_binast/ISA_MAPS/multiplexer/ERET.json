@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ERET",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "ERET": {"ARM": "ERET"}
+  },
+  "INPUTS": {
+    "ERET": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "ERET": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "ERET": {"ARM": ["ABI","0b0001"]}
+  },
+  "OUTPUT_BYTES": {
+    "ERET": {"ARM": ["ABI","0b0001"]}
+  }
+}

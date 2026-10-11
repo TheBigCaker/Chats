@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CY",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "CY": {"PowerPC": "CY"}
+  },
+  "INPUTS": {
+    "CY": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "CY": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "CY": {"PowerPC": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "CY": {"PowerPC": ["ProcResource","1"]}
+  }
+}

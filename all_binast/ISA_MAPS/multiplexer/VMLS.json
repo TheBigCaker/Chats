@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "VMLS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMLSfd": {"ARM": "VMLSfd"},
+    "VMLSfq": {"ARM": "VMLSfq"},
+    "VMLShd": {"ARM": "VMLShd"},
+    "VMLShq": {"ARM": "VMLShq"},
+    "VMLSslfd": {"ARM": "VMLSslfd"},
+    "VMLSslfq": {"ARM": "VMLSslfq"},
+    "VMLSslhd": {"ARM": "VMLSslhd"},
+    "VMLSslhq": {"ARM": "VMLSslhq"}
+  },
+  "INPUTS": {
+    "VMLSfd": {"ARM": []},
+    "VMLSfq": {"ARM": []},
+    "VMLShd": {"ARM": []},
+    "VMLShq": {"ARM": []},
+    "VMLSslfd": {"ARM": []},
+    "VMLSslfq": {"ARM": []},
+    "VMLSslhd": {"ARM": []},
+    "VMLSslhq": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VMLSfd": {"ARM": []},
+    "VMLSfq": {"ARM": []},
+    "VMLShd": {"ARM": []},
+    "VMLShq": {"ARM": []},
+    "VMLSslfd": {"ARM": []},
+    "VMLSslfq": {"ARM": []},
+    "VMLSslhd": {"ARM": []},
+    "VMLSslhq": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VMLSfd": {"ARM": ["N3VDMulOp","0","0","0b10","0b1101","1"]},
+    "VMLSfq": {"ARM": ["N3VQMulOp","0","0","0b10","0b1101","1"]},
+    "VMLShd": {"ARM": ["N3VDMulOp","0","0","0b11","0b1101","1"]},
+    "VMLShq": {"ARM": ["N3VQMulOp","0","0","0b11","0b1101","1"]},
+    "VMLSslfd": {"ARM": ["N3VDMulOpSL","0b10","0b0101"]},
+    "VMLSslfq": {"ARM": ["N3VQMulOpSL","0b10","0b0101"]},
+    "VMLSslhd": {"ARM": ["N3VDMulOpSL16","0b01","0b0101"]},
+    "VMLSslhq": {"ARM": ["N3VQMulOpSL16","0b01","0b0101"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMLSfd": {"ARM": ["N3VDMulOp","0","0","0b10","0b1101","1"]},
+    "VMLSfq": {"ARM": ["N3VQMulOp","0","0","0b10","0b1101","1"]},
+    "VMLShd": {"ARM": ["N3VDMulOp","0","0","0b11","0b1101","1"]},
+    "VMLShq": {"ARM": ["N3VQMulOp","0","0","0b11","0b1101","1"]},
+    "VMLSslfd": {"ARM": ["N3VDMulOpSL","0b10","0b0101"]},
+    "VMLSslfq": {"ARM": ["N3VQMulOpSL","0b10","0b0101"]},
+    "VMLSslhd": {"ARM": ["N3VDMulOpSL16","0b01","0b0101"]},
+    "VMLSslhq": {"ARM": ["N3VQMulOpSL16","0b01","0b0101"]}
+  }
+}

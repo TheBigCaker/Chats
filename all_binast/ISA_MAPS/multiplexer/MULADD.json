@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "MULADD",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "MULADD_UINT24_eg": {"AMDGPU": "MULADD_UINT24_eg"},
+    "MULADD_eg": {"AMDGPU": "MULADD_eg"},
+    "MULADD_IEEE_eg": {"AMDGPU": "MULADD_IEEE_eg"},
+    "MULADD_r600": {"AMDGPU": "MULADD_r600"},
+    "MULADD_IEEE_r600": {"AMDGPU": "MULADD_IEEE_r600"}
+  },
+  "INPUTS": {
+    "MULADD_UINT24_eg": {"AMDGPU": []},
+    "MULADD_eg": {"AMDGPU": []},
+    "MULADD_IEEE_eg": {"AMDGPU": []},
+    "MULADD_r600": {"AMDGPU": []},
+    "MULADD_IEEE_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "MULADD_UINT24_eg": {"AMDGPU": []},
+    "MULADD_eg": {"AMDGPU": []},
+    "MULADD_IEEE_eg": {"AMDGPU": []},
+    "MULADD_r600": {"AMDGPU": []},
+    "MULADD_IEEE_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "MULADD_UINT24_eg": {"AMDGPU": ["R600_3OP","0x10"]},
+    "MULADD_eg": {"AMDGPU": ["MULADD_Common","0x14"]},
+    "MULADD_IEEE_eg": {"AMDGPU": ["MULADD_IEEE_Common","0x18"]},
+    "MULADD_r600": {"AMDGPU": ["MULADD_Common","0x10"]},
+    "MULADD_IEEE_r600": {"AMDGPU": ["MULADD_IEEE_Common","0x14"]}
+  },
+  "OUTPUT_BYTES": {
+    "MULADD_UINT24_eg": {"AMDGPU": ["R600_3OP","0x10"]},
+    "MULADD_eg": {"AMDGPU": ["MULADD_Common","0x14"]},
+    "MULADD_IEEE_eg": {"AMDGPU": ["MULADD_IEEE_Common","0x18"]},
+    "MULADD_r600": {"AMDGPU": ["MULADD_Common","0x10"]},
+    "MULADD_IEEE_r600": {"AMDGPU": ["MULADD_IEEE_Common","0x14"]}
+  }
+}

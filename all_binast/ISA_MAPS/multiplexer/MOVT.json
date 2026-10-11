@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "MOVT",
+  "BACKENDS": ["AArch64","ARM"],
+  "INDEX": {
+    "MOVT_XTI": {"AArch64": "MOVT_XTI"},
+    "MOVT_TIX": {"AArch64": "MOVT_TIX"},
+    "MOVTi16": {"ARM": "MOVTi16"},
+    "MOVTi16_ga_pcrel": {"ARM": "MOVTi16_ga_pcrel"}
+  },
+  "INPUTS": {
+    "MOVT_XTI": {"AArch64": [["ZTR:$ZTt",0],["uimm3s8:$imm3",0]]},
+    "MOVT_TIX": {"AArch64": [["uimm3s8:$imm3",0],["GPR64:$Rt",64]]},
+    "MOVTi16": {"ARM": [["GPR",64],["imm0_65535_expr",0]]},
+    "MOVTi16_ga_pcrel": {"ARM": [["GPR",64],["i32imm",32],["pclabel",0]]}
+  },
+  "OUTPUTS": {
+    "MOVT_XTI": {"AArch64": [["GPR64:$Rt",64]]},
+    "MOVT_TIX": {"AArch64": [["ZTR:$ZTt",0]]},
+    "MOVTi16": {"ARM": [["GPRnopc",0]]},
+    "MOVTi16_ga_pcrel": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "MOVT_XTI": {"AArch64": ["sme2_movt_zt_to_scalar","0b0011111"]},
+    "MOVT_TIX": {"AArch64": ["sme2_movt_scalar_to_zt","0b0011111"]},
+    "MOVTi16": {"ARM": ["AI1","0b1010"]},
+    "MOVTi16_ga_pcrel": {"ARM": ["PseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVT_XTI": {"AArch64": ["sme2_movt_zt_to_scalar","0b0011111"]},
+    "MOVT_TIX": {"AArch64": ["sme2_movt_scalar_to_zt","0b0011111"]},
+    "MOVTi16": {"ARM": ["AI1","0b1010"]},
+    "MOVTi16_ga_pcrel": {"ARM": ["PseudoInst"]}
+  }
+}

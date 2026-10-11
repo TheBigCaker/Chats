@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FSR",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FSR": {"Sparc": "FSR"}
+  },
+  "INPUTS": {
+    "FSR": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FSR": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FSR": {"Sparc": ["SparcCtrlReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FSR": {"Sparc": ["SparcCtrlReg","0"]}
+  }
+}

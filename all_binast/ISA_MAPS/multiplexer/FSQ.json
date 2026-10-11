@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FSQ",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FSQ": {"RISCV": "FSQ"}
+  },
+  "INPUTS": {
+    "FSQ": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "FSQ": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "FSQ": {"RISCV": ["FPStore_r","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "FSQ": {"RISCV": ["FPStore_r","0b100"]}
+  }
+}

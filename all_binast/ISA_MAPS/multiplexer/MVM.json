@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MVM",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MVM": {"RISCV": "MVM"}
+  },
+  "INPUTS": {
+    "MVM": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "MVM": {"RISCV": [["GPR:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "MVM": {"RISCV": ["RVPTernary_rrr","0b0101","0b00","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "MVM": {"RISCV": ["RVPTernary_rrr","0b0101","0b00","0b001"]}
+  }
+}

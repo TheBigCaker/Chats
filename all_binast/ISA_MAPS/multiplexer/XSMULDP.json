@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSMULDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSMULDP": {"PowerPC": "XSMULDP"}
+  },
+  "INPUTS": {
+    "XSMULDP": {"PowerPC": [["vsfrc",0],["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSMULDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSMULDP": {"PowerPC": ["XX3Form","60","48"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSMULDP": {"PowerPC": ["XX3Form","60","48"]}
+  }
+}

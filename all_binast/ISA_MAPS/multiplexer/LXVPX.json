@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXVPX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXVPX": {"PowerPC": "LXVPX"}
+  },
+  "INPUTS": {
+    "LXVPX": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LXVPX": {"PowerPC": [["vsrprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LXVPX": {"PowerPC": ["XForm_XTp5_RAB5","31","333"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXVPX": {"PowerPC": ["XForm_XTp5_RAB5","31","333"]}
+  }
+}

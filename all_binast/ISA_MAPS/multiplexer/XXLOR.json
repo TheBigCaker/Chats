@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "XXLOR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXLOR": {"PowerPC": "XXLOR"},
+    "XXLORf": {"PowerPC": "XXLORf"}
+  },
+  "INPUTS": {
+    "XXLOR": {"PowerPC": [["vsrc",0],["vsrc",0]]},
+    "XXLORf": {"PowerPC": [["vsfrc",0],["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XXLOR": {"PowerPC": [["vsrc",0]]},
+    "XXLORf": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XXLOR": {"PowerPC": ["XX3Form","60","146"]},
+    "XXLORf": {"PowerPC": ["XX3Form","60","146"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXLOR": {"PowerPC": ["XX3Form","60","146"]},
+    "XXLORf": {"PowerPC": ["XX3Form","60","146"]}
+  }
+}

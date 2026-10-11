@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FXTRACT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "FXTRACT": {"X86": "FXTRACT"}
+  },
+  "INPUTS": {
+    "FXTRACT": {"X86": []}
+  },
+  "OUTPUTS": {
+    "FXTRACT": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "FXTRACT": {"X86": ["0xD9"]}
+  },
+  "OUTPUT_BYTES": {
+    "FXTRACT": {"X86": ["0xD9"]}
+  }
+}

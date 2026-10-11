@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BFM",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "BFM_INT_eg": {"AMDGPU": "BFM_INT_eg"}
+  },
+  "INPUTS": {
+    "BFM_INT_eg": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "BFM_INT_eg": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "BFM_INT_eg": {"AMDGPU": ["R600_2OP","0xA0"]}
+  },
+  "OUTPUT_BYTES": {
+    "BFM_INT_eg": {"AMDGPU": ["R600_2OP","0xA0"]}
+  }
+}

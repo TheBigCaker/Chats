@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSRSQRTESP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSRSQRTESP": {"PowerPC": "XSRSQRTESP"}
+  },
+  "INPUTS": {
+    "XSRSQRTESP": {"PowerPC": [["vssrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSRSQRTESP": {"PowerPC": [["vssrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSRSQRTESP": {"PowerPC": ["XX2Form","60","10"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSRSQRTESP": {"PowerPC": ["XX2Form","60","10"]}
+  }
+}

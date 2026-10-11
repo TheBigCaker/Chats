@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FXNORS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FXNORS": {"Sparc": "FXNORS"}
+  },
+  "INPUTS": {
+    "FXNORS": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FXNORS": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FXNORS": {"Sparc": ["VISInst","0b001110011"]}
+  },
+  "OUTPUT_BYTES": {
+    "FXNORS": {"Sparc": ["VISInst","0b001110011"]}
+  }
+}

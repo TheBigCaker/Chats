@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "LDNT",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "LDNT1B_2Z_STRIDED": {"AArch64": "LDNT1B_2Z_STRIDED"},
+    "LDNT1B_4Z_STRIDED": {"AArch64": "LDNT1B_4Z_STRIDED"},
+    "LDNT1H_2Z_STRIDED": {"AArch64": "LDNT1H_2Z_STRIDED"},
+    "LDNT1H_4Z_STRIDED": {"AArch64": "LDNT1H_4Z_STRIDED"},
+    "LDNT1W_2Z_STRIDED": {"AArch64": "LDNT1W_2Z_STRIDED"},
+    "LDNT1W_4Z_STRIDED": {"AArch64": "LDNT1W_4Z_STRIDED"},
+    "LDNT1D_2Z_STRIDED": {"AArch64": "LDNT1D_2Z_STRIDED"},
+    "LDNT1D_4Z_STRIDED": {"AArch64": "LDNT1D_4Z_STRIDED"}
+  },
+  "INPUTS": {
+    "LDNT1B_2Z_STRIDED": {"AArch64": [["PNRAny_p8to15:$PNg",0],["GPR64sp:$Rn",64],["gpr_ty:$Rm",0]]},
+    "LDNT1B_4Z_STRIDED": {"AArch64": [["PNRAny_p8to15:$PNg",0],["GPR64sp:$Rn",64],["gpr_ty:$Rm",0]]},
+    "LDNT1H_2Z_STRIDED": {"AArch64": [["PNRAny_p8to15:$PNg",0],["GPR64sp:$Rn",64],["gpr_ty:$Rm",0]]},
+    "LDNT1H_4Z_STRIDED": {"AArch64": [["PNRAny_p8to15:$PNg",0],["GPR64sp:$Rn",64],["gpr_ty:$Rm",0]]},
+    "LDNT1W_2Z_STRIDED": {"AArch64": [["PNRAny_p8to15:$PNg",0],["GPR64sp:$Rn",64],["gpr_ty:$Rm",0]]},
+    "LDNT1W_4Z_STRIDED": {"AArch64": [["PNRAny_p8to15:$PNg",0],["GPR64sp:$Rn",64],["gpr_ty:$Rm",0]]},
+    "LDNT1D_2Z_STRIDED": {"AArch64": [["PNRAny_p8to15:$PNg",0],["GPR64sp:$Rn",64],["gpr_ty:$Rm",0]]},
+    "LDNT1D_4Z_STRIDED": {"AArch64": [["PNRAny_p8to15:$PNg",0],["GPR64sp:$Rn",64],["gpr_ty:$Rm",0]]}
+  },
+  "OUTPUTS": {
+    "LDNT1B_2Z_STRIDED": {"AArch64": [["multi_vector_ty:$Zt",0]]},
+    "LDNT1B_4Z_STRIDED": {"AArch64": [["multi_vector_ty:$Zt",0]]},
+    "LDNT1H_2Z_STRIDED": {"AArch64": [["multi_vector_ty:$Zt",0]]},
+    "LDNT1H_4Z_STRIDED": {"AArch64": [["multi_vector_ty:$Zt",0]]},
+    "LDNT1W_2Z_STRIDED": {"AArch64": [["multi_vector_ty:$Zt",0]]},
+    "LDNT1W_4Z_STRIDED": {"AArch64": [["multi_vector_ty:$Zt",0]]},
+    "LDNT1D_2Z_STRIDED": {"AArch64": [["multi_vector_ty:$Zt",0]]},
+    "LDNT1D_4Z_STRIDED": {"AArch64": [["multi_vector_ty:$Zt",0]]}
+  },
+  "INPUT_BYTES": {
+    "LDNT1B_2Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg2_multi_scalar_scalar","0b00","0b1"]},
+    "LDNT1B_4Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg4_multi_scalar_scalar","0b00","0b1"]},
+    "LDNT1H_2Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg2_multi_scalar_scalar","0b01","0b1"]},
+    "LDNT1H_4Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg4_multi_scalar_scalar","0b01","0b1"]},
+    "LDNT1W_2Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg2_multi_scalar_scalar","0b10","0b1"]},
+    "LDNT1W_4Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg4_multi_scalar_scalar","0b10","0b1"]},
+    "LDNT1D_2Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg2_multi_scalar_scalar","0b11","0b1"]},
+    "LDNT1D_4Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg4_multi_scalar_scalar","0b11","0b1"]}
+  },
+  "OUTPUT_BYTES": {
+    "LDNT1B_2Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg2_multi_scalar_scalar","0b00","0b1"]},
+    "LDNT1B_4Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg4_multi_scalar_scalar","0b00","0b1"]},
+    "LDNT1H_2Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg2_multi_scalar_scalar","0b01","0b1"]},
+    "LDNT1H_4Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg4_multi_scalar_scalar","0b01","0b1"]},
+    "LDNT1W_2Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg2_multi_scalar_scalar","0b10","0b1"]},
+    "LDNT1W_4Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg4_multi_scalar_scalar","0b10","0b1"]},
+    "LDNT1D_2Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg2_multi_scalar_scalar","0b11","0b1"]},
+    "LDNT1D_4Z_STRIDED": {"AArch64": ["sme2_ld_vector_vg4_multi_scalar_scalar","0b11","0b1"]}
+  }
+}

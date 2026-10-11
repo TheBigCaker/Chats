@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DTSTDG",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DTSTDG": {"PowerPC": "DTSTDG"}
+  },
+  "INPUTS": {
+    "DTSTDG": {"PowerPC": [["f8rc",0],["u6imm",6]]}
+  },
+  "OUTPUTS": {
+    "DTSTDG": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "DTSTDG": {"PowerPC": ["Z22Form_BF3_FRA5_DCM6","59","226"]}
+  },
+  "OUTPUT_BYTES": {
+    "DTSTDG": {"PowerPC": ["Z22Form_BF3_FRA5_DCM6","59","226"]}
+  }
+}

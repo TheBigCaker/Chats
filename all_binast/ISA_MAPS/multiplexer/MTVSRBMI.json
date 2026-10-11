@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MTVSRBMI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MTVSRBMI": {"PowerPC": "MTVSRBMI"}
+  },
+  "INPUTS": {
+    "MTVSRBMI": {"PowerPC": [["u16imm64",16]]}
+  },
+  "OUTPUTS": {
+    "MTVSRBMI": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MTVSRBMI": {"PowerPC": ["DXForm","4","10"]}
+  },
+  "OUTPUT_BYTES": {
+    "MTVSRBMI": {"PowerPC": ["DXForm","4","10"]}
+  }
+}

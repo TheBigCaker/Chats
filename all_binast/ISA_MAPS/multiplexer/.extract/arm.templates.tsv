@@ -1,0 +1,568 @@
+Extension	4	|
+BitWidthImmOperand	1	|
+for	5	|p_imm:$coproc
+for	6	|
+CDE_RegisterOperands	2	|imm_13b:$imm
+CDE_CX2_Instr	2	|imm_9b:$imm
+CDE_CX3_Instr	2	|imm_6b:$imm
+CDE_CX_ParamsTemplate	3	|
+for	6	|
+for	6	|
+for	6	|vpred:$vp
+CDE_VCX1_Vec_Instr	2	|imm_12b:$imm
+for	3	|imm_11b:$imm
+CDE_VCX1_FP_Instr_S	2	|
+CDE_VCX1_FP_Instr_D	2	|
+CDE_VCX2_Vec_Instr	2	|imm_7b:$imm
+for	3	|imm_6b:$imm
+CDE_VCX2_FP_Instr_S	2	|
+CDE_VCX2_FP_Instr_D	2	|
+CDE_VCX3_Vec_Instr	2	|imm_4b:$imm
+for	3	|imm_3b:$imm
+CDE_VCX3_FP_Instr_S	2	|
+CDE_VCX3_FP_Instr_D	2	|
+CDE_VCX_RegisterOperandsTemplate	1	regclass:$Vd|regclass:$Vd_src
+CDE_VCXQ_RegisterOperandsTemplate	1	regclass:$Qd|regclass:$Qd_src
+CDE_VCX_ParamsTemplate	2	|
+CDE_VCXQ_ParamsTemplate	2	|
+Format	1	|
+UnaryDP	1	|
+IndexMode	1	|
+Domain	1	|
+for	2	|
+InstTemplate	7	|
+InstARM	7	|
+is	7	|
+AsmPseudoInst	3	|
+PseudoInst	4	|
+ARMPseudoInst	5	|
+tPseudoInst	5	|
+t2basePseudoInst	5	|
+t2PseudoInst	5	|
+I	11	|pred:$p
+InoP	11	|
+sI	11	|pred:$p, cc_out:$s
+XI	10	|
+ABI	7	|
+ABXI	6	|
+AIldr_ex_or_acq	8	|
+AIstr_ex_or_rel	8	|
+AIstrex	7	|
+AIstlex	7	|
+AIswp	5	|
+AIstrrel	7	|
+AI1	8	|
+AsI1	8	|
+AXI1	7	|
+AI2ldst	11	|
+AI2ldstidx	12	|
+AI2stridx_reg	11	|
+AI2stridx_imm	11	|
+when	11	|
+AI3ld	9	|
+AI3ldstidx	12	|
+when	11	|
+AI3str	8	|
+AXI4	8	|
+AMul1I	7	|
+AsMul1I	7	|
+AMul2I	8	|
+AMul2Ia	8	|
+AMulxyIbase	8	|
+AMulxyI	8	|
+AMulxyIa	8	|
+AMulxyI64	8	|
+AExtI	7	|
+AMiscA1I	8	|
+ADivA1I	7	|
+APKHI	8	|
+ARMPat	2	|
+ARMV5TPat	2	|
+ARMV5TEPat	2	|
+ARMV5MOPat	2	|
+ARMV6Pat	2	|
+ARMV6T2Pat	2	|
+VFPPat	2	|
+VFPNoNEONPat	2	|
+Thumb2DSPPat	2	|
+Thumb2DSPMulPat	2	|
+FPRegs16Pat	2	|
+FP16Pat	2	|
+FullFP16Pat	2	|
+ThumbI	8	|
+TIx2	8	|
+Thumb1I	8	|
+Thumb1sI	9	s_cc_out:$s|pred:$p
+Thumb1pI	9	|pred:$p
+Encoding16	1	|
+T1General	1	|
+T1DataProcessing	1	|
+T1Special	1	|
+T1LoadStore	2	|
+T1BranchCond	1	|
+T1pILdStEncode	8	|
+T1pILdStEncodeImm	9	|
+T1Misc	1	|
+Thumb2I	9	|pred:$p
+Thumb2sI	9	|pred:$p, cc_out:$s
+Thumb2XI	8	|
+ThumbXI	8	|
+T2Ii8s4	10	|
+T2Ii8s4post	10	|
+T2Cop	6	|
+T2Ipreldst	13	|pred:$p
+T2Ipostldst	13	|pred:$p
+T1Pat	2	|
+T2v6Pat	2	|
+T2Pat	2	|
+VFPI	11	|pred:$p
+VFPXI	10	|
+VFPAI	8	|
+ADI5	8	|
+ASI5	8	|
+AHI5	8	|
+PseudoVFPLdStM	5	|pred:$p
+AXXI4	6	|
+AXDI4	7	|
+AXSI4	7	|
+AXSI4FR	3	|GPRnopc:$Rn, pred:$p, dpr_reglist:$regs
+ADuI	12	|
+ADuInp	10	|
+ADbI	10	|
+ADbInp	8	|
+ASuI	12	|
+ASuInp	10	|
+ASuIn	11	|
+ASbI	10	|
+ASbInp	8	|
+ASbIn	10	|
+AHuI	11	|
+AHuInp	10	|
+AHbI	10	|
+AHbInp	8	|
+AVConv1I	10	|
+AVConv1XI	11	|
+AVConv1In	10	|
+AVConvXI	9	|
+NeonI	11	|pred:$p
+NeonXI	10	|pred:$p
+NeonInp	11	|
+NLdSt	12	|
+NLdStLn	12	|
+PseudoNLdSt	4	|pred:$p
+PseudoNeonI	5	|pred:$p
+NDataI	9	|
+NDataXI	8	|
+N1ModImm	15	|
+N2V	15	|
+N2Vnp	11	|
+N2VX	14	|
+N2VImm	15	|
+N3VCommon	15	|
+N3V	15	|
+N3Vnp	12	|
+N3VLane32	15	|
+N3VLane16	15	|
+N3VX	14	|
+NVLaneOp	11	|pred:$p
+NVDupLane	9	|
+NEONFPPat	2	|
+N3VCP8	12	|
+N3VLaneCP8	12	|
+the	12	|
+ComplexRotationOperand	4	|
+RegConstraint	1	|
+ImmAsmOperand	2	|
+ImmAsmOperandMinusOne	2	|
+MemOperand	1	|
+MVEPairVectorIndexOperand	2	|
+MVEPairVectorIndex	1	|
+MVEVectorIndexOperand	1	|
+MVEVectorIndex	1	|
+AddrMode_Imm12	4	|
+AddrMode3	4	|
+AddrMode5	4	|
+AddrMode5FP16	4	|
+for	3	|
+for	3	|
+AI_ext_rrot	3	GPRnopc:$Rd|GPRnopc:$Rm, rot_imm:$rot
+AI_ext_rrot_np	2	GPRnopc:$Rd|GPRnopc:$Rm, rot_imm:$rot
+AI_exta_rrot	3	GPRnopc:$Rd|GPR:$Rn, GPRnopc:$Rm, rot_imm:$rot
+AI_exta_rrot_np	2	GPRnopc:$Rd|GPR:$Rn, GPRnopc:$Rm, rot_imm:$rot
+CPS	2	|
+SRSI	2	|imm0_31:$mode
+RFEI	2	|GPR:$Rn
+AAI	9	GPRnopc:$Rd|
+AsMul1I32	7	|
+AsMul1I64	7	|
+AsMla1I64	7	|
+for	8	|
+AMulDualI	8	|
+AMulDualIa	8	|
+AMulDualI64	8	|
+AI_crc32	4	GPRnopc:$Rd|GPRnopc:$Rn, GPRnopc:$Rm
+ACI	7	|
+ACInoP	7	|
+MovRCopro	5	|
+MovRCopro2	5	|
+MovRRCopro	5	|
+MovRRCopro2	5	|
+TMemImm7ShiftOffsetAsmOperand	1	|
+taddrmode_imm7	1	|
+MemImm7ShiftOffsetAsmOperand	1	|
+T2AddrMode_Imm7	1	|
+t2addrmode_imm7	1	|
+MemImm7ShiftOffsetWBAsmOperand	1	|
+t2addrmode_imm7_pre	1	|
+t2am_imm7shiftOffsetAsmOperand	1	|
+t2am_imm7_offset	1	|
+MemRegRQOffsetAsmOperand	1	|
+mve_addr_rq_shift	1	|
+MemRegQOffsetAsmOperand	1	|
+mve_addr_q_shift	1	|
+MVEVectorVTInfo	7	|
+MVE_MI	8	|
+MVE_p	10	|vpred:$vp
+MVE_f	10	|
+MVE_MI_with_pred	7	|
+MVE_VMOV_lane_base	8	|
+MVE_ScalarShift	6	|
+MVE_ScalarShiftSingleReg	5	rGPR:$RdaDest|
+MVE_ScalarShiftSRegImm	2	|rGPR:$RdaSrc, long_shift:$imm
+MVE_ScalarShiftSRegReg	2	|rGPR:$RdaSrc, rGPR:$Rm
+MVE_ScalarShiftDoubleReg	5	tGPREven:$RdaLo, tGPROdd:$RdaHi|
+MVE_ScalarShiftDRegImm	4	|tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, long_shift:$imm
+MVE_ScalarShiftDRegRegBase	6	|
+MVE_ScalarShiftDRegReg	3	|tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, rGPR:$Rm
+MVE_ScalarShiftDRegRegWithSat	3	|tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, rGPR:$Rm, saturateop:$sat
+MVE_VABAV	3	rGPR:$Rda|rGPR:$Rda_src, MQPR:$Qn, MQPR:$Qm
+MVE_VADDV	8	tGPREven:$Rda|
+MVE_VADDLV	7	tGPREven:$RdaLo, tGPROdd:$RdaHi|
+MVE_VMINMAXNMV	6	rGPR:$RdaDest|rGPR:$RdaSrc, MQPR:$Qm
+MVE_VMINMAXV	7	rGPR:$RdaDest|rGPR:$RdaSrc, MQPR:$Qm
+MVE_VMLAMLSDAV	11	tGPREven:$RdaDest|
+for	12	tGPREven:$RdaLoDest, tGPROdd:$RdaHiDest|
+MVE_comp	6	MQPR:$Qd|MQPR:$Qn, MQPR:$Qm
+MVE_VMINMAXNM	5	|
+MVE_VMINMAX	6	|
+MVE_bit_arith	8	|
+MVE_VREV	6	MQPR:$Qd|MQPR:$Qm
+MVE_bit_ops	3	MQPR:$Qd|MQPR:$Qn, MQPR:$Qm
+MVE_bit_cmode	5	MQPR:$Qd|
+MVE_VMOV_lane_direction	4	|
+MVE_VMOV_lane_32	1	|MVEVectorIndex<4>:$Idx
+MVE_VMOV_lane_16	3	|MVEVectorIndex<8>:$Idx
+MVE_VMOV_lane_8	3	|MVEVectorIndex<16>:$Idx
+MVE_int	4	MQPR:$Qd|MQPR:$Qn, MQPR:$Qm
+MVE_VMULt1	4	|
+MVE_VQxDMULH_Base	5	|
+MVE_VADDSUB	5	|
+MVE_VQADDSUB	5	|
+MVE_VABD_int	4	|
+MVE_VRHADD_Base	4	|
+MVE_VHADDSUB	6	|
+MVE_VDUP	5	MQPR:$Qd|rGPR:$Rt
+MVEIntSingleSrc	4	MQPR:$Qd|MQPR:$Qm
+MVE_VCLSCLZ	5	|
+MVE_VABSNEG_int	6	|
+MVE_mod_imm	7	MQPR:$Qd|
+MVE_VMINMAXA	5	MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qm
+MVE_shift_imm	9	|
+MVE_VMOVL	6	MQPR:$Qd|MQPR:$Qm
+MVE_VSHLL_imm	7	MQPR:$Qd|MQPR:$Qm, immtype:$imm
+MVE_VSHLL_imm8	5	|
+MVE_VSHLL_imm16	5	|
+MVE_VSHLL_by_lane_width	6	MQPR:$Qd|MQPR:$Qm
+MVE_shift_imm_partial	4	MQPR:$Qd|MQPR:$QdSrc, MQPR:$Qm, imm:$imm
+MVE_VxSHRN	6	|
+MVE_VxQRSHRUN	6	|
+MVE_VxQRSHRN	6	|
+MVE_shift_by_vec	6	MQPR:$Qd|MQPR:$Qm, MQPR:$Qn
+MVE_shift_with_imm	9	|
+MVE_VSxI_imm	5	MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qm, immType:$imm
+MVE_VQSHL_imm	2	MQPR:$Qd|MQPR:$Qm, immType:$imm
+MVE_VQSHLU_imm	2	MQPR:$Qd|MQPR:$Qm, immType:$imm
+MVE_VRSHR_imm	2	MQPR:$Qd|MQPR:$Qm, immType:$imm
+MVE_VSHR_imm	3	MQPR:$Qd|MQPR:$Qm
+MVE_VSHL_imm	3	MQPR:$Qd|MQPR:$Qm
+MVE_float	9	|
+MVE_VRINT	5	MQPR:$Qd|MQPR:$Qm
+MVEFloatArithNeon	10	|
+MVE_VMUL_fp	4	MQPR:$Qd|MQPR:$Qn, MQPR:$Qm
+MVE_VCMLA	3	MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qn, MQPR:$Qm, complexrotateop:$rot
+MVE_VADDSUBFMA_fp	10	MQPR:$Qd|MQPR:$Qn, MQPR:$Qm
+MVE_VCADD	3	MQPR:$Qd|MQPR:$Qn, MQPR:$Qm, complexrotateopodd:$rot
+MVE_VABD_fp	2	MQPR:$Qd|MQPR:$Qn, MQPR:$Qm
+MVE_VCVT_fix	5	MQPR:$Qd|MQPR:$Qm, imm_operand_type:$imm6
+MVE_VCVT_imm_asmop	1	|
+MVE_VCVT_imm	1	|
+MVE_VCVT_fix_f32	3	|
+MVE_VCVT_fix_f16	3	|
+MVE_VCVT_fp_int_anpm	6	MQPR:$Qd|MQPR:$Qm
+MVE_VCVT_fp_int	5	MQPR:$Qd|MQPR:$Qm
+MVE_VABSNEG_fp	5	MQPR:$Qd|MQPR:$Qm
+MVE_VMAXMINNMA	5	MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qm
+MVE_VCMPqq	6	VCCR:$P0|MQPR:$Qn, MQPR:$Qm, predtype:$fc
+MVE_VCMPqqf	2	|
+MVE_VCMPqqi	2	|
+MVE_VCMPqqu	2	|
+MVE_VCMPqqs	2	|
+MVE_VCMPqr	6	VCCR:$P0|MQPR:$Qn, GPRwithZR:$Rm, predtype:$fc
+MVE_VCMPqrf	2	|
+MVE_VCMPqri	2	|
+MVE_VCMPqru	2	|
+MVE_VCMPqrs	2	|
+MVE_qDest_qSrc	9	|
+MVE_VQxDMLxDH	8	MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qn, MQPR:$Qm
+MVE_VCMUL	4	MQPR:$Qd|MQPR:$Qn, MQPR:$Qm, complexrotateop:$rot
+MVE_VMULL	8	MQPR:$Qd|MQPR:$Qn, MQPR:$Qm
+MVE_VxMULH	6	MQPR:$Qd|MQPR:$Qn, MQPR:$Qm
+MVE_VxMOVxN	7	MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qm
+MVE_VCVT_ff	7	MQPR:$Qd|MQPR:$Qm
+MVE_VxCADD	5	MQPR:$Qd|MQPR:$Qn, MQPR:$Qm, complexrotateopodd:$rot
+MVE_VADCSBC	5	MQPR:$Qd, cl_FPSCR_NZCV:$carryout|MQPR:$Qn, MQPR:$Qm
+MVE_VQDMULL	6	MQPR:$Qd|MQPR:$Qn, MQPR:$Qm
+MVE_qr_base	9	|
+MVE_qDest_single_rSrc	4	MQPR:$Qd|MQPR:$Qd_src, rGPR:$Rm
+MVE_VADDSUB_qr	7	|
+MVE_VQDMULL_qr	6	|
+MVE_VxADDSUB_qr	7	|
+MVE_VxSHL_qr	7	|
+MVE_VBRSR	4	|
+MVE_VMUL_qr_int	3	|
+MVE_VxxMUL_qr	6	|
+MVE_VFMAMLA_qr	7	|
+MVE_VQDMLAH_qr	7	|
+MVE_VxDUP	6	MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, MVE_VIDUP_imm:$imm
+MVE_VxWDUP	5	MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, tGPROdd:$Rm, MVE_VIDUP_imm:$imm
+MVE_VCTPInst	3	VCCR:$P0|rGPR:$Rn
+MVE_VMOV_64bit	5	|MVEPairVectorIndex2:$idx,                                              MVEPairVectorIndex0:$idx2
+for	12	|
+used	6	|
+that	4	|
+that	2	|
+for	4	|
+for	5	|
+for	13	|
+MVE_VLDRSTR_cs	11	|
+MVE_VLDRSTR_cw	13	|
+MVE_VLDRSTR_rq	8	|mve_addr_rq_shift<shift>:$addr
+MVE_VLDRSTR_qi	8	|mve_addr_q_shift<memsz.shift>:$addr
+MVE_VPT	5	|
+MVE_VPTt1	3	|
+MVE_VPTt1i	2	|vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_i:$fc
+MVE_VPTt1u	2	|vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_u:$fc
+MVE_VPTt1s	2	|vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_s:$fc
+MVE_VPTt2	3	|
+MVE_VPTt2i	2	|vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_i:$fc
+MVE_VPTt2u	2	|vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_u:$fc
+MVE_VPTt2s	2	|vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_s:$fc
+MVE_VPTf	5	|
+MVE_VPTft1	2	|vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_fp:$fc
+MVE_VPTft2	2	|vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_fp:$fc
+MVE_loltp_start	4	GPRlr:$LR|
+MVE_DLSTP	2	|rGPR:$Rn
+MVE_WLSTP	2	|rGPR:$Rn, wlslabel_u11:$label
+MVE_loltp_end	4	|
+nImmVMOVIAsmOperandReplicate	2	|
+nImmVINVIAsmOperandReplicate	2	|
+nImmVMOVIReplicate	2	|
+nImmVINVIReplicate	2	|
+VLD1D	3	VecListOneD:$Vd|AddrMode:$Rn
+VLD1Q	3	VecListDPair:$Vd|AddrMode:$Rn
+VLD1D3	3	VecListThreeD:$Vd|AddrMode:$Rn
+VLD1D4	3	VecListFourD:$Vd|AddrMode:$Rn
+VLD2	6	VdTy:$Vd|AddrMode:$Rn
+VLD3D	3	DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6:$Rn
+VLD3DWB	3	DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|addrmode6:$Rn, am6offset:$Rm
+VLD4D	3	DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6:$Rn
+VLD4DWB	3	DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6:$Rn, am6offset:$Rm
+VLD1LN	5	DPR:$Vd|addrmode6:$Rn, DPR:$src, nohash_imm:$lane
+VLD1LN32	5	DPR:$Vd|addrmode6oneL32:$Rn, DPR:$src, nohash_imm:$lane
+VLD1QLNPseudo	2	|
+VLD1LNWB	3	DPR:$Vd, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src, nohash_imm:$lane
+VLD2LN	3	DPR:$Vd, DPR:$dst2|addrmode6:$Rn, DPR:$src1, DPR:$src2, nohash_imm:$lane
+VLD2LNWB	3	DPR:$Vd, DPR:$dst2, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, nohash_imm:$lane
+VLD3LN	3	DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6:$Rn, DPR:$src1, DPR:$src2, DPR:$src3,           nohash_imm:$lane
+VLD3LNWB	3	DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, DPR:$src3, nohash_imm:$lane
+VLD4LN	3	DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6:$Rn, DPR:$src1, DPR:$src2, DPR:$src3, DPR:$src4,           nohash_imm:$lane
+VLD4LNWB	3	DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, DPR:$src3, DPR:$src4, nohash_imm:$lane
+VLD1DUP	5	VecListOneDAllLanes:$Vd|AddrMode:$Rn
+VLD1QDUP	5	VecListDPairAllLanes:$Vd|AddrMode:$Rn
+VLD2DUP	4	VdTy:$Vd|AddrMode:$Rn
+VLD3DUP	2	DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6dup:$Rn
+VLD3DUPWB	3	DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|AddrMode:$Rn, am6offset:$Rm
+VLD4DUP	2	DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6dup:$Rn
+VLD4DUPWB	2	DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6dup:$Rn, am6offset:$Rm
+VST1D	3	|AddrMode:$Rn, VecListOneD:$Vd
+VST1Q	3	|AddrMode:$Rn, VecListDPair:$Vd
+VST1D3	3	|AddrMode:$Rn, VecListThreeD:$Vd
+VST1D4	3	|AddrMode:$Rn, VecListFourD:$Vd
+VST2	6	|AddrMode:$Rn, VdTy:$Vd
+VST3D	3	|addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3
+VST3DWB	3	GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3
+VST4D	3	|addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4
+VST4DWB	3	GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4
+VST1LN	7	|AddrMode:$Rn, DPR:$Vd, nohash_imm:$lane
+VST1QLNPseudo	3	|
+VST1LNWB	7	GPR:$wb|AdrMode:$Rn, am6offset:$Rm,            DPR:$Vd, nohash_imm:$lane
+VST1QLNWBPseudo	3	|
+VST2LN	3	|addrmode6:$Rn, DPR:$Vd, DPR:$src2, nohash_imm:$lane
+VST2LNWB	3	GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, nohash_imm:$lane
+VST3LN	3	|addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3,            nohash_imm:$lane
+VST3LNWB	3	GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, nohash_imm:$lane
+VST4LN	3	|addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4,            nohash_imm:$lane
+VST4LNWB	3	GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4, nohash_imm:$lane
+N2VQIntX2np	11	QPR:$Vd|QPR:$src, QPR:$Vm
+N3VD	12	DPR:$Vd|DPR:$Vn, DPR:$Vm
+N3VDX	11	DPR:$Vd|DPR:$Vn, DPR:$Vm
+N3VDSL	7	DPR:$Vd|DPR:$Vn, DPR_VFP2:$Vm, VectorIndex32:$lane
+N3VDSL16	6	DPR:$Vd|DPR:$Vn, DPR_8:$Vm, VectorIndex16:$lane
+N3VQ	12	QPR:$Vd|QPR:$Vn, QPR:$Vm
+N3VQX	11	QPR:$Vd|QPR:$Vn, QPR:$Vm
+N3VQSL	8	QPR:$Vd|QPR:$Vn, DPR_VFP2:$Vm, VectorIndex32:$lane
+N3VQSL16	7	QPR:$Vd|QPR:$Vn, DPR_8:$Vm, VectorIndex16:$lane
+N3VDInt	13	DPR:$Vd|DPR:$Vn, DPR:$Vm
+N3VDIntnp	13	DPR:$Vd|DPR:$Vn, DPR:$Vm
+N3VDIntSL	7	DPR:$Vd|DPR:$Vn, DPR_VFP2:$Vm, VectorIndex32:$lane
+N3VDIntSL16	7	DPR:$Vd|DPR:$Vn, DPR_8:$Vm, VectorIndex16:$lane
+N3VDIntSh	12	DPR:$Vd|DPR:$Vm, DPR:$Vn
+N3VQInt	13	QPR:$Vd|QPR:$Vn, QPR:$Vm
+N3VQIntnp	13	QPR:$Vd|QPR:$Vn, QPR:$Vm
+N3VQInt3np	12	QPR:$Vd|QPR:$src, QPR:$Vn, QPR:$Vm
+N3VQIntSL	8	QPR:$Vd|QPR:$Vn, DPR_VFP2:$Vm, VectorIndex32:$lane
+N3VQIntSL16	8	QPR:$Vd|QPR:$Vn, DPR_8:$Vm, VectorIndex16:$lane
+N3VQIntSh	12	QPR:$Vd|QPR:$Vm, QPR:$Vn
+N3VNInt	11	DPR:$Vd|QPR:$Vn, QPR:$Vm
+N3VL	12	QPR:$Vd|DPR:$Vn, DPR:$Vm
+N3VLExt	13	QPR:$Vd|DPR:$Vn, DPR:$Vm
+N3VLIntExt	13	QPR:$Vd|DPR:$Vn, DPR:$Vm
+N3VLInt	12	QPR:$Vd|DPR:$Vn, DPR:$Vm
+N3VLIntnp	12	QPR:$Vd|DPR:$Vn, DPR:$Vm
+N3VW	12	QPR:$Vd|QPR:$Vn, DPR:$Vm
+N3VQ_cmp	12	QPR:$Vd|QPR:$Vn, QPR:$Vm
+N3VD_cmp	12	DPR:$Vd|DPR:$Vn, DPR:$Vm
+VDOT	9	RegTy:$dst|RegTy:$Vd, RegTy:$Vn, RegTy:$Vm
+N3VMatMul	5	QPR:$dst|QPR:$Vd, QPR:$Vn, QPR:$Vm
+BaseN3VCP8ComplexTied	10	|
+BaseN3VCP8ComplexOdd	11	|
+BaseN3VCP8ComplexTiedLane32	9	|
+BaseN3VCP8ComplexTiedLane64	9	|
+VFMD	3	DPR:$Vd|SPR:$Vn, SPR_8:$Vm, VectorIndex32:$idx
+VFMQ	3	QPR:$Vd|DPR:$Vn, DPR_8:$Vm, VectorIndex16:$idx
+N2VLShMax	12	|
+VEXTd	4	DPR:$Vd|DPR:$Vn, DPR:$Vm, immTy:$index
+VEXTq	4	QPR:$Vd|QPR:$Vn, QPR:$Vm, immTy:$index
+definition	6	|
+definition	8	|
+definition	7	|
+BF16VDOT	6	|
+BF16VDOTS	5	RegTy:$dst|RegTy:$Vd, RegTy:$Vn, RegTy:$Vm
+BF16MM	3	RegTy:$dst|RegTy:$Vd, RegTy:$Vn, RegTy:$Vm
+VBF16MALQ	3	QPR:$dst|QPR:$Vd, QPR:$Vn, QPR:$Vm
+T1SystemEncoding	1	|
+tHintAlias	3	|
+T1pIDPEncode	7	|
+T1pIMiscEncode	7	|
+T1sIDPEncode	7	|
+T1sIGenEncode	7	|
+T1sIGenEncodeImm	7	|
+T1sItDPEncode	7	|
+T1sItGenEncodeImm	7	|
+T2AddrMode_Imm8	4	|
+T2AddrMode_Imm8s4	4	|
+BFLabelOp	5	|
+T2OneRegImm	6	|
+T2sOneRegImm	6	|
+T2OneRegCmpImm	6	|
+T2OneRegShiftedReg	6	|
+T2sOneRegShiftedReg	6	|
+T2OneRegCmpShiftedReg	6	|
+T2TwoReg	6	|
+T2sTwoReg	6	|
+T2TwoRegCmp	6	|
+T2TwoRegImm	6	|
+T2sTwoRegImm	6	|
+T2TwoRegShiftImm	6	|
+T2sTwoRegShiftImm	6	|
+T2ThreeReg	6	|
+T2ThreeRegNoP	5	|
+T2sThreeReg	6	|
+T2TwoRegShiftedReg	6	|
+T2sTwoRegShiftedReg	6	|
+T2FourReg	6	|
+T2MulLong	4	rGPR:$RdLo, rGPR:$RdHi|rGPR:$Rn, rGPR:$Rm
+T2MlaLong	3	rGPR:$RdLo, rGPR:$RdHi|rGPR:$Rn, rGPR:$Rm, rGPR:$RLo, rGPR:$RHi
+T2I_ext_rrot_base	6	|
+T2I_exta_rrot	2	rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rot_imm:$rot
+T2PCOneRegImm	5	|
+T2IldT	4	rGPR:$Rt|t2addrmode_posimm8:$addr
+T2Ildacq	7	|
+T2IstT	3	|rGPR:$Rt, t2addrmode_posimm8:$addr
+T2Istrrel	6	|
+T2Iplpci	2	|t2ldrlabel:$addr
+T2I_pam	6	rGPR:$Rd|
+for	9	|
+T2FourReg_mac	9	|
+T2SatI	3	rGPR:$Rd|
+T2BitFI	6	|
+T2TwoRegBitFI	6	|
+T2FourRegMLA	3	rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra
+T2SMMUL	3	rGPR:$Rd|rGPR:$Rn, rGPR:$Rm
+T2FourRegSMMLA	4	rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra
+T2ThreeRegSMUL	4	rGPR:$Rd|rGPR:$Rn, rGPR:$Rm
+T2FourRegSMLA	4	rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra
+T2DualHalfMul	4	rGPR:$Rd|rGPR:$Rn, rGPR:$Rm
+T2I_misc	8	|
+T2I_crc32	4	rGPR:$Rd|rGPR:$Rn, rGPR:$Rm
+T2I_ldrex	11	|
+T2I_strex	11	|
+t2CPS	2	|
+T2DCPS	2	|
+T2SRS	8	|
+T2RFE	7	|
+T2CI	7	|
+t2MovRCopro	6	|
+t2MovRRCopro	6	|
+T2TT	3	rGPR:$Rt|GPRnopc:$Rn
+t2BF	3	|
+t2LOL	4	|
+CS	3	rGPR:$Rd|GPRwithZRnosp:$Rn, GPRwithZRnosp:$Rm, pred_noal:$fcond
+PACBTIAut	3	|
+PACBTIHintSpaceInst	3	|
+PACBTIHintSpaceDefInst	2	|
+PACBTIHintSpaceUseInst	2	|
+AVConv1IDs_Encode	10	|
+AVConv1InSs_Encode	10	|
+AVConv1IHs_Encode	10	|
+AVConv1IsD_Encode	10	|
+AVConv1InsS_Encode	10	|
+AVConv1IsH_Encode	10	|
+AVConv1XInsS_Encode	11	|
+AVConv1XInsD_Encode	11	|
+BF16_VCVT	2	SPR:$Sd|SPR:$dst, SPR:$Sm
+MovFromVFP	6	|
+MovToVFP	6	|
+vfp_vstrldr	10	|
+ARMReg	4	|
+ARMFReg	2	|
+above	5	|
+and	8	|
+representing	10	|
+representing	5	|
+representing	4	|
+to	4	|
+to	4	|
+CheckAM2OpAdd	1	|
+CheckAM2OpSub	1	|
+CheckAM2Offset	2	|
+CheckAM3OpSub	1	|
+BranchWriteRes	5	|
+A57WriteLMOpsListType	1	|
+A9WriteLMOpsListType	1	|
+M4UnitL1	1	|
+M4UnitL2	1	|
+M4UnitL3	1	|
+M4UnitL14	1	|
+MClassSysReg	5	|
+BankedReg	2	|

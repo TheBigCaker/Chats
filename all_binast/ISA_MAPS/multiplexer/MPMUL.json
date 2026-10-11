@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MPMUL",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "MPMUL": {"Sparc": "MPMUL"}
+  },
+  "INPUTS": {
+    "MPMUL": {"Sparc": [["simm5Op",0]]}
+  },
+  "OUTPUTS": {
+    "MPMUL": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "MPMUL": {"Sparc": ["F3_3","2","0b110110","0b101001000"]}
+  },
+  "OUTPUT_BYTES": {
+    "MPMUL": {"Sparc": ["F3_3","2","0b110110","0b101001000"]}
+  }
+}

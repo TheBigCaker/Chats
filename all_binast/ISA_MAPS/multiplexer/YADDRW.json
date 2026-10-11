@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YADDRW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YADDRW": {"RISCV": "YADDRW"}
+  },
+  "INPUTS": {
+    "YADDRW": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YADDRW": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YADDRW": {"RISCV": ["RVY_rr","0b0001011"]}
+  },
+  "OUTPUT_BYTES": {
+    "YADDRW": {"RISCV": ["RVY_rr","0b0001011"]}
+  }
+}

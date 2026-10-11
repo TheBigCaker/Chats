@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFMSH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFMSH": {"ARM": "VFMSH"}
+  },
+  "INPUTS": {
+    "VFMSH": {"ARM": [["HPR",0],["HPR",0],["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VFMSH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFMSH": {"ARM": ["AHbI","0b11101","0b10","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFMSH": {"ARM": ["AHbI","0b11101","0b10","1","0"]}
+  }
+}

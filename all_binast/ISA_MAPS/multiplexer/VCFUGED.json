@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCFUGED",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCFUGED": {"PowerPC": "VCFUGED"}
+  },
+  "INPUTS": {
+    "VCFUGED": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VCFUGED": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCFUGED": {"PowerPC": ["VXForm_1","1357"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCFUGED": {"PowerPC": ["VXForm_1","1357"]}
+  }
+}

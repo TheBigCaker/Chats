@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VFPN",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFPNeonDomain": {"ARM": "VFPNeonDomain"},
+    "VFPNeonA8Domain": {"ARM": "VFPNeonA8Domain"}
+  },
+  "INPUTS": {
+    "VFPNeonDomain": {"ARM": []},
+    "VFPNeonA8Domain": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VFPNeonDomain": {"ARM": []},
+    "VFPNeonA8Domain": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VFPNeonDomain": {"ARM": ["Domain","3"]},
+    "VFPNeonA8Domain": {"ARM": ["Domain","5"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFPNeonDomain": {"ARM": ["Domain","3"]},
+    "VFPNeonA8Domain": {"ARM": ["Domain","5"]}
+  }
+}

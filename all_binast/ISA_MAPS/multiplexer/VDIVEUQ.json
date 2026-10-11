@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VDIVEUQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VDIVEUQ": {"PowerPC": "VDIVEUQ"}
+  },
+  "INPUTS": {
+    "VDIVEUQ": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VDIVEUQ": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VDIVEUQ": {"PowerPC": ["VXForm_1","523"]}
+  },
+  "OUTPUT_BYTES": {
+    "VDIVEUQ": {"PowerPC": ["VXForm_1","523"]}
+  }
+}

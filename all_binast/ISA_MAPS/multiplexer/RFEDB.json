@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "RFEDB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "RFEDB": {"ARM": "RFEDB"},
+    "RFEDB_UPD": {"ARM": "RFEDB_UPD"}
+  },
+  "INPUTS": {
+    "RFEDB": {"ARM": [["GPR:$Rn",0]]},
+    "RFEDB_UPD": {"ARM": [["GPR:$Rn",0]]}
+  },
+  "OUTPUTS": {
+    "RFEDB": {"ARM": []},
+    "RFEDB_UPD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "RFEDB": {"ARM": ["RFEI","0"]},
+    "RFEDB_UPD": {"ARM": ["RFEI","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "RFEDB": {"ARM": ["RFEI","0"]},
+    "RFEDB_UPD": {"ARM": ["RFEI","1"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FXTOS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FXTOS": {"Sparc": "FXTOS"}
+  },
+  "INPUTS": {
+    "FXTOS": {"Sparc": [["DFPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FXTOS": {"Sparc": [["FPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FXTOS": {"Sparc": ["F3_3u","2","0b110100","0b010000100"]}
+  },
+  "OUTPUT_BYTES": {
+    "FXTOS": {"Sparc": ["F3_3u","2","0b110100","0b010000100"]}
+  }
+}

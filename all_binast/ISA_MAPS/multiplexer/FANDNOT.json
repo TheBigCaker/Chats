@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "FANDNOT",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FANDNOT1": {"Sparc": "FANDNOT1"},
+    "FANDNOT1S": {"Sparc": "FANDNOT1S"},
+    "FANDNOT2": {"Sparc": "FANDNOT2"},
+    "FANDNOT2S": {"Sparc": "FANDNOT2S"}
+  },
+  "INPUTS": {
+    "FANDNOT1": {"Sparc": []},
+    "FANDNOT1S": {"Sparc": []},
+    "FANDNOT2": {"Sparc": []},
+    "FANDNOT2S": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FANDNOT1": {"Sparc": []},
+    "FANDNOT1S": {"Sparc": []},
+    "FANDNOT2": {"Sparc": []},
+    "FANDNOT2S": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FANDNOT1": {"Sparc": ["VISInst","0b001101000"]},
+    "FANDNOT1S": {"Sparc": ["VISInst","0b001101001"]},
+    "FANDNOT2": {"Sparc": ["VISInst","0b001100100"]},
+    "FANDNOT2S": {"Sparc": ["VISInst","0b001100101"]}
+  },
+  "OUTPUT_BYTES": {
+    "FANDNOT1": {"Sparc": ["VISInst","0b001101000"]},
+    "FANDNOT1S": {"Sparc": ["VISInst","0b001101001"]},
+    "FANDNOT2": {"Sparc": ["VISInst","0b001100100"]},
+    "FANDNOT2S": {"Sparc": ["VISInst","0b001100101"]}
+  }
+}

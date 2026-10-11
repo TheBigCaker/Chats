@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PICADD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "PICADD": {"ARM": "PICADD"}
+  },
+  "INPUTS": {
+    "PICADD": {"ARM": [["GPR",64],["pclabel",0],["pred",0]]}
+  },
+  "OUTPUTS": {
+    "PICADD": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "PICADD": {"ARM": ["ARMPseudoInst","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "PICADD": {"ARM": ["ARMPseudoInst","4"]}
+  }
+}

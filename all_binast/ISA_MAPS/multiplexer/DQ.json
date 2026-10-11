@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "DQ",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "DQuad": {"ARM": "DQuad"},
+    "DQuadSpc": {"ARM": "DQuadSpc"}
+  },
+  "INPUTS": {
+    "DQuad": {"ARM": []},
+    "DQuadSpc": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "DQuad": {"ARM": []},
+    "DQuadSpc": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "DQuad": {"ARM": ["RegisterClass","256"]},
+    "DQuadSpc": {"ARM": ["RegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "DQuad": {"ARM": ["RegisterClass","256"]},
+    "DQuadSpc": {"ARM": ["RegisterClass","64"]}
+  }
+}

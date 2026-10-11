@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FLW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FLW": {"RISCV": "FLW"}
+  },
+  "INPUTS": {
+    "FLW": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "FLW": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "FLW": {"RISCV": ["FPLoad_r","0b010"]}
+  },
+  "OUTPUT_BYTES": {
+    "FLW": {"RISCV": ["FPLoad_r","0b010"]}
+  }
+}

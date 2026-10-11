@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "CPSR",
+  "BACKENDS": ["ARM","Sparc"],
+  "INDEX": {
+    "CPSR": {"ARM": "CPSR"},
+    "CPSR": {"Sparc": "CPSR"}
+  },
+  "INPUTS": {
+    "CPSR": {"ARM": []},
+    "CPSR": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "CPSR": {"ARM": []},
+    "CPSR": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "CPSR": {"ARM": ["ARMReg","0"]},
+    "CPSR": {"Sparc": ["SparcCtrlReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "CPSR": {"ARM": ["ARMReg","0"]},
+    "CPSR": {"Sparc": ["SparcCtrlReg","0"]}
+  }
+}

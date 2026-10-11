@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VCMPGTFP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCMPGTFP": {"PowerPC": "VCMPGTFP"},
+    "VCMPGTFP_rec": {"PowerPC": "VCMPGTFP_rec"}
+  },
+  "INPUTS": {
+    "VCMPGTFP": {"PowerPC": []},
+    "VCMPGTFP_rec": {"PowerPC": [["vrrc:$VA",0],["vrrc:$VB",0]]}
+  },
+  "OUTPUTS": {
+    "VCMPGTFP": {"PowerPC": []},
+    "VCMPGTFP_rec": {"PowerPC": [["vrrc:$VD",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCMPGTFP": {"PowerPC": ["VCMP","710"]},
+    "VCMPGTFP_rec": {"PowerPC": ["VCMP_rec","710"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCMPGTFP": {"PowerPC": ["VCMP","710"]},
+    "VCMPGTFP_rec": {"PowerPC": ["VCMP_rec","710"]}
+  }
+}

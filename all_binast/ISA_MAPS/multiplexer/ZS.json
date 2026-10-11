@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ZS",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "ZS_EMIT": {"Mali": "ZS_EMIT"},
+    "ZS_EMIT": {"Mali": "ZS_EMIT"}
+  },
+  "INPUTS": {
+    "ZS_EMIT": {"Mali": [["R32",32],["R32",32],["R32",32]]},
+    "ZS_EMIT": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "ZS_EMIT": {"Mali": [["R",32]]},
+    "ZS_EMIT": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "ZS_EMIT": {"Mali": ["Bifrost_add","0xd7800","0xff800"]},
+    "ZS_EMIT": {"Mali": ["Valhall_NONE"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZS_EMIT": {"Mali": ["Bifrost_add","0xd7800","0xff800"]},
+    "ZS_EMIT": {"Mali": ["Valhall_NONE"]}
+  }
+}

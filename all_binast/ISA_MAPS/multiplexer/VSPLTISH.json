@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VSPLTISH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSPLTISH_get_imm": {"PowerPC": "VSPLTISH_get_imm"},
+    "VSPLTISH": {"PowerPC": "VSPLTISH"}
+  },
+  "INPUTS": {
+    "VSPLTISH_get_imm": {"PowerPC": []},
+    "VSPLTISH": {"PowerPC": [["s5imm",5]]}
+  },
+  "OUTPUTS": {
+    "VSPLTISH_get_imm": {"PowerPC": []},
+    "VSPLTISH": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSPLTISH_get_imm": {"PowerPC": ["SDNodeXForm","2"]},
+    "VSPLTISH": {"PowerPC": ["VXForm_3","844"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSPLTISH_get_imm": {"PowerPC": ["SDNodeXForm","2"]},
+    "VSPLTISH": {"PowerPC": ["VXForm_3","844"]}
+  }
+}

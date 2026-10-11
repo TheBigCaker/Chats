@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BLEND",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "BLEND": {"Mali": "BLEND"},
+    "BLEND": {"Mali": "BLEND"}
+  },
+  "INPUTS": {
+    "BLEND": {"Mali": [["R32",32],["R32",32],["R32",32],["R32",32]]},
+    "BLEND": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "BLEND": {"Mali": [["R",32]]},
+    "BLEND": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "BLEND": {"Mali": ["Bifrost_add","0xca800","0xffe00"]},
+    "BLEND": {"Mali": ["Valhall_NONE"]}
+  },
+  "OUTPUT_BYTES": {
+    "BLEND": {"Mali": ["Bifrost_add","0xca800","0xffe00"]},
+    "BLEND": {"Mali": ["Valhall_NONE"]}
+  }
+}

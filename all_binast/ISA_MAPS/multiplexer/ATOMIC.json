@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "ATOMIC",
+  "BACKENDS": ["PowerPC","AMDGPU"],
+  "INDEX": {
+    "ATOMIC_CMP_SWAP_I64": {"PowerPC": "ATOMIC_CMP_SWAP_I64"},
+    "ATOMIC_CMP_SWAP_I128": {"PowerPC": "ATOMIC_CMP_SWAP_I128"},
+    "ATOMIC_FENCE": {"AMDGPU": "ATOMIC_FENCE"}
+  },
+  "INPUTS": {
+    "ATOMIC_CMP_SWAP_I64": {"PowerPC": [["memrr",0],["g8rc",0],["g8rc",0]]},
+    "ATOMIC_CMP_SWAP_I128": {"PowerPC": [["memrr",0],["g8rc",0],["g8rc",0],["g8rc",0],["g8rc",0]]},
+    "ATOMIC_FENCE": {"AMDGPU": [["i32imm",32],["i32imm",32]]}
+  },
+  "OUTPUTS": {
+    "ATOMIC_CMP_SWAP_I64": {"PowerPC": [["g8rc",0]]},
+    "ATOMIC_CMP_SWAP_I128": {"PowerPC": [["g8prc",0],["g8prc",0]]},
+    "ATOMIC_FENCE": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "ATOMIC_CMP_SWAP_I64": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "ATOMIC_CMP_SWAP_I128": {"PowerPC": ["PPCPostRAExpPseudo"]},
+    "ATOMIC_FENCE": {"AMDGPU": ["SPseudoInstSI"]}
+  },
+  "OUTPUT_BYTES": {
+    "ATOMIC_CMP_SWAP_I64": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "ATOMIC_CMP_SWAP_I128": {"PowerPC": ["PPCPostRAExpPseudo"]},
+    "ATOMIC_FENCE": {"AMDGPU": ["SPseudoInstSI"]}
+  }
+}

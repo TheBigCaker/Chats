@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "QASX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "QASX": {"ARM": "QASX"}
+  },
+  "INPUTS": {
+    "QASX": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "QASX": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "QASX": {"ARM": ["AAIIntrinsic","0b01100010","0b11110011"]}
+  },
+  "OUTPUT_BYTES": {
+    "QASX": {"ARM": ["AAIIntrinsic","0b01100010","0b11110011"]}
+  }
+}

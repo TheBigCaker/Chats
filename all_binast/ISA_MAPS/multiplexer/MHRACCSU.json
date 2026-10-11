@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MHRACCSU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MHRACCSU": {"RISCV": "MHRACCSU"}
+  },
+  "INPUTS": {
+    "MHRACCSU": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "MHRACCSU": {"RISCV": [["GPR:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "MHRACCSU": {"RISCV": ["RVPTernary_rrr","0b1001","0b11","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "MHRACCSU": {"RISCV": ["RVPTernary_rrr","0b1001","0b11","0b111"]}
+  }
+}

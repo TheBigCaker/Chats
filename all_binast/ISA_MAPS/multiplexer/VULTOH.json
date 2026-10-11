@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VULTOH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VULTOH": {"ARM": "VULTOH"}
+  },
+  "INPUTS": {
+    "VULTOH": {"ARM": [["SPR",0],["fbits32",0]]}
+  },
+  "OUTPUTS": {
+    "VULTOH": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VULTOH": {"ARM": ["AVConv1XInsS_Encode","0b11101","0b11","0b1011","0b1001","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VULTOH": {"ARM": ["AVConv1XInsS_Encode","0b11101","0b11","0b1011","0b1001","1"]}
+  }
+}

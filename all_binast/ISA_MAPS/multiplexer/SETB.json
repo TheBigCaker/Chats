@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SETB",
+  "BACKENDS": ["X86","PowerPC"],
+  "INDEX": {
+    "SETB_C32r": {"X86": "SETB_C32r"},
+    "SETB_C64r": {"X86": "SETB_C64r"},
+    "SETB8": {"PowerPC": "SETB8"}
+  },
+  "INPUTS": {
+    "SETB_C32r": {"X86": []},
+    "SETB_C64r": {"X86": []},
+    "SETB8": {"PowerPC": [["crrc",0]]}
+  },
+  "OUTPUTS": {
+    "SETB_C32r": {"X86": [["GR32",32]]},
+    "SETB_C64r": {"X86": [["GR64",64]]},
+    "SETB8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "SETB_C32r": {"X86": ["0"]},
+    "SETB_C64r": {"X86": ["0"]},
+    "SETB8": {"PowerPC": ["XForm_44","31","128"]}
+  },
+  "OUTPUT_BYTES": {
+    "SETB_C32r": {"X86": ["0"]},
+    "SETB_C64r": {"X86": ["0"]},
+    "SETB8": {"PowerPC": ["XForm_44","31","128"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TBA",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "TBA": {"Sparc": "TBA"}
+  },
+  "INPUTS": {
+    "TBA": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "TBA": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "TBA": {"Sparc": ["SparcCtrlReg","5"]}
+  },
+  "OUTPUT_BYTES": {
+    "TBA": {"Sparc": ["SparcCtrlReg","5"]}
+  }
+}

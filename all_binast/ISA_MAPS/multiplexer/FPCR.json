@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FPCR",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "FPCR": {"AArch64": "FPCR"}
+  },
+  "INPUTS": {
+    "FPCR": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "FPCR": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "FPCR": {"AArch64": ["AArch64Reg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPCR": {"AArch64": ["AArch64Reg","0"]}
+  }
+}

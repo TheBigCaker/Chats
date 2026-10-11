@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVMWHSSFA",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVMWHSSFA": {"PowerPC": "EVMWHSSFA"}
+  },
+  "INPUTS": {
+    "EVMWHSSFA": {"PowerPC": [["sperc",0],["sperc",0]]}
+  },
+  "OUTPUTS": {
+    "EVMWHSSFA": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVMWHSSFA": {"PowerPC": ["EVXForm_1","1127"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVMWHSSFA": {"PowerPC": ["EVXForm_1","1127"]}
+  }
+}

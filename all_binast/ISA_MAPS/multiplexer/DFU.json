@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DFU",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DFU": {"PowerPC": "DFU"}
+  },
+  "INPUTS": {
+    "DFU": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "DFU": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "DFU": {"PowerPC": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "DFU": {"PowerPC": ["ProcResource","1"]}
+  }
+}

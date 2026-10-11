@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VNCIPHER",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VNCIPHER": {"PowerPC": "VNCIPHER"}
+  },
+  "INPUTS": {
+    "VNCIPHER": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VNCIPHER": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VNCIPHER": {"PowerPC": ["VX1_Int_Ty","1352"]}
+  },
+  "OUTPUT_BYTES": {
+    "VNCIPHER": {"PowerPC": ["VX1_Int_Ty","1352"]}
+  }
+}

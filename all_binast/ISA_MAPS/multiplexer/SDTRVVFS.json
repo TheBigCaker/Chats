@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SDTRVVFS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SDTRVVFSlide1": {"RISCV": "SDTRVVFSlide1"}
+  },
+  "INPUTS": {
+    "SDTRVVFSlide1": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SDTRVVFSlide1": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SDTRVVFSlide1": {"RISCV": ["SDTypeProfile","1","5"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTRVVFSlide1": {"RISCV": ["SDTypeProfile","1","5"]}
+  }
+}

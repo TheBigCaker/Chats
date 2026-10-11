@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DSB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "DSB": {"ARM": "DSB"}
+  },
+  "INPUTS": {
+    "DSB": {"ARM": [["memb_opt",0]]}
+  },
+  "OUTPUTS": {
+    "DSB": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "DSB": {"ARM": ["AInoP"]}
+  },
+  "OUTPUT_BYTES": {
+    "DSB": {"ARM": ["AInoP"]}
+  }
+}

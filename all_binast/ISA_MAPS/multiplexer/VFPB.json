@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFPB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFPBinaryFrm": {"ARM": "VFPBinaryFrm"}
+  },
+  "INPUTS": {
+    "VFPBinaryFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VFPBinaryFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VFPBinaryFrm": {"ARM": ["Format","16"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFPBinaryFrm": {"ARM": ["Format","16"]}
+  }
+}

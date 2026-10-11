@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "NSetLnFrm": {"ARM": "NSetLnFrm"}
+  },
+  "INPUTS": {
+    "NSetLnFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "NSetLnFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "NSetLnFrm": {"ARM": ["Format","28"]}
+  },
+  "OUTPUT_BYTES": {
+    "NSetLnFrm": {"ARM": ["Format","28"]}
+  }
+}

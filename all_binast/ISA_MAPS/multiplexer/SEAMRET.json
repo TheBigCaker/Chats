@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SEAMRET",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SEAMRET": {"X86": "SEAMRET"}
+  },
+  "INPUTS": {
+    "SEAMRET": {"X86": []}
+  },
+  "OUTPUTS": {
+    "SEAMRET": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SEAMRET": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "SEAMRET": {"X86": ["0x01"]}
+  }
+}

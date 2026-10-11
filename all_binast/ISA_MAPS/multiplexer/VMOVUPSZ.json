@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "VMOVUPSZ",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMOVUPSZ128rm_NOVLX": {"X86": "VMOVUPSZ128rm_NOVLX"},
+    "VMOVUPSZ256rm_NOVLX": {"X86": "VMOVUPSZ256rm_NOVLX"},
+    "VMOVUPSZ128mr_NOVLX": {"X86": "VMOVUPSZ128mr_NOVLX"},
+    "VMOVUPSZ256mr_NOVLX": {"X86": "VMOVUPSZ256mr_NOVLX"}
+  },
+  "INPUTS": {
+    "VMOVUPSZ128rm_NOVLX": {"X86": [["f128mem",0]]},
+    "VMOVUPSZ256rm_NOVLX": {"X86": [["f256mem",0]]},
+    "VMOVUPSZ128mr_NOVLX": {"X86": [["f128mem",0],["VR128X",128]]},
+    "VMOVUPSZ256mr_NOVLX": {"X86": [["f256mem",0],["VR256X",256]]}
+  },
+  "OUTPUTS": {
+    "VMOVUPSZ128rm_NOVLX": {"X86": [["VR128X",128]]},
+    "VMOVUPSZ256rm_NOVLX": {"X86": [["VR256X",256]]},
+    "VMOVUPSZ128mr_NOVLX": {"X86": []},
+    "VMOVUPSZ256mr_NOVLX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMOVUPSZ128rm_NOVLX": {"X86": ["0"]},
+    "VMOVUPSZ256rm_NOVLX": {"X86": ["0"]},
+    "VMOVUPSZ128mr_NOVLX": {"X86": ["0"]},
+    "VMOVUPSZ256mr_NOVLX": {"X86": ["0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMOVUPSZ128rm_NOVLX": {"X86": ["0"]},
+    "VMOVUPSZ256rm_NOVLX": {"X86": ["0"]},
+    "VMOVUPSZ128mr_NOVLX": {"X86": ["0"]},
+    "VMOVUPSZ256mr_NOVLX": {"X86": ["0"]}
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "PSRAI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PSRAI_B": {"RISCV": "PSRAI_B"},
+    "PSRAI_H": {"RISCV": "PSRAI_H"},
+    "PSRAI_W": {"RISCV": "PSRAI_W"},
+    "PSRAI_DB": {"RISCV": "PSRAI_DB"},
+    "PSRAI_DH": {"RISCV": "PSRAI_DH"},
+    "PSRAI_DW": {"RISCV": "PSRAI_DW"}
+  },
+  "INPUTS": {
+    "PSRAI_B": {"RISCV": []},
+    "PSRAI_H": {"RISCV": []},
+    "PSRAI_W": {"RISCV": []},
+    "PSRAI_DB": {"RISCV": []},
+    "PSRAI_DH": {"RISCV": []},
+    "PSRAI_DW": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PSRAI_B": {"RISCV": []},
+    "PSRAI_H": {"RISCV": []},
+    "PSRAI_W": {"RISCV": []},
+    "PSRAI_DB": {"RISCV": []},
+    "PSRAI_DH": {"RISCV": []},
+    "PSRAI_DW": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PSRAI_B": {"RISCV": ["RVPShiftB_ri","0b100","0b100"]},
+    "PSRAI_H": {"RISCV": ["RVPShiftH_ri","0b100","0b100"]},
+    "PSRAI_W": {"RISCV": ["RVPShiftW_ri","0b100","0b100"]},
+    "PSRAI_DB": {"RISCV": ["RVPPairShiftB_ri","0b100","0b1"]},
+    "PSRAI_DH": {"RISCV": ["RVPPairShiftH_ri","0b100","0b1"]},
+    "PSRAI_DW": {"RISCV": ["RVPPairShiftW_ri","0b100","0b1"]}
+  },
+  "OUTPUT_BYTES": {
+    "PSRAI_B": {"RISCV": ["RVPShiftB_ri","0b100","0b100"]},
+    "PSRAI_H": {"RISCV": ["RVPShiftH_ri","0b100","0b100"]},
+    "PSRAI_W": {"RISCV": ["RVPShiftW_ri","0b100","0b100"]},
+    "PSRAI_DB": {"RISCV": ["RVPPairShiftB_ri","0b100","0b1"]},
+    "PSRAI_DH": {"RISCV": ["RVPPairShiftH_ri","0b100","0b1"]},
+    "PSRAI_DW": {"RISCV": ["RVPPairShiftW_ri","0b100","0b1"]}
+  }
+}

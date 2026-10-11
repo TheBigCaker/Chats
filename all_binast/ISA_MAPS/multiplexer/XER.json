@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XER",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XER": {"PowerPC": "XER"}
+  },
+  "INPUTS": {
+    "XER": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XER": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XER": {"PowerPC": ["SPR","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "XER": {"PowerPC": ["SPR","1"]}
+  }
+}

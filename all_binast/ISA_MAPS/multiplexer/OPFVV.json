@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "OPFVV",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "OPFVV": {"RISCV": "OPFVV"}
+  },
+  "INPUTS": {
+    "OPFVV": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "OPFVV": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "OPFVV": {"RISCV": ["RISCVVFormat","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "OPFVV": {"RISCV": ["RISCVVFormat","0b001"]}
+  }
+}

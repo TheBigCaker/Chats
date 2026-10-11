@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FNAND",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FNAND": {"Sparc": "FNAND"}
+  },
+  "INPUTS": {
+    "FNAND": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FNAND": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FNAND": {"Sparc": ["VISInst","0b001101110"]}
+  },
+  "OUTPUT_BYTES": {
+    "FNAND": {"Sparc": ["VISInst","0b001101110"]}
+  }
+}

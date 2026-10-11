@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VOR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VOR": {"PowerPC": "VOR"}
+  },
+  "INPUTS": {
+    "VOR": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VOR": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VOR": {"PowerPC": ["VXForm_1","1156"]}
+  },
+  "OUTPUT_BYTES": {
+    "VOR": {"PowerPC": ["VXForm_1","1156"]}
+  }
+}

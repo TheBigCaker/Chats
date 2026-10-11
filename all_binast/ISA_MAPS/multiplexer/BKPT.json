@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BKPT",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "BKPT": {"ARM": "BKPT"}
+  },
+  "INPUTS": {
+    "BKPT": {"ARM": [["imm0_65535",0]]}
+  },
+  "OUTPUTS": {
+    "BKPT": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "BKPT": {"ARM": ["AInoP"]}
+  },
+  "OUTPUT_BYTES": {
+    "BKPT": {"ARM": ["AInoP"]}
+  }
+}

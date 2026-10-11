@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VADDUWS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VADDUWS": {"PowerPC": "VADDUWS"}
+  },
+  "INPUTS": {
+    "VADDUWS": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VADDUWS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VADDUWS": {"PowerPC": ["VX1_Int_Ty","640"]}
+  },
+  "OUTPUT_BYTES": {
+    "VADDUWS": {"PowerPC": ["VX1_Int_Ty","640"]}
+  }
+}

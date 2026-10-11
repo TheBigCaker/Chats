@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SCSPSPUSH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SCSPSPUSH": {"RISCV": "SCSPSPUSH"}
+  },
+  "INPUTS": {
+    "SCSPSPUSH": {"RISCV": [["SP:$rs1",0]]}
+  },
+  "OUTPUTS": {
+    "SCSPSPUSH": {"RISCV": [["SP:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "SCSPSPUSH": {"RISCV": ["CSPSInst","0b0001000","0b01001"]}
+  },
+  "OUTPUT_BYTES": {
+    "SCSPSPUSH": {"RISCV": ["CSPSInst","0b0001000","0b01001"]}
+  }
+}

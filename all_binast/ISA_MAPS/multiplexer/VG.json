@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VG",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "VG": {"AArch64": "VG"}
+  },
+  "INPUTS": {
+    "VG": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "VG": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "VG": {"AArch64": ["AArch64Reg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VG": {"AArch64": ["AArch64Reg","0"]}
+  }
+}

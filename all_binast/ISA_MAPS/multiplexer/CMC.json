@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CMC",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CMC": {"X86": "CMC"}
+  },
+  "INPUTS": {
+    "CMC": {"X86": []}
+  },
+  "OUTPUTS": {
+    "CMC": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CMC": {"X86": ["0xF5"]}
+  },
+  "OUTPUT_BYTES": {
+    "CMC": {"X86": ["0xF5"]}
+  }
+}

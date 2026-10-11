@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "VSUM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSUM2SWS": {"PowerPC": "VSUM2SWS"},
+    "VSUM4SBS": {"PowerPC": "VSUM4SBS"},
+    "VSUM4SHS": {"PowerPC": "VSUM4SHS"},
+    "VSUM4UBS": {"PowerPC": "VSUM4UBS"}
+  },
+  "INPUTS": {
+    "VSUM2SWS": {"PowerPC": []},
+    "VSUM4SBS": {"PowerPC": []},
+    "VSUM4SHS": {"PowerPC": []},
+    "VSUM4UBS": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSUM2SWS": {"PowerPC": []},
+    "VSUM4SBS": {"PowerPC": []},
+    "VSUM4SHS": {"PowerPC": []},
+    "VSUM4UBS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSUM2SWS": {"PowerPC": ["VX1_Int_Ty","1672"]},
+    "VSUM4SBS": {"PowerPC": ["VX1_Int_Ty3","1800"]},
+    "VSUM4SHS": {"PowerPC": ["VX1_Int_Ty3","1608"]},
+    "VSUM4UBS": {"PowerPC": ["VX1_Int_Ty3","1544"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSUM2SWS": {"PowerPC": ["VX1_Int_Ty","1672"]},
+    "VSUM4SBS": {"PowerPC": ["VX1_Int_Ty3","1800"]},
+    "VSUM4SHS": {"PowerPC": ["VX1_Int_Ty3","1608"]},
+    "VSUM4UBS": {"PowerPC": ["VX1_Int_Ty3","1544"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMAXSB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMAXSB": {"PowerPC": "VMAXSB"}
+  },
+  "INPUTS": {
+    "VMAXSB": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMAXSB": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMAXSB": {"PowerPC": ["VX1_Int_Ty","258"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMAXSB": {"PowerPC": ["VX1_Int_Ty","258"]}
+  }
+}

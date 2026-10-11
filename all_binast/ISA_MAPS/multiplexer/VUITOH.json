@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUITOH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VUITOH": {"ARM": "VUITOH"}
+  },
+  "INPUTS": {
+    "VUITOH": {"ARM": [["SPR",0]]}
+  },
+  "OUTPUTS": {
+    "VUITOH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VUITOH": {"ARM": ["AVConv1IHs_Encode","0b11101","0b11","0b1000","0b1001"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUITOH": {"ARM": ["AVConv1IHs_Encode","0b11101","0b11","0b1000","0b1001"]}
+  }
+}

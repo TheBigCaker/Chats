@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "PP",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "PP_b_mul_r": {"AArch64": "PP_b_mul_r"},
+    "PP_h_mul_r": {"AArch64": "PP_h_mul_r"},
+    "PP_s_mul_r": {"AArch64": "PP_s_mul_r"},
+    "PP_d_mul_r": {"AArch64": "PP_d_mul_r"}
+  },
+  "INPUTS": {
+    "PP_b_mul_r": {"AArch64": []},
+    "PP_h_mul_r": {"AArch64": []},
+    "PP_s_mul_r": {"AArch64": []},
+    "PP_d_mul_r": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "PP_b_mul_r": {"AArch64": []},
+    "PP_h_mul_r": {"AArch64": []},
+    "PP_s_mul_r": {"AArch64": []},
+    "PP_d_mul_r": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "PP_b_mul_r": {"AArch64": ["PPR2MulRegOp","8"]},
+    "PP_h_mul_r": {"AArch64": ["PPR2MulRegOp","16"]},
+    "PP_s_mul_r": {"AArch64": ["PPR2MulRegOp","32"]},
+    "PP_d_mul_r": {"AArch64": ["PPR2MulRegOp","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "PP_b_mul_r": {"AArch64": ["PPR2MulRegOp","8"]},
+    "PP_h_mul_r": {"AArch64": ["PPR2MulRegOp","16"]},
+    "PP_s_mul_r": {"AArch64": ["PPR2MulRegOp","32"]},
+    "PP_d_mul_r": {"AArch64": ["PPR2MulRegOp","64"]}
+  }
+}

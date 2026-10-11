@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "VSHLL",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VSHLLi8": {"ARM": "VSHLLi8"},
+    "VSHLLi16": {"ARM": "VSHLLi16"},
+    "VSHLLi32": {"ARM": "VSHLLi32"}
+  },
+  "INPUTS": {
+    "VSHLLi8": {"ARM": []},
+    "VSHLLi16": {"ARM": []},
+    "VSHLLi32": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VSHLLi8": {"ARM": []},
+    "VSHLLi16": {"ARM": []},
+    "VSHLLi32": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VSHLLi8": {"ARM": ["N2VLShMax","1","1","0b110010","0b0011","0","0","0"]},
+    "VSHLLi16": {"ARM": ["N2VLShMax","1","1","0b110110","0b0011","0","0","0"]},
+    "VSHLLi32": {"ARM": ["N2VLShMax","1","1","0b111010","0b0011","0","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSHLLi8": {"ARM": ["N2VLShMax","1","1","0b110010","0b0011","0","0","0"]},
+    "VSHLLi16": {"ARM": ["N2VLShMax","1","1","0b110110","0b0011","0","0","0"]},
+    "VSHLLi32": {"ARM": ["N2VLShMax","1","1","0b111010","0b0011","0","0","0"]}
+  }
+}

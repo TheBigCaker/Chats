@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCMPD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VCMPD": {"ARM": "VCMPD"}
+  },
+  "INPUTS": {
+    "VCMPD": {"ARM": [["DPR",0],["DPR",0]]}
+  },
+  "OUTPUTS": {
+    "VCMPD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VCMPD": {"ARM": ["ADuI","0b11101","0b11","0b0100","0b01","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCMPD": {"ARM": ["ADuI","0b11101","0b11","0b0100","0b01","0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BADD",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "BADDu": {"Mips": "BADDu"}
+  },
+  "INPUTS": {
+    "BADDu": {"Mips": [["RO:$rs",0],["RO:$rt",0]]}
+  },
+  "OUTPUTS": {
+    "BADDu": {"Mips": [["RO:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "BADDu": {"Mips": ["ArithLogicR","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "BADDu": {"Mips": ["ArithLogicR","1"]}
+  }
+}

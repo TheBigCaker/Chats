@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VAVGUB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VAVGUB": {"PowerPC": "VAVGUB"}
+  },
+  "INPUTS": {
+    "VAVGUB": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VAVGUB": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VAVGUB": {"PowerPC": ["VX1_Int_Ty","1026"]}
+  },
+  "OUTPUT_BYTES": {
+    "VAVGUB": {"PowerPC": ["VX1_Int_Ty","1026"]}
+  }
+}

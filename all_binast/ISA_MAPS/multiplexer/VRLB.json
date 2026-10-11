@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VRLB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VRLB": {"PowerPC": "VRLB"}
+  },
+  "INPUTS": {
+    "VRLB": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VRLB": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VRLB": {"PowerPC": ["VX1_Int_Ty","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRLB": {"PowerPC": ["VX1_Int_Ty","4"]}
+  }
+}

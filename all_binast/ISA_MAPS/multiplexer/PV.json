@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "PV",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "PV_X": {"AMDGPU": "PV_X"},
+    "PV_Y": {"AMDGPU": "PV_Y"},
+    "PV_Z": {"AMDGPU": "PV_Z"},
+    "PV_W": {"AMDGPU": "PV_W"}
+  },
+  "INPUTS": {
+    "PV_X": {"AMDGPU": []},
+    "PV_Y": {"AMDGPU": []},
+    "PV_Z": {"AMDGPU": []},
+    "PV_W": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "PV_X": {"AMDGPU": []},
+    "PV_Y": {"AMDGPU": []},
+    "PV_Z": {"AMDGPU": []},
+    "PV_W": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "PV_X": {"AMDGPU": ["R600RegWithChan","254"]},
+    "PV_Y": {"AMDGPU": ["R600RegWithChan","254"]},
+    "PV_Z": {"AMDGPU": ["R600RegWithChan","254"]},
+    "PV_W": {"AMDGPU": ["R600RegWithChan","254"]}
+  },
+  "OUTPUT_BYTES": {
+    "PV_X": {"AMDGPU": ["R600RegWithChan","254"]},
+    "PV_Y": {"AMDGPU": ["R600RegWithChan","254"]},
+    "PV_Z": {"AMDGPU": ["R600RegWithChan","254"]},
+    "PV_W": {"AMDGPU": ["R600RegWithChan","254"]}
+  }
+}

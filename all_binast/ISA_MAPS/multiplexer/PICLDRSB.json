@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PICLDRSB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "PICLDRSB": {"ARM": "PICLDRSB"}
+  },
+  "INPUTS": {
+    "PICLDRSB": {"ARM": [["addrmodepc",0],["pred",0]]}
+  },
+  "OUTPUTS": {
+    "PICLDRSB": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "PICLDRSB": {"ARM": ["ARMPseudoInst","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "PICLDRSB": {"ARM": ["ARMPseudoInst","4"]}
+  }
+}

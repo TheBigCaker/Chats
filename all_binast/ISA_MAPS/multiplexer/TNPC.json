@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TNPC",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "TNPC": {"Sparc": "TNPC"}
+  },
+  "INPUTS": {
+    "TNPC": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "TNPC": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "TNPC": {"Sparc": ["SparcCtrlReg","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "TNPC": {"Sparc": ["SparcCtrlReg","1"]}
+  }
+}

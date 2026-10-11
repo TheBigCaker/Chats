@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BCDSUB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BCDSUB_rec": {"PowerPC": "BCDSUB_rec"}
+  },
+  "INPUTS": {
+    "BCDSUB_rec": {"PowerPC": [["vrrc:$VA",0],["vrrc:$VB",0],["u1imm:$PS",1]]}
+  },
+  "OUTPUTS": {
+    "BCDSUB_rec": {"PowerPC": [["vrrc:$VD",0]]}
+  },
+  "INPUT_BYTES": {
+    "BCDSUB_rec": {"PowerPC": ["VX_VT5_VA5_VB5_PS1_XO9_o","65"]}
+  },
+  "OUTPUT_BYTES": {
+    "BCDSUB_rec": {"PowerPC": ["VX_VT5_VA5_VB5_PS1_XO9_o","65"]}
+  }
+}

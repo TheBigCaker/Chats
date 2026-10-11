@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMOVZPQIL",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMOVZPQILo2PQIrr": {"X86": "VMOVZPQILo2PQIrr"}
+  },
+  "INPUTS": {
+    "VMOVZPQILo2PQIrr": {"X86": [["VR128",128]]}
+  },
+  "OUTPUTS": {
+    "VMOVZPQILo2PQIrr": {"X86": [["VR128",128]]}
+  },
+  "INPUT_BYTES": {
+    "VMOVZPQILo2PQIrr": {"X86": ["0x7E"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMOVZPQILo2PQIrr": {"X86": ["0x7E"]}
+  }
+}

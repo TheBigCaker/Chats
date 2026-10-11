@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VPEXTD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VPEXTD": {"PowerPC": "VPEXTD"}
+  },
+  "INPUTS": {
+    "VPEXTD": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VPEXTD": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VPEXTD": {"PowerPC": ["VXForm_1","1421"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPEXTD": {"PowerPC": ["VXForm_1","1421"]}
+  }
+}

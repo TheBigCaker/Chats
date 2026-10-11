@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HWB",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "HWBranch": {"AMDGPU": "HWBranch"}
+  },
+  "INPUTS": {
+    "HWBranch": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "HWBranch": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "HWBranch": {"AMDGPU": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "HWBranch": {"AMDGPU": ["ProcResource","1"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ADDRI",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "ADDRIndirect": {"AMDGPU": "ADDRIndirect"}
+  },
+  "INPUTS": {
+    "ADDRIndirect": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "ADDRIndirect": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "ADDRIndirect": {"AMDGPU": ["ComplexPattern","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADDRIndirect": {"AMDGPU": ["ComplexPattern","2"]}
+  }
+}

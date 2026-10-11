@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VTOSIRH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VTOSIRH": {"ARM": "VTOSIRH"}
+  },
+  "INPUTS": {
+    "VTOSIRH": {"ARM": [["SPR",0]]}
+  },
+  "OUTPUTS": {
+    "VTOSIRH": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VTOSIRH": {"ARM": ["AVConv1IsH_Encode","0b11101","0b11","0b1101","0b1001"]}
+  },
+  "OUTPUT_BYTES": {
+    "VTOSIRH": {"ARM": ["AVConv1IsH_Encode","0b11101","0b11","0b1101","0b1001"]}
+  }
+}

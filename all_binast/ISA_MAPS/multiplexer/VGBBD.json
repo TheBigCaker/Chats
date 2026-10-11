@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VGBBD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VGBBD": {"PowerPC": "VGBBD"}
+  },
+  "INPUTS": {
+    "VGBBD": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VGBBD": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VGBBD": {"PowerPC": ["VX2_Int_Ty2","1292"]}
+  },
+  "OUTPUT_BYTES": {
+    "VGBBD": {"PowerPC": ["VX2_Int_Ty2","1292"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VNSPACK",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VNSPACK_VV": {"RISCV": "VNSPACK_VV"},
+    "VNSPACK4_VV": {"RISCV": "VNSPACK4_VV"}
+  },
+  "INPUTS": {
+    "VNSPACK_VV": {"RISCV": []},
+    "VNSPACK4_VV": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VNSPACK_VV": {"RISCV": []},
+    "VNSPACK4_VV": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VNSPACK_VV": {"RISCV": ["VNPACK_INSN","0b0110001","0b1"]},
+    "VNSPACK4_VV": {"RISCV": ["VNPACK_INSN","0b0100001","0b1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VNSPACK_VV": {"RISCV": ["VNPACK_INSN","0b0110001","0b1"]},
+    "VNSPACK4_VV": {"RISCV": ["VNPACK_INSN","0b0100001","0b1"]}
+  }
+}

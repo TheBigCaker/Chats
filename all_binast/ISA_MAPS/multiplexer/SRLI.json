@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SRLI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SRLI": {"RISCV": "SRLI"}
+  },
+  "INPUTS": {
+    "SRLI": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SRLI": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SRLI": {"RISCV": ["Shift_ri","0b00000","0b101"]}
+  },
+  "OUTPUT_BYTES": {
+    "SRLI": {"RISCV": ["Shift_ri","0b00000","0b101"]}
+  }
+}

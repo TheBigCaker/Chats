@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVNMADDADP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVNMADDADP": {"PowerPC": "XVNMADDADP"}
+  },
+  "INPUTS": {
+    "XVNMADDADP": {"PowerPC": [["vsrc",0],["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVNMADDADP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVNMADDADP": {"PowerPC": ["XX3Form","60","225"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVNMADDADP": {"PowerPC": ["XX3Form","60","225"]}
+  }
+}

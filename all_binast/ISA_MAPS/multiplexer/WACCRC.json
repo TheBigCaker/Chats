@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WACCRC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "WACCRC": {"PowerPC": "WACCRC"}
+  },
+  "INPUTS": {
+    "WACCRC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "WACCRC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "WACCRC": {"PowerPC": ["PPCRegisterClassWithSize","128","0","512"]}
+  },
+  "OUTPUT_BYTES": {
+    "WACCRC": {"PowerPC": ["PPCRegisterClassWithSize","128","0","512"]}
+  }
+}

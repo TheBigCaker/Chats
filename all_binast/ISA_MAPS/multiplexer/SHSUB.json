@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SHSUB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SHSUB16": {"ARM": "SHSUB16"},
+    "SHSUB8": {"ARM": "SHSUB8"}
+  },
+  "INPUTS": {
+    "SHSUB16": {"ARM": []},
+    "SHSUB8": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SHSUB16": {"ARM": []},
+    "SHSUB8": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SHSUB16": {"ARM": ["AAIIntrinsic","0b01100011","0b11110111"]},
+    "SHSUB8": {"ARM": ["AAIIntrinsic","0b01100011","0b11111111"]}
+  },
+  "OUTPUT_BYTES": {
+    "SHSUB16": {"ARM": ["AAIIntrinsic","0b01100011","0b11110111"]},
+    "SHSUB8": {"ARM": ["AAIIntrinsic","0b01100011","0b11111111"]}
+  }
+}

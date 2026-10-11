@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "LDRLIT",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "LDRLIT_ga_abs": {"ARM": "LDRLIT_ga_abs"},
+    "LDRLIT_ga_pcrel": {"ARM": "LDRLIT_ga_pcrel"},
+    "LDRLIT_ga_pcrel_ldr": {"ARM": "LDRLIT_ga_pcrel_ldr"}
+  },
+  "INPUTS": {
+    "LDRLIT_ga_abs": {"ARM": [["i32imm",32]]},
+    "LDRLIT_ga_pcrel": {"ARM": [["i32imm",32]]},
+    "LDRLIT_ga_pcrel_ldr": {"ARM": [["i32imm",32]]}
+  },
+  "OUTPUTS": {
+    "LDRLIT_ga_abs": {"ARM": [["GPR",64]]},
+    "LDRLIT_ga_pcrel": {"ARM": [["GPR",64]]},
+    "LDRLIT_ga_pcrel_ldr": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "LDRLIT_ga_abs": {"ARM": ["PseudoInst"]},
+    "LDRLIT_ga_pcrel": {"ARM": ["PseudoInst"]},
+    "LDRLIT_ga_pcrel_ldr": {"ARM": ["PseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "LDRLIT_ga_abs": {"ARM": ["PseudoInst"]},
+    "LDRLIT_ga_pcrel": {"ARM": ["PseudoInst"]},
+    "LDRLIT_ga_pcrel_ldr": {"ARM": ["PseudoInst"]}
+  }
+}

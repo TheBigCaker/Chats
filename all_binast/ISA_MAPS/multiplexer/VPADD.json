@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "VPADD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VPADDi8": {"ARM": "VPADDi8"},
+    "VPADDi16": {"ARM": "VPADDi16"},
+    "VPADDi32": {"ARM": "VPADDi32"},
+    "VPADDf": {"ARM": "VPADDf"},
+    "VPADDh": {"ARM": "VPADDh"}
+  },
+  "INPUTS": {
+    "VPADDi8": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPADDi16": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPADDi32": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPADDf": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPADDh": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]}
+  },
+  "OUTPUTS": {
+    "VPADDi8": {"ARM": [["DPR:$Vd",0]]},
+    "VPADDi16": {"ARM": [["DPR:$Vd",0]]},
+    "VPADDi32": {"ARM": [["DPR:$Vd",0]]},
+    "VPADDf": {"ARM": [["DPR:$Vd",0]]},
+    "VPADDh": {"ARM": [["DPR:$Vd",0]]}
+  },
+  "INPUT_BYTES": {
+    "VPADDi8": {"ARM": ["N3VDInt","0","0","0b00","0b1011","1","0"]},
+    "VPADDi16": {"ARM": ["N3VDInt","0","0","0b01","0b1011","1","0"]},
+    "VPADDi32": {"ARM": ["N3VDInt","0","0","0b10","0b1011","1","0"]},
+    "VPADDf": {"ARM": ["N3VDInt","1","0","0b00","0b1101","0","0"]},
+    "VPADDh": {"ARM": ["N3VDInt","1","0","0b01","0b1101","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPADDi8": {"ARM": ["N3VDInt","0","0","0b00","0b1011","1","0"]},
+    "VPADDi16": {"ARM": ["N3VDInt","0","0","0b01","0b1011","1","0"]},
+    "VPADDi32": {"ARM": ["N3VDInt","0","0","0b10","0b1011","1","0"]},
+    "VPADDf": {"ARM": ["N3VDInt","1","0","0b00","0b1101","0","0"]},
+    "VPADDh": {"ARM": ["N3VDInt","1","0","0b01","0b1101","0","0"]}
+  }
+}

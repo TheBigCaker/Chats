@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DTSTDCQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DTSTDCQ": {"PowerPC": "DTSTDCQ"}
+  },
+  "INPUTS": {
+    "DTSTDCQ": {"PowerPC": [["fpairrc",0],["u6imm",6]]}
+  },
+  "OUTPUTS": {
+    "DTSTDCQ": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "DTSTDCQ": {"PowerPC": ["Z22Form_BF3_FRA5_DCM6","63","194"]}
+  },
+  "OUTPUT_BYTES": {
+    "DTSTDCQ": {"PowerPC": ["Z22Form_BF3_FRA5_DCM6","63","194"]}
+  }
+}

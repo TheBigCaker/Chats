@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "FPOW",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FPOW_SC_APPLY": {"Mali": "FPOW_SC_APPLY"},
+    "FPOW_SC_DET.f16": {"Mali": "FPOW_SC_DET.f16"},
+    "FPOW_SC_DET.f32": {"Mali": "FPOW_SC_DET.f32"}
+  },
+  "INPUTS": {
+    "FPOW_SC_APPLY": {"Mali": [["R32",32],["R32",32]]},
+    "FPOW_SC_DET.f16": {"Mali": [["R32",32],["R32",32]]},
+    "FPOW_SC_DET.f32": {"Mali": [["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "FPOW_SC_APPLY": {"Mali": [["R",32]]},
+    "FPOW_SC_DET.f16": {"Mali": [["R",32]]},
+    "FPOW_SC_DET.f32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FPOW_SC_APPLY": {"Mali": ["Bifrost_add","0x75080","0xfffc0"]},
+    "FPOW_SC_DET.f16": {"Mali": ["Bifrost_add"]},
+    "FPOW_SC_DET.f32": {"Mali": ["Bifrost_add","0x67640","0xffe40"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPOW_SC_APPLY": {"Mali": ["Bifrost_add","0x75080","0xfffc0"]},
+    "FPOW_SC_DET.f16": {"Mali": ["Bifrost_add"]},
+    "FPOW_SC_DET.f32": {"Mali": ["Bifrost_add","0x67640","0xffe40"]}
+  }
+}

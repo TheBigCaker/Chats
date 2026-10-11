@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AMDGPUDTI",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "AMDGPUDTIntTernaryOp": {"AMDGPU": "AMDGPUDTIntTernaryOp"}
+  },
+  "INPUTS": {
+    "AMDGPUDTIntTernaryOp": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "AMDGPUDTIntTernaryOp": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "AMDGPUDTIntTernaryOp": {"AMDGPU": ["SDTypeProfile","1","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "AMDGPUDTIntTernaryOp": {"AMDGPU": ["SDTypeProfile","1","3"]}
+  }
+}

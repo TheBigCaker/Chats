@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MONTMUL",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "MONTMUL": {"Sparc": "MONTMUL"}
+  },
+  "INPUTS": {
+    "MONTMUL": {"Sparc": [["simm5Op",0]]}
+  },
+  "OUTPUTS": {
+    "MONTMUL": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "MONTMUL": {"Sparc": ["F3_3","2","0b110110","0b101001001"]}
+  },
+  "OUTPUT_BYTES": {
+    "MONTMUL": {"Sparc": ["F3_3","2","0b110110","0b101001001"]}
+  }
+}

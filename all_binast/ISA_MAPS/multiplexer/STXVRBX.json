@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STXVRBX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STXVRBX": {"PowerPC": "STXVRBX"}
+  },
+  "INPUTS": {
+    "STXVRBX": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "STXVRBX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STXVRBX": {"PowerPC": ["X_XS6_RA5_RB5","31","141"]}
+  },
+  "OUTPUT_BYTES": {
+    "STXVRBX": {"PowerPC": ["X_XS6_RA5_RB5","31","141"]}
+  }
+}

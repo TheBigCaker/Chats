@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PPCST",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "PPCSToV": {"PowerPC": "PPCSToV"}
+  },
+  "INPUTS": {
+    "PPCSToV": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "PPCSToV": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "PPCSToV": {"PowerPC": ["SDNode","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "PPCSToV": {"PowerPC": ["SDNode","1"]}
+  }
+}

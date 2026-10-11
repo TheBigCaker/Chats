@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VMRUN",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMRUN32": {"X86": "VMRUN32"},
+    "VMRUN64": {"X86": "VMRUN64"}
+  },
+  "INPUTS": {
+    "VMRUN32": {"X86": []},
+    "VMRUN64": {"X86": []}
+  },
+  "OUTPUTS": {
+    "VMRUN32": {"X86": []},
+    "VMRUN64": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMRUN32": {"X86": ["0x01"]},
+    "VMRUN64": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMRUN32": {"X86": ["0x01"]},
+    "VMRUN64": {"X86": ["0x01"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SLLW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SLLW": {"RISCV": "SLLW"}
+  },
+  "INPUTS": {
+    "SLLW": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "SLLW": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "SLLW": {"RISCV": ["ALUW_rr","0b0000000","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "SLLW": {"RISCV": ["ALUW_rr","0b0000000","0b001"]}
+  }
+}

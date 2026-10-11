@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SDTARMVSHUF",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SDTARMVSHUF": {"ARM": "SDTARMVSHUF"},
+    "SDTARMVSHUF2": {"ARM": "SDTARMVSHUF2"}
+  },
+  "INPUTS": {
+    "SDTARMVSHUF": {"ARM": []},
+    "SDTARMVSHUF2": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SDTARMVSHUF": {"ARM": []},
+    "SDTARMVSHUF2": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SDTARMVSHUF": {"ARM": ["SDTypeProfile","1","1"]},
+    "SDTARMVSHUF2": {"ARM": ["SDTypeProfile","2","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTARMVSHUF": {"ARM": ["SDTypeProfile","1","1"]},
+    "SDTARMVSHUF2": {"ARM": ["SDTypeProfile","2","2"]}
+  }
+}

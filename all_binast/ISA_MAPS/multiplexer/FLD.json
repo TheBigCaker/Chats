@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FLD",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FLD": {"RISCV": "FLD"}
+  },
+  "INPUTS": {
+    "FLD": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "FLD": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "FLD": {"RISCV": ["FPLoad_r","0b011"]}
+  },
+  "OUTPUT_BYTES": {
+    "FLD": {"RISCV": ["FPLoad_r","0b011"]}
+  }
+}

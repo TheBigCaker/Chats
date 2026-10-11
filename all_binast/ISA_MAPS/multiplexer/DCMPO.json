@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DCMPO",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DCMPO": {"PowerPC": "DCMPO"}
+  },
+  "INPUTS": {
+    "DCMPO": {"PowerPC": [["f8rc",0],["f8rc",0]]}
+  },
+  "OUTPUTS": {
+    "DCMPO": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "DCMPO": {"PowerPC": ["XForm_17","59","130"]}
+  },
+  "OUTPUT_BYTES": {
+    "DCMPO": {"PowerPC": ["XForm_17","59","130"]}
+  }
+}

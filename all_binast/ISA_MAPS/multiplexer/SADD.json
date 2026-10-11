@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SADD",
+  "BACKENDS": ["ARM","RISCV"],
+  "INDEX": {
+    "SADD16": {"ARM": "SADD16"},
+    "SADD8": {"ARM": "SADD8"},
+    "SADD": {"RISCV": "SADD"}
+  },
+  "INPUTS": {
+    "SADD16": {"ARM": []},
+    "SADD8": {"ARM": []},
+    "SADD": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "SADD16": {"ARM": []},
+    "SADD8": {"ARM": []},
+    "SADD": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "SADD16": {"ARM": ["AAIIntrinsic","0b01100001","0b11110001"]},
+    "SADD8": {"ARM": ["AAIIntrinsic","0b01100001","0b11111001"]},
+    "SADD": {"RISCV": ["RVPBinary_rr","0b0010","0b01","0b000"]}
+  },
+  "OUTPUT_BYTES": {
+    "SADD16": {"ARM": ["AAIIntrinsic","0b01100001","0b11110001"]},
+    "SADD8": {"ARM": ["AAIIntrinsic","0b01100001","0b11111001"]},
+    "SADD": {"RISCV": ["RVPBinary_rr","0b0010","0b01","0b000"]}
+  }
+}

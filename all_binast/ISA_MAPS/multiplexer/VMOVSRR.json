@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMOVSRR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMOVSRR": {"ARM": "VMOVSRR"}
+  },
+  "INPUTS": {
+    "VMOVSRR": {"ARM": [["GPR",64],["GPR",64]]}
+  },
+  "OUTPUTS": {
+    "VMOVSRR": {"ARM": [["SPR",0],["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMOVSRR": {"ARM": ["AVConv5I","0b11000100","0b1010"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMOVSRR": {"ARM": ["AVConv5I","0b11000100","0b1010"]}
+  }
+}

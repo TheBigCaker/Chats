@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFSNABS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFSNABS": {"PowerPC": "EFSNABS"}
+  },
+  "INPUTS": {
+    "EFSNABS": {"PowerPC": [["spe4rc",0]]}
+  },
+  "OUTPUTS": {
+    "EFSNABS": {"PowerPC": [["spe4rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFSNABS": {"PowerPC": ["EFXForm_2","709"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFSNABS": {"PowerPC": ["EFXForm_2","709"]}
+  }
+}

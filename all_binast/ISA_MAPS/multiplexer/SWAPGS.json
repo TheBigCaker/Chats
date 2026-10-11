@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SWAPGS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SWAPGS": {"X86": "SWAPGS"}
+  },
+  "INPUTS": {
+    "SWAPGS": {"X86": []}
+  },
+  "OUTPUTS": {
+    "SWAPGS": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SWAPGS": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "SWAPGS": {"X86": ["0x01"]}
+  }
+}

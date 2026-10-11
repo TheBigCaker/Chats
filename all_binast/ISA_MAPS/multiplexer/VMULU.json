@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULU",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "VMULU": {"Mips": "VMULU"}
+  },
+  "INPUTS": {
+    "VMULU": {"Mips": [["RO:$rs",0],["RO:$rt",0]]}
+  },
+  "OUTPUTS": {
+    "VMULU": {"Mips": [["RO:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMULU": {"Mips": ["ArithLogicR","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULU": {"Mips": ["ArithLogicR","0"]}
+  }
+}

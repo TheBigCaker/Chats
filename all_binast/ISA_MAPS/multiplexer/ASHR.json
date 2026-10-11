@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ASHR",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "ASHR_eg": {"AMDGPU": "ASHR_eg"},
+    "ASHR_r600": {"AMDGPU": "ASHR_r600"}
+  },
+  "INPUTS": {
+    "ASHR_eg": {"AMDGPU": []},
+    "ASHR_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "ASHR_eg": {"AMDGPU": []},
+    "ASHR_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "ASHR_eg": {"AMDGPU": ["ASHR_Common","0x15"]},
+    "ASHR_r600": {"AMDGPU": ["ASHR_Common","0x70"]}
+  },
+  "OUTPUT_BYTES": {
+    "ASHR_eg": {"AMDGPU": ["ASHR_Common","0x15"]},
+    "ASHR_r600": {"AMDGPU": ["ASHR_Common","0x70"]}
+  }
+}

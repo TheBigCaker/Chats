@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RDFFR",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "RDFFR_PPz": {"AArch64": "RDFFR_PPz"}
+  },
+  "INPUTS": {
+    "RDFFR_PPz": {"AArch64": [["PPRAny:$Pg",0]]}
+  },
+  "OUTPUTS": {
+    "RDFFR_PPz": {"AArch64": [["PPR8:$Pd",8]]}
+  },
+  "INPUT_BYTES": {
+    "RDFFR_PPz": {"AArch64": ["sve_int_rdffr_pred","0b0"]}
+  },
+  "OUTPUT_BYTES": {
+    "RDFFR_PPz": {"AArch64": ["sve_int_rdffr_pred","0b0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EX",
+  "BACKENDS": ["NVPTX"],
+  "INDEX": {
+    "EX2_APPROX_f32": {"NVPTX": "EX2_APPROX_f32"}
+  },
+  "INPUTS": {
+    "EX2_APPROX_f32": {"NVPTX": [["FTZFlag",0]]}
+  },
+  "OUTPUTS": {
+    "EX2_APPROX_f32": {"NVPTX": []}
+  },
+  "INPUT_BYTES": {
+    "EX2_APPROX_f32": {"NVPTX": ["FEXP2Inst"]}
+  },
+  "OUTPUT_BYTES": {
+    "EX2_APPROX_f32": {"NVPTX": ["FEXP2Inst"]}
+  }
+}

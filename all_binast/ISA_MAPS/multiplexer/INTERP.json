@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "INTERP",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "INTERP_PAIR_XY": {"AMDGPU": "INTERP_PAIR_XY"},
+    "INTERP_PAIR_ZW": {"AMDGPU": "INTERP_PAIR_ZW"},
+    "INTERP_VEC_LOAD": {"AMDGPU": "INTERP_VEC_LOAD"},
+    "INTERP_XY": {"AMDGPU": "INTERP_XY"},
+    "INTERP_ZW": {"AMDGPU": "INTERP_ZW"},
+    "INTERP_LOAD_P0": {"AMDGPU": "INTERP_LOAD_P0"}
+  },
+  "INPUTS": {
+    "INTERP_PAIR_XY": {"AMDGPU": [["i32imm",32],["R600_TReg32_Y",600],["R600_TReg32_X",600]]},
+    "INTERP_PAIR_ZW": {"AMDGPU": [["i32imm",32],["R600_TReg32_Y",600],["R600_TReg32_X",600]]},
+    "INTERP_VEC_LOAD": {"AMDGPU": [["i32imm",32]]},
+    "INTERP_XY": {"AMDGPU": []},
+    "INTERP_ZW": {"AMDGPU": []},
+    "INTERP_LOAD_P0": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "INTERP_PAIR_XY": {"AMDGPU": [["R600_TReg32_X",600],["R600_TReg32_Y",600]]},
+    "INTERP_PAIR_ZW": {"AMDGPU": [["R600_TReg32_Z",600],["R600_TReg32_W",600]]},
+    "INTERP_VEC_LOAD": {"AMDGPU": [["R600_Reg128",600]]},
+    "INTERP_XY": {"AMDGPU": []},
+    "INTERP_ZW": {"AMDGPU": []},
+    "INTERP_LOAD_P0": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "INTERP_PAIR_XY": {"AMDGPU": ["AMDGPUShaderInst"]},
+    "INTERP_PAIR_ZW": {"AMDGPU": ["AMDGPUShaderInst"]},
+    "INTERP_VEC_LOAD": {"AMDGPU": ["AMDGPUShaderInst"]},
+    "INTERP_XY": {"AMDGPU": ["R600_2OP","0xD6"]},
+    "INTERP_ZW": {"AMDGPU": ["R600_2OP","0xD7"]},
+    "INTERP_LOAD_P0": {"AMDGPU": ["R600_1OP","0xE0"]}
+  },
+  "OUTPUT_BYTES": {
+    "INTERP_PAIR_XY": {"AMDGPU": ["AMDGPUShaderInst"]},
+    "INTERP_PAIR_ZW": {"AMDGPU": ["AMDGPUShaderInst"]},
+    "INTERP_VEC_LOAD": {"AMDGPU": ["AMDGPUShaderInst"]},
+    "INTERP_XY": {"AMDGPU": ["R600_2OP","0xD6"]},
+    "INTERP_ZW": {"AMDGPU": ["R600_2OP","0xD7"]},
+    "INTERP_LOAD_P0": {"AMDGPU": ["R600_1OP","0xE0"]}
+  }
+}

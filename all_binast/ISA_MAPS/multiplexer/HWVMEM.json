@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HWVMEM",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "HWVMEM": {"AMDGPU": "HWVMEM"}
+  },
+  "INPUTS": {
+    "HWVMEM": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "HWVMEM": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "HWVMEM": {"AMDGPU": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "HWVMEM": {"AMDGPU": ["ProcResource","1"]}
+  }
+}

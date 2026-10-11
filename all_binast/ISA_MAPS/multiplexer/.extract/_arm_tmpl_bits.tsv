@@ -1,0 +1,805 @@
+Architecture	3	fname	aname	list<SubtargetFeature> features	1	SubtargetFeature
+VFPver	6	name	query	description	list<SubtargetFeature> prev	list<SubtargetFeature> otherimplies	list<SubtargetFeature> vfp2prev = []	0
+BitWidthImmOperand	1	int width	1	ImmAsmOperand
+BitWidthImm	1	int width	2	Operand	ImmLeaf
+CDE_GPR_Instr	6	dual	acc	oops	iops	asm	cstr	2	CDE_Instr	Requires	25-24=0b10
+CDE_RegisterOperands	0	0
+CDE_CX2_Instr	2	iname	CX_Params params	1	CDE_GPR_Instr	21-20=imm	15-12=Rd	5-0=imm	19-16=Rn	23-22=0b01
+CDE_CX3_Instr	2	iname	CX_Params params	1	CDE_GPR_Instr	22-20=imm	15-12=Rm	19-16=Rn	3-0=Rd	5-4=imm
+CDE_CX_ParamsTemplate	3	dual	acc	CDE_RegisterOperands ops	1	CX_Params
+CDE_RequiresSReg	2	[HasCDE	HasFPRegs]	0
+CDE_FP_Instr	6	acc	sz	oops	iops	asm	cstr	1	CDE_FP_Vec_Instr
+CDE_Vec_Instr	6	acc	oops	iops	asm	cstr	vpred_ops vpred	2	CDE_RequiresQReg	CDE_FP_Vec_Instr
+CDE_VCX1_Vec_Instr	2	iname	VCX_Params params	1	CDE_Vec_Instr	21-20=0b10	5-0=imm	15-13=Qd	19-16=imm
+CDE_VCX1_FP_Instr	3	sz	iname	VCX_Params params	1	CDE_FP_Instr	21-20=0b10	5-0=imm	19-16=imm
+CDE_VCX1_FP_Instr_S	2	iname	VCX_Params params	2	CDE_RequiresSReg	CDE_VCX1_FP_Instr	15-12=Vd
+CDE_VCX1_FP_Instr_D	2	iname	VCX_Params params	2	CDE_RequiresDReg	CDE_VCX1_FP_Instr	15-12=Vd
+CDE_VCX2_Vec_Instr	2	iname	VCX_Params params	1	CDE_Vec_Instr	21-20=0b11	15-13=Qd	19-16=imm	3-1=Qm
+CDE_VCX2_FP_Instr	3	sz	iname	VCX_Params params	1	CDE_FP_Instr	21-20=0b11	19-16=imm
+CDE_VCX2_FP_Instr_S	2	iname	VCX_Params params	2	CDE_RequiresSReg	CDE_VCX2_FP_Instr	15-12=Vd	3-0=Vm
+CDE_VCX2_FP_Instr_D	2	iname	VCX_Params params	2	CDE_RequiresDReg	CDE_VCX2_FP_Instr	15-12=Vd	3-0=Vm
+CDE_VCX3_Vec_Instr	2	iname	VCX_Params params	1	CDE_Vec_Instr	21-20=imm	15-13=Qd	19-17=Qn	3-1=Qm
+CDE_VCX3_FP_Instr	3	sz	iname	VCX_Params params	1	CDE_FP_Instr	21-20=imm
+CDE_VCX3_FP_Instr_S	2	iname	VCX_Params params	2	CDE_VCX3_FP_Instr	CDE_RequiresSReg	15-12=Vd	19-16=Vn	3-0=Vm
+CDE_VCX3_FP_Instr_D	2	iname	VCX_Params params	2	CDE_RequiresDReg	CDE_VCX3_FP_Instr	15-12=Vd	19-16=Vn	3-0=Vm
+CDE_VCX_RegisterOperandsTemplate	1	regclass	1	CDE_RegisterOperands
+CDE_VCXQ_RegisterOperandsTemplate	1	regclass	1	CDE_RegisterOperands
+CDE_VCX_ParamsTemplate	2	acc	CDE_RegisterOperands ops	1	VCX_Params
+CDE_VCXQ_ParamsTemplate	2	acc	CDE_RegisterOperands ops	1	VCX_Params
+VCXPredicatedPat_m	1	MVEVectorVTInfo VTI	0
+Format	1	val	0
+UnaryDP	0	0
+AddrMode	1	val	0
+IndexMode	1	val	0
+Domain	1	val	0
+vpred_ops	2	extra_op	extra_mi	1	OperandWithDefaultOps
+ARMInstAlias	3	Asm	Result	EmitPriority = 0	2	Requires	InstAlias
+Encoding	0	0
+InoP	11	oops	iops	AddrMode am	int sz	IndexMode im	Format f	InstrItinClass itin	opc	asm	cstr	pattern	1	InstARM
+sI	11	oops	iops	AddrMode am	int sz	IndexMode im	Format f	InstrItinClass itin	opc	asm	cstr	pattern	1	InstARM	31-28=p
+XI	10	oops	iops	AddrMode am	int sz	IndexMode im	Format f	InstrItinClass itin	asm	cstr	pattern	1	InstARM
+AI	7	oops	iops	Format f	InstrItinClass itin	opc	asm	pattern	1	I	27-24=opcod
+ABXI	6	opcod	oops	iops	InstrItinClass itin	asm	pattern	1	XI	27-24=opcod
+JTI	5	oops	iops	InstrItinClass itin	asm	pattern	1	XI	7-0=0b10011111	11-10=0b11	15-12=Rt	22-21=opcod	9-8=opcod2	19-16=addr	27-23=0b00011
+AIstr_ex_or_rel	8	opcod	opcod2	oops	iops	InstrItinClass itin	opc	asm	pattern	1	I	11-10=0b11	22-21=opcod	7-4=0b1001	9-8=opcod2	19-16=addr	27-23=0b00011	3-0=Rt
+AIldrex	7	opcod	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AIldr_ex_or_acq	15-12=Rd
+AIldaex	7	opcod	oops	iops	InstrItinClass itin	opc	asm	pattern	2	AIldr_ex_or_acq	Requires	15-12=Rd
+AIswp	5	b	oops	iops	opc	pattern	1	AI	21-20=0b00	15-12=Rt	11-4=0b00001001	19-16=addr	27-23=0b00010	3-0=Rt2
+AIldracq	7	opcod	oops	iops	InstrItinClass itin	opc	asm	pattern	2	AIldr_ex_or_acq	Requires	15-12=0b1111
+AI1	8	opcod	oops	iops	Format f	InstrItinClass itin	opc	asm	pattern	1	I	24-21=opcod	27-26=0b00
+AsI1	8	opcod	oops	iops	Format f	InstrItinClass itin	opc	asm	pattern	1	sI	24-21=opcod	27-26=0b00
+AXI1	7	opcod	oops	iops	Format f	InstrItinClass itin	asm	pattern	1	XI	24-21=opcod	27-26=0b00
+AI2ldst	11	op	isLd	isByte	oops	iops	AddrMode am	Format f	InstrItinClass itin	opc	asm	pattern	1	I	27-25=op
+AI2ldstidx	12	isLd	isByte	isPre	oops	iops	IndexMode im	Format f	InstrItinClass itin	opc	asm	cstr	pattern	1	I	15-12=Rt	27-26=0b01
+AI2stridx_reg	11	isByte	isPre	oops	iops	IndexMode im	Format f	InstrItinClass itin	opc	asm	cstr	pattern	1	AI2ldstidx	11-5=offset	19-16=Rn	3-0=offset
+AI2stridx_imm	11	isByte	isPre	oops	iops	IndexMode im	Format f	InstrItinClass itin	opc	asm	cstr	pattern	1	AI2ldstidx	11-0=offset	19-16=Rn
+AI2stridxT	11	isByte	isPre	oops	iops	IndexMode im	Format f	InstrItinClass itin	opc	asm	cstr	pattern	1	AI2ldstidx	11-0=addr	19-16=addr
+AI3ld	9	op	op20	oops	iops	Format f	InstrItinClass itin	opc	asm	pattern	1	I	15-12=Rt	7-4=op	19-16=addr	3-0=addr	27-25=0b000	11-8=addr
+AI3ldstidx	12	op	op20	isPre	oops	iops	IndexMode im	Format f	InstrItinClass itin	opc	asm	cstr	pattern	1	I	15-12=Rt	7-4=op	27-25=0b000
+AI3ldstidxT	11	op	isLoad	oops	iops	IndexMode im	Format f	InstrItinClass itin	opc	asm	cstr	pattern	1	I	15-12=Rt	7-4=op	19-16=addr	27-25=0b000
+AI3str	8	op	oops	iops	Format f	InstrItinClass itin	opc	asm	pattern	1	I	15-12=Rt	7-4=op	19-16=addr	3-0=addr	27-25=0b000	11-8=addr
+AXI4	8	oops	iops	IndexMode im	Format f	InstrItinClass itin	asm	cstr	pattern	1	XI	31-28=p	19-16=Rn	15-0=regs	27-25=0b100
+AMul1I	7	opcod	oops	iops	InstrItinClass itin	opc	asm	pattern	1	I	27-21=opcod	7-4=0b1001
+AsMul1I	7	opcod	oops	iops	InstrItinClass itin	opc	asm	pattern	1	sI	27-21=opcod	7-4=0b1001
+AMul2I	8	opcod	opc7_4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	I	27-21=opcod	7-4=opc7_4	19-16=Rd	3-0=Rn	11-8=Rm
+AMul2Ia	8	opcod	opc7_4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AMul2I	15-12=Ra
+AMulxyIbase	8	opcod	bit6_5	oops	iops	InstrItinClass itin	opc	asm	pattern	1	I	6-5=bit6_5	27-21=opcod	3-0=Rn	11-8=Rm
+AMulxyI	8	opcod	bit6_5	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AMulxyIbase	19-16=Rd
+AMulxyIa	8	opcod	bit6_5	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AMulxyI	15-12=Ra
+AMulxyI64	8	opcod	bit6_5	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AMulxyIbase	15-12=RdLo	19-16=RdHi
+AExtI	7	opcod	oops	iops	InstrItinClass itin	opc	asm	pattern	1	I	27-20=opcod	15-12=Rd	7-4=0b0111	9-8=0b00	3-0=Rm
+AMiscA1I	8	opcod	opc7_4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	I	15-12=Rd	27-20=opcod	7-4=opc7_4	19-16=0b1111	3-0=Rm	11-8=0b1111
+ADivA1I	7	opcod	oops	iops	InstrItinClass itin	opc	asm	pattern	1	I	22-20=opcod	15-12=0b1111	7-4=0b0001	19-16=Rd	27-23=0b01110	3-0=Rn	11-8=Rm
+APKHI	8	opcod	tb	oops	iops	InstrItinClass itin	opc	asm	pattern	1	I	15-12=Rd	27-20=opcod	19-16=Rn	3-0=Rm	5-4=0b01	11-7=sh
+ARMPat	2	pattern	result	1	Pat
+ARMV5TPat	2	pattern	result	1	Pat
+ARMV5TEPat	2	pattern	result	1	Pat
+ARMV5MOPat	2	pattern	result	1	Pat
+ARMV6Pat	2	pattern	result	1	Pat
+ARMV6T2Pat	2	pattern	result	1	Pat
+VFPPat	2	pattern	result	1	Pat
+VFPNoNEONPat	2	pattern	result	1	Pat
+Thumb2DSPPat	2	pattern	result	1	Pat
+Thumb2DSPMulPat	2	pattern	result	1	Pat
+FPRegs16Pat	2	pattern	result	1	Pat
+FP16Pat	2	pattern	result	1	Pat
+FullFP16Pat	2	pattern	result	1	Pat
+ThumbI	8	oops	iops	AddrMode am	int sz	InstrItinClass itin	asm	cstr	pattern	1	InstThumb
+TI	5	oops	iops	InstrItinClass itin	asm	pattern	1	ThumbI	31-27=opcod1	15-14=opcod2
+TJTI	5	oops	iops	InstrItinClass itin	asm	pattern	1	ThumbI
+T1I	5	oops	iops	InstrItinClass itin	asm	pattern	1	Thumb1I
+T1sI	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	Thumb1sI
+T1pI	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	Thumb1pI	31-16=0x0000
+T1Encoding	1	opcode	1	Encoding16	15-10=opcode
+T1General	1	opcode	1	Encoding16	15-14=0b00	13-9=opcode
+T1DataProcessing	1	opcode	1	Encoding16	15-10=0b010000	9-6=opcode
+T1Special	1	opcode	1	Encoding16	15-10=0b010001	9-6=opcode
+T1LoadStore	2	opA	opB	1	Encoding16	11-9=opB	15-12=opA
+T1LdStSP	1	opB	1	T1LoadStore	15-12=opcode
+T1pILdStEncode	8	opcode	oops	iops	AddrMode am	InstrItinClass itin	opc	asm	pattern	2	T1LoadStore	Thumb1pI	8-6=addr	2-0=Rt	5-3=addr
+T1pILdStEncodeImm	9	opA	opB	oops	iops	AddrMode am	InstrItinClass itin	opc	asm	pattern	2	T1LoadStore	Thumb1pI	10-6=addr	2-0=Rt	5-3=addr
+T1Misc	1	opcode	1	Encoding16	15-12=0b1011	11-5=opcode
+Thumb2I	9	oops	iops	AddrMode am	int sz	InstrItinClass itin	opc	asm	cstr	pattern	1	InstARM
+Thumb2sI	9	oops	iops	AddrMode am	int sz	InstrItinClass itin	opc	asm	cstr	pattern	1	InstARM
+Thumb2XI	8	oops	iops	AddrMode am	int sz	InstrItinClass itin	asm	cstr	pattern	1	InstARM
+ThumbXI	8	oops	iops	AddrMode am	int sz	InstrItinClass itin	asm	cstr	pattern	1	InstARM
+T2I	7	oops	iops	InstrItinClass itin	opc	asm	pattern	AddrMode am = AddrModeNone	1	Thumb2I	31-25=0b1110100	7-0=addr	15-12=Rt	19-16=addr	11-8=Rt2
+T2Ii8s4post	10	P	W	isLoad	oops	iops	InstrItinClass itin	opc	asm	cstr	pattern	1	Thumb2I	31-25=0b1110100	7-0=imm	15-12=Rt	19-16=addr	11-8=Rt2
+T2sI	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	Thumb2sI	31-28=opc
+T2XIt	6	oops	iops	InstrItinClass itin	asm	cstr	pattern	1	Thumb2XI	31-27=0b11111	7-0=addr	15-12=Rt	22-21=opcod	19-16=addr	26-25=0b00
+T2Ipostldst	13	signed	opcod	load	pre	oops	iops	AddrMode am	IndexMode im	InstrItinClass itin	opc	asm	cstr	pattern	1	InstARM	31-27=0b11111	7-0=offset	15-12=Rt	22-21=opcod	19-16=Rn	26-25=0b00
+T1Pat	2	pattern	result	1	Pat
+T2v6Pat	2	pattern	result	1	Pat
+T2Pat	2	pattern	result	1	Pat
+VFPI	11	oops	iops	AddrMode am	int sz	IndexMode im	Format f	InstrItinClass itin	opc	asm	cstr	pattern	1	InstARM	31-28=p
+VFPXI	10	oops	iops	AddrMode am	int sz	IndexMode im	Format f	InstrItinClass itin	asm	cstr	pattern	1	InstARM	31-28=p
+VFPAI	8	oops	iops	Format f	InstrItinClass itin	opc	asm	cstr	pattern	1	VFPI
+ADI5	8	opcod1	opcod2	oops	iops	InstrItinClass itin	opc	asm	pattern	1	VFPI	11-9=0b101	21-20=opcod2	7-0=addr	15-12=Dd	19-16=addr	27-24=opcod1
+ASI5	8	opcod1	opcod2	oops	iops	InstrItinClass itin	opc	asm	pattern	1	VFPI	11-9=0b101	21-20=opcod2	7-0=addr	15-12=Sd	19-16=addr	27-24=opcod1
+AHI5	8	opcod1	opcod2	oops	iops	InstrItinClass itin	opc	asm	pattern	1	VFPI	21-20=opcod2	7-0=addr	15-12=Sd	19-16=addr	27-24=opcod1	11-8=0b1001
+PseudoVFPLdStM	5	oops	iops	InstrItinClass itin	cstr	pattern	1	InstARM
+AXXI4	6	oops	iops	IndexMode im	asm	cstr	pattern	1	VFPXI	7-1=regs	15-12=regs	19-16=Rn	27-25=0b110	11-8=0b1011
+AXDI4	7	oops	iops	IndexMode im	InstrItinClass itin	asm	cstr	pattern	1	VFPXI	11-9=0b101	7-1=regs	15-12=regs	19-16=Rn	27-25=0b110
+AXSI4	7	oops	iops	IndexMode im	InstrItinClass itin	asm	cstr	pattern	1	VFPXI	11-9=0b101	7-0=regs	15-12=regs	19-16=Rn	27-25=0b110
+AXSI4FR	3	asm	et	load	1	InstARM	11-9=0b101	31-28=0b1110	15-12=0b0000	19-16=Rn	27-25=0b110	6-0=0b0000000
+ADuI	12	opcod1	opcod2	opcod3	opcod4	opcod5	oops	iops	InstrItinClass itin	opc	asm	cstr	pattern	1	VFPAI	11-9=0b101	21-20=opcod2	15-12=Dd	19-16=opcod3	27-23=opcod1	7-6=opcod4	3-0=Dm
+ADuInp	10	opcod1	opcod2	opcod3	opcod4	opcod5	oops	iops	InstrItinClass itin	asm	pattern	1	VFPXI	11-9=0b101	21-20=opcod2	31-28=0b1111	15-12=Dd	19-16=opcod3	27-23=opcod1	7-6=opcod4	3-0=Dm
+ADbI	10	opcod1	opcod2	op6	op4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	VFPAI	11-9=0b101	21-20=opcod2	15-12=Dd	27-23=opcod1	19-16=Dn	3-0=Dm
+ADbInp	8	opcod1	opcod2	opcod3	oops	iops	InstrItinClass itin	asm	pattern	1	VFPXI	11-9=0b101	21-20=opcod2	31-28=0b1111	15-12=Dd	27-23=opcod1	19-16=Dn	3-0=Dm
+ASuI	12	opcod1	opcod2	opcod3	opcod4	opcod5	oops	iops	InstrItinClass itin	opc	asm	cstr	pattern	1	VFPAI	11-9=0b101	21-20=opcod2	15-12=Sd	19-16=opcod3	27-23=opcod1	7-6=opcod4	3-0=Sm
+ASuInp	10	opcod1	opcod2	opcod3	opcod4	opcod5	oops	iops	InstrItinClass itin	asm	pattern	1	VFPXI	11-9=0b101	21-20=opcod2	31-28=0b1111	15-12=Sd	19-16=opcod3	27-23=opcod1	7-6=opcod4	3-0=Sm
+ASuIn	11	opcod1	opcod2	opcod3	opcod4	opcod5	oops	iops	InstrItinClass itin	opc	asm	pattern	1	ASuI
+ASbI	10	opcod1	opcod2	op6	op4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	VFPAI	11-9=0b101	21-20=opcod2	15-12=Sd	27-23=opcod1	19-16=Sn	3-0=Sm
+ASbInp	8	opcod1	opcod2	opcod3	oops	iops	InstrItinClass itin	asm	pattern	1	VFPXI	11-9=0b101	21-20=opcod2	31-28=0b1111	15-12=Sd	27-23=opcod1	19-16=Sn	3-0=Sm
+ASbIn	10	opcod1	opcod2	op6	op4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	ASbI	15-12=Sd	19-16=Sn	3-0=Sm
+AHuI	11	opcod1	opcod2	opcod3	opcod4	opcod5	oops	iops	InstrItinClass itin	opc	asm	pattern	1	VFPAI	21-20=opcod2	15-12=Sd	19-16=opcod3	27-23=opcod1	7-6=opcod4	3-0=Sm	11-8=0b1001
+AHuInp	10	opcod1	opcod2	opcod3	opcod4	opcod5	oops	iops	InstrItinClass itin	asm	pattern	1	VFPXI	21-20=opcod2	31-28=0b1111	15-12=Sd	19-16=opcod3	27-23=opcod1	7-6=opcod4	3-0=Sm	11-8=0b1001
+AHbI	10	opcod1	opcod2	op6	op4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	VFPAI	21-20=opcod2	15-12=Sd	27-23=opcod1	19-16=Sn	3-0=Sm	11-8=0b1001
+AHbInp	8	opcod1	opcod2	opcod3	oops	iops	InstrItinClass itin	asm	pattern	1	VFPXI	21-20=opcod2	31-28=0b1111	15-12=Sd	27-23=opcod1	19-16=Sn	3-0=Sm	11-8=0b1001
+AVConv1I	10	opcod1	opcod2	opcod3	opcod4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	VFPAI	21-20=opcod2	19-16=opcod3	27-23=opcod1	11-8=opcod4
+AVConv1XI	11	op1	op2	op3	op4	op5	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AVConv1I	3-0=fbits
+AVConv1In	10	opcod1	opcod2	opcod3	opcod4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AVConv1I
+AVConvXI	9	opcod1	opcod2	oops	iops	Format f	InstrItinClass itin	opc	asm	pattern	1	VFPAI	27-20=opcod1	11-8=opcod2
+AVConv2I	8	opcod1	opcod2	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AVConvXI
+NeonXI	10	oops	iops	AddrMode am	IndexMode im	Format f	InstrItinClass itin	opc	asm	cstr	pattern	1	InstARM
+NeonInp	11	oops	iops	AddrMode am	IndexMode im	Format f	InstrItinClass itin	opc	dt	asm	cstr	pattern	1	InstARM	31-28=0b1111
+NLdSt	12	op23	op21_20	op11_8	op7_4	oops	iops	InstrItinClass itin	opc	dt	asm	cstr	pattern	1	NeonI	31-24=0b11110100	21-20=op21_20	15-12=Vd	7-4=op7_4	19-16=Rn	3-0=Rm	11-8=op11_8
+NLdStLn	12	op23	op21_20	op11_8	op7_4	oops	iops	InstrItinClass itin	opc	dt	asm	cstr	pattern	1	NLdSt
+PseudoNLdSt	4	oops	iops	InstrItinClass itin	cstr	1	InstARM
+PseudoNeonI	5	oops	iops	InstrItinClass itin	cstr	pattern	1	InstARM
+NDataI	9	oops	iops	Format f	InstrItinClass itin	opc	dt	asm	cstr	pattern	1	NeonI	31-25=0b1111001
+NDataXI	8	oops	iops	Format f	InstrItinClass itin	opc	asm	cstr	pattern	1	NeonXI	31-25=0b1111001
+N1ModImm	15	op23	op21_19	op11_8	op7	op6	op5	op4	oops	iops	InstrItinClass itin	opc	dt	asm	cstr	pattern	1	NDataI	15-12=Vd	18-16=SIMM	3-0=SIMM	21-19=op21_19	11-8=op11_8
+N2V	15	op24_23	op21_20	op19_18	op17_16	op11_7	op6	op4	oops	iops	InstrItinClass itin	opc	dt	asm	cstr	pattern	1	NDataI	21-20=op21_20	17-16=op17_16	15-12=Vd	3-0=Vm	11-7=op11_7	19-18=op19_18	24-23=op24_23
+N2Vnp	11	op19_18	op17_16	op10_8	op7	op6	oops	iops	InstrItinClass itin	OpcodeStr	Dt	pattern	1	NeonInp	10-8=op10_8	21-20=0b11	17-16=op17_16	15-12=Vd	27-23=0b00111	3-0=Vm	19-18=op19_18
+N2VX	14	op24_23	op21_20	op19_18	op17_16	op11_7	op6	op4	oops	iops	InstrItinClass itin	opc	asm	cstr	pattern	1	NDataXI	21-20=op21_20	17-16=op17_16	15-12=Vd	3-0=Vm	11-7=op11_7	19-18=op19_18	24-23=op24_23
+N2VImm	15	op24	op23	op11_8	op7	op6	op4	oops	iops	Format f	InstrItinClass itin	opc	dt	asm	cstr	pattern	1	NDataI	15-12=Vd	21-16=SIMM	3-0=Vm	11-8=op11_8
+N3VCommon	15	op24	op23	op21_20	op11_8	op6	op4	oops	iops	Format f	InstrItinClass itin	opc	dt	asm	cstr	pattern	1	NDataI	21-20=op21_20	11-8=op11_8
+N3V	15	op24	op23	op21_20	op11_8	op6	op4	oops	iops	Format f	InstrItinClass itin	opc	dt	asm	cstr	pattern	1	N3VCommon	15-12=Vd	19-16=Vn	3-0=Vm
+N3Vnp	12	op27_23	op21_20	op11_8	op6	op4	oops	iops	Format f	InstrItinClass itin	OpcodeStr	Dt	pattern	1	NeonInp	21-20=op21_20	15-12=Vd	27-23=op27_23	19-16=Vn	3-0=Vm	11-8=op11_8
+N3VLane32	15	op24	op23	op21_20	op11_8	op6	op4	oops	iops	Format f	InstrItinClass itin	opc	dt	asm	cstr	pattern	1	N3VCommon	15-12=Vd	19-16=Vn	3-0=Vm
+N3VLane16	15	op24	op23	op21_20	op11_8	op6	op4	oops	iops	Format f	InstrItinClass itin	opc	dt	asm	cstr	pattern	1	N3VCommon	2-0=Vm	15-12=Vd	19-16=Vn
+N3VX	14	op24	op23	op21_20	op11_8	op6	op4	oops	iops	Format f	InstrItinClass itin	opc	asm	cstr	pattern	1	NDataXI	21-20=op21_20	15-12=Vd	19-16=Vn	3-0=Vm	11-8=op11_8
+NVLaneOp	11	opcod1	opcod2	opcod3	oops	iops	Format f	InstrItinClass itin	opc	dt	asm	pattern	1	InstARM	31-28=p	6-5=opcod3	15-12=R	27-20=opcod1	19-16=V	3-0=0b0000	11-8=opcod2
+NVGetLane	10	opcod1	opcod2	opcod3	oops	iops	InstrItinClass itin	opc	dt	asm	pattern	1	NVLaneOp	21-20=0b11	15-12=Vd	19-16=op19_16	3-0=Vm	11-7=0b11000	24-23=0b11
+NEONFPPat	2	pattern	result	1	Pat
+VFPDataTypeInstAlias	5	opc	dt	asm	Result	EmitPriority = 0	2	Requires	InstAlias
+NEONDTAnyInstAlias	4	opc	asm	Result	EmitPriority = 0	0
+NEONDataTypeAsmPseudoInst	4	opc	dt	asm	iops	2	AsmPseudoInst	Requires	31-25=0b1111110	21-20=op21_20	15-12=Vd	19-16=Vn	3-0=Vm	11-8=0b1000	24-23=op24_23
+N3VLaneCP8	12	op23	op21_20	op6	op4	oops	iops	InstrItinClass itin	opc	dt	asm	cstr	pattern	1	NeonInp	31-24=0b11111110	21-20=op21_20	15-12=Vd	19-16=Vn	3-0=Vm	11-8=0b1000
+N3VCP8Q0	12	op24_23	op21_20	op6	op4	oops	iops	InstrItinClass itin	opc	dt	asm	cstr	pattern	1	NeonInp	31-25=0b1111110	21-20=op21_20	15-12=Vd	19-16=Vn	3-0=Vm	11-8=0b1000	24-23=op24_23
+ComplexRotationOperand	4	int Angle	int Remainder	Type	Diag	1	AsmOperandClass
+RegConstraint	1	C	0
+BinOpFrag	1	res	1	PatFrag
+ImmAsmOperand	2	int Low	int High	1	AsmOperandClass
+ImmAsmOperandMinusOne	2	int Low	int High	1	AsmOperandClass
+MemOperand	1	i32	0
+MVEPairVectorIndexOperand	2	start	end	1	AsmOperandClass
+MVEPairVectorIndex	1	opval	1	Operand
+MVEVectorIndexOperand	1	int NumLanes	1	AsmOperandClass
+MVEVectorIndex	1	int NumLanes	1	Operand
+AddrMode_Imm12	4	i32	2	"SelectAddrModeImm12"	[]	0
+AddrMode3	4	i32	3	"SelectAddrMode3"	[]	0
+AddrMode5	4	i32	2	"SelectAddrMode5"	[]	0
+AddrMode5FP16	4	i32	2	"SelectAddrMode5FP16"	[]	0
+AddrMode6Align	3	i32	2	"SelectAddrMode6"	0
+AddrMode6DupAlign	3	i32	2	"SelectAddrMode6"	0
+AsI1_bin_s_irs	5	InstrItinClass iii	InstrItinClass iir	InstrItinClass iis	SDNode opnode	Commutable = 0	0
+AsI1_rbin_s_is	3	InstrItinClass iii	InstrItinClass iis	SDNode opnode	0
+AI1_cmp_irs	8	opcod	opc	InstrItinClass iii	InstrItinClass iir	InstrItinClass iis	opnode	Commutable = 0	rrDecoderMethod = ""	0	6-5=shift	11-0=imm	15-12=0b0000	11-4=0b00000000	11-5=shift	19-16=Rn	3-0=Rm	11-8=shift
+AI_ext_rrot	3	opcod	opc	PatFrag opnode	3	Sched	AExtI	Requires	11-10=rot	15-12=Rd	19-16=0b1111	3-0=Rm
+AI_ext_rrot_np	2	opcod	opc	3	Sched	AExtI	Requires	11-10=rot	19-16=0b1111
+AI_exta_rrot	3	opcod	opc	PatFrag opnode	3	Sched	AExtI	Requires	9-4=0b000111	11-10=rot	15-12=Rd	19-16=Rn	3-0=Rm
+AI_exta_rrot_np	2	opcod	opc	3	Sched	AExtI	Requires	11-10=rot	19-16=Rn
+AI_ldr1	5	isByte	opc	InstrItinClass iii	InstrItinClass iir	PatFrag opnode	0	11-0=addr	15-12=Rt	19-16=addr
+AI_ldr1nopc	5	isByte	opc	InstrItinClass iii	InstrItinClass iir	PatFrag opnode	0	11-0=addr	15-12=Rt	19-16=addr
+AI_str1	5	isByte	opc	InstrItinClass iii	InstrItinClass iir	PatFrag opnode	0	11-0=addr	15-12=Rt	19-16=addr
+AI_str1nopc	5	isByte	opc	InstrItinClass iii	InstrItinClass iir	PatFrag opnode	0	11-0=addr	15-12=Rt	19-16=addr
+CPS	2	iops	asm_ops	2	AXI	Requires	4-0=mode	8-6=iflags	31-28=0b1111	27-20=0b00010000	19-18=imod	16-9=0b00000000
+APreLoad	3	read	data	opc	0	31-26=0b111101	21-20=0b01	11-0=addr	15-12=0b1111	19-16=addr
+SRSI	2	wb	asm	1	XI	4-0=mode	15-5=0b00000101000	31-28=0b1111	19-16=0b1101	27-25=0b100
+RFEI	2	wb	asm	1	XI	31-28=0b1111	19-16=Rn	15-0=0xa00	27-25=0b100
+AI2_ldridx	4	isByte	opc	InstrItinClass iii	InstrItinClass iir	0	11-0=addr	19-16=addr
+AI3_ldridx	3	op	opc	InstrItinClass itin	0	19-16=addr	3-0=addr	11-8=addr
+AI3ldrT	2	op	opc	0	3-0=offset	11-8=offset
+AI2_stridx	4	isByte	opc	InstrItinClass iii	InstrItinClass iir	0	11-0=addr	19-16=addr
+AI3strT	2	op	opc	0	3-0=offset	11-8=offset
+arm_ldst_mult	7	asm	sfx	L_bit	P_bit	Format f	InstrItinClass itin	InstrItinClass itin_upd	0	24-23=0b01
+AAI	9	op27_20	op11_4	opc	pattern = []	iops = (ins GPRnopc:$Rn	GPRnopc:$Rm)	asm = "\t$Rd	$Rn	$Rm"	2	Sched	AI	15-12=Rd	27-20=op27_20	11-4=op11_4	19-16=Rn	3-0=Rm
+AAIRevOpr	4	op27_20	op11_4	opc	pattern = []	1	AAI
+AsMul1I32	7	opcod	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AsMul1I	19-16=Rd	3-0=Rn	11-8=Rm
+AsMul1I64	7	opcod	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AsMul1I	15-12=RdLo	19-16=RdHi	3-0=Rn	11-8=Rm
+AsMla1I64	7	opcod	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AsMul1I	15-12=RdLo	19-16=RdHi	3-0=Rn	11-8=Rm
+AI_smul	1	opc	0
+AI_smla	1	opc	0
+SMLAL	2	opc1	asm	4	Sched	RegConstraint	Requires	AMulxyI64	21-20=0b00	27-23=0b01110	3-0=Rn	11-8=Rm
+AMulDualI	8	long	sub	swap	oops	iops	InstrItinClass itin	opc	asm	1	AMulDualIbase	15-12=0b1111	19-16=Rd
+AMulDualIa	8	long	sub	swap	oops	iops	InstrItinClass itin	opc	asm	1	AMulDualIbase	15-12=Ra	19-16=Rd
+AMulDualI64	8	long	sub	swap	oops	iops	InstrItinClass itin	opc	asm	1	AMulDualIbase	15-12=RdLo	19-16=RdHi
+AI_smld	2	sub	opc	0
+AI_sdml	2	sub	opc	0
+AI_crc32	4	C	sz	suffix	builtin	2	AInoP	Requires	31-28=0b1110	11-10=0b00	15-12=Rd	22-21=sz	7-4=0b0100	19-16=Rn	27-23=0b00010	3-0=Rm
+acquiring_load	1	PatFrags base	1	PatFrag
+ACI	7	oops	iops	opc	asm	pattern	IndexMode im = IndexModeNone	AddrMode am = AddrModeNone	1	I	27-25=0b110
+ACInoP	7	oops	iops	opc	asm	pattern	IndexMode im = IndexModeNone	AddrMode am = AddrModeNone	1	InoP	31-28=0b1111	27-25=0b110
+LdStCop	4	load	Dbit	asm	pattern	0	7-0=addr	15-12=CRd	19-16=addr	11-8=cop
+LdSt2Cop	4	load	Dbit	asm	pattern	0	7-0=addr	15-12=CRd	19-16=addr	11-8=cop
+MovRCopro	5	opc	direction	oops	iops	pattern	1	ABI	15-12=Rt	23-21=opc1	19-16=CRn	7-5=opc2	3-0=CRm	11-8=cop
+MovRCopro2	5	opc	direction	oops	iops	pattern	1	ABXI	31-24=0b11111110	15-12=Rt	23-21=opc1	19-16=CRn	7-5=opc2	3-0=CRm	11-8=cop
+MovRRCopro	5	opc	direction	oops	iops	pattern = []	1	ABI	15-12=Rt	7-4=opc1	23-21=0b010	19-16=Rt2	3-0=CRm	11-8=cop
+MovRRCopro2	5	opc	direction	oops	iops	pattern = []	2	ABXI	Requires	31-28=0b1111	15-12=Rt	7-4=opc1	23-21=0b010	19-16=Rt2	3-0=CRm	11-8=cop
+VCMPPredicateOperand	1	i32	0
+TMemImm7ShiftOffsetAsmOperand	1	int shift	1	AsmOperandClass
+taddrmode_imm7	1	int shift	2	MemOperand	ComplexPattern
+MemImm7ShiftOffsetAsmOperand	1	int shift	1	AsmOperandClass
+T2AddrMode_Imm7	1	int shift	2	MemOperand	ComplexPattern
+t2addrmode_imm7	1	int shift	1	T2AddrMode_Imm7
+MemImm7ShiftOffsetWBAsmOperand	1	int shift	1	AsmOperandClass
+t2addrmode_imm7_pre	1	int shift	1	T2AddrMode_Imm7
+t2am_imm7shiftOffsetAsmOperand	1	int shift	1	AsmOperandClass
+t2am_imm7_offset	1	int shift	2	MemOperand	ComplexPattern
+MemRegRQOffsetAsmOperand	1	int shift	1	AsmOperandClass
+mve_addr_rq_shift	1	int shift	1	MemOperand
+MemRegQOffsetAsmOperand	1	int shift	1	AsmOperandClass
+mve_addr_q_shift	1	int shift	1	MemOperand
+MVEVectorVTInfo	7	ValueType vec	ValueType dblvec	ValueType pred	ValueType dblpred	size	suffixletter	unsigned	0
+MVE_TwoOpPattern	6	MVEVectorVTInfo VTI	Op	Intrinsic PredInt	PredOperands	Instruction Inst	IdentityVec = null_frag	0
+MVE_TwoOpPatternDup	6	MVEVectorVTInfo VTI	Op	Intrinsic PredInt	PredOperands	Instruction Inst	IdentityVec = null_frag	0
+MVE_MI	8	oops	iops	InstrItinClass itin	asm	ops	cstr	vecsize	pattern	2	Requires	Thumb2XI
+MVE_p	10	oops	iops	InstrItinClass itin	iname	suffix	ops	vpred_ops vpred	cstr	vecsize	pattern=[]	1	MVE_MI	31-29=0b111	27-26=0b11
+MVE_f	10	oops	iops	InstrItinClass itin	iname	suffix	ops	vpred_ops vpred	cstr	vecsize	pattern=[]	1	MVE_p
+MVE_MI_with_pred	7	oops	iops	InstrItinClass itin	asm	ops	cstr	pattern	2	Thumb2I	Requires
+MVE_VMOV_lane_base	8	oops	iops	InstrItinClass itin	asm	suffix	ops	cstr	pattern	2	Thumb2I	Requires
+MVE_ScalarShift	6	iname	oops	iops	asm	cstr	pattern=[]	1	MVE_MI_with_pred	31-20=0b111010100101
+MVE_ScalarShiftSingleReg	5	iname	iops	asm	cstr	pattern=[]	1	MVE_ScalarShift	19-16=RdaDest
+MVE_ScalarShiftSRegImm	2	iname	op5_4	1	MVE_ScalarShiftSingleReg	14-12=imm	3-0=0b1111	7-6=imm	5-4=op5_4	11-8=0b1111
+MVE_ScalarShiftSRegReg	2	iname	op5_4	1	MVE_ScalarShiftSingleReg	15-12=Rm	3-0=0b1101	7-6=0b00	5-4=op5_4	11-8=0b1111
+MVE_ScalarShiftDoubleReg	5	iname	iops	asm	cstr	pattern=[]	1	MVE_ScalarShift	11-9=RdaHi	19-17=RdaLo
+MVE_ScalarShiftDRegImm	4	iname	op5_4	op16	pattern=[]	1	MVE_ScalarShiftDoubleReg	14-12=imm	3-0=0b1111	7-6=imm	5-4=op5_4
+MVE_ScalarShiftDRegRegBase	6	iname	iops	asm	op5	op16	pattern=[]	1	MVE_ScalarShiftDoubleReg	15-12=Rm	3-0=0b1101
+MVE_ScalarShiftDRegReg	3	iname	op5	pattern=[]	1	MVE_ScalarShiftDRegRegBase
+MVE_ScalarShiftDRegRegWithSat	3	iname	op5	pattern=[]	1	MVE_ScalarShiftDRegRegBase
+MVE_rDest	9	oops	iops	InstrItinClass itin	iname	suffix	ops	cstr	vecsize	pattern=[]	1	MVE_p	11-9=0b111	25-23=0b101
+MVE_VABAV	3	suffix	U	size	1	MVE_rDest	21-20=size	15-12=Rda	19-17=Qn	3-1=Qm
+MVE_VABAV_m	1	MVEVectorVTInfo VTI	0
+MVE_VADDV	8	iname	suffix	iops	cstr	A	U	size	pattern=[]	1	MVE_rDest	8-6=0b100	17-16=0b01	22-20=0b111	15-13=Rda	3-1=Qm	19-18=size
+MVE_VADDV_A	1	MVEVectorVTInfo VTI	0
+MVE_VADDLV	7	iname	suffix	iops	cstr	A	U	pattern=[]	1	MVE_rDest	8-6=0b100	17-16=0b01	22-20=RdaHi	15-13=RdaLo	3-1=Qm	19-18=0b10
+MVE_VADDLV_A	1	MVEVectorVTInfo VTI	0
+MVE_VMINMAXNMV	6	iname	suffix	sz	bit_17	bit_7	pattern=[]	1	MVE_rDest	6-5=0b00	22-20=0b110	15-12=RdaDest	3-1=Qm	19-18=0b11
+MVE_VMINMAXNMV_p	7	iname	notAbs	isMin	MVEVectorVTInfo VTI	intrBaseName	ValueType Scalar	ScalarReg	0
+MVE_VMINMAXNMV_fty	4	iname	notAbs	isMin	intrBase	0
+MVE_VMINMAXV	7	iname	suffix	U	size	bit_17	bit_7	pattern=[]	1	MVE_rDest	6-5=0b00	22-20=0b110	15-12=RdaDest	3-1=Qm	19-18=size
+MVE_VMINMAXV_p	5	iname	notAbs	isMin	MVEVectorVTInfo VTI	intrBaseName	0
+MVE_VMINMAXV_ty	3	iname	isMin	intrBaseName	0
+MVE_VMINMAXAV_ty	3	iname	isMin	intrBaseName	0
+MVE_VMLAMLSDAV	11	iname	suffix	iops	cstr	sz	bit_28	A	X	bit_8	bit_0	vecsize	1	MVE_rDest	22-20=0b111	15-13=RdaDest	7-6=0b00	19-17=Qn	3-1=Qm
+MVE_VMLAMLSDAV_A	8	iname	x	MVEVectorVTInfo VTI	sz	bit_28	X	bit_8	bit_0	0
+MVE_VMLAMLSDAV_AX	6	iname	MVEVectorVTInfo VTI	sz	bit_28	bit_8	bit_0	0
+MVE_VMLADAV_multi	4	MVEVectorVTInfo SVTI	MVEVectorVTInfo UVTI	sz	bit_8	0
+MVE_VMLSDAV_multi	3	MVEVectorVTInfo VTI	sz	bit_28	0
+MVE_VMLALDAVBase	12	iname	suffix	iops	cstr	sz	bit_28	A	X	bit_8	bit_0	vecsize	pattern=[]	1	MVE_rDest	22-20=RdaHiDest	15-13=RdaLoDest	7-6=0b00	19-17=Qn	3-1=Qm
+MVE_VMLALDAVBase_A	10	iname	x	suffix	sz	bit_28	X	bit_8	bit_0	vecsize	pattern=[]	0
+MVE_VMLALDAVBase_AX	8	iname	suffix	sz	bit_28	bit_8	bit_0	vecsize	pattern=[]	0
+MVE_VRMLALDAVH_multi	2	MVEVectorVTInfo VTI	pattern=[]	0
+MVE_VMLALDAV_multi	2	MVEVectorVTInfo VTI	pattern=[]	0
+MVE_VMLSLDAV_multi	6	iname	suffix	sz	bit_28	vecsize	pattern=[]	0
+MVE_comp	6	InstrItinClass itin	iname	suffix	cstr	vecsize	pattern=[]	1	MVE_p	10-9=0b11	15-13=Qd	19-17=Qn	3-1=Qm
+MVE_VMINMAXNM	5	iname	suffix	sz	bit_21	pattern=[]	1	MVE_comp	25-24=0b11
+MVE_VMINMAXNM_m	5	iname	bit_4	MVEVectorVTInfo VTI	Op	Intrinsic PredInt	0
+MVE_VMINMAX	6	iname	suffix	U	size	bit_4	pattern=[]	1	MVE_comp	25-24=0b11	21-20=size
+MVE_VMINMAX_m	5	iname	bit_4	MVEVectorVTInfo VTI	SDNode Op	Intrinsic PredInt	0
+MVE_VMAX	1	MVEVectorVTInfo VTI	1	MVE_VMINMAX_m	15-13=Qd	3-1=Qm
+MVE_VREV	6	iname	suffix	size	bit_8_7	vecsize	cstr=""	1	MVE_bit_arith	25-23=0b111	8-7=bit_8_7	21-20=0b11	12-9=0b0000	17-16=0b00	19-18=size
+MVE_VREV_basic_patterns	3	int revbits	list<MVEVectorVTInfo> VTIs	Instruction Inst	0
+MVE_bit_ops	3	iname	bit_21_20	bit_28	1	MVE_bit_arith	25-23=0b110	21-20=bit_21_20	12-8=0b00001	19-17=Qn
+MVE_bit_cmode	5	iname	suffix	halfword	inOps	vecsize	1	MVE_p	15-13=Qd	18-16=imm	27-23=0b11111	3-0=imm	7-6=0b01	21-19=0b000
+MVE_bit_cmode_p	5	iname	opcode	MVEVectorVTInfo VTI	imm_type	SDNode op	0
+MVE_VORRimm	2	MVEVectorVTInfo VTI	imm_type	0
+MVE_VBICimm	2	MVEVectorVTInfo VTI	imm_type	0
+MVE_VMOV_lane_direction	0	0
+MVE_VMOV_lane_32	1	MVE_VMOV_lane_direction dir	1	MVE_VMOV_lane	6-5=0b00
+MVE_VMOV_lane_16	3	suffix	U	MVE_VMOV_lane_direction dir	1	MVE_VMOV_lane
+MVE_VMOV_lane_8	3	suffix	U	MVE_VMOV_lane_direction dir	1	MVE_VMOV_lane
+MVE_int	4	iname	suffix	size	pattern=[]	1	MVE_p	21-20=size	15-13=Qd	19-17=Qn	3-1=Qm
+MVE_VMULt1	4	iname	suffix	size	pattern=[]	1	MVE_int	25-23=0b110	12-8=0b01001
+MVE_VMUL_m	1	MVEVectorVTInfo VTI	0
+MVE_VQxDMULH_Base	5	iname	suffix	size	rounding	pattern=[]	1	MVE_int	25-23=0b110	12-8=0b01011
+MVE_VQxDMULH_m	6	iname	MVEVectorVTInfo VTI	Op	Intrinsic unpred_int	Intrinsic pred_int	rounding	0
+MVE_VQxDMULH	3	iname	MVEVectorVTInfo VTI	rounding	1	MVE_VQxDMULH_m	25-23=0b110	12-8=0b01000
+MVE_VADDSUB_m	5	iname	MVEVectorVTInfo VTI	subtract	SDNode Op	Intrinsic PredInt	0
+MVE_VADD	1	MVEVectorVTInfo VTI	1	MVE_VADDSUB_m	25-23=0b110	12-10=0b000
+MVE_VQADD_	3	suffix	U	size	1	MVE_VQADDSUB
+MVE_VQADD	2	MVEVectorVTInfo VTI	SDNode unpred_op	1	MVE_VQADD_m
+MVE_VQSUB	2	MVEVectorVTInfo VTI	SDNode unpred_op	1	MVE_VQSUB_m	25-23=0b110	12-8=0b00111
+MVE_VABD_m	4	MVEVectorVTInfo VTI	SDNode Op	Intrinsic unpred_int	Intrinsic PredInt	0
+MVE_VABD	2	MVEVectorVTInfo VTI	SDNode Op	1	MVE_VABD_m	25-23=0b110	12-8=0b00001
+MVE_VRHADD_m	4	MVEVectorVTInfo VTI	SDNode Op	unpred_op	Intrinsic PredInt	0
+MVE_VRHADD	2	MVEVectorVTInfo VTI	SDNode rhadd	1	MVE_VRHADD_m	25-23=0b110	12-10=0b000
+MVE_VHADD_	4	suffix	U	size	pattern=[]	1	MVE_VHADDSUB
+MVE_VHADD	2	MVEVectorVTInfo VTI	SDNode Op	1	MVE_VHADD_m
+MVE_VHSUB	3	MVEVectorVTInfo VTI	PatFrag sub_op	SDNode shift_op	1	MVE_VHSUB_m	25-23=0b101	4-0=0b10000	21-20=0b10	15-12=Rt	19-17=Qd	11-8=0b1011
+MVEIntSingleSrc	4	iname	suffix	size	pattern=[]	1	MVE_p	15-13=Qd	3-1=Qm	19-18=size
+MVE_VCLSCLZ	5	iname	suffix	size	count_zeroes	pattern=[]	1	MVEIntSingleSrc	25-23=0b111	21-20=0b11	12-8=0b00100	17-16=0b00
+MVE_VCLSCLZ_p	4	opname	opcode	MVEVectorVTInfo VTI	unpred_op	0
+MVE_VABSNEG_int	6	iname	suffix	size	negate	saturate	pattern=[]	1	MVEIntSingleSrc	25-23=0b111	21-20=0b11	9-8=0b11	12-11=0b00
+MVE_VABSNEG_int_m	6	iname	negate	saturate	unpred_op	Intrinsic pred_int	MVEVectorVTInfo VTI	0
+vqabsneg_pattern	6	MVEVectorVTInfo VTI	int_min	int_max	zero_vec	MVE_VABSNEG_int vqabs_instruction	MVE_VABSNEG_int vqneg_instruction	0
+MVE_mod_imm	7	iname	suffix	cmode	op	iops	vecsize	pattern=[]	1	MVE_p	25-23=0b111	15-13=Qd	18-16=imm	3-0=imm	7-6=0b01	21-19=0b000	11-8=cmode
+MVE_VMINMAXA	5	iname	suffix	size	bit_12	pattern=[]	1	MVE_p	25-23=0b100	21-20=0b11	17-16=0b11	15-13=Qd	11-6=0b111010	3-1=Qm	19-18=size
+MVE_VMINMAXA_m	5	iname	MVEVectorVTInfo VTI	SDNode unpred_op	Intrinsic pred_int	bit_12	0
+MVE_VMINA	1	MVEVectorVTInfo VTI	1	MVE_VMINMAXA_m	12-4=0b011111100	25-23=0b101	20-16=imm	15-13=Qd	3-0=RdmDest
+MVE_shift_imm	9	oops	iops	iname	suffix	ops	vpred_ops vpred	cstr	vecsize	pattern=[]	1	MVE_p	15-13=Qd	3-1=Qm
+MVE_VMOVL	6	iname	suffix	sz	U	top	pattern=[]	1	MVE_shift_imm	25-23=0b101	18-16=0b000	20-19=sz	11-6=0b111101
+MVE_VMOVL_m	4	top	chr	MVEVectorVTInfo OutVTI	MVEVectorVTInfo InVTI	0
+MVE_VSHLL_imm	7	iname	suffix	U	th	immtype	vecsize	pattern=[]	1	MVE_shift_imm	25-23=0b101	11-6=0b111101
+MVE_VSHLL_imm8	5	iname	suffix	U	th	pattern=[]	1	MVE_VSHLL_imm	18-16=imm	20-19=0b01
+MVE_VSHLL_imm16	5	iname	suffix	U	th	pattern=[]	1	MVE_VSHLL_imm	19-16=imm
+MVE_VSHLL_by_lane_width	6	iname	suffix	size	U	ops	pattern=[]	1	MVE_shift_imm	25-23=0b100	21-20=0b11	17-16=0b01	11-6=0b111000	19-18=size
+MVE_VSHLL_lw	6	iname	suffix	sz	U	ops	pattern=[]	0
+MVE_VSHLL_patterns	2	MVEVectorVTInfo VTI	int top	0
+MVE_shift_imm_partial	4	imm	iname	suffix	vecsize	1	MVE_shift_imm
+MVE_VxSHRN	6	iname	suffix	bit_12	bit_28	imm	vecsize	1	MVE_shift_imm_partial	25-23=0b101	20-16=imm	11-6=0b111111
+MVE_VxQRSHRUN	6	iname	suffix	bit_28	bit_12	imm	vecsize	1	MVE_shift_imm_partial	25-23=0b101	20-16=imm	11-6=0b111111
+MVE_VxQRSHRN	6	iname	suffix	bit_0	bit_12	imm	vecsize	1	MVE_shift_imm_partial	25-23=0b101	20-16=imm	11-6=0b111101
+MVE_VxQRSHRN_types	3	iname	bit_0	bit_12	0	20-19=0b01
+MVE_VSHRN_patterns	6	MVE_shift_imm_partial inst	MVEVectorVTInfo OutVTI	MVEVectorVTInfo InVTI	q	r	top	0
+MVE_shift_by_vec	6	iname	suffix	U	size	bit_4	bit_8	1	MVE_p	25-24=0b11	21-20=size	12-9=0b0010	15-13=Qd	19-17=Qn	3-1=Qm
+MVE_shift_by_vec_p	4	iname	MVEVectorVTInfo VTI	q	r	0
+mve_shift_by_vec_multi	3	iname	bit_4	bit_8	0
+MVE_shift_with_imm	9	iname	suffix	oops	iops	ops	vpred_ops vpred	cstr	vecsize	pattern=[]	1	MVE_p	15-13=Qd	7-6=0b01	3-1=Qm	12-11=0b00
+MVE_VSxI_imm	5	iname	suffix	bit_8	immType	vecsize	1	MVE_shift_with_imm	25-24=0b11	10-9=0b10	21-16=imm
+MVE_VSxI_patterns	4	MVE_VSxI_imm inst	Node	PredIntr	MVEVectorVTInfo VTI	0
+MVE_VQSHL_imm	2	MVEVectorVTInfo VTI_	immType	1	MVE_shift_with_imm	25-24=0b11	10-8=0b111	21-16=imm
+MVE_VQSHLU_imm	2	MVEVectorVTInfo VTI_	immType	1	MVE_shift_with_imm	25-24=0b11	10-8=0b110	21-16=imm
+MVE_VRSHR_imm	2	MVEVectorVTInfo VTI_	immType	1	MVE_shift_with_imm	25-24=0b11	10-8=0b010	21-16=imm
+MVE_shift_imm_patterns	1	MVE_shift_with_imm inst	0
+MVE_VSHR_imm	3	suffix	imm	vecsize	1	MVE_shift_with_imm	25-24=0b11	10-8=0b000	21-16=imm
+MVE_VSHL_imm	3	suffix	imm	vecsize	1	MVE_shift_with_imm	25-24=0b11	10-8=0b101	21-16=imm
+MVE_immediate_shift_patterns_inner	6	MVEVectorVTInfo VTI	imm_operand_type	SDNode unpred_op	Intrinsic pred_int	Instruction inst	list<int> unsignedFlag = []	0
+MVE_immediate_shift_patterns	2	MVEVectorVTInfo VTI	imm_operand_type	0
+MVE_float	9	iname	suffix	oops	iops	ops	vpred_ops vpred	cstr	vecsize	pattern=[]	1	MVE_f	3-1=Qm
+MVE_VRINT	5	rmode	op	suffix	size	pattern=[]	1	MVE_float	25-23=0b111	21-20=0b11	11-10=0b01	17-16=0b10	15-13=Qd	9-7=op	19-18=size
+MVE_VRINT_m	4	MVEVectorVTInfo VTI	suffix	opcode	unpred_op	0
+MVE_VRINT_ops	1	MVEVectorVTInfo VTI	0
+MVEFloatArithNeon	10	iname	suffix	size	oops	iops	ops	vpred_ops vpred	cstr	vecsize	pattern=[]	1	MVE_float
+MVE_VMUL_fp	4	iname	suffix	size	pattern=[]	1	MVEFloatArithNeon	25-23=0b110	12-8=0b01101	15-13=Qd	19-17=Qn
+MVE_VMULT_fp_m	5	iname	MVEVectorVTInfo VTI	Op	Intrinsic PredInt	IdentityVec	0
+MVE_VMUL_fp_m	2	MVEVectorVTInfo VTI	IdentityVec	1	MVE_VMULT_fp_m
+MVE_VCMLA_m	2	MVEVectorVTInfo VTI	cstr=""	0
+MVE_VADDSUBFMA_fp	10	iname	suffix	size	bit_4	bit_8	bit_21	iops=(ins)	vpred_ops vpred=vpred_r	cstr=""	pattern=[]	1	MVEFloatArithNeon	11-9=0b110	25-23=0b110	15-13=Qd	19-17=Qn
+MVE_VFMA_fp_multi	3	iname	fms	MVEVectorVTInfo VTI	0
+MVE_VADDSUB_fp_m	6	iname	bit_21	MVEVectorVTInfo VTI	Op	Intrinsic PredInt	IdentityVec	0
+MVE_VADD_fp_m	2	MVEVectorVTInfo VTI	IdentityVec	1	MVE_VADDSUB_fp_m
+MVE_VCADD_m	2	MVEVectorVTInfo VTI	cstr=""	0
+MVE_VABD_fp	2	suffix	size	1	MVE_float	25-23=0b110	15-13=Qd	19-17=Qn	11-8=0b1101
+MVE_VABDT_fp_m	3	MVEVectorVTInfo VTI	Intrinsic unpred_int	Intrinsic pred_int	0
+MVE_VABD_fp_m	1	MVEVectorVTInfo VTI	1	MVE_VABDT_fp_m
+MVE_VCVT_fix	5	suffix	fsi	U	op	imm_operand_type	1	MVE_float	25-23=0b111	11-10=0b11	15-13=Qd	19-16=imm6
+MVE_VCVT_imm_asmop	1	int Bits	1	AsmOperandClass
+MVE_VCVT_imm	1	int Bits	1	Operand
+MVE_VCVT_fix_f32	3	suffix	U	op	1	MVE_VCVT_fix
+MVE_VCVT_fix_f16	3	suffix	U	op	1	MVE_VCVT_fix
+MVE_VCVT_fix_patterns	4	Instruction Inst	U	MVEVectorVTInfo DestVTI	MVEVectorVTInfo SrcVTI	0
+MVE_VCVT_fix_f32_m	4	U	op	MVEVectorVTInfo DestVTI	MVEVectorVTInfo SrcVTI	0
+MVE_VCVT_fix_f16_m	4	U	op	MVEVectorVTInfo DestVTI	MVEVectorVTInfo SrcVTI	0
+MVE_VCVT_fp_int_anpm	6	suffix	size	op	anpm	rm	pattern=[]	1	MVE_float	25-23=0b111	21-20=0b11	17-16=0b11	15-13=Qd	9-8=rm	12-10=0b000	19-18=size
+MVE_VCVT_fp_int_anpm_inner	4	MVEVectorVTInfo Int	MVEVectorVTInfo Flt	anpm	rm	0
+MVE_VCVT_fp_int_anpm_outer	2	MVEVectorVTInfo Int	MVEVectorVTInfo Flt	0
+MVE_VCVT_fp_int	5	suffix	size	toint	unsigned	pattern=[]	1	MVE_float	25-23=0b111	21-20=0b11	12-9=0b0011	17-16=0b11	15-13=Qd	19-18=size
+MVE_VCVT_fp_int_m	4	MVEVectorVTInfo Dest	MVEVectorVTInfo Src	SDNode unpred_op	unpred_intrinsic	0
+MVE_VABSNEG_fp	5	iname	suffix	size	negate	pattern=[]	1	MVE_float	25-23=0b111	21-20=0b11	17-16=0b01	15-13=Qd	19-18=size	11-8=0b0111
+MVE_VABSNEG_fp_m	5	iname	SDNode unpred_op	Intrinsic pred_int	MVEVectorVTInfo VTI	opcode	0
+MVE_VMAXMINNMA	5	iname	suffix	size	bit_12	pattern=[]	1	MVE_f	25-23=0b100	15-13=Qd	21-16=0b111111	11-6=0b111010	3-1=Qm
+MVE_VMAXMINNMA_m	5	iname	MVEVectorVTInfo VTI	unpred_op	Intrinsic pred_int	bit_12	0
+MVE_VMAXNMA	2	MVEVectorVTInfo VTI	bit_12	1	MVE_VMAXMINNMA_m	25-22=0b1000	21-20=bits_21_20	16-13=0b1000	19-17=Qn	3-1=Qm	11-8=0b1111
+MVE_VCMPqqf	2	suffix	size	1	MVE_VCMPqq
+MVE_VCMPqqi	2	suffix	size	1	MVE_VCMPqq
+MVE_VCMPqqu	2	suffix	size	1	MVE_VCMPqq
+MVE_VCMPqqs	2	suffix	size	1	MVE_VCMPqq
+MVE_VCMPqr	6	suffix	bit_28	bits_21_20	VCMPPredicateOperand predtype	vecsize	pattern=[]	1	MVE_p	25-22=0b1000	21-20=bits_21_20	16-13=0b1000	3-0=Rm	19-17=Qn	11-8=0b1111
+MVE_VCMPqrf	2	suffix	size	1	MVE_VCMPqr
+MVE_VCMPqri	2	suffix	size	1	MVE_VCMPqr
+MVE_VCMPqru	2	suffix	size	1	MVE_VCMPqr
+MVE_VCMPqrs	2	suffix	size	1	MVE_VCMPqr
+unpred_vcmp_z	2	suffix	PatLeaf fc	0
+unpred_vcmp_r	2	suffix	PatLeaf fc	0
+unpred_vcmpf_z	1	PatLeaf fc	0
+unpred_vcmpf_r	2	cmp	PatLeaf fc	0
+two_predops	2	opnode	Instruction insn	0
+MVE_qDest_qSrc	9	iname	suffix	oops	iops	ops	vpred_ops vpred	cstr	vecsize	pattern=[]	1	MVE_p	11-9=0b111	25-23=0b100	15-13=Qd	3-1=Qm
+MVE_VQxDMLxDH	8	iname	exch	round	subtract	suffix	size	cstr=""	pattern=[]	1	MVE_qDest_qSrc	21-20=size	19-17=Qn
+MVE_VQxDMLxDH_p	5	iname	exch	round	subtract	MVEVectorVTInfo VTI	0
+MVE_VQxDMLxDH_multi	4	iname	exch	round	subtract	0
+MVE_VCMUL	4	iname	suffix	size	cstr=""	1	MVE_qDest_qSrc	21-20=0b11	19-17=Qn
+MVE_VCMUL_m	3	iname	MVEVectorVTInfo VTI	cstr=""	0
+MVE_VMULL	8	iname	suffix	bit_28	bits_21_20	T	cstr	vecsize	pattern=[]	1	MVE_qDest_qSrc	21-20=bits_21_20	19-17=Qn
+MVE_VMULL_m	6	MVEVectorVTInfo VTI	unpred_op	Intrinsic pred_int	Top	vecsize	cstr=""	0
+MVE_VxMULH	6	iname	suffix	U	size	round	pattern=[]	1	MVE_qDest_qSrc	21-20=size	19-17=Qn
+MVE_VxMULH_m	5	iname	MVEVectorVTInfo VTI	unpred_op	Intrinsic PredInt	round	0
+MVE_VMULT	3	iname	MVEVectorVTInfo VTI	round	1	MVE_VxMULH_m	21-20=0b11	19-18=size
+MVE_VxMOVxN_halves	5	iname	suffix	bit_28	bit_17	size	0
+MVE_VMOVN_p	4	Instruction Inst	top	MVEVectorVTInfo VTI	MVEVectorVTInfo InVTI	0
+MVE_VQMOVN_p	6	Instruction Inst	outU	inU	top	MVEVectorVTInfo VTI	MVEVectorVTInfo InVTI	0
+MVE_VCVT_ff	7	iname	suffix	op	T	iops_extra	vpred_ops vpred	cstr	1	MVE_qDest_qSrc	8-7=0b00	21-16=0b111111
+MVE_VCVT_f2h_m	2	iname	int half	0
+MVE_VCVT_h2f_m	2	iname	int half	0
+MVE_VxCADD	5	iname	suffix	size	halve	cstr=""	1	MVE_qDest_qSrc	21-20=size	19-17=Qn
+MVE_VxCADD_m	4	iname	MVEVectorVTInfo VTI	halve	cstr=""	0
+MVE_VADCSBC	5	iname	I	subtract	carryin	pattern=[]	1	MVE_qDest_qSrc	21-20=0b11	19-17=Qn
+MVE_VQDMULL	6	iname	suffix	size	T	cstr=""	pattern=[]	1	MVE_qDest_qSrc	21-20=0b11	19-17=Qn
+MVE_VQDMULL_m	5	iname	MVEVectorVTInfo VTI	size	T	cstr	0
+MVE_VQDMULL_halves	3	MVEVectorVTInfo VTI	size	cstr=""	0
+MVE_qr_base	9	oops	iops	iname	suffix	ops	vpred_ops vpred	cstr	vecsize	pattern=[]	1	MVE_p	11-9=0b111	25-23=0b100	15-13=Qd	3-0=Rm	19-17=Qn
+MVE_qDest_rSrc	5	iname	suffix	cstr=""	vecsize	pattern=[]	1	MVE_qr_base	15-13=Qd	3-0=Rm
+MVE_vec_scalar_int_pat_m	6	Instruction inst	MVEVectorVTInfo VTI	unpred_op	pred_op	unpred_has_sign = 0	pred_has_sign = 0	0
+MVE_VADDSUB_qr	7	iname	suffix	size	bit_5	bit_12	bit_16	bit_28	1	MVE_qDest_rSrc	21-20=size
+MVE_VADDSUB_qr_m	5	iname	MVEVectorVTInfo VTI	subtract	SDNode Op	Intrinsic PredInt	0
+MVE_VADD_qr_m	1	MVEVectorVTInfo VTI	1	MVE_VADDSUB_qr_m
+MVE_VQADD_qr_m	2	MVEVectorVTInfo VTI	SDNode Op	1	MVE_VQADDSUB_qr_m	21-20=0b11
+MVE_VQDMULL_qr_m	5	iname	MVEVectorVTInfo VTI	size	T	cstr	0
+MVE_VQDMULL_qr_halves	3	MVEVectorVTInfo VTI	size	cstr=""	0
+MVE_VxADDSUB_qr	7	iname	suffix	bit_28	size	subtract	vecsize	pattern=[]	1	MVE_qDest_rSrc	21-20=size
+MVE_VHADDSUB_qr_m	8	iname	MVEVectorVTInfo VTI	subtract	Op	Intrinsic unpred_int	Intrinsic pred_int	PatFrag add_op	SDNode shift_op	0
+MVE_VHADD_qr_m	4	MVEVectorVTInfo VTI	PatFrag add_op	SDNode shift_op	SDNode Op	1	MVE_VHADDSUB_qr_m
+MVE_VxSHL_qr	7	iname	suffix	U	size	bit_7	bit_17	pattern=[]	1	MVE_qDest_single_rSrc	25-23=0b100	6-4=0b110	21-20=0b11	12-8=0b11110	19-18=size
+MVE_VxSHL_qr_p	4	iname	MVEVectorVTInfo VTI	q	r	0
+MVE_VxSHL_qr_types	3	iname	bit_7	bit_17	0
+MVE_VBRSR	4	iname	suffix	size	pattern=[]	1	MVE_qDest_rSrc	21-20=size
+MVE_VBRSR_pat_m	2	MVEVectorVTInfo VTI	Instruction Inst	0
+MVE_VMUL_qr_int	3	iname	suffix	size	1	MVE_qDest_rSrc	21-20=size
+MVE_VMUL_qr_int_m	1	MVEVectorVTInfo VTI	0
+MVE_VxxMUL_qr	6	iname	suffix	bit_28	size	vecsize	pattern=[]	1	MVE_qDest_rSrc	21-20=size
+MVE_VxxMUL_qr_m	6	iname	MVEVectorVTInfo VTI	bit_28	Op	Intrinsic int_unpred	Intrinsic int_pred	0
+MVE_VQDMULH_qr_m	1	MVEVectorVTInfo VTI	1	MVE_VxxMUL_qr_m
+MVE_VFMAMLA_qr	7	iname	suffix	bit_28	bits_21_20	S	vecsize	pattern=[]	1	MVE_qDestSrc_rSrc	21-20=bits_21_20
+MVE_VMLA_qr_multi	3	iname	MVEVectorVTInfo VTI	scalar_addend	0
+MVE_VFMA_qr_multi	3	iname	MVEVectorVTInfo VTI	scalar_addend	0
+MVE_VQDMLAH_qr	7	iname	suffix	U	size	bit_5	bit_12	pattern=[]	1	MVE_qDestSrc_rSrc	21-20=size
+MVE_VQDMLAH_qr_multi	4	iname	MVEVectorVTInfo VTI	bit_5	bit_12	0
+MVE_VQDMLAH_qr_types	3	iname	bit_5	bit_12	0
+MVE_VxDUP	6	iname	suffix	size	bit_12	ValueType VT	vxdup	1	MVE_p	6-1=0b110111	25-23=0b100	21-20=size	15-13=Qd	19-17=Rn	11-8=0b1111
+MVE_VxWDUP	5	iname	suffix	size	bit_12	pattern=[]	1	MVE_p	25-23=0b100	6-4=0b110	21-20=size	15-13=Qd	19-17=Rn	3-1=Rm	11-8=0b1111
+MVE_VCTP	2	MVEVectorVTInfo VTI	Intrinsic intr	0
+MVE_VMOV_64bit	5	oops	iops	to_qreg	ops	cstr	1	MVE_VMOV_lane_base	12-5=0b01111000	15-13=Qd	19-16=Rt2	3-0=Rt	31-23=0b111011000
+MVE_vldst24_base	12	writeback	fourregs	stage	size	load	Oops	loadIops	wbIops	iname	ops	cstr	pattern=[]	1	MVE_MI	4-1=0b0000	8-7=size	6-5=stage	12-9=0b1111	15-13=VQd	19-16=Rn	31-22=0b1111110010
+MVE_vldst24_writeback	6	b	Oo	Io	sy=""	c=""	n=""	0
+MVE_vldst24_nvecs	4	int n	list<int> s	b	RegisterOperand vl	0
+MVE_vldst24_lanesize	2	int i	b	0
+MVE_vld24_base	6	MVE_vldst24_nvecs n	pat	size	MVE_vldst24_writeback wb	iname	pattern=[]	1	MVE_vldst24_base
+MVE_vst24_patterns	2	int lanesize	ValueType VT	0
+MVE_ldst_direction	4	b	Oo	Io	c=""	0
+MVE_memsz	5	e	int s	AddrMode m	mn	list<string> types	0
+MVE_VLDRSTR_base	13	MVE_ldst_direction dir	U	P	W	opc	oops	iops	asm	suffix	ops	cstr	vecsize	pattern=[]	1	MVE_p	11-9=0b111	15-13=Qd
+MVE_VLDRSTR_cs	11	MVE_ldst_direction dir	MVE_memsz memsz	P	W	oops	iops	asm	suffix	IndexMode im	ops	cstr	1	MVE_VLDRSTR_base	8-7=memsz.encoding	19-16=addr	6-0=addr
+MVE_VLDRSTR_cw	13	MVE_ldst_direction dir	MVE_memsz memsz	U	P	W	size	oops	iops	asm	suffix	IndexMode im	ops	cstr	1	MVE_VLDRSTR_base	8-7=size	18-16=addr	6-0=addr
+MVE_VLDRSTR_cw_m	6	MVE_ldst_direction dir	MVE_memsz memsz	asm	suffix	U	size	0	18-16=Rn
+MVE_VLDRSTR_cs_m	4	MVE_ldst_direction dir	MVE_memsz memsz	asm	suffix	0	19-16=Rn
+MVE_VLDRSTR_rq	8	MVE_ldst_direction dir	MVE_memsz memsz	U	size	os	asm	suffix	int shift	1	MVE_VLDRSTR_base	8-7=size	19-16=addr	3-1=addr
+MVE_VLDRSTR_rq_w	6	MVE_ldst_direction dir	MVE_memsz memsz	asm	suffix	U	size	0
+MVE_VLDRSTR_rq_b	6	MVE_ldst_direction dir	MVE_memsz memsz	asm	suffix	U	size	1	MVE_VLDRSTR_rq
+MVE_VLDR_rq_b	1	list<MVEVectorVTInfo> VTIs	0
+MVE_VSTR_rq_w	2	MVE_memsz memsz	list<MVEVectorVTInfo> VTIs	0
+MVE_VSTR_rq_b	1	list<MVEVectorVTInfo> VTIs	0
+MVE_VLDRSTR_qi	8	MVE_ldst_direction dir	MVE_memsz memsz	W	wbops	asm	wbAsm	suffix	cstr = ""	1	MVE_VLDRSTR_base	19-17=addr	6-0=addr
+MVE_VLDRSTR_qi_m	4	MVE_ldst_direction dir	MVE_memsz memsz	asm	suffix	0
+MVE_VLDR_qi	3	MVE_memsz memsz	MVEVectorVTInfo AVTI	list<MVEVectorVTInfo> DVTIs	0
+MVE_VSTR_qi	3	MVE_memsz memsz	MVEVectorVTInfo AVTI	list<MVEVectorVTInfo> DVTIs	0
+MVE_VPT	5	suffix	size	iops	asm	pattern=[]	1	MVE_MI	21-20=size	15-13=Mk	19-17=Qn	11-8=0b1111	31-23=0b111111100
+MVE_VPTt1	3	suffix	size	iops	1	MVE_VPT	3-1=Qm
+MVE_VPTt1i	2	suffix	size	1	MVE_VPTt1
+MVE_VPTt1u	2	suffix	size	1	MVE_VPTt1
+MVE_VPTt1s	2	suffix	size	1	MVE_VPTt1
+MVE_VPTt2	3	suffix	size	iops	1	MVE_VPT	3-0=Rm
+MVE_VPTt2i	2	suffix	size	1	MVE_VPTt2
+MVE_VPTt2u	2	suffix	size	1	MVE_VPTt2
+MVE_VPTt2s	2	suffix	size	1	MVE_VPTt2
+MVE_VPTf	5	suffix	size	iops	asm	pattern=[]	1	MVE_MI	21-20=0b11	31-29=0b111	15-13=Mk	27-23=0b11100	19-17=Qn	11-8=0b1111
+MVE_VPTft1	2	suffix	size	1	MVE_VPTf	3-1=Qm
+MVE_VPTft2	2	suffix	size	1	MVE_VPTf	3-0=Rm
+MVE_loltp_start	4	iops	asm	ops	size	1	t2LOL	21-20=size	19-16=Rn
+MVE_DLSTP	2	asm	size	1	MVE_loltp_start	11-1=0b00000000000
+MVE_WLSTP	2	asm	size	1	MVE_loltp_start	10-1=label
+MVE_loltp_end	4	oops	iops	asm	ops	1	t2LOL	22-21=0b00	19-16=0b1111
+MVE_vector_store_typed	4	ValueType Ty	Instruction RegImmInst	PatFrag StoreKind	int shift	1	Pat
+MVE_vector_load_typed	4	ValueType Ty	Instruction RegImmInst	PatFrag LoadKind	int shift	1	Pat
+MVE_vector_offset_store_typed	4	ValueType Ty	Instruction Opcode	PatFrag StoreKind	int shift	1	Pat
+MVEExtLoadStore	6	Instruction LoadSInst	Instruction LoadUInst	StoreInst	Amble	ValueType VT	int Shift	0
+nImmVMOVIAsmOperandReplicate	2	ValueType From	ValueType To	1	AsmOperandClass
+nImmVINVIAsmOperandReplicate	2	ValueType From	ValueType To	1	AsmOperandClass
+nImmVMOVIReplicate	2	ValueType From	ValueType To	1	Operand
+nImmVINVIReplicate	2	ValueType From	ValueType To	1	Operand
+VLDQPseudo	1	InstrItinClass itin	1	PseudoNLdSt	5-4=Rn
+VLDQLNPseudo	1	InstrItinClass itin	1	PseudoNLdSt
+VLD1LN32	5	op11_8	op7_4	Dt	ValueType Ty	PatFrag LoadOp	2	Sched	NLdStLn
+VLD1QLNPseudo	2	ValueType Ty	PatFrag LoadOp	2	VLDQLNPseudo	Sched
+VLD1LNWB	3	op11_8	op7_4	Dt	2	Sched	NLdStLn
+VLD2LN	3	op11_8	op7_4	Dt	2	Sched	NLdStLn
+VLD2LNWB	3	op11_8	op7_4	Dt	1	NLdStLn
+VLD3LN	3	op11_8	op7_4	Dt	2	Sched	NLdStLn
+VLD3LNWB	3	op11_8	op7_4	Dt	2	Sched	NLdStLn
+VLD4LN	3	op11_8	op7_4	Dt	2	Sched	NLdStLn
+VLD4LNWB	3	op11_8	op7_4	Dt	1	NLdStLn
+VLD1DUP	5	op7_4	Dt	ValueType Ty	PatFrag LoadOp	AddrMode	2	Sched	NLdSt
+VLD1QDUP	5	op7_4	Dt	ValueType Ty	PatFrag LoadOp	AddrMode	1	NLdSt
+VLD1DUPWB	3	op7_4	Dt	AddrMode	0
+VLD1QDUPWB	3	op7_4	Dt	AddrMode	0
+VLD2DUP	4	op7_4	Dt	RegisterOperand VdTy	AddrMode	1	NLdSt
+VLDQQPseudoInputDST	1	InstrItinClass itin	1	PseudoNLdSt
+VLD3DUP	2	op7_4	Dt	2	Sched	NLdSt
+VLD3DUPWB	3	op7_4	Dt	AddrMode	2	Sched	NLdSt
+VLD4DUP	2	op7_4	Dt	1	NLdSt
+VLD4DUPWB	2	op7_4	Dt	2	Sched	NLdSt
+VSTQPseudo	1	InstrItinClass itin	1	PseudoNLdSt
+VST1Q	3	op7_4	Dt	AddrMode	2	Sched	NLdSt	5-4=Rn
+VST1DWB	3	op7_4	Dt	AddrMode	0
+VST1QWB	3	op7_4	Dt	AddrMode	0	5-4=Rn
+VST1D3	3	op7_4	Dt	AddrMode	2	Sched	NLdSt
+VST1D3WB	3	op7_4	Dt	AddrMode	0	5-4=Rn
+VST1D4	3	op7_4	Dt	AddrMode	2	Sched	NLdSt	5-4=Rn
+VST1D4WB	3	op7_4	Dt	AddrMode	0	5-4=Rn
+VST2	6	op11_8	op7_4	Dt	RegisterOperand VdTy	InstrItinClass itin	AddrMode	1	NLdSt	5-4=Rn
+VST2DWB	5	op11_8	op7_4	Dt	RegisterOperand VdTy	AddrMode	0	5-4=Rn
+VST2QWB	3	op7_4	Dt	AddrMode	0	5-4=Rn
+VST3D	3	op11_8	op7_4	Dt	2	Sched	NLdSt
+VST3DWB	3	op11_8	op7_4	Dt	2	Sched	NLdSt
+VST4D	3	op11_8	op7_4	Dt	2	Sched	NLdSt	5-4=Rn
+VST4DWB	3	op11_8	op7_4	Dt	2	Sched	NLdSt	5-4=Rn
+VSTQLNPseudo	1	InstrItinClass itin	1	PseudoNLdSt
+VST1QLNPseudo	3	ValueType Ty	PatFrag StoreOp	SDNode ExtractOp	2	Sched	VSTQLNPseudo
+VST1LNWB	7	op11_8	op7_4	Dt	ValueType Ty	PatFrag StoreOp	SDNode ExtractOp	AdrMode	2	Sched	NLdStLn
+VST1QLNWBPseudo	3	ValueType Ty	PatFrag StoreOp	SDNode ExtractOp	2	Sched	VSTQLNWBPseudo
+VST2LN	3	op11_8	op7_4	Dt	2	Sched	NLdStLn
+VST2LNWB	3	op11_8	op7_4	Dt	1	NLdStLn
+VST3LN	3	op11_8	op7_4	Dt	2	Sched	NLdStLn
+VST3LNWB	3	op11_8	op7_4	Dt	1	NLdStLn
+VST4LN	3	op11_8	op7_4	Dt	2	Sched	NLdStLn
+VST4LNWB	3	op11_8	op7_4	Dt	1	NLdStLn
+N2VD	11	op24_23	op21_20	op19_18	op17_16	op11_7	op4	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	SDNode OpNode	1	N2V
+N2VN	13	op24_23	op21_20	op19_18	op17_16	op11_7	op6	op4	InstrItinClass itin	OpcodeStr	Dt	ValueType TyD	ValueType TyQ	SDNode OpNode	1	N2V
+N3VD	12	op24	op23	op21_20	op11_8	op4	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	SDNode OpNode	Commutable	1	N3V
+N3VDX	11	op24	op23	op21_20	op11_8	op4	InstrItinClass itin	OpcodeStr	ValueType ResTy	ValueType OpTy	SDNode OpNode	Commutable	1	N3VX
+N3VDSL	7	op21_20	op11_8	InstrItinClass itin	OpcodeStr	Dt	ValueType Ty	SDNode ShOp	1	N3VLane32
+N3VDSL16	6	op21_20	op11_8	OpcodeStr	Dt	ValueType Ty	SDNode ShOp	1	N3VLane16
+N3VQ	12	op24	op23	op21_20	op11_8	op4	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	SDNode OpNode	Commutable	1	N3V
+N3VQX	11	op24	op23	op21_20	op11_8	op4	InstrItinClass itin	OpcodeStr	ValueType ResTy	ValueType OpTy	SDNode OpNode	Commutable	1	N3VX
+N3VQSL	8	op21_20	op11_8	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	SDNode ShOp	1	N3VLane32
+N3VQSL16	7	op21_20	op11_8	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	SDNode ShOp	1	N3VLane16
+N3VDInt	13	op24	op23	op21_20	op11_8	op4	Format f	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	IntOp	Commutable	1	N3V
+N3VDIntnp	13	op27_23	op21_20	op11_8	op6	op4	Format f	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	IntOp	Commutable	1	N3Vnp
+N3VDIntSL	7	op21_20	op11_8	InstrItinClass itin	OpcodeStr	Dt	ValueType Ty	IntOp	1	N3VLane32
+N3VDIntSL16	7	op21_20	op11_8	InstrItinClass itin	OpcodeStr	Dt	ValueType Ty	IntOp	1	N3VLane16
+N3VDIntSh	12	op24	op23	op21_20	op11_8	op4	Format f	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	IntOp	1	N3V
+N3VQInt	13	op24	op23	op21_20	op11_8	op4	Format f	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	IntOp	Commutable	1	N3V
+N3VQIntnp	13	op27_23	op21_20	op11_8	op6	op4	Format f	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	IntOp	Commutable	1	N3Vnp
+N3VQInt3np	12	op27_23	op21_20	op11_8	op6	op4	Format f	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	IntOp	1	N3Vnp
+N3VQIntSL	8	op21_20	op11_8	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	IntOp	1	N3VLane32
+N3VQIntSL16	8	op21_20	op11_8	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	IntOp	1	N3VLane16
+N3VQIntSh	12	op24	op23	op21_20	op11_8	op4	Format f	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	IntOp	1	N3V
+N3VDMulOp	11	op24	op23	op21_20	op11_8	op4	InstrItinClass itin	OpcodeStr	Dt	ValueType Ty	MulOp	OpNode	1	N3V
+N3VL	12	op24	op23	op21_20	op11_8	op4	InstrItinClass itin	OpcodeStr	Dt	ValueType TyQ	ValueType TyD	SDNode OpNode	Commutable	1	N3V
+N3VLSL	9	op24	op21_20	op11_8	InstrItinClass itin	OpcodeStr	Dt	ValueType TyQ	ValueType TyD	SDNode OpNode	1	N3VLane32
+N3VLIntExt	13	op24	op23	op21_20	op11_8	op4	InstrItinClass itin	OpcodeStr	Dt	ValueType TyQ	ValueType TyD	IntOp	SDNode ExtOp	Commutable	1	N3V
+N3VLInt	12	op24	op23	op21_20	op11_8	op4	InstrItinClass itin	OpcodeStr	Dt	ValueType TyQ	ValueType TyD	IntOp	Commutable	1	N3V
+N3VLIntnp	12	op27_23	op21_20	op11_8	op6	op4	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	IntOp	Commutable	1	N3Vnp
+N3VLIntSL	9	op24	op21_20	op11_8	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	IntOp	1	N3VLane32
+N2VDPLInt	11	op24_23	op21_20	op19_18	op17_16	op11_7	op4	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	IntOp	1	N2V
+N2VLSh	12	op24	op23	op11_8	op7	op6	op4	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	ImmTy	OpNode	1	N2VImm
+N2VDShIns	11	op24	op23	op11_8	op7	op4	ImmTy	Format f	OpcodeStr	Dt	ValueType Ty	SDNode ShOp	1	N2VImm
+N3VQ_cmp	12	op24	op23	op21_20	op11_8	op4	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	PatFrag fc	Commutable	1	N3V
+N3VD_cmp	12	op24	op23	op21_20	op11_8	op4	InstrItinClass itin	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	PatFrag fc	Commutable	1	N3V
+N3V_QHS_cmp	12	op24	op23	op11_8	op4	InstrItinClass itinD16	InstrItinClass itinD32	InstrItinClass itinQ16	InstrItinClass itinQ32	OpcodeStr	Dt	PatFrag fc	Commutable = 0	0
+N2VInt_QHS	10	op24_23	op21_20	op17_16	op11_7	op4	InstrItinClass itinD	InstrItinClass itinQ	OpcodeStr	Dt	IntOp	0
+N2VN_HSD	10	op24_23	op21_20	op17_16	op11_7	op6	op4	InstrItinClass itin	OpcodeStr	Dt	SDNode OpNode	0
+N2VNInt_HSD	10	op24_23	op21_20	op17_16	op11_7	op6	op4	InstrItinClass itin	OpcodeStr	Dt	IntOp	0
+N2VL_QHS	7	op24_23	op11_7	op6	op4	OpcodeStr	Dt	SDNode OpNode	0
+N3V_QHS	12	op24	op23	op11_8	op4	InstrItinClass itinD16	InstrItinClass itinD32	InstrItinClass itinQ16	InstrItinClass itinQ32	OpcodeStr	Dt	SDNode OpNode	Commutable = 0	0
+N3VSL_HS	3	op11_8	OpcodeStr	SDNode ShOp	0
+N3V_QHSD	10	op24	op23	op11_8	op4	InstrItinClass itinD	InstrItinClass itinQ	OpcodeStr	Dt	SDNode OpNode	Commutable = 0	1	N3V_QHS
+N3VInt_HS	13	op24	op23	op11_8	op4	Format f	InstrItinClass itinD16	InstrItinClass itinD32	InstrItinClass itinQ16	InstrItinClass itinQ32	OpcodeStr	Dt	IntOp	Commutable = 0	0
+N3VInt_HSSh	12	op24	op23	op11_8	op4	Format f	InstrItinClass itinD16	InstrItinClass itinD32	InstrItinClass itinQ16	InstrItinClass itinQ32	OpcodeStr	Dt	IntOp	0
+N3VIntSL_HS	8	op11_8	InstrItinClass itinD16	InstrItinClass itinD32	InstrItinClass itinQ16	InstrItinClass itinQ32	OpcodeStr	Dt	IntOp	0
+N3VInt_QHS	13	op24	op23	op11_8	op4	Format f	InstrItinClass itinD16	InstrItinClass itinD32	InstrItinClass itinQ16	InstrItinClass itinQ32	OpcodeStr	Dt	IntOp	Commutable = 0	1	N3VInt_HS
+N3VInt_QHSSh	12	op24	op23	op11_8	op4	Format f	InstrItinClass itinD16	InstrItinClass itinD32	InstrItinClass itinQ16	InstrItinClass itinQ32	OpcodeStr	Dt	IntOp	1	N3VInt_HSSh
+N3VInt_QHSD	13	op24	op23	op11_8	op4	Format f	InstrItinClass itinD16	InstrItinClass itinD32	InstrItinClass itinQ16	InstrItinClass itinQ32	OpcodeStr	Dt	IntOp	Commutable = 0	1	N3VInt_QHS
+N3VInt_QHSDSh	12	op24	op23	op11_8	op4	Format f	InstrItinClass itinD16	InstrItinClass itinD32	InstrItinClass itinQ16	InstrItinClass itinQ32	OpcodeStr	Dt	IntOp	1	N3VInt_QHSSh
+N3VNInt_HSD	8	op24	op23	op11_8	op4	OpcodeStr	Dt	IntOp	Commutable = 0	0
+N3VL_QHS	10	op24	op23	op11_8	op4	InstrItinClass itin16	InstrItinClass itin32	OpcodeStr	Dt	SDNode OpNode	Commutable = 0	0
+N3VLSL_HS	6	op24	op11_8	InstrItinClass itin	OpcodeStr	Dt	SDNode OpNode	0
+N3VLExt_QHS	11	op24	op23	op11_8	op4	InstrItinClass itin16	InstrItinClass itin32	OpcodeStr	Dt	SDNode OpNode	ExtOp	Commutable = 0	0
+N3VLInt_HS	10	op24	op23	op11_8	op4	InstrItinClass itin16	InstrItinClass itin32	OpcodeStr	Dt	IntOp	Commutable = 0	0
+N3VLIntSL_HS	6	op24	op11_8	InstrItinClass itin	OpcodeStr	Dt	IntOp	0
+N3VLInt_QHS	10	op24	op23	op11_8	op4	InstrItinClass itin16	InstrItinClass itin32	OpcodeStr	Dt	IntOp	Commutable = 0	1	N3VLInt_HS
+N3VLIntExt_QHS	10	op24	op23	op11_8	op4	InstrItinClass itin	OpcodeStr	Dt	IntOp	SDNode ExtOp	Commutable = 0	0
+N3VW_QHS	9	op24	op23	op11_8	op4	OpcodeStr	Dt	SDNode OpNode	ExtOp	Commutable = 0	0
+N3VMulOp_QHS	11	op24	op23	op11_8	op4	InstrItinClass itinD16	InstrItinClass itinD32	InstrItinClass itinQ16	InstrItinClass itinQ32	OpcodeStr	Dt	SDNode OpNode	0
+N3VMulOpSL_HS	8	op11_8	InstrItinClass itinD16	InstrItinClass itinD32	InstrItinClass itinQ16	InstrItinClass itinQ32	OpcodeStr	Dt	ShOp	0
+N3VIntOp_QHS	10	op24	op23	op11_8	op4	InstrItinClass itinD	InstrItinClass itinQ	OpcodeStr	Dt	IntOp	SDNode OpNode	0
+N3VInt3_HS	11	op24	op23	op11_8	op4	InstrItinClass itinD16	InstrItinClass itinD32	InstrItinClass itinQ16	InstrItinClass itinQ32	OpcodeStr	Dt	IntOp	0
+N3VInt3_QHS	11	op24	op23	op11_8	op4	InstrItinClass itinD16	InstrItinClass itinD32	InstrItinClass itinQ16	InstrItinClass itinQ32	OpcodeStr	Dt	IntOp	1	N3VInt3_HS
+N3VLMulOp_QHS	10	op24	op23	op11_8	op4	InstrItinClass itin16	InstrItinClass itin32	OpcodeStr	Dt	SDNode MulOp	SDNode OpNode	0
+N3VLMulOpSL_HS	6	op24	op11_8	OpcodeStr	Dt	SDNode MulOp	SDNode OpNode	0
+N3VLInt3_HS	9	op24	op23	op11_8	op4	InstrItinClass itin16	InstrItinClass itin32	OpcodeStr	Dt	IntOp	0
+N3VLInt3SL_HS	5	op24	op11_8	OpcodeStr	Dt	IntOp	0
+N3VLInt3_QHS	9	op24	op23	op11_8	op4	InstrItinClass itin16	InstrItinClass itin32	OpcodeStr	Dt	IntOp	1	N3VLInt3_HS
+N3VLIntExtOp_QHS	10	op24	op23	op11_8	op4	InstrItinClass itin	OpcodeStr	Dt	IntOp	SDNode ExtOp	SDNode OpNode	0
+N2VPLInt_QHS	8	op24_23	op21_20	op17_16	op11_7	op4	OpcodeStr	Dt	IntOp	0
+N2VPLInt2_QHS	8	op24_23	op21_20	op17_16	op11_7	op4	OpcodeStr	Dt	IntOp	0
+N2VShL_QHSD	8	op24	op23	op11_8	op4	InstrItinClass itin	OpcodeStr	Dt	SDNode OpNode	0	21-20=0b01	21-19=0b001
+N2VShR_QHSD	8	op24	op23	op11_8	op4	InstrItinClass itin	OpcodeStr	Dt	SDNode OpNode	0	21-20=0b01	21-19=0b001
+N2VShAdd_QHSD	7	op24	op23	op11_8	op4	OpcodeStr	Dt	SDNode ShOp	0	21-20=0b01	21-19=0b001
+N2VShInsL_QHSD	5	op24	op23	op11_8	op4	OpcodeStr	0	21-20=0b01	21-19=0b001
+N2VShInsR_QHSD	5	op24	op23	op11_8	op4	OpcodeStr	0	21-20=0b01	21-19=0b001
+N2VLSh_QHS	9	op24	op23	op11_8	op7	op6	op4	OpcodeStr	Dt	OpNode	0	21-20=0b01	21-19=0b001
+N2VNSh_HSD	10	op24	op23	op11_8	op7	op6	op4	InstrItinClass itin	OpcodeStr	Dt	OpNode	0	21-20=0b01	21-19=0b001
+VDOT	9	op6	op4	op23	RegTy	Asm	AsmTy	ValueType AccumTy	ValueType InputTy	OpNode	1	N3Vnp
+DOTI	9	opc	dt	Q	U	Ty	ValueType AccumType	ValueType InputType	OpNode	RHS	0
+N3VMatMul	5	B	U	Asm	AsmTy	OpNode	1	N3Vnp
+N3VMixedDotLane	9	Q	U	Asm	AsmTy	RegTy	ValueType AccumTy	ValueType InputTy	OpNode	RHS	0
+SUDOTLane	5	Q	RegTy	ValueType AccumTy	ValueType InputTy	RHS	1	N3VMixedDotLane
+BaseN3VCP8ComplexTied	10	op21	op4	s	q	InstrItinClass itin	oops	iops	opc	dt	pattern	1	N3VCP8	24-23=rot
+BaseN3VCP8ComplexOdd	11	op23	op21	op4	s	q	InstrItinClass itin	oops	iops	opc	dt	pattern	1	N3VCP8
+BaseN3VCP8ComplexTiedLane32	9	op4	s	q	InstrItinClass itin	oops	iops	opc	dt	pattern	1	N3VLaneCP8	21-20=rot
+BaseN3VCP8ComplexTiedLane64	9	op4	s	q	InstrItinClass itin	oops	iops	opc	dt	pattern	1	N3VLaneCP8	21-20=rot
+N3VCP8ComplexTied	3	op21	op4	OpcodeStr	0
+N3VCP8ComplexOdd	4	op23	op21	op4	OpcodeStr	0
+N3VCP8ComplexTiedLane	2	op4	OpcodeStr	0
+N3VCP8F16Q1	7	asm	Td	Tn	Tm	op1	op2	op3	1	N3VCP8	2-0=Vm	19-16=Vn
+VFMQ	3	opc	type	S	1	N3VLaneCP8
+BitwisePatterns	3	Name	OpNodeD	OpNodeQ	0
+N2VLShMax	12	op24	op23	op21_16	op11_8	op7	op6	op4	OpcodeStr	Dt	ValueType ResTy	ValueType OpTy	ImmTy	1	N2VLSh	21-16=op21_16
+VNEGD	4	size	OpcodeStr	Dt	ValueType Ty	1	N2V
+NEONImmReplicateI8InstAlias	1	ValueType To	0
+NEONImmReplicateInstAlias	6	ValueType From	NeonI V8	NeonI V16	NeonI NV8	NeonI NV16	ValueType To	0
+ExtractEltEvenF16	2	ValueType VT4	ValueType VT8	0
+ExtractEltOddF16VMOVH	2	ValueType VT4	ValueType VT8	0
+InsertEltF16	3	ValueType VTScalar	ValueType VT4	ValueType VT8	0
+VDUPD	4	opcod1	opcod3	Dt	ValueType Ty	1	NVDup
+VCVT_FPI	4	op	op10_8	IntS	IntU	0
+VREV64D	4	op19_18	OpcodeStr	Dt	ValueType Ty	1	N2V
+VREV32D	4	op19_18	OpcodeStr	Dt	ValueType Ty	1	N2V
+VREV16D	4	op19_18	OpcodeStr	Dt	ValueType Ty	1	N2V	10-8=index	11-8=index
+VRINT_FPI	3	op	op9_7	Int	0	9-7=op9_7
+AES	4	op	op7	op6	Int	1	N2VQIntXnp
+N2VSPat	2	SDNode OpNode	NeonI Inst	1	NEONFPPat
+Lengthen_Single	3	DestLanes	DestTy	SrcTy	0
+Lengthen_HalfSingle	5	DestLanes	DestTy	SrcTy	InsnLanes	InsnTy	0
+Lengthen_HalfSingle_Big_Endian	6	DestLanes	DestTy	SrcTy	InsnLanes	InsnTy	RevLanes	0
+Lengthen_Double	7	DestLanes	DestTy	SrcTy	Insn1Lanes	Insn1Ty	Insn2Lanes	Insn2Ty	0
+Lengthen_Double_Big_Endian	8	DestLanes	DestTy	SrcTy	Insn1Lanes	Insn1Ty	Insn2Lanes	Insn2Ty	RevLanes	0
+Lengthen_HalfDouble	7	DestLanes	DestTy	SrcTy	Insn1Lanes	Insn1Ty	Insn2Lanes	Insn2Ty	0
+Lengthen_HalfDouble_Big_Endian	7	DestLanes	DestTy	SrcTy	Insn1Lanes	Insn1Ty	Insn2Lanes	Insn2Ty	0
+BF16VDOT	6	op27_23	op21_20	op6	oops	iops	pattern	1	N3Vnp
+BF16VDOTS	5	Q	RegTy	opc	ValueType AccumTy	ValueType InputTy	1	BF16VDOT
+BF16VDOTI	6	Q	RegTy	opc	ValueType AccumTy	ValueType InputTy	RHS	0
+BF16MM	3	Q	RegTy	opc	1	N3Vnp
+VBF16MALQ	3	T	suffix	OpNode	1	N3VCP8
+VBF16MALQI	3	T	suffix	OpNode	0
+OperandUnsignedOffset_b8s2	0	0
+T1SystemEncoding	1	opc	1	T1Encoding	7-0=opc	9-8=0b11
+tHintAlias	3	Asm	Result	EmitPriority = 0	1	tInstAlias
+thumb_st_rr_ri_enc	9	reg_opc	imm_opc	AddrMode_r	AddrMode_i	AddrMode am	InstrItinClass itin_r	InstrItinClass itin_i	asm	PatFrag opnode	0
+T1pIDPEncode	7	opA	oops	iops	InstrItinClass itin	opc	asm	pattern	2	T1DataProcessing	T1pI	2-0=Rn	5-3=Rm
+T1pIMiscEncode	7	opA	oops	iops	InstrItinClass itin	opc	asm	pattern	2	T1pI	T1Misc	2-0=Rd	5-3=Rm
+T1sIDPEncode	7	opA	oops	iops	InstrItinClass itin	opc	asm	pattern	2	T1DataProcessing	T1sI	2-0=Rd	5-3=Rn
+T1sIGenEncode	7	opA	oops	iops	InstrItinClass itin	opc	asm	pattern	2	T1General	T1sI	8-6=Rm	2-0=Rd	5-3=Rn
+T1sIGenEncodeImm	7	opA	oops	iops	InstrItinClass itin	opc	asm	pattern	2	T1General	T1sI	2-0=Rd	5-3=Rm
+T1sItDPEncode	7	opA	oops	iops	InstrItinClass itin	opc	asm	pattern	2	T1DataProcessing	T1sIt	2-0=Rdn	5-3=Rm
+T1sItGenEncodeImm	7	opA	oops	iops	InstrItinClass itin	opc	asm	pattern	2	T1General	T1sIt	10-8=Rdn	7-0=imm8
+T2AddrMode_Imm8	4	i32	2	"SelectT2AddrModeImm8"	[]	0
+T2AddrMode_Imm8s4	4	i32	2	"SelectT2AddrModeImm8<2>"	[]	0
+T2AddrMode_Imm7s4	0	0
+T2sOneRegImm	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2sI	7-0=imm	14-12=imm	11-8=Rd
+T2OneRegCmpImm	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2I	7-0=imm	14-12=imm	19-16=Rn
+T2OneRegShiftedReg	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2I	14-12=ShiftedRm	7-6=ShiftedRm	3-0=ShiftedRm	5-4=ShiftedRm	11-8=Rd
+T2sOneRegShiftedReg	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2sI	14-12=ShiftedRm	7-6=ShiftedRm	3-0=ShiftedRm	5-4=ShiftedRm	11-8=Rd
+T2OneRegCmpShiftedReg	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2I	14-12=ShiftedRm	19-16=Rn	7-6=ShiftedRm	3-0=ShiftedRm	5-4=ShiftedRm
+T2TwoReg	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2I	3-0=Rm	11-8=Rd
+T2sTwoReg	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2sI	3-0=Rm	11-8=Rd
+T2TwoRegCmp	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2I	19-16=Rn	3-0=Rm
+T2TwoRegImm	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2I	7-0=imm	14-12=imm	19-16=Rn	11-8=Rd
+T2sTwoRegImm	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2sI	7-0=imm	14-12=imm	19-16=Rn	11-8=Rd
+T2TwoRegShiftImm	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2I	14-12=imm	7-6=imm	3-0=Rm	11-8=Rd
+T2sTwoRegShiftImm	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2sI	14-12=imm	7-6=imm	3-0=Rm	11-8=Rd
+T2ThreeReg	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2I	19-16=Rn	3-0=Rm	11-8=Rd
+T2ThreeRegNoP	5	oops	iops	InstrItinClass itin	asm	pattern	1	T2XI	19-16=Rn	3-0=Rm	11-8=Rd
+T2sThreeReg	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2sI	19-16=Rn	3-0=Rm	11-8=Rd
+T2TwoRegShiftedReg	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2I	14-12=ShiftedRm	19-16=Rn	7-6=ShiftedRm	3-0=ShiftedRm	5-4=ShiftedRm	11-8=Rd
+T2sTwoRegShiftedReg	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2sI	14-12=ShiftedRm	19-16=Rn	7-6=ShiftedRm	3-0=ShiftedRm	5-4=ShiftedRm	11-8=Rd
+T2FourReg	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2I	15-12=Ra	19-16=Rn	3-0=Rm	11-8=Rd
+T2MulLong	4	opc22_20	opc7_4	opc	pattern	2	Sched	T2I	22-20=opc22_20	15-12=RdLo	7-4=opc7_4	19-16=Rn	3-0=Rm	11-8=RdHi	31-23=0b111110111
+T2MlaLong	3	opc22_20	opc7_4	opc	3	Sched	RegConstraint	T2I	22-20=opc22_20	15-12=RdLo	7-4=opc7_4	19-16=Rn	3-0=Rm	11-8=RdHi	31-23=0b111110111
+T2I_bin_irs	8	opcod	opc	InstrItinClass iii	InstrItinClass iir	InstrItinClass iis	opnode	Commutable = 0	wide = ""	0	31-27=0b11110	14-12=0b000	26-25=0b01	7-6=0b00	24-21=opcod	5-4=0b00
+T2I_bin_w_irs	7	opcod	opc	InstrItinClass iii	InstrItinClass iir	InstrItinClass iis	opnode	Commutable = 0	1	T2I_bin_irs
+T2I_rbin_irs	3	opcod	opc	SDNode opnode	0	31-27=0b11110	14-12=0b000	26-25=0b01	7-6=0b00	24-21=opcod	5-4=0b00
+T2I_bin_s_irs	5	InstrItinClass iii	InstrItinClass iir	InstrItinClass iis	SDNode opnode	Commutable = 0	0
+T2I_rbin_s_is	1	SDNode opnode	0
+T2I_bin_ii12rs	4	op23_21	opc	SDNode opnode	Commutable = 0	0	25-24=0b01	31-27=0b11110	7-0=imm	14-12=imm	23-21=op23_21	26-25=0b01	19-16=Rn	7-6=0b00	5-4=0b00	11-8=Rd
+T2I_adde_sube_irs	5	opcod	opc	SDNode opnode	Commutable = 0	PostISelHook = 0	0	31-27=0b11110	14-12=0b000	26-25=0b01	7-6=0b00	24-21=opcod	5-4=0b00
+T2I_sh_ir	4	opcod	opc	ty	SDNode opnode	0	31-27=0b11101	26-21=0b010010	15-12=0b1111	22-21=opcod	26-23=0b0100	7-4=0b0000	19-16=0b1111	5-4=opcod
+T2I_cmp_irs	7	opcod	opc	LHSGPR	InstrItinClass iii	InstrItinClass iir	InstrItinClass iis	opnode	0	31-27=0b11110	14-12=0b000	26-25=0b01	7-6=0b00	24-21=opcod	5-4=0b00	11-8=0b1111
+T2I_ld	7	signed	opcod	opc	InstrItinClass iii	InstrItinClass iis	target	PatFrag opnode	0	31-25=0b1111100	31-27=0b11111	7-0=addr	11-0=addr	15-12=Rt	22-21=opcod	26-25=0b00	19-16=addr	3-0=addr	11-6=0b000000	5-4=addr
+T2I_st	6	opcod	opc	InstrItinClass iii	InstrItinClass iis	target	PatFrag opnode	0	31-27=0b11111	7-0=addr	11-0=addr	15-12=Rt	22-21=opcod	26-23=0b0001	19-16=addr	3-0=addr	11-6=0b000000	5-4=addr
+T2I_ext_rrot_base	6	opcod	iops	oops	opc	oprs	pattern	1	T2TwoReg	31-27=0b11111	22-20=opcod	15-12=0b1111	26-23=0b0100	19-16=0b1111	5-4=rot
+T2I_ext_rrot	2	opcod	opc	3	Sched	T2I_ext_rrot_base	Requires	31-27=0b11111	22-20=opcod	15-12=0b1111	26-23=0b0100	5-4=rot
+T2PCOneRegImm	5	oops	iops	InstrItinClass itin	asm	pattern	1	T2XI	7-0=label	14-12=label	11-8=Rd
+T2IldT	4	signed	type	opc	InstrItinClass ii	2	T2Ii8p	Sched	10-8=0b110	31-27=0b11111	7-0=addr	15-12=Rt	22-21=type	19-16=addr	26-25=0b00
+T2Ildacq	7	bits23_20	bit54	oops	iops	opc	asm	pattern	2	Thumb2I	Requires	31-27=0b11101	15-12=Rt	23-20=bits23_20	26-24=0b000	19-16=addr	3-0=0b1111	11-6=0b111110	5-4=bit54
+T2IstT	3	type	opc	InstrItinClass ii	2	T2Ii8p	Sched	10-8=0b110	31-27=0b11111	7-0=addr	15-12=Rt	22-21=type	19-16=addr	26-25=0b00
+T2Istrrel	6	bit54	oops	iops	opc	asm	pattern	3	Thumb2I	Sched	Requires	31-27=0b11101	26-20=0b0001100	15-12=Rt	19-16=addr	3-0=0b1111	11-6=0b111110	5-4=bit54
+T2Ipl	3	write	instr	opc	0	31-25=0b1111100	7-0=addr	11-0=addr	15-12=0b1111	19-16=addr	3-0=addr	11-6=0b000000	5-4=addr	11-8=0b1100
+T2Iplpci	2	inst	opc	2	Sched	T2Ipc	31-25=0b1111100	11-0=addr	22-20=0b001	15-12=0b1111	19-16=0b1111
+thumb2_ld_mult	4	asm	InstrItinClass itin	InstrItinClass itin_upd	L_bit	0	31-27=0b11101	19-16=Rn	26-25=0b00	15-0=regs	24-23=0b01
+thumb2_st_mult	4	asm	InstrItinClass itin	InstrItinClass itin_upd	L_bit	0	31-27=0b11101	12-0=regs	19-16=Rn	26-25=0b00	24-23=0b01
+T2I_pam	6	op22_20	op7_4	opc	pat	iops	asm	2	Requires	T2I	31-27=0b11111	22-20=op22_20	15-12=0b1111	26-23=0b0101	7-4=op7_4	19-16=Rn	3-0=Rm	11-8=Rd
+T2I_pam_intrinsics	4	op22_20	op7_4	opc	Intrinsic intrinsic	1	T2I_pam	31-27=0b11111	22-20=op22_20	7-4=op7_4	26-24=0b011
+T2FourReg_mac	9	long	op22_20	op7_4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2FourReg	31-27=0b11111	22-20=op22_20	7-4=op7_4	26-24=0b011
+T2SatI	3	iops	opc	asm	1	T2I	31-24=0b11110011	4-0=sat_imm	14-12=sh	19-16=Rn	7-6=sh	11-8=Rd
+T2BitFI	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2I	4-0=msb	14-12=lsb	7-6=lsb	11-8=Rd
+T2TwoRegBitFI	6	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2BitFI	19-16=Rn
+T2I_un_irs	9	opcod	opc	InstrItinClass iii	InstrItinClass iir	InstrItinClass iis	PatFrag opnode	Cheap = 0	ReMat = 0	MoveImm = 0	0	31-27=0b11110	14-12=0b000	26-25=0b01	19-16=0b1111	7-6=0b00	24-21=opcod	5-4=0b00
+T2FourRegMLA	3	op7_4	opc	pattern	3	T2FourReg	Sched	Requires	31-27=0b11111	22-20=0b000	26-23=0b0110	7-4=op7_4
+T2SMMUL	3	op7_4	opc	pattern	3	T2ThreeReg	Sched	Requires	31-27=0b11111	22-20=0b101	15-12=0b1111	26-23=0b0110	7-4=op7_4
+T2FourRegSMMLA	4	op22_20	op7_4	opc	pattern	3	T2FourReg	Sched	Requires	31-27=0b11111	22-20=op22_20	26-23=0b0110	7-4=op7_4
+T2ThreeRegSMUL	4	op22_20	op5_4	opc	pattern	3	T2ThreeReg	Sched	Requires	31-27=0b11111	22-20=op22_20	15-12=0b1111	26-23=0b0110	7-6=0b00	5-4=op5_4
+T2FourRegSMLA	4	op22_20	op5_4	opc	pattern	3	T2FourReg	Sched	Requires	31-27=0b11111	22-20=op22_20	26-23=0b0110	7-6=0b00	5-4=op5_4
+T2DualHalfMul	4	op22_20	op7_4	opc	Intrinsic intrinsic	3	Sched	T2ThreeReg_mac	Requires	15-12=0b1111
+T2DualHalfMulAdd	4	op22_20	op7_4	opc	Intrinsic intrinsic	2	T2FourReg_mac	Requires	31-27=0b11111	26-21=0b011100	15-12=0b1111	7-4=0b1111
+T2I_misc	8	op1	op2	oops	iops	InstrItinClass itin	opc	asm	pattern	1	T2ThreeReg	21-20=op1	31-27=0b11111	15-12=0b1111	26-22=0b01010	7-6=0b10	5-4=op2
+T2I_crc32	4	C	sz	suffix	builtin	2	T2ThreeRegNoP	Requires	31-27=0b11111	26-21=0b010110	15-12=0b1111	7-6=0b10	5-4=sz
+MOVCCShPseudo	8	(outs rGPR:$Rd)	(ins rGPR:$false	rGPR:$Rm	i32imm:$imm	pred:$p)	4	IIC_iCMOVsi	[]	0
+T2I_ldrex	11	opcod	oops	iops	AddrMode am	int sz	InstrItinClass itin	opc	asm	cstr	pattern	rt2 = 0b1111	1	Thumb2I	31-27=0b11101	26-20=0b0001101	15-12=Rt	7-4=opcod	19-16=addr	3-0=0b1111	11-8=rt2
+T2I_strex	11	opcod	oops	iops	AddrMode am	int sz	InstrItinClass itin	opc	asm	cstr	pattern	rt2 = 0b1111	1	Thumb2I	31-27=0b11101	26-20=0b0001100	15-12=Rt	7-4=opcod	19-16=addr	3-0=Rd	11-8=rt2
+t2CPS	2	iops	asm_op	2	T2XI	Requires	4-0=mode	10-9=imod	7-5=iflags	31-11=0b111100111010111110000
+T2DCPS	2	opt	opc	2	Requires	T2I	1-0=opt	31-27=0b11110	26-20=0b1111000	11-2=0b0000000000	15-12=0b1000	19-16=0b1111
+T2SRS	8	Op	W	oops	iops	InstrItinClass itin	opc	asm	pattern	2	Requires	T2I	31-25=0b1110100	4-0=mode	15-5=0b11000000000	20-16=0b01101	24-23=Op
+T2CI	7	op31_28	oops	iops	opc	asm	pattern	AddrMode am = AddrModeNone	1	T2I	31-28=op31_28	27-25=0b110
+t2LdStCop	5	op31_28	load	Dbit	asm	pattern	0	7-0=addr	15-12=CRd	19-16=addr	11-8=cop
+t2MovRCopro	6	Op	opc	direction	oops	iops	pattern	1	T2Cop	15-12=Rt	23-21=opc1	19-16=CRn	7-5=opc2	3-0=CRm	27-24=0b1110	11-8=cop
+t2MovRRCopro	6	Op	opc	direction	oops	iops	pattern = []	1	T2Cop	15-12=Rt	7-4=opc1	23-21=0b010	19-16=Rt2	3-0=CRm	27-24=0b1100	11-8=cop
+T2TT	3	at	asm	pattern	1	T2I	15-12=0b1111	5-0=0b000000	19-16=Rn	31-20=0b111010000100	7-6=at	11-8=Rt
+V8_1MI	8	oops	iops	AddrMode am	InstrItinClass itin	asm	ops	cstr	pattern	2	Requires	Thumb2XI
+t2BF	3	iops	asm	ops	1	V8_1MI	31-27=0b11110	15-14=0b11
+t2LOL	4	oops	iops	asm	ops	1	V8_1MI	15-14=0b11	31-23=0b111100000
+CS	3	iname	opcode	pattern=[]	1	V8_1MI	15-12=opcode	7-4=fcond	19-16=Rn	31-20=0b111010100101	3-0=Rm	11-8=Rd
+CSPats	2	SDNode Node	Instruction Insn	0
+ModifiedV8_1CSEL	2	Instruction Insn	modvalue	0
+PACBTIAut	3	iops	asm	b	1	V8_1MI	15-12=Ra	11-5=0b1111000	19-16=Rn	31-20=0b111110110101	3-0=Rm
+PACBTIHintSpaceInst	3	asm	ops	imm	2	Requires	Thumb2XI	31-8=0b111100111010111110000000	7-0=imm
+PACBTIHintSpaceNoOpsInst	2	asm	imm	1	PACBTIHintSpaceInst
+PACBTIHintSpaceUseInst	2	asm	imm	1	PACBTIHintSpaceInst
+vfp_ldst_mult	4	asm	L_bit	InstrItinClass itin	InstrItinClass itin_upd	0	24-23=0b01
+vfp_ldstx_mult	2	asm	L_bit	0	24-23=0b01
+vsel_inst	3	op	opc	int CC	0
+vmaxmin_inst	3	op	opc	PatFrags SD	0
+vcvt_inst	3	opc	rm	node = null_frag	0	17-16=rm	3-0=Dm
+vrint_inst_zrx	6	opc	op	op2	node	list<Register> uses = []	fpexc = 0	0
+vrint_inst_anpm	3	opc	rm	node = null_frag	0	17-16=rm
+AVConv1IDs_Encode	10	opcod1	opcod2	opcod3	opcod4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AVConv1I	15-12=Dd	3-0=Sm
+AVConv1InSs_Encode	10	opcod1	opcod2	opcod3	opcod4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AVConv1In	15-12=Sd	3-0=Sm
+AVConv1IHs_Encode	10	opcod1	opcod2	opcod3	opcod4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AVConv1I	15-12=Sd	3-0=Sm
+AVConv1IsD_Encode	10	opcod1	opcod2	opcod3	opcod4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AVConv1I	15-12=Sd	3-0=Dm
+AVConv1InsS_Encode	10	opcod1	opcod2	opcod3	opcod4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AVConv1In	15-12=Sd	3-0=Sm
+AVConv1IsH_Encode	10	opcod1	opcod2	opcod3	opcod4	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AVConv1I	15-12=Sd	3-0=Sm
+AVConv1XInsS_Encode	11	op1	op2	op3	op4	op5	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AVConv1XI	15-12=dst
+AVConv1XInsD_Encode	11	op1	op2	op3	op4	op5	oops	iops	InstrItinClass itin	opc	asm	pattern	1	AVConv1XI	15-12=dst
+MovFromVFP	6	opc19_16	oops	iops	opc	asm	pattern	1	VFPAI	6-5=0b00	15-12=Rt	27-20=0b11101111	19-16=opc19_16	3-0=0b0000	11-8=0b1010
+MovToVFP	6	opc19_16	oops	iops	opc	asm	pattern	1	VFPAI	6-5=0b00	15-12=Rt	27-20=0b11101110	19-16=opc19_16	3-0=0b0000	11-8=0b1010
+vfp_vstrldr	10	opc	P	W	SysReg	sysreg	oops	iops	IndexMode im	Dest	cstr	2	Sched	VFPI	12-7=0b011111	15-13=SysReg	19-16=addr	27-25=0b110	6-0=addr
+vfp_vstrldr_sysreg	5	opc	SysReg	sysreg	oops=(outs)	iops=(ins)	0	19-16=Rn
+ProcNoItin	2	Name	list<SubtargetFeature> Features	1	Processor
+ARMFReg	2	Enc	n	1	Register
+CheckAM2NoShift	1	int n	1	CheckImmOperand_s
+CheckAM2OpSub	1	int n	1	CheckImmOperand_s
+CheckAM2Offset	2	int n	int of	1	CheckImmOperand
+CheckAM3OpSub	1	int n	1	CheckImmOperand_s
+IsRegPCPred	1	int n	1	MCSchedPredicate
+CheckBranchForm	2	int n	BranchWriteRes br	1	SchedWriteVariant
+A57BranchForm	1	SchedWriteRes non_br	1	BranchWriteRes
+A9WriteLMOpsListType	1	list<WriteSequence> writes	0
+M4UnitL1	1	SchedWrite write	1	WriteRes
+M4UnitL2	1	SchedWrite write	1	WriteRes
+M4UnitL3	1	SchedWrite write	1	WriteRes
+M4UnitL14	1	SchedWrite write	1	WriteRes
+M4UnitL1I	1	instr	1	InstRW
+BankedReg	2	name	enc	0

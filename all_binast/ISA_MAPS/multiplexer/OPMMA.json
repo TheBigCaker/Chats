@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "OPMMA",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "OPMMA": {"RISCV": "OPMMA"},
+    "OPMMA_SLIDE": {"RISCV": "OPMMA_SLIDE"}
+  },
+  "INPUTS": {
+    "OPMMA": {"RISCV": []},
+    "OPMMA_SLIDE": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "OPMMA": {"RISCV": []},
+    "OPMMA_SLIDE": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "OPMMA": {"RISCV": ["SMTVDotOpcode","0b1110001"]},
+    "OPMMA_SLIDE": {"RISCV": ["SMTVDotOpcode","0b1110011"]}
+  },
+  "OUTPUT_BYTES": {
+    "OPMMA": {"RISCV": ["SMTVDotOpcode","0b1110001"]},
+    "OPMMA_SLIDE": {"RISCV": ["SMTVDotOpcode","0b1110011"]}
+  }
+}

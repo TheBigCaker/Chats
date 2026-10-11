@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VMSAVE",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMSAVE32": {"X86": "VMSAVE32"},
+    "VMSAVE64": {"X86": "VMSAVE64"}
+  },
+  "INPUTS": {
+    "VMSAVE32": {"X86": []},
+    "VMSAVE64": {"X86": []}
+  },
+  "OUTPUTS": {
+    "VMSAVE32": {"X86": []},
+    "VMSAVE64": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMSAVE32": {"X86": ["0x01"]},
+    "VMSAVE64": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMSAVE32": {"X86": ["0x01"]},
+    "VMSAVE64": {"X86": ["0x01"]}
+  }
+}

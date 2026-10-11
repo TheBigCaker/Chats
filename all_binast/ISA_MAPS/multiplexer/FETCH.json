@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FETCH",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "FETCH_CLAUSE": {"AMDGPU": "FETCH_CLAUSE"}
+  },
+  "INPUTS": {
+    "FETCH_CLAUSE": {"AMDGPU": [["i32imm",32]]}
+  },
+  "OUTPUTS": {
+    "FETCH_CLAUSE": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "FETCH_CLAUSE": {"AMDGPU": ["R600WrapperInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "FETCH_CLAUSE": {"AMDGPU": ["R600WrapperInst"]}
+  }
+}

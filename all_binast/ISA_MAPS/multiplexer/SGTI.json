@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SGTI",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "SGTImm64": {"Mips": "SGTImm64"}
+  },
+  "INPUTS": {
+    "SGTImm64": {"Mips": [["GPR64Opnd",64],["imm64",0]]}
+  },
+  "OUTPUTS": {
+    "SGTImm64": {"Mips": [["GPR64Opnd",64]]}
+  },
+  "INPUT_BYTES": {
+    "SGTImm64": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "SGTImm64": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

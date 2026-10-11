@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WMACC",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "WMACC": {"RISCV": "WMACC"}
+  },
+  "INPUTS": {
+    "WMACC": {"RISCV": [["GPRPairRV32:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "WMACC": {"RISCV": [["GPRPairRV32:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "WMACC": {"RISCV": ["RVPWideningTernary_rrr","0b0101","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "WMACC": {"RISCV": ["RVPWideningTernary_rrr","0b0101","0b01"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMPTRST",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMPTRSTm": {"X86": "VMPTRSTm"}
+  },
+  "INPUTS": {
+    "VMPTRSTm": {"X86": [["i64mem",0]]}
+  },
+  "OUTPUTS": {
+    "VMPTRSTm": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMPTRSTm": {"X86": ["0xC7"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMPTRSTm": {"X86": ["0xC7"]}
+  }
+}

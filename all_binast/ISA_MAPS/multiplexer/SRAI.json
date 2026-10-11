@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SRAI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SRAI": {"RISCV": "SRAI"}
+  },
+  "INPUTS": {
+    "SRAI": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SRAI": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SRAI": {"RISCV": ["Shift_ri","0b01000","0b101"]}
+  },
+  "OUTPUT_BYTES": {
+    "SRAI": {"RISCV": ["Shift_ri","0b01000","0b101"]}
+  }
+}

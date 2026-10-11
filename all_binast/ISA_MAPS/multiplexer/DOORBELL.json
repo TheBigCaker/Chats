@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DOORBELL",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "DOORBELL": {"Mali": "DOORBELL"}
+  },
+  "INPUTS": {
+    "DOORBELL": {"Mali": [["R32",32]]}
+  },
+  "OUTPUTS": {
+    "DOORBELL": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "DOORBELL": {"Mali": ["Bifrost_add","0xd7860","0xffff8"]}
+  },
+  "OUTPUT_BYTES": {
+    "DOORBELL": {"Mali": ["Bifrost_add","0xd7860","0xffff8"]}
+  }
+}

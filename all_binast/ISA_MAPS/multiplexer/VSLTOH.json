@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSLTOH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VSLTOH": {"ARM": "VSLTOH"}
+  },
+  "INPUTS": {
+    "VSLTOH": {"ARM": [["SPR",0],["fbits32",0]]}
+  },
+  "OUTPUTS": {
+    "VSLTOH": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSLTOH": {"ARM": ["AVConv1XInsS_Encode","0b11101","0b11","0b1010","0b1001","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSLTOH": {"ARM": ["AVConv1XInsS_Encode","0b11101","0b11","0b1010","0b1001","1"]}
+  }
+}

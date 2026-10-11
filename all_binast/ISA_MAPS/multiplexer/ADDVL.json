@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ADDVL",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "ADDVL_XXI": {"AArch64": "ADDVL_XXI"}
+  },
+  "INPUTS": {
+    "ADDVL_XXI": {"AArch64": [["GPR64sp:$Rn",64],["simm6_32b:$imm6",0]]}
+  },
+  "OUTPUTS": {
+    "ADDVL_XXI": {"AArch64": [["GPR64sp:$Rd",64]]}
+  },
+  "INPUT_BYTES": {
+    "ADDVL_XXI": {"AArch64": ["sve_int_arith_vl","0b0"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADDVL_XXI": {"AArch64": ["sve_int_arith_vl","0b0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "USAX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "USAX": {"ARM": "USAX"}
+  },
+  "INPUTS": {
+    "USAX": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "USAX": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "USAX": {"ARM": ["AAIIntrinsic","0b01100101","0b11110101"]}
+  },
+  "OUTPUT_BYTES": {
+    "USAX": {"ARM": ["AAIIntrinsic","0b01100101","0b11110101"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SUMOPU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SUMOPUnitStride": {"RISCV": "SUMOPUnitStride"},
+    "SUMOPUnitStrideMask": {"RISCV": "SUMOPUnitStrideMask"},
+    "SUMOPUnitStrideWholeReg": {"RISCV": "SUMOPUnitStrideWholeReg"}
+  },
+  "INPUTS": {
+    "SUMOPUnitStride": {"RISCV": []},
+    "SUMOPUnitStrideMask": {"RISCV": []},
+    "SUMOPUnitStrideWholeReg": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SUMOPUnitStride": {"RISCV": []},
+    "SUMOPUnitStrideMask": {"RISCV": []},
+    "SUMOPUnitStrideWholeReg": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SUMOPUnitStride": {"RISCV": ["RISCVSUMOP","0b00000"]},
+    "SUMOPUnitStrideMask": {"RISCV": ["RISCVSUMOP","0b01011"]},
+    "SUMOPUnitStrideWholeReg": {"RISCV": ["RISCVSUMOP","0b01000"]}
+  },
+  "OUTPUT_BYTES": {
+    "SUMOPUnitStride": {"RISCV": ["RISCVSUMOP","0b00000"]},
+    "SUMOPUnitStrideMask": {"RISCV": ["RISCVSUMOP","0b01011"]},
+    "SUMOPUnitStrideWholeReg": {"RISCV": ["RISCVSUMOP","0b01000"]}
+  }
+}

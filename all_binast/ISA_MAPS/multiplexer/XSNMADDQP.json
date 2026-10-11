@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSNMADDQP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSNMADDQP": {"PowerPC": "XSNMADDQP"}
+  },
+  "INPUTS": {
+    "XSNMADDQP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSNMADDQP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSNMADDQP": {"PowerPC": ["X_VT5_VA5_VB5_FMA","63","452"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSNMADDQP": {"PowerPC": ["X_VT5_VA5_VB5_FMA","63","452"]}
+  }
+}

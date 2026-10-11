@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VXSAT",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VXSAT": {"RISCV": "VXSAT"}
+  },
+  "INPUTS": {
+    "VXSAT": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VXSAT": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VXSAT": {"RISCV": ["RISCVReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VXSAT": {"RISCV": ["RISCVReg","0"]}
+  }
+}

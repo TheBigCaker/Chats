@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PKHBT",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "PKHBT": {"ARM": "PKHBT"}
+  },
+  "INPUTS": {
+    "PKHBT": {"ARM": [["GPRnopc",0],["GPRnopc",0],["pkh_lsl_amt",0]]}
+  },
+  "OUTPUTS": {
+    "PKHBT": {"ARM": [["GPRnopc",0]]}
+  },
+  "INPUT_BYTES": {
+    "PKHBT": {"ARM": ["APKHI","0b01101000","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "PKHBT": {"ARM": ["APKHI","0b01101000","0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BCCZ",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "BCCZi64": {"ARM": "BCCZi64"}
+  },
+  "INPUTS": {
+    "BCCZi64": {"ARM": [["i32imm",32],["GPR",64],["GPR",64],["brtarget",0]]}
+  },
+  "OUTPUTS": {
+    "BCCZi64": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "BCCZi64": {"ARM": ["PseudoInst","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "BCCZi64": {"ARM": ["PseudoInst","0","0"]}
+  }
+}

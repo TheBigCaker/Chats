@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFNMAH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFNMAH": {"ARM": "VFNMAH"}
+  },
+  "INPUTS": {
+    "VFNMAH": {"ARM": [["HPR",0],["HPR",0],["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VFNMAH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFNMAH": {"ARM": ["AHbI","0b11101","0b01","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFNMAH": {"ARM": ["AHbI","0b11101","0b01","1","0"]}
+  }
+}

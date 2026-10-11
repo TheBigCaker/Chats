@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BRANCHC",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "BRANCHC.i16": {"Mali": "BRANCHC.i16"},
+    "BRANCHC.i32": {"Mali": "BRANCHC.i32"}
+  },
+  "INPUTS": {
+    "BRANCHC.i16": {"Mali": [["R32",32],["R32",32]]},
+    "BRANCHC.i32": {"Mali": [["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "BRANCHC.i16": {"Mali": [["R",32]]},
+    "BRANCHC.i32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "BRANCHC.i16": {"Mali": ["Bifrost_add","0x6f030","0xff830"]},
+    "BRANCHC.i32": {"Mali": ["Bifrost_add","0x6f238","0xffa38"]}
+  },
+  "OUTPUT_BYTES": {
+    "BRANCHC.i16": {"Mali": ["Bifrost_add","0x6f030","0xff830"]},
+    "BRANCHC.i32": {"Mali": ["Bifrost_add","0x6f238","0xffa38"]}
+  }
+}

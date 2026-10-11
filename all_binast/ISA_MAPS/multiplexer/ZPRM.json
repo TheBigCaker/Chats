@@ -1,0 +1,64 @@
+{
+  "CATEGORY": "ZPRM",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "ZPRMul2_Lo": {"AArch64": "ZPRMul2_Lo"},
+    "ZPRMul2_Hi": {"AArch64": "ZPRMul2_Hi"},
+    "ZPRMul2AsmOp8_Lo": {"AArch64": "ZPRMul2AsmOp8_Lo"},
+    "ZPRMul2AsmOp8_Hi": {"AArch64": "ZPRMul2AsmOp8_Hi"},
+    "ZPRMul2AsmOp16_Lo": {"AArch64": "ZPRMul2AsmOp16_Lo"},
+    "ZPRMul2AsmOp16_Hi": {"AArch64": "ZPRMul2AsmOp16_Hi"},
+    "ZPRMul2AsmOp32_Lo": {"AArch64": "ZPRMul2AsmOp32_Lo"},
+    "ZPRMul2AsmOp32_Hi": {"AArch64": "ZPRMul2AsmOp32_Hi"},
+    "ZPRMul2AsmOp64_Lo": {"AArch64": "ZPRMul2AsmOp64_Lo"},
+    "ZPRMul2AsmOp64_Hi": {"AArch64": "ZPRMul2AsmOp64_Hi"}
+  },
+  "INPUTS": {
+    "ZPRMul2_Lo": {"AArch64": []},
+    "ZPRMul2_Hi": {"AArch64": []},
+    "ZPRMul2AsmOp8_Lo": {"AArch64": []},
+    "ZPRMul2AsmOp8_Hi": {"AArch64": []},
+    "ZPRMul2AsmOp16_Lo": {"AArch64": []},
+    "ZPRMul2AsmOp16_Hi": {"AArch64": []},
+    "ZPRMul2AsmOp32_Lo": {"AArch64": []},
+    "ZPRMul2AsmOp32_Hi": {"AArch64": []},
+    "ZPRMul2AsmOp64_Lo": {"AArch64": []},
+    "ZPRMul2AsmOp64_Hi": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "ZPRMul2_Lo": {"AArch64": []},
+    "ZPRMul2_Hi": {"AArch64": []},
+    "ZPRMul2AsmOp8_Lo": {"AArch64": []},
+    "ZPRMul2AsmOp8_Hi": {"AArch64": []},
+    "ZPRMul2AsmOp16_Lo": {"AArch64": []},
+    "ZPRMul2AsmOp16_Hi": {"AArch64": []},
+    "ZPRMul2AsmOp32_Lo": {"AArch64": []},
+    "ZPRMul2AsmOp32_Hi": {"AArch64": []},
+    "ZPRMul2AsmOp64_Lo": {"AArch64": []},
+    "ZPRMul2AsmOp64_Hi": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "ZPRMul2_Lo": {"AArch64": ["ZPRClass","0","14","2"]},
+    "ZPRMul2_Hi": {"AArch64": ["ZPRClass","16","30","2"]},
+    "ZPRMul2AsmOp8_Lo": {"AArch64": ["ZPRAsmOperand","8"]},
+    "ZPRMul2AsmOp8_Hi": {"AArch64": ["ZPRAsmOperand","8"]},
+    "ZPRMul2AsmOp16_Lo": {"AArch64": ["ZPRAsmOperand","16"]},
+    "ZPRMul2AsmOp16_Hi": {"AArch64": ["ZPRAsmOperand","16"]},
+    "ZPRMul2AsmOp32_Lo": {"AArch64": ["ZPRAsmOperand","32"]},
+    "ZPRMul2AsmOp32_Hi": {"AArch64": ["ZPRAsmOperand","32"]},
+    "ZPRMul2AsmOp64_Lo": {"AArch64": ["ZPRAsmOperand","64"]},
+    "ZPRMul2AsmOp64_Hi": {"AArch64": ["ZPRAsmOperand","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZPRMul2_Lo": {"AArch64": ["ZPRClass","0","14","2"]},
+    "ZPRMul2_Hi": {"AArch64": ["ZPRClass","16","30","2"]},
+    "ZPRMul2AsmOp8_Lo": {"AArch64": ["ZPRAsmOperand","8"]},
+    "ZPRMul2AsmOp8_Hi": {"AArch64": ["ZPRAsmOperand","8"]},
+    "ZPRMul2AsmOp16_Lo": {"AArch64": ["ZPRAsmOperand","16"]},
+    "ZPRMul2AsmOp16_Hi": {"AArch64": ["ZPRAsmOperand","16"]},
+    "ZPRMul2AsmOp32_Lo": {"AArch64": ["ZPRAsmOperand","32"]},
+    "ZPRMul2AsmOp32_Hi": {"AArch64": ["ZPRAsmOperand","32"]},
+    "ZPRMul2AsmOp64_Lo": {"AArch64": ["ZPRAsmOperand","64"]},
+    "ZPRMul2AsmOp64_Hi": {"AArch64": ["ZPRAsmOperand","64"]}
+  }
+}

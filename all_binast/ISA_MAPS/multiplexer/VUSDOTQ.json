@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUSDOTQ",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VUSDOTQ": {"ARM": "VUSDOTQ"}
+  },
+  "INPUTS": {
+    "VUSDOTQ": {"ARM": [["RegTy:$Vd",0],["RegTy:$Vn",0],["RegTy:$Vm",0]]}
+  },
+  "OUTPUTS": {
+    "VUSDOTQ": {"ARM": [["RegTy:$dst",0]]}
+  },
+  "INPUT_BYTES": {
+    "VUSDOTQ": {"ARM": ["VDOT","1","0","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUSDOTQ": {"ARM": ["VDOT","1","0","1"]}
+  }
+}

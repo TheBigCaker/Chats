@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TRECHKPT",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "TRECHKPT": {"PowerPC": "TRECHKPT"}
+  },
+  "INPUTS": {
+    "TRECHKPT": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "TRECHKPT": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "TRECHKPT": {"PowerPC": ["XForm_base_r3xo","31","1006"]}
+  },
+  "OUTPUT_BYTES": {
+    "TRECHKPT": {"PowerPC": ["XForm_base_r3xo","31","1006"]}
+  }
+}

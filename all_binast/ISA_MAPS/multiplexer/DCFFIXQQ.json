@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DCFFIXQQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DCFFIXQQ": {"PowerPC": "DCFFIXQQ"}
+  },
+  "INPUTS": {
+    "DCFFIXQQ": {"PowerPC": [["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "DCFFIXQQ": {"PowerPC": [["fpairrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "DCFFIXQQ": {"PowerPC": ["XForm_26","63","994"]}
+  },
+  "OUTPUT_BYTES": {
+    "DCFFIXQQ": {"PowerPC": ["XForm_26","63","994"]}
+  }
+}

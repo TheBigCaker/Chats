@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SHIFT",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "SHIFT_DOUBLE.i32": {"Mali": "SHIFT_DOUBLE.i32"}
+  },
+  "INPUTS": {
+    "SHIFT_DOUBLE.i32": {"Mali": [["R32",32],["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "SHIFT_DOUBLE.i32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "SHIFT_DOUBLE.i32": {"Mali": ["Bifrost_add","0xefe00","0xffe00"]}
+  },
+  "OUTPUT_BYTES": {
+    "SHIFT_DOUBLE.i32": {"Mali": ["Bifrost_add","0xefe00","0xffe00"]}
+  }
+}

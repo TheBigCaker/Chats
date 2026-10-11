@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FLOOR",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "FLOOR": {"AMDGPU": "FLOOR"}
+  },
+  "INPUTS": {
+    "FLOOR": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "FLOOR": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "FLOOR": {"AMDGPU": ["R600_1OP_Helper","0x14"]}
+  },
+  "OUTPUT_BYTES": {
+    "FLOOR": {"AMDGPU": ["R600_1OP_Helper","0x14"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "OUTSL",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "OUTSL": {"X86": "OUTSL"}
+  },
+  "INPUTS": {
+    "OUTSL": {"X86": [["srcidx32",0]]}
+  },
+  "OUTPUTS": {
+    "OUTSL": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "OUTSL": {"X86": ["0x6F"]}
+  },
+  "OUTPUT_BYTES": {
+    "OUTSL": {"X86": ["0x6F"]}
+  }
+}

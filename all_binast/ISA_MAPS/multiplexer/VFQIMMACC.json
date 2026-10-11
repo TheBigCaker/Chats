@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFQIMMACC",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFQIMMACC_VV": {"RISCV": "VFQIMMACC_VV"}
+  },
+  "INPUTS": {
+    "VFQIMMACC_VV": {"RISCV": [["VR:$vd",0],["VR:$vs1",0],["VR:$vs2",0],["VScaleOp:$vm",0]]}
+  },
+  "OUTPUTS": {
+    "VFQIMMACC_VV": {"RISCV": [["VR:$vd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFQIMMACC_VV": {"RISCV": ["VIFMEMACScaleVV","0b111010"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFQIMMACC_VV": {"RISCV": ["VIFMEMACScaleVV","0b111010"]}
+  }
+}

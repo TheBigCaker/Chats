@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "JALR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "JALR": {"RISCV": "JALR"}
+  },
+  "INPUTS": {
+    "JALR": {"RISCV": [["GPR",64],["simm12_lo_optional",0]]}
+  },
+  "OUTPUTS": {
+    "JALR": {"RISCV": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "JALR": {"RISCV": ["RVInstI","0b000"]}
+  },
+  "OUTPUT_BYTES": {
+    "JALR": {"RISCV": ["RVInstI","0b000"]}
+  }
+}

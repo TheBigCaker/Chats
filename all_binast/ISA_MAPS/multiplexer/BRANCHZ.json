@@ -1,0 +1,59 @@
+{
+  "CATEGORY": "BRANCHZ",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "BRANCHZ.f16": {"Mali": "BRANCHZ.f16"},
+    "BRANCHZ.f32": {"Mali": "BRANCHZ.f32"},
+    "BRANCHZ.i16": {"Mali": "BRANCHZ.i16"},
+    "BRANCHZ.i32": {"Mali": "BRANCHZ.i32"},
+    "BRANCHZ.s16": {"Mali": "BRANCHZ.s16"},
+    "BRANCHZ.s32": {"Mali": "BRANCHZ.s32"},
+    "BRANCHZ.u16": {"Mali": "BRANCHZ.u16"},
+    "BRANCHZ.u32": {"Mali": "BRANCHZ.u32"},
+    "BRANCHZ": {"Mali": "BRANCHZ"}
+  },
+  "INPUTS": {
+    "BRANCHZ.f16": {"Mali": [["R32",32],["R32",32]]},
+    "BRANCHZ.f32": {"Mali": [["R32",32],["R32",32]]},
+    "BRANCHZ.i16": {"Mali": [["R32",32],["R32",32]]},
+    "BRANCHZ.i32": {"Mali": [["R32",32],["R32",32]]},
+    "BRANCHZ.s16": {"Mali": [["R32",32],["R32",32]]},
+    "BRANCHZ.s32": {"Mali": [["R32",32],["R32",32]]},
+    "BRANCHZ.u16": {"Mali": [["R32",32],["R32",32]]},
+    "BRANCHZ.u32": {"Mali": [["R32",32],["R32",32]]},
+    "BRANCHZ": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "BRANCHZ.f16": {"Mali": [["R",32]]},
+    "BRANCHZ.f32": {"Mali": [["R",32]]},
+    "BRANCHZ.i16": {"Mali": [["R",32]]},
+    "BRANCHZ.i32": {"Mali": [["R",32]]},
+    "BRANCHZ.s16": {"Mali": [["R",32]]},
+    "BRANCHZ.s32": {"Mali": [["R",32]]},
+    "BRANCHZ.u16": {"Mali": [["R",32]]},
+    "BRANCHZ.u32": {"Mali": [["R",32]]},
+    "BRANCHZ": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "BRANCHZ.f16": {"Mali": ["Bifrost_add","0x6f000","0xff000"]},
+    "BRANCHZ.f32": {"Mali": ["Bifrost_add","0x6f000","0xff030"]},
+    "BRANCHZ.i16": {"Mali": ["Bifrost_add","0x6f800","0xffe00"]},
+    "BRANCHZ.i32": {"Mali": ["Bifrost_add","0x6f800","0xffe30"]},
+    "BRANCHZ.s16": {"Mali": ["Bifrost_add","0x6f008","0xff008"]},
+    "BRANCHZ.s32": {"Mali": ["Bifrost_add","0x6f008","0xff038"]},
+    "BRANCHZ.u16": {"Mali": ["Bifrost_add","0x6f000","0xff008"]},
+    "BRANCHZ.u32": {"Mali": ["Bifrost_add","0x6f000","0xff038"]},
+    "BRANCHZ": {"Mali": ["Valhall_CVT"]}
+  },
+  "OUTPUT_BYTES": {
+    "BRANCHZ.f16": {"Mali": ["Bifrost_add","0x6f000","0xff000"]},
+    "BRANCHZ.f32": {"Mali": ["Bifrost_add","0x6f000","0xff030"]},
+    "BRANCHZ.i16": {"Mali": ["Bifrost_add","0x6f800","0xffe00"]},
+    "BRANCHZ.i32": {"Mali": ["Bifrost_add","0x6f800","0xffe30"]},
+    "BRANCHZ.s16": {"Mali": ["Bifrost_add","0x6f008","0xff008"]},
+    "BRANCHZ.s32": {"Mali": ["Bifrost_add","0x6f008","0xff038"]},
+    "BRANCHZ.u16": {"Mali": ["Bifrost_add","0x6f000","0xff008"]},
+    "BRANCHZ.u32": {"Mali": ["Bifrost_add","0x6f000","0xff038"]},
+    "BRANCHZ": {"Mali": ["Valhall_CVT"]}
+  }
+}

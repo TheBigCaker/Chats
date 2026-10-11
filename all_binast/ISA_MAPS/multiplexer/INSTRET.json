@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "INSTRET",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "INSTRET": {"RISCV": "INSTRET"}
+  },
+  "INPUTS": {
+    "INSTRET": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "INSTRET": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "INSTRET": {"RISCV": ["SysReg","0xC02"]}
+  },
+  "OUTPUT_BYTES": {
+    "INSTRET": {"RISCV": ["SysReg","0xC02"]}
+  }
+}

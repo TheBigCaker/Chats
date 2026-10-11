@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VTOULS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VTOULS": {"ARM": "VTOULS"}
+  },
+  "INPUTS": {
+    "VTOULS": {"ARM": [["SPR",0],["fbits32",0]]}
+  },
+  "OUTPUTS": {
+    "VTOULS": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VTOULS": {"ARM": ["AVConv1XInsS_Encode","0b11101","0b11","0b1111","0b1010","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VTOULS": {"ARM": ["AVConv1XInsS_Encode","0b11101","0b11","0b1111","0b1010","1"]}
+  }
+}

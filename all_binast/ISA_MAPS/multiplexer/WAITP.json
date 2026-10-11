@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WAITP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "WAITP10": {"PowerPC": "WAITP10"}
+  },
+  "INPUTS": {
+    "WAITP10": {"PowerPC": [["u2imm",2],["u2imm",2]]}
+  },
+  "OUTPUTS": {
+    "WAITP10": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "WAITP10": {"PowerPC": ["XForm_IMM2_IMM2","31","30"]}
+  },
+  "OUTPUT_BYTES": {
+    "WAITP10": {"PowerPC": ["XForm_IMM2_IMM2","31","30"]}
+  }
+}

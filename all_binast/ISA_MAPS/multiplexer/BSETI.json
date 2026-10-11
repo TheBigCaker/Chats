@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BSETI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "BSETI": {"RISCV": "BSETI"}
+  },
+  "INPUTS": {
+    "BSETI": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "BSETI": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "BSETI": {"RISCV": ["Shift_ri","0b00101","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "BSETI": {"RISCV": ["Shift_ri","0b00101","0b001"]}
+  }
+}

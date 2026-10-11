@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "PNCLIPP",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PNCLIPP_B": {"RISCV": "PNCLIPP_B"},
+    "PNCLIPP_H": {"RISCV": "PNCLIPP_H"},
+    "PNCLIPP_W": {"RISCV": "PNCLIPP_W"}
+  },
+  "INPUTS": {
+    "PNCLIPP_B": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PNCLIPP_H": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PNCLIPP_W": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PNCLIPP_B": {"RISCV": [["GPR:$rd",0]]},
+    "PNCLIPP_H": {"RISCV": [["GPR:$rd",0]]},
+    "PNCLIPP_W": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "PNCLIPP_B": {"RISCV": ["RVPBinary_rr","0b1000","0b00","0b010"]},
+    "PNCLIPP_H": {"RISCV": ["RVPBinary_rr","0b1000","0b01","0b010"]},
+    "PNCLIPP_W": {"RISCV": ["RVPBinary_rr","0b1000","0b11","0b010"]}
+  },
+  "OUTPUT_BYTES": {
+    "PNCLIPP_B": {"RISCV": ["RVPBinary_rr","0b1000","0b00","0b010"]},
+    "PNCLIPP_H": {"RISCV": ["RVPBinary_rr","0b1000","0b01","0b010"]},
+    "PNCLIPP_W": {"RISCV": ["RVPBinary_rr","0b1000","0b11","0b010"]}
+  }
+}

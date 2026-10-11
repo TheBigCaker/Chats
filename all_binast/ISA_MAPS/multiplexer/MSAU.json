@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MSAU",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MSAUnmap": {"Mips": "MSAUnmap"}
+  },
+  "INPUTS": {
+    "MSAUnmap": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "MSAUnmap": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "MSAUnmap": {"Mips": ["MipsReg","7"]}
+  },
+  "OUTPUT_BYTES": {
+    "MSAUnmap": {"Mips": ["MipsReg","7"]}
+  }
+}

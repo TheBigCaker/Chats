@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "VMV",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VMV_X_S": {"RISCV": "VMV_X_S"},
+    "VMV_S_X": {"RISCV": "VMV_S_X"},
+    "VMV0": {"RISCV": "VMV0"}
+  },
+  "INPUTS": {
+    "VMV_X_S": {"RISCV": [["VR",0]]},
+    "VMV_S_X": {"RISCV": [["VR",0],["GPR",64]]},
+    "VMV0": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VMV_X_S": {"RISCV": [["GPR",64]]},
+    "VMV_S_X": {"RISCV": [["VR",0]]},
+    "VMV0": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VMV_X_S": {"RISCV": ["RVInstVUnaryRd","0b010000","0b00000"]},
+    "VMV_S_X": {"RISCV": ["RVInstVX","0b010000"]},
+    "VMV0": {"RISCV": ["VReg","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMV_X_S": {"RISCV": ["RVInstVUnaryRd","0b010000","0b00000"]},
+    "VMV_S_X": {"RISCV": ["RVInstVX","0b010000"]},
+    "VMV0": {"RISCV": ["VReg","1"]}
+  }
+}

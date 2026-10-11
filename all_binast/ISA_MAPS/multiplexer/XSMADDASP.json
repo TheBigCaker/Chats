@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSMADDASP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSMADDASP": {"PowerPC": "XSMADDASP"}
+  },
+  "INPUTS": {
+    "XSMADDASP": {"PowerPC": [["vssrc",0],["vssrc",0],["vssrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSMADDASP": {"PowerPC": [["vssrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSMADDASP": {"PowerPC": ["XX3Form","60","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSMADDASP": {"PowerPC": ["XX3Form","60","1"]}
+  }
+}

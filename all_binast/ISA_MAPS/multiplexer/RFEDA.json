@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "RFEDA",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "RFEDA": {"ARM": "RFEDA"},
+    "RFEDA_UPD": {"ARM": "RFEDA_UPD"}
+  },
+  "INPUTS": {
+    "RFEDA": {"ARM": [["GPR:$Rn",0]]},
+    "RFEDA_UPD": {"ARM": [["GPR:$Rn",0]]}
+  },
+  "OUTPUTS": {
+    "RFEDA": {"ARM": []},
+    "RFEDA_UPD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "RFEDA": {"ARM": ["RFEI","0"]},
+    "RFEDA_UPD": {"ARM": ["RFEI","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "RFEDA": {"ARM": ["RFEI","0"]},
+    "RFEDA_UPD": {"ARM": ["RFEI","1"]}
+  }
+}

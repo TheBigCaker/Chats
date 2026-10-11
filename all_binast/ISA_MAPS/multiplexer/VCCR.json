@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCCR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VCCR": {"ARM": "VCCR"}
+  },
+  "INPUTS": {
+    "VCCR": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VCCR": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VCCR": {"ARM": ["RegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCCR": {"ARM": ["RegisterClass","32"]}
+  }
+}

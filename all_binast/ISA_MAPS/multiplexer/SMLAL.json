@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SMLAL",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SMLAL": {"ARM": "SMLAL"},
+    "SMLALv5": {"ARM": "SMLALv5"}
+  },
+  "INPUTS": {
+    "SMLAL": {"ARM": [["GPR",64],["GPR",64],["GPR",64],["GPR",64]]},
+    "SMLALv5": {"ARM": [["GPR",64],["GPR",64],["GPR",64],["GPR",64],["pred",0],["cc_out",0]]}
+  },
+  "OUTPUTS": {
+    "SMLAL": {"ARM": [["GPR",64],["GPR",64]]},
+    "SMLALv5": {"ARM": [["GPR",64],["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "SMLAL": {"ARM": ["AsMla1I64","0b0000111"]},
+    "SMLALv5": {"ARM": ["ARMPseudoExpand","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMLAL": {"ARM": ["AsMla1I64","0b0000111"]},
+    "SMLALv5": {"ARM": ["ARMPseudoExpand","4"]}
+  }
+}

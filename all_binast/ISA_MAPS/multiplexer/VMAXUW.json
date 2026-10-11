@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMAXUW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMAXUW": {"PowerPC": "VMAXUW"}
+  },
+  "INPUTS": {
+    "VMAXUW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMAXUW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMAXUW": {"PowerPC": ["VX1_Int_Ty","130"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMAXUW": {"PowerPC": ["VX1_Int_Ty","130"]}
+  }
+}

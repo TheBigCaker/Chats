@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "SPILL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SPILL_QUADWORD": {"PowerPC": "SPILL_QUADWORD"},
+    "SPILL_ACC": {"PowerPC": "SPILL_ACC"},
+    "SPILL_UACC": {"PowerPC": "SPILL_UACC"},
+    "SPILL_WACC": {"PowerPC": "SPILL_WACC"},
+    "SPILL_DMRP": {"PowerPC": "SPILL_DMRP"},
+    "SPILL_DMR": {"PowerPC": "SPILL_DMR"}
+  },
+  "INPUTS": {
+    "SPILL_QUADWORD": {"PowerPC": [["g8prc",0],["memrix",0]]},
+    "SPILL_ACC": {"PowerPC": [["acc",0],["memrix16",0]]},
+    "SPILL_UACC": {"PowerPC": [["uacc",0],["memrix16",0]]},
+    "SPILL_WACC": {"PowerPC": [["wacc",0],["memrix16",0]]},
+    "SPILL_DMRP": {"PowerPC": [["dmrp",0],["memrix16",0]]},
+    "SPILL_DMR": {"PowerPC": [["dmr",0],["memrix16",0]]}
+  },
+  "OUTPUTS": {
+    "SPILL_QUADWORD": {"PowerPC": []},
+    "SPILL_ACC": {"PowerPC": []},
+    "SPILL_UACC": {"PowerPC": []},
+    "SPILL_WACC": {"PowerPC": []},
+    "SPILL_DMRP": {"PowerPC": []},
+    "SPILL_DMR": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "SPILL_QUADWORD": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "SPILL_ACC": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "SPILL_UACC": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "SPILL_WACC": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "SPILL_DMRP": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "SPILL_DMR": {"PowerPC": ["PPCEmitTimePseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "SPILL_QUADWORD": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "SPILL_ACC": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "SPILL_UACC": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "SPILL_WACC": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "SPILL_DMRP": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "SPILL_DMR": {"PowerPC": ["PPCEmitTimePseudo"]}
+  }
+}

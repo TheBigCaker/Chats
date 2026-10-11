@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "WMMAO",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "WMMAOpSelVOP3PMods": {"AMDGPU": "WMMAOpSelVOP3PMods"},
+    "WMMAOpSel": {"AMDGPU": "WMMAOpSel"}
+  },
+  "INPUTS": {
+    "WMMAOpSelVOP3PMods": {"AMDGPU": []},
+    "WMMAOpSel": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "WMMAOpSelVOP3PMods": {"AMDGPU": []},
+    "WMMAOpSel": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "WMMAOpSelVOP3PMods": {"AMDGPU": ["ComplexPattern","1"]},
+    "WMMAOpSel": {"AMDGPU": ["WMMAType","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "WMMAOpSelVOP3PMods": {"AMDGPU": ["ComplexPattern","1"]},
+    "WMMAOpSel": {"AMDGPU": ["WMMAType","0b10"]}
+  }
+}

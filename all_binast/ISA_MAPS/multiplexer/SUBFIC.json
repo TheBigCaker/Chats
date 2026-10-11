@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SUBFIC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SUBFIC8": {"PowerPC": "SUBFIC8"}
+  },
+  "INPUTS": {
+    "SUBFIC8": {"PowerPC": [["g8rc",0],["s16imm64",16]]}
+  },
+  "OUTPUTS": {
+    "SUBFIC8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "SUBFIC8": {"PowerPC": ["DForm_2","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "SUBFIC8": {"PowerPC": ["DForm_2","8"]}
+  }
+}

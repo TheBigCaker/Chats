@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "POPSS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "POPSS16": {"X86": "POPSS16"},
+    "POPSS32": {"X86": "POPSS32"}
+  },
+  "INPUTS": {
+    "POPSS16": {"X86": []},
+    "POPSS32": {"X86": []}
+  },
+  "OUTPUTS": {
+    "POPSS16": {"X86": []},
+    "POPSS32": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "POPSS16": {"X86": ["0x17"]},
+    "POPSS32": {"X86": ["0x17"]}
+  },
+  "OUTPUT_BYTES": {
+    "POPSS16": {"X86": ["0x17"]},
+    "POPSS32": {"X86": ["0x17"]}
+  }
+}

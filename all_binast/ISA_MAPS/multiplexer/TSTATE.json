@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TSTATE",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "TSTATE": {"Sparc": "TSTATE"}
+  },
+  "INPUTS": {
+    "TSTATE": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "TSTATE": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "TSTATE": {"Sparc": ["SparcCtrlReg","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "TSTATE": {"Sparc": ["SparcCtrlReg","2"]}
+  }
+}

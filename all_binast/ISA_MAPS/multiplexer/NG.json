@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NG",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "NGetLnFrm": {"ARM": "NGetLnFrm"}
+  },
+  "INPUTS": {
+    "NGetLnFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "NGetLnFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "NGetLnFrm": {"ARM": ["Format","27"]}
+  },
+  "OUTPUT_BYTES": {
+    "NGetLnFrm": {"ARM": ["Format","27"]}
+  }
+}

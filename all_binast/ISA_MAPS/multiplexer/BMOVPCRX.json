@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BMOVPCRX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "BMOVPCRX_CALL": {"ARM": "BMOVPCRX_CALL"}
+  },
+  "INPUTS": {
+    "BMOVPCRX_CALL": {"ARM": [["tGPR",0]]}
+  },
+  "OUTPUTS": {
+    "BMOVPCRX_CALL": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "BMOVPCRX_CALL": {"ARM": ["ARMPseudoInst","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "BMOVPCRX_CALL": {"ARM": ["ARMPseudoInst","8"]}
+  }
+}

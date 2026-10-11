@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VBPERMD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VBPERMD": {"PowerPC": "VBPERMD"}
+  },
+  "INPUTS": {
+    "VBPERMD": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VBPERMD": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VBPERMD": {"PowerPC": ["VX1_Int_Ty3","1484"]}
+  },
+  "OUTPUT_BYTES": {
+    "VBPERMD": {"PowerPC": ["VX1_Int_Ty3","1484"]}
+  }
+}

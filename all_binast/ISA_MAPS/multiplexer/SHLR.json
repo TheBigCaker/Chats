@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SHLR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SHLR": {"RISCV": "SHLR"}
+  },
+  "INPUTS": {
+    "SHLR": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "SHLR": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "SHLR": {"RISCV": ["RVPBinaryScalar_rr","0b011","0b11","0b010"]}
+  },
+  "OUTPUT_BYTES": {
+    "SHLR": {"RISCV": ["RVPBinaryScalar_rr","0b011","0b11","0b010"]}
+  }
+}

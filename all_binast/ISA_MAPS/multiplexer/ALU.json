@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "ALU",
+  "BACKENDS": ["PowerPC","AMDGPU"],
+  "INDEX": {
+    "ALU": {"PowerPC": "ALU"},
+    "ALU_CLAUSE": {"AMDGPU": "ALU_CLAUSE"},
+    "ALU_LITERAL_X": {"AMDGPU": "ALU_LITERAL_X"},
+    "ALU_LITERAL_Y": {"AMDGPU": "ALU_LITERAL_Y"},
+    "ALU_LITERAL_Z": {"AMDGPU": "ALU_LITERAL_Z"},
+    "ALU_LITERAL_W": {"AMDGPU": "ALU_LITERAL_W"},
+    "ALU_CONST": {"AMDGPU": "ALU_CONST"},
+    "ALU_PARAM": {"AMDGPU": "ALU_PARAM"}
+  },
+  "INPUTS": {
+    "ALU": {"PowerPC": []},
+    "ALU_CLAUSE": {"AMDGPU": [["i32imm",32]]},
+    "ALU_LITERAL_X": {"AMDGPU": []},
+    "ALU_LITERAL_Y": {"AMDGPU": []},
+    "ALU_LITERAL_Z": {"AMDGPU": []},
+    "ALU_LITERAL_W": {"AMDGPU": []},
+    "ALU_CONST": {"AMDGPU": []},
+    "ALU_PARAM": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "ALU": {"PowerPC": []},
+    "ALU_CLAUSE": {"AMDGPU": []},
+    "ALU_LITERAL_X": {"AMDGPU": []},
+    "ALU_LITERAL_Y": {"AMDGPU": []},
+    "ALU_LITERAL_Z": {"AMDGPU": []},
+    "ALU_LITERAL_W": {"AMDGPU": []},
+    "ALU_CONST": {"AMDGPU": []},
+    "ALU_PARAM": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "ALU": {"PowerPC": ["ProcResource","4"]},
+    "ALU_CLAUSE": {"AMDGPU": ["R600WrapperInst"]},
+    "ALU_LITERAL_X": {"AMDGPU": ["R600RegWithChan","253"]},
+    "ALU_LITERAL_Y": {"AMDGPU": ["R600RegWithChan","253"]},
+    "ALU_LITERAL_Z": {"AMDGPU": ["R600RegWithChan","253"]},
+    "ALU_LITERAL_W": {"AMDGPU": ["R600RegWithChan","253"]},
+    "ALU_CONST": {"AMDGPU": ["R600Reg","0"]},
+    "ALU_PARAM": {"AMDGPU": ["R600Reg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "ALU": {"PowerPC": ["ProcResource","4"]},
+    "ALU_CLAUSE": {"AMDGPU": ["R600WrapperInst"]},
+    "ALU_LITERAL_X": {"AMDGPU": ["R600RegWithChan","253"]},
+    "ALU_LITERAL_Y": {"AMDGPU": ["R600RegWithChan","253"]},
+    "ALU_LITERAL_Z": {"AMDGPU": ["R600RegWithChan","253"]},
+    "ALU_LITERAL_W": {"AMDGPU": ["R600RegWithChan","253"]},
+    "ALU_CONST": {"AMDGPU": ["R600Reg","0"]},
+    "ALU_PARAM": {"AMDGPU": ["R600Reg","0"]}
+  }
+}

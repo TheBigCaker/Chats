@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VFQWDOTA",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFQWDOTA_VV": {"RISCV": "VFQWDOTA_VV"},
+    "VFQWDOTA_ALT_VV": {"RISCV": "VFQWDOTA_ALT_VV"}
+  },
+  "INPUTS": {
+    "VFQWDOTA_VV": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["VR:$vs1",0],["VMaskOp:$vm",0]]},
+    "VFQWDOTA_ALT_VV": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["VR:$vs1",0],["VMaskOp:$vm",0]]}
+  },
+  "OUTPUTS": {
+    "VFQWDOTA_VV": {"RISCV": [["VR:$vd_wb",0]]},
+    "VFQWDOTA_ALT_VV": {"RISCV": [["VR:$vd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFQWDOTA_VV": {"RISCV": ["ZvdotVALUVV","0b100110"]},
+    "VFQWDOTA_ALT_VV": {"RISCV": ["ZvdotVALUVV","0b100111"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFQWDOTA_VV": {"RISCV": ["ZvdotVALUVV","0b100110"]},
+    "VFQWDOTA_ALT_VV": {"RISCV": ["ZvdotVALUVV","0b100111"]}
+  }
+}

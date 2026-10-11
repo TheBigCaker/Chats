@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SHADD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SHADD16": {"ARM": "SHADD16"},
+    "SHADD8": {"ARM": "SHADD8"}
+  },
+  "INPUTS": {
+    "SHADD16": {"ARM": []},
+    "SHADD8": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SHADD16": {"ARM": []},
+    "SHADD8": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SHADD16": {"ARM": ["AAIIntrinsic","0b01100011","0b11110001"]},
+    "SHADD8": {"ARM": ["AAIIntrinsic","0b01100011","0b11111001"]}
+  },
+  "OUTPUT_BYTES": {
+    "SHADD16": {"ARM": ["AAIIntrinsic","0b01100011","0b11110001"]},
+    "SHADD8": {"ARM": ["AAIIntrinsic","0b01100011","0b11111001"]}
+  }
+}

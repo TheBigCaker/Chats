@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AC",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "AC0_64": {"Mips": "AC0_64"}
+  },
+  "INPUTS": {
+    "AC0_64": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "AC0_64": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "AC0_64": {"Mips": ["ACCReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "AC0_64": {"Mips": ["ACCReg","0"]}
+  }
+}

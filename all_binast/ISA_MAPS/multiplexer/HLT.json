@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HLT",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "HLT": {"ARM": "HLT"}
+  },
+  "INPUTS": {
+    "HLT": {"ARM": [["imm0_65535",0]]}
+  },
+  "OUTPUTS": {
+    "HLT": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "HLT": {"ARM": ["AInoP"]}
+  },
+  "OUTPUT_BYTES": {
+    "HLT": {"ARM": ["AInoP"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSTRS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VSTRS": {"ARM": "VSTRS"}
+  },
+  "INPUTS": {
+    "VSTRS": {"ARM": [["SPR",0],["addrmode5",0]]}
+  },
+  "OUTPUTS": {
+    "VSTRS": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VSTRS": {"ARM": ["ASI5","0b1101","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSTRS": {"ARM": ["ASI5","0b1101","0b00"]}
+  }
+}

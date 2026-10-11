@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFREC",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFREC7_V": {"RISCV": "VFREC7_V"}
+  },
+  "INPUTS": {
+    "VFREC7_V": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VFREC7_V": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VFREC7_V": {"RISCV": ["VRCP_FV_VS2","0b010011","0b00101"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFREC7_V": {"RISCV": ["VRCP_FV_VS2","0b010011","0b00101"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MTVSRQM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MTVSRQM": {"PowerPC": "MTVSRQM"}
+  },
+  "INPUTS": {
+    "MTVSRQM": {"PowerPC": [["g8rc",0]]}
+  },
+  "OUTPUTS": {
+    "MTVSRQM": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MTVSRQM": {"PowerPC": ["VXForm_RD5_XO5_RS5","1602","20"]}
+  },
+  "OUTPUT_BYTES": {
+    "MTVSRQM": {"PowerPC": ["VXForm_RD5_XO5_RS5","1602","20"]}
+  }
+}

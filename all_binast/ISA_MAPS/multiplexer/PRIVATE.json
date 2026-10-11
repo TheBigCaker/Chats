@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PRIVATE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "PRIVATE_RSRC_REG": {"AMDGPU": "PRIVATE_RSRC_REG"}
+  },
+  "INPUTS": {
+    "PRIVATE_RSRC_REG": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "PRIVATE_RSRC_REG": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "PRIVATE_RSRC_REG": {"AMDGPU": ["SIReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "PRIVATE_RSRC_REG": {"AMDGPU": ["SIReg","0"]}
+  }
+}

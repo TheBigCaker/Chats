@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VCMPEQUQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCMPEQUQ": {"PowerPC": "VCMPEQUQ"},
+    "VCMPEQUQ_rec": {"PowerPC": "VCMPEQUQ_rec"}
+  },
+  "INPUTS": {
+    "VCMPEQUQ": {"PowerPC": []},
+    "VCMPEQUQ_rec": {"PowerPC": [["vrrc:$VA",0],["vrrc:$VB",0]]}
+  },
+  "OUTPUTS": {
+    "VCMPEQUQ": {"PowerPC": []},
+    "VCMPEQUQ_rec": {"PowerPC": [["vrrc:$VD",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCMPEQUQ": {"PowerPC": ["VCMP","455"]},
+    "VCMPEQUQ_rec": {"PowerPC": ["VCMP_rec","455"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCMPEQUQ": {"PowerPC": ["VCMP","455"]},
+    "VCMPEQUQ_rec": {"PowerPC": ["VCMP_rec","455"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MSAR",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MSARequest": {"Mips": "MSARequest"}
+  },
+  "INPUTS": {
+    "MSARequest": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "MSARequest": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "MSARequest": {"Mips": ["MipsReg","5"]}
+  },
+  "OUTPUT_BYTES": {
+    "MSARequest": {"Mips": ["MipsReg","5"]}
+  }
+}

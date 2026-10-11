@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WSUBAU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "WSUBAU": {"RISCV": "WSUBAU"}
+  },
+  "INPUTS": {
+    "WSUBAU": {"RISCV": [["GPRPairRV32:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "WSUBAU": {"RISCV": [["GPRPairRV32:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "WSUBAU": {"RISCV": ["RVPWideningTernary_rrr","0b1011","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "WSUBAU": {"RISCV": ["RVPWideningTernary_rrr","0b1011","0b01"]}
+  }
+}

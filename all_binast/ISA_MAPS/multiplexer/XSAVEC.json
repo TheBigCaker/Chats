@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSAVEC",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XSAVEC": {"X86": "XSAVEC"}
+  },
+  "INPUTS": {
+    "XSAVEC": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "XSAVEC": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "XSAVEC": {"X86": ["0xC7"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSAVEC": {"X86": ["0xC7"]}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "VEXTSH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VEXTSH2W": {"PowerPC": "VEXTSH2W"},
+    "VEXTSH2D": {"PowerPC": "VEXTSH2D"},
+    "VEXTSH2Ws": {"PowerPC": "VEXTSH2Ws"},
+    "VEXTSH2Ds": {"PowerPC": "VEXTSH2Ds"}
+  },
+  "INPUTS": {
+    "VEXTSH2W": {"PowerPC": []},
+    "VEXTSH2D": {"PowerPC": []},
+    "VEXTSH2Ws": {"PowerPC": []},
+    "VEXTSH2Ds": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VEXTSH2W": {"PowerPC": []},
+    "VEXTSH2D": {"PowerPC": []},
+    "VEXTSH2Ws": {"PowerPC": []},
+    "VEXTSH2Ds": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VEXTSH2W": {"PowerPC": ["VX_VT5_EO5_VB5","1538","17"]},
+    "VEXTSH2D": {"PowerPC": ["VX_VT5_EO5_VB5","1538","25"]},
+    "VEXTSH2Ws": {"PowerPC": ["VX_VT5_EO5_VB5s","1538","17"]},
+    "VEXTSH2Ds": {"PowerPC": ["VX_VT5_EO5_VB5s","1538","25"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEXTSH2W": {"PowerPC": ["VX_VT5_EO5_VB5","1538","17"]},
+    "VEXTSH2D": {"PowerPC": ["VX_VT5_EO5_VB5","1538","25"]},
+    "VEXTSH2Ws": {"PowerPC": ["VX_VT5_EO5_VB5s","1538","17"]},
+    "VEXTSH2Ds": {"PowerPC": ["VX_VT5_EO5_VB5s","1538","25"]}
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "CATEGORY": "ACC",
+  "BACKENDS": ["Mips","PowerPC"],
+  "INDEX": {
+    "ACC64": {"Mips": "ACC64"},
+    "ACC128": {"Mips": "ACC128"},
+    "ACC64DSP": {"Mips": "ACC64DSP"},
+    "ACC0": {"PowerPC": "ACC0"},
+    "ACC1": {"PowerPC": "ACC1"},
+    "ACC2": {"PowerPC": "ACC2"},
+    "ACC3": {"PowerPC": "ACC3"},
+    "ACC4": {"PowerPC": "ACC4"},
+    "ACC5": {"PowerPC": "ACC5"},
+    "ACC6": {"PowerPC": "ACC6"},
+    "ACC7": {"PowerPC": "ACC7"}
+  },
+  "INPUTS": {
+    "ACC64": {"Mips": []},
+    "ACC128": {"Mips": []},
+    "ACC64DSP": {"Mips": []},
+    "ACC0": {"PowerPC": []},
+    "ACC1": {"PowerPC": []},
+    "ACC2": {"PowerPC": []},
+    "ACC3": {"PowerPC": []},
+    "ACC4": {"PowerPC": []},
+    "ACC5": {"PowerPC": []},
+    "ACC6": {"PowerPC": []},
+    "ACC7": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "ACC64": {"Mips": []},
+    "ACC128": {"Mips": []},
+    "ACC64DSP": {"Mips": []},
+    "ACC0": {"PowerPC": []},
+    "ACC1": {"PowerPC": []},
+    "ACC2": {"PowerPC": []},
+    "ACC3": {"PowerPC": []},
+    "ACC4": {"PowerPC": []},
+    "ACC5": {"PowerPC": []},
+    "ACC6": {"PowerPC": []},
+    "ACC7": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "ACC64": {"Mips": ["RegisterClass","64"]},
+    "ACC128": {"Mips": ["RegisterClass","128"]},
+    "ACC64DSP": {"Mips": ["RegisterClass","64","0"]},
+    "ACC0": {"PowerPC": ["ACC","0"]},
+    "ACC1": {"PowerPC": ["ACC","1"]},
+    "ACC2": {"PowerPC": ["ACC","2"]},
+    "ACC3": {"PowerPC": ["ACC","3"]},
+    "ACC4": {"PowerPC": ["ACC","4"]},
+    "ACC5": {"PowerPC": ["ACC","5"]},
+    "ACC6": {"PowerPC": ["ACC","6"]},
+    "ACC7": {"PowerPC": ["ACC","7"]}
+  },
+  "OUTPUT_BYTES": {
+    "ACC64": {"Mips": ["RegisterClass","64"]},
+    "ACC128": {"Mips": ["RegisterClass","128"]},
+    "ACC64DSP": {"Mips": ["RegisterClass","64","0"]},
+    "ACC0": {"PowerPC": ["ACC","0"]},
+    "ACC1": {"PowerPC": ["ACC","1"]},
+    "ACC2": {"PowerPC": ["ACC","2"]},
+    "ACC3": {"PowerPC": ["ACC","3"]},
+    "ACC4": {"PowerPC": ["ACC","4"]},
+    "ACC5": {"PowerPC": ["ACC","5"]},
+    "ACC6": {"PowerPC": ["ACC","6"]},
+    "ACC7": {"PowerPC": ["ACC","7"]}
+  }
+}

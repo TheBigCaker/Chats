@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STACKALLOC",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "STACKALLOC_W_PROBING": {"X86": "STACKALLOC_W_PROBING"}
+  },
+  "INPUTS": {
+    "STACKALLOC_W_PROBING": {"X86": [["i64imm",64]]}
+  },
+  "OUTPUTS": {
+    "STACKALLOC_W_PROBING": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "STACKALLOC_W_PROBING": {"X86": ["0"]}
+  },
+  "OUTPUT_BYTES": {
+    "STACKALLOC_W_PROBING": {"X86": ["0"]}
+  }
+}

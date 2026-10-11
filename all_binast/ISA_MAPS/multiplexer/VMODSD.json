@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMODSD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMODSD": {"PowerPC": "VMODSD"}
+  },
+  "INPUTS": {
+    "VMODSD": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMODSD": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMODSD": {"PowerPC": ["VXForm_1","1995"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMODSD": {"PowerPC": ["VXForm_1","1995"]}
+  }
+}

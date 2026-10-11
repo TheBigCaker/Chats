@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AMDGPUF",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "AMDGPUFmasOp": {"AMDGPU": "AMDGPUFmasOp"}
+  },
+  "INPUTS": {
+    "AMDGPUFmasOp": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "AMDGPUFmasOp": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "AMDGPUFmasOp": {"AMDGPU": ["SDTypeProfile","1","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "AMDGPUFmasOp": {"AMDGPU": ["SDTypeProfile","1","4"]}
+  }
+}

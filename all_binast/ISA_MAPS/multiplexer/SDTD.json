@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SDTD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SDTDynOp": {"PowerPC": "SDTDynOp"},
+    "SDTDynAreaOp": {"PowerPC": "SDTDynAreaOp"}
+  },
+  "INPUTS": {
+    "SDTDynOp": {"PowerPC": []},
+    "SDTDynAreaOp": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "SDTDynOp": {"PowerPC": []},
+    "SDTDynAreaOp": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "SDTDynOp": {"PowerPC": ["SDTypeProfile","1","2"]},
+    "SDTDynAreaOp": {"PowerPC": ["SDTypeProfile","1","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTDynOp": {"PowerPC": ["SDTypeProfile","1","2"]},
+    "SDTDynAreaOp": {"PowerPC": ["SDTypeProfile","1","1"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XXEXTRACTUW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXEXTRACTUW": {"PowerPC": "XXEXTRACTUW"}
+  },
+  "INPUTS": {
+    "XXEXTRACTUW": {"PowerPC": [["vsrc",0],["u4imm",4]]}
+  },
+  "OUTPUTS": {
+    "XXEXTRACTUW": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XXEXTRACTUW": {"PowerPC": ["XX2_RD6_UIM5_RS6","60","165"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXEXTRACTUW": {"PowerPC": ["XX2_RD6_UIM5_RS6","60","165"]}
+  }
+}

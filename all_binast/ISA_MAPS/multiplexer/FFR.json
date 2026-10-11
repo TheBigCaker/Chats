@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FFR",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "FFR": {"AArch64": "FFR"}
+  },
+  "INPUTS": {
+    "FFR": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "FFR": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "FFR": {"AArch64": ["AArch64Reg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FFR": {"AArch64": ["AArch64Reg","0"]}
+  }
+}

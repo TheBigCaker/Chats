@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DREGSNOZ",
+  "BACKENDS": ["AVR"],
+  "INDEX": {
+    "DREGSNOZ": {"AVR": "DREGSNOZ"}
+  },
+  "INPUTS": {
+    "DREGSNOZ": {"AVR": []}
+  },
+  "OUTPUTS": {
+    "DREGSNOZ": {"AVR": []}
+  },
+  "INPUT_BYTES": {
+    "DREGSNOZ": {"AVR": ["RegisterClass","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "DREGSNOZ": {"AVR": ["RegisterClass","8"]}
+  }
+}

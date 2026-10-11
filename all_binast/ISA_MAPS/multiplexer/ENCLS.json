@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ENCLS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "ENCLS": {"X86": "ENCLS"}
+  },
+  "INPUTS": {
+    "ENCLS": {"X86": []}
+  },
+  "OUTPUTS": {
+    "ENCLS": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "ENCLS": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "ENCLS": {"X86": ["0x01"]}
+  }
+}

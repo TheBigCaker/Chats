@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "GPRTC",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "GPRTC": {"RISCV": "GPRTC"}
+  },
+  "INPUTS": {
+    "GPRTC": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "GPRTC": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "GPRTC": {"RISCV": ["GPRRegisterClass","6","10","28"]}
+  },
+  "OUTPUT_BYTES": {
+    "GPRTC": {"RISCV": ["GPRRegisterClass","6","10","28"]}
+  }
+}

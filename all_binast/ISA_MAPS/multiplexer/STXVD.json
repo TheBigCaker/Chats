@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STXVD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STXVD2X": {"PowerPC": "STXVD2X"}
+  },
+  "INPUTS": {
+    "STXVD2X": {"PowerPC": [["vsrc",0],["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "STXVD2X": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STXVD2X": {"PowerPC": ["XX1Form_memOp","31","972"]}
+  },
+  "OUTPUT_BYTES": {
+    "STXVD2X": {"PowerPC": ["XX1Form_memOp","31","972"]}
+  }
+}

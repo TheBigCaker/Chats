@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "FPSUB",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FPSUB16": {"Sparc": "FPSUB16"},
+    "FPSUB16S": {"Sparc": "FPSUB16S"},
+    "FPSUB32": {"Sparc": "FPSUB32"},
+    "FPSUB32S": {"Sparc": "FPSUB32S"}
+  },
+  "INPUTS": {
+    "FPSUB16": {"Sparc": []},
+    "FPSUB16S": {"Sparc": []},
+    "FPSUB32": {"Sparc": []},
+    "FPSUB32S": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FPSUB16": {"Sparc": []},
+    "FPSUB16S": {"Sparc": []},
+    "FPSUB32": {"Sparc": []},
+    "FPSUB32S": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FPSUB16": {"Sparc": ["VISInst","0b001010100"]},
+    "FPSUB16S": {"Sparc": ["VISInst","0b001010101"]},
+    "FPSUB32": {"Sparc": ["VISInst","0b001010110"]},
+    "FPSUB32S": {"Sparc": ["VISInst","0b001010111"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPSUB16": {"Sparc": ["VISInst","0b001010100"]},
+    "FPSUB16S": {"Sparc": ["VISInst","0b001010101"]},
+    "FPSUB32": {"Sparc": ["VISInst","0b001010110"]},
+    "FPSUB32S": {"Sparc": ["VISInst","0b001010111"]}
+  }
+}

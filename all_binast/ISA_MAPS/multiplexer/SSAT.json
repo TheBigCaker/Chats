@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SSAT",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SSAT": {"ARM": "SSAT"},
+    "SSAT16": {"ARM": "SSAT16"}
+  },
+  "INPUTS": {
+    "SSAT": {"ARM": [["imm1_32",0],["GPRnopc",0],["shift_imm",0]]},
+    "SSAT16": {"ARM": [["imm1_16",0],["GPRnopc",0]]}
+  },
+  "OUTPUTS": {
+    "SSAT": {"ARM": [["GPRnopc",0]]},
+    "SSAT16": {"ARM": [["GPRnopc",0]]}
+  },
+  "INPUT_BYTES": {
+    "SSAT": {"ARM": ["AI"]},
+    "SSAT16": {"ARM": ["AI"]}
+  },
+  "OUTPUT_BYTES": {
+    "SSAT": {"ARM": ["AI"]},
+    "SSAT16": {"ARM": ["AI"]}
+  }
+}

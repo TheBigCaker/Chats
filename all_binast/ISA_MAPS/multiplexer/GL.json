@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "GL",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "GL": {"Sparc": "GL"}
+  },
+  "INPUTS": {
+    "GL": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "GL": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "GL": {"Sparc": ["SparcCtrlReg","16"]}
+  },
+  "OUTPUT_BYTES": {
+    "GL": {"Sparc": ["SparcCtrlReg","16"]}
+  }
+}

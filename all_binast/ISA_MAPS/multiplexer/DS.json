@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "DS",
+  "BACKENDS": ["X86","AMDGPU"],
+  "INDEX": {
+    "DS_PREFIX": {"X86": "DS_PREFIX"},
+    "DS_DIRECT_LOAD": {"AMDGPU": "DS_DIRECT_LOAD"},
+    "DS_PARAM_LOAD": {"AMDGPU": "DS_PARAM_LOAD"},
+    "DS_SWIZZLE_B32": {"AMDGPU": "DS_SWIZZLE_B32"},
+    "DS1Addr1Offset": {"AMDGPU": "DS1Addr1Offset"},
+    "DS64Bit4ByteAligned": {"AMDGPU": "DS64Bit4ByteAligned"},
+    "DS128Bit8ByteAligned": {"AMDGPU": "DS128Bit8ByteAligned"}
+  },
+  "INPUTS": {
+    "DS_PREFIX": {"X86": []},
+    "DS_DIRECT_LOAD": {"AMDGPU": []},
+    "DS_PARAM_LOAD": {"AMDGPU": []},
+    "DS_SWIZZLE_B32": {"AMDGPU": []},
+    "DS1Addr1Offset": {"AMDGPU": []},
+    "DS64Bit4ByteAligned": {"AMDGPU": []},
+    "DS128Bit8ByteAligned": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "DS_PREFIX": {"X86": []},
+    "DS_DIRECT_LOAD": {"AMDGPU": []},
+    "DS_PARAM_LOAD": {"AMDGPU": []},
+    "DS_SWIZZLE_B32": {"AMDGPU": []},
+    "DS1Addr1Offset": {"AMDGPU": []},
+    "DS64Bit4ByteAligned": {"AMDGPU": []},
+    "DS128Bit8ByteAligned": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "DS_PREFIX": {"X86": ["0x3E"]},
+    "DS_DIRECT_LOAD": {"AMDGPU": ["DSDIR_Pseudo","1"]},
+    "DS_PARAM_LOAD": {"AMDGPU": ["DSDIR_Pseudo","0"]},
+    "DS_SWIZZLE_B32": {"AMDGPU": ["DS_1A_RET","0"]},
+    "DS1Addr1Offset": {"AMDGPU": ["ComplexPattern","2"]},
+    "DS64Bit4ByteAligned": {"AMDGPU": ["ComplexPattern","3"]},
+    "DS128Bit8ByteAligned": {"AMDGPU": ["ComplexPattern","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "DS_PREFIX": {"X86": ["0x3E"]},
+    "DS_DIRECT_LOAD": {"AMDGPU": ["DSDIR_Pseudo","1"]},
+    "DS_PARAM_LOAD": {"AMDGPU": ["DSDIR_Pseudo","0"]},
+    "DS_SWIZZLE_B32": {"AMDGPU": ["DS_1A_RET","0"]},
+    "DS1Addr1Offset": {"AMDGPU": ["ComplexPattern","2"]},
+    "DS64Bit4ByteAligned": {"AMDGPU": ["ComplexPattern","3"]},
+    "DS128Bit8ByteAligned": {"AMDGPU": ["ComplexPattern","3"]}
+  }
+}

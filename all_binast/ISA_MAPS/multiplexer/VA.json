@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VA",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VA1": {"RISCV": "VA1"},
+    "VA2": {"RISCV": "VA2"}
+  },
+  "INPUTS": {
+    "VA1": {"RISCV": []},
+    "VA2": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VA1": {"RISCV": []},
+    "VA2": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VA1": {"RISCV": ["ProcResource","1"]},
+    "VA2": {"RISCV": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VA1": {"RISCV": ["ProcResource","1"]},
+    "VA2": {"RISCV": ["ProcResource","1"]}
+  }
+}

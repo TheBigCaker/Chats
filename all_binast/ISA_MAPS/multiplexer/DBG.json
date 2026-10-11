@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DBG",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "DBG": {"ARM": "DBG"}
+  },
+  "INPUTS": {
+    "DBG": {"ARM": [["imm0_15",0]]}
+  },
+  "OUTPUTS": {
+    "DBG": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "DBG": {"ARM": ["AI"]}
+  },
+  "OUTPUT_BYTES": {
+    "DBG": {"ARM": ["AI"]}
+  }
+}

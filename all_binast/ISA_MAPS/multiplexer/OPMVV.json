@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "OPMVV",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "OPMVV": {"RISCV": "OPMVV"}
+  },
+  "INPUTS": {
+    "OPMVV": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "OPMVV": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "OPMVV": {"RISCV": ["RISCVVFormat","0b010"]}
+  },
+  "OUTPUT_BYTES": {
+    "OPMVV": {"RISCV": ["RISCVVFormat","0b010"]}
+  }
+}

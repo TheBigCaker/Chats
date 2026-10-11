@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ISB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "ISB": {"ARM": "ISB"}
+  },
+  "INPUTS": {
+    "ISB": {"ARM": [["instsyncb_opt",0]]}
+  },
+  "OUTPUTS": {
+    "ISB": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "ISB": {"ARM": ["AInoP"]}
+  },
+  "OUTPUT_BYTES": {
+    "ISB": {"ARM": ["AInoP"]}
+  }
+}

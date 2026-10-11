@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FD",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FDiv": {"RISCV": "FDiv"}
+  },
+  "INPUTS": {
+    "FDiv": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "FDiv": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "FDiv": {"RISCV": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "FDiv": {"RISCV": ["ProcResource","1"]}
+  }
+}

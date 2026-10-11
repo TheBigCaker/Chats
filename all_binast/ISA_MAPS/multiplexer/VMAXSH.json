@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMAXSH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMAXSH": {"PowerPC": "VMAXSH"}
+  },
+  "INPUTS": {
+    "VMAXSH": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMAXSH": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMAXSH": {"PowerPC": ["VX1_Int_Ty","322"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMAXSH": {"PowerPC": ["VX1_Int_Ty","322"]}
+  }
+}

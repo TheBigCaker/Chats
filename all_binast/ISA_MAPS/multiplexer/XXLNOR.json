@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XXLNOR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXLNOR": {"PowerPC": "XXLNOR"}
+  },
+  "INPUTS": {
+    "XXLNOR": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XXLNOR": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XXLNOR": {"PowerPC": ["XX3Form","60","162"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXLNOR": {"PowerPC": ["XX3Form","60","162"]}
+  }
+}

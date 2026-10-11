@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FHRC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "FHRC": {"PowerPC": "FHRC"}
+  },
+  "INPUTS": {
+    "FHRC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "FHRC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "FHRC": {"PowerPC": ["PPCNonAllocatableRegisterClass","64","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FHRC": {"PowerPC": ["PPCNonAllocatableRegisterClass","64","0"]}
+  }
+}

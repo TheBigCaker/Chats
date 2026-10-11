@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVLDDX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVLDDX": {"PowerPC": "EVLDDX"}
+  },
+  "INPUTS": {
+    "EVLDDX": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "EVLDDX": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVLDDX": {"PowerPC": ["EVXForm_1","768"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVLDDX": {"PowerPC": ["EVXForm_1","768"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUNZIPO",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VUNZIPO_V": {"RISCV": "VUNZIPO_V"}
+  },
+  "INPUTS": {
+    "VUNZIPO_V": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VUNZIPO_V": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VUNZIPO_V": {"RISCV": ["VALUVs2","0b010010","0b01111"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUNZIPO_V": {"RISCV": ["VALUVs2","0b010010","0b01111"]}
+  }
+}

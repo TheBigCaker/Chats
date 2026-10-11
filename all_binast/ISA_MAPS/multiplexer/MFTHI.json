@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MFTHI",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MFTHI": {"Mips": "MFTHI"}
+  },
+  "INPUTS": {
+    "MFTHI": {"Mips": [["ACC64DSPOpnd",0]]}
+  },
+  "OUTPUTS": {
+    "MFTHI": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "INPUT_BYTES": {
+    "MFTHI": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "MFTHI": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

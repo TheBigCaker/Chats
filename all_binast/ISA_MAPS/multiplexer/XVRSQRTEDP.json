@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVRSQRTEDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVRSQRTEDP": {"PowerPC": "XVRSQRTEDP"}
+  },
+  "INPUTS": {
+    "XVRSQRTEDP": {"PowerPC": [["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVRSQRTEDP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVRSQRTEDP": {"PowerPC": ["XX2Form","60","202"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVRSQRTEDP": {"PowerPC": ["XX2Form","60","202"]}
+  }
+}

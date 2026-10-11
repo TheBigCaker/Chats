@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMOVRH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMOVRH": {"ARM": "VMOVRH"}
+  },
+  "INPUTS": {
+    "VMOVRH": {"ARM": [["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VMOVRH": {"ARM": [["rGPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMOVRH": {"ARM": ["AVConv2I","0b11100001","0b1001"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMOVRH": {"ARM": ["AVConv2I","0b11100001","0b1001"]}
+  }
+}

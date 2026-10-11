@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVNEGSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVNEGSP": {"PowerPC": "XVNEGSP"}
+  },
+  "INPUTS": {
+    "XVNEGSP": {"PowerPC": [["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVNEGSP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVNEGSP": {"PowerPC": ["XX2Form","60","441"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVNEGSP": {"PowerPC": ["XX2Form","60","441"]}
+  }
+}

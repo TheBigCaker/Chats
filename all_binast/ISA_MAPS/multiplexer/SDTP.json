@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SDTP",
+  "BACKENDS": ["NVPTX"],
+  "INDEX": {
+    "SDTProxyReg": {"NVPTX": "SDTProxyReg"}
+  },
+  "INPUTS": {
+    "SDTProxyReg": {"NVPTX": []}
+  },
+  "OUTPUTS": {
+    "SDTProxyReg": {"NVPTX": []}
+  },
+  "INPUT_BYTES": {
+    "SDTProxyReg": {"NVPTX": ["SDTypeProfile","1","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTProxyReg": {"NVPTX": ["SDTypeProfile","1","1"]}
+  }
+}

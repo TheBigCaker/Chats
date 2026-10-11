@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFMALDI",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFMALDI": {"ARM": "VFMALDI"}
+  },
+  "INPUTS": {
+    "VFMALDI": {"ARM": [["SPR:$Vn",0],["SPR_8:$Vm",0],["VectorIndex32:$idx",0]]}
+  },
+  "OUTPUTS": {
+    "VFMALDI": {"ARM": [["DPR:$Vd",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFMALDI": {"ARM": ["VFMD","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFMALDI": {"ARM": ["VFMD","0b00"]}
+  }
+}

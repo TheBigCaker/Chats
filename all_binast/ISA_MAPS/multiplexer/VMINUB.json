@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMINUB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMINUB": {"PowerPC": "VMINUB"}
+  },
+  "INPUTS": {
+    "VMINUB": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMINUB": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMINUB": {"PowerPC": ["VX1_Int_Ty","514"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMINUB": {"PowerPC": ["VX1_Int_Ty","514"]}
+  }
+}

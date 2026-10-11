@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LIWZX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LIWZX": {"PowerPC": "LIWZX"}
+  },
+  "INPUTS": {
+    "LIWZX": {"PowerPC": [["memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LIWZX": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LIWZX": {"PowerPC": ["PseudoXFormMemOp"]}
+  },
+  "OUTPUT_BYTES": {
+    "LIWZX": {"PowerPC": ["PseudoXFormMemOp"]}
+  }
+}

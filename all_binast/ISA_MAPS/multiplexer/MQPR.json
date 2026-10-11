@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MQPR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MQPR": {"ARM": "MQPR"}
+  },
+  "INPUTS": {
+    "MQPR": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "MQPR": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "MQPR": {"ARM": ["RegisterClass","128"]}
+  },
+  "OUTPUT_BYTES": {
+    "MQPR": {"ARM": ["RegisterClass","128"]}
+  }
+}

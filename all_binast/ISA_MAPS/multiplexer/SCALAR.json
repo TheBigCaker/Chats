@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "SCALAR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SCALAR_F16": {"RISCV": "SCALAR_F16"},
+    "SCALAR_F32": {"RISCV": "SCALAR_F32"},
+    "SCALAR_F64": {"RISCV": "SCALAR_F64"},
+    "SCALAR_BF16": {"RISCV": "SCALAR_BF16"},
+    "SCALAR_F16_FPR32": {"RISCV": "SCALAR_F16_FPR32"}
+  },
+  "INPUTS": {
+    "SCALAR_F16": {"RISCV": []},
+    "SCALAR_F32": {"RISCV": []},
+    "SCALAR_F64": {"RISCV": []},
+    "SCALAR_BF16": {"RISCV": []},
+    "SCALAR_F16_FPR32": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SCALAR_F16": {"RISCV": []},
+    "SCALAR_F32": {"RISCV": []},
+    "SCALAR_F64": {"RISCV": []},
+    "SCALAR_BF16": {"RISCV": []},
+    "SCALAR_F16_FPR32": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SCALAR_F16": {"RISCV": ["FPR_Info","16"]},
+    "SCALAR_F32": {"RISCV": ["FPR_Info","32"]},
+    "SCALAR_F64": {"RISCV": ["FPR_Info","64"]},
+    "SCALAR_BF16": {"RISCV": ["FPR_Info","16"]},
+    "SCALAR_F16_FPR32": {"RISCV": ["FPR_Info","16"]}
+  },
+  "OUTPUT_BYTES": {
+    "SCALAR_F16": {"RISCV": ["FPR_Info","16"]},
+    "SCALAR_F32": {"RISCV": ["FPR_Info","32"]},
+    "SCALAR_F64": {"RISCV": ["FPR_Info","64"]},
+    "SCALAR_BF16": {"RISCV": ["FPR_Info","16"]},
+    "SCALAR_F16_FPR32": {"RISCV": ["FPR_Info","16"]}
+  }
+}

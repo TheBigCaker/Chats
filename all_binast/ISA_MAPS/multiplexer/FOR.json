@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FOR",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FOR": {"Sparc": "FOR"}
+  },
+  "INPUTS": {
+    "FOR": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FOR": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FOR": {"Sparc": ["VISInst","0b001111100"]}
+  },
+  "OUTPUT_BYTES": {
+    "FOR": {"Sparc": ["VISInst","0b001111100"]}
+  }
+}

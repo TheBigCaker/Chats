@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCLZ",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VCLZ_V": {"RISCV": "VCLZ_V"}
+  },
+  "INPUTS": {
+    "VCLZ_V": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VCLZ_V": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VCLZ_V": {"RISCV": ["VALUVs2","0b010010","0b01100"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCLZ_V": {"RISCV": ["VALUVs2","0b010010","0b01100"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SDTIL",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SDTIL_BRCond": {"AMDGPU": "SDTIL_BRCond"}
+  },
+  "INPUTS": {
+    "SDTIL_BRCond": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SDTIL_BRCond": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SDTIL_BRCond": {"AMDGPU": ["SDTypeProfile","0","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTIL_BRCond": {"AMDGPU": ["SDTypeProfile","0","2"]}
+  }
+}

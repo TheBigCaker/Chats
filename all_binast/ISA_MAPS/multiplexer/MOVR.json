@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MOVR",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "MOVRrr": {"Sparc": "MOVRrr"},
+    "MOVRri": {"Sparc": "MOVRri"}
+  },
+  "INPUTS": {
+    "MOVRrr": {"Sparc": [["I64Regs",0],["IntRegs",0],["IntRegs",0],["RegCCOp",0]]},
+    "MOVRri": {"Sparc": [["I64Regs",0],["i32imm",32],["IntRegs",0],["RegCCOp",0]]}
+  },
+  "OUTPUTS": {
+    "MOVRrr": {"Sparc": [["IntRegs",0]]},
+    "MOVRri": {"Sparc": [["IntRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "MOVRrr": {"Sparc": ["F4_4r","0b101111","0b00000"]},
+    "MOVRri": {"Sparc": ["F4_4i","0b101111"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVRrr": {"Sparc": ["F4_4r","0b101111","0b00000"]},
+    "MOVRri": {"Sparc": ["F4_4i","0b101111"]}
+  }
+}

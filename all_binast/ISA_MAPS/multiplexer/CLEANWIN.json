@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CLEANWIN",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "CLEANWIN": {"Sparc": "CLEANWIN"}
+  },
+  "INPUTS": {
+    "CLEANWIN": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "CLEANWIN": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "CLEANWIN": {"Sparc": ["SparcCtrlReg","12"]}
+  },
+  "OUTPUT_BYTES": {
+    "CLEANWIN": {"Sparc": ["SparcCtrlReg","12"]}
+  }
+}

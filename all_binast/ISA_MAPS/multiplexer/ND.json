@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ND",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "NDupFrm": {"ARM": "NDupFrm"}
+  },
+  "INPUTS": {
+    "NDupFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "NDupFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "NDupFrm": {"ARM": ["Format","29"]}
+  },
+  "OUTPUT_BYTES": {
+    "NDupFrm": {"ARM": ["Format","29"]}
+  }
+}

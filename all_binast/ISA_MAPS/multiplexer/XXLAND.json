@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XXLAND",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXLAND": {"PowerPC": "XXLAND"}
+  },
+  "INPUTS": {
+    "XXLAND": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XXLAND": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XXLAND": {"PowerPC": ["XX3Form","60","130"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXLAND": {"PowerPC": ["XX3Form","60","130"]}
+  }
+}

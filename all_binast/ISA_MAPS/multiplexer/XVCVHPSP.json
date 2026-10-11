@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVCVHPSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVCVHPSP": {"PowerPC": "XVCVHPSP"}
+  },
+  "INPUTS": {
+    "XVCVHPSP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XVCVHPSP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XVCVHPSP": {"PowerPC": ["XX2_XT6_XO5_XB6","60","24","475"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVCVHPSP": {"PowerPC": ["XX2_XT6_XO5_XB6","60","24","475"]}
+  }
+}

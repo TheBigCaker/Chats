@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VFPL",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFPLdStFrm": {"ARM": "VFPLdStFrm"},
+    "VFPLdStMulFrm": {"ARM": "VFPLdStMulFrm"}
+  },
+  "INPUTS": {
+    "VFPLdStFrm": {"ARM": []},
+    "VFPLdStMulFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VFPLdStFrm": {"ARM": []},
+    "VFPLdStMulFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VFPLdStFrm": {"ARM": ["Format","22"]},
+    "VFPLdStMulFrm": {"ARM": ["Format","23"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFPLdStFrm": {"ARM": ["Format","22"]},
+    "VFPLdStMulFrm": {"ARM": ["Format","23"]}
+  }
+}

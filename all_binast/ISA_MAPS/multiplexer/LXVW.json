@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXVW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXVW4X": {"PowerPC": "LXVW4X"}
+  },
+  "INPUTS": {
+    "LXVW4X": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LXVW4X": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LXVW4X": {"PowerPC": ["XX1Form_memOp","31","780"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXVW4X": {"PowerPC": ["XX1Form_memOp","31","780"]}
+  }
+}

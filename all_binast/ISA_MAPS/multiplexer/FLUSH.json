@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FLUSH",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FLUSH.f32": {"Mali": "FLUSH.f32"},
+    "FLUSH.v2f16": {"Mali": "FLUSH.v2f16"}
+  },
+  "INPUTS": {
+    "FLUSH.f32": {"Mali": []},
+    "FLUSH.v2f16": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "FLUSH.f32": {"Mali": [["R",32]]},
+    "FLUSH.v2f16": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FLUSH.f32": {"Mali": ["Valhall_"]},
+    "FLUSH.v2f16": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "FLUSH.f32": {"Mali": ["Valhall_"]},
+    "FLUSH.v2f16": {"Mali": ["Valhall_"]}
+  }
+}

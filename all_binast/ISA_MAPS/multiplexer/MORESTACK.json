@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MORESTACK",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MORESTACK_RET": {"X86": "MORESTACK_RET"},
+    "MORESTACK_RET_RESTORE_R10": {"X86": "MORESTACK_RET_RESTORE_R10"}
+  },
+  "INPUTS": {
+    "MORESTACK_RET": {"X86": []},
+    "MORESTACK_RET_RESTORE_R10": {"X86": []}
+  },
+  "OUTPUTS": {
+    "MORESTACK_RET": {"X86": []},
+    "MORESTACK_RET_RESTORE_R10": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "MORESTACK_RET": {"X86": ["0"]},
+    "MORESTACK_RET_RESTORE_R10": {"X86": ["0"]}
+  },
+  "OUTPUT_BYTES": {
+    "MORESTACK_RET": {"X86": ["0"]},
+    "MORESTACK_RET_RESTORE_R10": {"X86": ["0"]}
+  }
+}

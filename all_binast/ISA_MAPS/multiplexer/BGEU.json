@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BGEU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "BGEU": {"RISCV": "BGEU"}
+  },
+  "INPUTS": {
+    "BGEU": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0],["bare_simm13_lsb0:$imm12",0]]}
+  },
+  "OUTPUTS": {
+    "BGEU": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "BGEU": {"RISCV": ["BranchCC_rri","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "BGEU": {"RISCV": ["BranchCC_rri","0b111"]}
+  }
+}

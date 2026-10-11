@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUCMPRLN",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VUCMPRLN": {"PowerPC": "VUCMPRLN"}
+  },
+  "INPUTS": {
+    "VUCMPRLN": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VUCMPRLN": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VUCMPRLN": {"PowerPC": ["VXForm_VRTAB5","67"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUCMPRLN": {"PowerPC": ["VXForm_VRTAB5","67"]}
+  }
+}

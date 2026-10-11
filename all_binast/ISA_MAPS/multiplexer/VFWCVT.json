@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "VFWCVT",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFWCVT_XU_F_V": {"RISCV": "VFWCVT_XU_F_V"},
+    "VFWCVT_X_F_V": {"RISCV": "VFWCVT_X_F_V"},
+    "VFWCVT_RTZ_XU_F_V": {"RISCV": "VFWCVT_RTZ_XU_F_V"},
+    "VFWCVT_RTZ_X_F_V": {"RISCV": "VFWCVT_RTZ_X_F_V"},
+    "VFWCVT_F_XU_V": {"RISCV": "VFWCVT_F_XU_V"},
+    "VFWCVT_F_X_V": {"RISCV": "VFWCVT_F_X_V"},
+    "VFWCVT_F_F_V": {"RISCV": "VFWCVT_F_F_V"}
+  },
+  "INPUTS": {
+    "VFWCVT_XU_F_V": {"RISCV": []},
+    "VFWCVT_X_F_V": {"RISCV": []},
+    "VFWCVT_RTZ_XU_F_V": {"RISCV": []},
+    "VFWCVT_RTZ_X_F_V": {"RISCV": []},
+    "VFWCVT_F_XU_V": {"RISCV": []},
+    "VFWCVT_F_X_V": {"RISCV": []},
+    "VFWCVT_F_F_V": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VFWCVT_XU_F_V": {"RISCV": []},
+    "VFWCVT_X_F_V": {"RISCV": []},
+    "VFWCVT_RTZ_XU_F_V": {"RISCV": []},
+    "VFWCVT_RTZ_X_F_V": {"RISCV": []},
+    "VFWCVT_F_XU_V": {"RISCV": []},
+    "VFWCVT_F_X_V": {"RISCV": []},
+    "VFWCVT_F_F_V": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VFWCVT_XU_F_V": {"RISCV": ["VWCVTI_FV_VS2","0b010010","0b01000"]},
+    "VFWCVT_X_F_V": {"RISCV": ["VWCVTI_FV_VS2","0b010010","0b01001"]},
+    "VFWCVT_RTZ_XU_F_V": {"RISCV": ["VWCVTI_FV_VS2","0b010010","0b01110"]},
+    "VFWCVT_RTZ_X_F_V": {"RISCV": ["VWCVTI_FV_VS2","0b010010","0b01111"]},
+    "VFWCVT_F_XU_V": {"RISCV": ["VWCVTF_IV_VS2","0b010010","0b01010"]},
+    "VFWCVT_F_X_V": {"RISCV": ["VWCVTF_IV_VS2","0b010010","0b01011"]},
+    "VFWCVT_F_F_V": {"RISCV": ["VWCVTF_FV_VS2","0b010010","0b01100"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFWCVT_XU_F_V": {"RISCV": ["VWCVTI_FV_VS2","0b010010","0b01000"]},
+    "VFWCVT_X_F_V": {"RISCV": ["VWCVTI_FV_VS2","0b010010","0b01001"]},
+    "VFWCVT_RTZ_XU_F_V": {"RISCV": ["VWCVTI_FV_VS2","0b010010","0b01110"]},
+    "VFWCVT_RTZ_X_F_V": {"RISCV": ["VWCVTI_FV_VS2","0b010010","0b01111"]},
+    "VFWCVT_F_XU_V": {"RISCV": ["VWCVTF_IV_VS2","0b010010","0b01010"]},
+    "VFWCVT_F_X_V": {"RISCV": ["VWCVTF_IV_VS2","0b010010","0b01011"]},
+    "VFWCVT_F_F_V": {"RISCV": ["VWCVTF_FV_VS2","0b010010","0b01100"]}
+  }
+}

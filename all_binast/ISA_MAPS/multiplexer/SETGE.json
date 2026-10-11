@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SETGE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SETGE_DX10": {"AMDGPU": "SETGE_DX10"},
+    "SETGE_INT": {"AMDGPU": "SETGE_INT"},
+    "SETGE_UINT": {"AMDGPU": "SETGE_UINT"}
+  },
+  "INPUTS": {
+    "SETGE_DX10": {"AMDGPU": []},
+    "SETGE_INT": {"AMDGPU": []},
+    "SETGE_UINT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SETGE_DX10": {"AMDGPU": []},
+    "SETGE_INT": {"AMDGPU": []},
+    "SETGE_UINT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SETGE_DX10": {"AMDGPU": ["R600_2OP","0xE","0"]},
+    "SETGE_INT": {"AMDGPU": ["R600_2OP","0x3C","0"]},
+    "SETGE_UINT": {"AMDGPU": ["R600_2OP","0x3F","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "SETGE_DX10": {"AMDGPU": ["R600_2OP","0xE","0"]},
+    "SETGE_INT": {"AMDGPU": ["R600_2OP","0x3C","0"]},
+    "SETGE_UINT": {"AMDGPU": ["R600_2OP","0x3F","0"]}
+  }
+}

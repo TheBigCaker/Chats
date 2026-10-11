@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "VMOVPQI",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMOVPQIto64Zrr": {"X86": "VMOVPQIto64Zrr"},
+    "VMOVPQIto64Zmr": {"X86": "VMOVPQIto64Zmr"},
+    "VMOVPQI2QIZmr": {"X86": "VMOVPQI2QIZmr"}
+  },
+  "INPUTS": {
+    "VMOVPQIto64Zrr": {"X86": [["VR128X",128]]},
+    "VMOVPQIto64Zmr": {"X86": [["i64mem",0],["VR128X",128]]},
+    "VMOVPQI2QIZmr": {"X86": [["i64mem",0],["VR128X",128]]}
+  },
+  "OUTPUTS": {
+    "VMOVPQIto64Zrr": {"X86": [["GR64",64]]},
+    "VMOVPQIto64Zmr": {"X86": []},
+    "VMOVPQI2QIZmr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMOVPQIto64Zrr": {"X86": ["0x7E"]},
+    "VMOVPQIto64Zmr": {"X86": ["0x7E"]},
+    "VMOVPQI2QIZmr": {"X86": ["0xD6"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMOVPQIto64Zrr": {"X86": ["0x7E"]},
+    "VMOVPQIto64Zmr": {"X86": ["0x7E"]},
+    "VMOVPQI2QIZmr": {"X86": ["0xD6"]}
+  }
+}

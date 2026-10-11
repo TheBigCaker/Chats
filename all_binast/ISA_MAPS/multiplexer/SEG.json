@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "SEG",
+  "BACKENDS": ["X86","Mali"],
+  "INDEX": {
+    "SEG_ALLOCA_32": {"X86": "SEG_ALLOCA_32"},
+    "SEG_ALLOCA_64": {"X86": "SEG_ALLOCA_64"},
+    "SEG_ADD": {"Mali": "SEG_ADD"},
+    "SEG_SUB": {"Mali": "SEG_SUB"},
+    "SEG_ADD": {"Mali": "SEG_ADD"},
+    "SEG_SUB": {"Mali": "SEG_SUB"},
+    "SEG_ADD.i64": {"Mali": "SEG_ADD.i64"},
+    "SEG_ADD.u64": {"Mali": "SEG_ADD.u64"}
+  },
+  "INPUTS": {
+    "SEG_ALLOCA_32": {"X86": [["GR32",32]]},
+    "SEG_ALLOCA_64": {"X86": [["GR64",64]]},
+    "SEG_ADD": {"Mali": [["R32",32]]},
+    "SEG_SUB": {"Mali": [["R32",32]]},
+    "SEG_ADD": {"Mali": [["R32",32]]},
+    "SEG_SUB": {"Mali": [["R32",32]]},
+    "SEG_ADD.i64": {"Mali": [["R32",32],["R32",32]]},
+    "SEG_ADD.u64": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "SEG_ALLOCA_32": {"X86": [["GR32",32]]},
+    "SEG_ALLOCA_64": {"X86": [["GR64",64]]},
+    "SEG_ADD": {"Mali": [["R",32]]},
+    "SEG_SUB": {"Mali": [["R",32]]},
+    "SEG_ADD": {"Mali": [["R",32]]},
+    "SEG_SUB": {"Mali": [["R",32]]},
+    "SEG_ADD.i64": {"Mali": [["R",32]]},
+    "SEG_ADD.u64": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "SEG_ALLOCA_32": {"X86": ["0"]},
+    "SEG_ALLOCA_64": {"X86": ["0"]},
+    "SEG_ADD": {"Mali": ["Bifrost_fma","0x701500","0x7fff40"]},
+    "SEG_SUB": {"Mali": ["Bifrost_fma","0x701540","0x7fff40"]},
+    "SEG_ADD": {"Mali": ["Bifrost_add","0x3d500","0xfff40"]},
+    "SEG_SUB": {"Mali": ["Bifrost_add","0x3d540","0xfff40"]},
+    "SEG_ADD.i64": {"Mali": ["Bifrost_add"]},
+    "SEG_ADD.u64": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "SEG_ALLOCA_32": {"X86": ["0"]},
+    "SEG_ALLOCA_64": {"X86": ["0"]},
+    "SEG_ADD": {"Mali": ["Bifrost_fma","0x701500","0x7fff40"]},
+    "SEG_SUB": {"Mali": ["Bifrost_fma","0x701540","0x7fff40"]},
+    "SEG_ADD": {"Mali": ["Bifrost_add","0x3d500","0xfff40"]},
+    "SEG_SUB": {"Mali": ["Bifrost_add","0x3d540","0xfff40"]},
+    "SEG_ADD.i64": {"Mali": ["Bifrost_add"]},
+    "SEG_ADD.u64": {"Mali": ["Valhall_"]}
+  }
+}

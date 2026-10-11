@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SMSW",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SMSW16r": {"X86": "SMSW16r"},
+    "SMSW32r": {"X86": "SMSW32r"},
+    "SMSW16m": {"X86": "SMSW16m"}
+  },
+  "INPUTS": {
+    "SMSW16r": {"X86": []},
+    "SMSW32r": {"X86": []},
+    "SMSW16m": {"X86": [["i16mem",0]]}
+  },
+  "OUTPUTS": {
+    "SMSW16r": {"X86": [["GR16",16]]},
+    "SMSW32r": {"X86": [["GR32",32]]},
+    "SMSW16m": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SMSW16r": {"X86": ["0x01"]},
+    "SMSW32r": {"X86": ["0x01"]},
+    "SMSW16m": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMSW16r": {"X86": ["0x01"]},
+    "SMSW32r": {"X86": ["0x01"]},
+    "SMSW16m": {"X86": ["0x01"]}
+  }
+}

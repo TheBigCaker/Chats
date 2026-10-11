@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TABORTWCI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "TABORTWCI": {"PowerPC": "TABORTWCI"}
+  },
+  "INPUTS": {
+    "TABORTWCI": {"PowerPC": [["u5imm",5],["gprc",0],["u5imm",5]]}
+  },
+  "OUTPUTS": {
+    "TABORTWCI": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "TABORTWCI": {"PowerPC": ["XForm_base_r3xo","31","846"]}
+  },
+  "OUTPUT_BYTES": {
+    "TABORTWCI": {"PowerPC": ["XForm_base_r3xo","31","846"]}
+  }
+}

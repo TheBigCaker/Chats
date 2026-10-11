@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CPQ",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "CPQ": {"Sparc": "CPQ"}
+  },
+  "INPUTS": {
+    "CPQ": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "CPQ": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "CPQ": {"Sparc": ["SparcCtrlReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "CPQ": {"Sparc": ["SparcCtrlReg","0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMAXUD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMAXUD": {"PowerPC": "VMAXUD"}
+  },
+  "INPUTS": {
+    "VMAXUD": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMAXUD": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMAXUD": {"PowerPC": ["VX1_Int_Ty","194"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMAXUD": {"PowerPC": ["VX1_Int_Ty","194"]}
+  }
+}

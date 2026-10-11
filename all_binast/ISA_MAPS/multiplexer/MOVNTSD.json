@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVNTSD",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MOVNTSD": {"X86": "MOVNTSD"}
+  },
+  "INPUTS": {
+    "MOVNTSD": {"X86": [["f64mem",0],["VR128",128]]}
+  },
+  "OUTPUTS": {
+    "MOVNTSD": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "MOVNTSD": {"X86": ["0x2B"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVNTSD": {"X86": ["0x2B"]}
+  }
+}

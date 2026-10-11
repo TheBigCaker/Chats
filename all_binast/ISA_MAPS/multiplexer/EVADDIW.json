@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVADDIW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVADDIW": {"PowerPC": "EVADDIW"}
+  },
+  "INPUTS": {
+    "EVADDIW": {"PowerPC": [["sperc",0],["u5imm",5]]}
+  },
+  "OUTPUTS": {
+    "EVADDIW": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVADDIW": {"PowerPC": ["EVXForm_1","514"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVADDIW": {"PowerPC": ["EVXForm_1","514"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "XL",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "XLenRI": {"RISCV": "XLenRI"},
+    "XLenPairRI": {"RISCV": "XLenPairRI"}
+  },
+  "INPUTS": {
+    "XLenRI": {"RISCV": []},
+    "XLenPairRI": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "XLenRI": {"RISCV": []},
+    "XLenPairRI": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "XLenRI": {"RISCV": ["RegInfoByHwMode","32","64"]},
+    "XLenPairRI": {"RISCV": ["RegInfoByHwMode","64","128"]}
+  },
+  "OUTPUT_BYTES": {
+    "XLenRI": {"RISCV": ["RegInfoByHwMode","32","64"]},
+    "XLenPairRI": {"RISCV": ["RegInfoByHwMode","64","128"]}
+  }
+}

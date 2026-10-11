@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "VMWRITE",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMWRITE64rr": {"X86": "VMWRITE64rr"},
+    "VMWRITE32rr": {"X86": "VMWRITE32rr"},
+    "VMWRITE64rm": {"X86": "VMWRITE64rm"},
+    "VMWRITE32rm": {"X86": "VMWRITE32rm"}
+  },
+  "INPUTS": {
+    "VMWRITE64rr": {"X86": [["GR64",64]]},
+    "VMWRITE32rr": {"X86": [["GR32",32]]},
+    "VMWRITE64rm": {"X86": [["i64mem",0]]},
+    "VMWRITE32rm": {"X86": [["i32mem",0]]}
+  },
+  "OUTPUTS": {
+    "VMWRITE64rr": {"X86": [["GR64",64]]},
+    "VMWRITE32rr": {"X86": [["GR32",32]]},
+    "VMWRITE64rm": {"X86": [["GR64",64]]},
+    "VMWRITE32rm": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "VMWRITE64rr": {"X86": ["0x79"]},
+    "VMWRITE32rr": {"X86": ["0x79"]},
+    "VMWRITE64rm": {"X86": ["0x79"]},
+    "VMWRITE32rm": {"X86": ["0x79"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMWRITE64rr": {"X86": ["0x79"]},
+    "VMWRITE32rr": {"X86": ["0x79"]},
+    "VMWRITE64rm": {"X86": ["0x79"]},
+    "VMWRITE32rm": {"X86": ["0x79"]}
+  }
+}

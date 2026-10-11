@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "NOP",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "NOP": {"Mali": "NOP"},
+    "NOP": {"Mali": "NOP"},
+    "NOP": {"Mali": "NOP"}
+  },
+  "INPUTS": {
+    "NOP": {"Mali": []},
+    "NOP": {"Mali": []},
+    "NOP": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "NOP": {"Mali": [["R",32]]},
+    "NOP": {"Mali": [["R",32]]},
+    "NOP": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "NOP": {"Mali": ["Bifrost_fma/","0x701963","0x7fffff"]},
+    "NOP": {"Mali": ["Bifrost_add/","0x3d964","0xfffff"]},
+    "NOP": {"Mali": ["Valhall_CVT"]}
+  },
+  "OUTPUT_BYTES": {
+    "NOP": {"Mali": ["Bifrost_fma/","0x701963","0x7fffff"]},
+    "NOP": {"Mali": ["Bifrost_add/","0x3d964","0xfffff"]},
+    "NOP": {"Mali": ["Valhall_CVT"]}
+  }
+}

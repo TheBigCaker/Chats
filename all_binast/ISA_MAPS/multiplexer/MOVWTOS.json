@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVWTOS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "MOVWTOS": {"Sparc": "MOVWTOS"}
+  },
+  "INPUTS": {
+    "MOVWTOS": {"Sparc": [["IntRegs",0]]}
+  },
+  "OUTPUTS": {
+    "MOVWTOS": {"Sparc": [["FPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "MOVWTOS": {"Sparc": ["VISInstFormat","0b100011001"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVWTOS": {"Sparc": ["VISInstFormat","0b100011001"]}
+  }
+}

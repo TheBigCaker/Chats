@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFSSUB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFSSUB": {"PowerPC": "EFSSUB"}
+  },
+  "INPUTS": {
+    "EFSSUB": {"PowerPC": [["spe4rc",0],["spe4rc",0]]}
+  },
+  "OUTPUTS": {
+    "EFSSUB": {"PowerPC": [["spe4rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFSSUB": {"PowerPC": ["EFXForm_1","705"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFSSUB": {"PowerPC": ["EFXForm_1","705"]}
+  }
+}

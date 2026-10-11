@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOPSTS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MOPSTStrided": {"RISCV": "MOPSTStrided"}
+  },
+  "INPUTS": {
+    "MOPSTStrided": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "MOPSTStrided": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "MOPSTStrided": {"RISCV": ["RISCVMOP","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOPSTStrided": {"RISCV": ["RISCVMOP","0b10"]}
+  }
+}

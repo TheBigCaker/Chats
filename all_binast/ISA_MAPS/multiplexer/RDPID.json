@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "RDPID",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "RDPID32": {"X86": "RDPID32"},
+    "RDPID64": {"X86": "RDPID64"}
+  },
+  "INPUTS": {
+    "RDPID32": {"X86": []},
+    "RDPID64": {"X86": []}
+  },
+  "OUTPUTS": {
+    "RDPID32": {"X86": [["GR32",32]]},
+    "RDPID64": {"X86": [["GR64",64]]}
+  },
+  "INPUT_BYTES": {
+    "RDPID32": {"X86": ["0xC7"]},
+    "RDPID64": {"X86": ["0xC7"]}
+  },
+  "OUTPUT_BYTES": {
+    "RDPID32": {"X86": ["0xC7"]},
+    "RDPID64": {"X86": ["0xC7"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VMOVDQUY",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMOVDQUYrm": {"X86": "VMOVDQUYrm"},
+    "VMOVDQUYmr": {"X86": "VMOVDQUYmr"}
+  },
+  "INPUTS": {
+    "VMOVDQUYrm": {"X86": [["i256mem",0]]},
+    "VMOVDQUYmr": {"X86": [["i256mem",0],["VR256",256]]}
+  },
+  "OUTPUTS": {
+    "VMOVDQUYrm": {"X86": [["VR256",256]]},
+    "VMOVDQUYmr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMOVDQUYrm": {"X86": ["0x6F"]},
+    "VMOVDQUYmr": {"X86": ["0x7F"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMOVDQUYrm": {"X86": ["0x6F"]},
+    "VMOVDQUYmr": {"X86": ["0x7F"]}
+  }
+}

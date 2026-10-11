@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BUILD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BUILD_QUADWORD": {"PowerPC": "BUILD_QUADWORD"},
+    "BUILD_UACC": {"PowerPC": "BUILD_UACC"}
+  },
+  "INPUTS": {
+    "BUILD_QUADWORD": {"PowerPC": [["g8rc",0],["g8rc",0]]},
+    "BUILD_UACC": {"PowerPC": [["uacc",0]]}
+  },
+  "OUTPUTS": {
+    "BUILD_QUADWORD": {"PowerPC": [["g8prc",0]]},
+    "BUILD_UACC": {"PowerPC": [["acc",0]]}
+  },
+  "INPUT_BYTES": {
+    "BUILD_QUADWORD": {"PowerPC": ["PPCPostRAExpPseudo"]},
+    "BUILD_UACC": {"PowerPC": ["PPCPostRAExpPseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "BUILD_QUADWORD": {"PowerPC": ["PPCPostRAExpPseudo"]},
+    "BUILD_UACC": {"PowerPC": ["PPCPostRAExpPseudo"]}
+  }
+}

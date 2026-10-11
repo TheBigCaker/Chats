@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVNMADDASP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVNMADDASP": {"PowerPC": "XVNMADDASP"}
+  },
+  "INPUTS": {
+    "XVNMADDASP": {"PowerPC": [["vsrc",0],["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVNMADDASP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVNMADDASP": {"PowerPC": ["XX3Form","60","193"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVNMADDASP": {"PowerPC": ["XX3Form","60","193"]}
+  }
+}

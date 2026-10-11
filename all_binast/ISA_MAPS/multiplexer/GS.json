@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "GS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "GS_PREFIX": {"X86": "GS_PREFIX"}
+  },
+  "INPUTS": {
+    "GS_PREFIX": {"X86": []}
+  },
+  "OUTPUTS": {
+    "GS_PREFIX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "GS_PREFIX": {"X86": ["0x65"]}
+  },
+  "OUTPUT_BYTES": {
+    "GS_PREFIX": {"X86": ["0x65"]}
+  }
+}

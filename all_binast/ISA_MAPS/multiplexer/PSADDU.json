@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "PSADDU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PSADDU_H": {"RISCV": "PSADDU_H"},
+    "PSADDU_B": {"RISCV": "PSADDU_B"},
+    "PSADDU_W": {"RISCV": "PSADDU_W"},
+    "PSADDU_DH": {"RISCV": "PSADDU_DH"},
+    "PSADDU_DW": {"RISCV": "PSADDU_DW"},
+    "PSADDU_DB": {"RISCV": "PSADDU_DB"}
+  },
+  "INPUTS": {
+    "PSADDU_H": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PSADDU_B": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PSADDU_W": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PSADDU_DH": {"RISCV": []},
+    "PSADDU_DW": {"RISCV": []},
+    "PSADDU_DB": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PSADDU_H": {"RISCV": [["GPR:$rd",0]]},
+    "PSADDU_B": {"RISCV": [["GPR:$rd",0]]},
+    "PSADDU_W": {"RISCV": [["GPR:$rd",0]]},
+    "PSADDU_DH": {"RISCV": []},
+    "PSADDU_DW": {"RISCV": []},
+    "PSADDU_DB": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PSADDU_H": {"RISCV": ["RVPBinary_rr","0b0110","0b00","0b000"]},
+    "PSADDU_B": {"RISCV": ["RVPBinary_rr","0b0110","0b10","0b000"]},
+    "PSADDU_W": {"RISCV": ["RVPBinary_rr","0b0110","0b01","0b000"]},
+    "PSADDU_DH": {"RISCV": ["RVPPairBinary_rr","0b0110","0b00"]},
+    "PSADDU_DW": {"RISCV": ["RVPPairBinary_rr","0b0110","0b01"]},
+    "PSADDU_DB": {"RISCV": ["RVPPairBinary_rr","0b0110","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "PSADDU_H": {"RISCV": ["RVPBinary_rr","0b0110","0b00","0b000"]},
+    "PSADDU_B": {"RISCV": ["RVPBinary_rr","0b0110","0b10","0b000"]},
+    "PSADDU_W": {"RISCV": ["RVPBinary_rr","0b0110","0b01","0b000"]},
+    "PSADDU_DH": {"RISCV": ["RVPPairBinary_rr","0b0110","0b00"]},
+    "PSADDU_DW": {"RISCV": ["RVPPairBinary_rr","0b0110","0b01"]},
+    "PSADDU_DB": {"RISCV": ["RVPPairBinary_rr","0b0110","0b10"]}
+  }
+}

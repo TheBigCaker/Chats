@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VABSDUH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VABSDUH": {"PowerPC": "VABSDUH"}
+  },
+  "INPUTS": {
+    "VABSDUH": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VABSDUH": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VABSDUH": {"PowerPC": ["VXForm_1","1091"]}
+  },
+  "OUTPUT_BYTES": {
+    "VABSDUH": {"PowerPC": ["VXForm_1","1091"]}
+  }
+}

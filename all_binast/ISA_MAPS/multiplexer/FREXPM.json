@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "FREXPM",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FREXPM.f32": {"Mali": "FREXPM.f32"},
+    "FREXPM.v2f16": {"Mali": "FREXPM.v2f16"},
+    "FREXPM.f32": {"Mali": "FREXPM.f32"},
+    "FREXPM.v2f16": {"Mali": "FREXPM.v2f16"},
+    "FREXPM.f32": {"Mali": "FREXPM.f32"},
+    "FREXPM.v2f16": {"Mali": "FREXPM.v2f16"}
+  },
+  "INPUTS": {
+    "FREXPM.f32": {"Mali": [["R32",32]]},
+    "FREXPM.v2f16": {"Mali": [["R32",32]]},
+    "FREXPM.f32": {"Mali": [["R32",32]]},
+    "FREXPM.v2f16": {"Mali": [["R32",32]]},
+    "FREXPM.f32": {"Mali": []},
+    "FREXPM.v2f16": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "FREXPM.f32": {"Mali": [["R",32]]},
+    "FREXPM.v2f16": {"Mali": [["R",32]]},
+    "FREXPM.f32": {"Mali": [["R",32]]},
+    "FREXPM.v2f16": {"Mali": [["R",32]]},
+    "FREXPM.f32": {"Mali": [["R",32]]},
+    "FREXPM.v2f16": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FREXPM.f32": {"Mali": ["Bifrost_fma"]},
+    "FREXPM.v2f16": {"Mali": ["Bifrost_fma"]},
+    "FREXPM.f32": {"Mali": ["Bifrost_add"]},
+    "FREXPM.v2f16": {"Mali": ["Bifrost_add"]},
+    "FREXPM.f32": {"Mali": ["Valhall_"]},
+    "FREXPM.v2f16": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "FREXPM.f32": {"Mali": ["Bifrost_fma"]},
+    "FREXPM.v2f16": {"Mali": ["Bifrost_fma"]},
+    "FREXPM.f32": {"Mali": ["Bifrost_add"]},
+    "FREXPM.v2f16": {"Mali": ["Bifrost_add"]},
+    "FREXPM.f32": {"Mali": ["Valhall_"]},
+    "FREXPM.v2f16": {"Mali": ["Valhall_"]}
+  }
+}

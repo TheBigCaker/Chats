@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SPH",
+  "BACKENDS": ["AVR"],
+  "INDEX": {
+    "SPH": {"AVR": "SPH"}
+  },
+  "INPUTS": {
+    "SPH": {"AVR": []}
+  },
+  "OUTPUTS": {
+    "SPH": {"AVR": []}
+  },
+  "INPUT_BYTES": {
+    "SPH": {"AVR": ["AVRReg","33"]}
+  },
+  "OUTPUT_BYTES": {
+    "SPH": {"AVR": ["AVRReg","33"]}
+  }
+}

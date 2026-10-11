@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YPERMC",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YPERMC": {"RISCV": "YPERMC"}
+  },
+  "INPUTS": {
+    "YPERMC": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YPERMC": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YPERMC": {"RISCV": ["RVY_rr","0b0010011"]}
+  },
+  "OUTPUT_BYTES": {
+    "YPERMC": {"RISCV": ["RVY_rr","0b0010011"]}
+  }
+}

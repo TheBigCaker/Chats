@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VEXTSD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VEXTSD2Q": {"PowerPC": "VEXTSD2Q"}
+  },
+  "INPUTS": {
+    "VEXTSD2Q": {"PowerPC": [["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VEXTSD2Q": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VEXTSD2Q": {"PowerPC": ["VXForm_RD5_XO5_RS5","1538","27"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEXTSD2Q": {"PowerPC": ["VXForm_RD5_XO5_RS5","1538","27"]}
+  }
+}

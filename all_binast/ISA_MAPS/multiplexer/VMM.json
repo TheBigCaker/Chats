@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMM",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "VMM0": {"Mips": "VMM0"}
+  },
+  "INPUTS": {
+    "VMM0": {"Mips": [["RO:$rs",0],["RO:$rt",0]]}
+  },
+  "OUTPUTS": {
+    "VMM0": {"Mips": [["RO:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMM0": {"Mips": ["ArithLogicR","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMM0": {"Mips": ["ArithLogicR","0"]}
+  }
+}

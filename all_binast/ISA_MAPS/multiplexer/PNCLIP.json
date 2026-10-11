@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PNCLIP",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PNCLIP_BS": {"RISCV": "PNCLIP_BS"},
+    "PNCLIP_HS": {"RISCV": "PNCLIP_HS"}
+  },
+  "INPUTS": {
+    "PNCLIP_BS": {"RISCV": [["GPRPairRV32:$rs1",0],["GPR:$rs2",0]]},
+    "PNCLIP_HS": {"RISCV": [["GPRPairRV32:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PNCLIP_BS": {"RISCV": [["GPR:$rd",0]]},
+    "PNCLIP_HS": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "PNCLIP_BS": {"RISCV": ["RVPNarrowingShift_rr","0b110","0b00"]},
+    "PNCLIP_HS": {"RISCV": ["RVPNarrowingShift_rr","0b110","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "PNCLIP_BS": {"RISCV": ["RVPNarrowingShift_rr","0b110","0b00"]},
+    "PNCLIP_HS": {"RISCV": ["RVPNarrowingShift_rr","0b110","0b01"]}
+  }
+}

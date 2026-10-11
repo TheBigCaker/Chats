@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DUMMY",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "DUMMY_REG_PAIR_WITH_X0": {"RISCV": "DUMMY_REG_PAIR_WITH_X0"}
+  },
+  "INPUTS": {
+    "DUMMY_REG_PAIR_WITH_X0": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "DUMMY_REG_PAIR_WITH_X0": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "DUMMY_REG_PAIR_WITH_X0": {"RISCV": ["RISCVReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "DUMMY_REG_PAIR_WITH_X0": {"RISCV": ["RISCVReg","0"]}
+  }
+}

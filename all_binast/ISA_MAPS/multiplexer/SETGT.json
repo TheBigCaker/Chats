@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SETGT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SETGT_DX10": {"AMDGPU": "SETGT_DX10"},
+    "SETGT_INT": {"AMDGPU": "SETGT_INT"},
+    "SETGT_UINT": {"AMDGPU": "SETGT_UINT"}
+  },
+  "INPUTS": {
+    "SETGT_DX10": {"AMDGPU": []},
+    "SETGT_INT": {"AMDGPU": []},
+    "SETGT_UINT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SETGT_DX10": {"AMDGPU": []},
+    "SETGT_INT": {"AMDGPU": []},
+    "SETGT_UINT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SETGT_DX10": {"AMDGPU": ["R600_2OP","0xD","0"]},
+    "SETGT_INT": {"AMDGPU": ["R600_2OP","0x3B","0"]},
+    "SETGT_UINT": {"AMDGPU": ["R600_2OP","0x3E","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "SETGT_DX10": {"AMDGPU": ["R600_2OP","0xD","0"]},
+    "SETGT_INT": {"AMDGPU": ["R600_2OP","0x3B","0"]},
+    "SETGT_UINT": {"AMDGPU": ["R600_2OP","0x3E","0"]}
+  }
+}

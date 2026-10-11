@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "IMM",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "IMM_Offset": {"AMDGPU": "IMM_Offset"}
+  },
+  "INPUTS": {
+    "IMM_Offset": {"AMDGPU": [["SMEMOffset",0]]}
+  },
+  "OUTPUTS": {
+    "IMM_Offset": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "IMM_Offset": {"AMDGPU": ["OffsetMode","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "IMM_Offset": {"AMDGPU": ["OffsetMode","1","0"]}
+  }
+}

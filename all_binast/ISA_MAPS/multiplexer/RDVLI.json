@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RDVLI",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "RDVLI_XI": {"AArch64": "RDVLI_XI"}
+  },
+  "INPUTS": {
+    "RDVLI_XI": {"AArch64": [["simm6_32b:$imm6",0]]}
+  },
+  "OUTPUTS": {
+    "RDVLI_XI": {"AArch64": [["GPR64:$Rd",64]]}
+  },
+  "INPUT_BYTES": {
+    "RDVLI_XI": {"AArch64": ["sve_int_read_vl_a","0b0","0b11111"]}
+  },
+  "OUTPUT_BYTES": {
+    "RDVLI_XI": {"AArch64": ["sve_int_read_vl_a","0b0","0b11111"]}
+  }
+}

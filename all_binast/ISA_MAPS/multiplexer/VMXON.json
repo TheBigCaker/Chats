@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMXON",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMXON": {"X86": "VMXON"}
+  },
+  "INPUTS": {
+    "VMXON": {"X86": [["i64mem",0]]}
+  },
+  "OUTPUTS": {
+    "VMXON": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMXON": {"X86": ["0xC7"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMXON": {"X86": ["0xC7"]}
+  }
+}

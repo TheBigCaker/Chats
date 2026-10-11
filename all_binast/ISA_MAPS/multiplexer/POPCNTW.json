@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "POPCNTW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "POPCNTW": {"PowerPC": "POPCNTW"}
+  },
+  "INPUTS": {
+    "POPCNTW": {"PowerPC": [["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "POPCNTW": {"PowerPC": [["gprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "POPCNTW": {"PowerPC": ["XForm_11","31","378"]}
+  },
+  "OUTPUT_BYTES": {
+    "POPCNTW": {"PowerPC": ["XForm_11","31","378"]}
+  }
+}

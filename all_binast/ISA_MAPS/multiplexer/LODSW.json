@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LODSW",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LODSW": {"X86": "LODSW"}
+  },
+  "INPUTS": {
+    "LODSW": {"X86": [["srcidx16",0]]}
+  },
+  "OUTPUTS": {
+    "LODSW": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "LODSW": {"X86": ["0xAD"]}
+  },
+  "OUTPUT_BYTES": {
+    "LODSW": {"X86": ["0xAD"]}
+  }
+}

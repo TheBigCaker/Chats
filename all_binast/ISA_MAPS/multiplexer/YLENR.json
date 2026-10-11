@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YLENR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YLENR": {"RISCV": "YLENR"}
+  },
+  "INPUTS": {
+    "YLENR": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YLENR": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YLENR": {"RISCV": ["RVY_r_xy","0b00011"]}
+  },
+  "OUTPUT_BYTES": {
+    "YLENR": {"RISCV": ["RVY_r_xy","0b00011"]}
+  }
+}

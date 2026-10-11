@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "PLUI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PLUI_H": {"RISCV": "PLUI_H"},
+    "PLUI_W": {"RISCV": "PLUI_W"},
+    "PLUI_DH": {"RISCV": "PLUI_DH"}
+  },
+  "INPUTS": {
+    "PLUI_H": {"RISCV": [["simm10_plui:$imm10",0]]},
+    "PLUI_W": {"RISCV": [["simm10_plui:$imm10",0]]},
+    "PLUI_DH": {"RISCV": [["simm10_plui",0]]}
+  },
+  "OUTPUTS": {
+    "PLUI_H": {"RISCV": []},
+    "PLUI_W": {"RISCV": []},
+    "PLUI_DH": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PLUI_H": {"RISCV": ["PLUI_i","0b1111000"]},
+    "PLUI_W": {"RISCV": ["PLUI_i","0b1111001"]},
+    "PLUI_DH": {"RISCV": ["RVPPairLoadImm_i","0b0111000"]}
+  },
+  "OUTPUT_BYTES": {
+    "PLUI_H": {"RISCV": ["PLUI_i","0b1111000"]},
+    "PLUI_W": {"RISCV": ["PLUI_i","0b1111001"]},
+    "PLUI_DH": {"RISCV": ["RVPPairLoadImm_i","0b0111000"]}
+  }
+}

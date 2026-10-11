@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CLFLUSH",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CLFLUSH": {"X86": "CLFLUSH"}
+  },
+  "INPUTS": {
+    "CLFLUSH": {"X86": [["i8mem",0]]}
+  },
+  "OUTPUTS": {
+    "CLFLUSH": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CLFLUSH": {"X86": ["0xAE"]}
+  },
+  "OUTPUT_BYTES": {
+    "CLFLUSH": {"X86": ["0xAE"]}
+  }
+}

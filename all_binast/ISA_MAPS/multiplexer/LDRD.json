@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "LDRD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "LDRD": {"ARM": "LDRD"},
+    "LDRD_PRE": {"ARM": "LDRD_PRE"},
+    "LDRD_POST": {"ARM": "LDRD_POST"}
+  },
+  "INPUTS": {
+    "LDRD": {"ARM": [["addrmode3",0]]},
+    "LDRD_PRE": {"ARM": [["addrmode3_pre",0]]},
+    "LDRD_POST": {"ARM": [["addr_offset_none",0],["am3offset",0]]}
+  },
+  "OUTPUTS": {
+    "LDRD": {"ARM": [["GPR",64],["GPR",64]]},
+    "LDRD_PRE": {"ARM": [["GPR",64],["GPR",64],["GPR",64]]},
+    "LDRD_POST": {"ARM": [["GPR",64],["GPR",64],["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "LDRD": {"ARM": ["AI3ld","0b1101","0"]},
+    "LDRD_PRE": {"ARM": ["AI3ldstidx","0b1101","0","1"]},
+    "LDRD_POST": {"ARM": ["AI3ldstidx","0b1101","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "LDRD": {"ARM": ["AI3ld","0b1101","0"]},
+    "LDRD_PRE": {"ARM": ["AI3ldstidx","0b1101","0","1"]},
+    "LDRD_POST": {"ARM": ["AI3ldstidx","0b1101","0","0"]}
+  }
+}

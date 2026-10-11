@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSXSIGQP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSXSIGQP": {"PowerPC": "XSXSIGQP"}
+  },
+  "INPUTS": {
+    "XSXSIGQP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSXSIGQP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSXSIGQP": {"PowerPC": ["X_VT5_XO5_VB5","63","18","804"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSXSIGQP": {"PowerPC": ["X_VT5_XO5_VB5","63","18","804"]}
+  }
+}

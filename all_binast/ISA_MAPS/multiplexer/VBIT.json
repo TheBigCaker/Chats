@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VBIT",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VBITd": {"ARM": "VBITd"},
+    "VBITq": {"ARM": "VBITq"}
+  },
+  "INPUTS": {
+    "VBITd": {"ARM": [["DPR",0],["DPR",0],["DPR",0]]},
+    "VBITq": {"ARM": [["QPR",0],["QPR",0],["QPR",0]]}
+  },
+  "OUTPUTS": {
+    "VBITd": {"ARM": [["DPR",0]]},
+    "VBITq": {"ARM": [["QPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VBITd": {"ARM": ["N3VX","1","0","0b10","0b0001","0","1"]},
+    "VBITq": {"ARM": ["N3VX","1","0","0b10","0b0001","1","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VBITd": {"ARM": ["N3VX","1","0","0b10","0b0001","0","1"]},
+    "VBITq": {"ARM": ["N3VX","1","0","0b10","0b0001","1","1"]}
+  }
+}

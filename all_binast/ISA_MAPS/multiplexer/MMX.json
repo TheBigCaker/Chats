@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "MMX",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MMX_SET0": {"X86": "MMX_SET0"},
+    "MMX_MOVDQ2Qrr": {"X86": "MMX_MOVDQ2Qrr"},
+    "MMX_MOVQ2DQrr": {"X86": "MMX_MOVQ2DQrr"},
+    "MMX_MOVQ2FR64rr": {"X86": "MMX_MOVQ2FR64rr"},
+    "MMX_MOVFR642Qrr": {"X86": "MMX_MOVFR642Qrr"}
+  },
+  "INPUTS": {
+    "MMX_SET0": {"X86": []},
+    "MMX_MOVDQ2Qrr": {"X86": [["VR128",128]]},
+    "MMX_MOVQ2DQrr": {"X86": [["VR64",64]]},
+    "MMX_MOVQ2FR64rr": {"X86": [["VR64",64]]},
+    "MMX_MOVFR642Qrr": {"X86": [["FR64",64]]}
+  },
+  "OUTPUTS": {
+    "MMX_SET0": {"X86": [["VR64",64]]},
+    "MMX_MOVDQ2Qrr": {"X86": [["VR64",64]]},
+    "MMX_MOVQ2DQrr": {"X86": [["VR128",128]]},
+    "MMX_MOVQ2FR64rr": {"X86": [["FR64",64]]},
+    "MMX_MOVFR642Qrr": {"X86": [["VR64",64]]}
+  },
+  "INPUT_BYTES": {
+    "MMX_SET0": {"X86": ["0"]},
+    "MMX_MOVDQ2Qrr": {"X86": ["0xD6"]},
+    "MMX_MOVQ2DQrr": {"X86": ["0xD6"]},
+    "MMX_MOVQ2FR64rr": {"X86": ["0xD6"]},
+    "MMX_MOVFR642Qrr": {"X86": ["0xD6"]}
+  },
+  "OUTPUT_BYTES": {
+    "MMX_SET0": {"X86": ["0"]},
+    "MMX_MOVDQ2Qrr": {"X86": ["0xD6"]},
+    "MMX_MOVQ2DQrr": {"X86": ["0xD6"]},
+    "MMX_MOVQ2FR64rr": {"X86": ["0xD6"]},
+    "MMX_MOVFR642Qrr": {"X86": ["0xD6"]}
+  }
+}

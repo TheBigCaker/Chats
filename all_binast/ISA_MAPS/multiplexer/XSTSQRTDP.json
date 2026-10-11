@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSTSQRTDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSTSQRTDP": {"PowerPC": "XSTSQRTDP"}
+  },
+  "INPUTS": {
+    "XSTSQRTDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSTSQRTDP": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSTSQRTDP": {"PowerPC": ["XX2Form_1","60","106"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSTSQRTDP": {"PowerPC": ["XX2Form_1","60","106"]}
+  }
+}

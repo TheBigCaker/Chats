@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STXSSPX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STXSSPX": {"PowerPC": "STXSSPX"}
+  },
+  "INPUTS": {
+    "STXSSPX": {"PowerPC": [["vssrc",0],["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "STXSSPX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STXSSPX": {"PowerPC": ["XX1Form_memOp","31","652"]}
+  },
+  "OUTPUT_BYTES": {
+    "STXSSPX": {"PowerPC": ["XX1Form_memOp","31","652"]}
+  }
+}

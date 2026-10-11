@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVRSPIM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVRSPIM": {"PowerPC": "XVRSPIM"}
+  },
+  "INPUTS": {
+    "XVRSPIM": {"PowerPC": [["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVRSPIM": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVRSPIM": {"PowerPC": ["XX2Form","60","185"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVRSPIM": {"PowerPC": ["XX2Form","60","185"]}
+  }
+}

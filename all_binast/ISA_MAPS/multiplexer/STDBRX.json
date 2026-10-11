@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STDBRX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STDBRX": {"PowerPC": "STDBRX"}
+  },
+  "INPUTS": {
+    "STDBRX": {"PowerPC": [["g8rc",0],["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "STDBRX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STDBRX": {"PowerPC": ["XForm_8_memOp","31","660"]}
+  },
+  "OUTPUT_BYTES": {
+    "STDBRX": {"PowerPC": ["XForm_8_memOp","31","660"]}
+  }
+}

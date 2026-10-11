@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "CC",
+  "BACKENDS": ["AArch64","ARM"],
+  "INDEX": {
+    "CC_AArch64_DarwinPCS": {"AArch64": "CC_AArch64_DarwinPCS"},
+    "CC_ARM_AAPCS_Common": {"ARM": "CC_ARM_AAPCS_Common"}
+  },
+  "INPUTS": {
+    "CC_AArch64_DarwinPCS": {"AArch64": []},
+    "CC_ARM_AAPCS_Common": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "CC_AArch64_DarwinPCS": {"AArch64": []},
+    "CC_ARM_AAPCS_Common": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "CC_AArch64_DarwinPCS": {"AArch64": ["CallingConv","16"]},
+    "CC_ARM_AAPCS_Common": {"ARM": ["CallingConv","8","4","4","8","16","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "CC_AArch64_DarwinPCS": {"AArch64": ["CallingConv","16"]},
+    "CC_ARM_AAPCS_Common": {"ARM": ["CallingConv","8","4","4","8","16","8"]}
+  }
+}

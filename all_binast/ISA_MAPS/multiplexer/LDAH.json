@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LDAH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "LDAH": {"ARM": "LDAH"}
+  },
+  "INPUTS": {
+    "LDAH": {"ARM": [["addr_offset_none",0]]}
+  },
+  "OUTPUTS": {
+    "LDAH": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "LDAH": {"ARM": ["AIldracq","0b11"]}
+  },
+  "OUTPUT_BYTES": {
+    "LDAH": {"ARM": ["AIldracq","0b11"]}
+  }
+}

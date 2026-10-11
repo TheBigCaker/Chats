@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AMDGPUTCR",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "AMDGPUTCReturnTP": {"AMDGPU": "AMDGPUTCReturnTP"}
+  },
+  "INPUTS": {
+    "AMDGPUTCReturnTP": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "AMDGPUTCReturnTP": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "AMDGPUTCReturnTP": {"AMDGPU": ["SDTypeProfile","0","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "AMDGPUTCReturnTP": {"AMDGPU": ["SDTypeProfile","0","3"]}
+  }
+}

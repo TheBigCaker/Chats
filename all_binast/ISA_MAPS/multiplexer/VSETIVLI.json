@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSETIVLI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VSETIVLI": {"RISCV": "VSETIVLI"}
+  },
+  "INPUTS": {
+    "VSETIVLI": {"RISCV": [["uimm5",0],["VTypeIOp10",0]]}
+  },
+  "OUTPUTS": {
+    "VSETIVLI": {"RISCV": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "VSETIVLI": {"RISCV": ["RVInstVSetiVLi"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSETIVLI": {"RISCV": ["RVInstVSetiVLi"]}
+  }
+}

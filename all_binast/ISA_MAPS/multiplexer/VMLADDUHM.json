@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMLADDUHM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMLADDUHM": {"PowerPC": "VMLADDUHM"}
+  },
+  "INPUTS": {
+    "VMLADDUHM": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMLADDUHM": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMLADDUHM": {"PowerPC": ["VA1a_Int_Ty","34"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMLADDUHM": {"PowerPC": ["VA1a_Int_Ty","34"]}
+  }
+}

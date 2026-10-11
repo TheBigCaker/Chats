@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SSP",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SSP": {"RISCV": "SSP"}
+  },
+  "INPUTS": {
+    "SSP": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SSP": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SSP": {"RISCV": ["RISCVReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "SSP": {"RISCV": ["RISCVReg","0"]}
+  }
+}

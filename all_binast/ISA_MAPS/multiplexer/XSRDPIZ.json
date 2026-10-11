@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSRDPIZ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSRDPIZ": {"PowerPC": "XSRDPIZ"}
+  },
+  "INPUTS": {
+    "XSRDPIZ": {"PowerPC": [["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSRDPIZ": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSRDPIZ": {"PowerPC": ["XX2Form","60","89"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSRDPIZ": {"PowerPC": ["XX2Form","60","89"]}
+  }
+}

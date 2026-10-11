@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "VR",
+  "BACKENDS": ["RISCV","AMDGPU"],
+  "INDEX": {
+    "VR": {"RISCV": "VR"},
+    "VRegOrLds_32": {"AMDGPU": "VRegOrLds_32"},
+    "VReg_1": {"AMDGPU": "VReg_1"}
+  },
+  "INPUTS": {
+    "VR": {"RISCV": []},
+    "VRegOrLds_32": {"AMDGPU": []},
+    "VReg_1": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "VR": {"RISCV": []},
+    "VRegOrLds_32": {"AMDGPU": []},
+    "VReg_1": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "VR": {"RISCV": ["VReg","8","7","1"]},
+    "VRegOrLds_32": {"AMDGPU": ["SIRegisterClass","32"]},
+    "VReg_1": {"AMDGPU": ["SIRegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "VR": {"RISCV": ["VReg","8","7","1"]},
+    "VRegOrLds_32": {"AMDGPU": ["SIRegisterClass","32"]},
+    "VReg_1": {"AMDGPU": ["SIRegisterClass","32"]}
+  }
+}

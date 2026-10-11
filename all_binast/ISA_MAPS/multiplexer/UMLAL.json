@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "UMLAL",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UMLAL": {"ARM": "UMLAL"},
+    "UMLALv5": {"ARM": "UMLALv5"}
+  },
+  "INPUTS": {
+    "UMLAL": {"ARM": [["GPR",64],["GPR",64],["GPR",64],["GPR",64]]},
+    "UMLALv5": {"ARM": [["GPR",64],["GPR",64],["GPR",64],["GPR",64],["pred",0],["cc_out",0]]}
+  },
+  "OUTPUTS": {
+    "UMLAL": {"ARM": [["GPR",64],["GPR",64]]},
+    "UMLALv5": {"ARM": [["GPR",64],["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "UMLAL": {"ARM": ["AsMla1I64","0b0000101"]},
+    "UMLALv5": {"ARM": ["ARMPseudoExpand","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "UMLAL": {"ARM": ["AsMla1I64","0b0000101"]},
+    "UMLALv5": {"ARM": ["ARMPseudoExpand","4"]}
+  }
+}

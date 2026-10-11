@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVTSTDCSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVTSTDCSP": {"PowerPC": "XVTSTDCSP"}
+  },
+  "INPUTS": {
+    "XVTSTDCSP": {"PowerPC": [["u7imm",7],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVTSTDCSP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVTSTDCSP": {"PowerPC": ["XX2_RD6_DCMX7_RS6","60","13","5"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVTSTDCSP": {"PowerPC": ["XX2_RD6_DCMX7_RS6","60","13","5"]}
+  }
+}

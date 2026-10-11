@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULOSW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMULOSW": {"PowerPC": "VMULOSW"}
+  },
+  "INPUTS": {
+    "VMULOSW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMULOSW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMULOSW": {"PowerPC": ["VX1_Int_Ty2","392"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULOSW": {"PowerPC": ["VX1_Int_Ty2","392"]}
+  }
+}

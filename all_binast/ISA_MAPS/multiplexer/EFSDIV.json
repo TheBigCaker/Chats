@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFSDIV",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFSDIV": {"PowerPC": "EFSDIV"}
+  },
+  "INPUTS": {
+    "EFSDIV": {"PowerPC": [["spe4rc",0],["spe4rc",0]]}
+  },
+  "OUTPUTS": {
+    "EFSDIV": {"PowerPC": [["spe4rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFSDIV": {"PowerPC": ["EFXForm_1","713"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFSDIV": {"PowerPC": ["EFXForm_1","713"]}
+  }
+}

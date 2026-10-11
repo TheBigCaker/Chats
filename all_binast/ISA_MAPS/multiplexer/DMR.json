@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "DMR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DMRp0": {"PowerPC": "DMRp0"},
+    "DMRp1": {"PowerPC": "DMRp1"},
+    "DMRp2": {"PowerPC": "DMRp2"},
+    "DMRp3": {"PowerPC": "DMRp3"},
+    "DMRpRC": {"PowerPC": "DMRpRC"}
+  },
+  "INPUTS": {
+    "DMRp0": {"PowerPC": []},
+    "DMRp1": {"PowerPC": []},
+    "DMRp2": {"PowerPC": []},
+    "DMRp3": {"PowerPC": []},
+    "DMRpRC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "DMRp0": {"PowerPC": []},
+    "DMRp1": {"PowerPC": []},
+    "DMRp2": {"PowerPC": []},
+    "DMRp3": {"PowerPC": []},
+    "DMRpRC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "DMRp0": {"PowerPC": ["DMRp","0"]},
+    "DMRp1": {"PowerPC": ["DMRp","1"]},
+    "DMRp2": {"PowerPC": ["DMRp","2"]},
+    "DMRp3": {"PowerPC": ["DMRp","3"]},
+    "DMRpRC": {"PowerPC": ["PPCRegisterClassWithSize","128","2048"]}
+  },
+  "OUTPUT_BYTES": {
+    "DMRp0": {"PowerPC": ["DMRp","0"]},
+    "DMRp1": {"PowerPC": ["DMRp","1"]},
+    "DMRp2": {"PowerPC": ["DMRp","2"]},
+    "DMRp3": {"PowerPC": ["DMRp","3"]},
+    "DMRpRC": {"PowerPC": ["PPCRegisterClassWithSize","128","2048"]}
+  }
+}

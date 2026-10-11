@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VRFIN",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VRFIN": {"PowerPC": "VRFIN"}
+  },
+  "INPUTS": {
+    "VRFIN": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VRFIN": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VRFIN": {"PowerPC": ["VX2_Int_SP","522"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRFIN": {"PowerPC": ["VX2_Int_SP","522"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ALUE",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "ALUE": {"PowerPC": "ALUE"}
+  },
+  "INPUTS": {
+    "ALUE": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "ALUE": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "ALUE": {"PowerPC": ["ProcResource","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "ALUE": {"PowerPC": ["ProcResource","2"]}
+  }
+}

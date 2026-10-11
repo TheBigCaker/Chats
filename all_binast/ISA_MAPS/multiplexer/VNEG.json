@@ -1,0 +1,64 @@
+{
+  "CATEGORY": "VNEG",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VNEGs8d": {"ARM": "VNEGs8d"},
+    "VNEGs16d": {"ARM": "VNEGs16d"},
+    "VNEGs32d": {"ARM": "VNEGs32d"},
+    "VNEGs8q": {"ARM": "VNEGs8q"},
+    "VNEGs16q": {"ARM": "VNEGs16q"},
+    "VNEGs32q": {"ARM": "VNEGs32q"},
+    "VNEGfd": {"ARM": "VNEGfd"},
+    "VNEGf32q": {"ARM": "VNEGf32q"},
+    "VNEGhd": {"ARM": "VNEGhd"},
+    "VNEGhq": {"ARM": "VNEGhq"}
+  },
+  "INPUTS": {
+    "VNEGs8d": {"ARM": []},
+    "VNEGs16d": {"ARM": []},
+    "VNEGs32d": {"ARM": []},
+    "VNEGs8q": {"ARM": []},
+    "VNEGs16q": {"ARM": []},
+    "VNEGs32q": {"ARM": []},
+    "VNEGfd": {"ARM": [["DPR",0]]},
+    "VNEGf32q": {"ARM": [["QPR",0]]},
+    "VNEGhd": {"ARM": [["DPR",0]]},
+    "VNEGhq": {"ARM": [["QPR",0]]}
+  },
+  "OUTPUTS": {
+    "VNEGs8d": {"ARM": []},
+    "VNEGs16d": {"ARM": []},
+    "VNEGs32d": {"ARM": []},
+    "VNEGs8q": {"ARM": []},
+    "VNEGs16q": {"ARM": []},
+    "VNEGs32q": {"ARM": []},
+    "VNEGfd": {"ARM": [["DPR",0]]},
+    "VNEGf32q": {"ARM": [["QPR",0]]},
+    "VNEGhd": {"ARM": [["DPR",0]]},
+    "VNEGhq": {"ARM": [["QPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VNEGs8d": {"ARM": ["VNEGD","0b00"]},
+    "VNEGs16d": {"ARM": ["VNEGD","0b01"]},
+    "VNEGs32d": {"ARM": ["VNEGD","0b10"]},
+    "VNEGs8q": {"ARM": ["VNEGQ","0b00"]},
+    "VNEGs16q": {"ARM": ["VNEGQ","0b01"]},
+    "VNEGs32q": {"ARM": ["VNEGQ","0b10"]},
+    "VNEGfd": {"ARM": ["N2V","0b11","0b11","0b10","0b01","0b01111","0","0"]},
+    "VNEGf32q": {"ARM": ["N2V","0b11","0b11","0b10","0b01","0b01111","1","0"]},
+    "VNEGhd": {"ARM": ["N2V","0b11","0b11","0b01","0b01","0b01111","0","0"]},
+    "VNEGhq": {"ARM": ["N2V","0b11","0b11","0b01","0b01","0b01111","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VNEGs8d": {"ARM": ["VNEGD","0b00"]},
+    "VNEGs16d": {"ARM": ["VNEGD","0b01"]},
+    "VNEGs32d": {"ARM": ["VNEGD","0b10"]},
+    "VNEGs8q": {"ARM": ["VNEGQ","0b00"]},
+    "VNEGs16q": {"ARM": ["VNEGQ","0b01"]},
+    "VNEGs32q": {"ARM": ["VNEGQ","0b10"]},
+    "VNEGfd": {"ARM": ["N2V","0b11","0b11","0b10","0b01","0b01111","0","0"]},
+    "VNEGf32q": {"ARM": ["N2V","0b11","0b11","0b10","0b01","0b01111","1","0"]},
+    "VNEGhd": {"ARM": ["N2V","0b11","0b11","0b01","0b01","0b01111","0","0"]},
+    "VNEGhq": {"ARM": ["N2V","0b11","0b11","0b01","0b01","0b01111","1","0"]}
+  }
+}

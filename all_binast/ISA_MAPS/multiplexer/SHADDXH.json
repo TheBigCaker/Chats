@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SHADDXH",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "SHADDXH.i32": {"Mali": "SHADDXH.i32"}
+  },
+  "INPUTS": {
+    "SHADDXH.i32": {"Mali": [["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "SHADDXH.i32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "SHADDXH.i32": {"Mali": ["Bifrost_add","0x3f8c0","0xfffc0"]}
+  },
+  "OUTPUT_BYTES": {
+    "SHADDXH.i32": {"Mali": ["Bifrost_add","0x3f8c0","0xfffc0"]}
+  }
+}

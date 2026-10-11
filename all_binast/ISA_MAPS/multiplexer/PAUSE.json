@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PAUSE",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PAUSE": {"X86": "PAUSE"}
+  },
+  "INPUTS": {
+    "PAUSE": {"X86": []}
+  },
+  "OUTPUTS": {
+    "PAUSE": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PAUSE": {"X86": ["0x90"]}
+  },
+  "OUTPUT_BYTES": {
+    "PAUSE": {"X86": ["0x90"]}
+  }
+}

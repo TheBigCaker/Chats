@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FPEXC",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "FPEXC": {"ARM": "FPEXC"}
+  },
+  "INPUTS": {
+    "FPEXC": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "FPEXC": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "FPEXC": {"ARM": ["ARMReg","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPEXC": {"ARM": ["ARMReg","8"]}
+  }
+}

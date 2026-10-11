@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WACC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "WACC_HIRC": {"PowerPC": "WACC_HIRC"}
+  },
+  "INPUTS": {
+    "WACC_HIRC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "WACC_HIRC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "WACC_HIRC": {"PowerPC": ["PPCRegisterClassWithSize","128","0","512"]}
+  },
+  "OUTPUT_BYTES": {
+    "WACC_HIRC": {"PowerPC": ["PPCRegisterClassWithSize","128","0","512"]}
+  }
+}

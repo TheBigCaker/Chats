@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VINSERTW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VINSERTW": {"PowerPC": "VINSERTW"}
+  },
+  "INPUTS": {
+    "VINSERTW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VINSERTW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VINSERTW": {"PowerPC": ["VX1_VT5_UIM5_VB5","909"]}
+  },
+  "OUTPUT_BYTES": {
+    "VINSERTW": {"PowerPC": ["VX1_VT5_UIM5_VB5","909"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVMAXSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVMAXSP": {"PowerPC": "XVMAXSP"}
+  },
+  "INPUTS": {
+    "XVMAXSP": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVMAXSP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVMAXSP": {"PowerPC": ["XX3Form","60","192"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVMAXSP": {"PowerPC": ["XX3Form","60","192"]}
+  }
+}

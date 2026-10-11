@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MULHR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MULHR": {"RISCV": "MULHR"}
+  },
+  "INPUTS": {
+    "MULHR": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "MULHR": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "MULHR": {"RISCV": ["RVPBinary_rr","0b0000","0b11","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "MULHR": {"RISCV": ["RVPBinary_rr","0b0000","0b11","0b111"]}
+  }
+}

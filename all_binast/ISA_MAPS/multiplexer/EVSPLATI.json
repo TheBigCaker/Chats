@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVSPLATI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVSPLATI": {"PowerPC": "EVSPLATI"}
+  },
+  "INPUTS": {
+    "EVSPLATI": {"PowerPC": [["s5imm",5]]}
+  },
+  "OUTPUTS": {
+    "EVSPLATI": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVSPLATI": {"PowerPC": ["EVXForm_2","553"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVSPLATI": {"PowerPC": ["EVXForm_2","553"]}
+  }
+}

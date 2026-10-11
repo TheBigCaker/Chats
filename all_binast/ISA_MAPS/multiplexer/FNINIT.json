@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FNINIT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "FNINIT": {"X86": "FNINIT"}
+  },
+  "INPUTS": {
+    "FNINIT": {"X86": []}
+  },
+  "OUTPUTS": {
+    "FNINIT": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "FNINIT": {"X86": ["0xDB"]}
+  },
+  "OUTPUT_BYTES": {
+    "FNINIT": {"X86": ["0xDB"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PMULHU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PMULHU_H": {"RISCV": "PMULHU_H"},
+    "PMULHU_W": {"RISCV": "PMULHU_W"}
+  },
+  "INPUTS": {
+    "PMULHU_H": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMULHU_W": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PMULHU_H": {"RISCV": [["GPR:$rd",0]]},
+    "PMULHU_W": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "PMULHU_H": {"RISCV": ["RVPBinary_rr","0b0010","0b00","0b111"]},
+    "PMULHU_W": {"RISCV": ["RVPBinary_rr","0b0010","0b01","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "PMULHU_H": {"RISCV": ["RVPBinary_rr","0b0010","0b00","0b111"]},
+    "PMULHU_W": {"RISCV": ["RVPBinary_rr","0b0010","0b01","0b111"]}
+  }
+}

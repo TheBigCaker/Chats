@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TABORTDC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "TABORTDC": {"PowerPC": "TABORTDC"}
+  },
+  "INPUTS": {
+    "TABORTDC": {"PowerPC": [["u5imm",5],["gprc",0],["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "TABORTDC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "TABORTDC": {"PowerPC": ["XForm_base_r3xo","31","814"]}
+  },
+  "OUTPUT_BYTES": {
+    "TABORTDC": {"PowerPC": ["XForm_base_r3xo","31","814"]}
+  }
+}

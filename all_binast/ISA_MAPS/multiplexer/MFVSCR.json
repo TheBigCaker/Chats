@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MFVSCR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MFVSCR": {"PowerPC": "MFVSCR"}
+  },
+  "INPUTS": {
+    "MFVSCR": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "MFVSCR": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MFVSCR": {"PowerPC": ["VXForm_4","1540"]}
+  },
+  "OUTPUT_BYTES": {
+    "MFVSCR": {"PowerPC": ["VXForm_4","1540"]}
+  }
+}

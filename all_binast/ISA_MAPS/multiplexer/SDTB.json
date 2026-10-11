@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "SDTB",
+  "BACKENDS": ["ARM","AMDGPU"],
+  "INDEX": {
+    "SDTBinaryArithWithFlags": {"ARM": "SDTBinaryArithWithFlags"},
+    "SDTBinaryArithWithFlagsInOut": {"ARM": "SDTBinaryArithWithFlagsInOut"},
+    "SDTBufferLoad": {"AMDGPU": "SDTBufferLoad"},
+    "SDTBufferStore": {"AMDGPU": "SDTBufferStore"}
+  },
+  "INPUTS": {
+    "SDTBinaryArithWithFlags": {"ARM": []},
+    "SDTBinaryArithWithFlagsInOut": {"ARM": []},
+    "SDTBufferLoad": {"AMDGPU": []},
+    "SDTBufferStore": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SDTBinaryArithWithFlags": {"ARM": []},
+    "SDTBinaryArithWithFlagsInOut": {"ARM": []},
+    "SDTBufferLoad": {"AMDGPU": []},
+    "SDTBufferStore": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SDTBinaryArithWithFlags": {"ARM": ["SDTypeProfile","2","2"]},
+    "SDTBinaryArithWithFlagsInOut": {"ARM": ["SDTypeProfile","2","3"]},
+    "SDTBufferLoad": {"AMDGPU": ["SDTypeProfile","1","7"]},
+    "SDTBufferStore": {"AMDGPU": ["SDTypeProfile","0","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTBinaryArithWithFlags": {"ARM": ["SDTypeProfile","2","2"]},
+    "SDTBinaryArithWithFlagsInOut": {"ARM": ["SDTypeProfile","2","3"]},
+    "SDTBufferLoad": {"AMDGPU": ["SDTypeProfile","1","7"]},
+    "SDTBufferStore": {"AMDGPU": ["SDTypeProfile","0","8"]}
+  }
+}

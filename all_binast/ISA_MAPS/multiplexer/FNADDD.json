@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FNADDD",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FNADDD": {"Sparc": "FNADDD"}
+  },
+  "INPUTS": {
+    "FNADDD": {"Sparc": [["DFPRegs",0],["DFPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FNADDD": {"Sparc": [["DFPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FNADDD": {"Sparc": ["F3_3","0b10","0b110100","0b001010010"]}
+  },
+  "OUTPUT_BYTES": {
+    "FNADDD": {"Sparc": ["F3_3","0b10","0b110100","0b001010010"]}
+  }
+}

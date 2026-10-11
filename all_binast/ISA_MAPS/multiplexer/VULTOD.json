@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VULTOD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VULTOD": {"ARM": "VULTOD"}
+  },
+  "INPUTS": {
+    "VULTOD": {"ARM": [["DPR",0],["fbits32",0]]}
+  },
+  "OUTPUTS": {
+    "VULTOD": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VULTOD": {"ARM": ["AVConv1XInsD_Encode","0b11101","0b11","0b1011","0b1011","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VULTOD": {"ARM": ["AVConv1XInsD_Encode","0b11101","0b11","0b1011","0b1011","1"]}
+  }
+}

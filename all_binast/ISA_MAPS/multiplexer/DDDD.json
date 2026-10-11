@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DDDD",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "DDDD": {"AArch64": "DDDD"}
+  },
+  "INPUTS": {
+    "DDDD": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "DDDD": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "DDDD": {"AArch64": ["RegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "DDDD": {"AArch64": ["RegisterClass","64"]}
+  }
+}

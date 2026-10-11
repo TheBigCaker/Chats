@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMRGOW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMRGOW": {"PowerPC": "VMRGOW"}
+  },
+  "INPUTS": {
+    "VMRGOW": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMRGOW": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMRGOW": {"PowerPC": ["VXForm_1","1676"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMRGOW": {"PowerPC": ["VXForm_1","1676"]}
+  }
+}

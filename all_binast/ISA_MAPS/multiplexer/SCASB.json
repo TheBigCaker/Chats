@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SCASB",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SCASB": {"X86": "SCASB"}
+  },
+  "INPUTS": {
+    "SCASB": {"X86": [["dstidx8",0]]}
+  },
+  "OUTPUTS": {
+    "SCASB": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SCASB": {"X86": ["0xAE"]}
+  },
+  "OUTPUT_BYTES": {
+    "SCASB": {"X86": ["0xAE"]}
+  }
+}

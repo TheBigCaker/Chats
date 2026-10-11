@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "ARRAY",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "ARRAY8": {"Sparc": "ARRAY8"},
+    "ARRAY16": {"Sparc": "ARRAY16"},
+    "ARRAY32": {"Sparc": "ARRAY32"}
+  },
+  "INPUTS": {
+    "ARRAY8": {"Sparc": []},
+    "ARRAY16": {"Sparc": []},
+    "ARRAY32": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "ARRAY8": {"Sparc": []},
+    "ARRAY16": {"Sparc": []},
+    "ARRAY32": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "ARRAY8": {"Sparc": ["VISInst","0b000010000"]},
+    "ARRAY16": {"Sparc": ["VISInst","0b000010010"]},
+    "ARRAY32": {"Sparc": ["VISInst","0b000010100"]}
+  },
+  "OUTPUT_BYTES": {
+    "ARRAY8": {"Sparc": ["VISInst","0b000010000"]},
+    "ARRAY16": {"Sparc": ["VISInst","0b000010010"]},
+    "ARRAY32": {"Sparc": ["VISInst","0b000010100"]}
+  }
+}

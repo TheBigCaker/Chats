@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FFBH",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "FFBH_UINT": {"AMDGPU": "FFBH_UINT"}
+  },
+  "INPUTS": {
+    "FFBH_UINT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "FFBH_UINT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "FFBH_UINT": {"AMDGPU": ["R600_1OP_Helper","0xAB"]}
+  },
+  "OUTPUT_BYTES": {
+    "FFBH_UINT": {"AMDGPU": ["R600_1OP_Helper","0xAB"]}
+  }
+}

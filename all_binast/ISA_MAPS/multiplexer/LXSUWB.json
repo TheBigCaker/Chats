@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXSUWB",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "LXSUWB": {"RISCV": "LXSUWB"}
+  },
+  "INPUTS": {
+    "LXSUWB": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "LXSUWB": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "LXSUWB": {"RISCV": ["ZilxLoad","0b11110","0b000"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXSUWB": {"RISCV": ["ZilxLoad","0b11110","0b000"]}
+  }
+}

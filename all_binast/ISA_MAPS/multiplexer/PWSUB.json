@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PWSUB",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PWSUB_H": {"RISCV": "PWSUB_H"},
+    "PWSUB_B": {"RISCV": "PWSUB_B"}
+  },
+  "INPUTS": {
+    "PWSUB_H": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PWSUB_B": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PWSUB_H": {"RISCV": [["GPRPairRV32:$rd",0]]},
+    "PWSUB_B": {"RISCV": [["GPRPairRV32:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "PWSUB_H": {"RISCV": ["RVPWideningBinary_rr","0b1000","0b00"]},
+    "PWSUB_B": {"RISCV": ["RVPWideningBinary_rr","0b1000","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "PWSUB_H": {"RISCV": ["RVPWideningBinary_rr","0b1000","0b00"]},
+    "PWSUB_B": {"RISCV": ["RVPWideningBinary_rr","0b1000","0b10"]}
+  }
+}

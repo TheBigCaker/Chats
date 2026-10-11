@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "CVTPS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CVTPS2PDrr": {"X86": "CVTPS2PDrr"},
+    "CVTPS2PDrm": {"X86": "CVTPS2PDrm"}
+  },
+  "INPUTS": {
+    "CVTPS2PDrr": {"X86": [["VR128",128]]},
+    "CVTPS2PDrm": {"X86": [["f64mem",0]]}
+  },
+  "OUTPUTS": {
+    "CVTPS2PDrr": {"X86": [["VR128",128]]},
+    "CVTPS2PDrm": {"X86": [["VR128",128]]}
+  },
+  "INPUT_BYTES": {
+    "CVTPS2PDrr": {"X86": ["0x5A"]},
+    "CVTPS2PDrm": {"X86": ["0x5A"]}
+  },
+  "OUTPUT_BYTES": {
+    "CVTPS2PDrr": {"X86": ["0x5A"]},
+    "CVTPS2PDrm": {"X86": ["0x5A"]}
+  }
+}

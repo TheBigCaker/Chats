@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "GPRJALR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "GPRJALR": {"RISCV": "GPRJALR"}
+  },
+  "INPUTS": {
+    "GPRJALR": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "GPRJALR": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "GPRJALR": {"RISCV": ["GPRRegisterClass","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "GPRJALR": {"RISCV": ["GPRRegisterClass","0"]}
+  }
+}

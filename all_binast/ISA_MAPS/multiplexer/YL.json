@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YL",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YLenRI": {"RISCV": "YLenRI"}
+  },
+  "INPUTS": {
+    "YLenRI": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YLenRI": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YLenRI": {"RISCV": ["RegInfoByHwMode","64","128"]}
+  },
+  "OUTPUT_BYTES": {
+    "YLenRI": {"RISCV": ["RegInfoByHwMode","64","128"]}
+  }
+}

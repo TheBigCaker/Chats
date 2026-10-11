@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "SMEM",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "SMEMatrixNone": {"AArch64": "SMEMatrixNone"},
+    "SMEMatrixTileB": {"AArch64": "SMEMatrixTileB"},
+    "SMEMatrixTileH": {"AArch64": "SMEMatrixTileH"},
+    "SMEMatrixTileS": {"AArch64": "SMEMatrixTileS"},
+    "SMEMatrixTileD": {"AArch64": "SMEMatrixTileD"},
+    "SMEMatrixTileQ": {"AArch64": "SMEMatrixTileQ"},
+    "SMEMatrixArray": {"AArch64": "SMEMatrixArray"}
+  },
+  "INPUTS": {
+    "SMEMatrixNone": {"AArch64": []},
+    "SMEMatrixTileB": {"AArch64": []},
+    "SMEMatrixTileH": {"AArch64": []},
+    "SMEMatrixTileS": {"AArch64": []},
+    "SMEMatrixTileD": {"AArch64": []},
+    "SMEMatrixTileQ": {"AArch64": []},
+    "SMEMatrixArray": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "SMEMatrixNone": {"AArch64": []},
+    "SMEMatrixTileB": {"AArch64": []},
+    "SMEMatrixTileH": {"AArch64": []},
+    "SMEMatrixTileS": {"AArch64": []},
+    "SMEMatrixTileD": {"AArch64": []},
+    "SMEMatrixTileQ": {"AArch64": []},
+    "SMEMatrixArray": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "SMEMatrixNone": {"AArch64": ["SMEMatrixTypeEnum","0"]},
+    "SMEMatrixTileB": {"AArch64": ["SMEMatrixTypeEnum","1"]},
+    "SMEMatrixTileH": {"AArch64": ["SMEMatrixTypeEnum","2"]},
+    "SMEMatrixTileS": {"AArch64": ["SMEMatrixTypeEnum","3"]},
+    "SMEMatrixTileD": {"AArch64": ["SMEMatrixTypeEnum","4"]},
+    "SMEMatrixTileQ": {"AArch64": ["SMEMatrixTypeEnum","5"]},
+    "SMEMatrixArray": {"AArch64": ["SMEMatrixTypeEnum","6"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMEMatrixNone": {"AArch64": ["SMEMatrixTypeEnum","0"]},
+    "SMEMatrixTileB": {"AArch64": ["SMEMatrixTypeEnum","1"]},
+    "SMEMatrixTileH": {"AArch64": ["SMEMatrixTypeEnum","2"]},
+    "SMEMatrixTileS": {"AArch64": ["SMEMatrixTypeEnum","3"]},
+    "SMEMatrixTileD": {"AArch64": ["SMEMatrixTypeEnum","4"]},
+    "SMEMatrixTileQ": {"AArch64": ["SMEMatrixTypeEnum","5"]},
+    "SMEMatrixArray": {"AArch64": ["SMEMatrixTypeEnum","6"]}
+  }
+}

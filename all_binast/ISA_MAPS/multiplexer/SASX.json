@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SASX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SASX": {"ARM": "SASX"}
+  },
+  "INPUTS": {
+    "SASX": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SASX": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SASX": {"ARM": ["AAIIntrinsic","0b01100001","0b11110011"]}
+  },
+  "OUTPUT_BYTES": {
+    "SASX": {"ARM": ["AAIIntrinsic","0b01100001","0b11110011"]}
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "LO",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "LO0": {"Mips": "LO0"},
+    "LO1": {"Mips": "LO1"},
+    "LO2": {"Mips": "LO2"},
+    "LO3": {"Mips": "LO3"},
+    "LO32": {"Mips": "LO32"},
+    "LO32DSP": {"Mips": "LO32DSP"},
+    "LO64": {"Mips": "LO64"}
+  },
+  "INPUTS": {
+    "LO0": {"Mips": []},
+    "LO1": {"Mips": []},
+    "LO2": {"Mips": []},
+    "LO3": {"Mips": []},
+    "LO32": {"Mips": []},
+    "LO32DSP": {"Mips": []},
+    "LO64": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "LO0": {"Mips": []},
+    "LO1": {"Mips": []},
+    "LO2": {"Mips": []},
+    "LO3": {"Mips": []},
+    "LO32": {"Mips": []},
+    "LO32DSP": {"Mips": []},
+    "LO64": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "LO0": {"Mips": ["MipsReg","0"]},
+    "LO1": {"Mips": ["MipsReg","1"]},
+    "LO2": {"Mips": ["MipsReg","2"]},
+    "LO3": {"Mips": ["MipsReg","3"]},
+    "LO32": {"Mips": ["RegisterClass","32"]},
+    "LO32DSP": {"Mips": ["RegisterClass","32","0"]},
+    "LO64": {"Mips": ["RegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "LO0": {"Mips": ["MipsReg","0"]},
+    "LO1": {"Mips": ["MipsReg","1"]},
+    "LO2": {"Mips": ["MipsReg","2"]},
+    "LO3": {"Mips": ["MipsReg","3"]},
+    "LO32": {"Mips": ["RegisterClass","32"]},
+    "LO32DSP": {"Mips": ["RegisterClass","32","0"]},
+    "LO64": {"Mips": ["RegisterClass","64"]}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "FMINM",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FMINM_S": {"RISCV": "FMINM_S"},
+    "FMINM_D": {"RISCV": "FMINM_D"},
+    "FMINM_H": {"RISCV": "FMINM_H"},
+    "FMINM_Q": {"RISCV": "FMINM_Q"}
+  },
+  "INPUTS": {
+    "FMINM_S": {"RISCV": [["rty:$rs1",0],["rty:$rs2",0]]},
+    "FMINM_D": {"RISCV": [["rty:$rs1",0],["rty:$rs2",0]]},
+    "FMINM_H": {"RISCV": [["rty:$rs1",0],["rty:$rs2",0]]},
+    "FMINM_Q": {"RISCV": [["rty:$rs1",0],["rty:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "FMINM_S": {"RISCV": [["rty:$rd",0]]},
+    "FMINM_D": {"RISCV": [["rty:$rd",0]]},
+    "FMINM_H": {"RISCV": [["rty:$rd",0]]},
+    "FMINM_Q": {"RISCV": [["rty:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "FMINM_S": {"RISCV": ["FPALU_rr","0b0010100","0b010"]},
+    "FMINM_D": {"RISCV": ["FPALU_rr","0b0010101","0b010"]},
+    "FMINM_H": {"RISCV": ["FPALU_rr","0b0010110","0b010"]},
+    "FMINM_Q": {"RISCV": ["FPALU_rr","0b0010111","0b010"]}
+  },
+  "OUTPUT_BYTES": {
+    "FMINM_S": {"RISCV": ["FPALU_rr","0b0010100","0b010"]},
+    "FMINM_D": {"RISCV": ["FPALU_rr","0b0010101","0b010"]},
+    "FMINM_H": {"RISCV": ["FPALU_rr","0b0010110","0b010"]},
+    "FMINM_Q": {"RISCV": ["FPALU_rr","0b0010111","0b010"]}
+  }
+}

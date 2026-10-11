@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TLBIEP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "TLBIEP": {"PowerPC": "TLBIEP"}
+  },
+  "INPUTS": {
+    "TLBIEP": {"PowerPC": [["gprc",0],["gprc",0],["u2imm",2],["u1imm",1],["u1imm",1]]}
+  },
+  "OUTPUTS": {
+    "TLBIEP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "TLBIEP": {"PowerPC": ["XForm_RSB5_UIMM2_2UIMM1","31","50"]}
+  },
+  "OUTPUT_BYTES": {
+    "TLBIEP": {"PowerPC": ["XForm_RSB5_UIMM2_2UIMM1","31","50"]}
+  }
+}

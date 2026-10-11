@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FMVP",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FMVP_D_X": {"RISCV": "FMVP_D_X"},
+    "FMVP_Q_X": {"RISCV": "FMVP_Q_X"}
+  },
+  "INPUTS": {
+    "FMVP_D_X": {"RISCV": []},
+    "FMVP_Q_X": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "FMVP_D_X": {"RISCV": []},
+    "FMVP_Q_X": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "FMVP_D_X": {"RISCV": ["FPBinaryOp_rr","0b1011001","0b000"]},
+    "FMVP_Q_X": {"RISCV": ["FPBinaryOp_rr","0b1011011","0b000"]}
+  },
+  "OUTPUT_BYTES": {
+    "FMVP_D_X": {"RISCV": ["FPBinaryOp_rr","0b1011001","0b000"]},
+    "FMVP_Q_X": {"RISCV": ["FPBinaryOp_rr","0b1011011","0b000"]}
+  }
+}

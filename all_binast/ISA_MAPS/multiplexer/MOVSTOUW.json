@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVSTOUW",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "MOVSTOUW": {"Sparc": "MOVSTOUW"}
+  },
+  "INPUTS": {
+    "MOVSTOUW": {"Sparc": [["FPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "MOVSTOUW": {"Sparc": [["IntRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "MOVSTOUW": {"Sparc": ["VISInstFormat","0b100010001"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVSTOUW": {"Sparc": ["VISInstFormat","0b100010001"]}
+  }
+}

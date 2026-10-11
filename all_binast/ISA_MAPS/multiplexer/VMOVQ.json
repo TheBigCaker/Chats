@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMOVQ",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMOVQ0": {"ARM": "VMOVQ0"}
+  },
+  "INPUTS": {
+    "VMOVQ0": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VMOVQ0": {"ARM": [["QPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMOVQ0": {"ARM": ["ARMPseudoExpand","4","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMOVQ0": {"ARM": ["ARMPseudoExpand","4","0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSXEXPQP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSXEXPQP": {"PowerPC": "XSXEXPQP"}
+  },
+  "INPUTS": {
+    "XSXEXPQP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSXEXPQP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSXEXPQP": {"PowerPC": ["X_VT5_XO5_VB5","63","2","804"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSXEXPQP": {"PowerPC": ["X_VT5_XO5_VB5","63","2","804"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "JAL",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "JAL": {"RISCV": "JAL"}
+  },
+  "INPUTS": {
+    "JAL": {"RISCV": [["simm21_lsb0_jal",0]]}
+  },
+  "OUTPUTS": {
+    "JAL": {"RISCV": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "JAL": {"RISCV": ["RVInstJ"]}
+  },
+  "OUTPUT_BYTES": {
+    "JAL": {"RISCV": ["RVInstJ"]}
+  }
+}

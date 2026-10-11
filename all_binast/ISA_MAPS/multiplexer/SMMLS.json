@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SMMLS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SMMLS": {"ARM": "SMMLS"}
+  },
+  "INPUTS": {
+    "SMMLS": {"ARM": [["GPR",64],["GPR",64],["GPR",64]]}
+  },
+  "OUTPUTS": {
+    "SMMLS": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "SMMLS": {"ARM": ["AMul2Ia","0b0111010","0b1101"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMMLS": {"ARM": ["AMul2Ia","0b0111010","0b1101"]}
+  }
+}

@@ -1,0 +1,1436 @@
+AMDGPUSubtargetFeature	6	FeatureString	Description	GenPredicate = 1	GenAssemblerPredicate = 1	list<SubtargetFeature> Deps = []	InlineBehavior IB = InlineDefault	0
+FeatureMaxHardClauseLength	1	int size	1	SubtargetFeature
+GCNSubtargetFeatureGeneration	3	Value	FeatureName	list<SubtargetFeature> Implies	1	SubtargetFeatureGeneration
+CCIfExtend	1	CCAction A	1	CCIf
+RegMask	1	mask	1	CalleeSavedRegs
+canonicalize_zext_shift_amt	1	Instruction opc	1	GICombineRule
+combine_binop_s64_with_s32_mask	1	Instruction opcode	1	GICombineRule
+SubtargetFeatureFlatOffsetBits	1	int Value	1	SubtargetFeature
+GISelSop2Pat	5	node	Instruction inst	ValueType dst_vt	ValueType src0_vt = dst_vt	ValueType src1_vt = src0_vt	1	GCNPat
+AMDGPUInst	4	outs	ins	asm = ""	pattern = []	1	Instruction
+AMDGPUShaderInst	4	outs	ins	asm = ""	pattern = []	1	AMDGPUInst
+ILFormat	4	outs	ins	asmstr	pattern	1	Instruction
+RegListUnion	2	list<Register> lstA	list<Register> lstB	0
+AMDGPUPat	2	pattern	result	3	Pat	PredicateControl	GISelFlags
+CustomOperandClass	5	name	optional	predicateMethod	parserMethod	defaultMethod	1	AsmOperandClass
+CustomOperandProps	2	optional = 0	name = NAME	0
+CustomOperand	3	optional = 0	name = NAME	ValueType type = i32	2	Operand	CustomOperandProps
+S16ImmOperand	4	i16	"S16Imm"	0	"printU16ImmOperand"	0
+HasOneUseUnaryOp	1	op	1	PatFrag
+HasOneUseBinOp	1	op	1	PatFrag
+HasOneUseTernaryOp	1	op	1	PatFrag
+is_canonicalized_1	1	op	1	PatFrag
+is_canonicalized_2	1	op	1	PatFrag
+FoldTernaryOpPat	2	op1	op2	1	PatFrag
+AddressSpaceList	1	list<int> AS	0
+Aligned	1	int Bytes	0
+StoreHi16	2	op	ValueType vt	1	PatFrag
+noret_op	0	0
+flat_addr_space_atomic_op	0	0
+local_addr_space_atomic_op	0	0
+noret_binary_atomic_op	1	SDNode atomic_op	0
+noret_binary_atomic_op_fp	1	SDNode atomic_op	0
+noret_ternary_atomic_op	1	SDNode atomic_op	0
+binary_atomic_op_all_as	1	SDNode atomic_op	0
+binary_atomic_op_fp_all_as	1	SDNode atomic_op	0
+Constants	0	0
+True16PredicateClass	1	cond	1	Predicate
+RsrcIntrinsic	1	AMDGPURsrcIntrinsic intr	0
+GcnBufferFormatBase	5	f	bpc	numc	nfmt	dfmt	0
+Gfx9BufferFormat	5	f	bpc	numc	nfmt	dfmt	1	GcnBufferFormatBase
+Gfx10PlusBufferFormat	5	f	bpc	numc	nfmt	dfmt	0
+SourceOfDivergence	1	Intrinsic intr	0
+AlwaysUniform	1	Intrinsic intr	0
+AMDGPUArchFeature	1	spelling	0
+AMDGPUGPUInfo	1	list<int> isa = []	0
+R600ProcessorModel	3	n	ProcessorItineraries pi	list<SubtargetFeature> f	2	Processor	AMDGPUGPUInfo
+getAddrName	1	int addrKind	0
+MUBUFAddr64Table	2	is_addr64	Name	0
+MTBUFAddr64Table	2	is_addr64	Name	0
+BUF_Pseudo	5	opName	outs	ins	asmOps	pattern=[]	2	InstSI	SIMCInstr
+MTBUFGetBaseOpcode	1	Op	0
+MTBUF_Pseudo	5	opName	outs	ins	asmOps	pattern=[]	1	BUF_Pseudo
+MTBUF_Real	2	MTBUF_Pseudo ps	real_name = ps.Mnemonic	1	InstSI
+getMTBUFInsDA	3	list<RegisterOperand> vdataList	list<RegisterOperand> vaddrList=[]	hasRestrictedSOffset	0
+getMTBUFIns	3	int addrKind	list<RegisterOperand> vdataList=[]	hasRestrictedSOffset	0
+getMTBUFAsmOps	1	int addrKind	0
+MTBUF_SetupAddr	1	int addrKind	0
+MTBUF_Load_Pseudo	6	opName	int addrKind	RegisterOperand vdataClass	int elems	hasRestrictedSOffset = 0	pattern=[]	2	MTBUF_Pseudo	MTBUF_SetupAddr
+MTBUF_Pseudo_Loads_Helper	4	opName	RegisterOperand vdataClass	int elems	hasRestrictedSOffset	0
+MTBUF_Pseudo_Loads	3	opName	RegisterOperand vdataClass	int elems	0
+MTBUF_Store_Pseudo	6	opName	int addrKind	RegisterOperand vdataClass	int elems	hasRestrictedSOffset = 0	pattern=[]	2	MTBUF_Pseudo	MTBUF_SetupAddr
+MTBUF_Pseudo_Stores_Helper	4	opName	RegisterOperand vdataClass	int elems	hasRestrictedSOffset	0
+MTBUF_Pseudo_Stores	3	opName	RegisterOperand vdataClass	int elems	0
+MUBUFGetBaseOpcode	1	Op	0
+MUBUF_Pseudo	5	opName	outs	ins	asmOps	pattern=[]	1	BUF_Pseudo
+MUBUF_Real	2	MUBUF_Pseudo ps	real_name = ps.Mnemonic	1	InstSI
+MUBUF_Invalidate	2	opName	node = null_frag	1	MUBUF_Pseudo
+getBUFVDataRegisterOperand	3	int Size	isTFE	isTrue16 = false	0
+getBUFVDataRegisterOperandForOp	2	RegisterOperand Op	isTFE	0
+getMUBUFInsDA	6	list<RegisterOperand> vdataList	list<RegisterOperand> vaddrList	isTFE	hasRestrictedSOffset	isTrue16	isLds	0
+getMUBUFElements	1	ValueType vt	0
+getMUBUFIns	6	int addrKind	list<RegisterOperand> vdataList	isTFE	hasRestrictedSOffset	isTrue16	isLds	0
+getMUBUFAsmOps	4	int addrKind	noVdata = 0	isLds = 0	isTFE = 0	0
+MUBUF_SetupAddr	1	int addrKind	0
+MUBUF_Load_Pseudo	10	opName	int addrKind	ValueType vdata_vt	HasTiedDest = 0	isLds = 0	isLdsOpc = 0	isTFE = 0	hasRestrictedSOffset = 0	pattern=[]	RegisterOperand vdata_op = getBUFVDataRegisterOperand<vdata_vt.Size, isTFE>.ret	2	MUBUF_Pseudo	MUBUF_SetupAddr
+MUBUF_Offset_Load_Pat	3	Instruction inst	ValueType load_vt = i32	ld = null_frag	1	GCNPat
+MUBUF_Pseudo_Load_Pats	3	BaseInst	ValueType load_vt = i32	ld = null_frag	0
+MUBUF_Pseudo_Loads_Helper	6	opName	ValueType load_vt	TiedDest	isLds	isTFE	hasRestrictedSOffset	0
+MUBUF_Pseudo_Loads_Helper_t16	8	opName	Hi16Name	Lo16Name	ValueType load_vt	TiedDest	isLds	isTFE	hasRestrictedSOffset	0
+MUBUF_Pseudo_Loads	4	opName	ValueType load_vt = i32	TiedDest = 0	isLds = 0	0
+MUBUF_Pseudo_Loads_t16	5	opName	ValueType load_vt = i32	TiedDest = 0	isLds = 0	hiOpName = NAME#"_HI"	0
+MUBUF_Pseudo_Loads_Lds	3	opName	ValueType load_vt = i32	Predicate LDSPred = TruePredicate	0
+MUBUF_Store_Pseudo	7	opName	int addrKind	ValueType store_vt	isTFE = 0	hasRestrictedSOffset = 0	pattern=[]	isTrue16 = false	2	MUBUF_Pseudo	MUBUF_SetupAddr
+MUBUF_Pseudo_Store_Pats_Common	3	BaseInst	ValueType store_vt = i32	st = null_frag	0
+MUBUF_Pseudo_Store_Pats	3	BaseInst	ValueType store_vt = i32	st = null_frag	0
+MUBUF_Pseudo_Stores_Helper	4	opName	ValueType store_vt	isTFE	hasRestrictedSOffset	0
+MUBUF_Pseudo_Stores_Helper_t16	6	opName	Hi16Name	Lo16Name	ValueType store_vt	isTFE	hasRestrictedSOffset	0
+MUBUF_Pseudo_Stores	2	opName	ValueType store_vt = i32	0
+MUBUF_Pseudo_Stores_t16	2	opName	ValueType store_vt = i32	0
+MUBUF_Pseudo_Store_Lds	1	opName	1	MUBUF_Pseudo
+getMUBUFAtomicInsDA	4	RegisterOperand vdata_op	vdata_in	hasRestrictedSOffset	list<RegisterOperand> vaddrList=[]	0
+getMUBUFAtomicIns	4	int addrKind	RegisterOperand vdataClass	vdata_in	hasRestrictedSOffset	0
+MUBUF_Atomic_Pseudo	6	opName	int addrKind	outs	ins	asmOps	pattern=[]	2	MUBUF_Pseudo	MUBUF_SetupAddr
+MUBUF_AtomicNoRet_Pseudo	5	opName	int addrKind	RegisterOperand vdataClass	hasRestrictedSOffset = 0	pattern=[]	1	MUBUF_Atomic_Pseudo
+MUBUF_AtomicRet_Pseudo	5	opName	int addrKind	RegisterOperand vdata_op	hasRestrictedSOffset = 0	pattern=[]	1	MUBUF_Atomic_Pseudo
+MUBUF_Pseudo_Atomics_NO_RTN	3	opName	RegisterOperand vdataClass	ValueType vdataType	0
+MUBUF_Pseudo_Atomics_RTN	3	opName	RegisterOperand vdataClass	ValueType vdataType	0
+MUBUF_Pseudo_Atomics	3	opName	RegisterOperand vdataClass	ValueType vdataType	2	MUBUF_Pseudo_Atomics_RTN	MUBUF_Pseudo_Atomics_NO_RTN
+MUBUF_LoadIntrinsicPat_Common	4	name	ValueType vt	opcode	ValueType memoryVt = vt	0
+MUBUF_LoadIntrinsicPat	4	name	ValueType vt	opcode	ValueType memoryVt = vt	0
+MUBUF_StoreIntrinsicPat_Common	4	name	ValueType vt	opcode	ValueType memoryVt = vt	0
+MUBUF_StoreIntrinsicPat	4	name	ValueType vt	opcode	ValueType memoryVt = vt	0
+BufferAtomicPat_Common	4	OpPrefix	ValueType vt	Inst	isIntr = 0	0
+BufferAtomicPat	4	OpPrefix	ValueType vt	Inst	isIntr = 0	0
+BufferAtomicIntrPat	3	OpPrefix	ValueType vt	Inst	1	BufferAtomicPat
+BufferAtomicCmpSwapPat	3	ValueType vt	ValueType data_vt	Inst	0
+SIBufferAtomicPat_Common	5	OpPrefix	ValueType vt	Inst	list<string> RtnModes = ["ret"	"noret"]	0
+SIBufferAtomicPat	5	OpPrefix	ValueType vt	Inst	list<string> RtnModes = ["ret"	"noret"]	0
+NoUseBufferAtomic	2	Op	ValueType vt	1	PatFrag
+BufferAtomicPatterns_NO_RTN_Common	3	name	ValueType vt	opcode	0
+BufferAtomicPatterns_NO_RTN	3	name	ValueType vt	opcode	0
+SIBufferAtomicCmpSwapPat_Common	3	ValueType vt	ValueType data_vt	Inst	0
+SIBufferAtomicCmpSwapPat	3	ValueType vt	ValueType data_vt	Inst	0
+MUBUFLoad_PatternADDR64	3	MUBUF_Pseudo Instr_ADDR64	ValueType vt	PatFrag constant_ld	1	GCNPat
+MUBUFLoad_PatternOffset_Common	3	Instr	ValueType vt	PatFrag ld	0
+MUBUFLoad_PatternOffset	3	Instr	ValueType vt	PatFrag ld	0
+MUBUFScratchLoadPat_Common	3	Instr	ValueType vt	PatFrag ld	0
+MUBUFScratchLoadPat	3	Instr	ValueType vt	PatFrag ld	0
+MUBUFScratchLoadPat_D16_Common	3	Instr	ValueType vt	PatFrag ld_frag	0
+MUBUFScratchLoadPat_D16_Common_t16	3	Instr	ValueType vt	PatFrag ld_frag	0
+MUBUFScratchLoadPat_D16	3	Instr	ValueType vt	PatFrag ld_frag	0
+MUBUFScratchLoadPat_D16_t16	3	Instr	ValueType vt	PatFrag ld_frag	0
+MUBUFStore_Atomic_Pattern	4	MUBUF_Pseudo Instr_ADDR64	MUBUF_Pseudo Instr_OFFSET	ValueType vt	PatFrag atomic_st	0
+MUBUFStore_PatternOffset_Common	3	Instr	ValueType vt	PatFrag st	0
+MUBUFStore_PatternOffset	3	Instr	ValueType vt	PatFrag st	0
+MUBUFScratchStorePat_Common	4	Instr	ValueType vt	PatFrag st	RegisterClassLike rc = VGPR_32	0
+MUBUFScratchStorePat	4	Instr	ValueType vt	PatFrag st	RegisterClassLike rc = VGPR_32	0
+MTBUF_LoadIntrinsicPat_Common	4	name	ValueType vt	opcode	ValueType memoryVt = vt	0
+MTBUF_LoadIntrinsicPat	4	name	ValueType vt	opcode	ValueType memoryVt = vt	0
+MTBUF_StoreIntrinsicPat_Common	4	name	ValueType vt	opcode	ValueType memoryVt = vt	0
+MTBUF_StoreIntrinsicPat	4	name	ValueType vt	opcode	ValueType memoryVt = vt	0
+get_BUF_ps	1	name	0
+Base_MUBUF_Real_gfx6_gfx7_gfx10_gfx11	3	MUBUF_Pseudo ps	int ef	real_name = ps.Mnemonic	3	MUBUF_Real	Enc64	SIMCInstr	31-26=0x38	11-0=	63-56=	39-32=	47-40=	52-48=
+MUBUF_Real_gfx11	2	op	real_name = !cast<MUBUF_Pseudo>(NAME).Mnemonic	0	25-18=op
+Base_MUBUF_Real_gfx6_gfx7_gfx10	4	op	MUBUF_Pseudo ps	int ef	asmName	1	Base_MUBUF_Real_gfx6_gfx7_gfx10_gfx11	24-18=op
+MUBUF_Real_gfx10	3	op	psName = NAME	asmName = !cast<MUBUF_Pseudo>(psName).Mnemonic	0
+MUBUF_Real_gfx6_gfx7	3	op	psName = NAME	asmName = !cast<MUBUF_Pseudo>(psName).Mnemonic	0
+MUBUF_Real_gfx6	1	op	0
+MUBUF_Real_gfx7	1	op	0
+VBUFFER_Real	3	op	BUF_Pseudo ps	real_name	1	InstSI	31-26=0b110001	51-50=cpol	95-72=	21-14=op	39-32=	71-64=	47-41=	49-48=0b00	54-53=cpol	6-0=
+VBUFFER_Real_gfx12	3	op	BUF_Pseudo ps	real_name	2	VBUFFER_Real	SIMCInstr
+VBUFFER_MUBUF_Real_gfx12	2	op	real_name	0	61-55=0b0000001
+VBUFFER_MTBUF_Real_gfx12	2	op	real_name	0	61-55=format
+VBUFFER_Real_gfx13	3	op	BUF_Pseudo ps	real_name	2	VBUFFER_Real	SIMCInstr
+VBUFFER_MUBUF_Real_gfx13	2	op	real_name	0	61-55=0b0000001
+VBUFFER_MTBUF_Real_gfx13	2	op	real_name	0	61-55=format
+Mnem_gfx13	2	mnemonic	real_name	2	MnemonicAlias	Requires
+MUBUF_Real_Atomics_gfx13	3	op	real_name = get_BUF_ps<NAME>.Mnemonic	extra_alias = real_name	0
+Mnem_gfx11_gfx12	2	mnemonic	real_name	1	AMDGPUMnemonicAlias
+Mnem_gfx11	2	mnemonic	real_name	1	AMDGPUMnemonicAlias
+Mnem_gfx12	2	mnemonic	real_name	1	AMDGPUMnemonicAlias
+MUBUF_Real_AllAddr_gfx11_Impl2	2	op	real_name	0
+MUBUF_Real_AllAddr_gfx12_Impl2	2	op	real_name	0
+MUBUF_Real_AllAddr_gfx11_gfx12_Impl2	2	op	real_name	2	MUBUF_Real_AllAddr_gfx11_Impl2	MUBUF_Real_AllAddr_gfx12_Impl2
+MUBUF_Real_AllAddr_gfx11_gfx12_Impl	2	op	real_name	0
+MUBUF_Real_AllAddr_gfx11	2	op	hasTFE = 1	1	MUBUF_Real_AllAddr_gfx11_Impl
+MUBUF_Real_Atomic_gfx11_impl	3	op	is_return	real_name	0
+MUBUF_Real_Atomic_gfx12_impl	3	op	is_return	real_name = get_BUF_ps<NAME>.Mnemonic	0
+MUBUF_Real_Atomic_gfx11_gfx12_impl	3	op	is_return	real_name	2	MUBUF_Real_Atomic_gfx12_impl	MUBUF_Real_Atomic_gfx11_impl
+MUBUF_Real_Atomic_gfx11_gfx12	3	op	gfx12_name = get_BUF_ps<NAME>.Mnemonic	gfx11_name = gfx12_name	2	MUBUF_Real_Atomic_gfx12_impl	MUBUF_Real_Atomic_gfx11_impl
+MUBUF_Real_Atomic_gfx12_Renamed	2	op	real_name	1	MUBUF_Real_Atomic_gfx12_impl
+MUBUF_Real_AllAddr_Helper_gfx10	1	op	0
+MUBUF_Real_AllAddr_gfx10	1	op	0
+MUBUF_Real_AllAddr_Lds_gfx10	2	op	isTFE = 0	0
+MUBUF_Real_Atomics_RTN_gfx10	3	op	psName = NAME	asmName = !cast<MUBUF_Pseudo>(psName).Mnemonic	0
+MUBUF_Real_Atomics_gfx10	3	op	psName = NAME	asmName = get_BUF_ps<psName>.Mnemonic	1	MUBUF_Real_Atomics_RTN_gfx10
+MUBUF_Real_AllAddr_gfx10_Renamed_gfx13	2	op	gfx13_name	2	MUBUF_Real_AllAddr_gfx10	MUBUF_Real_AllAddr_gfx13
+MUBUF_Real_AllAddr_gfx6_gfx7	1	op	0
+MUBUF_Real_AllAddr_Lds_gfx6_gfx7	2	op	isTFE = 0	0
+MUBUF_Real_Atomics_gfx6_gfx7	3	op	psName = NAME	asmName = get_BUF_ps<psName>.Mnemonic	0
+MUBUF_Real_AllAddr_gfx6_gfx7_gfx10	1	op	2	MUBUF_Real_AllAddr_gfx10	MUBUF_Real_AllAddr_gfx6_gfx7
+MUBUF_Real_AllAddr_Lds_gfx6_gfx7_gfx10_gfx13	1	op	2	MUBUF_Real_AllAddr_Lds_gfx6_gfx7_gfx10	MUBUF_Real_AllAddr_gfx13	31-26=0x3a	11-0=	63-56=	39-32=	47-40=	52-48=
+MTBUF_Real_gfx11	2	op	real_name	0	25-19=format	18-15=op
+Base_MTBUF_Real_gfx6_gfx7_gfx10	3	op	MTBUF_Pseudo ps	int ef	1	Base_MTBUF_Real_gfx6_gfx7_gfx10_gfx11	18-16=op
+MTBUF_Real_AllAddr_gfx13_Impl	2	op	real_name	0
+MTBUF_Real_AllAddr_gfx13	2	op	real_name = get_BUF_ps<NAME>.Mnemonic	1	MTBUF_Real_AllAddr_gfx13_Impl
+MTBUF_Real_AllAddr_gfx11_gfx12_Impl	2	op	real_name	0
+MTBUF_Real_AllAddr_gfx11_gfx12	2	op	real_name = get_BUF_ps<NAME>.Mnemonic	1	MTBUF_Real_AllAddr_gfx11_gfx12_Impl
+MTBUF_Real_gfx10	1	op	0	25-19=format
+MTBUF_Real_AllAddr_gfx10	1	op	0
+MTBUF_Real_gfx6_gfx7	1	op	0	22-19=dfmt	25-23=nfmt
+MTBUF_Real_AllAddr_gfx6_gfx7	1	op	0
+MTBUF_Real_AllAddr_gfx6_gfx7_gfx10	1	op	2	MTBUF_Real_AllAddr_gfx10	MTBUF_Real_AllAddr_gfx6_gfx7	31-26=0x38	24-18=op	11-0=	63-56=	39-32=	47-40=	52-48=
+MUBUF_Real_vi	2	op	has_sccb = !cast<MUBUF_Pseudo>(NAME).has_sccb	0
+MUBUF_Real_gfx90a	2	op	has_sccb = !cast<MUBUF_Pseudo>(NAME).has_sccb	0
+MUBUF_Real_gfx940	2	op	MUBUF_Pseudo ps	1	MUBUF_Real_Base_vi
+MUBUF_Real_vi_gfx90a	2	op	isTFE = 0	1	MUBUF_Real_vi
+MUBUF_Real_AllAddr_Helper_vi	2	op	isTFE = 0	0
+MUBUF_Real_AllAddr_vi	2	op	hasTFE = 1	0
+MUBUF_Real_AllAddr_Lds_Helper_vi	2	op	isTFE = 0	0
+MUBUF_Real_AllAddr_Lds_vi	1	op	0
+MUBUF_Real_gfx80	1	op	0	31-26=0x38	24-18=op	11-0=	63-56=	39-32=	47-40=	52-48=
+MUBUF_Real_AllAddr_Helper_gfx80	1	op	0
+MUBUF_Real_AllAddr_gfx80	1	op	0
+MUBUF_Real_Atomic_vi	1	op	1	MUBUF_Real_AllAddr_vi
+MTBUF_Real_Base_vi	3	op	MTBUF_Pseudo ps	int Enc	3	Enc64	MTBUF_Real	SIMCInstr	22-19=dfmt	25-23=nfmt	31-26=0x3a	11-0=	63-56=	39-32=	18-15=op	47-40=	52-48=
+MTBUF_Real_vi	2	op	MTBUF_Pseudo ps	1	MTBUF_Real_Base_vi
+MTBUF_Real_gfx90a	2	op	MTBUF_Pseudo ps	1	MTBUF_Real_Base_vi
+MTBUF_Real_vi_gfx90a	1	op	0
+MTBUF_Real_AllAddr_vi	1	op	0
+MTBUF_Real_gfx80	1	op	0	22-19=dfmt	25-23=nfmt	31-26=0x3a	11-0=	63-56=	39-32=	18-15=op	47-40=	52-48=
+MTBUF_Real_AllAddr_gfx80	1	op	0
+RAT_STORE_DWORD	3	rc	ValueType vt	mask	1	CF_MEM_RAT_CACHELESS
+VTX_READ_cm	2	name	outs	2	VTX_WORD0_cm	VTX_READ	31-0=Word0
+LDSDIRe	2	op	is_direct	1	Enc32	31-24=0xce	21-20=op	7-0=vdst	15-10=	9-8=	19-16=waitvdst	23-22=0x0
+VDSDIRe	2	op	is_direct	1	Enc32	31-24=0xce	21-20=op	7-0=vdst	15-10=	9-8=	19-16=waitvdst
+LDSDIR_getIns	1	direct	0
+VDSDIR_getIns	1	direct	0
+DSDIR_Common	4	opName	asm = ""	ins	direct	1	InstSI
+DSDIR_Pseudo	3	opName	ins	direct	2	DSDIR_Common	SIMCInstr
+LDSDIR_getAsm	1	direct	0
+VDSDIR_getAsm	1	direct	0
+DSDIR_Real	4	DSDIR_Pseudo lds	ins	asm	int subtarget	2	DSDIR_Common	SIMCInstr
+DSDIR_Real_gfx11	1	op	0
+DSDIR_Real	2	GFXGen Gen	op	0
+DSDIR_Real_gfx12_gfx13	1	op	1	DSDIR_Real
+DS_Pseudo	5	opName	outs	ins	asmOps	pattern=[]	1	InstSI
+DS_Real	2	DS_Pseudo ps	opName = ps.Mnemonic	1	InstSI
+DS_0A1D_NORET	2	opName	RegisterOperand rc = AVLdSt_32	1	DS_Pseudo
+DS_1A1D_NORET	2	opName	RegisterOperand rc = AVLdSt_32	1	DS_Pseudo
+DS_1A1D_NORET_mc	2	opName	RegisterOperand rc = AVLdSt_32	0
+DS_1A1D_NORET_t16	2	opName	RegisterOperand rc = AVLdSt_32	1	DS_1A1D_NORET_mc
+DS_1A1D_NORET_mc_gfx9	2	opName	RegisterOperand rc = AVLdSt_32	0
+DS_1A2D_NORET	2	opName	RegisterOperand data_op = VGPROp_32	1	DS_Pseudo
+DS_1A2D_NORET_mc	2	opName	RegisterOperand rc = VGPROp_32	0
+DS_1A2D_Off8_NORET	2	opName	RegisterOperand data_op = VGPROp_32	1	DS_Pseudo
+DS_1A2D_Off8_NORET_mc	2	opName	RegisterOperand rc = VGPROp_32	0
+DS_0A1D_RET_GDS	3	opName	RegisterOperand dst_op = AVLdSt_32	RegisterOperand src_op = dst_op	1	DS_Pseudo
+DS_1A1D_RET	2	opName	RegisterOperand data_op = AVLdSt_32	1	DS_Pseudo
+DS_1A1D_RET_mc	2	opName	RegisterOperand rc = VGPROp_32	0
+DS_1A1D_RET_mc_gfx9	2	opName	RegisterOperand rc = VGPROp_32	0
+DS_1A2D_RET	3	opName	RegisterOperand dst_rc = VGPROp_32	RegisterOperand src_rc = dst_rc	1	DS_Pseudo
+DS_1A2D_RET_mc	3	opName	RegisterOperand dst_rc = VGPROp_32	RegisterOperand src_rc = dst_rc	0
+DS_1A2D_Off8_RET	3	opName	RegisterOperand dst_rc = VGPROp_32	RegisterOperand src_rc = dst_rc	1	DS_Pseudo
+DS_1A2D_Off8_RET_mc	3	opName	RegisterOperand dst_rc = VGPROp_32	RegisterOperand src_rc = dst_rc	0
+DS_BVH_STACK	3	opName	RegisterOperand vdst_rc	RegisterOperand data1_rc	1	DS_Pseudo
+DS_1A_RET	4	opName	RegisterOperand data_op = AVLdSt_32	HasTiedOutput = 0	ofs = Offset	1	DS_Pseudo
+DS_1A_RET_mc	4	opName	RegisterOperand rc = AVLdSt_32	HasTiedOutput = 0	ofs = Offset	0
+DS_1A_RET_t16	4	opName	RegisterOperand rc = AVLdSt_32	HasTiedOutput = 0	ofs = Offset	1	DS_1A_RET_mc
+DS_1A_RET_NoM0	2	opName	RegisterOperand rc = VGPROp_32	0
+DS_1A_RET_Tied	2	opName	RegisterOperand rc = AVLdSt_32	1	DS_1A_RET
+DS_1A_Off8_RET_mc	2	opName	RegisterOperand rc = VGPROp_32	0
+DS_1A_RET_GDS	1	opName	1	DS_Pseudo
+DS_1A_Off16_NORET	1	opName	1	DS_Pseudo
+DS_0A_RET	1	opName	1	DS_Pseudo
+DS_1A	1	opName	1	DS_Pseudo
+DS_1A_mc	1	opName	0
+DS_GWS	3	opName	ins	asmOps	1	DS_Pseudo
+DS_GWS_0D	1	opName	1	DS_GWS
+DS_GWS_1D	1	opName	1	DS_GWS
+DS_VOID	1	opName	1	DS_Pseudo
+DS_1A1D_PERMUTE	3	opName	node = null_frag	RegisterOperand data_op = AVLdSt_32	1	DS_Pseudo
+DS_1A1D_PERMUTE_mc	3	opName	node = null_frag	RegisterOperand data_op = VGPROp_32	0
+DSAtomicRetPat	5	DS_Pseudo inst	ValueType vt	PatFrag frag	int complexity = 0	gds=0	1	GCNPat
+DSAtomicRetPat_mc	3	DS_Pseudo inst	ValueType vt	frag	0
+DSAtomicRetNoRetPat_NoM0_mc	4	DS_Pseudo inst	DS_Pseudo noRetInst	ValueType vt	frag	0
+DSAtomicRetNoRetPat_mc	4	DS_Pseudo inst	DS_Pseudo noRetInst	ValueType vt	frag	0
+DSReadPat	4	DS_Pseudo inst	ValueType vt	PatFrag frag	int gds=0	1	GCNPat
+DSReadPat_t16	3	DS_Pseudo inst	ValueType vt	frag	0
+DSReadPat_D16	3	DS_Pseudo inst	PatFrag frag	ValueType vt	1	GCNPat
+DSWritePat	4	DS_Pseudo inst	ValueType vt	PatFrag frag	int gds=0	1	GCNPat
+DSWritePat_t16	3	DS_Pseudo inst	ValueType vt	frag	0
+DS64Bit4ByteAlignedReadPat	3	DS_Pseudo inst	ValueType vt	PatFrag frag	1	GCNPat
+DS128Bit8ByteAlignedPat_mc	1	ValueType vt	0
+DSAtomicCmpXChgSwapped	5	DS_Pseudo inst	ValueType vt	PatFrag frag	int complexity = 0	gds=0	1	GCNPat
+DSAtomicCmpXChgSwapped_mc	4	DS_Pseudo inst	DS_Pseudo noRetInst	ValueType vt	frag	0
+DSAtomicCmpXChg	5	DS_Pseudo inst	ValueType vt	PatFrag frag	int complexity = 0	gds=0	1	GCNPat
+DSAtomicCmpXChg_mc	4	DS_Pseudo inst	DS_Pseudo noRetInst	ValueType vt	frag	0
+DSAtomicRetPatIntrinsic	4	DS_Pseudo inst	ValueType vt	PatFrag frag	gds=0	1	GCNPat
+DSLoadTrPat	3	DS_Pseudo inst	ValueType vt	node	1	GCNPat
+Base_DS_Real_gfx6_gfx7_gfx10_gfx11_gfx12_gfx13	5	op	DS_Pseudo ps	int ef	opName = ps.Mnemonic	hasGDS = true	2	DS_Real	SIMCInstr	31-26=0x36	55-48=	7-0=	63-56=	25-18=op	39-32=	15-8=	47-40=
+DS_Real_gfx12	3	op	DS_Pseudo ps = !cast<DS_Pseudo>(NAME)	name = !tolower(NAME)	0
+DS_Real_gfx13	3	op	DS_Pseudo ps = !cast<DS_Pseudo>(NAME)	name = !tolower(NAME)	0
+DS_Real_gfx12_with_name	2	op	name	0
+DS_Real_gfx12_gfx13	3	op	DS_Pseudo ps = !cast<DS_Pseudo>(NAME)	name = !tolower(NAME)	2	DS_Real_gfx12	DS_Real_gfx13
+DS_Real_gfx11	3	op	DS_Pseudo ps = !cast<DS_Pseudo>(NAME#"_gfx9")	name = !tolower(NAME)	0
+DS_Real_gfx11_gfx12	3	op	name = !tolower(NAME)	DS_Pseudo ps = !cast<DS_Pseudo>(NAME#"_gfx9")	2	DS_Real_gfx11	DS_Real_gfx12
+DS_Real_gfx10_gfx13	2	op	DS_Pseudo ps = !cast<DS_Pseudo>(NAME)	2	DS_Real_gfx10	DS_Real_gfx13
+DS_Real_gfx7_gfx10_gfx11_gfx12_gfx13	3	op	DS_Pseudo ps_gfx6 = !cast<DS_Pseudo>(NAME)	DS_Pseudo ps_gfx9 = !cast<DS_Pseudo>(NAME#"_gfx9")	2	DS_Real_gfx7	DS_Real_gfx10_gfx11_gfx12_gfx13
+DS_Real_gfx6_gfx7_gfx10_gfx11_gfx12_gfx13	3	op	DS_Pseudo ps_gfx6 = !cast<DS_Pseudo>(NAME)	DS_Pseudo ps_gfx9 = !cast<DS_Pseudo>(NAME#"_gfx9")	2	DS_Real_gfx10_gfx11_gfx12_gfx13	DS_Real_gfx6_gfx7	31-26=0x36	24-17=op	55-48=	7-0=	63-56=	39-32=	15-8=	47-40=
+DS_Real_vi	3	op	DS_Pseudo base_pseudo	need_gfx9_suffix = true	0
+DS_Real_m0_vi	2	op	DS_Pseudo ps	1	DS_Real_vi
+EXP_Pseudo	2	row	done	2	EXPCommon	SIMCInstr
+EXP_Real_ComprVM	2	EXP_Pseudo ps	int subtarget	2	EXPCommon	SIMCInstr
+EXP_Real_Row	3	EXP_Pseudo ps	int subtarget	name = "exp"	2	EXPCommon	SIMCInstr
+EXP_Real_si	0	0
+EXP_Real_vi	0	0
+EXP_Real_gfx10	0	0
+EXP_Real_gfx11	0	0
+VEXPORT_Real	1	GFXGen Gen	0
+ExpPattern	3	ValueType vt	Instruction Inst	int done_val	1	GCNPat
+EGOrCaymanPat	2	pattern	result	1	AMDGPUPat
+CF_MEM_RAT_CACHELESS	6	rat_inst	rat_id	mask	ins	name	pattern	1	EG_CF_RAT
+RAT_ATOMIC	3	op_ret	op_noret	name	0
+VTX_READ_eg	2	name	outs	2	VTX_READ	VTX_WORD0_eg	31-0=Word0
+AtomicPat	2	Instruction inst_noret	node_noret	0
+R600_LDS	5	op	outs	ins	asm	pattern = []	1	InstR600	31-0=Word0	63-32=Word1
+R600_LDS_1A	3	lds_op	name	pattern	1	R600_LDS
+R600_LDS_1A1D	5	lds_op	outs	name	pattern	dst =""	1	R600_LDS
+R600_LDS_1A1D_NORET	3	lds_op	name	pattern	1	R600_LDS_1A1D
+R600_LDS_1A1D_RET	3	lds_op	name	pattern	1	R600_LDS_1A1D
+R600_LDS_1A2D	5	lds_op	outs	name	pattern	dst =""	1	R600_LDS
+R600_LDS_1A2D_NORET	3	lds_op	name	pattern	1	R600_LDS_1A2D
+R600_LDS_1A2D_RET	3	lds_op	name	pattern	1	R600_LDS_1A2D
+True16D16Table	2	hiOp	loOp	0
+FLAT_Pseudo	5	opName	outs	ins	asmOps	pattern=[]	2	InstSI	SIMCInstr
+FLAT_Real	3	op	FLAT_Pseudo ps	opName = ps.Mnemonic	1	InstSI	54-48=	31-26=0x37	24-18=op	63-56=	39-32=	47-40=	15-14=seg	12-0=offset
+VFLAT_Real	3	op	FLAT_Pseudo ps	opName = ps.Mnemonic	1	InstSI	62-55=	51-50=cpol	31-26=0x3b	95-72=	71-64=	39-32=	21-14=op	54-53=cpol	6-0=
+GlobalSaddrTable	2	is_saddr	Name = ""	0
+FLAT_Load_Pseudo	8	opName	RegisterOperand vdata_op	HasTiedOutput = 0	HasSaddr = 0	EnableSaddr = 0	RegisterOperand VaddrOp = !if(EnableSaddr	VGPROp_32	VGPROp_64)	1	FLAT_Pseudo
+FLAT_Flat_Load_Pseudo	3	opName	RegisterOperand regClass = AVLdSt_32	HasTiedInput = 0	0
+FLAT_Flat_Load_Pseudo_t16	1	opName	0
+FLAT_Store_Pseudo	7	opName	RegisterOperand vdataClass	HasSaddr = 0	EnableSaddr = 0	RegisterOperand VaddrOp = !if(EnableSaddr	VGPROp_32	VGPROp_64)	1	FLAT_Pseudo
+FLAT_Flat_Store_Pseudo	2	opName	RegisterOperand regClass = AVLdSt_32	0
+FLAT_Flat_Store_Pseudo_t16	1	opName	0
+FLAT_Global_Load_Pseudo	3	opName	RegisterOperand regClass = AVLdSt_32	HasTiedInput = 0	0
+FLAT_Global_Load_Pseudo_t16	1	opName	0
+FLAT_Global_Load_AddTid_Pseudo	4	opName	RegisterOperand regClass	HasTiedOutput = 0	EnableSaddr = 0	1	FLAT_Pseudo
+FLAT_Global_Load_AddTid_Pseudo	3	opName	RegisterOperand regClass	HasTiedOutput = 0	0
+FLAT_Global_Store_Pseudo	2	opName	RegisterOperand regClass = AVLdSt_32	0
+FLAT_Global_Store_Pseudo_t16	1	opName	0
+FLAT_Global_Load_LDS_Pseudo	4	opName	EnableSaddr = 0	IsAsync = 0	IsLegacyLDSDMA = 0	1	FLAT_Pseudo
+FLAT_Global_Load_LDS_Pseudo	3	opName	IsAsync = 0	IsLegacyLDSDMA = 0	0
+FLAT_Global_STORE_LDS_Pseudo	2	opName	EnableSaddr = 0	1	FLAT_Pseudo
+FLAT_Global_STORE_LDS_Pseudo	1	opName	0
+FLAT_Global_Store_AddTid_Pseudo	3	opName	RegisterOperand vdataClass	EnableSaddr = 0	1	FLAT_Pseudo
+FLAT_Global_Store_AddTid_Pseudo	2	opName	RegisterOperand regClass	0
+FLAT_Global_Tensor_Pseudo	2	opName	EnableSaddr = 0	1	FLAT_Pseudo
+FLAT_Global_Invalidate_Writeback	2	opName	node = null_frag	1	FLAT_Pseudo
+FLAT_Prefetch_Pseudo	3	opName	addr = (ins VGPROp_64:$vaddr)	asm = " $vaddr"	1	FLAT_Pseudo
+FLAT_Flat_Prefetch_Pseudo	1	opName	0
+FLAT_Global_Prefetch_Pseudo	1	opName	0
+FlatScratchInst	2	sv_op	mode	0
+FLAT_Scratch_Load_Pseudo	7	opName	RegisterOperand regClass = AVLdSt_32	HasTiedOutput = 0	EnableSaddr = 0	EnableSVE = 0	EnableVaddr = !or(EnableSVE	!not(EnableSaddr))	1	FLAT_Pseudo
+FLAT_Scratch_Store_Pseudo	6	opName	RegisterOperand vdata_op	EnableSaddr = 0	EnableSVE = 0	EnableVaddr = !or(EnableSVE	!not(EnableSaddr))	1	FLAT_Pseudo
+FLAT_Scratch_Load_Pseudo	3	opName	RegisterOperand regClass = AVLdSt_32	HasTiedOutput = 0	0
+FLAT_Scratch_Load_Pseudo_t16	1	opName	0
+FLAT_Scratch_Store_Pseudo	2	opName	RegisterOperand regClass = AVLdSt_32	0
+FLAT_Scratch_Store_Pseudo_t16	1	opName	0
+FLAT_Scratch_Load_LDS_Pseudo	5	opName	EnableSaddr = 0	EnableSVE = 0	EnableVaddr = !or(EnableSVE	!not(EnableSaddr))	1	FLAT_Pseudo
+FLAT_Scratch_Load_LDS_Pseudo	1	opName	0
+FLAT_AtomicNoRet_Pseudo	5	opName	outs	ins	asm	pattern = []	1	FLAT_Pseudo
+FLAT_AtomicRet_Pseudo	5	opName	outs	ins	asm	pattern = []	1	FLAT_AtomicNoRet_Pseudo
+FLAT_Atomic_Pseudo_NO_RTN	5	opName	RegisterOperand vdst_op	ValueType vt	ValueType data_vt = vt	RegisterOperand data_op = vdst_op	0
+FLAT_Atomic_Pseudo_RTN	5	opName	RegisterOperand vdst_op	ValueType vt	ValueType data_vt = vt	RegisterOperand data_op = vdst_op	0
+FLAT_Atomic_Pseudo	5	opName	RegisterOperand vdst_op	ValueType vt	ValueType data_vt = vt	RegisterOperand data_op = vdst_op	0
+FLAT_Global_Atomic_Pseudo_NO_RTN	9	opName	RegisterOperand vdst_op	ValueType vt	ValueType data_vt = vt	RegisterOperand data_op = vdst_op	EnableSaddr = false	RegisterOperand VaddrOp = !if(EnableSaddr	VGPROp_32	VGPROp_64)	2	FLAT_AtomicNoRet_Pseudo	GlobalSaddrTable
+FLAT_Global_Atomic_Pseudo_Helper_NO_RTN	5	opName	RegisterOperand vdst_op	ValueType vt	ValueType data_vt = vt	RegisterOperand data_op = vdst_op	0
+FLAT_Global_Atomic_Pseudo_RTN	10	opName	RegisterOperand vdst_op	ValueType vt	ValueType data_vt = vt	RegisterOperand data_op = vdst_op	EnableSaddr = false	IsVGPR = false	RegisterOperand VaddrOp = !if(EnableSaddr	VGPROp_32	VGPROp_64)	2	FLAT_AtomicRet_Pseudo	GlobalSaddrTable
+FLAT_Global_Atomic_Pseudo_Helper_RTN	5	opName	RegisterOperand vdst_op	ValueType vt	ValueType data_vt = vt	RegisterOperand data_op = vdst_op	0
+FLAT_Global_Atomic_Pseudo	5	opName	RegisterOperand vdst_rc	ValueType vt	ValueType data_vt = vt	RegisterOperand data_rc = vdst_rc	0
+FlatLoadPat	3	FLAT_Pseudo inst	node	ValueType vt	1	GCNPat
+GlobalAtomicNoRtnSaddrPat	3	FLAT_Pseudo inst	node	ValueType vt	1	GCNPat
+FlatAtomicNoRtnPat	5	inst	node	ValueType vt	ValueType data_vt = vt	isIntr = 0	1	FlatAtomicNoRtnPatBase
+FlatAtomicRtnPat	5	inst	node	ValueType vt	ValueType data_vt = vt	isIntr = 0	1	FlatAtomicRtnPatBase
+FlatAtomicIntrRtnPat	4	inst	node	ValueType vt	ValueType data_vt = vt	0
+FlatAtomicIntrPat	4	inst	node	ValueType vt	ValueType data_vt = vt	2	FlatAtomicRtnPat	FlatAtomicNoRtnPat
+FlatSignedAtomicPat	6	inst	node	ValueType vt	ValueType data_vt = vt	int complexity = 0	isIntr = 0	0
+ScratchLoadSignedPat	3	FLAT_Pseudo inst	node	ValueType vt	1	GCNPat
+GlobalLoadLDSPats	2	FLAT_Pseudo inst	node	0
+GlobalStoreLDSPats	2	FLAT_Pseudo inst	node	0
+GlobalFLATLoadPats	3	FLAT_Pseudo inst	node	ValueType vt	0
+GlobalFLATLoadPats_M0	3	FLAT_Pseudo inst	node	ValueType vt	0
+GlobalFLATLoadPats_CPOL	3	FLAT_Pseudo inst	node	ValueType vt	0
+GlobalFLATLoadPats_D16	3	FLAT_Pseudo inst	node	ValueType vt	0
+GlobalFLATLoadPats_D16_t16	3	inst	node	ValueType vt	0
+GlobalFLATLoadPats_t16	3	FLAT_Pseudo inst	node	ValueType vt	0
+GlobalFLATStorePats	3	FLAT_Pseudo inst	node	ValueType vt	0
+GlobalFLATStorePats_D16_t16	3	inst	node	ValueType vt	0
+GlobalFLATAtomicPatsNoRtnBase	4	inst	node	ValueType vt	ValueType data_vt = vt	0
+GlobalFLATAtomicPatsRtnBase	5	inst	node	ValueType vt	ValueType data_vt = vt	isPatFrags = 0	0
+GlobalFLATAtomicPatsNoRtn	5	inst	node	ValueType vt	ValueType data_vt = vt	isIntr = 0	1	GlobalFLATAtomicPatsNoRtnBase
+ScratchFLATLoadPats	3	FLAT_Pseudo inst	node	ValueType vt	0
+ScratchFLATStorePats	3	FLAT_Pseudo inst	node	ValueType vt	0
+ScratchFLATStorePats_D16_t16	3	inst	node	ValueType vt	0
+ScratchFLATLoadPats_D16	3	FLAT_Pseudo inst	node	ValueType vt	0
+ScratchFLATLoadPats_D16_t16	3	inst	node	ValueType vt	0
+ScratchFLATLoadPats_t16	3	FLAT_Pseudo inst	node	ValueType vt	0
+FlatLoadPats	3	FLAT_Pseudo inst	node	ValueType vt	0
+FlatLoadPats_D16	3	FLAT_Pseudo inst	node	ValueType vt	0
+FlatLoadPats_D16_t16	3	FLAT_Pseudo inst	node	ValueType vt	0
+FlatLoadPats_t16	3	FLAT_Pseudo inst	node	ValueType vt	0
+FlatStorePats	3	FLAT_Pseudo inst	node	ValueType vt	0
+FlatStorePats_t16	3	FLAT_Pseudo inst	node	ValueType vt	0
+FlatPrefetchPats	3	inst	prefetch_kind	rw	0
+FlatIntrPrefetchPats	2	inst	intr	0
+FLAT_Real_ci	3	op	FLAT_Pseudo ps	asmName = ps.Mnemonic	1	FLAT_Real
+FLAT_Real_Atomics_ci	3	op	opName = NAME	asmName = !cast<FLAT_Pseudo>(opName).Mnemonic	0
+FLAT_Real_vi	3	op	FLAT_Pseudo ps	has_sccb = ps.has_sccb	1	FLAT_Real
+FLAT_Real_AllAddr_vi	2	op	has_sccb = !cast<FLAT_Pseudo>(NAME).has_sccb	0
+FLAT_Real_gfx940	2	op	FLAT_Pseudo ps	1	FLAT_Real
+FLAT_Real_AllAddr_SVE_vi	1	op	0
+FLAT_Real_AllAddr_LDS	6	op	pre_gfx940_op	pre_gfx940_name = !subst("_lds"	""	!cast<FLAT_Pseudo>(NAME).Mnemonic)	has_sccb = !cast<FLAT_Pseudo>(NAME).has_sccb	0
+FLAT_Real_AllAddr_SVE_LDS	2	op	pre_gfx940_op	0
+FLAT_Real_Atomics_vi	2	op	has_sccb = !cast<FLAT_Pseudo>(NAME).has_sccb	0
+FLAT_Global_Real_Atomics_vi	2	op	has_sccb = !cast<FLAT_Pseudo>(NAME).has_sccb	1	FLAT_Real_AllAddr_vi
+FLAT_Real_AllAddr_gfx940	1	op	0
+FLAT_Real_Atomics_gfx940	1	op	0
+FLAT_Global_Real_Atomics_gfx940	1	op	1	FLAT_Real_AllAddr_gfx940
+FLAT_Real_gfx10	3	op	FLAT_Pseudo ps	opName = ps.Mnemonic	2	FLAT_Real	SIMCInstr	54-48=	11-0=offset
+FLAT_Real_Base_gfx10	3	op	psName = NAME	asmName = !cast<FLAT_Pseudo>(psName).Mnemonic	0
+FLAT_Real_RTN_gfx10	3	op	psName = NAME	asmName = !cast<FLAT_Pseudo>(psName).Mnemonic	0
+FLAT_Real_SADDR_gfx10	3	op	psName = NAME	asmName = !cast<FLAT_Pseudo>(psName#"_SADDR").Mnemonic	0
+FLAT_Real_SADDR_RTN_gfx10	3	op	psName = NAME	asmName = !cast<FLAT_Pseudo>(psName#"_SADDR_RTN").Mnemonic	0
+FLAT_Real_ST_gfx10	1	op	0
+FLAT_Real_AllAddr_gfx10	3	op	OpName = NAME	asmName = !cast<FLAT_Pseudo>(OpName).Mnemonic	2	FLAT_Real_Base_gfx10	FLAT_Real_SADDR_gfx10
+FLAT_Real_ScratchAllAddr_LDS_gfx10	4	op	opname = !subst("_lds"	""	!cast<FLAT_Pseudo>(NAME).Mnemonic)	0
+get_FLAT_ps	1	name	0
+FLAT_Real_gfx11	2	op	name = get_FLAT_ps<NAME>.Mnemonic	0	54-48=	17-16=seg
+FLAT_Aliases_gfx11	1	name	0
+FLAT_Real_Base_gfx11	2	op	name = get_FLAT_ps<NAME>.Mnemonic	2	FLAT_Aliases_gfx11	FLAT_Real_gfx11
+GLOBAL_Real_AllAddr_gfx11	2	op	name = get_FLAT_ps<NAME>.Mnemonic	1	FLAT_Real_Base_gfx11
+GLOBAL_Real_Atomics_gfx11	2	op	name = get_FLAT_ps<NAME>.Mnemonic	1	GLOBAL_Real_AllAddr_gfx11
+SCRATCH_Real_AllAddr_gfx11	2	op	name = get_FLAT_ps<NAME>.Mnemonic	1	FLAT_Real_Base_gfx11
+VFLAT_Real_gfx12	2	op	name = get_FLAT_ps<NAME>.Mnemonic	0	25-24=ps.is_flat_global,ps.is_flat_scratch
+VFLAT_Aliases_gfx12	2	name	alias = name	0
+VFLAT_Real_Base_gfx12	3	op	name = get_FLAT_ps<NAME>.Mnemonic	alias = name	2	VFLAT_Aliases_gfx12	VFLAT_Real_gfx12
+VGLOBAL_Real_AllAddr_gfx1200	1	op	0
+VFLAT_Real_AllAddr_gfx12_w64	2	op	name = get_FLAT_ps<NAME>.Mnemonic	1	VFLAT_Aliases_gfx12
+VFLAT_Real_Atomics_gfx12	3	op	name = get_FLAT_ps<NAME>.Mnemonic	alias = name	1	VFLAT_Real_AllAddr_gfx12
+VSCRATCH_Real_AllAddr_gfx12	2	op	name = get_FLAT_ps<NAME>.Mnemonic	1	VFLAT_Real_Base_gfx12
+VFLAT_Real_gfx1250	2	op	name = get_FLAT_ps<NAME>.Mnemonic	0	25-24=ps.is_flat_global,ps.is_flat_scratch
+VFLAT_Real_RTN_gfx1250	2	op	name	0
+VFLAT_Real_SADDR_gfx1250	2	op	name	0
+VFLAT_Real_SADDR_RTN_gfx1250	2	op	name	0
+VFLAT_Real_AllAddr_gfx1250	3	op	name = get_FLAT_ps<NAME>.Mnemonic	list<Predicate> aliasPreds = [isGFX125xOnly]	2	VFLAT_Real_gfx1250	VFLAT_Real_SADDR_gfx1250
+VFLAT_Real_Atomics_gfx1250	2	op	name = get_FLAT_ps<NAME>.Mnemonic	3	VFLAT_Real_SADDR_RTN_gfx1250	VFLAT_Real_AllAddr_gfx1250	VFLAT_Real_RTN_gfx1250
+VFLAT_Real_gfx13	2	op	name = get_FLAT_ps<NAME>.Mnemonic	0	25-24=ps.is_flat_global,ps.is_flat_scratch
+VFLAT_Aliases_gfx13	2	name	alias = name	0
+VFLAT_Real_Base_gfx13	3	op	name = get_FLAT_ps<NAME>.Mnemonic	alias = name	2	VFLAT_Aliases_gfx13	VFLAT_Real_gfx13
+VFLAT_Real_AllAddr_gfx13	3	op	name = get_FLAT_ps<NAME>.Mnemonic	alias = name	1	VFLAT_Real_Base_gfx13
+VFLAT_Real_AllAddr_Atomics_gfx13	3	op	name = get_FLAT_ps<NAME>.Mnemonic	alias = name	1	VFLAT_Real_AllAddr_gfx13
+VSCRATCH_Real_AllAddr_gfx13	2	op	name = get_FLAT_ps<NAME>.Mnemonic	1	VFLAT_Real_Base_gfx13
+MIMGEncoding	0	0
+MIMGBaseOpcode	0	0
+MIMG_NoSampler	6	mimgopc op	asm	has_d16	mip = 0	isResInfo = 0	msaa = 0	0
+MIMG_Store_Helper	5	mimgopc op	asm	RegisterOperand data_rc	addr_rc	dns = ""	1	MIMG_gfx6789
+MIMG_Store_Helper_gfx90a	5	mimgopc op	asm	RegisterOperand data_rc	addr_rc	dns = ""	1	MIMG_gfx90a
+MIMG_Store_gfx10	5	mimgopc op	opcode	RegisterOperand DataRC	AddrRC	dns=""	1	MIMG_gfx10
+MIMG_Store_nsa_gfx10	5	mimgopc op	opcode	RegisterOperand DataRC	int num_addrs	dns=""	1	MIMG_nsa_gfx10
+MIMG_Store_gfx11	5	mimgopc op	opcode	RegisterOperand DataRC	AddrRC	dns=""	1	MIMG_gfx11
+MIMG_Store_nsa_gfx11	5	mimgopc op	opcode	RegisterOperand DataRC	int num_addrs	dns=""	1	MIMG_nsa_gfx11
+VIMAGE_Store	7	int op	opcode	RegisterOperand DataRC	int num_addrs	GFXGen gfxGen	MIMGEncoding encoding	enableDisasm	1	VIMAGE
+VIMAGE_Store_gfx12	5	mimgopc op	opcode	RegisterOperand DataRC	int num_addrs	enableDisasm=0	1	VIMAGE_Store
+MIMG_Store	4	mimgopc op	asm	has_d16	mip = 0	0
+MIMG_Atomic_gfx6789_base	6	op	asm	RegisterOperand data_rc	addr_rc	noRtn	dns=""	1	MIMG_gfx6789
+MIMG_Atomic_gfx90a_base	6	op	asm	RegisterOperand data_rc	addr_rc	noRtn	dns=""	1	MIMG_gfx90a
+MIMG_Atomic_si	6	mimgopc op	asm	RegisterOperand data_rc	addr_rc	noRtn = 0	enableDasm = 0	1	MIMG_Atomic_gfx6789_base
+MIMG_Atomic_vi	6	mimgopc op	asm	RegisterOperand data_rc	addr_rc	noRtn = 0	enableDasm = 0	1	MIMG_Atomic_gfx6789_base
+MIMG_Atomic_gfx90a	6	mimgopc op	asm	RegisterOperand data_rc	addr_rc	noRtn = 0	enableDasm = 0	1	MIMG_Atomic_gfx90a_base
+MIMG_Atomic_gfx10	6	mimgopc op	opcode	RegisterOperand DataRC	AddrRC	noRtn = 0	enableDisasm = 0	1	MIMG_gfx10
+MIMG_Atomic_nsa_gfx10	6	mimgopc op	opcode	RegisterOperand DataRC	int num_addrs	noRtn = 0	enableDisasm = 0	1	MIMG_nsa_gfx10
+MIMG_Atomic_gfx11	6	mimgopc op	opcode	RegisterOperand DataRC	AddrRC	noRtn = 0	enableDisasm = 0	1	MIMG_gfx11
+MIMG_Atomic_nsa_gfx11	6	mimgopc op	opcode	RegisterOperand DataRC	int num_addrs	noRtn = 0	enableDisasm = 0	1	MIMG_nsa_gfx11
+VIMAGE_Atomic	9	int op	opcode	RegisterOperand DataRC	int num_addrs	GFXGen gfxGen	MIMGEncoding encoding	renamed	noRtn = 0	enableDisasm = 0	1	VIMAGE
+VIMAGE_Atomic_gfx12	7	mimgopc op	opcode	RegisterOperand DataRC	int num_addrs	renamed	noRtn = 0	enableDisasm=0	1	VIMAGE_Atomic
+MIMG_Atomic_Addr_Helper_m	7	mimgopc op	asm	RegisterOperand data_rc	enableDasm = 0	isFP = 0	noRtn = 0	renamed = ""	0
+MIMG_Atomic_Base	7	mimgopc op	asm	isCmpSwap = 0	isFP = 0	noRtn = 0	renamed = ""	defBaseOpcode = 1	0
+MIMG_Atomic	5	mimgopc op	asm	isCmpSwap = 0	isFP = 0	renamed = ""	0
+MIMG_Atomic_Renamed	5	mimgopc op	asm	renamed	isCmpSwap = 0	isFP = 0	1	MIMG_Atomic
+MIMG_Sampler_Helper	5	mimgopc op	asm	RegisterOperand dst_rc	RegisterOperand src_rc	dns=""	1	MIMG_gfx6789
+MIMG_Sampler_gfx90a	5	mimgopc op	asm	RegisterOperand dst_rc	RegisterOperand src_rc	dns=""	1	MIMG_gfx90a
+MIMG_Sampler_OpList_gfx10p	2	OpPrefix	HasD16	0
+MIMG_Sampler_Asm_gfx10p	3	opcode	AsmPrefix	HasD16	0
+MIMG_Sampler_gfx10	5	mimgopc op	opcode	RegisterOperand DataRC	RegisterOperand AddrRC	dns=""	1	MIMG_gfx10
+MIMG_Sampler_nsa_gfx10	5	mimgopc op	opcode	RegisterOperand DataRC	int num_addrs	dns=""	1	MIMG_nsa_gfx10
+MIMG_Sampler_nortn_gfx10	4	mimgopc op	opcode	RegisterOperand AddrRC	dns=""	1	MIMG_gfx10
+MIMG_Sampler_nortn_nsa_gfx10	4	mimgopc op	opcode	int num_addrs	dns=""	1	MIMG_nsa_gfx10
+MIMG_Sampler_gfx11	5	mimgopc op	opcode	RegisterOperand DataRC	RegisterOperand AddrRC	dns=""	1	MIMG_gfx11
+MIMG_Sampler_nsa_gfx11	6	mimgopc op	opcode	RegisterOperand DataRC	int num_addrs	RegisterOperand LastVAddrSize	dns=""	1	MIMG_nsa_gfx11
+MIMG_Sampler_nortn_gfx11	4	mimgopc op	opcode	RegisterOperand AddrRC	dns=""	1	MIMG_gfx11
+MIMG_Sampler_nortn_nsa_gfx11	5	mimgopc op	opcode	int num_addrs	RegisterOperand LastVAddrSize	dns=""	1	MIMG_nsa_gfx11
+MIMGAddrSize	3	int dw	enable_disasm	int AddrDW = dw	0
+LastVAddrSize	3	int dw	int max_idx	enable_disasm	1	MIMGAddrSize
+isRangeInList	3	int min	int max	list<int> lst	0
+MIMGAddrSizes_dw_range	1	list<int> range	0
+MIMG_Sampler_AddrSizes	4	AMDGPUSampleVariant sample	isG16	int nsa_max_addr = 5	includeNSA1 = 0	0
+MIMG_Sampler_Src_Helper	7	mimgopc op	asm	AMDGPUSampleVariant sample	RegisterOperand dst_rc	enableDisasm = 0	ExtendedImageInst = 1	isG16 = 0	0
+MIMG_Sampler_BaseOpcode	1	AMDGPUSampleVariant sample	1	MIMGBaseOpcode
+MIMG_Sampler_NoReturn	5	mimgopc op	AMDGPUSampleVariant sample	wqm = 0	isG16	asm	0
+MIMG_Sampler	11	mimgopc op	AMDGPUSampleVariant sample	isPointSampleAccel = 0	wqm = 0	isG16 = 0	isGetLod = 0	asm = "image_sample"#sample.LowerCaseMod#!if(isG16	"_g16"	"")	ExtendedImageInst = !ne(sample.LowerCaseMod	"")	0
+MIMG_Sampler_WQM	3	mimgopc op	AMDGPUSampleVariant sample	isPointSampleAccel = 0	1	MIMG_Sampler
+MIMG_Gather_WQM	2	mimgopc op	AMDGPUSampleVariant sample	1	MIMG_Gather
+MIMG_IntersectRay_gfx10	3	mimgopc op	opcode	RegisterOperand AddrRC	1	MIMG_gfx10
+MIMG_IntersectRay_nsa_gfx10	3	mimgopc op	opcode	int num_addrs	1	MIMG_nsa_gfx10
+MIMG_IntersectRay_gfx11	3	mimgopc op	opcode	RegisterOperand AddrRC	1	MIMG_gfx11
+MIMG_IntersectRay_nsa_gfx11	4	mimgopc op	opcode	int num_addrs	list<RegisterOperand> addr_types	1	MIMG_nsa_gfx11
+VIMAGE_IntersectRay_gfx12	6	mimgopc op	opcode	int num_addrs	isDual	isBVH8	list<RegisterOperand> addr_types	1	VIMAGE
+MIMG_IntersectRay	6	mimgopc op	opcode	Is64	IsA16	isDual	isBVH8 = 0	0
+MIMG_MSAA_Load	2	mimgopc op	asm	0
+ImageDimAtomicIntrinsicInfo	1	AMDGPUImageDimIntrinsic I	1	ImageDimIntrinsicInfo
+VIMAGE_TENSOR_Pseudo	2	opName	_UpTo2D = 0	2	InstSI	SIMCInstr
+VIMAGE_TENSOR_Real	3	op	VIMAGE_TENSOR_Pseudo ps	opName = ps.Mnemonic	1	InstSI
+VIMAGE_TENSOR_Real_gfx1250	1	op	0
+R600Pat	2	pattern	result	1	AMDGPUPat
+InstR600	5	outs	ins	asm	pattern	InstrItinClass itin = NoItinerary	1	AMDGPUInst
+R600_ALU_LDS_Word0	0	0
+R600ALU_Word0	0	0
+R600ALU_Word1	0	0
+R600ALU_Word1_OP2	1	alu_inst	1	R600ALU_Word1
+R600ALU_Word1_OP3	1	alu_inst	1	R600ALU_Word1
+R600LDS_Word1	0	0
+R600ALU_Word1_OP2_r700	0	0
+VTX_WORD0_eg	0	0
+VTX_WORD0_cm	0	0
+VTX_WORD1_GPR	0	0
+TEX_WORD0	0	0
+TEX_WORD1	0	0
+TEX_WORD2	0	0
+CF_WORD1_R600	0	0
+CF_WORD0_EG	0	0
+CF_WORD1_EG	0	0
+CF_ALU_WORD0	0	0
+CF_ALU_WORD1	0	0
+CF_ALLOC_EXPORT_WORD0_RAT	0	0
+CF_ALLOC_EXPORT_WORD1_BUF	0	0
+InstR600ISA	4	outs	ins	asm	pattern = []	1	InstR600
+InstFlag	2	PM = "printOperand"	int Default = 0	1	OperandWithDefaultOps
+R600_1OP	4	inst	opName	pattern	InstrItinClass itin = AnyALU	1	InstR600	31-0=Word0	63-32=Word1
+R600_1OP_Helper	4	inst	opName	node	InstrItinClass itin = AnyALU	1	R600_1OP	31-0=Word0	63-32=Word1
+R600_2OP_Helper	4	inst	opName	node = null_frag	InstrItinClass itin = AnyALU	1	R600_2OP	31-0=Word0	63-32=Word1
+EG_CF_RAT	8	bits <8> cfinst	bits <6> ratinst	ratid	mask	outs	ins	asm	pattern	1	InstR600ISA	31-0=Word0	63-32=Word1
+VTX_READ	3	name	outs	pattern	1	InstR600ISA	63-32=Word1
+AZExtLoadBase	1	ld_node	1	PatFrag
+ExportSwzWord1	0	0
+ExportBufWord1	0	0
+ExportPattern	2	Instruction ExportInst	cf_inst	0
+SteamOutputExportPattern	5	Instruction ExportInst	buf0inst	buf1inst	buf2inst	buf3inst	0
+ExportSwzInst	13	(     outs)	(ins R600_Reg128:$gpr	i32imm:$type	i32imm:$arraybase	RSel:$sw_x	RSel:$sw_y	RSel:$sw_z	RSel:$sw_w	i32imm:$inst	i32imm:$eop)	!strconcat("EXPORT"	" $gpr.$sw_x$sw_y$sw_z$sw_w")	[]	0	31-0=Word0	63-32=Word1
+ExportBufInst	11	(     outs)	(ins R600_Reg128:$gpr	i32imm:$type	i32imm:$arraybase	i32imm:$arraySize	i32imm:$compMask	i32imm:$inst	i32imm:$eop)	!strconcat("EXPORT"	" $gpr")	[]	0	31-0=Word0	63-32=Word1
+ALU_CLAUSE	2	inst	OpName	1	R600WrapperInst	31-0=Word0	63-32=Word1
+CF_WORD0_R600	0	0
+CF_CLAUSE_EG	3	inst	ins	AsmPrint	1	R600WrapperInst	31-0=Word0	63-32=Word1
+FABS	1	rc	1	AMDGPUShaderInst
+MOV_IMM	1	immType	1	R600WrapperInst
+R600_TEX	2	inst	opName	1	InstR600	31-0=Word0	63-32=Word1
+MUL_LIT_Common	1	inst	1	R600_3OP
+CNDE_Common	1	inst	1	R600_3OP
+CNDGE_Common	1	inst	1	R600_3OP
+R600_VEC2OP	1	pattern	1	InstR600
+DOT4_Common	1	inst	1	R600_2OP
+EXP_IEEE_Common	1	inst	1	R600_1OP_Helper
+FLT_TO_INT_Common	1	inst	1	R600_1OP_Helper
+INT_TO_FLT_Common	1	inst	1	R600_1OP_Helper
+FLT_TO_UINT_Common	1	inst	1	R600_1OP_Helper
+UINT_TO_FLT_Common	1	inst	1	R600_1OP_Helper
+LOG_CLAMPED_Common	1	inst	1	R600_1OP
+LSHL_Common	1	inst	1	R600_2OP_Helper
+MULHI_INT24_Common	1	inst	1	R600_2OP_Helper
+MULHI_UINT_Common	1	inst	1	R600_2OP_Helper
+MULHI_UINT24_Common	1	inst	1	R600_2OP_Helper
+MULLO_INT_Common	1	inst	1	R600_2OP_Helper
+MULLO_UINT_Common	1	inst	1	R600_2OP
+RECIP_CLAMPED_Common	1	inst	1	R600_1OP
+RECIP_IEEE_Common	1	inst	1	R600_1OP
+RECIP_UINT_Common	1	inst	1	R600_1OP_Helper
+RECIPSQRT_CLAMPED_Common	1	inst	1	R600_1OP_Helper
+RECIPSQRT_IEEE_Common	1	inst	1	R600_1OP_Helper
+SIN_Common	1	inst	1	R600_1OP
+COS_Common	1	inst	1	R600_1OP
+DIV_Common	1	InstR600 recip_ieee	0
+SqrtPat	2	Instruction RsqInst	Instruction RecipInst	1	R600Pat
+BranchConditional	3	SDNode Op	rci	rcf	0
+BranchInstr	1	name	0
+BranchInstr2	1	name	0
+ExtractVertical	1	vec_rc	1	InstR600
+ExtractVerticalPat	3	Instruction inst	ValueType vec_ty	ValueType scalar_ty	1	R600Pat
+SubtargetFeatureFetchLimit	1	Value	1	SubtargetFeature
+R600Reg	2	name	encoding	1	Register
+R600RegWithChan	3	name	sel	chan	1	Register
+R600Reg_128	3	n	list<Register> subregs	encoding	1	RegisterWithSubRegs
+R600Reg_64	3	n	list<Register> subregs	encoding	1	RegisterWithSubRegs
+R600Reg_64Vertical	3	int lo	int hi	chan	1	R600Reg_64
+InstSI	4	outs	ins	asm = ""	pattern = []	2	PredicateControl	AMDGPUInst
+PseudoInstSI	4	outs	ins	pattern = []	asm = ""	1	InstSI
+SPseudoInstSI	4	outs	ins	pattern = []	asm = ""	1	PseudoInstSI
+VPseudoInstSI	4	outs	ins	pattern = []	asm = ""	1	PseudoInstSI
+CFPseudoInstSI	5	outs	ins	pattern = []	UseExec = 0	DefExec = 0	1	SPseudoInstSI
+Enc32	0	0
+MIMGe_gfxpre11	0	0
+MIMGe_gfx6789	1	op	1	MIMGe_gfxpre11	24-18=op	39-32=vaddr
+MIMGe_gfx90a	1	op	1	MIMGe_gfxpre11	24-18=op	39-32=vaddr
+MIMGe_gfx10	1	op	1	MIMGe_gfxpre11	24-18=op	39-32=vaddr0	2-1=nsa	5-3=dim
+MIMGe_gfx11	1	op	1	Enc64	31-26=0x3c	4-2=dim	62-58=ssamp	25-18=op	39-32=vaddr0	47-40=vdata	52-48=srsrc	11-8=dmask
+VIMAGE_VSAMPLE_Common	1	op	1	Enc96	87-80=vaddr2	25-22=dmask	51-50=cpol	79-72=vaddr1	49-41=rsrc	2-0=dim	71-64=vaddr0	39-32=vdata	21-14=op	95-88=vaddr3	54-52=cpol
+VSAMPLEe	1	op	1	VIMAGE_VSAMPLE_Common	31-26=0x39	63-55=samp
+VIMAGEe	1	op	1	VIMAGE_VSAMPLE_Common	31-26=0x34	63-56=vaddr4
+EXPe	0	0
+EXPe_ComprVM	0	0
+EXPe_Row	0	0
+VINTRPCommon	4	outs	ins	asm	pattern	1	InstSI
+AMDGPUMnemonicAlias	3	From	To	VariantName = ""	2	MnemonicAlias	PredicateControl
+GFXGen	4	Predicate pred	dn	suffix	int sub	0
+SDBufferAtomic	1	opcode	0
+SDGlobalAtomicNoRtn	2	opcode	ValueType ty	1	SDNode
+mubuf_intrinsic_load	2	name	ValueType vt	1	PatFrag
+mubuf_intrinsic_store	2	name	ValueType vt	1	PatFrag
+mtbuf_intrinsic_load	2	name	ValueType vt	1	PatFrag
+mtbuf_intrinsic_store	2	name	ValueType vt	1	PatFrag
+LoadD16Frag	1	op	1	PatFrag
+SIAtomicM0Glue2	4	op_name	is_amdgpu = 0	SDTypeProfile tc = SDTAtomic2	IsInt = 1	0
+bitextract_imm	1	int bitnum	1	SDNodeXForm
+build_vector_fpimm_pos_zero_v2	1	VTVec vec	1	PatLeaf
+BoolRC	1	SReg_1	0
+SDWASrc	1	ValueType vt	1	RegisterOperand
+NamedIntOperand	3	prefix	Optional = 1	name = NAME	1	CustomOperand
+NamedBitOperand	3	Id	Name = NAME	AlwaysIgnoreNegative = 0	1	CustomOperand
+DefaultOperand	2	CustomOperand Op	int Value	2	OperandWithDefaultOps	CustomOperandProps
+SDWAOperand	2	Id	Name = NAME	1	CustomOperand
+ArrayOperand0	2	Id	Name = NAME	2	OperandWithDefaultOps	CustomOperandProps
+KImmFPOperand	1	ValueType vt	1	ImmOperand
+FPInputModsMatchClass	1	int opSize	1	AsmOperandClass
+FPVCSrcInputModsMatchClass	1	int opSize	1	FPInputModsMatchClass
+FPVRegSrcInputModsMatchClass	1	int opSize	1	FPInputModsMatchClass
+FPT16InputModsMatchClass	1	IsFake16	1	FPInputModsMatchClass
+FP16VCSrcInputModsMatchClass	1	IsFake16	1	FPVCSrcInputModsMatchClass
+InputMods	1	AsmOperandClass matchClass	1	Operand
+FPInputMods	1	FPInputModsMatchClass matchClass	1	InputMods
+FPT16InputMods	1	IsFake16	1	FPInputMods
+FPT16VCSrcInputMods	1	IsFake16 = 1	1	FPInputMods
+IntInputModsMatchClass	1	int opSize	1	AsmOperandClass
+IntVCSrcInputModsMatchClass	1	int opSize	1	IntInputModsMatchClass
+IntT16InputModsMatchClass	1	IsFake16	1	IntInputModsMatchClass
+IntT16VCSrcInputModsMatchClass	1	IsFake16	1	IntInputModsMatchClass
+IntInputMods	1	IntInputModsMatchClass matchClass	1	InputMods
+IntT16InputMods	1	IsFake16	1	IntInputMods
+IntT16VCSrcInputMods	1	IsFake16 = 1	1	IntInputMods
+OpSelModsMatchClass	0	0
+UniformSextInreg	1	ValueType VT	1	PatFrag
+AMDGPUWaveReducePseudoGenerator	5	Op	DataType	ValueType ty	RetReg	SrcRegOrImm9 Reg	0
+WaveReduceOp	5	OpName	TypeStr	ValueType Ty	ReturnRegisterClass	SrcRegOrImm9 RC	0
+WrapTerminatorInst	1	SOP_Pseudo base_inst	1	SPseudoInstSI
+WrapTerminatorVOPC	1	VOPC_Pseudo base_inst	1	VPseudoInstSI
+PseudoInstKill	1	ins	0
+SI_TCRETURN_Pseudo	2	rc	pattern = []	1	SPseudoInstSI
+SI_CS_CHAIN_TC	3	ValueType execvt	Predicate wavesizepred	RegisterOperand execrc = getSOPSrcForVT<execvt>.ret	0
+si_cs_chain_tc_pattern	4	callee	ValueType execvt	RegisterOperand execrc	Instruction tc	0
+si_cs_chain_tc_patterns	6	ValueType execvt	RegisterOperand execrc = getSOPSrcForVT<execvt>.ret	Instruction tc = !if(!eq(execvt	i32)	SI_CS_CHAIN_TC_W32	SI_CS_CHAIN_TC_W64)	0
+si_cs_chain_tc_dvgpr_patterns	3	ValueType execvt	RegisterOperand execrc = getSOPSrcForVT<execvt>.ret	Instruction tc = SI_CS_CHAIN_TC_W32_DVGPR	0
+SI_INDIRECT_SRC	1	rc	1	VPseudoInstSI
+SI_INDIRECT_DST	1	rc	1	VPseudoInstSI
+INDIRECT_REG_WRITE_MOVREL_pseudo	2	rc	RegisterOperand val_ty	1	PseudoInstSI
+V_INDIRECT_REG_WRITE_MOVREL_B32_pseudo	1	rc	1	INDIRECT_REG_WRITE_MOVREL_pseudo
+S_INDIRECT_REG_WRITE_MOVREL_pseudo	2	rc	RegisterOperand val_ty	1	INDIRECT_REG_WRITE_MOVREL_pseudo
+S_INDIRECT_REG_WRITE_MOVREL_B32_pseudo	1	rc	1	S_INDIRECT_REG_WRITE_MOVREL_pseudo
+V_INDIRECT_REG_READ_GPR_IDX_pseudo	1	rc	1	PseudoInstSI
+SI_SPILL_SGPR	1	sgpr_class	0
+SI_SPILL_VGPR	3	SIRegisterClassLike vgpr_class	UsesTmp = 0	HasMask = 0	0
+f16_to_fp_Pats	2	Instruction cvt_f16_f32_inst_e64	Instruction cvt_f32_f16_inst_e64	0
+f16_fp_Pats	3	Instruction cvt_f16_f32_inst_e64	Instruction cvt_f32_f16_inst_e64	RegOrImmOperand VSrc	0
+FMADPat	2	ValueType vt	Instruction inst	1	GCNPat
+VOPSelectModsPat	1	ValueType vt	1	GCNPat
+FPBinOpPat	3	node	ValueType vt	Instruction inst	1	GCNPat
+Ext32Pat	1	SDNode ext	1	GCNPat
+ZExt_i64_i1_Pat	1	SDNode ext	1	GCNPat
+AlignBit32Inst	4	op1	op2	op3	isTrue16	0
+bswapi64ExtPat	1	hasTrue16	0
+SelectCanonicalizeAsMax	3	list<Predicate> f32_preds = []	list<Predicate> f64_preds = []	list<Predicate> f16_preds = []	0
+PackB32Pat	1	Instruction inst	1	GCNPat
+AMDGPUGenericInstruction	0	0
+G_AMDGPU_MAD_64_32	0	0
+getSubRegs	1	int size	0
+RegSeqNames	4	int last_reg	int stride	int size	prefix	0
+RegSeqDags	5	RC	int last_reg	int stride	int size	int start = 0	0
+SIRegisterTuples	6	list<SubRegIndex> Indices	RC	int last_reg	int stride	int size	prefix	1	RegisterTuples
+SIRegisterClassLike	4	int BW = 0	V = false	A = false	S = false	0
+SIRegisterClass	4	n	list<ValueType> rTypes	int Align	rList	1	RegisterClass
+SIRegLoHi16	7	n	regIdx	ArtificialHigh = 1	isVGPR = 0	isAGPR = 0	list<int> DwarfEncodings = [-1	-1]	0
+ApertureRegister	2	name	regIdx	0
+FLAT_SCR_LOHI_m	3	n	ci_e	vi_e	0
+FlatReg	3	Register lo	Register hi	encoding	1	RegisterWithSubRegs
+VCCTuple	2	int StartRegIdx	int NumRegs	1	RegisterWithSubRegs
+TmpRegTuplesBase	8	int index	int size	list<Register> subRegs	list<SubRegIndex> indices = getSubRegs<size>.ret	int index1 = !add(index	size	-1)	name = "ttmp["#index#":"#index1#"]"	1	RegisterWithSubRegs
+TmpRegTuples	43	tgt	int size	int index0	int index1 = !add(index0	1)	int index2 = !add(index0	!if(!eq(size	2)	1	2))	int index3 = !add(index0	!if(!eq(size	2)	1	3))	int index4 = !add(index0	!if(!eq(size	8)	4	1))	int index5 = !add(index0	!if(!eq(size	8)	5	1))	int index6 = !add(index0	!if(!eq(size	8)	6	1))	int index7 = !add(index0	!if(!eq(size	8)	7	1))	Register r0 = !cast<Register>("TTMP"#index0#tgt)	Register r1 = !cast<Register>("TTMP"#index1#tgt)	Register r2 = !cast<Register>("TTMP"#index2#tgt)	Register r3 = !cast<Register>("TTMP"#index3#tgt)	Register r4 = !cast<Register>("TTMP"#index4#tgt)	Register r5 = !cast<Register>("TTMP"#index5#tgt)	Register r6 = !cast<Register>("TTMP"#index6#tgt)	Register r7 = !cast<Register>("TTMP"#index7#tgt)	1	TmpRegTuplesBase
+RegisterTypes	1	list<ValueType> reg_types	0
+SRegClass	9	int numRegs	list<ValueType> regTypes	SIRegisterTuples regList	extraRegs	SIRegisterTuples ttmpList = regList	hasNull = 0	int copyCost = !sra(!add(numRegs	1)	1)	0
+VRegClassBase	3	int numRegs	list<ValueType> regTypes	regList	1	SIRegisterClass
+VRegClass	3	int numRegs	list<ValueType> regTypes	regList	0
+ARegClass	3	int numRegs	list<ValueType> regTypes	regList	0
+AVRegClass	4	int numRegs	list<ValueType> regTypes	vregList	aregList	0
+RegImmMatcher	1	name	1	AsmOperandClass
+RegOrImmOperand	2	RegisterClassLike RegClass	OperandTypeName	1	RegisterOperand
+SrcRegOrImm9	2	RegisterClassLike regClass	operandType	1	RegOrImmOperand
+SrcRegOrImm9_t16	2	operandType	regClass = VS_16	1	SrcRegOrImm9
+SrcReg9	1	RegisterClassLike regClass	1	RegisterOperand
+VGPROp	1	regClass	1	RegisterOperand
+VGPROp_Align2	1	regClass	1	RegisterOperand
+AVOperand	2	RegisterClassLike regClass	decoder	1	RegisterOperand
+AVSrcOperand	1	RegisterClassLike regClass	1	AVOperand
+SrcRegOrImmA9	2	RegisterClassLike regClass	operandType	1	RegOrImmOperand
+getRegClassFromOp	1	DAGOperand Op	0
+OperandIsAV	1	DAGOperand Op	0
+OperandIsAGPR	1	DAGOperand Op	0
+OperandIsVGPR	1	DAGOperand Op	0
+VDstOperandIsAV	1	OperandList	0
+VDstOperandIsAGPR	1	OperandList	0
+Data0OperandIsAV	1	OperandList	0
+Data0OperandIsAGPR	1	OperandList	0
+VDataOperandIsAV	1	OperandList	0
+VDataOperandIsAGPR	1	OperandList	0
+SISchedMachineModel	0	0
+GFX125xCommonWriteRes	0	0
+SM_Pseudo	5	opName	outs	ins	asmOps	pattern=[]	1	InstSI
+SM_Real	2	SM_Pseudo ps	opName = ps.Mnemonic	1	InstSI
+OffsetMode	5	hasOffset	hasSOffset	variant	ins	asm	0
+SM_Probe_Pseudo	3	opName	baseClass	OffsetMode offsets	1	SM_Pseudo
+SM_Load_Pseudo	4	opName	baseClass	dstClass	OffsetMode offsets	1	SM_Pseudo
+SM_Store_Pseudo	4	opName	baseClass	srcClass	OffsetMode offsets	1	SM_Pseudo
+SM_Discard_Pseudo	2	opName	OffsetMode offsets	1	SM_Pseudo
+SM_Load_Pseudos	4	op	baseClass	dstClass	OffsetMode offsets	0
+SM_Pseudo_Loads	2	baseClass	dstClass	0
+SM_Pseudo_Stores	2	baseClass	srcClass	0
+SM_Pseudo_Discards	0	0
+SMRD_Real_si	2	op	SM_Pseudo ps	3	SM_Real	Enc32	SIMCInstr	14-9=	31-27=0x18	7-0=	26-22=op	21-15=
+SM_Real_Loads_si	1	op	0
+SMEM_Real_vi	2	op	SM_Pseudo ps	3	SM_Real	Enc64	SIMCInstr	31-26=0x30	12-6=	52-32=Offset	25-18=op	63-57=	5-0=
+SMEM_Real_Load_vi	2	op	ps	1	SMEM_Real_vi
+SM_Real_Loads_vi	1	op	0
+SMEM_Real_Store_Base_vi	2	op	SM_Pseudo ps	1	SMEM_Real_vi	12-6=
+SMEM_Real_Store_vi	2	op	ps	1	SMEM_Real_Store_Base_vi
+SM_Real_Probe_vi	1	op	0
+SMEM_Atomic_Real_vi	2	op	SM_Atomic_Pseudo ps	1	SMEM_Real_vi	12-6=
+SM_Real_Atomics_vi	1	op	0
+SM_Real_Discard_vi	1	op	0
+SMRD_Real_Load_IMM_ci	2	op	SM_Load_Pseudo ps	2	SM_Real	Enc64	14-9=sbase	31-27=0x18	7-0=0xff	26-22=op	21-15=sdst	63-32=offset
+SMRD_Real_ci	2	op	SM_Pseudo ps	3	SM_Real	Enc32	SIMCInstr	14-9=	31-27=0x18	7-0=	26-22=op	21-15=
+SMRDLoadPat	1	PatFrag Op	1	PatFrag
+SMRDAlignedLoadPat	1	PatFrag Op	1	PatFrag
+SMRD_Patterns	5	Instr	ValueType vt	PatFrag frag	immci = true	suffix = ""	0
+SMRD_Pattern	3	Instr	ValueType vt	immci = true	0
+SMLoad_Pattern	3	Instr	ValueType vt	immci = true	0
+ScalarLoadWithExtensionPat	3	Instr	node	ValueType vt	0
+ScalarBufferLoadIntrinsicPat	2	name	Instr	0
+SMPrefetchPat	2	type	TImmLeaf cache_type	0
+SMEM_Real_10Plus_common	5	op	SM_Pseudo ps	opName	int subtarget	RegisterWithSubRegs sgpr_null	3	SM_Real	Enc64	SIMCInstr	31-26=0x3d	12-6=	52-32=	25-18=op	63-57=	5-0=
+SMEM_Real_gfx10	2	op	SM_Pseudo ps	1	SMEM_Real_10Plus_common
+SMEM_Real_Load_gfx10	2	op	ps	1	SMEM_Real_gfx10
+SMEM_Real_Store_gfx10	2	op	SM_Pseudo ps	1	SMEM_Real_gfx10	12-6=
+SM_Real_Stores_gfx10	1	op	0
+SM_Real_Probe_gfx10	1	op	0
+SMEM_Atomic_Real_gfx10	2	op	SM_Atomic_Pseudo ps	1	SMEM_Real_gfx10	12-6=
+SM_Real_Atomics_gfx10	1	op	0
+SM_Real_Discard_gfx10	1	op	0
+SMEM_Real_gfx11	3	op	SM_Pseudo ps	opName = ps.Mnemonic	1	SMEM_Real_10Plus_common
+SMEM_Real_Load_gfx11	3	op	ps	opName	1	SMEM_Real_gfx11
+SMEM_Real_Store_gfx11	2	op	SM_Pseudo ps	1	SMEM_Real_gfx11	12-6=
+SM_Real_Probe_gfx11	1	op	0
+SMEM_Real_gfx12Plus	5	op	SM_Pseudo ps	opName	int subtarget	RegisterWithSubRegs sgpr_null	3	SM_Real	Enc64	SIMCInstr	31-26=0x3d	18-13=op	63-57=	55-32=
+SMEM_Real_gfx12	3	op	SM_Pseudo ps	opName = ps.Mnemonic	1	SMEM_Real_gfx12Plus	12-6=	5-0=
+SMEM_Real_Prefetch_gfx12	2	op	SM_Pseudo ps	1	SMEM_Real_gfx12	10-6=	22-21=cpol	24-23=cpol	12-11=0
+SMEM_Real_Load_gfx12	4	op	ps	opName	OffsetMode offsets	1	SMEM_Real_gfx12	22-21=cpol	24-23=cpol
+SM_Real_Loads_gfx12	2	op	ps = NAME	0
+SMEM_Real_Probe_gfx12	1	op	0
+SMEM_Real_gfx13	3	op	SM_Pseudo ps	opName = ps.Mnemonic	1	SMEM_Real_gfx12Plus	12-6=	5-0=
+SMEM_Real_Prefetch_gfx13	2	op	SM_Pseudo ps	1	SMEM_Real_gfx13	10-6=	22-21=cpol	24-23=cpol	12-11=0
+SMEM_Real_Load_gfx13	4	op	ps	opName	OffsetMode offsets	1	SMEM_Real_gfx13	22-21=cpol	24-23=cpol
+SM_Real_Loads_gfx13	2	op	ps = NAME	0
+SMEM_Real_Probe_gfx13	1	op	0
+SOP_Pseudo	5	opName	outs	ins	asmOps	pattern=[]	2	InstSI	SIMCInstr
+SOP1_Pseudo	5	opName	outs	ins	asmOps	pattern=[]	1	SOP_Pseudo
+SOP1_Real	3	op	SOP1_Pseudo ps	real_name = ps.Mnemonic	1	InstSI	7-0=	15-8=op	22-16=	31-23=0x17d
+SOP1_32	3	opName	pattern=[]	tied_in = 0	1	SOP1_Pseudo
+SOP1_32R	2	opName	pattern=[]	1	SOP1_Pseudo
+SOP1_32_movreld	2	opName	pattern=[]	1	SOP1_Pseudo
+SOP1_64	2	opName	pattern=[]	1	SOP1_Pseudo
+SOP1_64_0	2	opName	pattern=[]	1	SOP1_Pseudo
+SOP1_1	2	opName	pattern=[]	1	SOP1_Pseudo
+SOP1_1_REGIMM64	2	opName	pattern=[]	1	SOP1_Pseudo
+UniformUnaryFrag	1	Op	1	PatFrag
+UniformBinFrag	1	Op	1	PatFrag
+UniformTernaryFrag	1	Op	1	PatFrag
+DivergentBinFrag	1	Op	1	PatFrag
+SOP1_F32_Inst	4	opName	Op	ValueType vt0=f32	ValueType vt1=vt0	1	SOP1_32
+SOP2_Pseudo	5	opName	outs	ins	asmOps	pattern=[]	1	SOP_Pseudo
+SOP2_Real	2	SOP_Pseudo ps	name = ps.Mnemonic	1	InstSI
+SOP2_Real32	3	op	SOP_Pseudo ps	name = ps.Mnemonic	2	Enc32	SOP2_Real	29-23=op	7-0=src0	15-8=src1	31-30=0x2	22-16=
+SOP2_Real64	3	op	SOP_Pseudo ps	name = ps.Mnemonic	2	SOP2_Real	Enc64	29-23=op	7-0=src0	15-8=src1	31-30=0x2	22-16=	63-32=imm
+SOP2_F16	2	opName	pattern=[]	1	SOP2_Pseudo
+SOP_FPToUSatPat	2	lhs	int hi	1	GCNPat
+SOP2_F32_Inst	3	opName	Op	ValueType dstVt=f32	1	SOP2_F32
+SOPK_Pseudo	5	opName	outs	ins	asmOps	pattern=[]	1	SOP_Pseudo
+SOPK_Real	2	SOPK_Pseudo ps	name = ps.Mnemonic	1	InstSI
+SOPK_Real32	3	op	SOPK_Pseudo ps	name = ps.Mnemonic	1	SOPK_Real	31-28=0xb	27-23=op	22-16=	15-0=simm16
+SOPK_Real64	2	op	SOPK_Pseudo ps	2	SOPK_Real	Enc64	31-28=0xb	27-23=op	22-16=	15-0=simm16	63-32=imm
+SOPKInstTable	2	is_sopk	cmpOp = ""	0
+SOPK_32	2	opName	pattern=[]	1	SOPK_Pseudo
+SOPK_SCC	3	opName	base_op	isSignExt	1	SOPK_Pseudo
+SOPK_32TIE	2	opName	pattern=[]	1	SOPK_Pseudo
+S_GETREG_B32_Pseudo	1	pattern=[]	1	SOPK_Pseudo
+S_SETREG_B32_Pseudo	1	pattern=[]	1	SOPK_Pseudo
+S_SETREG_IMM32_B32_Pseudo	6	"s_setreg_imm32_b32"	(outs)	(ins i32imm:$imm	hwreg:$simm16)	"$simm16	$imm"	0
+SOPK_WAITCNT	2	opName	pat=[]	1	SOPK_Pseudo
+SOPC_Pseudo	5	opName	outs	ins	asmOps	pattern=[]	1	SOP_Pseudo
+SOPC_Real	2	op	SOPC_Pseudo ps	1	InstSI	7-0=src0	15-8=src1	22-16=op	31-23=0x17e
+SOPC_Base	4	RegisterOperand rc0	RegisterOperand rc1	opName	pattern = []	1	SOPC_Pseudo
+SOPC_Helper	4	RegisterOperand rc	ValueType vt	opName	cond	1	SOPC_Base
+SOPC_CMP_32	3	opName	cond = COND_NULL	revOp = opName	3	SOPC_Helper	Commutable_REV	SOPKInstTable
+SOPC_CMP_F32	3	opName	cond = COND_NULL	revOp = opName	3	SOPC_Helper	Commutable_REV	SOPKInstTable
+SOPC_CMP_F16	3	opName	cond = COND_NULL	revOp = opName	3	SOPC_Helper	Commutable_REV	SOPKInstTable
+SOPC_CMP_64	3	opName	cond = COND_NULL	revOp = opName	2	SOPC_Helper	Commutable_REV
+SOPC_32	2	opName	pattern = []	1	SOPC_Base
+SOPP_Pseudo	8	opName	ins	asmOps = ""	pattern=[]	sep = !if(!empty(asmOps)	""	" ")	keyName = opName	1	SOP_Pseudo
+SOPPRelaxTable	3	isRelaxed	keyName	gfxip	0
+SOPP_Real	2	SOPP_Pseudo ps	name = ps.Mnemonic	1	InstSI
+SOPP_Real_32	3	op	SOPP_Pseudo ps	name = ps.Mnemonic	2	Enc32	SOPP_Real	22-16=op	15-0=	31-23=0x17f
+SOPP_Real_64	3	op	SOPP_Pseudo ps	name = ps.Mnemonic	2	SOPP_Real	Enc64	54-48=0x0	63-55=0x17f	47-32=0x0	22-16=op	15-0=	31-23=0x17f
+SOPP_With_Relaxation	4	opName	ins	asmOps	pattern=[]	0
+GetFPModePat	1	int fpmode_mask	1	GCNPat
+ScalarNot2Pat	6	Instruction inst	op	ValueType vt	notnode = !if(vt.isVector	vnot	not)	1	GCNPat
+Select	2	GFXGen Gen	opName	1	SIMCInstr
+Select_vi	1	opName	1	SIMCInstr
+Select_gfx6_gfx7	1	opName	1	SIMCInstr
+SOP1_Real_gfx13	2	op	name = !tolower(NAME)	0
+SOP1_M0_Real_gfx13	1	op	0	7-0=M0_gfx11plus.HWEncoding
+SOP1_IMM_Real_gfx13	1	op	0
+SOP1_Real_gfx11	2	op	name = !tolower(NAME)	0
+SOP1_Real_gfx12	2	op	name = !tolower(NAME)	0
+SOP1_M0_Real_gfx12	1	op	0	7-0=M0_gfx11plus.HWEncoding
+SOP1_M0_Real_gfx12_gfx13	1	op	2	SOP1_M0_Real_gfx12	SOP1_M0_Real_gfx13
+SOP1_IMM_Real_gfx12_gfx13	1	op	2	SOP1_IMM_Real_gfx12	SOP1_IMM_Real_gfx13
+SOP1_Real_gfx11_gfx12_gfx13	1	op	3	SOP1_Real_gfx11	SOP1_Real_gfx12	SOP1_Real_gfx13
+SOP1_Real_gfx10	1	op	0
+SOP1_Real_gfx10_gfx13	1	op	2	SOP1_Real_gfx10	SOP1_Real_gfx13
+SOP1_Real_gfx6_gfx7_gfx10	1	op	2	SOP1_Real_gfx10	SOP1_Real_gfx6_gfx7
+SOP2_Real_gfx12	2	op	name = !tolower(NAME)	0
+SOP2_Real_gfx12_gfx13	2	op	name = !tolower(NAME)	2	SOP2_Real_gfx12	SOP2_Real_gfx13
+SOP2_Real_gfx11_gfx12	2	op	name = !tolower(NAME)	2	SOP2_Real_gfx11	SOP2_Real_gfx12
+SOP2_Real_FMAK_gfx12	1	op	0
+SOP2_Real_FMAK_gfx11	1	op	0
+SOP2_Real_FMAK_gfx11_gfx12_gfx13	1	op	3	SOP2_Real_FMAK_gfx11	SOP2_Real_FMAK_gfx12	SOP2_Real_FMAK_gfx13
+SOP2_Real_gfx10_gfx13	1	op	2	SOP2_Real_gfx10	SOP2_Real_gfx13
+SOP2_Real_gfx6_gfx7_gfx10_gfx13	1	op	3	SOP2_Real_gfx6_gfx7	SOP2_Real_gfx10	SOP2_Real_gfx13
+SOPK_Real64_gfx10	1	op	0
+SOPK_Real32_gfx11	1	op	0
+SOPK_Real64_gfx11	1	op	0
+SOPK_Real32_gfx12	2	op	name = !tolower(NAME)	0
+SOPK_Real64_gfx12	1	op	0
+SOPK_Real32_gfx11_gfx12	1	op	2	SOPK_Real32_gfx11	SOPK_Real32_gfx12
+SOPK_Real32_gfx13	2	op	name = !tolower(NAME)	0
+SOPK_Real64_gfx13	1	op	0
+SOPK_Real32_gfx10_gfx11_gfx12_gfx13	1	op	4	SOPK_Real32_gfx10	SOPK_Real32_gfx11	SOPK_Real32_gfx12	SOPK_Real32_gfx13
+SOPK_Real32_gfx6_gfx7_gfx10_gfx11	1	op	3	SOPK_Real32_gfx10	SOPK_Real32_gfx11	SOPK_Real32_gfx6_gfx7
+SOPK_Real32_gfx6_gfx7_gfx10_gfx13	1	op	3	SOPK_Real32_gfx10	SOPK_Real32_gfx13	SOPK_Real32_gfx6_gfx7
+SOPP_Real_64_gfx13	1	op	0
+SOPP_Real_32_gfx12	2	op	name = !tolower(NAME)	0
+SOPP_Real_64_gfx12	1	op	0
+SOPP_Real_32_gfx11	2	op	name = !tolower(NAME)	0
+SOPP_Real_64_gfx11	1	op	0
+SOPP_Real_With_Relaxation_gfx11	1	op	0
+SOPP_Real_32_gfx10	1	op	0
+SOPP_Real_32_gfx12_gfx13	1	op	2	SOPP_Real_32_gfx12	SOPP_Real_32_gfx13
+SOPP_Real_32_gfx6_gfx7	1	op	0
+SOPP_Real_32_gfx6_gfx7_gfx8_gfx9	1	op	2	SOPP_Real_32_gfx8_gfx9	SOPP_Real_32_gfx6_gfx7
+SOPP_Real_64_gfx8_gfx9	1	op	0
+SOPP_Real_64_gfx10	1	op	0
+SOPP_Real_64_gfx6_gfx7_gfx8_gfx9	1	op	2	SOPP_Real_64_gfx8_gfx9	SOPP_Real_64_gfx6_gfx7
+SOPP_Real_64_gfx6_gfx7_gfx8_gfx9_gfx10	1	op	2	SOPP_Real_64_gfx6_gfx7_gfx8_gfx9	SOPP_Real_64_gfx10
+SOPP_Real_32_gfx10_gfx11_gfx12_gfx13	1	op	4	SOPP_Real_32_gfx10	SOPP_Real_32_gfx11	SOPP_Real_32_gfx12	SOPP_Real_32_gfx13
+SOPP_Real_With_Relaxation_gfx11_gfx12	1	bits<7>op	2	SOPP_Real_With_Relaxation_gfx11	SOPP_Real_With_Relaxation_gfx12
+SOPC_Real_gfx11	1	op	0
+SOPC_Real_gfx11_gfx12	1	op	2	SOPC_Real_gfx11	SOPC_Real_gfx12
+SOPC_Real_gfx11_gfx12_gfx13	1	op	3	SOPC_Real_gfx11	SOPC_Real_gfx12	SOPC_Real_gfx13
+SOPC_Real_gfx6_gfx7	1	op	0
+SOPC_Real_gfx6_gfx7_gfx8_gfx9	1	op	2	SOPC_Real_gfx8_gfx9	SOPC_Real_gfx6_gfx7
+SOPC_Real_gfx8_gfx9_gfx10_gfx13	1	op	3	SOPC_Real_gfx10	SOPC_Real_gfx8_gfx9	SOPC_Real_gfx13	31-26=0x31
+VINTRPe_vi	1	op	1	VINTRPe	31-26=0x35
+VINTERPe	0	0
+VINTERPe_gfx11	1	op	1	VINTERPe	22-16=op
+VINTERPe_gfx12_gfx13	1	op	1	VINTERPe	20-16=op
+VINTERP_Pseudo	3	OpName	VOPProfile P	pattern = []	1	VOP3_Pseudo
+VINTERP_Real	3	VOP_Pseudo ps	int EncodingFamily	asmName	1	VOP3_Real
+VOP3_VINTERP_F16_t16	1	list<ValueType> ArgVT	1	VOPProfile_True16
+VOP3_VINTERP_F16_fake16	1	list<ValueType> ArgVT	1	VOPProfile_Fake16
+VINTERP_t16	2	OpName	list<ValueType> ArgVT	0
+VInterpF32Pat	2	op	Instruction inst	1	GCNPat
+VInterpF16Pat_t16	5	op	Instruction inst	ValueType dstVT	high	isP2	1	GCNPat
+VINTERP_Real	3	GFXGen Gen	op	asmName	0
+VINTERP_Real_gfx11_gfx12_gfx13	2	op	asmName = !cast<VOP3_Pseudo>(NAME).Mnemonic	1	VINTERP_Real
+VOP1e	2	op	VOPProfile P	1	Enc32	31-25=0x3f	24-17=	8-0=	16-9=op
+VOP1_SDWAe	2	op	VOPProfile P	1	VOP_SDWAe	31-25=0x3f	24-17=	8-0=0xf9	16-9=op
+VOP1_SDWA9Ae	2	op	VOPProfile P	1	VOP_SDWA9Ae	31-25=0x3f	24-17=	8-0=0xf9	16-9=op
+VOP1_Pseudo	4	opName	VOPProfile P	pattern=[]	VOP1Only = 0	1	VOP_Pseudo
+VOP1_Real	3	VOP1_Pseudo ps	int EncodingFamily	real_name = ps.Mnemonic	1	VOP_Real
+VOP1_Real_Gen	3	VOP1_Pseudo ps	GFXGen Gen	real_name = ps.Mnemonic	1	VOP1_Real
+VOP1_SDWA_Pseudo	3	OpName	VOPProfile P	pattern=[]	1	VOP_SDWA_Pseudo
+VOP1_DPP_Pseudo	3	OpName	VOPProfile P	pattern=[]	1	VOP_DPP_Pseudo
+VOP1_DPP8_Pseudo	3	OpName	VOPProfile P	pattern=[]	1	VOP_DPP8_Pseudo
+VOP1Inst	4	opName	VOPProfile P	node = null_frag	int VOPDOp = -1	0
+VOP1Inst_t16_with_profiles	5	opName	VOPProfile P	VOPProfile P_t16	VOPProfile P_fake16	node = null_frag	0
+VOP1Inst_t16	3	opName	VOPProfile P	node = null_frag	1	VOP1Inst_t16_with_profiles
+VOP_SPECIAL_OMOD_PROF	2	ValueType dstVt	ValueType srcVt	1	VOPProfile
+VOP_MOVREL	1	RegisterOperand Src1RC	1	VOPProfile
+fp16_fp_to_int_sat_Pats	2	Instruction cvt_u16_f16_inst_e64	Instruction cvt_i16_f16_inst_e64	0
+VOPProfile_Base_CVT_F32_F8	1	ValueType vt	1	VOPProfileI2F
+Cvt_F32_F8_Pat	3	node	int index	VOP1_SDWA_Pseudo inst_sdwa	1	GCNPat
+Cvt_PK_F32_F8_Pat	4	node	int index	VOP1_Pseudo inst_e32	VOP1_SDWA_Pseudo inst_sdwa	1	GCNPat
+Cvt_PK_F32_F8_Conv_Pat	2	node	Instruction inst	1	GCNPat
+VOPProfile_Base_CVT_F_F8_ByteSel	2	ValueType DstVT	_HasClamp = 0	1	VOPProfile
+Cvt_F_F8_Pat_ByteSel	3	node	VOP3_Pseudo inst	HasOpSel = 0	1	GCNPat
+Cvt_PK_F32_F8_Pat_OpSel	4	node	int index	VOP1_Pseudo inst_e32	VOP3_Pseudo inst_e64	1	GCNPat
+VOP1_DPP	4	op	VOP1_DPP_Pseudo ps	VOPProfile p = ps.Pfl	isDPP16 = 0	1	VOP_DPP	31-25=0x3f	24-17=	8-0=0xfa	16-9=op
+VOP1_DPP16	4	op	VOP1_DPP_Pseudo ps	int subtarget	VOPProfile p = ps.Pfl	2	VOP1_DPP	SIMCInstr
+VOP1_DPP16_Gen	4	op	VOP1_DPP_Pseudo ps	GFXGen Gen	VOPProfile p = ps.Pfl	1	VOP1_DPP16
+VOP1_DPP8	4	op	VOP1_DPP8_Pseudo ps	int subtarget	VOPProfile p = ps.Pfl	2	VOP_DPP8	SIMCInstr	31-25=0x3f	24-17=	8-0=fi	16-9=op
+VOP1_DPP8_Gen	4	op	VOP1_DPP8_Pseudo ps	GFXGen Gen	VOPProfile p = ps.Pfl	1	VOP1_DPP8
+VOP1Only_Real	2	GFXGen Gen	op	0
+VOP1_Real_e32	3	GFXGen Gen	op	opName = NAME	0
+VOP1_Real_e32_with_name	4	GFXGen Gen	op	opName	asmName	0
+VOP1_Real_e64	2	GFXGen Gen	op	0
+VOP1_Real_dpp	3	GFXGen Gen	op	opName = NAME	0
+VOP1_Real_dpp_with_name	4	GFXGen Gen	op	opName	asmName	0
+VOP1_Real_dpp8	3	GFXGen Gen	op	opName = NAME	0
+VOP1_Real_dpp8_with_name	4	GFXGen Gen	op	opName	asmName	0
+VOP1_Realtriple_e64	2	GFXGen Gen	op	1	VOP3_Realtriple
+VOP1_Realtriple_e64_with_name_gfx12_gfx13	3	op	opName	asmName	1	VOP1_Realtriple_e64_with_name
+VOP1_Real_NO_VOP3_with_name_gfx12_gfx13	3	op	opName	asmName	0
+VOP1_Real_FULL_with_name	4	GFXGen Gen	op	opName	asmName	4	VOP1_Real_dpp_with_name	VOP1_Realtriple_e64_with_name	VOP1_Real_dpp8_with_name	VOP1_Real_e32_with_name
+VOP1_Real_FULL_t16_gfx11_gfx12_gfx13	3	op	asmName	opName = NAME	1	VOP1_Real_FULL_with_name
+VOP1Only_Real_gfx11_gfx12_gfx13	1	op	1	VOP1Only_Real
+VOP1_Real_FULL_t16_and_fake16_gfx13	3	op	asmName = !tolower(NAME)	opName = NAME	0
+VOP1_Real_FULL_with_name_gfx11_gfx12_gfx13_not_gfx1250	3	op	opName	asmName	1	VOP1_Real_FULL_with_name
+VOP1_CVT_PK_F8_F16_Profile	1	RegisterOperand RC	1	VOPProfile
+VOP1_CVT_PK_F8_F16_True16_Profile	1	RegisterOperand RC	1	VOPProfile_True16
+VOP1_CVT_PK_F8_F16_Fake16_Profile	1	RegisterOperand RC	1	VOPProfile_Fake16
+VOP1_Real_OpSelIsDPP_gfx1250_gfx13	1	op	1	VOP1_Real_OpSelIsDPP
+VOP1_Real_gfx10	1	op	5	VOP1_Real_dpp_gfx10	VOP1_Real_e64_gfx10	VOP1_Real_e32_gfx10	VOP1_Real_dpp8_gfx10	VOP1_Real_sdwa_gfx10
+VOP1_Real_gfx7	1	op	2	VOP1_Real_e64_gfx7	VOP1_Real_e32_gfx7
+VOP1_Real_gfx6_gfx7	1	op	2	VOP1_Real_e64_gfx6_gfx7	VOP1_Real_e32_gfx6_gfx7
+VOP1_DPPe	3	op	VOP1_DPP_Pseudo ps	VOPProfile P = ps.Pfl	1	VOP_DPPe	31-25=0x3f	24-17=	8-0=0xfa	16-9=op
+VOP1Only_Real_vi	1	op	0
+VOP1_Real_e32e64_vi	1	op	0
+VOP1_Real_vi	1	op	0
+VOP1_Real_gfx9	1	op	0
+VOP1_Real_NoDstSel_SDWA_gfx9	1	op	0	42-40=6
+VOP1_OpSel_Real_e32e64_gfx9	1	op	0
+VOP2e	2	op	VOPProfile P	1	Enc32	24-17=	8-0=	30-25=op	16-9=
+VOP2_MADKe	2	op	VOPProfile P	1	Enc64	24-17=	8-0=	63-32=imm	30-25=op	16-9=
+VOP2_MADK64e	2	op	VOPProfile P	1	Enc96	24-17=	8-0=	95-32=imm	30-25=op	16-9=
+VOP2_SDWAe	2	op	VOPProfile P	1	VOP_SDWAe	24-17=	8-0=0xf9	30-25=op	16-9=
+VOP2_SDWA9Ae	2	op	VOPProfile P	1	VOP_SDWA9Ae	24-17=	8-0=0xf9	30-25=op	16-9=
+VOP2_Pseudo	4	opName	VOPProfile P	pattern=[]	suffix = "_e32"	1	VOP_Pseudo
+VOP2_Real	3	VOP2_Pseudo ps	int EncodingFamily	real_name = ps.Mnemonic	1	VOP_Real
+VOP2_Real_Gen	3	VOP2_Pseudo ps	GFXGen Gen	real_name = ps.Mnemonic	1	VOP2_Real
+VOP2_SDWA_Pseudo	3	OpName	VOPProfile P	pattern=[]	1	VOP_SDWA_Pseudo
+VOP2_DPP_Pseudo	3	OpName	VOPProfile P	pattern=[]	1	VOP_DPP_Pseudo
+getVOP2Pat64	2	node	VOPProfile P	1	LetDummies
+VOP2Inst_e32	4	opName	VOPProfile P	node = null_frag	revOp = opName	0
+VOP2Inst_e32_VOPD	6	opName	VOPProfile P	VOPDOp	VOPDName	node = null_frag	revOp = opName	0
+VOP2Inst_e64_base	4	opName	VOPProfile P	node = null_frag	revOp = opName	0
+VOP2Inst_e64_dpp	2	opName	VOPProfile P	0
+VOP2Inst_e64	4	opName	VOPProfile P	node = null_frag	revOp = opName	2	VOP2Inst_e64_dpp	VOP2Inst_e64_base
+VOP2Inst_sdwa	3	opName	VOPProfile P	revOp = opName	0
+VOP2Inst	4	opName	VOPProfile P	node = null_frag	revOp = opName	3	VOP2Inst_e64	VOP2Inst_sdwa	VOP2Inst_e32
+VOP2Inst_t16	4	opName	VOPProfile P	node = null_frag	revOp = opName	0
+VOP2Inst_e64_t16	4	opName	VOPProfile P	node = null_frag	revOp = opName	0
+VOP2Inst_VOPD	6	opName	VOPProfile P	VOPDOp	VOPDName	node = null_frag	revOp = opName	3	VOP2Inst_e64_VOPD	VOP2Inst_sdwa	VOP2Inst_e32_VOPD
+VOP2bInst	6	opName	VOPProfile P	node = null_frag	revOp = opName	useSGPRInput = !eq(P.NumSrcArgs	3)	0
+VOP2bInstAlias	4	VOP2_Pseudo ps	Instruction inst	OpName	opnd	1	InstAlias
+VOP2bInstAliases	3	VOP2_Pseudo ps	VOP2_Real inst	OpName	0
+VOP2eInst_Base	7	opName	VOPProfile P	VOPDOp	VOPDName	node	revOp	useSGPRInput	0
+VOP2eInst	6	opName	VOPProfile P	node = null_frag	revOp = opName	useSGPRInput = !eq(P.NumSrcArgs	3)	1	VOP2eInst_Base
+VOP_MADK_Base	1	ValueType vt	1	VOPProfile
+VOP_MADAK	1	ValueType vt	1	VOP_MADK_Base
+VOP_MADMK	1	ValueType vt	1	VOP_MADK_Base
+getVOP3VRegForVT	3	ValueType VT	IsTrue16 = 0	IsFake16 = 0	0
+VOP_MAC	2	ValueType vt0	ValueType vt1=vt0	1	VOPProfile
+VOP_DOT_ACC	2	ValueType vt0	ValueType vt1	1	VOP_MAC
+VOP2e_SGPR	1	list<ValueType> ArgVT	1	VOPProfile
+DivergentBinOp	2	Op	VOP_Pseudo Inst	1	GCNPat
+divergent_i64_BinOp	3	Op	Instruction Inst	ValueType vt = i64	1	GCNPat
+LDEXP_F16_Pat	3	op	VOP_Pseudo inst	VOPProfile P = inst.Pfl	1	GCNPat
+Dot2F32NoModsPat	3	node	Instruction inst	ValueType ty	1	GCNPat
+Arithmetic_i16_0Hi_Pats	2	op	Instruction inst	0
+ZExt_i16_i1_Pat	1	SDNode ext	1	GCNPat
+VOP2_DPP	5	op	VOP2_DPP_Pseudo ps	opName = ps.OpName	VOPProfile p = ps.Pfl	IsDPP16 = 0	1	VOP_DPP	24-17=	8-0=0xfa	30-25=op	16-9=
+Base_VOP2_DPP16	4	op	VOP2_DPP_Pseudo ps	opName = ps.OpName	VOPProfile p = ps.Pfl	1	VOP2_DPP
+VOP2_DPP16	5	op	VOP2_DPP_Pseudo ps	int subtarget	opName = ps.OpName	VOPProfile p = ps.Pfl	2	Base_VOP2_DPP16	SIMCInstr
+VOP2_DPP8	3	op	VOP2_Pseudo ps	VOPProfile p = ps.Pfl	1	VOP_DPP8	24-17=	8-0=fi	30-25=op	16-9=
+VOP2_DPP8_Gen	4	op	VOP2_Pseudo ps	GFXGen Gen	VOPProfile p = ps.Pfl	1	VOP2_DPP8
+VOP2Only_Real_MADK	2	GFXGen Gen	op	0
+VOP2Only_Real_MADK64	2	GFXGen Gen	op	0
+VOP2Only_Real_MADK64_gfx1250_gfx13	2	gfx1250Op	op	1	VOP2Only_Real_MADK64
+VOP2_Real_e32	2	GFXGen Gen	op	0
+VOP2Only_Real_e32	2	GFXGen Gen	op	0
+VOP2_Real_e64	2	GFXGen Gen	op	0
+VOP2_Real_dpp	2	GFXGen Gen	op	0
+VOP2_Real_dpp8	2	GFXGen Gen	op	0
+VOP2_Real_e32_with_name	5	GFXGen Gen	op	opName	asmName	single = 0	0
+VOP2_Real_e64_with_name	4	GFXGen Gen	op	opName	asmName	0
+VOP2_Real_dpp_with_name	4	GFXGen Gen	op	opName	asmName	0
+VOP2_Real_dpp8_with_name	4	GFXGen Gen	op	opName	asmName	0
+VOP2be_Real_e32	4	GFXGen Gen	op	opName	asmName	0
+VOP2be_Real_dpp	4	GFXGen Gen	op	opName	asmName	0
+VOP2be_Real_dpp8	4	GFXGen Gen	op	opName	asmName	0
+VOP2_Realtriple_e64	2	GFXGen Gen	op	1	VOP3_Realtriple
+VOP2be_Real	4	GFXGen Gen	op	opName	asmName	4	VOP3be_Realtriple	VOP2be_Real_dpp8	VOP2be_Real_e32	VOP2be_Real_dpp
+VOP2_Real_FULL_with_name	4	GFXGen Gen	op	opName	asmName	2	VOP2_Realtriple_e64_with_name	VOP2_Real_NO_VOP3_with_name
+VOP2_Real_with_NO_DPP_with_alias	3	GFXGen Gen	op	alias	0
+VOP2_Real_with_DPP16_with_alias	3	GFXGen Gen	op	alias	3	VOP2_Real_with_NO_DPP_with_alias	VOP3_Real_dpp_Base	VOP2_Real_dpp
+VOP2_Real_with_NO_DPP_gfx13_DPP16_with_alias_gfx12	2	op	alias	2	VOP2_Real_with_NO_DPP_with_alias	VOP2_Real_with_DPP16_with_alias
+VOP2_Real_NO_DPP_with_name_gfx12	3	op	opName	asmName	1	VOP2_Real_NO_DPP_with_name
+VOP2be_Real_gfx11	3	op	opName	asmName	1	VOP2be_Real
+VOP2_Real_FULL_t16_gfx11	3	op	asmName	opName = NAME	1	VOP2_Real_FULL_with_name
+VOP2_Real_FULL_t16_gfx11_no_gfx1170	3	op	asmName	opName = NAME	1	VOP2_Real_FULL_with_name
+VOP2_Real_FULL_t16_gfx1170	4	op	opName	asmName	alias	0
+VOP2_Real_FULL_t16_and_fake16_gfx1170	4	op	opName	asmName	alias	0
+VOP2_Real_NO_DPP_with_name_gfx11	3	op	opName	asmName	1	VOP2_Real_NO_DPP_with_name
+VOP3beOnly_Realtriple_gfx11_gfx12_gfx13	2	preGFX13Op	op	1	VOP3beOnly_Realtriple
+VOP2_Real_FULL_t16_gfx11_gfx12_gfx13	3	op	asmName	opName = NAME	1	VOP2_Real_FULL_with_name
+VOP2_Real_FULL_gfx11	1	op	1	VOP2_Real_FULL
+VOP2Only_Real_MADK_gfx10	1	op	0
+VOP2Only_Real_MADK_gfx10_with_name	3	op	opName	asmName	0
+VOP2_Real_e32_gfx10	1	op	0
+VOP2_Real_e64_gfx10	1	op	0
+VOP2_Real_sdwa_gfx10	1	op	0
+VOP2_Real_dpp_gfx10	1	op	0
+VOP2_Real_dpp8_gfx10	1	op	0
+VOP2Only_Real_e32_gfx10	1	op	0
+VOP2_Real_e32_dpp_dpp8_gfx10	1	op	3	VOP2Only_Real_e32_gfx10	VOP2_Real_dpp_gfx10	VOP2_Real_dpp8_gfx10
+VOP2_Real_e64_gfx10_with_name	3	op	opName	asmName	0
+VOP2_Real_sdwa_gfx10_with_name	3	op	opName	asmName	0
+VOP2_Real_dpp_gfx10_with_name	3	op	opName	asmName	0
+VOP2_Real_dpp8_gfx10_with_name	3	op	opName	asmName	0
+VOP2be_Real_e32_gfx10	3	op	opName	asmName	0
+VOP2be_Real_e64_gfx10	3	op	opName	asmName	0
+VOP2be_Real_sdwa_gfx10	3	op	opName	asmName	0
+VOP2be_Real_dpp_gfx10	3	op	opName	asmName	0
+VOP2be_Real_dpp8_gfx10	3	op	opName	asmName	0
+VOP3Only_Real_gfx10	1	op	0
+VOP3beOnly_Real_gfx10	1	op	0
+VOP2Only_Real_MADK_gfx10_gfx11	1	op	2	VOP2Only_Real_MADK	VOP2Only_Real_MADK_gfx10
+VOP2_DPPe	3	op	VOP2_DPP_Pseudo ps	VOPProfile P = ps.Pfl	1	VOP_DPPe	24-17=	8-0=0xfa	30-25=op	16-9=
+VOP2_Lane_Real_gfx6_gfx7	1	op	0
+VOP2Only_Real_MADK_gfx6_gfx7	1	op	0
+VOP2_Real_e32_gfx6_gfx7	2	op	opName = NAME	0
+VOP2_Real_e64_gfx6_gfx7	2	op	opName = NAME	0
+VOP2be_Real_e64_gfx6_gfx7	2	op	opName = NAME	0
+VOP2Only_Real_MADK_gfx6_gfx7_gfx10	1	op	2	VOP2Only_Real_MADK_gfx10	VOP2Only_Real_MADK_gfx6_gfx7
+VOP2_Real_MADK_vi	1	op	0
+VOP2_Real_MADK_gfx940	1	op	0
+VOP2_Real_e32_vi	1	op	0
+VOP2_Real_e64_vi	1	op	0
+VOP2_Real_e64only_vi	1	op	0
+Base_VOP2_Real_e32e64_vi	1	op	2	VOP2_Real_e64_vi	VOP2_Real_e32_vi
+VOP2_SDWA9_Real	1	op	0
+VOP2be_Real_e32e64_vi_only	3	op	OpName	AsmName	0
+VOP2be_Real_e32e64_gfx9	3	op	OpName	AsmName	0
+VOP2_Real_e32e64_gfx9	1	op	0
+VOP2_Real_e32e64_vi	1	op	3	VOP2_SDWA8_Real	VOP2_SDWA9_Real	Base_VOP2_Real_e32e64_vi
+SI2_VI3Alias	2	name	VOP3_Real inst	1	InstAlias
+VOP2_Real_e32_gfx90a	1	op	0
+VOP2_Real_e64_gfx90a	1	op	0
+Base_VOP2_Real_e32e64_gfx90a	1	op	2	VOP2_Real_e64_gfx90a	VOP2_Real_e32_gfx90a
+VOP2_Real_DOT_ACC_gfx9	1	op	1	Base_VOP2_Real_e32e64_vi
+VOP2_Real_DOT_ACC_gfx10	1	op	3	VOP2_Real_dpp_gfx10	VOP2_Real_dpp8_gfx10	VOP2_Real_e32_gfx10
+VOP3b_Profile	1	ValueType vt	1	VOPProfile
+V_MUL_PROF	1	VOPProfile P	1	VOP3_Profile
+VOP3Interp	3	OpName	VOPProfile P	pattern = []	1	VOP3_Pseudo
+getInterp16Asm	3	HasSrc2	HasOMod	OpSel	0
+getInterp16Ins	5	HasSrc2	HasOMod	Src0Mod	Src2Mod	OpSel	0
+VOP3_INTERP16	2	list<ValueType> ArgVT	OpSel = 0	1	VOPProfile
+Arithmetic_i16_0Hi_TernaryPats	2	op	Instruction inst	0
+Ternary_i16_Pats	2	op	Instruction inst	0
+Ternary_i16_Pats_gfx9	3	op1	op2	Instruction inst	0
+ThreeOpFragSDAG	2	op1	op2	1	PatFrag
+ThreeOpFrag	2	op1	op2	1	ThreeOpFragSDAG
+VOP3_CVT_PK_F8_F32_Profile	1	_HasClamp = 0	1	VOP3_Profile
+VOP3_CVT_PK_F8_F32_Profile_fake16	1	_HasClamp = 0	1	VOP3_Profile_Fake16
+VOP3_CVT_PK_F8_F32_Profile_t16	1	_HasClamp = 0	1	VOP3_Profile_True16
+VOP3_CVT_SR_F8_ByteSel_Profile	2	ValueType SrcVT	_HasClamp = 0	1	VOP3_Profile
+Cvt_PK_F8_F32_Pat	3	node	int index	VOP3_Pseudo inst	1	GCNPat
+Cvt_PK_F8_F32_E5M3_t16_Pat	3	node	VOP3_Pseudo inst	int Clamp	0
+Cvt_SR_F8_F32_Pat	3	node	index	VOP3_Pseudo inst	1	GCNPat
+ThreeOp_i32_Pats	3	op1	op2	Instruction inst	1	GCNPat
+OpSelBinOpClampPat	2	node	Instruction inst	1	GCNPat
+IMAD32_Pats	1	VOP3_Pseudo inst	0
+IMAD32_Mul24_Pats_Impl	2	VOP3_Pseudo inst	AddOp	1	GCNPat
+VOP3_PERMLANE_NOOPSEL_Profile	1	VOPProfile P	1	VOP3_Profile
+SrcAndDstSelToOpSelXForm	2	int modifier_idx	dest_sel	1	SDNodeXForm
+PermlanePat	3	permlane	Instruction inst	ValueType vt	1	GCNPat
+VOP3_CVT_SCALE_F1632_FP8BF8_Profile	1	ValueType DstTy	1	VOP3_Profile
+VOP3_CVT_SCALE_F1632_FP8BF8_TiedInput_Profile	1	VOPProfile P	1	VOP3_Profile
+VOP3_CVT_SCALE_FP4FP8BF8_F32_TiedInput_Profile	1	VOPProfile P	1	VOP3_Profile
+VOP3_CVT_SCALE_FP4_F32_TiedInput_Profile	1	VOPProfile P	1	VOP3_CVT_SCALE_FP4FP8BF8_F32_TiedInput_Profile
+VOP3_CVT_SCALE_SR_F8BF8_F16BF16F32_TiedInput_Profile	1	VOPProfile P	1	VOP3_CVT_SCALE_FP4FP8BF8_F32_TiedInput_Profile
+VOP3_CVT_SCALE_FP4_F16BF16_TiedInput_Profile	1	VOPProfile P	1	VOP3_Profile
+VOP3_CVT_SCALE_SR_PK_F4_F16BF16_TiedInput_Profile	1	ValueType Src0Ty	1	VOP3_Profile
+VOP3_CVT_SCALE_SR_PK_F4_F32_TiedInput_Profile	1	VOPProfile P	1	VOP3_Profile
+VOP3_CVT_SCALE_PK_F16BF16F32_FP4FP8BF8_Profile	1	ValueType DstTy	1	VOP3_Profile
+VOP3_CVT_SCALE_PK_FP8BF8_F16BF16_TiedInput_Profile	1	VOPProfile P	1	VOP3_Profile
+VOP3_CVT_SCALEF32_PK_F864_Profile	1	VOPProfile P	1	VOP3_Profile
+Cvt_Scale_FP4FP8BF8ToF16F32_Pat	3	node	VOP3_Pseudo inst	ValueType DstTy	1	GCNPat
+Cvt_Scale_PK_F32ToFP8BF8_Pat	2	node	VOP3_Pseudo inst	1	GCNPat
+DivFmasPat	3	ValueType vt	Instruction inst	Register CondReg	1	GCNPat
+VOP3_DOT_Profile	1	VOPProfile P	1	VOP3_Profile
+VOP3_DOT_Profile_t16	2	VOPProfile P	VOP3Features Features = VOP3_REGULAR	1	VOP3_Profile_True16
+VOP3_DOT_Profile_fake16	2	VOPProfile P	VOP3Features Features = VOP3_REGULAR	1	VOP3_Profile_Fake16
+VOP3_CVT_SR_FP16_TiedInput_Profile	1	VOPProfile P	1	VOP3_CVT_SCALE_F1632_FP8BF8_TiedInput_Profile
+VOP3_CVT_SCALE_PK_F16_F864_Profile	1	VOPProfile P	1	VOP3_CVT_SCALEF32_PK_F864_Profile
+VOP3CvtScaleSelInst	3	OpName	VOPProfile P	node	0
+Cvt_Scale_Sr_F32ToBF16F16_Pat	3	node	VOP3_Pseudo inst	ValueType DstTy	1	GCNPat
+VOP_Pseudo_Scalar	4	Dst	RegisterOperand SrcOp	ValueType dstVt	ValueType srcVt = dstVt	1	VOPProfile
+PseudoScalarPatF16	2	node	VOP3_Pseudo inst	1	GCNPat
+AshrPkI8Pat	4	VOP3_Pseudo inst	int lo	int hi	true16 = 0	0
+AshrPkU8Pat	4	VOP3_Pseudo inst	int lo	int hi	true16 = 0	0
+getClampPat	2	VOPProfile P	node	0
+getClampRes	2	VOPProfile P	Instruction inst	0
+IntClampPat	2	VOP3InstBase inst	node	1	GCNPat
+VOP3_Realtriple_gfx11_gfx12_gfx13	2	preGFX13Op	op = preGFX13Op	1	VOP3_Realtriple
+VOP3_Realtriple_t16_gfx11_gfx12_gfx13	6	preGFX13Op	op	asmName	opName = NAME	pseudo_mnemonic = ""	isSingle = 0	1	VOP3_Realtriple_with_name
+VOP3be_Real_gfx11_gfx12_gfx13	3	op	opName	asmName	1	VOP3be_Real
+VOP3_Real_gfx10	1	op	0
+VOP3_Real_No_Suffix_gfx10	1	op	0
+VOP3_Real_gfx10_with_name	3	op	opName	asmName	0
+VOP3be_Real_gfx10	1	op	0
+VOP3Interp_Real_gfx10	1	op	0
+VOP3OpSel_Real_gfx10	1	op	0
+VOP3OpSel_Real_gfx10_with_name	3	op	opName	asmName	0
+VOP3_Real_gfx7	1	op	0
+VOP3be_Real_gfx7	1	op	0
+VOP3_Real_gfx7_gfx10	1	op	2	VOP3_Real_gfx7	VOP3_Real_gfx10
+VOP3_Real_gfx6_gfx7_gfx10	1	op	2	VOP3_Real_gfx6_gfx7	VOP3_Real_gfx10
+VOP3_F16_Real_vi	1	op	0
+VOP3Interp_F16_Real_vi	1	op	0
+VOP3_F16_Real_gfx9	3	op	OpName	AsmName	0
+VOP3OpSel_F16_Real_gfx9	2	op	AsmName	0
+VOP3Interp_F16_Real_gfx9	3	op	OpName	AsmName	0
+VOP3Interp_F16_OpSel_Real_gfx9	3	op	OpName	AsmName	0
+VOP3_Real_gfx9	2	op	AsmName	0
+VOP3_Real_BITOP3_gfx9	3	op	AsmName	isSingle = 0	0	63-61=bitop3	60-59=bitop3	10-8=bitop3
+VOP3OpSel_Real_gfx9_with_name	3	op	opName	AsmName	0
+VOP3P_Profile	3	VOPProfile P	VOP3Features Features = VOP3_REGULAR	HasDPP = 0	1	VOP3_Profile
+VOP3P_Mix_Profile	3	VOPProfile P	VOP3Features Features = VOP3_REGULAR	useTiedOutput = 0	1	VOP3P_Profile
+VOP3P_Mix_Profile_t16	2	VOPProfile P	VOP3Features Features = VOP3_REGULAR	1	VOP3P_Mix_Profile
+VOP3PInst	4	OpName	VOPProfile P	node = null_frag	IsDOT = 0	0
+VOP3PInstDotWithDual	5	OpName	VOPProfile P	node = null_frag	VOPDOp	VOPDName	0
+VOP3_VOP3PInst	2	OpName	VOP3P_Mix_Profile P	0
+VOP3_VOP3PInst_t16	2	OpName	VOP3P_Mix_Profile P	0
+VOP3PSatPat	2	pat	Instruction inst	1	GCNPat
+MadFmaMixFP32Pats	3	fma_like	Instruction mix_inst	ValueType VT = f16	0
+MadFmaMixFP16Pats	5	fma_like	Instruction mixlo_inst	Instruction mixhi_inst	ValueType VT = f16	ValueType vecVT = v2f16	0
+MadFmaMixFP16Pats_t16	4	fma_like	Instruction mix_inst_16	ValueType VT = f16	ValueType vecVT = v2f16	0
+MinimumMaximumByMinimum3Maximum3VOP3P	2	node	Instruction inst	1	GCNPat
+ThreeOp_OpSelClampPats	5	op1	op2	VOP3P_Pseudo inst	ValueType vt = inst.Pfl.Src0VT	RegisterOperand RC = getVCSrcForVT<vt>.ret	1	GCNPat
+Extract	3	int FromBitIndex	int BitMask	U	1	PatFrag
+UDot2Pat	1	VOP_Pseudo Inst	1	GCNPat
+SDot2Pat	1	VOP_Pseudo Inst	1	GCNPat
+VOP3PDOTIUInst	2	OpName	intrinsic_node	0
+VOP3PDOTF8Inst	2	OpName	intrinsic_node	0
+UDot2SatPat	1	VOP_Pseudo Inst	1	GCNPat
+SDot2SatPat	1	VOP_Pseudo Inst	1	GCNPat
+VOPProfileMAI	5	VOPProfile P	RegisterOperand _SrcRC	RegisterOperand _DstRC	RegisterOperand SrcARC = AVSrc_32	RegisterOperand SrcBRC = SrcARC	1	VOP3P_Profile
+VOPProfileSMFMAC	4	VOPProfile P	RegisterOperand _DstRC	RegisterOperand _SrcARC	RegisterOperand _SrcBRC	1	VOPProfileMAI
+MFMATable	4	is_mac	Kind	Name	AGPROpName = NAME	1	AGPRFormTable
+MFMA_F8F6F4_WithSizeTable	4	int A	int B	Instruction ThisVariant	Instruction F8F8Variant	0
+MFMA_F8F6F4_WithSizeTable_Helper	2	VOP3_Pseudo  ps	F8F8Op	1	MFMA_F8F6F4_WithSizeTable
+MAIFrag	3	Op	HasAbid = true	Scaled = false	1	PatFrag
+AgprMAIFrag	4	Op	ValueType vt	HasAbid = true	Scaled = false	2	MAIFrag	CanUseAGPR_MAI
+MAIInst	4	OpName	VOPProfile P	node	Scaled = false	1	VOP3InstBase
+ScaledMAIInst	3	OpName	MAIInst BaseInst	node	1	MAIInst
+MAIInst	5	OpName	P	node = null_frag	HasAbid = true	Scaled = false	0
+ScaledMAIInst_mc	3	OpName	UnscaledOpName_	node	0
+MAIInst_SrcFormats_mc	3	OpName	ProfileSuffix	node	0
+MAIInst_SrcFormats_Scaled_mc	3	OpName	UnscaledOpName	node	0
+SMFMACInst	3	OpName	P	node	0
+VOPProfileWMMA	5	VOPProfile P	Suffix	RegisterOperand _Src01RC64	_HasClamp	_HasOpSel	1	VOP3P_Profile
+WMMAType	1	val	0
+WMMARegularPat	3	Instruction Inst	node	VOPProfile P	1	GCNPat
+WMMAMappingTable	0	0
+VOP3PWMMA_Profile	12	list<ValueType> ArgTy	_IsSWMMAC	int _IndexType	_IsIU	_IsFP8BF8	_Has_ImodOp = 0	_HasMatrixFMT = 0	_HasMatrixScale = 0	_Scale16 = 0	_HasMatrixReuse = 0	_IsF4 = 0	_NoABMods = 0	1	VOP3P_Profile
+WMMAInstInfo	1	VOP3PWMMA_Profile WMMAProfile	0
+WMMAInstGFX12	4	Instr	VOP3PWMMA_Profile WMMAProfile	PseudoInstrSuffix	DiffVdstSrc2 = 0	0
+SWMMACInstGFX12	3	Instr	VOP3PWMMA_Profile WMMAProfile	PseudoInstrSuffix	0
+getWMMAF8F6F4DstVTy	3	ValueType DstEltTy	int M	int N	0
+getWMMAF8F6F4ABVTy	3	Fmt	int D1	int D2	0
+WMMA_F8F6F4_Profiles	7	ValueType DstEltTy	int M	int N	int K	HasMatrixScale	Scale16	HasMatrixReuse	0
+VOP_WMMA_LD_SCALE	2	ValueType vt	RegisterOperand RC	1	VOP3P_Profile
+WMMAInst_SrcFormats_mc	2	OpName	Profile	0
+WMMAPat	4	Inst	node	VOP3PWMMA_Profile P	IsGFX11OpselIntrinsic = 0	0
+SWMMACPat	3	Instruction Inst	node	VOP3PWMMA_Profile P	1	GCNPat
+VOP3P_DPP16	4	op	VOP_DPP_Pseudo ps	int subtarget	opName = ps.OpName	2	VOP3P_DPP	SIMCInstr
+VOP3P_DPP8_Base	3	op	VOP_Pseudo ps	opName = ps.OpName	1	VOP3P_DPP8
+VOP3P_Real_Base	4	GFXGen Gen	op	backing_ps_name = NAME	asmName = !cast<VOP3P_Pseudo>(NAME).Mnemonic	0
+VOP3PeWmma	3	op	VOPProfile P	VOP3PWMMA_Profile WMMAP	1	VOP3Pe_gfx11_gfx12
+VOP3P_WMMA_Real_Base	5	GFXGen Gen	op	VOP3PWMMA_Profile WMMAP	backing_ps_name = NAME	asmName = !cast<VOP3P_Pseudo>(NAME).Mnemonic	0
+VOP3P_Real_WMMA_gfx1170	2	op	VOP3PWMMA_Profile WMMAP	0
+VOP3P_Real_WMMA_gfx1170w64	2	op	VOP3PWMMA_Profile WMMAP	0
+VOP3P_Real_WMMA_gfx12	2	op	VOP3PWMMA_Profile WMMAP	0
+VOP3P_Real_WMMA_gfx12w64	2	op	VOP3PWMMA_Profile WMMAP	0
+VOP3P_Real_WMMA_gfx1170_gfx12	2	op	VOP3PWMMA_Profile WMMAP	2	VOP3P_Real_WMMA_gfx1170	VOP3P_Real_WMMA_gfx12
+VOP3P_Real_WMMA_F8F6F4	3	Gen	op	VOP3PWMMA_Profile WMMAP	0
+VOP3P_Real_WMMA_SrcFormats	3	Gen	op	WMMAP	0
+VOP3PX2e	3	op	LdScaleOp	VOP3PWMMA_Profile P	2	VOP3Pe_Base	Enc128	87-80=op	31-24=0xcc	63-61=0,matrix_a_scale_fmt{1-0	49-41=scale_src1	40-32=scale_src0	10-8=0,matrix_b_scale_fmt{1-0	104-96=	71-64=vdst	58-50=	113-105=	122-114=	95-88=0xcc	77-75=	23-16=LdScaleOp
+VOP3PX2_Real_ScaledWMMA_F4	4	Gen	op	LdScaleOp	VOP3PWMMA_Profile WMMAP	0
+VOP3PX2_Real_ScaledWMMA	4	Gen	op	LdScaleOp	VOP3PWMMA_Profile WMMAP	0
+VOP3PX2_Real_ScaledWMMA_SrcFormats	4	Gen	op	LdScaleOp	WMMAP	0
+VOP3P_Real_with_name	4	GFXGen Gen	op	backing_ps_name = NAME	asmName = !cast<VOP3P_Pseudo>(NAME).Mnemonic	0
+VOP3P_Real_dpp	4	GFXGen Gen	op	backing_ps_name = NAME	asmName = !cast<VOP3P_Pseudo>(NAME).Mnemonic	0
+VOP3P_Real_dpp8	4	GFXGen Gen	op	backing_ps_name = NAME	asmName = !cast<VOP3P_Pseudo>(NAME).Mnemonic	0
+VOP3P_Realtriple	4	GFXGen Gen	op	backing_ps_name = NAME	asmName = !cast<VOP3P_Pseudo>(NAME).Mnemonic	3	VOP3P_Real_dpp	VOP3P_Real_Base	VOP3P_Real_dpp8
+VOP3P_Real_gfx11_gfx12	1	op	1	VOP3P_Real_Base
+VOP3P_Real_WMMA	1	op	0
+VOP3P_Real_vi	1	op	0
+VOP3P_Real_MAI	1	op	0
+VOP3P_Real_MFMA_gfx90a	1	op	0
+VOP3P_Real_MFMA_gfx940_aliases	7	NameFrom	NameTo	Op	VOP3_Pseudo PS_ACD = !cast<VOP3_Pseudo>(Op # "_e64")	VOP3_Pseudo PS_VCD = !cast<VOP3_Pseudo>(Op # "_vgprcd" # "_e64")	VOPProfile Pfl_ACD = PS_ACD.Pfl	VOPProfile Pfl_VCD = PS_VCD.Pfl	0
+VOP3P_Real_MFMA_gfx940	4	op	Name = !cast<VOP3_Pseudo>(NAME#"_e64").Mnemonic	VOP3_Pseudo PS_ACD = !cast<VOP3_Pseudo>(NAME # "_e64")	VOP3_Pseudo PS_VCD = !cast<VOP3_Pseudo>(NAME # "_vgprcd" # "_e64")	0
+VOP3P_Real_MFMA_F8F6F4_gfx940	4	op	Name = !cast<VOP3_Pseudo>(NAME#"_e64").Mnemonic	VOP3_Pseudo PS_ACD = !cast<VOP3_Pseudo>(NAME # "_e64")	VOP3_Pseudo PS_VCD = !cast<VOP3_Pseudo>(NAME # "_vgprcd" # "_e64")	0
+VOP3P_Real_MFMA_gfx950	4	op	Name = !cast<VOP3_Pseudo>(NAME#"_e64").Mnemonic	VOP3_Pseudo PS_ACD = !cast<VOP3_Pseudo>(NAME # "_e64")	VOP3_Pseudo PS_VCD = !cast<VOP3_Pseudo>(NAME # "_vgprcd" # "_e64")	0
+VOP3P_Real_MFMA_F8F6F4_gfx950_mc	2	op	Name	0
+VOP3PX_Real_ScaledMFMA	1	op	0
+VOP3PX_Real_ScaledMFMA_F8F6F4_mc	1	op	0
+VOP3P_Real_MFMA_vi	1	op	0
+VOP3P_Real_MFMA_vi_gfx90a	1	op	1	VOP3P_Real_MFMA_gfx90a
+VOP3P_Real_gfx10	1	op	0
+VOP3P_Real_gfx10_gfx11	1	op	2	VOP3P_Real_gfx10	VOP3P_Real_Base
+CvtPkF32ToI16Pat	2	dagOp	Instruction inst	0
+FPToSSatI16Pat	3	lhs	int hi	int lo	0
+FPToUSatI16Pat	2	lhs	int hi	0
+VOPCe	1	op	1	Enc32	31-25=0x3e	24-17=op	8-0=src0	16-9=src1
+VOPC_SDWAe	2	op	VOPProfile P	1	VOP_SDWAe	31-25=0x3e	24-17=op	8-0=0xf9	16-9=
+VOPC_SDWA9e	2	op	VOPProfile P	1	VOP_SDWA9Be	31-25=0x3e	24-17=op	8-0=0xf9	16-9=
+VOPC_Profile	3	list<SchedReadWrite> sched	ValueType vt0	ValueType vt1 = vt0	1	VOPProfile
+VOPC_Profile_t16	3	list<SchedReadWrite> sched	ValueType vt0	ValueType vt1 = vt0	0
+VOPC_NoSdst_Profile	3	list<SchedReadWrite> sched	ValueType vt0	ValueType vt1 = vt0	1	VOPC_Profile
+VOPC_NoSdst_Profile_t16	3	list<SchedReadWrite> sched	ValueType vt0	ValueType vt1 = vt0	0
+VOPC_Pseudo	4	opName	VOPC_Profile P	pattern=[]	DefVcc = 1	2	InstSI	VOP
+VOPC_Real	3	VOPC_Pseudo ps	int EncodingFamily	asm_name = ps.PseudoInstr	1	InstSI
+VOPC_SDWA_Pseudo	3	OpName	VOPProfile P	pattern=[]	1	VOP_SDWA_Pseudo
+VOPCInstAlias	5	VOP3_Pseudo ps	Instruction inst	Asm32 = ps.Pfl.Asm32	real_name = ps.OpName	VOPProfile p = ps.Pfl	1	InstAlias
+VOPCInstAliases	4	old_name	Arch	real_name = old_name	mnemonic_from = real_name	0
+VOPCXInstAliases	4	old_name	Arch	real_name = old_name	mnemonic_from = real_name	0
+getVOPCPat64	2	cond	VOPProfile P	1	LetDummies
+VCMPXNoSDstTable	2	has_sdst	Name	0
+VCMPVCMPXTable	1	Name	0
+VOPC_Pseudos	5	opName	VOPC_Profile P	cond = COND_NULL	revOp = opName	DefExec = 0	0
+VOPCX_Pseudos	5	opName	VOPC_Profile P	VOPC_Profile P_NoSDst	cond = COND_NULL	revOp = opName	1	VOPC_Pseudos
+VOPC_F16	3	opName	cond = COND_NULL	revOp = opName	0
+VOPC_F32	3	opName	cond = COND_NULL	revOp = opName	1	VOPC_Pseudos
+VOPC_I16	3	opName	cond = COND_NULL	revOp = opName	0
+VOPC_I32	3	opName	cond = COND_NULL	revOp = opName	1	VOPC_Pseudos
+VOPCX_F16	2	opName	revOp = opName	0
+VOPCX_F32	2	opName	revOp = opName	1	VOPCX_Pseudos
+VOPCX_I16	2	opName	revOp = opName	0
+VOPCX_I32	2	opName	revOp = opName	1	VOPCX_Pseudos
+VOPC_Class_Profile_Base	3	list<SchedReadWrite> sched	ValueType src0VT	ValueType src1VT = i32	1	VOPC_Profile
+VOPC_Class_Profile	3	list<SchedReadWrite> sched	ValueType src0VT	ValueType src1VT = i32	1	VOPC_Class_Profile_Base
+VOPC_Class_Profile_t16	1	list<SchedReadWrite> sched	0
+VOPC_Class_NoSdst_Profile	3	list<SchedReadWrite> sched	ValueType src0VT	ValueType src1VT = i32	1	VOPC_Class_Profile_Base
+VOPC_Class_NoSdst_Profile_t16	1	list<SchedReadWrite> sched	0
+VOPCClassPat64	1	inst_name	0
+VOPCClassPat64_t16	1	inst_name	0
+VOPCClassPat64_fake16	1	inst_name	0
+VOPC_Class_Pseudos	4	opName	VOPC_Profile p	DefExec	DefVcc = 1	0
+VOPCX_Class_Pseudos	3	opName	VOPC_Profile P	VOPC_Profile P_NoSDst	1	VOPC_Class_Pseudos
+VOPC_CLASS_F16	1	opName	0
+VOPCX_CLASS_F16	1	opName	0
+VOPC_CLASS_F32	1	opName	0
+VOPCX_CLASS_F32	1	opName	1	VOPCX_Class_Pseudos
+VOPCX_CLASS_F64	1	opName	1	VOPCX_Class_Pseudos
+ICMP_Pattern_t16	3	PatFrags cond	Instruction inst	ValueType vt	1	ICMP_Pattern
+FCMP_Pattern	3	PatFrags cond	Instruction inst	ValueType vt	0
+VOPC_DPPe_Common	1	op	1	Enc64	31-25=0x3e	24-17=op	16-9=src1
+VOPC_DPP_Base	3	op	OpName	VOPProfile P	2	VOPC_DPPe_Common	VOP_DPP_Base	63-60=row_mask	48-40=dpp_ctrl	59-56=bank_mask	39-32=	8-0=0xfa
+VOPC_DPP8_Base	3	op	OpName	VOPProfile P	2	VOPC_DPPe_Common	VOP_DPP8_Base	39-32=	8-0=fi	63-40=dpp8
+VOPC_DPP16	3	op	VOP_DPP_Pseudo ps	opName = ps.OpName	1	VOPC_DPP_Base
+VOPC_DPP16_SIMC	4	op	VOP_DPP_Pseudo ps	int subtarget	opName = ps.OpName	2	VOPC_DPP16	SIMCInstr
+VOPC64_DPP	2	VOP_DPP_Pseudo ps	opName = ps.OpName	1	VOP3_DPP_Base
+VOPC64_DPP16_Dst	3	op	VOP_DPP_Pseudo ps	opName = ps.OpName	2	VOPC64_DPP	VOP3_DPP_Enc	7-0=sdst
+VOPC64_DPP16_NoDst	3	op	VOP_DPP_Pseudo ps	opName = ps.OpName	2	VOPC64_DPP	VOP3_DPP_Enc	7-0=
+VOPC64_DPP16_Dst_t16	3	op	VOP_DPP_Pseudo ps	opName = ps.OpName	2	VOP3_DPP_Enc_t16	VOPC64_DPP	7-0=sdst
+VOPC64_DPP16_NoDst_t16	3	op	VOP_DPP_Pseudo ps	opName = ps.OpName	2	VOP3_DPP_Enc_t16	VOPC64_DPP	7-0=
+VOPC64_DPP8	2	VOP_Pseudo ps	opName = ps.OpName	1	VOP3_DPP8_Base
+VOPC64_DPP8_Dst	3	op	VOP_Pseudo ps	opName = ps.OpName	2	VOPC64_DPP8	VOP3_DPP8_Enc	7-0=sdst
+VOPC64_DPP8_NoDst	3	op	VOP_Pseudo ps	opName = ps.OpName	2	VOPC64_DPP8	VOP3_DPP8_Enc	7-0=
+VOPC64_DPP8_Dst_t16	3	op	VOP_Pseudo ps	opName = ps.OpName	2	VOP3_DPP8_Enc_t16	VOPC64_DPP8	7-0=sdst
+VOPC64_DPP8_NoDst_t16	3	op	VOP_Pseudo ps	opName = ps.OpName	2	VOP3_DPP8_Enc_t16	VOPC64_DPP8	7-0=
+VOPC_Real_Base	2	GFXGen Gen	op	0	7-0=sdst
+VOPC_Real_with_name	5	GFXGen Gen	op	OpName	asm_name	pseudo_mnemonic = ""	0	7-0=sdst
+VOPC_Real_t16	5	GFXGen Gen	op	asm_name	OpName = NAME	pseudo_mnemonic = ""	1	VOPC_Real_with_name	7-0=
+VOPCX_Real_with_name	5	GFXGen Gen	op	OpName	asm_name	pseudo_mnemonic = ""	0	7-0=
+VOPCX_Real_t16	5	GFXGen Gen	op	asm_name	OpName = NAME	pseudo_mnemonic = ""	1	VOPCX_Real_with_name
+VOPC_Real_t16_and_fake16_gfx11_gfx12_gfx13	4	bits <9> op	asm_name	OpName = NAME	pseudo_mnemonic = ""	0
+VOPCX_Real_t16_gfx11	4	op	asm_name	OpName = NAME	pseudo_mnemonic = ""	1	VOPCX_Real_t16
+VOPCX_Real_t16_gfx11_gfx12_gfx13	4	op	asm_name	OpName = NAME	pseudo_mnemonic = ""	1	VOPCX_Real_t16
+VOPC_Real_gfx10	1	op	0	7-0=sdst
+VOPCX_Real_gfx10	1	op	0	7-0=
+VOPC_Real_gfx6_gfx7	1	op	0	7-0=sdst
+VOPC_Real_gfx6_gfx7_gfx10	1	op	2	VOPC_Real_gfx6_gfx7	VOPC_Real_gfx10	7-0=sdst
+VOPDe	2	opX	opY	1	Enc64	25-22=opX	48-41=vsrc1Y	31-26=0x32	40-32=src0Y	63-56=vdstX	55-49=vdstY	21-17=opY	8-0=src0X	16-9=vsrc1X
+VOPD_MADKe	2	opX	opY	1	Enc96	25-22=opX	48-41=vsrc1Y	31-26=0x32	40-32=src0Y	95-64=imm	63-56=vdstX	55-49=vdstY	21-17=opY	8-0=src0X	16-9=vsrc1X
+VOPD3e	4	opX	opY	VOP_Pseudo VDX	VOP_Pseudo VDY	1	Enc96	87-80=	31-24=0xcf	23-18=opX	17-12=opY	79-72=	40-32=src0Y	55-48=	63-56=	71-64=vdstX	8-0=src0X	95-88=vdstY
+GFXGenD	4	GFXGen Gen	list<string> DXPseudos	list<string> DYPseudos	Predicate subtargetPred = Gen.AssemblerPredicate	1	GFXGen
+VOPD_Base	8	outs	ins	asm	VOP_Pseudo VDX	VOP_Pseudo VDY	VOPD_Component XasVC	VOPD_Component YasVC	GFXGenD Gen	3	VOP	VOPAnyCommon	SIMCInstr
+VOPD	8	outs	ins	asm	VOP_Pseudo VDX	VOP_Pseudo VDY	VOPD_Component XasVC	VOPD_Component YasVC	GFXGenD Gen	2	VOPDe	VOPD_Base	48-41=	16-9=
+VOPD_MADK	8	outs	ins	asm	VOP_Pseudo VDX	VOP_Pseudo VDY	VOPD_Component XasVC	VOPD_Component YasVC	GFXGenD Gen	2	VOPD_MADKe	VOPD_Base	48-41=	16-9=
+VOPD3	8	outs	ins	asm	VOP_Pseudo VDX	VOP_Pseudo VDY	VOPD_Component XasVC	VOPD_Component YasVC	GFXGenD Gen	2	VOPD3e	VOPD_Base
+getRenamed	2	VOPDName	GFXGen Gen	0
+getOpcMap	1	OPName	0
+VOPDXY	5	Op	Sub	IsVOPD3	X	Y	0
+LetDummies	0	0
+VOP3a_t16	1	VOPProfile P	1	Enc64	60-59=	31-26=0x35	49-41=	40-32=	7-0=	58-50=
+VOP3a_gfx6_gfx7	2	op	VOPProfile p	1	VOP3a	25-17=op
+VOP3a_gfx10	2	op	VOPProfile p	1	VOP3a	31-26=0x35	25-16=op
+VOP3a_gfx11_gfx12	2	op	VOPProfile p	1	VOP3a_gfx10	25-16=op
+VOP3e_gfx6_gfx7	2	op	VOPProfile p	1	VOP3a_gfx6_gfx7	7-0=
+VOP3e_gfx10	2	op	VOPProfile p	1	VOP3a_gfx10	7-0=
+VOP3e_gfx11_gfx12	2	op	VOPProfile p	1	VOP3e_gfx10	25-16=op
+VOP3e_vi	2	op	VOPProfile P	1	VOP3a_vi	7-0=
+VOP3OpSel_gfx9	2	op	VOPProfile P	1	VOP3e_vi
+VOP3OpSelIsDPP_base	0	0
+VOP3OpSelIsDPP_gfx12	2	op	VOPProfile P	2	VOP3OpSelIsDPP_base	VOP3e_gfx11_gfx12
+VOP3OpSel_gfx10	2	op	VOPProfile p	1	VOP3e_gfx10
+VOP3OpSel_gfx11_gfx12	2	op	VOPProfile p	1	VOP3OpSel_gfx10	11-12=byte_sel
+VOP3FP8OpSel_dst_bytesel_gfx11_gfx12	2	op	VOPProfile p	1	VOP3e_gfx10	14-13=byte_sel
+VOP3DotOpSel_gfx11_gfx12	2	op	VOPProfile p	1	VOP3e_t16_gfx11_gfx12
+VOP3Interp_vi	2	op	VOPProfile P	1	VOP3e_vi	37-32=attr	49-41=src0	39-38=attrchan
+VOP3a_BITOP3_gfx12	2	op	VOPProfile p	1	VOP3e_gfx11_gfx12	63-61=bitop3	60-59=bitop3	10-8=bitop3
+VOP3a_ScaleSel_gfx1250_gfx13	2	op	VOPProfile p	1	VOP3e_gfx11_gfx12	14-11=scale_sel
+VOP3Interp_OpSel_gfx9	2	op	VOPProfile p	1	VOP3Interp_vi
+VOP3Interp_gfx10	2	op	VOPProfile p	1	VOP3e_gfx10	37-32=attr	49-41=src0	39-38=attrchan
+VOP3Interp_gfx11	2	op	VOPProfile p	1	VOP3Interp_gfx10	14-8=sdst	60-59=	31-26=0x34	49-41=	40-32=	7-0=vdst	58-50=
+VOP3Pe_Base	0	0
+VOP3Pe_MAI_Base	0	0
+VOP3Pe_SMFMAC	1	op	1	Enc64	63-61=blgp	49-41=src1	40-32=src0	14-11=abid	10-8=cbsz	7-0=vdst	58-50=idx	22-16=op	31-23=0x1a7
+VOP3PXe	3	op	VOPProfile MFMAPfl	acc_cd = 0	2	Enc128	VOP3Pe_MAI_Base	78-75=0b0001	31-16=0b1101001110101100	74-72=	49-41=scale_src1	40-32=scale_src0	104-96=	71-64=vdst	113-105=	122-114=	95-87=0x1a7	127-125=	86-80=op
+VOP3Pe_vi	2	op	VOPProfile P	1	VOP3Pe	22-16=op	31-23=0x1a7
+VOP3Pe_gfx10	2	op	VOPProfile P	1	VOP3Pe	31-24=0xcc	23-16=op
+VOP3Pe_gfx11_gfx12	2	op	VOPProfile P	1	VOP3Pe_gfx10	25-17=op
+VOP3be_gfx10	2	op	VOPProfile p	1	VOP3be	31-26=0x35	25-16=op
+VOP3be_gfx11_gfx12	2	op	VOPProfile p	1	VOP3be_gfx10	25-16=op
+VOP_SDWAe	1	VOPProfile P	1	Enc64	58-56=	50-48=	44-43=	42-40=	39-32=	53-52=	61-60=
+VOP_SDWA9e	1	VOPProfile P	1	Enc64	58-56=	50-48=	39-32=	53-52=	61-60=
+VOP_SDWA9Ae	1	VOPProfile P	1	VOP_SDWA9e	47-46=	44-43=	42-40=
+VOP_SDWA9Be	1	VOPProfile P	1	VOP_SDWA9e	46-40=
+VOP_SDWA_Pseudo	3	opName	VOPProfile P	pattern=[]	1	VOP_Pseudo
+VOP_SDWA8_Real	1	VOP_SDWA_Pseudo ps	1	InstSI
+Base_VOP_SDWA9_Real	1	VOP_SDWA_Pseudo ps	1	InstSI
+VOP_SDWA9_Real	1	VOP_SDWA_Pseudo ps	1	Base_VOP_SDWA9_Real
+VOP_SDWA10_Real	1	VOP_SDWA_Pseudo ps	2	Base_VOP_SDWA10_Real	SIMCInstr	63-60=row_mask	48-40=dpp_ctrl	59-56=bank_mask	39-32=
+VOP3_DPPe_Fields_Base	0	0
+VOP3_DPPe_Common	2	op	VOPProfile P	1	VOP3_DPPe_Common_Base	49-41=	7-0=	58-50=
+VOP3_DPPe_Common_t16	2	op	VOPProfile P	1	VOP3_DPPe_Common_Base	49-41=	7-0=	58-50=
+VOP3P_DPPe_Common_Base	2	op	VOPProfile P	1	Enc96	31-24=0xcc	23-16=op
+VOP3P_DPPe_Common	2	op	VOPProfile P	1	VOP3P_DPPe_Common_Base	49-41=	7-0=vdst	58-50=
+VOP3P_DPPe_Common_t16	2	op	VOPProfile P	1	VOP3P_DPPe_Common_Base	49-41=	7-0=vdst	58-50=
+VOP_DPP_Pseudo	5	OpName	VOPProfile P	pattern=[]	Ins = P.InsDPP	asmOps = P.AsmDPP	1	VOP_Pseudo
+VOP3_DPP_Pseudo	2	OpName	VOPProfile P	1	VOP_DPP_Pseudo
+VOP_DPP_Real	2	VOP_DPP_Pseudo ps	int EncodingFamily	1	InstSI
+VOP_DPP_Base	4	OpName	VOPProfile P	InsDPP	AsmDPP	1	InstSI
+VOP_DPP	9	OpName	VOPProfile P	IsDPP16	InsDPP = !if(IsDPP16	P.InsDPP16	P.InsDPP)	AsmDPP = !if(IsDPP16	P.AsmDPP16	P.AsmDPP)	2	VOP_DPP_Base	VOP_DPPe
+VOP3_DPP_Enc	3	op	VOPProfile P	IsDPP16	2	VOP3_DPPe_Fields	VOP3_DPPe_Common	91-88=bank_mask	40-32=0xfa	95-92=row_mask	71-64=	80-72=dpp_ctrl
+VOP3_DPP	10	op	OpName	VOPProfile P	IsDPP16	InsDPP = !if(IsDPP16	P.InsVOP3DPP16	P.InsVOP3DPP)	AsmDPP = !if(IsDPP16	P.AsmVOP3DPP16	P.AsmVOP3DPP)	2	VOP3_DPP_Base	VOP3_DPP_Enc	91-88=bank_mask	40-32=0xfa	95-92=row_mask	71-64=	80-72=dpp_ctrl
+VOP3_DPP_t16	10	op	OpName	VOPProfile P	IsDPP16	InsDPP = !if (IsDPP16	P.InsVOP3DPP16	P.InsVOP3DPP)	AsmDPP = !if (IsDPP16	P.AsmVOP3DPP16	P.AsmVOP3DPP)	2	VOP3_DPP_Enc_t16	VOP3_DPP_Base
+VOP3P_DPP	10	op	OpName	VOPProfile P	IsDPP16	InsDPP = !if(IsDPP16	P.InsVOP3DPP16	P.InsVOP3DPP)	AsmDPP = !if(IsDPP16	P.AsmVOP3DPP16	P.AsmVOP3DPP)	3	VOP3_DPPe_Fields	VOP3_DPP_Base	VOP3P_DPPe_Common	91-88=bank_mask	40-32=0xfa	95-92=row_mask	71-64=	80-72=dpp_ctrl
+VOP_DPP8e	1	VOPProfile P	1	Enc64	39-32=	63-40=dpp8
+VOP3_DPP8e_Fields	0	0
+VOP3_DPP8	3	op	OpName	VOPProfile P	2	VOP3_DPP8_Enc	VOP3_DPP8_Base	95-72=dpp8	40-32=fi	71-64=
+VOP3_DPP8_t16	3	op	OpName	VOPProfile P	2	VOP3_DPP8_Enc_t16	VOP3_DPP8_Base	95-72=dpp8	40-32=fi	71-64=
+getNumNodeArgs	1	Op	0
+getDivergentFrag	1	Op	0
+VOPPatGen	2	Op	VOPProfile P	0
+DivergentUnaryFrag	1	Op	1	PatFrag
+VOPPatOrNull	2	Op	VOPProfile P	0
+DivergentFragOrOp	2	Op	VOPProfile P	0
+getVSrcOp	1	ValueType vt	0
+VOPBinOpClampPat	3	node	Instruction inst	ValueType vt	1	GCNPat
+getVOP3PModPat	8	VOPProfile P	node	HasExplicitClamp	IsDOT = 0	ComplexPattern SrcPat = !if(IsDOT	VOP3PModsDOT	VOP3PMods)	ComplexPattern Src2Pat = SrcPat	0
+getVOP3OpSelPat	2	VOPProfile P	node	0
+getVOP3OpSelModPat	2	VOPProfile P	node	0
+getVOP3FromVOP2Pat	2	VOPProfile P	node	0
+getVOP3Pat	2	VOPProfile P	node	0
+getVOP3ClampPat	2	VOPProfile P	node	0
+getVOP3MAIPat	2	VOPProfile P	node	0
+getVOP3MAIScaledPat	2	VOPProfile P	node	0
+VOP3Features	4	Clamp	OpSel	Packed	MAI	0
+VOP3_Profile_Base	2	VOPProfile P	VOP3Features Features = VOP3_REGULAR	1	VOPProfile
+VOP3_Profile	2	VOPProfile P	VOP3Features Features = VOP3_REGULAR	1	VOP3_Profile_Base
+VOP3_Profile_True16	2	VOPProfile P	VOP3Features Features = VOP3_REGULAR	1	VOPProfile_True16
+VOP3_Profile_Fake16	2	VOPProfile P	VOP3Features Features = VOP3_REGULAR	1	VOPProfile_Fake16
+VOP3Inst_Pseudo_Wrapper	4	opName	VOPProfile P	pattern = []	VOP3Only = 0	0
+VOP3InstBase	5	OpName	VOPProfile P	node = null_frag	IsVOP2 = 0	MAIScaled = false	1	VOP3_Pseudo
+VOP3Inst_dpp	3	OpName	VOPProfile P	list<Predicate> predicates = []	0
+VOP3Inst	4	OpName	VOPProfile P	node = null_frag	list<Predicate> predicates = []	1	VOP3Inst_dpp
+VOP3Inst_VOPD	6	OpName	VOPProfile P	VOPDOp	VOPDName	node = null_frag	list<Predicate> predicates = []	1	VOP3Inst_dpp
+UniformUnaryFragOrOp	1	Op	0
+VOP3PseudoScalarInst	3	OpName	VOPProfile P	node = null_frag	0
+VOP3Inst_t16_with_profiles	6	OpName	VOPProfile P	VOPProfile P_t16	VOPProfile P_fake16	node = null_frag	node_t16 = node	0
+VOP3Inst_t16	4	OpName	VOPProfile P	node = null_frag	node_t16 = node	1	VOP3Inst_t16_with_profiles
+VOP3_DPP16_t16_Helper	3	op	VOP_DPP_Pseudo ps	opName = ps.OpName	1	VOP3_DPP_t16
+VOP3_DPP16	4	op	VOP_DPP_Pseudo ps	int subtarget	opName = ps.OpName	2	VOP3_DPP16_Helper	SIMCInstr
+VOP3_DPP16_Gen_t16	4	op	VOP_DPP_Pseudo ps	GFXGen Gen	opName = ps.OpName	1	VOP3_DPP16_t16
+Base_VOP3_DPP8	3	op	VOP_Pseudo ps	opName = ps.OpName	1	VOP3_DPP8
+Base_VOP3_DPP8_t16	3	op	VOP_Pseudo ps	opName = ps.OpName	1	VOP3_DPP8_t16
+Base_VOP3b_DPP16	3	op	VOP_DPP_Pseudo ps	opName = ps.OpName	1	VOP3_DPP16_Helper
+VOP3b_DPP8_Base	3	op	VOP_Pseudo ps	opName = ps.OpName	1	Base_VOP3_DPP8
+VOP3_BITOP3_DPP16_Gen	4	op	VOP_DPP_Pseudo p	GFXGen Gen	asmName	1	VOP3_DPP16_Gen_t16	63-61=bitop3	60-59=bitop3	10-8=bitop3
+VOP3_BITOP3_DPP8	3	op	VOP_Pseudo p	asmName	1	Base_VOP3_DPP8_t16	63-61=bitop3	60-59=bitop3	10-8=bitop3
+VOP3b_DPP8_Base_t16	3	op	VOP_Pseudo ps	opName = ps.OpName	1	Base_VOP3_DPP8
+VOP3_Real_Base	4	GFXGen Gen	op	opName = NAME	isSingle = 0	0
+VOP3Dot_Real_Base	5	GFXGen Gen	op	asmName	opName = NAME	isSingle = 0	0
+VOP3_Real_with_name	6	GFXGen Gen	op	opName	asmName	pseudo_mnemonic = ""	isSingle = 0	0
+VOP3_Real_with_name_gfx12_gfx13	5	op	opName	asmName	pseudo_mnemonic = ""	isSingle = 0	1	VOP3_Real_with_name
+VOP3_Real_dpp_Base	3	GFXGen Gen	op	opName = NAME	0
+VOP3Dot_Real_dpp_Base	4	GFXGen Gen	op	asmName	opName = NAME	0
+VOP3_Real_dpp_with_name	4	GFXGen Gen	op	opName	asmName	0
+VOP3_Real_dpp8_Base	3	GFXGen Gen	op	opName = NAME	0
+VOP3Dot_Real_dpp8_Base	4	GFXGen Gen	op	asmName	opName = NAME	0
+VOP3_Real_dpp8_with_name	4	GFXGen Gen	op	opName	asmName	0
+VOP3be_Real	5	GFXGen Gen	op	opName	asmName	isSingle = 0	0
+VOP3be_Real_dpp	4	GFXGen Gen	op	opName	asmName	0
+VOP3be_Real_dpp8	4	GFXGen Gen	op	opName	asmName	0
+VOP3_Realtriple	4	GFXGen Gen	op	isSingle = 0	opName = NAME	0
+VOP3_Realtriple_DPP8	2	GFXGen Gen	op	3	VOP3_Real_Base	VOP3_Real_dpp8_Base	VOP3_Real_dpp_Base
+VOP3_BITOP3_Real_dpp8_Base	3	GFXGen Gen	op	asmName	0
+VOP3_BITOP3_Real_Base	3	GFXGen Gen	op	asmName	0
+VOP3Only_ScaleSel_Real_gfx1250	1	op	0
+VOP3Only_ScaleSel_Real_gfx1250_gfx13	2	preGFX13	op = preGFX13	1	VOP3Only_ScaleSel_Real_gfx1250
+VOP3Only_Realtriple_t16_gfx11_gfx12_not_gfx1250_gfx13	6	preGFX13Op	op	asmName	opName = NAME	pseudo_mnemonic = ""	isSingle = 0	1	VOP3_Realtriple_with_name
+VOP3_Realtriple_with_name_gfx11_gfx12_not_gfx1250_gfx13	6	preGFX13Op	op	opName	asmName	pseudo_mnemonic = ""	isSingle = 0	1	VOP3_Realtriple_with_name
+VOP3Only_Realtriple_t16_gfx11	4	op	asmName	opName = NAME	pseudo_mnemonic = ""	1	VOP3_Realtriple_t16_gfx11
+VOP3be_Real_gfx11	4	op	opName	asmName	isSingle = 0	1	VOP3be_Real
+VOP3_Real_Base_gfx1170	4	op	opName = NAME	alias = NAME	isSingle = 0	1	VOP3_Real_Base_alias
+VOP3_Realtriple_with_name_gfx1170	5	op	opName	asmName	pseudo_mnemonic = ""	isSingle = 0	1	VOP3_Realtriple_with_name
+VOP3_Realtriple_t16_gfx12	5	op	asmName	opName = NAME	pseudo_mnemonic = ""	isSingle = 0	1	VOP3_Realtriple_with_name
+VOP3_Realtriple_t16_gfx13	5	op	asmName	opName = NAME	pseudo_mnemonic = ""	isSingle = 0	1	VOP3_Realtriple_with_name
+VOP3_Realtriple_with_name_gfx12_gfx13	6	gfx12Op	op	opName	asmName	pseudo_mnemonic = ""	isSingle = 0	1	VOP3_Realtriple_with_name
+VOP3Only_Realtriple_t16_and_fake16_gfx1250_gfx13	5	preGFX13Op	op	asmName = !cast<VOP3_Pseudo>(NAME#"_e64").Mnemonic	opName = NAME	pseudo_mnemonic = ""	0
+VOP3Only_Realtriple_t16_and_fake16_gfx1250	4	op	asmName = !cast<VOP3_Pseudo>(NAME#"_e64").Mnemonic	opName = NAME	pseudo_mnemonic = ""	0
+VOP3be_Real_with_name_gfx12	4	op	opName	asmName	isSingle = 0	0
+VOP3Only_Realtriple_with_name_gfx11_gfx12_gfx13	4	preGFX13Op	op	opName	asmName	1	VOP3Only_Realtriple_with_name
+VOP3Dot_Realtriple_gfx11_gfx12	4	op	asmName	isSingle = 0	opName = NAME	1	VOP3Dot_Realtriple
+ClassPat_t16	2	Instruction inst	ValueType vt	1	GCNPat
+VOPInfoTable	1	Format	1	GenericTable
+VOPC64Table	1	Format	1	GenericTable
+AsmOnlyInfoTable	2	Format	Class	1	GenericTable

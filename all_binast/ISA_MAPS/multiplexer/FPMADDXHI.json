@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FPMADDXHI",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FPMADDXHI": {"Sparc": "FPMADDXHI"}
+  },
+  "INPUTS": {
+    "FPMADDXHI": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FPMADDXHI": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FPMADDXHI": {"Sparc": ["FourOp","0b110111","0b0100"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPMADDXHI": {"Sparc": ["FourOp","0b110111","0b0100"]}
+  }
+}

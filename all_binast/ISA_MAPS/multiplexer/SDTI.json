@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "SDTI",
+  "BACKENDS": ["ARM","RISCV"],
+  "INDEX": {
+    "SDTIntUnaryOpWithFlagsOut": {"ARM": "SDTIntUnaryOpWithFlagsOut"},
+    "SDTIntUnaryOpWithFlagsIn": {"ARM": "SDTIntUnaryOpWithFlagsIn"},
+    "SDTIntMulAddOp": {"RISCV": "SDTIntMulAddOp"},
+    "SDTIntShiftAddOp": {"RISCV": "SDTIntShiftAddOp"}
+  },
+  "INPUTS": {
+    "SDTIntUnaryOpWithFlagsOut": {"ARM": []},
+    "SDTIntUnaryOpWithFlagsIn": {"ARM": []},
+    "SDTIntMulAddOp": {"RISCV": []},
+    "SDTIntShiftAddOp": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SDTIntUnaryOpWithFlagsOut": {"ARM": []},
+    "SDTIntUnaryOpWithFlagsIn": {"ARM": []},
+    "SDTIntMulAddOp": {"RISCV": []},
+    "SDTIntShiftAddOp": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SDTIntUnaryOpWithFlagsOut": {"ARM": ["SDTypeProfile","2","1"]},
+    "SDTIntUnaryOpWithFlagsIn": {"ARM": ["SDTypeProfile","1","2"]},
+    "SDTIntMulAddOp": {"RISCV": ["SDTypeProfile","1","3"]},
+    "SDTIntShiftAddOp": {"RISCV": ["SDTypeProfile","1","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTIntUnaryOpWithFlagsOut": {"ARM": ["SDTypeProfile","2","1"]},
+    "SDTIntUnaryOpWithFlagsIn": {"ARM": ["SDTypeProfile","1","2"]},
+    "SDTIntMulAddOp": {"RISCV": ["SDTypeProfile","1","3"]},
+    "SDTIntShiftAddOp": {"RISCV": ["SDTypeProfile","1","3"]}
+  }
+}

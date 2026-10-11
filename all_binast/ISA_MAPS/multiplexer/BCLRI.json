@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BCLRI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "BCLRI": {"RISCV": "BCLRI"}
+  },
+  "INPUTS": {
+    "BCLRI": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "BCLRI": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "BCLRI": {"RISCV": ["Shift_ri","0b01001","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "BCLRI": {"RISCV": ["Shift_ri","0b01001","0b001"]}
+  }
+}

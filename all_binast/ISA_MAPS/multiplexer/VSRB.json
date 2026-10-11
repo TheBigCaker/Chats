@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSRB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSRB": {"PowerPC": "VSRB"}
+  },
+  "INPUTS": {
+    "VSRB": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSRB": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSRB": {"PowerPC": ["VX1_Int_Ty","516"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSRB": {"PowerPC": ["VX1_Int_Ty","516"]}
+  }
+}

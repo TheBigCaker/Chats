@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FSD",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FSD": {"RISCV": "FSD"}
+  },
+  "INPUTS": {
+    "FSD": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "FSD": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "FSD": {"RISCV": ["FPStore_r","0b011"]}
+  },
+  "OUTPUT_BYTES": {
+    "FSD": {"RISCV": ["FPStore_r","0b011"]}
+  }
+}

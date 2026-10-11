@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MULHU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MULHU": {"RISCV": "MULHU"}
+  },
+  "INPUTS": {
+    "MULHU": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "MULHU": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "MULHU": {"RISCV": ["ALU_rr","0b0000001","0b011"]}
+  },
+  "OUTPUT_BYTES": {
+    "MULHU": {"RISCV": ["ALU_rr","0b0000001","0b011"]}
+  }
+}

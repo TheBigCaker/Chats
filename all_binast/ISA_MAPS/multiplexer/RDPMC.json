@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RDPMC",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "RDPMC": {"X86": "RDPMC"}
+  },
+  "INPUTS": {
+    "RDPMC": {"X86": []}
+  },
+  "OUTPUTS": {
+    "RDPMC": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "RDPMC": {"X86": ["0x33"]}
+  },
+  "OUTPUT_BYTES": {
+    "RDPMC": {"X86": ["0x33"]}
+  }
+}

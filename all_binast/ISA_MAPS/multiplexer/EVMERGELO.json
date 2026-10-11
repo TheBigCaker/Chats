@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVMERGELO",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVMERGELO": {"PowerPC": "EVMERGELO"}
+  },
+  "INPUTS": {
+    "EVMERGELO": {"PowerPC": [["gprc",0],["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "EVMERGELO": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVMERGELO": {"PowerPC": ["EVXForm_1","557"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVMERGELO": {"PowerPC": ["EVXForm_1","557"]}
+  }
+}

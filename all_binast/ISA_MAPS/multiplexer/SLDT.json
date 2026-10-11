@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SLDT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SLDT16r": {"X86": "SLDT16r"},
+    "SLDT16m": {"X86": "SLDT16m"},
+    "SLDT32r": {"X86": "SLDT32r"}
+  },
+  "INPUTS": {
+    "SLDT16r": {"X86": []},
+    "SLDT16m": {"X86": [["i16mem",0]]},
+    "SLDT32r": {"X86": []}
+  },
+  "OUTPUTS": {
+    "SLDT16r": {"X86": [["GR16",16]]},
+    "SLDT16m": {"X86": []},
+    "SLDT32r": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "SLDT16r": {"X86": ["0x00"]},
+    "SLDT16m": {"X86": ["0x00"]},
+    "SLDT32r": {"X86": ["0x00"]}
+  },
+  "OUTPUT_BYTES": {
+    "SLDT16r": {"X86": ["0x00"]},
+    "SLDT16m": {"X86": ["0x00"]},
+    "SLDT32r": {"X86": ["0x00"]}
+  }
+}

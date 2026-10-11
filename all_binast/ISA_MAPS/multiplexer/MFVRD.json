@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MFVRD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MFVRD": {"PowerPC": "MFVRD"}
+  },
+  "INPUTS": {
+    "MFVRD": {"PowerPC": [["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "MFVRD": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MFVRD": {"PowerPC": ["XX1_RS6_RD5_XO","31","51"]}
+  },
+  "OUTPUT_BYTES": {
+    "MFVRD": {"PowerPC": ["XX1_RS6_RD5_XO","31","51"]}
+  }
+}

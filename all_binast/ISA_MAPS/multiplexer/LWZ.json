@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LWZ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LWZ8": {"PowerPC": "LWZ8"}
+  },
+  "INPUTS": {
+    "LWZ8": {"PowerPC": [["(memri",0]]}
+  },
+  "OUTPUTS": {
+    "LWZ8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LWZ8": {"PowerPC": ["DForm_1","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "LWZ8": {"PowerPC": ["DForm_1","32"]}
+  }
+}

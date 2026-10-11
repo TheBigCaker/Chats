@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VRN",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VRNoV0": {"RISCV": "VRNoV0"}
+  },
+  "INPUTS": {
+    "VRNoV0": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VRNoV0": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VRNoV0": {"RISCV": ["VReg","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRNoV0": {"RISCV": ["VReg","1"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSREDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSREDP": {"PowerPC": "XSREDP"}
+  },
+  "INPUTS": {
+    "XSREDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSREDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSREDP": {"PowerPC": ["XX2Form","60","90"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSREDP": {"PowerPC": ["XX2Form","60","90"]}
+  }
+}

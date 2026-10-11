@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULEUB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMULEUB": {"PowerPC": "VMULEUB"}
+  },
+  "INPUTS": {
+    "VMULEUB": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMULEUB": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMULEUB": {"PowerPC": ["VX1_Int_Ty2","520"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULEUB": {"PowerPC": ["VX1_Int_Ty2","520"]}
+  }
+}

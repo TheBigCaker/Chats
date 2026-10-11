@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "RFEIB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "RFEIB": {"ARM": "RFEIB"},
+    "RFEIB_UPD": {"ARM": "RFEIB_UPD"}
+  },
+  "INPUTS": {
+    "RFEIB": {"ARM": [["GPR:$Rn",0]]},
+    "RFEIB_UPD": {"ARM": [["GPR:$Rn",0]]}
+  },
+  "OUTPUTS": {
+    "RFEIB": {"ARM": []},
+    "RFEIB_UPD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "RFEIB": {"ARM": ["RFEI","0"]},
+    "RFEIB_UPD": {"ARM": ["RFEI","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "RFEIB": {"ARM": ["RFEI","0"]},
+    "RFEIB_UPD": {"ARM": ["RFEI","1"]}
+  }
+}

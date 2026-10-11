@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "CRC",
+  "BACKENDS": ["ARM","Sparc"],
+  "INDEX": {
+    "CRC32B": {"ARM": "CRC32B"},
+    "CRC32CB": {"ARM": "CRC32CB"},
+    "CRC32H": {"ARM": "CRC32H"},
+    "CRC32CH": {"ARM": "CRC32CH"},
+    "CRC32W": {"ARM": "CRC32W"},
+    "CRC32CW": {"ARM": "CRC32CW"},
+    "CRC32C": {"Sparc": "CRC32C"}
+  },
+  "INPUTS": {
+    "CRC32B": {"ARM": [["GPRnopc:$Rn",0],["GPRnopc:$Rm",0]]},
+    "CRC32CB": {"ARM": [["GPRnopc:$Rn",0],["GPRnopc:$Rm",0]]},
+    "CRC32H": {"ARM": [["GPRnopc:$Rn",0],["GPRnopc:$Rm",0]]},
+    "CRC32CH": {"ARM": [["GPRnopc:$Rn",0],["GPRnopc:$Rm",0]]},
+    "CRC32W": {"ARM": [["GPRnopc:$Rn",0],["GPRnopc:$Rm",0]]},
+    "CRC32CW": {"ARM": [["GPRnopc:$Rn",0],["GPRnopc:$Rm",0]]},
+    "CRC32C": {"Sparc": [["DFPRegs",0],["DFPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "CRC32B": {"ARM": [["GPRnopc:$Rd",0]]},
+    "CRC32CB": {"ARM": [["GPRnopc:$Rd",0]]},
+    "CRC32H": {"ARM": [["GPRnopc:$Rd",0]]},
+    "CRC32CH": {"ARM": [["GPRnopc:$Rd",0]]},
+    "CRC32W": {"ARM": [["GPRnopc:$Rd",0]]},
+    "CRC32CW": {"ARM": [["GPRnopc:$Rd",0]]},
+    "CRC32C": {"Sparc": [["DFPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "CRC32B": {"ARM": ["AI_crc32","0","0b00"]},
+    "CRC32CB": {"ARM": ["AI_crc32","1","0b00"]},
+    "CRC32H": {"ARM": ["AI_crc32","0","0b01"]},
+    "CRC32CH": {"ARM": ["AI_crc32","1","0b01"]},
+    "CRC32W": {"ARM": ["AI_crc32","0","0b10"]},
+    "CRC32CW": {"ARM": ["AI_crc32","1","0b10"]},
+    "CRC32C": {"Sparc": ["F3_3","2","0b110110","0b101000111"]}
+  },
+  "OUTPUT_BYTES": {
+    "CRC32B": {"ARM": ["AI_crc32","0","0b00"]},
+    "CRC32CB": {"ARM": ["AI_crc32","1","0b00"]},
+    "CRC32H": {"ARM": ["AI_crc32","0","0b01"]},
+    "CRC32CH": {"ARM": ["AI_crc32","1","0b01"]},
+    "CRC32W": {"ARM": ["AI_crc32","0","0b10"]},
+    "CRC32CW": {"ARM": ["AI_crc32","1","0b10"]},
+    "CRC32C": {"Sparc": ["F3_3","2","0b110110","0b101000111"]}
+  }
+}

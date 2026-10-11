@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FXRSTOR",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "FXRSTOR": {"X86": "FXRSTOR"}
+  },
+  "INPUTS": {
+    "FXRSTOR": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "FXRSTOR": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "FXRSTOR": {"X86": ["0xAE"]}
+  },
+  "OUTPUT_BYTES": {
+    "FXRSTOR": {"X86": ["0xAE"]}
+  }
+}

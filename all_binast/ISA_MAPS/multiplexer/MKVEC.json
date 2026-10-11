@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "MKVEC",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "MKVEC.v2i16": {"Mali": "MKVEC.v2i16"},
+    "MKVEC.v4i8": {"Mali": "MKVEC.v4i8"},
+    "MKVEC.v2i16": {"Mali": "MKVEC.v2i16"},
+    "MKVEC.v2i8": {"Mali": "MKVEC.v2i8"},
+    "MKVEC.v2i16": {"Mali": "MKVEC.v2i16"},
+    "MKVEC.v2i8": {"Mali": "MKVEC.v2i8"}
+  },
+  "INPUTS": {
+    "MKVEC.v2i16": {"Mali": [["R32",32],["R32",32]]},
+    "MKVEC.v4i8": {"Mali": [["R32",32],["R32",32],["R32",32],["R32",32]]},
+    "MKVEC.v2i16": {"Mali": [["R32",32],["R32",32]]},
+    "MKVEC.v2i8": {"Mali": [["R32",32],["R32",32],["R32",32]]},
+    "MKVEC.v2i16": {"Mali": []},
+    "MKVEC.v2i8": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "MKVEC.v2i16": {"Mali": [["R",32]]},
+    "MKVEC.v4i8": {"Mali": [["R",32]]},
+    "MKVEC.v2i16": {"Mali": [["R",32]]},
+    "MKVEC.v2i8": {"Mali": [["R",32]]},
+    "MKVEC.v2i16": {"Mali": [["R",32]]},
+    "MKVEC.v2i8": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "MKVEC.v2i16": {"Mali": ["Bifrost_fma","0x70f000","0x7fff00"]},
+    "MKVEC.v4i8": {"Mali": ["Bifrost_fma","0x710000","0x7f0000"]},
+    "MKVEC.v2i16": {"Mali": ["Bifrost_add","0x75300","0xfff00"]},
+    "MKVEC.v2i8": {"Mali": ["Bifrost_fma"]},
+    "MKVEC.v2i16": {"Mali": ["Valhall_CVT"]},
+    "MKVEC.v2i8": {"Mali": ["Valhall_CVT"]}
+  },
+  "OUTPUT_BYTES": {
+    "MKVEC.v2i16": {"Mali": ["Bifrost_fma","0x70f000","0x7fff00"]},
+    "MKVEC.v4i8": {"Mali": ["Bifrost_fma","0x710000","0x7f0000"]},
+    "MKVEC.v2i16": {"Mali": ["Bifrost_add","0x75300","0xfff00"]},
+    "MKVEC.v2i8": {"Mali": ["Bifrost_fma"]},
+    "MKVEC.v2i16": {"Mali": ["Valhall_CVT"]},
+    "MKVEC.v2i8": {"Mali": ["Valhall_CVT"]}
+  }
+}

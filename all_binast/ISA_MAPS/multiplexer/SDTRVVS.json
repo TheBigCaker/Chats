@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SDTRVVS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SDTRVVSlide": {"RISCV": "SDTRVVSlide"},
+    "SDTRVVSlide1": {"RISCV": "SDTRVVSlide1"}
+  },
+  "INPUTS": {
+    "SDTRVVSlide": {"RISCV": []},
+    "SDTRVVSlide1": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SDTRVVSlide": {"RISCV": []},
+    "SDTRVVSlide1": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SDTRVVSlide": {"RISCV": ["SDTypeProfile","1","6"]},
+    "SDTRVVSlide1": {"RISCV": ["SDTypeProfile","1","5"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTRVVSlide": {"RISCV": ["SDTypeProfile","1","6"]},
+    "SDTRVVSlide1": {"RISCV": ["SDTypeProfile","1","5"]}
+  }
+}

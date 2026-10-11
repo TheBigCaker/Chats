@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFNCVTBF",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFNCVTBF16_F_F_W": {"RISCV": "VFNCVTBF16_F_F_W"}
+  },
+  "INPUTS": {
+    "VFNCVTBF16_F_F_W": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VFNCVTBF16_F_F_W": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VFNCVTBF16_F_F_W": {"RISCV": ["VNCVTF_FV_VS2","0b010010","0b11101"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFNCVTBF16_F_F_W": {"RISCV": ["VNCVTF_FV_VS2","0b010010","0b11101"]}
+  }
+}

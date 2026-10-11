@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "LOG",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "LOG_IEEE_eg": {"AMDGPU": "LOG_IEEE_eg"},
+    "LOG_CLAMPED_eg": {"AMDGPU": "LOG_CLAMPED_eg"},
+    "LOG_CLAMPED_r600": {"AMDGPU": "LOG_CLAMPED_r600"},
+    "LOG_IEEE_r600": {"AMDGPU": "LOG_IEEE_r600"}
+  },
+  "INPUTS": {
+    "LOG_IEEE_eg": {"AMDGPU": []},
+    "LOG_CLAMPED_eg": {"AMDGPU": []},
+    "LOG_CLAMPED_r600": {"AMDGPU": []},
+    "LOG_IEEE_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "LOG_IEEE_eg": {"AMDGPU": []},
+    "LOG_CLAMPED_eg": {"AMDGPU": []},
+    "LOG_CLAMPED_r600": {"AMDGPU": []},
+    "LOG_IEEE_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "LOG_IEEE_eg": {"AMDGPU": ["LOG_IEEE_Common","0x83"]},
+    "LOG_CLAMPED_eg": {"AMDGPU": ["LOG_CLAMPED_Common","0x82"]},
+    "LOG_CLAMPED_r600": {"AMDGPU": ["LOG_CLAMPED_Common","0x62"]},
+    "LOG_IEEE_r600": {"AMDGPU": ["LOG_IEEE_Common","0x63"]}
+  },
+  "OUTPUT_BYTES": {
+    "LOG_IEEE_eg": {"AMDGPU": ["LOG_IEEE_Common","0x83"]},
+    "LOG_CLAMPED_eg": {"AMDGPU": ["LOG_CLAMPED_Common","0x82"]},
+    "LOG_CLAMPED_r600": {"AMDGPU": ["LOG_CLAMPED_Common","0x62"]},
+    "LOG_IEEE_r600": {"AMDGPU": ["LOG_IEEE_Common","0x63"]}
+  }
+}

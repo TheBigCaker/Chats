@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VEXTRACTUH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VEXTRACTUH": {"PowerPC": "VEXTRACTUH"}
+  },
+  "INPUTS": {
+    "VEXTRACTUH": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VEXTRACTUH": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VEXTRACTUH": {"PowerPC": ["VX1_VT5_UIM5_VB5","589"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEXTRACTUH": {"PowerPC": ["VX1_VT5_UIM5_VB5","589"]}
+  }
+}

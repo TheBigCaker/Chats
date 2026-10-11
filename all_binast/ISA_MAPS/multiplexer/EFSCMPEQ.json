@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFSCMPEQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFSCMPEQ": {"PowerPC": "EFSCMPEQ"}
+  },
+  "INPUTS": {
+    "EFSCMPEQ": {"PowerPC": [["spe4rc",0],["spe4rc",0]]}
+  },
+  "OUTPUTS": {
+    "EFSCMPEQ": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFSCMPEQ": {"PowerPC": ["EFXForm_3","718"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFSCMPEQ": {"PowerPC": ["EFXForm_3","718"]}
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "PMULH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PMULH_H": {"RISCV": "PMULH_H"},
+    "PMULH_H_B0": {"RISCV": "PMULH_H_B0"},
+    "PMULH_H_B1": {"RISCV": "PMULH_H_B1"},
+    "PMULH_W": {"RISCV": "PMULH_W"},
+    "PMULH_W_H0": {"RISCV": "PMULH_W_H0"},
+    "PMULH_W_H1": {"RISCV": "PMULH_W_H1"}
+  },
+  "INPUTS": {
+    "PMULH_H": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMULH_H_B0": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMULH_H_B1": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMULH_W": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMULH_W_H0": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMULH_W_H1": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PMULH_H": {"RISCV": [["GPR:$rd",0]]},
+    "PMULH_H_B0": {"RISCV": [["GPR:$rd",0]]},
+    "PMULH_H_B1": {"RISCV": [["GPR:$rd",0]]},
+    "PMULH_W": {"RISCV": [["GPR:$rd",0]]},
+    "PMULH_W_H0": {"RISCV": [["GPR:$rd",0]]},
+    "PMULH_W_H1": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "PMULH_H": {"RISCV": ["RVPBinary_rr","0b0000","0b00","0b111"]},
+    "PMULH_H_B0": {"RISCV": ["RVPBinary_rr","0b0100","0b00","0b111"]},
+    "PMULH_H_B1": {"RISCV": ["RVPBinary_rr","0b0110","0b00","0b111"]},
+    "PMULH_W": {"RISCV": ["RVPBinary_rr","0b0000","0b01","0b111"]},
+    "PMULH_W_H0": {"RISCV": ["RVPBinary_rr","0b0100","0b01","0b111"]},
+    "PMULH_W_H1": {"RISCV": ["RVPBinary_rr","0b0110","0b01","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "PMULH_H": {"RISCV": ["RVPBinary_rr","0b0000","0b00","0b111"]},
+    "PMULH_H_B0": {"RISCV": ["RVPBinary_rr","0b0100","0b00","0b111"]},
+    "PMULH_H_B1": {"RISCV": ["RVPBinary_rr","0b0110","0b00","0b111"]},
+    "PMULH_W": {"RISCV": ["RVPBinary_rr","0b0000","0b01","0b111"]},
+    "PMULH_W_H0": {"RISCV": ["RVPBinary_rr","0b0100","0b01","0b111"]},
+    "PMULH_W_H1": {"RISCV": ["RVPBinary_rr","0b0110","0b01","0b111"]}
+  }
+}

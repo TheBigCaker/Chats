@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SDTARMVCMPZ",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SDTARMVCMPZ": {"ARM": "SDTARMVCMPZ"}
+  },
+  "INPUTS": {
+    "SDTARMVCMPZ": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SDTARMVCMPZ": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SDTARMVCMPZ": {"ARM": ["SDTypeProfile","1","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTARMVCMPZ": {"ARM": ["SDTypeProfile","1","2"]}
+  }
+}

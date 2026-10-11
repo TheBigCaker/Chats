@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "UQADD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UQADD16": {"ARM": "UQADD16"},
+    "UQADD8": {"ARM": "UQADD8"}
+  },
+  "INPUTS": {
+    "UQADD16": {"ARM": []},
+    "UQADD8": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "UQADD16": {"ARM": []},
+    "UQADD8": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "UQADD16": {"ARM": ["AAIIntrinsic","0b01100110","0b11110001"]},
+    "UQADD8": {"ARM": ["AAIIntrinsic","0b01100110","0b11111001"]}
+  },
+  "OUTPUT_BYTES": {
+    "UQADD16": {"ARM": ["AAIIntrinsic","0b01100110","0b11110001"]},
+    "UQADD8": {"ARM": ["AAIIntrinsic","0b01100110","0b11111001"]}
+  }
+}

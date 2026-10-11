@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXSIWZX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXSIWZX": {"PowerPC": "LXSIWZX"}
+  },
+  "INPUTS": {
+    "LXSIWZX": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LXSIWZX": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LXSIWZX": {"PowerPC": ["XX1Form_memOp","31","12"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXSIWZX": {"PowerPC": ["XX1Form_memOp","31","12"]}
+  }
+}

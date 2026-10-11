@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFNMAD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFNMAD": {"ARM": "VFNMAD"}
+  },
+  "INPUTS": {
+    "VFNMAD": {"ARM": [["DPR",0],["DPR",0],["DPR",0]]}
+  },
+  "OUTPUTS": {
+    "VFNMAD": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFNMAD": {"ARM": ["ADbI","0b11101","0b01","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFNMAD": {"ARM": ["ADbI","0b11101","0b01","1","0"]}
+  }
+}

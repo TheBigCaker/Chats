@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FCONSTH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "FCONSTH": {"ARM": "FCONSTH"}
+  },
+  "INPUTS": {
+    "FCONSTH": {"ARM": [["vfp_f16imm",0]]}
+  },
+  "OUTPUTS": {
+    "FCONSTH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "FCONSTH": {"ARM": ["VFPAI"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCONSTH": {"ARM": ["VFPAI"]}
+  }
+}

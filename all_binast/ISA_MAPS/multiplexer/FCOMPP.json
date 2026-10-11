@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FCOMPP",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "FCOMPP": {"X86": "FCOMPP"}
+  },
+  "INPUTS": {
+    "FCOMPP": {"X86": []}
+  },
+  "OUTPUTS": {
+    "FCOMPP": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "FCOMPP": {"X86": ["0xDE"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCOMPP": {"X86": ["0xDE"]}
+  }
+}

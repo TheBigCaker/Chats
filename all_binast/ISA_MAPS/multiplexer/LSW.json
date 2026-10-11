@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "LSW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "LSWidth8": {"RISCV": "LSWidth8"},
+    "LSWidth16": {"RISCV": "LSWidth16"},
+    "LSWidth32": {"RISCV": "LSWidth32"},
+    "LSWidth64": {"RISCV": "LSWidth64"}
+  },
+  "INPUTS": {
+    "LSWidth8": {"RISCV": []},
+    "LSWidth16": {"RISCV": []},
+    "LSWidth32": {"RISCV": []},
+    "LSWidth64": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "LSWidth8": {"RISCV": []},
+    "LSWidth16": {"RISCV": []},
+    "LSWidth32": {"RISCV": []},
+    "LSWidth64": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "LSWidth8": {"RISCV": ["RISCVWidth","0b0000"]},
+    "LSWidth16": {"RISCV": ["RISCVWidth","0b0101"]},
+    "LSWidth32": {"RISCV": ["RISCVWidth","0b0110"]},
+    "LSWidth64": {"RISCV": ["RISCVWidth","0b0111"]}
+  },
+  "OUTPUT_BYTES": {
+    "LSWidth8": {"RISCV": ["RISCVWidth","0b0000"]},
+    "LSWidth16": {"RISCV": ["RISCVWidth","0b0101"]},
+    "LSWidth32": {"RISCV": ["RISCVWidth","0b0110"]},
+    "LSWidth64": {"RISCV": ["RISCVWidth","0b0111"]}
+  }
+}

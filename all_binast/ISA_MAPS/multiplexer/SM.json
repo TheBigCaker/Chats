@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "SM",
+  "BACKENDS": ["AArch64","RISCV"],
+  "INDEX": {
+    "SM4E_ZZZ_S": {"AArch64": "SM4E_ZZZ_S"},
+    "SM4ED": {"RISCV": "SM4ED"},
+    "SM4KS": {"RISCV": "SM4KS"},
+    "SM3P0": {"RISCV": "SM3P0"},
+    "SM3P1": {"RISCV": "SM3P1"}
+  },
+  "INPUTS": {
+    "SM4E_ZZZ_S": {"AArch64": [["zprty:$_Zdn",0],["zprty:$Zm",0]]},
+    "SM4ED": {"RISCV": []},
+    "SM4KS": {"RISCV": []},
+    "SM3P0": {"RISCV": []},
+    "SM3P1": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SM4E_ZZZ_S": {"AArch64": [["zprty:$Zdn",0]]},
+    "SM4ED": {"RISCV": []},
+    "SM4KS": {"RISCV": []},
+    "SM3P0": {"RISCV": []},
+    "SM3P1": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SM4E_ZZZ_S": {"AArch64": ["sve2_crypto_des_bin_op","0b10"]},
+    "SM4ED": {"RISCV": ["RVKByteSelect","0b11000"]},
+    "SM4KS": {"RISCV": ["RVKByteSelect","0b11010"]},
+    "SM3P0": {"RISCV": ["Unary_r","0b000100001000","0b001"]},
+    "SM3P1": {"RISCV": ["Unary_r","0b000100001001","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "SM4E_ZZZ_S": {"AArch64": ["sve2_crypto_des_bin_op","0b10"]},
+    "SM4ED": {"RISCV": ["RVKByteSelect","0b11000"]},
+    "SM4KS": {"RISCV": ["RVKByteSelect","0b11010"]},
+    "SM3P0": {"RISCV": ["Unary_r","0b000100001000","0b001"]},
+    "SM3P1": {"RISCV": ["Unary_r","0b000100001001","0b001"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SHADDX",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "SHADDX.u64": {"Mali": "SHADDX.u64"},
+    "SHADDX.s64": {"Mali": "SHADDX.s64"}
+  },
+  "INPUTS": {
+    "SHADDX.u64": {"Mali": []},
+    "SHADDX.s64": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "SHADDX.u64": {"Mali": [["R",32]]},
+    "SHADDX.s64": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "SHADDX.u64": {"Mali": ["Valhall_"]},
+    "SHADDX.s64": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "SHADDX.u64": {"Mali": ["Valhall_"]},
+    "SHADDX.s64": {"Mali": ["Valhall_"]}
+  }
+}

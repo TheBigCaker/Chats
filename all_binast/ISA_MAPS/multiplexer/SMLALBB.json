@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SMLALBB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SMLALBB": {"ARM": "SMLALBB"}
+  },
+  "INPUTS": {
+    "SMLALBB": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SMLALBB": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SMLALBB": {"ARM": ["SMLAL","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMLALBB": {"ARM": ["SMLAL","0b00"]}
+  }
+}

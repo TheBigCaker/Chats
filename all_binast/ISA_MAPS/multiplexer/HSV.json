@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "HSV",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "HSV_B": {"RISCV": "HSV_B"},
+    "HSV_H": {"RISCV": "HSV_H"},
+    "HSV_W": {"RISCV": "HSV_W"},
+    "HSV_D": {"RISCV": "HSV_D"}
+  },
+  "INPUTS": {
+    "HSV_B": {"RISCV": [["GPR:$rs2",0],["GPRMemZeroOffset:$rs1",0]]},
+    "HSV_H": {"RISCV": [["GPR:$rs2",0],["GPRMemZeroOffset:$rs1",0]]},
+    "HSV_W": {"RISCV": [["GPR:$rs2",0],["GPRMemZeroOffset:$rs1",0]]},
+    "HSV_D": {"RISCV": [["GPR:$rs2",0],["GPRMemZeroOffset:$rs1",0]]}
+  },
+  "OUTPUTS": {
+    "HSV_B": {"RISCV": []},
+    "HSV_H": {"RISCV": []},
+    "HSV_W": {"RISCV": []},
+    "HSV_D": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "HSV_B": {"RISCV": ["HStore_rr","0b0110001"]},
+    "HSV_H": {"RISCV": ["HStore_rr","0b0110011"]},
+    "HSV_W": {"RISCV": ["HStore_rr","0b0110101"]},
+    "HSV_D": {"RISCV": ["HStore_rr","0b0110111"]}
+  },
+  "OUTPUT_BYTES": {
+    "HSV_B": {"RISCV": ["HStore_rr","0b0110001"]},
+    "HSV_H": {"RISCV": ["HStore_rr","0b0110011"]},
+    "HSV_W": {"RISCV": ["HStore_rr","0b0110101"]},
+    "HSV_D": {"RISCV": ["HStore_rr","0b0110111"]}
+  }
+}

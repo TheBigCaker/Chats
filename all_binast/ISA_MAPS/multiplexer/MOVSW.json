@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVSW",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MOVSW": {"X86": "MOVSW"}
+  },
+  "INPUTS": {
+    "MOVSW": {"X86": [["dstidx16",0],["srcidx16",0]]}
+  },
+  "OUTPUTS": {
+    "MOVSW": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "MOVSW": {"X86": ["0xA5"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVSW": {"X86": ["0xA5"]}
+  }
+}

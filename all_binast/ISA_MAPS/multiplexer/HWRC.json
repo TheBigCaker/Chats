@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HWRC",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "HWRC": {"AMDGPU": "HWRC"}
+  },
+  "INPUTS": {
+    "HWRC": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "HWRC": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "HWRC": {"AMDGPU": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "HWRC": {"AMDGPU": ["ProcResource","1"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUMMLA",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VUMMLA": {"ARM": "VUMMLA"}
+  },
+  "INPUTS": {
+    "VUMMLA": {"ARM": [["QPR:$Vd",0],["QPR:$Vn",0],["QPR:$Vm",0]]}
+  },
+  "OUTPUTS": {
+    "VUMMLA": {"ARM": [["QPR:$dst",0]]}
+  },
+  "INPUT_BYTES": {
+    "VUMMLA": {"ARM": ["N3VMatMul","0","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUMMLA": {"ARM": ["N3VMatMul","0","1"]}
+  }
+}

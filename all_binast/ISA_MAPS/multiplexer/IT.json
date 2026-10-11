@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "IT",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "ITasm": {"ARM": "ITasm"}
+  },
+  "INPUTS": {
+    "ITasm": {"ARM": [["it_pred",0],["it_mask",0]]}
+  },
+  "OUTPUTS": {
+    "ITasm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "ITasm": {"ARM": ["ARMAsmPseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "ITasm": {"ARM": ["ARMAsmPseudo"]}
+  }
+}

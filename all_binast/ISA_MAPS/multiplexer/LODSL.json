@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LODSL",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LODSL": {"X86": "LODSL"}
+  },
+  "INPUTS": {
+    "LODSL": {"X86": [["srcidx32",0]]}
+  },
+  "OUTPUTS": {
+    "LODSL": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "LODSL": {"X86": ["0xAD"]}
+  },
+  "OUTPUT_BYTES": {
+    "LODSL": {"X86": ["0xAD"]}
+  }
+}

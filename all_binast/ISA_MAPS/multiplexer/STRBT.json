@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STRBT",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "STRBT_POST_REG": {"ARM": "STRBT_POST_REG"}
+  },
+  "INPUTS": {
+    "STRBT_POST_REG": {"ARM": [["GPR",64],["addr_offset_none",0],["am2offset_reg",0]]}
+  },
+  "OUTPUTS": {
+    "STRBT_POST_REG": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "STRBT_POST_REG": {"ARM": ["AI2ldstidx","0","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "STRBT_POST_REG": {"ARM": ["AI2ldstidx","0","1","0"]}
+  }
+}

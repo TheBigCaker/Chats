@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FIXED",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "FIXED_REGS": {"AArch64": "FIXED_REGS"}
+  },
+  "INPUTS": {
+    "FIXED_REGS": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "FIXED_REGS": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "FIXED_REGS": {"AArch64": ["RegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "FIXED_REGS": {"AArch64": ["RegisterClass","64"]}
+  }
+}

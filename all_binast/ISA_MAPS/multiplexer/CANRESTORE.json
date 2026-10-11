@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CANRESTORE",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "CANRESTORE": {"Sparc": "CANRESTORE"}
+  },
+  "INPUTS": {
+    "CANRESTORE": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "CANRESTORE": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "CANRESTORE": {"Sparc": ["SparcCtrlReg","11"]}
+  },
+  "OUTPUT_BYTES": {
+    "CANRESTORE": {"Sparc": ["SparcCtrlReg","11"]}
+  }
+}

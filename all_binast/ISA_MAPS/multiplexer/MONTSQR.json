@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MONTSQR",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "MONTSQR": {"Sparc": "MONTSQR"}
+  },
+  "INPUTS": {
+    "MONTSQR": {"Sparc": [["simm5Op",0]]}
+  },
+  "OUTPUTS": {
+    "MONTSQR": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "MONTSQR": {"Sparc": ["F3_3","2","0b110110","0b101001010"]}
+  },
+  "OUTPUT_BYTES": {
+    "MONTSQR": {"Sparc": ["F3_3","2","0b110110","0b101001010"]}
+  }
+}

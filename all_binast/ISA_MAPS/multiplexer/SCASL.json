@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SCASL",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SCASL": {"X86": "SCASL"}
+  },
+  "INPUTS": {
+    "SCASL": {"X86": [["dstidx32",0]]}
+  },
+  "OUTPUTS": {
+    "SCASL": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SCASL": {"X86": ["0xAF"]}
+  },
+  "OUTPUT_BYTES": {
+    "SCASL": {"X86": ["0xAF"]}
+  }
+}

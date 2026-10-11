@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TABORT",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "TABORT": {"PowerPC": "TABORT"}
+  },
+  "INPUTS": {
+    "TABORT": {"PowerPC": [["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "TABORT": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "TABORT": {"PowerPC": ["XForm_base_r3xo","31","910"]}
+  },
+  "OUTPUT_BYTES": {
+    "TABORT": {"PowerPC": ["XForm_base_r3xo","31","910"]}
+  }
+}

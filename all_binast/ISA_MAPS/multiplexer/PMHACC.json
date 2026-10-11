@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "PMHACC",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PMHACC_H": {"RISCV": "PMHACC_H"},
+    "PMHACC_H_B0": {"RISCV": "PMHACC_H_B0"},
+    "PMHACC_H_B1": {"RISCV": "PMHACC_H_B1"},
+    "PMHACC_W": {"RISCV": "PMHACC_W"},
+    "PMHACC_W_H0": {"RISCV": "PMHACC_W_H0"},
+    "PMHACC_W_H1": {"RISCV": "PMHACC_W_H1"}
+  },
+  "INPUTS": {
+    "PMHACC_H": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMHACC_H_B0": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMHACC_H_B1": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMHACC_W": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMHACC_W_H0": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMHACC_W_H1": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PMHACC_H": {"RISCV": [["GPR:$rd_wb",0]]},
+    "PMHACC_H_B0": {"RISCV": [["GPR:$rd_wb",0]]},
+    "PMHACC_H_B1": {"RISCV": [["GPR:$rd_wb",0]]},
+    "PMHACC_W": {"RISCV": [["GPR:$rd_wb",0]]},
+    "PMHACC_W_H0": {"RISCV": [["GPR:$rd_wb",0]]},
+    "PMHACC_W_H1": {"RISCV": [["GPR:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "PMHACC_H": {"RISCV": ["RVPTernary_rrr","0b0001","0b00","0b111"]},
+    "PMHACC_H_B0": {"RISCV": ["RVPTernary_rrr","0b0101","0b00","0b111"]},
+    "PMHACC_H_B1": {"RISCV": ["RVPTernary_rrr","0b0111","0b00","0b111"]},
+    "PMHACC_W": {"RISCV": ["RVPTernary_rrr","0b0001","0b01","0b111"]},
+    "PMHACC_W_H0": {"RISCV": ["RVPTernary_rrr","0b0101","0b01","0b111"]},
+    "PMHACC_W_H1": {"RISCV": ["RVPTernary_rrr","0b0111","0b01","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "PMHACC_H": {"RISCV": ["RVPTernary_rrr","0b0001","0b00","0b111"]},
+    "PMHACC_H_B0": {"RISCV": ["RVPTernary_rrr","0b0101","0b00","0b111"]},
+    "PMHACC_H_B1": {"RISCV": ["RVPTernary_rrr","0b0111","0b00","0b111"]},
+    "PMHACC_W": {"RISCV": ["RVPTernary_rrr","0b0001","0b01","0b111"]},
+    "PMHACC_W_H0": {"RISCV": ["RVPTernary_rrr","0b0101","0b01","0b111"]},
+    "PMHACC_W_H1": {"RISCV": ["RVPTernary_rrr","0b0111","0b01","0b111"]}
+  }
+}

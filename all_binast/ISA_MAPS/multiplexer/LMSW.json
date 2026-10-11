@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LMSW",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LMSW16r": {"X86": "LMSW16r"},
+    "LMSW16m": {"X86": "LMSW16m"}
+  },
+  "INPUTS": {
+    "LMSW16r": {"X86": [["GR16",16]]},
+    "LMSW16m": {"X86": [["i16mem",0]]}
+  },
+  "OUTPUTS": {
+    "LMSW16r": {"X86": []},
+    "LMSW16m": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "LMSW16r": {"X86": ["0x01"]},
+    "LMSW16m": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "LMSW16r": {"X86": ["0x01"]},
+    "LMSW16m": {"X86": ["0x01"]}
+  }
+}

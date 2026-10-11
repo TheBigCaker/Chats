@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SCASW",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SCASW": {"X86": "SCASW"}
+  },
+  "INPUTS": {
+    "SCASW": {"X86": [["dstidx16",0]]}
+  },
+  "OUTPUTS": {
+    "SCASW": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SCASW": {"X86": ["0xAF"]}
+  },
+  "OUTPUT_BYTES": {
+    "SCASW": {"X86": ["0xAF"]}
+  }
+}

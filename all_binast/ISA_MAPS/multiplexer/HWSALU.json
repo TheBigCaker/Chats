@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HWSALU",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "HWSALU": {"AMDGPU": "HWSALU"}
+  },
+  "INPUTS": {
+    "HWSALU": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "HWSALU": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "HWSALU": {"AMDGPU": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "HWSALU": {"AMDGPU": ["ProcResource","1"]}
+  }
+}

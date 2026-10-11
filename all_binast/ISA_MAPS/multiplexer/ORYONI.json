@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ORYONI",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "ORYONI4FP0": {"AArch64": "ORYONI4FP0"},
+    "ORYONI5FP1": {"AArch64": "ORYONI5FP1"}
+  },
+  "INPUTS": {
+    "ORYONI4FP0": {"AArch64": []},
+    "ORYONI5FP1": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "ORYONI4FP0": {"AArch64": []},
+    "ORYONI5FP1": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "ORYONI4FP0": {"AArch64": ["ProcResource","1"]},
+    "ORYONI5FP1": {"AArch64": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "ORYONI4FP0": {"AArch64": ["ProcResource","1"]},
+    "ORYONI5FP1": {"AArch64": ["ProcResource","1"]}
+  }
+}

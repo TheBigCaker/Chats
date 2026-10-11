@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WSLA",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "WSLA": {"RISCV": "WSLA"}
+  },
+  "INPUTS": {
+    "WSLA": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "WSLA": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "WSLA": {"RISCV": ["RVPWideningShift_rr","0b100","0b11"]}
+  },
+  "OUTPUT_BYTES": {
+    "WSLA": {"RISCV": ["RVPWideningShift_rr","0b100","0b11"]}
+  }
+}

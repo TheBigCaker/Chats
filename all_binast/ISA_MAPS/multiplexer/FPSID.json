@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FPSID",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "FPSID": {"ARM": "FPSID"}
+  },
+  "INPUTS": {
+    "FPSID": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "FPSID": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "FPSID": {"ARM": ["ARMReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPSID": {"ARM": ["ARMReg","0"]}
+  }
+}

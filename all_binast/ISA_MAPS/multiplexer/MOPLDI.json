@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MOPLDI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MOPLDIndexedUnord": {"RISCV": "MOPLDIndexedUnord"},
+    "MOPLDIndexedOrder": {"RISCV": "MOPLDIndexedOrder"}
+  },
+  "INPUTS": {
+    "MOPLDIndexedUnord": {"RISCV": []},
+    "MOPLDIndexedOrder": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "MOPLDIndexedUnord": {"RISCV": []},
+    "MOPLDIndexedOrder": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "MOPLDIndexedUnord": {"RISCV": ["RISCVMOP","0b01"]},
+    "MOPLDIndexedOrder": {"RISCV": ["RISCVMOP","0b11"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOPLDIndexedUnord": {"RISCV": ["RISCVMOP","0b01"]},
+    "MOPLDIndexedOrder": {"RISCV": ["RISCVMOP","0b11"]}
+  }
+}

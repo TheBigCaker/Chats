@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PREFETCHRST",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PREFETCHRST2": {"X86": "PREFETCHRST2"}
+  },
+  "INPUTS": {
+    "PREFETCHRST2": {"X86": [["i8mem",0]]}
+  },
+  "OUTPUTS": {
+    "PREFETCHRST2": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PREFETCHRST2": {"X86": ["0x18"]}
+  },
+  "OUTPUT_BYTES": {
+    "PREFETCHRST2": {"X86": ["0x18"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVSRWIU",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVSRWIU": {"PowerPC": "EVSRWIU"}
+  },
+  "INPUTS": {
+    "EVSRWIU": {"PowerPC": [["sperc",0],["u5imm",5]]}
+  },
+  "OUTPUTS": {
+    "EVSRWIU": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVSRWIU": {"PowerPC": ["EVXForm_1","546"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVSRWIU": {"PowerPC": ["EVXForm_1","546"]}
+  }
+}

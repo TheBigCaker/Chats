@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VREFP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VREFP": {"PowerPC": "VREFP"}
+  },
+  "INPUTS": {
+    "VREFP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VREFP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VREFP": {"PowerPC": ["VX2_Int_SP","266"]}
+  },
+  "OUTPUT_BYTES": {
+    "VREFP": {"PowerPC": ["VX2_Int_SP","266"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "VSM",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VSM4K_VI": {"RISCV": "VSM4K_VI"},
+    "VSM3C_VI": {"RISCV": "VSM3C_VI"},
+    "VSM3ME_VV": {"RISCV": "VSM3ME_VV"}
+  },
+  "INPUTS": {
+    "VSM4K_VI": {"RISCV": []},
+    "VSM3C_VI": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["optype:$imm",0]]},
+    "VSM3ME_VV": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VSM4K_VI": {"RISCV": []},
+    "VSM3C_VI": {"RISCV": [["VR:$vd_wb",0]]},
+    "VSM3ME_VV": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VSM4K_VI": {"RISCV": ["ZvkALUVINoVm","0b100001"]},
+    "VSM3C_VI": {"RISCV": ["ZvkALUVINoVmBinary","0b101011"]},
+    "VSM3ME_VV": {"RISCV": ["ZvkALUVVNoVm","0b100000"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSM4K_VI": {"RISCV": ["ZvkALUVINoVm","0b100001"]},
+    "VSM3C_VI": {"RISCV": ["ZvkALUVINoVmBinary","0b101011"]},
+    "VSM3ME_VV": {"RISCV": ["ZvkALUVVNoVm","0b100000"]}
+  }
+}

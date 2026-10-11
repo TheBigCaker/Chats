@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSTRH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VSTRH": {"ARM": "VSTRH"}
+  },
+  "INPUTS": {
+    "VSTRH": {"ARM": [["HPR",0],["addrmode5fp16",0]]}
+  },
+  "OUTPUTS": {
+    "VSTRH": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VSTRH": {"ARM": ["AHI5","0b1101","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSTRH": {"ARM": ["AHI5","0b1101","0b00"]}
+  }
+}

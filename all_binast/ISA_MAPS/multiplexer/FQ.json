@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FQ",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FQ": {"Sparc": "FQ"}
+  },
+  "INPUTS": {
+    "FQ": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FQ": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FQ": {"Sparc": ["SparcCtrlReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FQ": {"Sparc": ["SparcCtrlReg","0"]}
+  }
+}

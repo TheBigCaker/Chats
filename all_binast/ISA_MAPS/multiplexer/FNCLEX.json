@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FNCLEX",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "FNCLEX": {"X86": "FNCLEX"}
+  },
+  "INPUTS": {
+    "FNCLEX": {"X86": []}
+  },
+  "OUTPUTS": {
+    "FNCLEX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "FNCLEX": {"X86": ["0xDB"]}
+  },
+  "OUTPUT_BYTES": {
+    "FNCLEX": {"X86": ["0xDB"]}
+  }
+}

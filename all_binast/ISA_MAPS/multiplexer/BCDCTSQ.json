@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BCDCTSQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BCDCTSQ_rec": {"PowerPC": "BCDCTSQ_rec"}
+  },
+  "INPUTS": {
+    "BCDCTSQ_rec": {"PowerPC": [["vrrc:$VB",0]]}
+  },
+  "OUTPUTS": {
+    "BCDCTSQ_rec": {"PowerPC": [["vrrc:$VD",0]]}
+  },
+  "INPUT_BYTES": {
+    "BCDCTSQ_rec": {"PowerPC": ["VX_VT5_EO5_VB5_XO9_o","0","385"]}
+  },
+  "OUTPUT_BYTES": {
+    "BCDCTSQ_rec": {"PowerPC": ["VX_VT5_EO5_VB5_XO9_o","0","385"]}
+  }
+}

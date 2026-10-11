@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VEOR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VEORd": {"ARM": "VEORd"},
+    "VEORq": {"ARM": "VEORq"}
+  },
+  "INPUTS": {
+    "VEORd": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VEORq": {"ARM": [["QPR:$Vn",0],["QPR:$Vm",0]]}
+  },
+  "OUTPUTS": {
+    "VEORd": {"ARM": [["DPR:$Vd",0]]},
+    "VEORq": {"ARM": [["QPR:$Vd",0]]}
+  },
+  "INPUT_BYTES": {
+    "VEORd": {"ARM": ["N3VDX","1","0","0b00","0b0001","1","1"]},
+    "VEORq": {"ARM": ["N3VQX","1","0","0b00","0b0001","1","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEORd": {"ARM": ["N3VDX","1","0","0b00","0b0001","1","1"]},
+    "VEORq": {"ARM": ["N3VQX","1","0","0b00","0b0001","1","1"]}
+  }
+}

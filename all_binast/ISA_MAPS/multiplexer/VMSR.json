@@ -1,0 +1,59 @@
+{
+  "CATEGORY": "VMSR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMSR": {"ARM": "VMSR"},
+    "VMSR_FPEXC": {"ARM": "VMSR_FPEXC"},
+    "VMSR_FPSID": {"ARM": "VMSR_FPSID"},
+    "VMSR_FPINST": {"ARM": "VMSR_FPINST"},
+    "VMSR_FPINST2": {"ARM": "VMSR_FPINST2"},
+    "VMSR_FPCXTNS": {"ARM": "VMSR_FPCXTNS"},
+    "VMSR_FPCXTS": {"ARM": "VMSR_FPCXTS"},
+    "VMSR_VPR": {"ARM": "VMSR_VPR"},
+    "VMSR_P0": {"ARM": "VMSR_P0"}
+  },
+  "INPUTS": {
+    "VMSR": {"ARM": [["GPRnopc",0]]},
+    "VMSR_FPEXC": {"ARM": [["GPRnopc",0]]},
+    "VMSR_FPSID": {"ARM": [["GPRnopc",0]]},
+    "VMSR_FPINST": {"ARM": [["GPRnopc",0]]},
+    "VMSR_FPINST2": {"ARM": [["GPRnopc",0]]},
+    "VMSR_FPCXTNS": {"ARM": [["GPR",64]]},
+    "VMSR_FPCXTS": {"ARM": [["GPR",64]]},
+    "VMSR_VPR": {"ARM": [["GPR",64]]},
+    "VMSR_P0": {"ARM": [["GPR",64]]}
+  },
+  "OUTPUTS": {
+    "VMSR": {"ARM": []},
+    "VMSR_FPEXC": {"ARM": []},
+    "VMSR_FPSID": {"ARM": []},
+    "VMSR_FPINST": {"ARM": []},
+    "VMSR_FPINST2": {"ARM": []},
+    "VMSR_FPCXTNS": {"ARM": []},
+    "VMSR_FPCXTS": {"ARM": []},
+    "VMSR_VPR": {"ARM": []},
+    "VMSR_P0": {"ARM": [["VCCR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMSR": {"ARM": ["MovToVFP"]},
+    "VMSR_FPEXC": {"ARM": ["MovToVFP"]},
+    "VMSR_FPSID": {"ARM": ["MovToVFP"]},
+    "VMSR_FPINST": {"ARM": ["MovToVFP"]},
+    "VMSR_FPINST2": {"ARM": ["MovToVFP"]},
+    "VMSR_FPCXTNS": {"ARM": ["MovToVFP"]},
+    "VMSR_FPCXTS": {"ARM": ["MovToVFP"]},
+    "VMSR_VPR": {"ARM": ["MovToVFP"]},
+    "VMSR_P0": {"ARM": ["MovToVFP"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMSR": {"ARM": ["MovToVFP"]},
+    "VMSR_FPEXC": {"ARM": ["MovToVFP"]},
+    "VMSR_FPSID": {"ARM": ["MovToVFP"]},
+    "VMSR_FPINST": {"ARM": ["MovToVFP"]},
+    "VMSR_FPINST2": {"ARM": ["MovToVFP"]},
+    "VMSR_FPCXTNS": {"ARM": ["MovToVFP"]},
+    "VMSR_FPCXTS": {"ARM": ["MovToVFP"]},
+    "VMSR_VPR": {"ARM": ["MovToVFP"]},
+    "VMSR_P0": {"ARM": ["MovToVFP"]}
+  }
+}

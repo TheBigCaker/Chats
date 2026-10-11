@@ -1,0 +1,59 @@
+{
+  "CATEGORY": "MIPS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MIPS_EHB": {"RISCV": "MIPS_EHB"},
+    "MIPS_IHB": {"RISCV": "MIPS_IHB"},
+    "MIPS_PAUSE": {"RISCV": "MIPS_PAUSE"},
+    "MIPS_PREF": {"RISCV": "MIPS_PREF"},
+    "MIPS_CCMOV": {"RISCV": "MIPS_CCMOV"},
+    "MIPS_LWP": {"RISCV": "MIPS_LWP"},
+    "MIPS_LDP": {"RISCV": "MIPS_LDP"},
+    "MIPS_SWP": {"RISCV": "MIPS_SWP"},
+    "MIPS_SDP": {"RISCV": "MIPS_SDP"}
+  },
+  "INPUTS": {
+    "MIPS_EHB": {"RISCV": []},
+    "MIPS_IHB": {"RISCV": []},
+    "MIPS_PAUSE": {"RISCV": []},
+    "MIPS_PREF": {"RISCV": [["GPR",64],["uimm9",0],["uimm5",0]]},
+    "MIPS_CCMOV": {"RISCV": [["GPR",64],["GPR",64],["GPR",64]]},
+    "MIPS_LWP": {"RISCV": [["GPR",64],["uimm7_lsb00",0]]},
+    "MIPS_LDP": {"RISCV": [["GPR",64],["uimm7_lsb000",0]]},
+    "MIPS_SWP": {"RISCV": [["GPR",64],["GPR",64],["GPR",64],["uimm7_lsb00",0]]},
+    "MIPS_SDP": {"RISCV": [["GPR",64],["GPR",64],["GPR",64],["uimm7_lsb000",0]]}
+  },
+  "OUTPUTS": {
+    "MIPS_EHB": {"RISCV": []},
+    "MIPS_IHB": {"RISCV": []},
+    "MIPS_PAUSE": {"RISCV": []},
+    "MIPS_PREF": {"RISCV": []},
+    "MIPS_CCMOV": {"RISCV": [["GPR",64]]},
+    "MIPS_LWP": {"RISCV": [["GPR",64],["GPR",64]]},
+    "MIPS_LDP": {"RISCV": [["GPR",64],["GPR",64]]},
+    "MIPS_SWP": {"RISCV": []},
+    "MIPS_SDP": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "MIPS_EHB": {"RISCV": ["MIPSExtInst_ri","0b000011"]},
+    "MIPS_IHB": {"RISCV": ["MIPSExtInst_ri","0b000001"]},
+    "MIPS_PAUSE": {"RISCV": ["MIPSExtInst_ri","0b000101"]},
+    "MIPS_PREF": {"RISCV": ["Mips_prefetch_ri"]},
+    "MIPS_CCMOV": {"RISCV": ["RVInstR4","0b11","0b011"]},
+    "MIPS_LWP": {"RISCV": ["LWPFormat"]},
+    "MIPS_LDP": {"RISCV": ["LDPFormat"]},
+    "MIPS_SWP": {"RISCV": ["SWPFormat"]},
+    "MIPS_SDP": {"RISCV": ["SDPFormat"]}
+  },
+  "OUTPUT_BYTES": {
+    "MIPS_EHB": {"RISCV": ["MIPSExtInst_ri","0b000011"]},
+    "MIPS_IHB": {"RISCV": ["MIPSExtInst_ri","0b000001"]},
+    "MIPS_PAUSE": {"RISCV": ["MIPSExtInst_ri","0b000101"]},
+    "MIPS_PREF": {"RISCV": ["Mips_prefetch_ri"]},
+    "MIPS_CCMOV": {"RISCV": ["RVInstR4","0b11","0b011"]},
+    "MIPS_LWP": {"RISCV": ["LWPFormat"]},
+    "MIPS_LDP": {"RISCV": ["LDPFormat"]},
+    "MIPS_SWP": {"RISCV": ["SWPFormat"]},
+    "MIPS_SDP": {"RISCV": ["SDPFormat"]}
+  }
+}

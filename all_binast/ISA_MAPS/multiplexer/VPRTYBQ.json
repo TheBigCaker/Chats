@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VPRTYBQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VPRTYBQ": {"PowerPC": "VPRTYBQ"}
+  },
+  "INPUTS": {
+    "VPRTYBQ": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VPRTYBQ": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VPRTYBQ": {"PowerPC": ["VX_VT5_EO5_VB5","1538","10"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPRTYBQ": {"PowerPC": ["VX_VT5_EO5_VB5","1538","10"]}
+  }
+}

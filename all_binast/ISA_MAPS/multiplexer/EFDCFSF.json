@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFDCFSF",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFDCFSF": {"PowerPC": "EFDCFSF"}
+  },
+  "INPUTS": {
+    "EFDCFSF": {"PowerPC": [["spe4rc",0]]}
+  },
+  "OUTPUTS": {
+    "EFDCFSF": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFDCFSF": {"PowerPC": ["EFXForm_2a","755"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFDCFSF": {"PowerPC": ["EFXForm_2a","755"]}
+  }
+}

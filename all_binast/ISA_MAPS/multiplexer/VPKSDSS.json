@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VPKSDSS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VPKSDSS": {"PowerPC": "VPKSDSS"}
+  },
+  "INPUTS": {
+    "VPKSDSS": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VPKSDSS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VPKSDSS": {"PowerPC": ["VX1_Int_Ty2","1486"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPKSDSS": {"PowerPC": ["VX1_Int_Ty2","1486"]}
+  }
+}

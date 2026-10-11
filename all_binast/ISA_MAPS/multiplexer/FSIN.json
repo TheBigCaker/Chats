@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "FSIN",
+  "BACKENDS": ["X86","Mali"],
+  "INDEX": {
+    "FSIN": {"X86": "FSIN"},
+    "FSIN_TABLE.u6": {"Mali": "FSIN_TABLE.u6"},
+    "FSIN_TABLE.u6": {"Mali": "FSIN_TABLE.u6"}
+  },
+  "INPUTS": {
+    "FSIN": {"X86": []},
+    "FSIN_TABLE.u6": {"Mali": [["R32",32]]},
+    "FSIN_TABLE.u6": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "FSIN": {"X86": []},
+    "FSIN_TABLE.u6": {"Mali": [["R",32]]},
+    "FSIN_TABLE.u6": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FSIN": {"X86": ["0xD9"]},
+    "FSIN_TABLE.u6": {"Mali": ["Bifrost_add","0x67a80","0xfffe8"]},
+    "FSIN_TABLE.u6": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "FSIN": {"X86": ["0xD9"]},
+    "FSIN_TABLE.u6": {"Mali": ["Bifrost_add","0x67a80","0xfffe8"]},
+    "FSIN_TABLE.u6": {"Mali": ["Valhall_"]}
+  }
+}

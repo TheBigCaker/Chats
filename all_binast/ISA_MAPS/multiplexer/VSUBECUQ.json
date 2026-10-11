@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSUBECUQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSUBECUQ": {"PowerPC": "VSUBECUQ"}
+  },
+  "INPUTS": {
+    "VSUBECUQ": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSUBECUQ": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSUBECUQ": {"PowerPC": ["VA1a_Int_Ty","63"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSUBECUQ": {"PowerPC": ["VA1a_Int_Ty","63"]}
+  }
+}

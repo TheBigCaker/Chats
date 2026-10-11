@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MVNCC",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MVNCCi": {"ARM": "MVNCCi"}
+  },
+  "INPUTS": {
+    "MVNCCi": {"ARM": [["GPR",64],["mod_imm",0],["pred",0]]}
+  },
+  "OUTPUTS": {
+    "MVNCCi": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "MVNCCi": {"ARM": ["ARMPseudoInst","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "MVNCCi": {"ARM": ["ARMPseudoInst","4"]}
+  }
+}

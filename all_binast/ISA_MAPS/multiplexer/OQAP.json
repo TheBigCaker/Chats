@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "OQAP",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "OQAP": {"AMDGPU": "OQAP"}
+  },
+  "INPUTS": {
+    "OQAP": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "OQAP": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "OQAP": {"AMDGPU": ["R600Reg","221"]}
+  },
+  "OUTPUT_BYTES": {
+    "OQAP": {"AMDGPU": ["R600Reg","221"]}
+  }
+}

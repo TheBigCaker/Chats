@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CRBITRC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "CRBITRC": {"PowerPC": "CRBITRC"}
+  },
+  "INPUTS": {
+    "CRBITRC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "CRBITRC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "CRBITRC": {"PowerPC": ["PPCRegisterClassWithSize","32","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "CRBITRC": {"PowerPC": ["PPCRegisterClassWithSize","32","32"]}
+  }
+}

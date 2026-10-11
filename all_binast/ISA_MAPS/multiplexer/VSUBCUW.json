@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSUBCUW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSUBCUW": {"PowerPC": "VSUBCUW"}
+  },
+  "INPUTS": {
+    "VSUBCUW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSUBCUW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSUBCUW": {"PowerPC": ["VX1_Int_Ty","1408"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSUBCUW": {"PowerPC": ["VX1_Int_Ty","1408"]}
+  }
+}

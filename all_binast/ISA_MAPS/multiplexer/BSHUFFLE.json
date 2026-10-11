@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BSHUFFLE",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "BSHUFFLE": {"Sparc": "BSHUFFLE"}
+  },
+  "INPUTS": {
+    "BSHUFFLE": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "BSHUFFLE": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "BSHUFFLE": {"Sparc": ["VISInst","0b001001100"]}
+  },
+  "OUTPUT_BYTES": {
+    "BSHUFFLE": {"Sparc": ["VISInst","0b001001100"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DMXXEXTFDMR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DMXXEXTFDMR256": {"PowerPC": "DMXXEXTFDMR256"}
+  },
+  "INPUTS": {
+    "DMXXEXTFDMR256": {"PowerPC": [["dmrrowp",0],["u2imm",2]]}
+  },
+  "OUTPUTS": {
+    "DMXXEXTFDMR256": {"PowerPC": [["vsrprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "DMXXEXTFDMR256": {"PowerPC": ["XX2Form_AT3_XBp5_P2","60","484"]}
+  },
+  "OUTPUT_BYTES": {
+    "DMXXEXTFDMR256": {"PowerPC": ["XX2Form_AT3_XBp5_P2","60","484"]}
+  }
+}

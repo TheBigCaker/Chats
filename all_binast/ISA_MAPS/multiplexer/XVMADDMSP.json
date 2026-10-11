@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVMADDMSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVMADDMSP": {"PowerPC": "XVMADDMSP"}
+  },
+  "INPUTS": {
+    "XVMADDMSP": {"PowerPC": [["vsrc",0],["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVMADDMSP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVMADDMSP": {"PowerPC": ["XX3Form","60","73"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVMADDMSP": {"PowerPC": ["XX3Form","60","73"]}
+  }
+}

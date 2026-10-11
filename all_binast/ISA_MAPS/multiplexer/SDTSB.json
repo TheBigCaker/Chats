@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SDTSB",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SDTSBufferLoad": {"AMDGPU": "SDTSBufferLoad"},
+    "SDTSBufferPrefetch": {"AMDGPU": "SDTSBufferPrefetch"}
+  },
+  "INPUTS": {
+    "SDTSBufferLoad": {"AMDGPU": []},
+    "SDTSBufferPrefetch": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SDTSBufferLoad": {"AMDGPU": []},
+    "SDTSBufferPrefetch": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SDTSBufferLoad": {"AMDGPU": ["SDTypeProfile","1","3"]},
+    "SDTSBufferPrefetch": {"AMDGPU": ["SDTypeProfile","0","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTSBufferLoad": {"AMDGPU": ["SDTypeProfile","1","3"]},
+    "SDTSBufferPrefetch": {"AMDGPU": ["SDTypeProfile","0","3"]}
+  }
+}

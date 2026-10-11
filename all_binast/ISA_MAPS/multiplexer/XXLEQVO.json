@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XXLEQVO",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXLEQVOnes": {"PowerPC": "XXLEQVOnes"}
+  },
+  "INPUTS": {
+    "XXLEQVOnes": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XXLEQVOnes": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XXLEQVOnes": {"PowerPC": ["XX3Form_SameOp","60","186"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXLEQVOnes": {"PowerPC": ["XX3Form_SameOp","60","186"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCMPEZH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VCMPEZH": {"ARM": "VCMPEZH"}
+  },
+  "INPUTS": {
+    "VCMPEZH": {"ARM": [["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VCMPEZH": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VCMPEZH": {"ARM": ["AHuI","0b11101","0b11","0b0101","0b11","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCMPEZH": {"ARM": ["AHuI","0b11101","0b11","0b0101","0b11","0"]}
+  }
+}

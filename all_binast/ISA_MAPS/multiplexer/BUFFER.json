@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BUFFER",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "BUFFER_WBL2_gfx940": {"AMDGPU": "BUFFER_WBL2_gfx940"},
+    "BUFFER_INV_gfx940": {"AMDGPU": "BUFFER_INV_gfx940"}
+  },
+  "INPUTS": {
+    "BUFFER_WBL2_gfx940": {"AMDGPU": []},
+    "BUFFER_INV_gfx940": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "BUFFER_WBL2_gfx940": {"AMDGPU": []},
+    "BUFFER_INV_gfx940": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "BUFFER_WBL2_gfx940": {"AMDGPU": ["MUBUF_Real_gfx940","0x28"]},
+    "BUFFER_INV_gfx940": {"AMDGPU": ["MUBUF_Real_gfx940","0x29"]}
+  },
+  "OUTPUT_BYTES": {
+    "BUFFER_WBL2_gfx940": {"AMDGPU": ["MUBUF_Real_gfx940","0x28"]},
+    "BUFFER_INV_gfx940": {"AMDGPU": ["MUBUF_Real_gfx940","0x29"]}
+  }
+}

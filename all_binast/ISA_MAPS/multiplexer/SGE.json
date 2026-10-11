@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SGE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SGE": {"AMDGPU": "SGE"}
+  },
+  "INPUTS": {
+    "SGE": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SGE": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SGE": {"AMDGPU": ["R600_2OP","0xA"]}
+  },
+  "OUTPUT_BYTES": {
+    "SGE": {"AMDGPU": ["R600_2OP","0xA"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STOSL",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "STOSL": {"X86": "STOSL"}
+  },
+  "INPUTS": {
+    "STOSL": {"X86": [["dstidx32",0]]}
+  },
+  "OUTPUTS": {
+    "STOSL": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "STOSL": {"X86": ["0xAB"]}
+  },
+  "OUTPUT_BYTES": {
+    "STOSL": {"X86": ["0xAB"]}
+  }
+}

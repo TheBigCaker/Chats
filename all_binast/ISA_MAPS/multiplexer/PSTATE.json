@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PSTATE",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "PSTATE": {"Sparc": "PSTATE"}
+  },
+  "INPUTS": {
+    "PSTATE": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "PSTATE": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "PSTATE": {"Sparc": ["SparcCtrlReg","6"]}
+  },
+  "OUTPUT_BYTES": {
+    "PSTATE": {"Sparc": ["SparcCtrlReg","6"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SDTS",
+  "BACKENDS": ["NVPTX"],
+  "INDEX": {
+    "SDTStackRestore": {"NVPTX": "SDTStackRestore"}
+  },
+  "INPUTS": {
+    "SDTStackRestore": {"NVPTX": []}
+  },
+  "OUTPUTS": {
+    "SDTStackRestore": {"NVPTX": []}
+  },
+  "INPUT_BYTES": {
+    "SDTStackRestore": {"NVPTX": ["SDTypeProfile","0","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTStackRestore": {"NVPTX": ["SDTypeProfile","0","1"]}
+  }
+}

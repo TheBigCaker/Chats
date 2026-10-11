@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PICSTRB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "PICSTRB": {"ARM": "PICSTRB"}
+  },
+  "INPUTS": {
+    "PICSTRB": {"ARM": [["GPR",64],["addrmodepc",0],["pred",0]]}
+  },
+  "OUTPUTS": {
+    "PICSTRB": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "PICSTRB": {"ARM": ["ARMPseudoInst","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "PICSTRB": {"ARM": ["ARMPseudoInst","4"]}
+  }
+}

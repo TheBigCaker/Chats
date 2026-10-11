@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VDIVUD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VDIVUD": {"PowerPC": "VDIVUD"}
+  },
+  "INPUTS": {
+    "VDIVUD": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VDIVUD": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VDIVUD": {"PowerPC": ["VXForm_1","203"]}
+  },
+  "OUTPUT_BYTES": {
+    "VDIVUD": {"PowerPC": ["VXForm_1","203"]}
+  }
+}

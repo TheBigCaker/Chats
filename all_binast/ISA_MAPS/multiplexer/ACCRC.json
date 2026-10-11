@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ACCRC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "ACCRC": {"PowerPC": "ACCRC"}
+  },
+  "INPUTS": {
+    "ACCRC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "ACCRC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "ACCRC": {"PowerPC": ["PPCRegisterClassWithPriority","128","31","1","512"]}
+  },
+  "OUTPUT_BYTES": {
+    "ACCRC": {"PowerPC": ["PPCRegisterClassWithPriority","128","31","1","512"]}
+  }
+}

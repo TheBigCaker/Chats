@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "UXTAH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UXTAH": {"ARM": "UXTAH"}
+  },
+  "INPUTS": {
+    "UXTAH": {"ARM": [["GPR:$Rn",0],["GPRnopc:$Rm",0],["rot_imm:$rot",0]]}
+  },
+  "OUTPUTS": {
+    "UXTAH": {"ARM": [["GPRnopc:$Rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "UXTAH": {"ARM": ["AI_exta_rrot","0b01101111"]}
+  },
+  "OUTPUT_BYTES": {
+    "UXTAH": {"ARM": ["AI_exta_rrot","0b01101111"]}
+  }
+}

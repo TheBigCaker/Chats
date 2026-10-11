@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "LHZXTLS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LHZXTLS": {"PowerPC": "LHZXTLS"},
+    "LHZXTLS_32": {"PowerPC": "LHZXTLS_32"},
+    "LHZXTLS_": {"PowerPC": "LHZXTLS_"}
+  },
+  "INPUTS": {
+    "LHZXTLS": {"PowerPC": [["ptr_rc_nor0",0],["tlsreg",0]]},
+    "LHZXTLS_32": {"PowerPC": [["ptr_rc_nor0",0],["tlsreg",0]]},
+    "LHZXTLS_": {"PowerPC": [["ptr_rc_nor0",0],["tlsreg",0]]}
+  },
+  "OUTPUTS": {
+    "LHZXTLS": {"PowerPC": [["g8rc",0]]},
+    "LHZXTLS_32": {"PowerPC": [["gprc",0]]},
+    "LHZXTLS_": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LHZXTLS": {"PowerPC": ["XForm_1","31","279"]},
+    "LHZXTLS_32": {"PowerPC": ["XForm_1","31","279"]},
+    "LHZXTLS_": {"PowerPC": ["XForm_1","31","279"]}
+  },
+  "OUTPUT_BYTES": {
+    "LHZXTLS": {"PowerPC": ["XForm_1","31","279"]},
+    "LHZXTLS_32": {"PowerPC": ["XForm_1","31","279"]},
+    "LHZXTLS_": {"PowerPC": ["XForm_1","31","279"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FMVH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FMVH_X_D": {"RISCV": "FMVH_X_D"},
+    "FMVH_X_Q": {"RISCV": "FMVH_X_Q"}
+  },
+  "INPUTS": {
+    "FMVH_X_D": {"RISCV": [["rs1ty:$rs1",0]]},
+    "FMVH_X_Q": {"RISCV": [["rs1ty:$rs1",0]]}
+  },
+  "OUTPUTS": {
+    "FMVH_X_D": {"RISCV": [["rdty:$rd",0]]},
+    "FMVH_X_Q": {"RISCV": [["rdty:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "FMVH_X_D": {"RISCV": ["FPUnaryOp_r","0b1110001","0b00001","0b000"]},
+    "FMVH_X_Q": {"RISCV": ["FPUnaryOp_r","0b1110011","0b00001","0b000"]}
+  },
+  "OUTPUT_BYTES": {
+    "FMVH_X_D": {"RISCV": ["FPUnaryOp_r","0b1110001","0b00001","0b000"]},
+    "FMVH_X_Q": {"RISCV": ["FPUnaryOp_r","0b1110011","0b00001","0b000"]}
+  }
+}

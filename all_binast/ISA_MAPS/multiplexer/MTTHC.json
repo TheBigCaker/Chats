@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MTTHC",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MTTHC1": {"Mips": "MTTHC1"}
+  },
+  "INPUTS": {
+    "MTTHC1": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "OUTPUTS": {
+    "MTTHC1": {"Mips": [["FGR32Opnd",32]]}
+  },
+  "INPUT_BYTES": {
+    "MTTHC1": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "MTTHC1": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

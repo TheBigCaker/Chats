@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CFTC",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "CFTC1": {"Mips": "CFTC1"}
+  },
+  "INPUTS": {
+    "CFTC1": {"Mips": [["FGR32CCOpnd",32]]}
+  },
+  "OUTPUTS": {
+    "CFTC1": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "INPUT_BYTES": {
+    "CFTC1": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "CFTC1": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

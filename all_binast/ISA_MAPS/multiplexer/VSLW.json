@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSLW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSLW": {"PowerPC": "VSLW"}
+  },
+  "INPUTS": {
+    "VSLW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSLW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSLW": {"PowerPC": ["VX1_Int_Ty","388"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSLW": {"PowerPC": ["VX1_Int_Ty","388"]}
+  }
+}

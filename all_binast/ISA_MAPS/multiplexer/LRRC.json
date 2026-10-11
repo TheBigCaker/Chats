@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LRRC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LRRC": {"PowerPC": "LRRC"}
+  },
+  "INPUTS": {
+    "LRRC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "LRRC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "LRRC": {"PowerPC": ["PPCNonAllocatableRegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "LRRC": {"PowerPC": ["PPCNonAllocatableRegisterClass","32"]}
+  }
+}

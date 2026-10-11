@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VNMLSS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VNMLSS": {"ARM": "VNMLSS"}
+  },
+  "INPUTS": {
+    "VNMLSS": {"ARM": [["SPR",0],["SPR",0],["SPR",0]]}
+  },
+  "OUTPUTS": {
+    "VNMLSS": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VNMLSS": {"ARM": ["ASbI","0b11100","0b01","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VNMLSS": {"ARM": ["ASbI","0b11100","0b01","0","0"]}
+  }
+}

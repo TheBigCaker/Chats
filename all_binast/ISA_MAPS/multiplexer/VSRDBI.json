@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSRDBI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSRDBI": {"PowerPC": "VSRDBI"}
+  },
+  "INPUTS": {
+    "VSRDBI": {"PowerPC": [["vrrc",0],["vrrc",0],["u3imm",3]]}
+  },
+  "OUTPUTS": {
+    "VSRDBI": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSRDBI": {"PowerPC": ["VNForm_VTAB5_SD3","22","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSRDBI": {"PowerPC": ["VNForm_VTAB5_SD3","22","1"]}
+  }
+}

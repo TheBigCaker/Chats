@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "UMULXHI",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "UMULXHI": {"Sparc": "UMULXHI"}
+  },
+  "INPUTS": {
+    "UMULXHI": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "UMULXHI": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "UMULXHI": {"Sparc": ["VISInst","0b000010110"]}
+  },
+  "OUTPUT_BYTES": {
+    "UMULXHI": {"Sparc": ["VISInst","0b000010110"]}
+  }
+}

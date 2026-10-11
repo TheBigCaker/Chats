@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "AVX",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "AVX512_128_SET0": {"X86": "AVX512_128_SET0"},
+    "AVX512_512_SETALLONES": {"X86": "AVX512_512_SETALLONES"},
+    "AVX512_512_SEXT_MASK_32": {"X86": "AVX512_512_SEXT_MASK_32"},
+    "AVX512_512_SEXT_MASK_64": {"X86": "AVX512_512_SEXT_MASK_64"}
+  },
+  "INPUTS": {
+    "AVX512_128_SET0": {"X86": []},
+    "AVX512_512_SETALLONES": {"X86": []},
+    "AVX512_512_SEXT_MASK_32": {"X86": [["VK16WM",0]]},
+    "AVX512_512_SEXT_MASK_64": {"X86": [["VK8WM",0]]}
+  },
+  "OUTPUTS": {
+    "AVX512_128_SET0": {"X86": [["VR128X",128]]},
+    "AVX512_512_SETALLONES": {"X86": [["VR512",512]]},
+    "AVX512_512_SEXT_MASK_32": {"X86": [["VR512",512]]},
+    "AVX512_512_SEXT_MASK_64": {"X86": [["VR512",512]]}
+  },
+  "INPUT_BYTES": {
+    "AVX512_128_SET0": {"X86": ["0"]},
+    "AVX512_512_SETALLONES": {"X86": ["0"]},
+    "AVX512_512_SEXT_MASK_32": {"X86": ["0"]},
+    "AVX512_512_SEXT_MASK_64": {"X86": ["0"]}
+  },
+  "OUTPUT_BYTES": {
+    "AVX512_128_SET0": {"X86": ["0"]},
+    "AVX512_512_SETALLONES": {"X86": ["0"]},
+    "AVX512_512_SEXT_MASK_32": {"X86": ["0"]},
+    "AVX512_512_SEXT_MASK_64": {"X86": ["0"]}
+  }
+}

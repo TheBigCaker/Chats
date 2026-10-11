@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ORYONFP",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "ORYONFP0I4": {"AArch64": "ORYONFP0I4"},
+    "ORYONFP1I5": {"AArch64": "ORYONFP1I5"}
+  },
+  "INPUTS": {
+    "ORYONFP0I4": {"AArch64": []},
+    "ORYONFP1I5": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "ORYONFP0I4": {"AArch64": []},
+    "ORYONFP1I5": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "ORYONFP0I4": {"AArch64": ["ProcResource","1"]},
+    "ORYONFP1I5": {"AArch64": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "ORYONFP0I4": {"AArch64": ["ProcResource","1"]},
+    "ORYONFP1I5": {"AArch64": ["ProcResource","1"]}
+  }
+}

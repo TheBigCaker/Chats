@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMSUMMBM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMSUMMBM": {"PowerPC": "VMSUMMBM"}
+  },
+  "INPUTS": {
+    "VMSUMMBM": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMSUMMBM": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMSUMMBM": {"PowerPC": ["VA1a_Int_Ty3","37"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMSUMMBM": {"PowerPC": ["VA1a_Int_Ty3","37"]}
+  }
+}

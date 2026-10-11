@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "VTRN",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VTRNd8": {"ARM": "VTRNd8"},
+    "VTRNd16": {"ARM": "VTRNd16"},
+    "VTRNd32": {"ARM": "VTRNd32"},
+    "VTRNq8": {"ARM": "VTRNq8"},
+    "VTRNq16": {"ARM": "VTRNq16"},
+    "VTRNq32": {"ARM": "VTRNq32"}
+  },
+  "INPUTS": {
+    "VTRNd8": {"ARM": []},
+    "VTRNd16": {"ARM": []},
+    "VTRNd32": {"ARM": []},
+    "VTRNq8": {"ARM": []},
+    "VTRNq16": {"ARM": []},
+    "VTRNq32": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VTRNd8": {"ARM": []},
+    "VTRNd16": {"ARM": []},
+    "VTRNd32": {"ARM": []},
+    "VTRNq8": {"ARM": []},
+    "VTRNq16": {"ARM": []},
+    "VTRNq32": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VTRNd8": {"ARM": ["N2VDShuffle","0b00","0b00001"]},
+    "VTRNd16": {"ARM": ["N2VDShuffle","0b01","0b00001"]},
+    "VTRNd32": {"ARM": ["N2VDShuffle","0b10","0b00001"]},
+    "VTRNq8": {"ARM": ["N2VQShuffle","0b00","0b00001"]},
+    "VTRNq16": {"ARM": ["N2VQShuffle","0b01","0b00001"]},
+    "VTRNq32": {"ARM": ["N2VQShuffle","0b10","0b00001"]}
+  },
+  "OUTPUT_BYTES": {
+    "VTRNd8": {"ARM": ["N2VDShuffle","0b00","0b00001"]},
+    "VTRNd16": {"ARM": ["N2VDShuffle","0b01","0b00001"]},
+    "VTRNd32": {"ARM": ["N2VDShuffle","0b10","0b00001"]},
+    "VTRNq8": {"ARM": ["N2VQShuffle","0b00","0b00001"]},
+    "VTRNq16": {"ARM": ["N2VQShuffle","0b01","0b00001"]},
+    "VTRNq32": {"ARM": ["N2VQShuffle","0b10","0b00001"]}
+  }
+}

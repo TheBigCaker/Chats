@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SMULL",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SMULL": {"ARM": "SMULL"},
+    "SMULLv5": {"ARM": "SMULLv5"}
+  },
+  "INPUTS": {
+    "SMULL": {"ARM": [["GPR",64],["GPR",64]]},
+    "SMULLv5": {"ARM": [["GPR",64],["GPR",64],["pred",0],["cc_out",0]]}
+  },
+  "OUTPUTS": {
+    "SMULL": {"ARM": [["GPR",64],["GPR",64]]},
+    "SMULLv5": {"ARM": [["GPR",64],["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "SMULL": {"ARM": ["AsMul1I64","0b0000110"]},
+    "SMULLv5": {"ARM": ["ARMPseudoExpand","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMULL": {"ARM": ["AsMul1I64","0b0000110"]},
+    "SMULLv5": {"ARM": ["ARMPseudoExpand","4"]}
+  }
+}

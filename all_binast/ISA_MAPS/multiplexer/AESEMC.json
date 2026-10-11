@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "AESEMC",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "AESEMC_2ZZI_B": {"AArch64": "AESEMC_2ZZI_B"},
+    "AESEMC_4ZZI_B": {"AArch64": "AESEMC_4ZZI_B"}
+  },
+  "INPUTS": {
+    "AESEMC_2ZZI_B": {"AArch64": [["ZZ_b_mul_r:$_Zdn",0],["ZPR128:$Zm",128],["VectorIndexS32b_timm:$imm2",0]]},
+    "AESEMC_4ZZI_B": {"AArch64": [["ZZZZ_b_mul_r:$_Zdn",0],["ZPR128:$Zm",128],["VectorIndexS32b_timm:$imm2",0]]}
+  },
+  "OUTPUTS": {
+    "AESEMC_2ZZI_B": {"AArch64": [["ZZ_b_mul_r:$Zdn",0]]},
+    "AESEMC_4ZZI_B": {"AArch64": [["ZZZZ_b_mul_r:$Zdn",0]]}
+  },
+  "INPUT_BYTES": {
+    "AESEMC_2ZZI_B": {"AArch64": ["sve_crypto_binary_multi2","0b100"]},
+    "AESEMC_4ZZI_B": {"AArch64": ["sve_crypto_binary_multi4","0b1000"]}
+  },
+  "OUTPUT_BYTES": {
+    "AESEMC_2ZZI_B": {"AArch64": ["sve_crypto_binary_multi2","0b100"]},
+    "AESEMC_4ZZI_B": {"AArch64": ["sve_crypto_binary_multi4","0b1000"]}
+  }
+}

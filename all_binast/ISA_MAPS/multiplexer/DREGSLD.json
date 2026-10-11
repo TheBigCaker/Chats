@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DREGSLD",
+  "BACKENDS": ["AVR"],
+  "INDEX": {
+    "DREGSLD8lo": {"AVR": "DREGSLD8lo"}
+  },
+  "INPUTS": {
+    "DREGSLD8lo": {"AVR": []}
+  },
+  "OUTPUTS": {
+    "DREGSLD8lo": {"AVR": []}
+  },
+  "INPUT_BYTES": {
+    "DREGSLD8lo": {"AVR": ["RegisterClass","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "DREGSLD8lo": {"AVR": ["RegisterClass","8"]}
+  }
+}

@@ -1,0 +1,1558 @@
+CCIfILP32	1	CCAction A	1	CCIf
+push_opcode_through_ext	2	Instruction opcode	Instruction extOpcode	1	GICombineRule
+unmerge_duplane	1	Instruction Op	1	GICombineRule
+FMVExtension	2	name	enumeration	0
+Extension	5	TargetFeatureName	Spelling	ArchitectureFeatureName	Desc	list<SubtargetFeature> Implies = []	1	SubtargetFeature
+ExtensionWithMArch	5	TargetFeatureName	Spelling	ArchitectureFeatureName	Desc	list<SubtargetFeature> Implies = []	1	Extension
+Architecture64	6	int major	int minor	profile	target_feature_name	list<SubtargetFeature> implied_features	list<Extension> default_extensions	1	SubtargetFeature
+relaxed_load	1	PatFrags base	1	PatFrag
+acquiring_load	1	PatFrags base	1	PatFrag
+seq_cst_load	1	PatFrags base	1	PatFrag
+releasing_store	1	PatFrag base	1	PatFrag
+relaxed_store	1	PatFrag base	1	PatFrag
+cmp_swap_128	9	(outs GPR64common:$RdLo	GPR64common:$RdHi	GPR32common:$scratch)	(ins GPR64:$addr	GPR64:$desiredLo	GPR64:$desiredHi	GPR64:$newLo	GPR64:$newHi)	[]	0
+InstSubst	3	Asm	Result	EmitPriority = 0	2	Requires	InstAlias
+EncodedI	2	cstr	pattern	1	AArch64Inst
+I	6	oops	iops	asm	operands	cstr	pattern	1	EncodedI
+TriOpFrag	1	res	1	PatFrag
+ArithmeticShifterOperand	1	int width	1	AsmOperandClass
+LogicalShifterOperand	1	int width	1	AsmOperandClass
+UImmScaledMemoryIndexed	2	int Width	int Scale	1	AsmOperandClass
+SImmScaledMemoryIndexed	2	int Width	int Scale	1	AsmOperandClass
+SImmOperand	1	int width	1	AsmOperandClass
+AsmImmRange	2	int Low	int High	1	AsmOperandClass
+BranchTarget	1	int N	1	AsmOperandClass
+PCRelLabel	1	int N	1	BranchTarget
+fixedpoint_i32	1	ValueType FloatVT	2	Operand	ComplexPattern
+fixedpoint_i64	1	ValueType FloatVT	2	Operand	ComplexPattern
+fixedpoint_recip_i32	1	ValueType FloatVT	2	Operand	ComplexPattern
+fixedpoint_recip_i64	1	ValueType FloatVT	2	Operand	ComplexPattern
+arith_shift	2	ValueType Ty	int width	1	Operand
+arith_shifted_reg	3	ValueType Ty	regclass	int width	2	Operand	ComplexPattern
+logical_shift	1	int width	1	Operand
+logical_shifted_reg	3	ValueType Ty	regclass	shiftop	2	Operand	ComplexPattern
+addsub_shifted_imm	1	ValueType Ty	2	Operand	ComplexPattern
+addsub_shifted_imm_neg	1	ValueType Ty	1	Operand
+neg_addsub_shifted_imm	1	ValueType Ty	2	Operand	ComplexPattern
+arith_extended_reg32	1	ValueType Ty	2	Operand	ComplexPattern
+arith_extended_reg32to64	1	ValueType Ty	2	Operand	ComplexPattern
+AsmVectorIndex	3	int Min	int Max	NamePrefix=""	1	AsmOperandClass
+AsmVectorIndexOpnd	2	ValueType ty	AsmOperandClass mc	1	Operand
+VectorIndex	3	ValueType ty	AsmOperandClass mc	code pred	0
+UImmScaledMemoryIndexedRange	3	int Width	int Scale	int OffsetVal	1	AsmOperandClass
+SimpleSystemI	5	L	iops	asm	operands	pattern = []	1	BaseSystemI	4-0=0b11111
+RtSystemI	6	L	oops	iops	asm	operands	pattern = []	2	Sched	BaseSystemI	4-0=Rt
+RegInputSystemI	4	CRm	Op2	asm	pattern = []	1	RtSystemI	20-12=0b000110001	7-5=Op2	11-8=CRm
+HintE	1	mnemonic	2	Sched	I	4-0=imm16	15-12=0b0010	18-16=imm16	11-5=imm16	20-19=0b00	31-22=0b1101010100
+CRmSystemI	4	crmtype	opc	asm	pattern = []	2	Sched	SimpleSystemI	20-12=0b000110011	7-5=opc	11-8=CRm
+SystemNoOperands	3	op2	asm	pattern = []	2	Sched	SimpleSystemI	4-0=0b11111	7-5=op2	31-12=0b11010101000000110010	11-8=CRm
+MRSI	6	1	(outs GPR64:$Rt)	(ins mrs_sysreg_op:$systemreg)	"mrs"	"\t$Rt	$systemreg"	0	20-5=systemreg
+MSRI	7	0	(outs)	(ins msr_sysreg_op:$systemreg	GPR64:$Rt)	"msr"	"\t$systemreg	$Rt"	0	20-5=systemreg
+MSRpstateImm0_15	5	(ins pstatefield4_op:$pstatefield	imm0_15:$imm)	"msr"	"\t$pstatefield	$imm"	0	18-16=pstatefield	7-5=pstatefield	11-8=imm
+MSRpstateImm0_1	5	(ins pstatefield1_op:$pstatefield	imm0_1:$imm)	"msr"	"\t$pstatefield	$imm"	0	11-9=pstatefield	18-16=pstatefield	7-5=pstatefield
+SystemXtI	1	asm	1	RtSystemI	15-12=Cn	18-16=op1	7-5=op2	20-19=0b01	11-8=Cm
+SystemLXtI	2	L	asm	1	RtSystemI	15-12=Cn	18-16=op1	7-5=op2	20-19=0b01	11-8=Cm
+BaseBranchReg	6	opc	oops	iops	asm	operands	pattern	2	Sched	I	31-25=0b1101011	4-0=0b00000	15-10=0b000000	20-16=0b11111	24-21=opc
+BranchReg	3	opc	asm	pattern	1	BaseBranchReg	9-5=Rn
+AuthBase	6	M	oops	iops	asm	operands	pattern	2	Sched	I	20-11=0b1111100001	31-25=0b1101011	4-0=0b11111
+AuthBranchTwoOperands	3	op	M	asm	1	AuthBase	4-0=Rm	9-5=Rn	24-22=0b100
+AuthOneOperand	3	opc	M	asm	1	AuthBase	9-5=Rn	23-21=opc
+AuthLoad	3	M	asm	opr	0
+BranchCond	2	bit4	mnemonic	2	Sched	I	31-24=0b01010100	23-5=target	3-0=cond
+BaseCmpBranch	4	regtype	op	asm	SDNode node	2	Sched	I	4-0=Rt	23-5=target	30-25=0b011010
+CmpBranch	3	op	asm	SDNode node	0
+tbz_imm0_31	1	AsmOperandClass matcher	2	Operand	ImmLeaf
+TestBranch	3	op	asm	SDNode node	0
+BImm	4	op	iops	asm	pattern	2	Sched	I	25-0=addr	30-26=0b00101
+BranchImm	3	op	asm	pattern	1	BImm	4-0=Rd	15-10=opc	9-5=Rn	20-16=opc2	28-21=0b11010110
+OneWRegData	3	opc	asm	node	1	BaseOneOperandData	31-15=0b11011010110000010	4-0=Rd	14-12=opcode_prefix	11-10=opcode	9-5=Rn
+SignAuthZero	4	opcode_prefix	opcode	asm	op	2	Sched	I	31-15=0b11011010110000010	4-0=Rd	14-12=opcode_prefix	11-10=opcode	9-5=0b11111
+SignAuthTwoOperand	3	opc	asm	OpNode	2	Sched	I	13-10=opc	4-0=Rd	9-5=Rn	20-16=Rm	15-14=0b00	31-21=0b10011010110
+ClearAuth	2	data	asm	2	Sched	I	4-0=Rd	9-5=0b11111	31-11=0b110110101100000101000
+SignAuthFixedRegs	3	opcode2	opcode	asm	2	Sched	I	4-0=0b11110	15-10=opcode	9-5=0b11111	20-16=opcode2	28-21=0b11010110
+SignAuthPCRel	2	opc	asm	2	Sched	I	4-0=0b11111	20-5=label	22-21=opc	30-23=0b11100111
+SignAuthOneReg	3	opcode2	opcode	asm	2	Sched	I	4-0=0b11110	15-10=opcode	9-5=Rn	20-16=opcode2	28-21=0b11010110
+SignAuthReturnPCRel	3	opc	op2	asm	2	Sched	I	31-24=0b01010101	4-0=op2	20-5=label	23-21=opc
+SignAuthReturnReg	2	op3	asm	2	Sched	I	31-25=0b1101011	4-0=Rm	15-10=op3	9-5=0b11111	20-16=0b11111	24-21=0b0010
+BaseFlagManipulation	5	sf	sz	iops	asm	ops	2	Sched	I	13-10=0b0010	4-0=0b01101	9-5=Rn	30-15=0b0111010000000000
+FlagRotate	3	iops	asm	ops	1	BaseFlagManipulation	13-10=0b0001	20-15=imm	3-0=mask
+BaseBaseAddSubCarry	4	isSub	regtype	asm	pattern	2	Sched	I	4-0=Rd	15-10=0	9-5=Rn	20-16=Rm	28-21=0b11010000
+BaseAddSubCarry	4	isSub	regtype	asm	SDNode OpNode	1	BaseBaseAddSubCarry
+AddSubCarry	5	isSub	asm	asm_setflags	SDNode OpNode	SDNode OpNode_setflags	0
+BaseTwoOperandRegReg	8	sf	S	opc	regtype	asm	OpNode	in1regtype = regtype	in2regtype = regtype	1	I	4-0=Rd	15-10=opc	9-5=Rn	20-16=Rm	28-21=0b11010110
+BaseDiv	5	size	isSigned	regtype	asm	OpNode	1	BaseTwoOperandRegReg
+Div	3	isSigned	asm	OpNode	0
+BaseShift	5	size	shift_type	regtype	asm	OpNode = null_frag	2	Sched	BaseTwoOperandRegReg	11-10=shift_type
+Shift	3	shift_type	asm	SDNode OpNode	0
+ShiftAlias	3	asm	Instruction inst	regtype	1	InstAlias	4-0=Rd	14-10=Ra	9-5=Rn	20-16=Rm	23-21=opc	30-24=0b0011011
+MulAccum	2	isSub	asm	0
+WideMulAccum	5	isSub	opc	asm	AccNode	SDNode ExtNode	2	Sched	BaseMulAccum
+MulHi	3	opc	asm	SDNode OpNode	2	Sched	I	31-24=0b10011011	4-0=Rd	14-10=0b11111	9-5=Rn	20-16=Rm	23-21=opc
+MulAccumWAlias	2	asm	Instruction inst	1	InstAlias	4-0=Rd	11-10=sz	9-5=Rn	20-16=Rm	15-13=0b010	30-21=0b0011010110
+ADRI	4	page	asm	adr	pattern	2	Sched	I	4-0=Xd	30-29=label	23-5=label	28-24=0b10000
+MoveImmediate	2	opc	asm	0
+InsertImmediate	2	opc	asm	0
+BaseAddSubImm	7	isSub	setFlags	dstRegtype	asm_inst	asm_ops	inputs	pattern	2	Sched	I	4-0=Rd	9-5=Rn	28-24=0b10001
+AddSubImmShift	7	isSub	setFlags	dstRegtype	srcRegtype	addsub_shifted_imm immtype	asm_inst	OpNode	1	BaseAddSubImm	21-10=imm	23-22=imm
+BaseAddSubRegPseudo	2	regtype	OpNode	2	Sched	Pseudo	4-0=Rd	15-10=shift	9-5=Rn	20-16=Rm	23-22=shift	28-24=0b01011
+BaseAddSubEReg	7	isSub	setFlags	dstRegtype	src1Regtype	src2Regtype	asm	OpNode	2	Sched	I	4-0=Rd	9-5=Rn	20-16=Rm	15-13=extend	23-21=0b001	12-10=extend	28-24=0b01011
+AddSubRegAlias	5	asm	Instruction inst	dstRegtype	src1Regtype	src2	1	InstAlias	14-13=0b11
+AddSubS	6	isSub	mnemonic	SDNode OpNode	cmp	alias	cmpAlias	0	14-13=0b11
+AddSubG	3	isSub	asm_inst	OpNode	1	BaseAddSubImm	13-10=imm4	15-14=0b00	21-16=imm6	23-22=0b10
+SUBP	3	setsFlags	asm_instr	OpNode	1	BaseTwoOperandRegReg	4-0=Rd	15-10=imm	9-5=Rn	20-16=Rm	30-23=0b00100111
+ExtractImm	1	asm	0
+BitfieldImm	2	opc	asm	0
+BitfieldImmWith2RegArgs	2	opc	asm	0
+BaseLogicalImm	6	opc	dregtype	sregtype	imm_type	asm	pattern	2	Sched	I	4-0=Rd	30-29=opc	15-10=imm	9-5=Rn	21-16=imm	28-23=0b100100
+BaseLogicalSReg	6	opc	N	regtype	logical_shifted_reg shifted_regtype	asm	pattern	2	Sched	I	4-0=Rd	30-29=opc	15-10=shift	9-5=Rn	20-16=Rm	23-22=shift	28-24=0b01010
+LogicalRegAlias	4	asm	Instruction inst	regtype	op2	1	InstAlias
+LogicalImmS	4	opc	mnemonic	SDNode OpNode	Alias	0
+BaseLogicalRegPseudo	2	regtype	OpNode	2	Sched	Pseudo
+LogicalRegS	4	opc	N	mnemonic	OpNode = null_frag	0
+CondComparison	3	op	mnemonic	SDNode OpNode	0
+BaseCondSelect	4	op	op2	regtype	asm	2	Sched	I	4-0=Rd	11-10=op2	9-5=Rn	15-12=cond	20-16=Rm	29-21=0b011010100
+CondSelect	3	op	op2	asm	0
+BaseCondSelectOp	5	op	op2	regtype	asm	PatFrag frag	2	Sched	I	4-0=Rd	11-10=op2	9-5=Rn	15-12=cond	20-16=Rm	29-21=0b011010100
+CondSelectOp	4	op	op2	asm	PatFrag frag	0
+UImm12OffsetOperand	1	int Scale	1	AsmOperandClass
+uimm12_scaled	1	int Scale	1	Operand
+BaseLoadStoreUI	7	sz	V	opc	oops	iops	asm	pattern	1	I	4-0=Rt	21-10=offset	25-24=0b01	29-27=0b111	9-5=Rn	23-22=opc	31-30=sz
+LoadUI	7	sz	V	opc	DAGOperand regtype	indextype	asm	pattern	0
+StoreUI	7	sz	V	opc	DAGOperand regtype	indextype	asm	pattern	0
+StoreUIz	7	sz	V	opc	RegisterOperand regtype	indextype	asm	pattern	0
+MemExtendOperand	2	Reg	int Width	1	AsmOperandClass
+ro_extend	3	AsmOperandClass ParserClass	Reg	int Width	1	Operand
+ROAddrMode	4	ComplexPattern windex	ComplexPattern xindex	wextend	xextend	0
+LoadStore8RO	7	sz	V	opc	asm	ins	outs	pat	1	I	4-0=Rt	25-24=0b00	29-27=0b111	11-10=0b10	9-5=Rn	20-16=Rm	23-22=opc	31-30=sz
+ROInstAlias	4	asm	DAGOperand regtype	Instruction INST	ro_extend ext	1	InstAlias
+Store8RO	7	sz	V	opc	DAGOperand regtype	asm	ValueType Ty	storeop	0
+LoadStore16RO	7	sz	V	opc	asm	ins	outs	pat	1	I	4-0=Rt	25-24=0b00	29-27=0b111	11-10=0b10	9-5=Rn	20-16=Rm	23-22=opc	31-30=sz
+Load16RO	7	sz	V	opc	DAGOperand regtype	asm	ValueType Ty	loadop	0
+Store16RO	7	sz	V	opc	DAGOperand regtype	asm	ValueType Ty	storeop	0
+LoadStore32RO	7	sz	V	opc	asm	ins	outs	pat	1	I	4-0=Rt	25-24=0b00	29-27=0b111	11-10=0b10	9-5=Rn	20-16=Rm	23-22=opc	31-30=sz
+Load32RO	7	sz	V	opc	DAGOperand regtype	asm	ValueType Ty	loadop	0
+Store32RO	7	sz	V	opc	DAGOperand regtype	asm	ValueType Ty	storeop	0
+LoadStore64RO	7	sz	V	opc	asm	ins	outs	pat	1	I	4-0=Rt	25-24=0b00	29-27=0b111	11-10=0b10	9-5=Rn	20-16=Rm	23-22=opc	31-30=sz
+Load64RO	7	sz	V	opc	DAGOperand regtype	asm	ValueType Ty	loadop	0
+Store64RO	7	sz	V	opc	DAGOperand regtype	asm	ValueType Ty	storeop	0
+LoadStore128RO	7	sz	V	opc	asm	ins	outs	pat	1	I	4-0=Rt	25-24=0b00	29-27=0b111	11-10=0b10	9-5=Rn	20-16=Rm	23-22=opc	31-30=sz
+Load128RO	7	sz	V	opc	DAGOperand regtype	asm	ValueType Ty	loadop	0
+Store128RO	5	sz	V	opc	DAGOperand regtype	asm	0
+PrefetchRO	4	sz	V	opc	asm	0
+BaseLoadStoreUnscale	7	sz	V	opc	oops	iops	asm	pattern	1	I	4-0=Rt	20-12=offset	25-24=0b00	29-27=0b111	11-10=0b00	9-5=Rn	23-22=opc	31-30=sz
+BaseLoadUnscaleV84	4	asm	sz	opc	DAGOperand regtype	0
+BaseStoreUnscaleV84	4	asm	sz	opc	DAGOperand regtype	0
+LoadUnscaled	6	sz	V	opc	DAGOperand regtype	asm	pattern	0
+StoreUnscaled	6	sz	V	opc	DAGOperand regtype	asm	pattern	0
+PrefetchUnscaled	5	sz	V	opc	asm	pat	0
+BaseLoadStoreUnprivileged	6	sz	V	opc	oops	iops	asm	1	I	4-0=Rt	20-12=offset	25-24=0b00	29-27=0b111	11-10=0b10	9-5=Rn	23-22=opc	31-30=sz
+LoadUnprivileged	5	sz	V	opc	regtype	asm	0
+StoreUnprivileged	5	sz	V	opc	regtype	asm	0
+BaseLoadStorePreIdx	8	sz	V	opc	oops	iops	asm	cstr	pat	1	I	4-0=Rt	20-12=offset	25-24=0	29-27=0b111	11-10=0b11	9-5=Rn	23-22=opc	31-30=sz
+BaseLoadStorePostIdx	8	sz	V	opc	oops	iops	asm	cstr	pat	1	I	4-0=Rt	20-12=offset	25-24=0b00	29-27=0b111	11-10=0b01	9-5=Rn	23-22=opc	31-30=sz
+BaseLoadStorePairOffset	6	opc	V	L	oops	iops	asm	1	I	25-23=0b010	4-0=Rt	14-10=Rt2	29-27=0b101	9-5=Rn	21-15=offset	31-30=opc
+LoadPairOffset	5	opc	V	RegisterOperand regtype	indextype	asm	0
+StorePairOffset	5	opc	V	RegisterOperand regtype	indextype	asm	0
+BaseLoadStoreAcquirePairOffset	5	opc	L	oops	iops	asm	1	I	4-0=Rt	11-10=0b10	9-5=Rn	15-12=opc	20-16=Rt2	31-23=0b110110010
+LoadAcquirePairOffset	2	opc	asm	0
+StoreAcquirePairOffset	2	opc	asm	0
+BaseLoadStorePairPreIdx	6	opc	V	L	oops	iops	asm	1	I	25-23=0b011	4-0=Rt	14-10=Rt2	29-27=0b101	9-5=Rn	21-15=offset	31-30=opc
+BaseLoadStorePairPostIdx	6	opc	V	L	oops	iops	asm	1	I	25-23=0b001	4-0=Rt	14-10=Rt2	29-27=0b101	9-5=Rn	21-15=offset	31-30=opc
+BaseLoadStorePairNoAlloc	6	opc	V	L	oops	iops	asm	1	I	25-23=0b000	4-0=Rt	14-10=Rt2	29-27=0b101	9-5=Rn	21-15=offset	31-30=opc
+LoadPairNoAlloc	5	opc	V	DAGOperand regtype	indextype	asm	0
+StorePairNoAlloc	5	opc	V	DAGOperand regtype	indextype	asm	0
+BaseLoadStorePairNoAllocLSUI	6	opc	V	L	oops	iops	asm	1	I	25-23=0b000	4-0=Rt	14-10=Rt2	29-27=0b101	9-5=Rn	21-15=offset	31-30=opc
+LoadPairNoAllocLSUI	5	opc	V	DAGOperand regtype	indextype	asm	0
+StorePairNoAllocLSUI	5	opc	V	DAGOperand regtype	indextype	asm	0
+LoadStoreExclusiveSimple	9	sz	o2	L	o1	o0	oops	iops	asm	operands	1	BaseLoadStoreExclusive	4-0=Rt	14-10=0b11111	9-5=Rn	20-16=0b11111
+LoadExclusive	7	sz	o2	L	o1	o0	regtype	asm	2	Sched	LoadStoreExclusiveSimple	4-0=Rt	14-10=Rt2	9-5=Rn	20-16=0b11111
+LoadExclusiveLSUI	5	sz	L	o0	regtype	asm	2	Sched	BaseLoadStoreExclusiveLSUI	4-0=Rt	14-10=0b11111	9-5=Rn	20-16=0b11111
+StoreExclusiveLSUI	5	sz	L	o0	regtype	asm	2	Sched	BaseLoadStoreExclusiveLSUI	4-0=Rt	14-10=0b11111	9-5=Rn	20-16=Ws
+BaseLoadUnprivilegedLSUI	4	sz	oops	iops	asm	1	I	29-23=0b0010010	4-0=Rt	14-10=0b11111	9-5=Rn	20-16=0b11111	31-30=sz
+LoadUnprivilegedLSUI	3	sz	regtype	asm	0
+BaseStoreUnprivilegedLSUI	4	sz	oops	iops	asm	1	I	29-23=0b0010010	4-0=Rt	14-10=0b11111	9-5=Rn	20-16=Ws	31-30=sz
+StoreUnprivilegedLSUI	3	sz	regtype	asm	0
+StoreExclusivePair	7	sz	o2	L	o1	o0	regtype	asm	2	Sched	BaseLoadStoreExclusive	4-0=Rt	14-10=Rt2	9-5=Rn	20-16=Ws
+BaseMemTag	7	opc1	opc2	asm_insn	asm_opnds	cstr	oops	iops	2	Sched	I	31-24=0b11011001	11-10=opc2	9-5=Rn	23-22=opc1
+MemTagVector	5	Load	asm_insn	asm_opnds	oops	iops	1	BaseMemTag	4-0=Rt	20-12=0b000000000
+MemTagLoad	2	asm_insn	asm_opnds	1	BaseMemTag	4-0=Rt	20-12=offset
+BaseMemTagStore	7	opc1	opc2	asm_insn	asm_opnds	cstr	oops	iops	1	BaseMemTag	4-0=Rt	20-12=offset
+MemTagStore	2	opc1	insn	0
+UDFType	2	opc	asm	2	Sched	I	31-16=opc	15-0=imm
+FPToIntegerUnscaled	4	rmode	opcode	asm	OpN	0
+FPToIntegerSIMDScalar	4	rmode	opcode	asm	OpN	0
+FPToIntegerScaled	4	rmode	opcode	asm	OpN	0
+IntegerToFP	4	rmode	opcode	asm	node	0	23-22=0b11
+IntegerToFPSIMDScalar	4	rmode	opcode	asm	node = null_frag	0	23-22=0b11
+UnscaledConversion	1	asm	0	23-22=0b11
+FPConversion	1	asm	0
+SingleOperandFPData	4	opcode	asm	node = null_frag	int fpexceptions = 1	0	23-22=0b11
+SingleOperandFPDataNoException	3	opcode	asm	node = null_frag	1	SingleOperandFPData	23-22=0b00
+FRIntNNT	3	opcode	asm	node = null_frag	1	SingleOperandFPNo16	31-24=0b00011110	4-0=Rd	11-10=0b10	9-5=Rn	15-12=opcode	20-16=Rm
+TwoOperandFPData	3	opcode	asm	node = null_frag	0	23-22=0b11
+TwoOperandFPDataNeg	3	opcode	asm	node	0	23-22=0b11
+ThreeOperandFPData	4	isNegated	isSub	asm	node	0	23-22=0b11
+FPComparison	3	signalAllNans	asm	OpNode = null_frag	0	23-22=0b11
+FPCondComparison	3	signalAllNans	mnemonic	OpNode = null_frag	0	23-22=0b11
+BaseFPCondSelect	3	regtype	ValueType vt	asm	2	Sched	I	31-24=0b00011110	4-0=Rd	11-10=0b11	9-5=Rn	15-12=cond	20-16=Rm
+FPCondSelect	1	asm	0	23-22=0b11
+BaseFPMoveImmediate	3	regtype	fpimmtype	asm	2	Sched	I	31-24=0b00011110	12-5=0b10000000	4-0=Rd	20-13=imm
+FPMoveImmediate	1	asm	0	23-22=0b11
+SIMDLogicalThreeVectorPseudo	1	OpNode	0
+SIMDThreeSameVector	4	U	opc	asm	OpNode	0
+SIMDThreeSameVectorBHS	4	U	opc	asm	OpNode	0
+SIMDThreeSameVectorBHSTied	4	U	opc	asm	OpNode	0
+SIMDThreeSameVectorB	4	U	opc	asm	OpNode	0
+SIMDLogicalThreeVector	4	U	size	asm	OpNode = null_frag	0
+SIMDLogicalThreeVectorTied	4	U	size	asm	OpNode = null_frag	0
+BaseSIMDThreeSameVectorDot	11	Q	U	sz	opc	asm	kind1	kind2	RegisterOperand RegType	ValueType AccumType	ValueType InputType	OpNode	1	BaseSIMDThreeSameVectorTied
+SIMDThreeSameVectorDot	4	U	Mixed	asm	OpNode	0
+SIMDThreeSameVectorFML	5	U	b13	size	asm	OpNode	0
+SIMDThreeSameVectorMLA	3	Q	asm	op	0
+SIMDThreeSameVectorMLAL	4	Q	sz	asm	op	0
+SIMDThreeSameVectorFMLA	2	asm	OpNode = null_frag	0
+SIMDThreeSameVectorFMLAWiden	2	asm	OpNode = null_frag	0
+SIMDThreeSameVectorFDot	2	asm	OpNode = null_frag	0
+BaseSIMDThreeVectors	9	Q	U	size	op	RegisterOperand regtype1	RegisterOperand regtype2	asm	kind1	kind2	2	Sched	I	4-0=Rd	14-11=op	9-5=Rn	20-16=Rm	23-22=size	28-24=0b01110
+SIMD_FP8_CVTN_F16	2	asm	Op	0
+SIMD_FP8_CVTN_F32	2	asm	Op	0
+SIMD_FP8_Dot2	2	asm	op	0
+SIMD_FP8_Dot4	2	asm	op	0
+SIMDTwoVectorBHS	4	U	opc	asm	OpNode	0
+BaseSIMDVectorLShiftLongBySize	7	Q	size	RegisterOperand regtype	asm	dstkind	srckind	amount	2	Sched	I	29-24=0b101110	4-0=Rd	21-10=0b100001001110	9-5=Rn	23-22=size
+SIMDVectorLShiftLongBySizeBHS	0	0
+SIMDLongTwoVector	4	U	opc	asm	OpNode	0
+SIMDLongTwoVectorTied	4	U	opc	asm	OpNode	0
+SIMDTwoVectorBHSDTied	4	U	opc	asm	OpNode	0
+SIMDTwoVectorBHSD	4	U	opc	asm	OpNode = null_frag	0
+SIMDTwoVectorB	5	U	size	opc	asm	OpNode	0
+SIMDTwoVectorBH	4	U	opc	asm	OpNode	0
+SIMDTwoVectorFP	6	U	S	opc	asm	OpNode	int fpexceptions = 1	0
+SIMDTwoVectorFPNoException	5	U	S	opc	asm	OpNode	1	SIMDTwoVectorFP
+FRIntNNTVector	4	U	op	asm	OpNode = null_frag	1	SIMDTwoVectorSD
+SIMDMixedTwoVector	4	U	opc	asm	OpNode	0
+SIMD_FP8_CVTL	4	bits<2>sz	asm	ValueType dty	Op	0
+BaseSIMDCmpTwoVector	12	Q	U	size	size2	opcode	RegisterOperand regtype	asm	kind	zero	ValueType dty	ValueType sty	OpNode	2	Sched	I	4-0=Rd	11-10=0b10	9-5=Rn	16-12=opcode	18-17=0b00	20-19=size2	23-22=size	28-24=0b01110
+SIMDCmpTwoVector	4	U	opc	asm	OpNode	0
+SIMDFPCmpTwoVector	5	U	S	opc	asm	OpNode	0
+SIMDFPWidenTwoVector	4	U	S	opc	asm	0
+SIMDFPNarrowTwoVector	4	U	S	opc	asm	0
+SIMDFPInexactCvtTwoVector	5	U	S	opc	asm	OpNode	0
+SIMDNarrowThreeVectorBHS	4	U	opc	asm	IntOp	0
+SIMDDifferentThreeVectorBD	4	U	opc	asm	OpNode	0
+SIMDLongThreeVectorHS	4	U	opc	asm	OpNode	0
+SIMDLongThreeVectorTiedBHS	4	U	opc	asm	OpNode	0
+SIMDLongThreeVectorSQDMLXTiedHS	4	U	opc	asm	Accum	0
+SIMDWideThreeVectorBHS	4	U	opc	asm	OpNode	0
+BaseSIMDBitwiseExtract	5	size	RegisterOperand regtype	ValueType vty	asm	kind	2	Sched	I	4-0=Rd	14-11=imm	9-5=Rn	20-16=Rm	29-21=0b101110000
+SIMDBitwiseExtract	1	asm	0
+BaseSIMDZipVector	7	size	opc	RegisterOperand regtype	asm	kind	SDNode OpNode	ValueType valty	2	Sched	I	29-24=0b001110	4-0=Rd	14-12=opc	11-10=0b10	9-5=Rn	20-16=Rm	23-22=size
+SIMDZipVector	3	bits<3>opc	asm	SDNode OpNode	0
+SIMDThreeScalarD	4	U	opc	asm	OpNode	0
+SIMDThreeScalarBHSD	6	U	opc	asm	OpNode	G_OpNode	SatOp	0
+SIMDThreeScalarHS	5	U	opc	asm	OpNode	G_OpNode	0
+SIMDThreeScalarHSTied	6	U	R	opc	asm	OpNode	G_OpNode	0
+SIMDFPThreeScalar	6	U	S	opc	asm	OpNode = null_frag	Predicate pred = HasNEON	0
+SIMDThreeScalarFPCmp	5	U	S	opc	asm	OpNode = null_frag	0
+BaseSIMDThreeScalarMixed	8	U	size	opcode	oops	iops	asm	cstr	pat	2	Sched	I	4-0=Rd	15-11=opcode	9-5=Rn	20-16=Rm	23-22=size	31-30=0b01	28-24=0b11110
+SIMDCmpTwoScalarD	4	U	opc	asm	OpNode	0
+SIMDFPCmpTwoScalar	5	U	S	opc	asm	OpNode	0
+SIMDTwoScalarD	5	U	opc	asm	OpNode = null_frag	list<Predicate> preds = []	0
+SIMDTwoScalarBHSD	5	U	opc	asm	OpNode	Intrinsic IntrNode	0
+SIMDTwoScalarBHSDTied	5	U	opc	asm	OpNode	Intrinsic IntrNode	0
+SIMDPairwiseScalarD	3	U	opc	asm	0
+SIMDAcrossLanesBHS	3	U	opcode	asm	0
+SIMDAcrossLanesHSD	3	U	opcode	asm	0
+BaseSIMDInsDup	8	Q	op	outs	ins	asm	operands	constraints	pattern	2	Sched	I	4-0=Rd	9-5=Rn	28-21=0b01110000
+SIMDDupFromMain	6	Q	imm5	size	ValueType vectype	RegisterOperand vecreg	regtype	1	BaseSIMDInsDup	14-11=0b0001	20-16=imm5
+SIMDDupFromElement	8	Q	dstkind	srckind	ValueType vectype	ValueType insreg	RegisterOperand vecreg	idxtype	SDNode OpNode	1	BaseSIMDInsDup	14-11=0b0000
+SIMDDup64FromElement	8	1	".2d"	".d"	v2i64	v2i64	V128	VectorIndexD	AArch64duplane64	0	19-16=0b1000
+SIMDDup32FromElement	4	Q	size	ValueType vectype	RegisterOperand vecreg	1	SIMDDupFromElement	18-16=0b100	20-19=idx
+SIMDDup16FromElement	4	Q	size	ValueType vectype	RegisterOperand vecreg	1	SIMDDupFromElement	17-16=0b10	20-18=idx
+SIMDDup8FromElement	4	Q	size	ValueType vectype	RegisterOperand vecreg	1	SIMDDupFromElement	20-17=idx
+BaseSIMDMov	7	Q	size	imm4	regtype	idxtype	asm	pattern	1	BaseSIMDInsDup	14-11=imm4
+SIMDSMov	4	Q	size	regtype	idxtype	1	BaseSIMDMov
+SMov	0	0	20-16=0b00001
+UMov	0	0	20-16=0b00001
+SIMDInsFromMain	4	size	ValueType vectype	regtype	idxtype	1	BaseSIMDInsDup	14-11=0b0011
+SIMDInsFromElement	4	size	ValueType vectype	ValueType elttype	idxtype	1	BaseSIMDInsDup
+SIMDInsElementMovAlias	3	size	Instruction inst	idxtype	1	InstAlias	13-11=?,?,?	14-11=idx2	14-12=idx2	14-13=idx2	17-16=0b10	18-16=0b100	20-17=idx	20-18=idx	19-16=0b1000	20-19=idx	12-11=?,?
+SIMDTableLookupAlias	4	asm	Instruction inst	RegisterOperand vectype	RegisterOperand listtype	1	InstAlias
+SIMDTableLookupTied	2	op	asm	0
+BaseSIMDTableLookupIndexed2	1	asm	0	14-12=idx	14-13=idx
+BaseSIMDTableLookupIndexed4	1	asm	0	14-13=idx
+SIMDScalarDUPAlias	6	asm	size	Instruction inst	regtype	RegisterOperand vectype	idxtype	1	InstAlias	17-16=0b10	18-16=0b100	20-17=idx	20-18=idx	19-16=0b1000	20-19=idx
+BaseSIMDModifiedImm	9	Q	op	op2	oops	iops	asm	op_string	cstr	pattern	2	Sched	I	4-0=Rd	28-19=0b0111100000	9-5=imm8	18-16=imm8
+BaseSIMDModifiedImmVector	10	Q	op	op2	RegisterOperand vectype	immtype	opt_shift_iop	opt_shift	asm	kind	pattern	1	BaseSIMDModifiedImm
+BaseSIMDModifiedImmVectorTied	9	Q	op	RegisterOperand vectype	immtype	opt_shift_iop	opt_shift	asm	kind	pattern	1	BaseSIMDModifiedImm
+BaseSIMDModifiedImmVectorShift	7	Q	op	b15_b12	RegisterOperand vectype	asm	kind	pattern	1	BaseSIMDModifiedImmVector	14-13=shift
+BaseSIMDModifiedImmVectorShiftTied	7	Q	op	b15_b12	RegisterOperand vectype	asm	kind	pattern	1	BaseSIMDModifiedImmVectorTied	14-13=shift
+BaseSIMDModifiedImmVectorShiftHalf	7	Q	op	b15_b12	RegisterOperand vectype	asm	kind	pattern	1	BaseSIMDModifiedImmVector
+BaseSIMDModifiedImmVectorShiftHalfTied	7	Q	op	b15_b12	RegisterOperand vectype	asm	kind	pattern	1	BaseSIMDModifiedImmVectorTied
+SIMDModifiedImmVectorShift	4	op	hw_cmode	w_cmode	asm	0
+SIMDModifiedImmVectorShiftTied	5	op	hw_cmode	w_cmode	asm	SDNode OpNode	0
+SIMDModifiedImmMoveMSL	7	Q	op	cmode	RegisterOperand vectype	asm	kind	pattern	1	BaseSIMDModifiedImmVector	15-13=cmode
+SIMDModifiedImmVectorNoShift	9	Q	op	op2	cmode	RegisterOperand vectype	imm_type	asm	kind	pattern	1	BaseSIMDModifiedImmVector	15-12=cmode
+SIMDModifiedImmScalarNoShift	5	Q	op	cmode	asm	pattern	1	BaseSIMDModifiedImm	15-12=cmode
+BaseSIMDThreeSameVectorBFDot	8	Q	U	asm	kind1	kind2	RegisterOperand RegType	ValueType AccumType	ValueType InputType	1	BaseSIMDThreeSameVectorTied
+SIMDThreeSameVectorBFDot	2	U	asm	0
+SIMDThreeSameVectorBF16MatrixMul	1	asm	1	BaseSIMDThreeSameVectorTied
+BaseSIMDThreeSameVectorBF16DotI	9	Q	U	asm	dst_kind	lhs_kind	rhs_kind	RegisterOperand RegType	ValueType AccumType	ValueType InputType	0
+SIMDThreeSameVectorBF16DotI	2	U	asm	0
+BaseSIMDThreeSameVectorIndexB	8	Q	U	sz	opc	asm	dst_kind	RegisterOperand RegType	RegisterOperand RegType_lo	1	BaseSIMDIndexedTied	21-19=idx
+SIMDThreeSameVectorMLAIndex	3	Q	asm	op	0
+SIMDThreeSameVectorMLALIndex	4	Q	sz	asm	op	0
+SIMDThreeSameVectorMatMul	4	B	U	asm	OpNode	1	BaseSIMDThreeSameVectorTied
+BaseSIMDThreeSameVectorIndexS	13	Q	U	size	opc	asm	dst_kind	lhs_kind	rhs_kind	RegisterOperand RegType	ValueType AccumType	ValueType InputType	AsmVectorIndexOpnd VIdx	OpNode	1	BaseSIMDIndexedTied
+SIMDThreeSameVectorDotIndex	5	U	Mixed	size	asm	OpNode	0
+SIMD_FP8_Dot4_Index	2	asm	op	0
+SIMDThreeSameVectorFMLIndex	4	U	opc	asm	OpNode	0
+SIMDThreeSameVectorFDOTIndex	1	asm	0
+SIMD_FP8_Dot2_Index	2	asm	op	0
+SIMDFPIndexed	4	U	opc	asm	OpNode	0
+SIMDFPIndexedTiedPatterns	2	INST	OpNode	0
+SIMDIndexedHSPatterns	2	OpNodeLane	OpNodeLaneQ	0
+SIMDIndexedHS	5	U	opc	asm	OpNode	G_OpNode	0
+SIMDVectorIndexedHS	4	U	opc	asm	OpNode	0
+SIMDVectorIndexedHSTied	4	U	opc	asm	OpNode	0
+SIMDIndexedLongSD	4	U	opc	asm	OpNode	0
+SIMDIndexedLongSQDMLXSDTied	6	U	opc	asm	VecAcc	ScalAcc	G_ScalAcc	0
+SIMDVectorIndexedLongSD	4	U	opc	asm	OpNode	0
+SIMDVectorIndexedLongSDTied	4	U	opc	asm	OpNode	0
+SIMDFPScalarRShift	3	U	opc	asm	0	20-16=imm	21-16=imm	19-16=imm
+SIMDScalarRShiftD	4	U	opc	asm	OpNode	0	21-16=imm
+SIMDScalarRShiftDTied	4	U	opc	asm	OpNode = null_frag	0	21-16=imm
+SIMDScalarLShiftD	4	U	opc	asm	OpNode	0	21-16=imm
+SIMDScalarRShiftBHS	5	U	opc	asm	OpNode = null_frag	GOpNode = null_frag	0	20-16=imm	18-16=imm	19-16=imm
+SIMDScalarLShiftBHSD	4	U	opc	asm	OpNode	0	20-16=imm	18-16=imm	21-16=imm	19-16=imm
+SIMDVectorRShiftSD	4	U	opc	asm	Intrinsic OpNode	0	20-16=imm	21-16=imm	19-16=imm
+SIMDVectorRShiftToFP	4	U	opc	asm	Intrinsic OpNode	0	20-16=imm	21-16=imm	19-16=imm
+SIMDVectorRShiftNarrowBHS	4	U	opc	asm	OpNode	0	20-16=imm	18-16=imm	19-16=imm
+SIMDVectorLShiftBHSD	4	U	opc	asm	OpNode	0	20-16=imm	18-16=imm	21-16=imm	19-16=imm
+SIMDVectorRShiftBHSD	4	U	opc	asm	OpNode	0	20-16=imm	18-16=imm	21-16=imm	19-16=imm
+SIMDVectorLShiftBHSDTied	4	U	opc	asm	OpNode = null_frag	0	20-16=imm	18-16=imm	21-16=imm	19-16=imm
+SIMDVectorLShiftLongBHSD	4	U	opc	asm	OpNode	0	20-16=imm	18-16=imm	19-16=imm
+BaseSIMDLdSt	8	Q	L	opcode	size	asm	oops	iops	pattern	1	I	29-23=0b0011000	4-0=Vt	11-10=size	9-5=Rn	15-12=opcode	21-16=0b000000
+BaseSIMDLdStPost	7	Q	L	opcode	size	asm	oops	iops	1	I	29-23=0b0011001	4-0=Vt	11-10=size	9-5=Rn	15-12=opcode	20-16=Xm
+SIMDLdStAliases	6	BaseName	asm	layout	Count	int Offset	int Size	0
+BaseSIMDLdN	7	BaseName	Count	asm	veclist	int Offset128	int Offset64	opcode	0
+BaseSIMDStN	7	BaseName	Count	asm	veclist	int Offset128	int Offset64	opcode	0
+BaseSIMDLd1	7	BaseName	Count	asm	veclist	int Offset128	int Offset64	opcode	1	BaseSIMDLdN
+BaseSIMDSt1	7	BaseName	Count	asm	veclist	int Offset128	int Offset64	opcode	1	BaseSIMDStN
+SIMDLd1Multiple	1	asm	0
+SIMDSt1Multiple	1	asm	0
+SIMDLd2Multiple	1	asm	0
+SIMDSt2Multiple	1	asm	0
+SIMDLd3Multiple	1	asm	0
+SIMDSt3Multiple	1	asm	0
+SIMDLd4Multiple	1	asm	0
+SIMDSt4Multiple	1	asm	0
+BaseSIMDLdStSingle	9	L	R	opcode	asm	operands	cst	oops	iops	pattern	1	I	29-24=0b001101	4-0=Vt	9-5=Rn	15-13=opcode
+BaseSIMDLdStSingleTied	9	L	R	opcode	asm	operands	cst	oops	iops	pattern	1	I	29-24=0b001101	4-0=Vt	9-5=Rn	15-13=opcode
+SIMDLdrAliases	6	BaseName	asm	layout	Count	int Offset	int Size	0
+SIMDLdR	9	R	opcode	S	asm	Count	int Offset1	int Offset2	int Offset4	int Offset8	0
+SIMDLdStSingleB	7	L	R	opcode	asm	oops	iops	pattern	1	BaseSIMDLdStSingle	11-10=idx	20-16=0b00000
+SIMDLdStSingleBTied	7	L	R	opcode	asm	oops	iops	pattern	1	BaseSIMDLdStSingleTied	11-10=idx	20-16=0b00000
+SIMDLdStSingleBPost	6	L	R	opcode	asm	oops	iops	1	BaseSIMDLdStSingle	11-10=idx	20-16=Xm
+SIMDLdStSingleBTiedPost	6	L	R	opcode	asm	oops	iops	1	BaseSIMDLdStSingleTied	11-10=idx	20-16=Xm
+SIMDLdStSingleH	8	L	R	opcode	size	asm	oops	iops	pattern	1	BaseSIMDLdStSingle	20-16=0b00000
+SIMDLdStSingleHTied	8	L	R	opcode	size	asm	oops	iops	pattern	1	BaseSIMDLdStSingleTied	20-16=0b00000
+SIMDLdStSingleHPost	7	L	R	opcode	size	asm	oops	iops	1	BaseSIMDLdStSingle	20-16=Xm
+SIMDLdStSingleHTiedPost	7	L	R	opcode	size	asm	oops	iops	1	BaseSIMDLdStSingleTied	20-16=Xm
+SIMDLdStSingleS	8	L	R	opcode	size	asm	oops	iops	pattern	1	BaseSIMDLdStSingle	11-10=size	20-16=0b00000
+SIMDLdStSingleSTied	8	L	R	opcode	size	asm	oops	iops	pattern	1	BaseSIMDLdStSingleTied	11-10=size	20-16=0b00000
+SIMDLdStSingleSPost	7	L	R	opcode	size	asm	oops	iops	1	BaseSIMDLdStSingle	11-10=size	20-16=Xm
+SIMDLdStSingleSTiedPost	7	L	R	opcode	size	asm	oops	iops	1	BaseSIMDLdStSingleTied	11-10=size	20-16=Xm
+SIMDLdStSingleD	8	L	R	opcode	size	asm	oops	iops	pattern	1	BaseSIMDLdStSingle	11-10=size	20-16=0b00000
+SIMDLdStSingleDTied	8	L	R	opcode	size	asm	oops	iops	pattern	1	BaseSIMDLdStSingleTied	11-10=size	20-16=0b00000
+SIMDLdStSingleDPost	7	L	R	opcode	size	asm	oops	iops	1	BaseSIMDLdStSingle	11-10=size	20-16=Xm
+SIMDLdStSingleDTiedPost	7	L	R	opcode	size	asm	oops	iops	1	BaseSIMDLdStSingleTied	11-10=size	20-16=Xm
+SIMDLdStSingleAliases	6	asm	layout	Type	Count	int Offset	idxtype	0
+SIMDLdSt1SingleAliases	1	asm	0
+SIMDLdSt2SingleAliases	1	asm	0
+SIMDLdSt3SingleAliases	1	asm	0
+SIMDLdSt4SingleAliases	1	asm	0
+BaseSIMDThreeSameVectorTiedR0	8	Q	U	size	opcode	RegisterOperand regtype	asm	kind	pattern	1	BaseSIMDThreeSameVectorTied
+SIMDThreeSameVectorSQRDMLxHTiedHS	4	U	opc	asm	op	0
+SIMDIndexedSQRDMLxHSDTied	5	U	opc	asm	op	G_op	0
+ComplexRotationOperand	3	int Angle	int Remainder	Type	1	AsmOperandClass
+SIMDThreeSameVectorComplexHSD	5	U	opcode	rottype	asm	OpNode	0
+SIMDThreeSameVectorTiedComplexHSD	5	U	opcode	rottype	asm	OpNode	0
+SIMDIndexedTiedComplexHSD	4	opc1	opc2	rottype	asm	0
+AESInst	3	opc	asm	Intrinsic OpNode	1	AESBase
+SHATiedInstQSV	3	opc	asm	Intrinsic OpNode	1	SHA3OpTiedInst
+SHATiedInstVV	3	opc	asm	Intrinsic OpNode	1	SHA2OpInst	31-25=0b1100111	4-0=Vd	9-5=Vn
+CryptoRRTied	4	bits<1>op0	bits<2>op1	asm	asmops	1	BaseCryptoV82	31-25=0b1100111	13-12=0b00	11-10=op1	20-15=0b000001	24-21=0b0110
+CryptoRRTied_2D	3	bits<1>op0	bits<2>op1	asm	1	CryptoRRTied
+CryptoRRR	7	op0	bits<2>op1	oops	iops	asm	asmops	cst	1	BaseCryptoV82	13-12=0b00	11-10=op1	20-16=Vm	24-21=0b0011
+CryptoRRR_2D	3	op0	bits<2>op1	asm	1	CryptoRRR
+CryptoRRR_4S	3	op0	bits<2>op1	asm	1	CryptoRRR
+CryptoRRRTied	3	op0	bits<2>op1	asm	1	CryptoRRR	14-10=Va	20-16=Vm	22-21=op0	24-23=0b00
+CryptoRRRR_16B	2	bits<2>op0	asm	1	CryptoRRRR
+CryptoRRRR_4S	2	bits<2>op0	asm	1	CryptoRRRR
+CryptoRRRi6	1	asm	1	BaseCryptoV82	4-0=Vd	15-10=imm	9-5=Vn	20-16=Vm	24-21=0b0100
+CryptoRRRi2Tied	3	bits<1>op0	bits<2>op1	asm	1	BaseCryptoV82	13-12=imm	11-10=op1	20-16=Vm	24-21=0b0010
+BaseCAS	3	order	size	RC	2	BaseCASEncoding	Sched
+CompareAndSwap	3	Acq	Rel	order	0
+BaseCASP	3	order	size	RegisterOperand RC	2	BaseCASEncoding	Sched
+CompareAndSwapPair	3	Acq	Rel	order	0
+CompareAndSwapUnprivileged	4	Sz	L	o0	order	0
+CompareAndSwapPairUnprivileged	4	Sz	L	o0	order	0
+Swap	3	Acq	Rel	order	0
+BaseSWPLSUI	2	order	RC	2	Sched	I	29-24=0b011001	4-0=Rt	14-12=0b000	11-10=0b01	9-5=Rn	20-16=Rs	31-30=Sz
+SwapLSUI	3	Acq	Rel	order	0
+LDOPregister	5	opc	op	Acq	Rel	order	0
+BaseLDOPregisterLSUI	3	op	order	RC	2	Sched	I	29-24=0b011001	4-0=Rt	14-12=opc	11-10=0b01	9-5=Rn	20-16=Rs	31-30=Sz
+LDOPregisterLSUI	5	opc	op	Acq	Rel	order	0
+LDOPregister_patterns_ord	5	inst	suffix	op	ValueType vt	RHS	0
+LDOPregister_patterns_ord_mod	6	inst	suffix	op	ValueType vt	LHS	RHS	0
+LDOPregister_patterns	2	inst	op	0
+LDOPregister_patterns_mod	3	inst	op	mod	0
+LDFPOPregister_patterns_ord	5	inst	suffix	op	ValueType vt	RHS	0
+LDFPOPregister_patterns	2	inst	op	0
+LDBFPOPregister_patterns	2	inst	op	0
+CASregister_patterns_ord	6	inst	suffix	op	ValueType vt	OLD	NEW	0
+CASregister_patterns	2	inst	op	0
+STOPregister	2	asm	instr	0
+STOPregisterLSUI	2	asm	instr	0
+LoadStore64B_base	6	opc	asm_inst	asm_ops	iops	oops	pat	2	Sched	I	4-0=Rt	14-12=opc	11-10=0b00	9-5=Rn	31-21=0b11111000001
+LoadStore64B	5	opc	asm_inst	iops	oops	pat = []	1	LoadStore64B_base	20-16=0b11111
+LoadStore64B	7	opc	asm_inst	may_load	may_store	iops	oops	pat = []	0
+Store64BV	3	opc	asm_inst	pat = []	1	LoadStore64B_base	20-16=Rs
+MOPSMemoryCopyMoveBase	5	isMove	opcode	op1	op2	asm	2	Sched	I	4-0=Rd	13-12=op1	25-24=0b01	31-27=0b00011	11-10=0b01	9-5=Rn	20-16=Rs	15-14=op2	23-22=opcode
+MOPSMemoryCopy	4	opcode	op1	op2	asm	1	MOPSMemoryCopyMoveBase	4-0=Rd	31-27=0b00011	9-5=Rn	20-16=Rm	15-14=opcode	25-21=0b01110
+MOPSMemorySet	5	opcode	op1	op2	op3	asm	1	MOPSMemorySetBase
+MOPSMemorySetTagging	5	opcode	op1	op2	op3	asm	1	MOPSMemorySetBase
+MOPSGoMemorySetTagging	5	opcode	op1	op2	op3	asm	1	MOPSMemorySetBase	20-16=0b11111
+MOPSMemoryCopyInsns	2	opcode	asm	0
+MOPSMemoryMoveInsns	2	opcode	asm	0
+MOPSMemorySetInsns	2	opcode	asm	0
+MOPSMemorySetTaggingInsns	2	opcode	asm	0
+MOPSGoMemorySetTaggingInsns	2	opcode	asm	0
+BaseTwoOperandRegImm	8	sf	Op	S	opc	regtype	ImmLeaf immtype	asm	OpNode	1	I	4-0=Rd	9-5=Rn	21-18=opc	28-22=0b1000111	17-10=imm
+BaseComparisonOpReg	6	size	isUnsigned	isMin	regtype	asm	OpNode	2	Sched	BaseTwoOperandRegReg
+BaseComparisonOpImm	7	size	isUnsigned	isMin	regtype	ImmLeaf immtype	asm	OpNode	2	BaseTwoOperandRegImm	Sched
+ComparisonOp	4	isUnsigned	isMin	asm	OpNode = null_frag	0
+BaseLRCPC3	8	size	V	opc	oops	iops	asm	operands	cstr = ""	2	Sched	I	29-24=0,1,1,V,0,1	4-0=Rt	11-10=0b10	9-5=Rn	23-22=opc	31-30=size
+BaseLRCPC3IntegerLoadStorePair	8	size	opc	opc2	oops	iops	asm	operands	cstr	1	BaseLRCPC3	15-12=opc2	20-16=Rt2
+BaseLRCPC3IntegerLoadStore	7	size	opc	oops	iops	asm	operands	cstr	1	BaseLRCPC3	20-12=0b000000000
+LRCPC3NEONLoadStoreUnscaledOffset	6	size	opc	regtype	oops	iops	asm	0	20-12=simm
+LRCPC3NEONLdStSingle	5	L	oops	iops	asm	cst	2	Sched	BaseSIMDLdStSingle	11-10=0b01	20-16=0b00001
+BaseRCWCASEncoding	3	oops	iops	asm	2	Sched	I	29-24=0b011001	4-0=Rt	9-5=Rn	20-16=Rs	15-13=0b000	12-11=0b01
+BaseRCWCAS	3	oops	iops	prefix	0
+ReadCheckWriteCompareAndSwap	0	0
+BaseRCWOPPEncoding	1	asm	2	Sched	I	29-24=0b011001	4-0=Rt	14-12=opc	11-10=0b00	9-5=Rn	20-16=Rt2
+BaseRCWOP	1	prefix	0
+ReadCheckWriteOperation	2	opc	op	0
+RtSystemI128	6	L	oops	iops	asm	operands	pattern = []	1	RtSystemI
+BaseSYSPEncoding	5	L	asm	operands	outputs	inputs	1	RtSystemI128	15-12=Cn	18-16=op1	7-5=op2	20-19=0b01	11-8=Cm
+SystemPXtI	2	L	asm	1	BaseSYSPEncoding
+BaseAddSubCPA	2	isSub	asm	2	Sched	I	4-0=Rd	9-5=Rn	20-16=Rm	15-13=0b001	12-10=shift_imm	29-21=0b011010000
+AddSubCPAAlias	2	asm	Instruction inst	1	InstAlias
+MulAccumCPA	2	isSub	asm	2	Sched	BaseMulAccum
+BaseCmpBranchRegister	5	regtype	sf	cc	bits<2>sz	asm	2	Sched	I	4-0=Rt	13-5=target	20-16=Rm	15-14=sz	23-21=cc	30-24=0b1110100
+CmpBranchRegister	2	cc	asm	0
+BaseCmpBranchImmediate	5	regtype	sf	cc	imm_ty	asm	2	Sched	I	4-0=Rt	20-15=imm	13-5=target	23-21=cc	30-24=0b1110101
+CmpBranchImmediate	3	cc	imm_ty	asm	0
+CmpBranchImmediateAlias	3	mnemonic	insn	imm_ty	0
+CmpBranchWRegisterAlias	2	mnemonic	insn	0
+CmpBranchRegisterAlias	2	mnemonic	insn	0
+CmpBranchRegisterPseudo	1	regtype	2	Sched	Pseudo
+CmpBranchExtRegisterPseudo	8	(outs)	(ins ccode:$Cond	GPR32:$Rt	GPR32:$Rm	am_brcmpcond:$Target	simm8_32b:$ExtRt	simm8_32b:$ExtRm)	[]	0
+CmpBranchImmediatePseudo	2	regtype	ImmLeaf imtype	2	Sched	Pseudo
+AtomicFPLoad	3	AR	op0	asm	0
+AtomicFPStore	3	R	op0	asm	0
+BaseSIMDThreeSameVectorFP8MatrixMul	4	asm	size	kind	pattern	1	BaseSIMDThreeSameVectorTied
+SIMDThreeSameVectorFP8MatrixMul	2	asm	OpNode	0
+TCHANGERegInst	2	asm	isB	2	Sched	I	4-0=Xd	31-19=0b1101010110000	9-5=Xn	16-10=0b0000000
+TCHANGEImmInst	2	asm	isB	2	Sched	I	4-0=Xd	31-19=0b1101010110010	16-12=0b00000	11-5=imm
+TENTERInst	1	asm	2	Sched	I	4-0=0b00000	31-18=0b11010100111000	16-12=0b00000	11-5=imm
+TEXITInst	1	asm	2	Sched	I	9-0=0b1111100000	31-11=0b110101101111111100000
+TCHANGEReg	2	asm	isB	0
+TCHANGEImm	2	asm	isB	0
+TENTER	1	asm	0
+TEXIT	1	asm	0
+AArch64GenericInstruction	0	0
+GCSNoOp	2	op2	mnemonic	2	Sched	SimpleSystemI	7-5=op2	20-8=0b0100001110111
+GCSRtIn	4	op1	op2	mnemonic	pattern = []	1	RtSystemI	15-8=0b01110111	18-16=op1	7-5=op2	20-19=0b01
+GCSRtOut	4	op1	op2	mnemonic	pattern = []	1	RtSystemI	15-8=0b01110111	18-16=op1	7-5=op2	20-19=0b01
+GCSSt	2	mnemonic	op	2	Sched	I	31-15=0b11011001000111110	4-0=Rt	14-12=op	11-10=0b11	9-5=Rn
+BaseSIMDSUDOTIndex	7	Q	dst_kind	lhs_kind	rhs_kind	RegisterOperand RegType	ValueType AccumType	ValueType InputType	1	BaseSIMDThreeSameVectorIndexS
+SIMDSUDOTIndex	0	0
+movw_mov_alias	5	basename	Instruction INST	GPR	int width	int shift	0
+VecROLoadPat	4	ROAddrMode ro	ValueType VecTy	Instruction LOADW	Instruction LOADX	0
+ExtLoadTo64ROPat	4	ROAddrMode ro	loadop	Instruction INSTW	Instruction INSTX	0
+ExtLoadTo32ROPat	4	ROAddrMode ro	loadop	Instruction INSTW	Instruction INSTX	0
+SImm9OffsetOperand	1	int Width	1	AsmOperandClass
+LoadInsertVTPatterns	13	LoadOp	ValueType VT	ValueType ScalarVT	Instruction LoadInst	Instruction UnscaledLoadInst	Instruction ROWLoadInst	Instruction ROXLoadInst	ROAddrMode ro	ComplexPattern Addr	ComplexPattern UnscaledAddr	AddrImm	SubRegIndex SubReg	VecInsFrag	0
+LoadInsertPatterns	16	LoadOp	ValueType VT	ValueType HVT	ValueType SVT	ValueType ScalarVT	VecInsVT	VecInsHVT	Instruction LoadInst	Instruction UnscaledLoadInst	Instruction ROWLoadInst	Instruction ROXLoadInst	ROAddrMode ro	ComplexPattern Addr	ComplexPattern UnscaledAddr	AddrImm	SubRegIndex SubReg	0
+ExtLoad8_16AllModes	5	ValueType OutTy	ValueType InnerTy	OuterOp	PatFrags LoadOp8	PatFrags LoadOp16	0
+ExtLoad8_16_32AllModes	6	ValueType OutTy	ValueType InnerTy	OuterOp	PatFrags LoadOp8	PatFrags LoadOp16	PatFrags LoadOp32	0
+TruncStoreFrom64ROPat	4	ROAddrMode ro	storeop	Instruction STRW	Instruction STRX	0
+VecROStorePat	5	ROAddrMode ro	ValueType VecTy	FPR	Instruction STRW	Instruction STRX	0
+VecROStoreLane0Pat	8	ROAddrMode ro	storeop	ValueType VecTy	ValueType STy	ValueType SubRegTy	SubRegIndex SubRegIdx	Instruction STRW	Instruction STRX	0
+VecStoreLane0Pat	8	ComplexPattern UIAddrMode	storeop	ValueType VTy	ValueType STy	ValueType SubRegTy	SubRegIndex SubRegIdx	IndexType	Instruction STR	0
+VecStoreULane0Pat	6	StoreOp	ValueType VTy	ValueType STy	ValueType SubRegTy	SubRegIndex SubRegIdx	Instruction STR	0
+FMULScalarFromIndexedLane0Patterns	6	inst	inst_f16_suffix	inst_f32_suffix	inst_f64_suffix	OpNode	list<Predicate> preds = []	0
+SIMDTwoVectorFPToIntSatPats	2	SDNode to_int_sat	INST	0
+SIMDTwoVectorFPToIntRoundPats	4	SDNode to_int	SDNode to_int_sat	SDNode round	INST	0
+SelectVectorPartialReduceAdd	3	ValueType DstVT	ValueType SrcVT	immOneV	0
+SIMDVectorLShiftLongBySizeBHSPats	1	ext	0
+SelectSetCC	2	PatFrags InFrag	INST	0
+SelectSetCCSwapOperands	2	PatFrags InFrag	INST	0
+SelectSetCCZeroRHS	2	PatFrags InFrag	INST	0
+SelectSetCCZeroLHS	2	PatFrags InFrag	INST	0
+IntegerToFPSIMDScalarPatterns	2	OpN	INST	0
+FPToIntegerSIMDScalarPatterns	2	OpN	INST	0
+FPToIntegerIntPats	2	Intrinsic round	INST	0
+FPToIntegerFmulPats	2	round	INST	0
+FPToIntegerSatPats	2	SDNode to_int_sat	INST	0
+FPToIntegerPats	4	SDNode to_int	SDNode to_int_sat	SDNode round	INST	0
+F16ToI16ScalarPat	2	SDNode cvt_isd	BaseSIMDTwoScalar instr	1	Pat
+UIntToFPROLoadPat	8	ValueType DstTy	ValueType SrcTy	loadop	Instruction UCVTF	ROAddrMode ro	Instruction LDRW	Instruction LDRX	SubRegIndex sub	0
+Neon_mul_acc_widen_patterns	5	opnode	vecopnode	Instruction INST8B	Instruction INST4H	Instruction INST2S	0
+Neon_addl_extract_patterns	3	opnode	ext	Inst	0
+AddSubHNPatterns	7	Instruction ADDHN	Instruction ADDHN2	Instruction SUBHN	Instruction SUBHN2	ValueType VT64	ValueType VT128	int Shift	0
+ExtPat	3	ValueType VT64	ValueType VT128	int N	0
+concat_trunc_to_uzp1_pat	3	ValueType SrcTy	ValueType TruncTy	ValueType ConcatTy	1	Pat
+DUPWithTruncPat	5	ValueType ResVT	ValueType SrcVT	ValueType ScalVT	Instruction DUP	SDNodeXForm IdxXFORM	1	Pat
+Neon_INS_elt_pattern	8	ValueType VT128	ValueType VT64	ValueType VTSVE	ValueType VTScal	SVEIdxTy	Instruction INS	Instruction DUP	SubRegIndex DUPSub	0
+Neon_INS_elt_ext_pattern	8	ValueType VT128	ValueType VT64	ValueType OutVT	ScalToVec	Instruction INS	Instruction DUP	SubRegIndex DUPSub	SDNodeXForm VecIndexMult	0
+ConcatPat	3	ValueType DstTy	ValueType SrcTy	ComplexPattern ExtractHigh	0
+SIMDAcrossLaneLongPairIntrinsic	2	Opc	addlp	0
+SIMDAcrossLaneLongPairIntrinsicGISel	2	Opc	addlp	0
+SIMDAcrossLaneLongReductionIntrinsic	2	Opc	addlv	0
+SIMDAcrossLanesIntrinsic	2	baseOpc	opNode	0
+SIMDAcrossLanesSignedIntrinsic	2	baseOpc	opNode	1	SIMDAcrossLanesIntrinsic
+SIMDAcrossLanesUnsignedIntrinsic	2	baseOpc	opNode	1	SIMDAcrossLanesIntrinsic
+SIMDAcrossLanesVecReductionIntrinsic	2	baseOpc	opNode	0
+FMLSIndexedAfterNegPatterns	1	OpNode	0
+FPToFixedScalarPats	2	OpN	INST	0
+fixedpoint_vec_f64	1	ValueType FloatVT	1	ComplexPattern
+FCVTPat	5	ValueType FVT	ValueType IVT	ValueType ScalarVT	RegisterOperand RC	ComplexPattern fixedpoint	0
+fixedpoint_recip_vec_f64	1	ValueType FloatVT	1	ComplexPattern
+CVTFRecipPat	4	ValueType FVT	ValueType IVT	RegisterOperand RC	ComplexPattern fixedpoint	0
+SHLToADDPat	2	ValueType ty	regtype	1	Pat
+WidenShiftImmPats	2	inst	ext	0
+WidenShiftFullWidthPats	1	ext	0
+SExtLoadi8CVTf32Pat	2	addrmode	INST	2	Pat	Requires
+Ld1Lane128Pat	5	scalar_load	VecIndex	ValueType VTy	ValueType STy	Instruction LD1	1	Pat
+Ld1Lane128FirstElm	5	ValueType ResultTy	ValueType VecTy	ExtLoad	VecInsNode	Instruction LD1	1	Pat
+InsertSubvectorUndef	1	ValueType Ty	0
+PairwiseUZPBinOp	4	Op	ValueType VT	RC	Instruction Inst	0
+PairwiseZIPBinOp	4	Op	ValueType VT	RC	Instruction Inst	0
+PairwiseXtnUzp2BinOpWide	5	Op	ValueType VT	ValueType HalfVT	ValueType WideEltVT	Instruction Inst	0
+NTStore128Pat	1	ValueType VT	1	Pat	4-0=0b11111	13-12=Rt	11-10=0b10	4-3=0b11	2-0=Rt	20-5=systemreg	15-12=Cn	20-16=Rm	9-5=Rn	18-16=op1	7-5=op2	20-19=0b01	31-21=0b11111000101	11-8=Cm
+sve_masked_gather_x2_scaled	3	ValueType Ty	Load	Inst	0
+sve_masked_gather_x2_unscaled	4	ValueType Ty	Load	Inst	ImmTy	0
+sve_masked_gather_x4	3	ValueType Ty	Load	Instruction Inst	0
+sve_ld1q_pat	6	ValueType Ty	ValueType PredTy	Load1qOp	Instruction RegRegInst	Instruction RegImmInst	ComplexPattern AddrCP	0
+sve_st1q_pat	6	ValueType DataType	ValueType PredTy	Store1qOp	Instruction RegRegInst	Instruction RegImmInst	ComplexPattern AddrCP	0
+sve_masked_scatter_x2_scaled	3	ValueType Ty	Store	Inst	0
+sve_masked_scatter_x2_unscaled	4	ValueType Ty	Store	Inst	ImmTy	0
+sve_masked_scatter_x4	3	ValueType Ty	Store	Instruction Inst	0
+sve_prefetch	5	prefetch	ValueType PredTy	Instruction RegImmInst	Instruction RegRegInst	ComplexPattern AddrCP	0
+adrShiftPat	5	ValueType Ty	ValueType PredTy	ValueType ShiftTy	Instruction DestAdrIns	int ShiftAmt	0
+sveMulMlaImmAddAdrPat	7	ValueType Ty	ValueType PredTy	ValueType ScalarTy	Instruction Add	Instruction Adr1	Instruction Adr2	Instruction Adr3	0
+adrXtwShiftPat	3	ValueType Ty	ValueType PredTy	int ShiftAmt	0
+LD1RPat	7	ValueType vt	operator	Instruction load	Instruction ptrue	ValueType index_vt	ComplexPattern CP	immtype	0
+ld1rq_pat	4	ValueType vt1	op	Instruction load_instr	ComplexPattern AddrCP	0
+pred_load	6	ValueType Ty	ValueType PredTy	Load	Instruction RegRegInst	Instruction RegImmInst	ComplexPattern AddrCP	0
+pred_store	6	ValueType Ty	ValueType PredTy	Store	Instruction RegRegInst	Instruction RegImmInst	ComplexPattern AddrCP	0
+unpred_store	6	PatFrag Store	ValueType Ty	Instruction RegRegInst	Instruction RegImmInst	Instruction PTrue	ComplexPattern AddrCP	0
+unpred_load	6	PatFrag Load	ValueType Ty	Instruction RegRegInst	Instruction RegImmInst	Instruction PTrue	ComplexPattern AddrCP	0
+unpred_loadstore_bitcast	1	ValueType Ty	0
+ld1	7	Instruction RegRegInst	Instruction RegImmInst	ValueType Ty	Load	ValueType PredTy	ValueType MemVT	ComplexPattern AddrCP	0
+ldnf1	5	Instruction I	ValueType Ty	Load	ValueType PredTy	ValueType MemVT	0
+ldff1	6	Instruction I	ValueType Ty	Load	ValueType PredTy	ValueType MemVT	ComplexPattern AddrCP	0
+st1	7	Instruction RegRegInst	Instruction RegImmInst	ValueType Ty	Store	ValueType PredTy	ValueType MemVT	ComplexPattern AddrCP	0
+sve_insert_extract_elt	4	ValueType VT	ValueType VTScalar	Instruction DUP	IdxTy	0
+sve_predicated_add	2	SDNode extend	int value	0
+binary_bitwise	3	ValueType VT	InOp	OutOp	0
+store_pn_x2	3	ValueType Ty	Store	Instruction RegImmInst	0
+store_pn_x4	3	ValueType Ty	Store	Instruction RegImmInst	0
+store_pn_x2_sme2	3	ValueType Ty	Store	Instruction RegImmPseudo	0
+store_pn_x4_sme2	3	ValueType Ty	Store	Instruction RegImmPseudo	0
+PromoteNEONToSVEImm	5	SDNode Opc	ValueType VT	ComplexPattern ImmPat	Instruction SVEImmInst	ValueType ImmType	1	Pat
+CortexA320Write	2	int n	ProcResourceKind res	1	SchedWriteRes
+CortexA320MCWrite	3	int n	int m	ProcResourceKind res	1	SchedWriteRes
+CortexA320MC_RC0Write	2	int n	ProcResourceKind res	1	SchedWriteRes
+CortexA320Write_PAC_B	1	int lat	1	SchedWriteRes
+CortexA320VSt	1	int n	1	SchedWriteRes
+CortexA510Write	2	int n	ProcResourceKind res	1	SchedWriteRes
+CortexA510MCWrite	3	int n	int m	ProcResourceKind res	1	SchedWriteRes
+CortexA510MC_RC0Write	2	int n	ProcResourceKind res	1	SchedWriteRes
+A510Write_PAC_B	1	int lat	1	SchedWriteRes
+CortexA510VSt	1	int n	1	SchedWriteRes
+CortexA55WriteVd	2	int n	ProcResourceKind res	1	SchedWriteRes
+CortexA55WriteVq	2	int n	ProcResourceKind res	1	SchedWriteRes
+C1NanoWriteVMACBypass	1	[C1NanoUnitVMAC]	0
+C1NanoCMEWrite	2	int LatencyCycles	list<ProcResourceKind> Resources	1	SchedWriteRes
+C1NanoCMEWriteRC	3	int LatencyCycles	list<ProcResourceKind> Resources	list<int> ReleaseCycles	1	SchedWriteRes
+C1NanoStreamingSchedWrite	2	SchedWrite StreamingWrite	SchedWrite BaseWrite	1	SchedWriteVariant
+C1UCMEWrite	2	int LatencyCycles	list<ProcResourceKind> Resources	1	SchedWriteRes
+C1UCMEWriteRC	3	int LatencyCycles	list<ProcResourceKind> Resources	list<int> ReleaseCycles	1	SchedWriteRes
+C1USMEStreamingSchedWrite	2	SchedWrite StreamingWrite	SchedWrite SMEWrite	1	SchedWriteVariant
+IsUBFMLSLImm	2	Instruction Opc	int Width	1	CheckAll
+AT	5	name	op1	crn	crm	op2	0
+DB	2	name	encoding	0
+DBnXS	3	name	encoding	immValue	0
+DC	5	name	op1	crn	crm	op2	0
+IC	6	name	op1	crn	crm	op2	needsreg	0
+ISB	2	name	encoding	0
+PRFM	6	type	type_encoding	target	target_encoding	policy	policy_encoding	0
+SVEPRFM	2	name	encoding	0
+RPRFM	3	name	type_encoding	policy_encoding	0
+SVEPREDPAT	2	name	encoding	0
+SVEVECLENSPECIFIER	2	name	encoding	0
+ExactFPImm	3	name	repr	enum	0
+PStateImm0_15	3	name	op1	op2	0
+PStateImm0_1	4	name	op1	op2	crm_high	0
+SVCR	2	name	encoding	0
+TIndex	2	name	encoding	1	SearchableTable
+RegValue	0	0
+TLBIEntry	6	name	op1	crm	op2	nxs	RegValue reguse	1	TLBICommon
+TLBITableBase	1	list<string> fields	0
+TLBI	6	name	op1	crm	op2	RegValue reguse	hasTLBIP = 0	0
+SysReg	6	name	op0	op1	crn	crm	op2	0
+RWSysReg	6	name	op0	op1	crn	crm	op2	1	SysReg
+ROSysReg	6	name	op0	op1	crn	crm	op2	1	SysReg
+WOSysReg	6	name	op0	op1	crn	crm	op2	1	SysReg
+PPIRegisters	1	prefix	0
+GIC	6	name	op1	crn	crm	op2	needsreg = 1	0
+GSB	5	name	op1	crn	crm	op2	0
+GICR	5	name	op1	crn	crm	op2	0
+PLBIEntry	6	op1	crn	crm	op2	name	RegValue reguse	0
+PLBI	6	name	op1	crn	op2	RegValue reguse	optionalIS = 0	0
+SMEPseudo2Instr	2	name	instr	0
+sme_outer_product_pseudo	2	ZPRRegOp zpr_ty	SMEMatrixTypeEnum za_flag	2	Sched	Pseudo
+sme_sparse_outer_product_pseudo	3	RegisterOperand zn_ty	RegisterOperand zm_ty	SMEMatrixTypeEnum za_flag	2	Sched	Pseudo
+sme2_quarter_tile_outer_product_pseudo	3	RegisterOperand zn_ty	RegisterOperand zm_ty	SMEMatrixTypeEnum za_flag	2	Sched	Pseudo
+sme2_za_array_2op_multi_single_pseudo	5	name	index_ty	RegisterOperand multi_vector_ty	ZPRRegOp zpr_ty	SMEMatrixTypeEnum za_flag	2	SMEPseudo2Instr	Pseudo
+sme2_za_array_2op_multi_multi_pseudo	4	name	index_ty	RegisterOperand multi_vector_ty	SMEMatrixTypeEnum za_flag	2	SMEPseudo2Instr	Pseudo
+sme2_za_array_2op_multi_index_pseudo	6	name	index_ty	RegisterOperand multi_vector_ty	ZPRRegOp zpr_ty	imm_ty	SMEMatrixTypeEnum za_flag	2	SMEPseudo2Instr	Pseudo
+sme2_move_to_za_pseudo	4	name	imm_ty	RegisterOperand multi_vector_ty	SMEMatrixTypeEnum za_flag	2	SMEPseudo2Instr	Pseudo
+sme2_move_to_tile_pseudo	5	name	tile_imm	imm_ty	RegisterOperand multi_vector_ty	SMEMatrixTypeEnum za_flag	2	SMEPseudo2Instr	Pseudo
+sem2p1_zero_matrix_pseudo	3	name	index_ty	SMEMatrixTypeEnum za_flag	2	SMEPseudo2Instr	Pseudo
+sme2_movez_to_tile_pseudo	5	name	tile_imm	imm_ty	RegisterOperand vector_ty	SMEMatrixTypeEnum za_flag	2	SMEPseudo2Instr	Pseudo
+sme2_movaz_array_to_tile_pseudo	4	name	index_ty	RegisterOperand multi_vector_ty	SMEMatrixTypeEnum za_flag	2	SMEPseudo2Instr	Pseudo
+SME2_ZA_TwoOp_Multi_Single_Pat	6	name	intrinsic	index_ty	ZPRRegOp zpr_ty	ValueType vt	ComplexPattern tileslice	1	Pat	11-9=pstatefield	18-16=0b011	7-5=0b011
+sme_fp_outer_product_inst	6	S	sz	op	MatrixTileOperand za_ty	ZPRRegOp zpr_ty	mnemonic	2	Sched	I	31-25=0b1000000	9-5=Zn	20-16=Zm	22-21=sz	15-13=Pm	12-10=Pn
+sme_outer_product_fp32	5	S	sz	ZPRRegOp zpr_ty	mnemonic	op	0	1-0=ZAda
+sme2_fp8_fmopa_za32	2	mnemonic	intrinsic	0	1-0=ZAda
+sme_outer_product_fp64	3	S	mnemonic	op	0	2-0=ZAda
+sme2_fp8_fmopa_za16	2	mnemonic	intrinsic	0	2-1=0b00
+sme2p1_fmop_tile_fp16	5	mnemonic	bf	s	ValueType vt	intrinsic = null_frag	0	2-1=0b00
+sme_int_outer_product_inst	6	opc	sz	sme2	MatrixTileOperand za_ty	ZPRRegOp zpr_ty	mnemonic	2	Sched	I	31-25=0b1010000	9-5=Zn	20-16=Zm	15-13=Pm	12-10=Pn
+sme_int_outer_product_i32	3	opc	mnemonic	op	0	1-0=ZAda
+sme_int_outer_product_i64	3	opc	mnemonic	op	0	2-0=ZAda
+sme_outer_product_widening_inst	3	opc	ZPRRegOp zpr_ty	mnemonic	2	Sched	I	1-0=ZAda	31-25=0b1000000	9-5=Zn	20-16=Zm	15-13=Pm	23-22=0b10	12-10=Pn
+sme_bf16_outer_product	3	opc	mnemonic	op	0
+sme_f16_outer_product	3	opc	mnemonic	op	0
+sme_quarter_outer_product_i64	6	zn_u_pair	zm_u_pair	subtr	RegisterOperand zn_ty	RegisterOperand zm_ty	mnemonic	2	Sched	I	31-25=0b1010000	8-6=Zn	2-0=ZAda	16-10=0b0000000	23-22=0b11	19-17=Zm
+sme_quarter_outer_product_i8_i32	6	zn_u_pair	zm_u_pair	subtr	RegisterOperand zn_ty	RegisterOperand zm_ty	mnemonic	2	Sched	I	1-0=ZAda	31-25=0b1000000	8-6=Zn	16-10=0b0100000	23-22=0b00	19-17=Zm	3-2=0b00
+sme_quarter_outer_product_i16_i32	7	u0	N	M	subtr	RegisterOperand zn_ty	RegisterOperand zm_ty	mnemonic	2	Sched	I	1-0=ZAda	31-25=0b1000000	8-6=Zn	16-10=0b0100000	23-21=0b000	19-17=Zm	3-2=0b10
+sme_quarter_outer_product_i8_i32	5	zn_u	zm_u	subtr	mnemonic	op	0
+sme_quarter_outer_product_i16_i32	4	unsigned	subtr	mnemonic	op	0
+sme_quarter_outer_product_i64	5	zn_u	zm_u	subtr	mnemonic	op	0
+sme_add_vector_to_tile_inst	5	op	V	MatrixTileOperand tile_ty	ZPRRegOp zpr_ty	mnemonic	2	Sched	I	4-3=0b00	9-5=Zn	15-13=Pm	21-17=0b01000	12-10=Pn	31-23=0b110000001
+sme_add_vector_to_tile_pseudo	2	ZPRRegOp zpr_ty	SMEMatrixTypeEnum za_flag	2	Sched	Pseudo
+sme_add_vector_to_tile_u32	3	V	mnemonic	op	0	1-0=ZAda
+sme_add_vector_to_tile_u64	3	V	mnemonic	op	0	2-0=ZAda
+sme_mem_ld_ss_base	7	Q	V	msz	outs	ins	mnemonic	argstr	2	Sched	I	31-25=0b1110000	14-13=Rv	9-5=Rn	20-16=Rm	23-22=msz	12-10=Pg
+sme_mem_ld_ss_inst	7	Q	msz	mnemonic	MatrixTileVectorOperand tile_ty	is_col	imm_ty	RegisterOperand gpr_ty	1	sme_mem_ld_ss_base
+sme_mem_ss_aliases	4	mnemonic	inst	is_col	pg_suffix=""	0
+sme_mem_ld_ss_aliases	2	inst	is_col	0
+sme_mem_ld_ss_patterns	6	Instruction Inst	Load	tile_ty	offset_ty	ComplexPattern addr	ComplexPattern tileslice	0
+sme_load_pseudo	8	(outs)	(ins i32imm:$tile	MatrixIndexGPR32Op12_15:$idx	i32imm:$imm	PPR3bAny:$pg	GPR64sp:$base	GPR64:$offset)	[]	0
+sme_mem_ld_v_ss	2	mnemonic	is_col	0	1-0=imm	2-0=imm	3-0=imm	3-1=ZAt	3-2=ZAt
+sme_mem_ld_ss	1	mnemonic	0
+sme_mem_st_ss_base	6	Q	V	msz	ins	mnemonic	argstr	2	Sched	I	31-25=0b1110000	14-13=Rv	9-5=Rn	20-16=Rm	23-22=msz	12-10=Pg
+sme_mem_st_ss_inst	7	Q	msz	mnemonic	MatrixTileVectorOperand tile_ty	is_col	imm_ty	RegisterOperand gpr_ty	1	sme_mem_st_ss_base
+sme_mem_st_ss_patterns	6	Instruction Inst	Store	offset_ty	ComplexPattern imm2tile	ComplexPattern addr	ComplexPattern tileslice	0
+sme_mem_st_v_ss	2	mnemonic	is_col	0	1-0=imm	2-0=imm	3-0=imm	3-1=ZAt	3-2=ZAt
+sme_mem_st_ss	1	mnemonic	0
+sme_spill_fill_base	4	isStore	outs	ins	opcodestr	2	Sched	I	14-13=Rv	20-15=0b000000	9-5=Rn	3-0=imm4	12-10=0b000	31-22=0b1110000100
+sme_spill	1	opcodestr	0
+sme_fill	1	opcodestr	0
+sme_vector_to_tile_base	7	Q	V	sz	outs	ins	mnemonic	argstr	2	Sched	I	31-24=0b11000000	14-13=Rv	9-5=Zn	21-17=0b00000	23-22=sz	12-10=Pg
+sme_vector_to_tile_inst	7	Q	sz	MatrixTileVectorOperand tile_ty	is_col	imm_ty	ZPRRegOp zpr_ty	mnemonic	1	sme_vector_to_tile_base
+sme_vector_to_tile_aliases	4	Instruction inst	MatrixTileVectorOperand tile_ty	ZPRRegOp zpr_ty	imm_ty	0
+sme_vector_to_tile_patterns	7	Instruction inst	ValueType zpr_vt	ValueType ppr_vt	imm_ty	offset_ty	op	ComplexPattern tileslice	0
+sme_mova_insert_pseudo	1	SMEMatrixTypeEnum za_flag	2	Sched	Pseudo
+sme_vector_v_to_tile	2	mnemonic	is_col	0	1-0=imm	2-0=imm	3-0=imm	3-1=ZAd	3-2=ZAd
+sme_vector_to_tile	1	mnemonic	0
+sme_tile_to_vector_base	7	Q	V	sz	outs	ins	mnemonic	argstr	2	Sched	I	31-24=0b11000000	4-0=Zd	14-13=Rv	21-17=0b00001	23-22=sz	12-10=Pg
+sme_tile_to_vector_inst	7	Q	sz	ZPRRegOp zpr_ty	MatrixTileVectorOperand tile_ty	is_col	imm_ty	mnemonic	1	sme_tile_to_vector_base
+sme_tile_to_vector_aliases	4	Instruction inst	ZPRRegOp zpr_ty	MatrixTileVectorOperand tile_ty	imm_ty	0
+sme_tile_to_vector_patterns	7	Instruction inst	ValueType zpr_vt	ValueType ppr_vt	offset_ty	ComplexPattern imm2tile	ComplexPattern tileslice	op	0
+sme_tile_to_vector_v	2	mnemonic	is_col	0	8-5=imm	8-6=ZAn	8-7=ZAn	6-5=imm	7-5=imm
+sme_tile_to_vector	1	mnemonic	0
+sme_zero_inst	1	mnemonic	2	Sched	I	31-8=0b110000000000100000000000	7-0=imm
+sme_zero	1	mnemonic	0
+sve2_int_perm_revd	1	asm	2	Sched	I	31-24=0b00000101	4-0=Zd	21-13=0b101110100	9-5=Zn	23-22=0b00	12-10=Pg
+sve2_int_perm_revd	2	asm	op	0
+sve2_clamp	4	asm	sz	U	ZPRRegOp zpr_ty	2	Sched	I	31-24=0b01000100	4-0=Zd	15-11=0b11000	9-5=Zn	20-16=Zm	23-22=sz
+sve2_clamp	3	asm	U	op	0
+sve2_int_perm_sel_p	3	asm	PPRRegOp ppr_ty	imm_ty	2	Sched	I	13-10=Pn	31-24=0b00100101	8-5=Pm	17-16=Rv	15-14=0b01	3-0=Pd
+sve2_int_perm_sel_p	2	asm	op	0	20-18=0b100	20-19=imm	23-22=imm	19-18=0b10
+sme2_dot_mla_add_sub_array_vg24_single	5	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ZPRRegOp zpr_ty	mnemonic	2	Sched	I	2-0=imm3	4-3=op	14-13=Rv	9-5=Zn	19-16=Zm	12-10=op	31-23=0b110000010
+sme2_dot_mla_add_sub_array_vg24_single	5	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ZPRRegOp zpr_ty	0
+sme2_dot_mla_add_sub_array_vg2_single	7	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ZPRRegOp zpr_ty	ValueType vty	intrinsic	0
+sme2_dot_mla_add_sub_array_vg4_single	7	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ZPRRegOp zpr_ty	ValueType vty	intrinsic	0
+sme2_dot_mla_add_sub_array_vg2_multi	4	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	mnemonic	2	Sched	I	2-0=imm3	14-13=Rv	9-6=Zn	20-17=Zm	5-3=op	12-10=op	16-15=0b00	31-23=0b110000011
+sme2_dot_mla_add_sub_array_vg2_multi	6	mnemonic	op	MatrixOperand  matrix_ty	RegisterOperand multi_vector_ty	ValueType zpr_ty	intrinsic	0
+sme2_dot_mla_add_sub_array_vg4_multi	4	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	mnemonic	2	Sched	I	17-15=0b010	2-0=imm3	14-13=Rv	9-7=Zn	20-18=Zm	5-3=op	12-10=op	31-23=0b110000011
+sme2_dot_mla_add_sub_array_vg4_multi	6	mnemonic	op	MatrixOperand  matrix_ty	RegisterOperand multi_vector_ty	ValueType zpr_ty	intrinsic	0
+sme2_multivec_accum_add_sub	6	mnemonic	sz	vg4	op	MatrixOperand matrix_ty	RegisterOperand vector_ty	2	Sched	I	2-0=imm3	4-3=op	14-13=Rv	12-10=0b111	21-19=0b100	31-23=0b110000011
+sme2_multivec_accum_add_sub_vg2	5	mnemonic	sz	op	MatrixOperand matrix_ty	RegisterOperand vector_ty	1	sme2_multivec_accum_add_sub	9-6=Zm
+sme2_multivec_accum_add_sub_vg2	6	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand vector_ty	ValueType vty	intrinsic	0
+sme2_multivec_accum_add_sub_vg4	5	mnemonic	sz	op	MatrixOperand matrix_ty	RegisterOperand vector_ty	1	sme2_multivec_accum_add_sub	9-7=Zm
+sme2_multivec_accum_add_sub_vg4	6	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand vector_ty	ValueType vty	intrinsic	0
+sme2_sve_destructive_vector_vg2_single	5	sz	op	RegisterOperand vector_ty	ZPRRegOp zpr_ty	mnemonic	2	Sched	I	10-5=op	31-24=0b11000001	4-1=Zdn	21-20=0b10	15-11=0b10100	19-16=Zm	23-22=sz
+sme2_fp_sve_destructive_vector_vg2_single	2	mnemonic	op	0
+sme2_int_sve_destructive_vector_vg2_single	2	mnemonic	op	0
+sme2p1_bf_max_min_vector_vg2_single	2	mnemonic	bits<7>op	0
+sme2_sve_destructive_vector_vg4_single	5	sz	op	RegisterOperand vector_ty	ZPRRegOp zpr_ty	mnemonic	2	Sched	I	10-5=op	31-24=0b11000001	21-20=0b10	4-2=Zdn	15-11=0b10101	19-16=Zm	23-22=sz
+sme2_fp_sve_destructive_vector_vg4_single	2	mnemonic	op	0
+sme2_int_sve_destructive_vector_vg4_single	2	mnemonic	op	0
+sme2p1_bf_max_min_vector_vg4_single	2	mnemonic	bits<7>op	0
+sme2_sve_destructive_vector_vg2_multi	4	sz	op	RegisterOperand vector_ty	mnemonic	2	Sched	I	10-5=op	31-24=0b11000001	4-1=Zdn	16-11=0b010110	20-17=Zm	23-22=sz
+sme2_fp_sve_destructive_vector_vg2_multi	2	mnemonic	op	0
+sme2_int_sve_destructive_vector_vg2_multi	2	mnemonic	op	0
+sme2p1_bf_max_min_vector_vg2_multi	2	mnemonic	bits<7>op	0
+sme2_sve_destructive_vector_vg4_multi	4	sz	op	RegisterOperand vector_ty	mnemonic	2	Sched	I	10-5=op	17-11=0b0010111	31-24=0b11000001	4-2=Zdn	20-18=Zm	23-22=sz
+sme2_fp_sve_destructive_vector_vg4_multi	2	mnemonic	op	0
+sme2_int_sve_destructive_vector_vg4_multi	2	mnemonic	op	0
+sme2p1_bf_max_min_vector_vg4_multi	2	mnemonic	bits<7>op	0
+sme2_mla_long_array_index_base	6	op0	op	index_ty	RegisterOperand multi_vector_ty	mnemonic	vg_acronym=""	2	Sched	I	31-24=0b11000001	4-3=op	14-13=Rv	19-16=Zm	23-22=op0
+sme2_mla_long_array_index	5	mnemonic	op0	op	ValueType zpr_ty	intrinsic	0	2-0=imm	11-10=i3	9-5=Zn
+sme2_mla_long_array_vg2_index	3	mnemonic	op0	op	1	sme2_mla_long_array_index_base	1-0=imm	11-10=i3	9-6=Zn
+sme2_fp_mla_long_array_vg2_index	4	mnemonic	op	ValueType zpr_ty	intrinsic	0
+sme2_int_mla_long_array_vg2_index	3	mnemonic	op	intrinsic	0
+sme2_mla_long_array_vg4_index	3	mnemonic	op0	op	1	sme2_mla_long_array_index_base	1-0=imm	6-5=0b00	11-10=i3	9-7=Zn
+sme2_fp_mla_long_array_vg4_index	4	mnemonic	op	ValueType zpr_ty	intrinsic	0
+sme2_int_mla_long_array_vg4_index	3	mnemonic	op	intrinsic	0
+sme2_mla_long_array	8	bits<2>op0	op	MatrixOperand matrix_ty	index_ty	RegisterOperand first_vector_ty	RegisterOperand second_vector_ty	mnemonic	vg_acronym=""	2	Sched	I	31-24=0b11000001	4-3=op	14-13=Rv	23-22=op0	12-11=0b01
+sme2_mla_long_array_single	5	mnemonic	op0	op	ValueType zpr_ty	intrinsic	0	2-0=imm	9-5=Zn	19-16=Zm
+sme2_mla_long_array_single_16b	1	mnemonic	1	sme2_mla_long_array	2-0=imm	9-5=Zn	19-16=Zm
+sme2_fp8_fmlal_single_za16	2	mnemonic	intrinsic	0
+sme2_mla_long_array_vg24_single	9	op0	vg4	op	o2	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ZPRRegOp zpr_ty	mnemonic	vg_acronym	1	sme2_mla_long_array	1-0=imm	9-5=Zn	19-16=Zm
+sme2_fp_mla_long_array_vg2_single	8	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	ValueType zpr_ty	intrinsic	list<Register> uses=[]	0
+sme2_int_mla_long_array_vg2_single	3	mnemonic	op	intrinsic	0
+sme2_fp_mla_long_array_vg4_single	8	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	ValueType zpr_ty	intrinsic	list<Register> uses=[]	0
+sme2_int_mla_long_array_vg4_single	3	mnemonic	op	intrinsic	0
+sme2_mla_long_array_vg2_multi	5	mnemonic	op0	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	1	sme2_mla_long_array	1-0=imm	9-6=Zn	20-17=Zm
+sme2_fp_mla_long_array_vg2_multi	7	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ValueType zpr_ty	intrinsic	list<Register> uses=[]	0
+sme2_int_mla_long_array_vg2_multi	3	mnemonic	op	intrinsic	0
+sme2_mla_long_array_vg4_multi	5	mnemonic	op0	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	1	sme2_mla_long_array	1-0=imm	9-7=Zn	20-18=Zm
+sme2_fp_mla_long_array_vg4_multi	7	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ValueType zpr_ty	intrinsic	list<Register> uses=[]	0
+sme2_int_mla_long_array_vg4_multi	3	mnemonic	op	intrinsic	0
+sme2_frint_cvt_vg2_multi	5	bits<2>sz	bits<5>op	RegisterOperand first_ty	RegisterOperand second_ty	mnemonic	2	Sched	I	31-24=0b11000001	4-1=Zd	21-20=0b10	15-10=0b111000	9-6=Zn	19-16=op	23-22=sz
+sme2_fp_cvt_vg2_multi	2	mnemonic	op	0
+sme2_frint_vector_vg2_multi	2	mnemonic	op	0
+sme2_frint_zip_cvt_vg4_multi	5	bits<2>sz	bits<7>op	RegisterOperand first_ty	RegisterOperand second_ty	mnemonic	2	Sched	I	31-24=0b11000001	21-20=0b11	4-2=Zd	6-5=op	15-10=0b111000	9-7=Zn	19-16=op	23-22=sz
+sme2_fp_cvt_vg4_multi	2	mnemonic	op	0
+sme2_zip_vector_vg4	2	mnemonic	op	0
+sme2_zip_vector_vg4_Q	2	mnemonic	op	0
+sme2_frint_vector_vg4_multi	2	mnemonic	op	0
+sme2_cvt_vg2_single	4	mnemonic	op	RegisterOperand first_ty	RegisterOperand second_ty	2	Sched	I	4-0=Zd	15-10=0b111000	9-6=Zn	18-16=op	21-19=0b100	31-23=0b110000010
+sme2_cvt_vg2_single	5	mnemonic	op	ValueType out_vt	ValueType in_vt	intrinsic	0
+sme2_fp8_cvt_vg2_single	4	mnemonic	op	ValueType in_vt	intrinsic	0
+sme2_cvt_unpk_vector_vg2	6	bits<2>sz	op	u	RegisterOperand first_ty	RegisterOperand second_ty	mnemonic	2	Sched	I	31-24=0b11000001	4-1=Zd	15-10=0b111000	9-5=Zn	18-16=op	23-22=sz	21-19=0b100
+sme2_unpk_vector_vg2	2	mnemonic	u	0
+sme2p1_fp_cvt_vector_vg2_single	2	mnemonic	l	0
+sme2p1_fp8_cvt_vector_vg2_single	3	mnemonic	opc	L	0
+sme2_cvt_vg4_single	6	sz	op	bits<4>op2	RegisterOperand first_ty	RegisterOperand second_ty	mnemonic	2	Sched	I	31-24=0b11000001	4-0=Zd	21-20=0b11	6-5=op	15-10=0b111000	9-7=Zn	19-16=op2
+sme2_int_cvt_vg4_single	3	mnemonic	op	intrinsic	0
+sme2_fp8_cvt_vg4_single	3	mnemonic	N	intrinsic	0
+sme2_unpk_vector_vg4	5	bits<2>sz	u	RegisterOperand first_ty	RegisterOperand second_ty	mnemonic	2	Sched	I	31-24=0b11000001	21-10=0b110101111000	4-2=Zd	9-6=Zn	23-22=sz
+sme2_unpk_vector_vg4	2	mnemonic	u	0
+sme2_clamp_vector_vg24_multi	6	sz	op1	u	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	mnemonic	2	Sched	I	31-24=0b11000001	9-5=Zn	20-16=Zm	15-13=0b110	23-22=sz	12-10=op1
+sme2_clamp_vector_vg2_multi	6	sz	op1	u	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	mnemonic	1	sme2_clamp_vector_vg24_multi	4-1=Zd
+sme2_fp_clamp_vector_vg2_multi	1	mnemonic	0
+sme2_int_clamp_vector_vg2_multi	2	mnemonic	u	0
+sme2p1_bfclamp_vector_vg2_multi	1	mnemonic	0
+sme2_clamp_vector_vg4_multi	6	sz	op1	u	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	mnemonic	1	sme2_clamp_vector_vg24_multi	4-2=Zd
+sme2_fp_clamp_vector_vg4_multi	1	mnemonic	0
+sme2_int_clamp_vector_vg4_multi	2	mnemonic	u	0
+sme2p1_bfclamp_vector_vg4_multi	1	mnemonic	0
+sme2_zip_vector_vg2	6	sz	q	u	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	mnemonic	2	Sched	I	31-24=0b11000001	4-1=Zd	15-11=0b11010	9-5=Zn	20-16=Zm	23-22=sz
+sme2_zip_vector_vg2	2	mnemonic	op	0
+sme2_multi_vec_array_vg2_index	7	sz	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	index_ty	mnemonic	2	Sched	I	31-24=0b11000001	21-20=0b01	2-0=imm3	14-13=Rv	9-6=Zn	19-16=Zm	23-22=sz	5-3=op	12-10=op
+sme2_multi_vec_array_vg2_index_32b	7	mnemonic	sz	op	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	ValueType vt	intrinsic	0	11-10=i
+sme2p1_multi_vec_array_vg2_index_16b	7	mnemonic	sz	op	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	ValueType vt	intrinsic	0	11-10=i
+sme2p1_multi_vec_array_vg2_index_f8f16	5	mnemonic	sz	op	RegisterOperand multi_vector_ty	ZPRRegOp zpr_ty	0	11-10=i
+sme2_fp8_multi_vec_array_vg4_index	2	mnemonic	T	1	sme2_multi_vec_array_vg2_index
+sme2_multi_vec_array_vg2_index_64b	4	op	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	mnemonic	2	Sched	I	2-0=imm3	4-3=op	14-13=Rv	9-6=Zn	19-16=Zm	31-20=0b110000011101	12-11=0b00
+sme2_multi_vec_array_vg2_index_64b	6	mnemonic	op	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	ValueType vt	intrinsic	0
+sme2_multi_vec_array_vg4_index	7	sz	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	index_ty	mnemonic	2	Sched	I	6-3=op	21-20=0b01	2-0=imm3	14-13=Rv	9-7=Zn	19-16=Zm	12-10=op	31-23=0b110000010
+sme2_multi_vec_array_vg4_index_32b	6	mnemonic	op	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	ValueType vt	intrinsic	0	11-10=i
+sme2p1_multi_vec_array_vg4_index_f8f16	4	mnemonic	op	RegisterOperand multi_vector_ty	ZPRRegOp zpr_ty	0	11-10=i
+sme2p1_multi_vec_array_vg4_index_16b	6	mnemonic	op	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	ValueType vt	intrinsic	0	11-10=i
+sme2_multi_vec_array_vg4_index_64b	4	op	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	mnemonic	2	Sched	I	6-5=0b00	2-0=imm3	4-3=op	14-13=Rv	9-7=Zn	19-16=Zm	31-20=0b110000011101
+sme2_multi_vec_array_vg4_index_64b	6	mnemonic	op	RegisterOperand multi_vector_ty	ZPRRegOp vector_ty	ValueType vty	intrinsic	0
+sme2_fp8_fmlal_vg24_index_za16	5	sz	vg4	op	RegisterOperand multi_vector_ty	mnemonic	2	Sched	I	1-0=imm2	31-24=0b11000001	21-20=0b01	11-10=i	14-13=Rv	19-16=Zm	23-22=sz	5-4=op	3-2=i
+sme2_fp8_fmlal_index_za16_vgx2	2	mnemonic	intrinsic	0	9-6=Zn
+sme2_fp8_fmlal_index_za16_vgx4	2	mnemonic	intrinsic	0	9-7=Zn
+sme2_fp8_fmlal_index_za16	3	mnemonic	sz	op	2	Sched	I	31-24=0b11000001	21-20=0b00	2-0=imm3	11-10=i	14-13=Rv	9-5=Zn	19-16=Zm	23-22=sz
+sme2_fp8_fmlal_index_za16	2	mnemonic	intrinsic	0
+sme2_mla_ll_array_index_32b	3	mnemonic	sz	op	2	Sched	I	1-0=imm2	31-24=0b11000001	21-20=0b00	4-2=op	14-13=Rv	9-5=Zn	19-16=Zm	23-22=sz	12-10=i
+sme2_mla_ll_array_index_32b	5	mnemonic	sz	op	intrinsic	list<Register> uses=[]	0
+sme2_mla_ll_array_index_64b	2	mnemonic	op	2	Sched	I	1-0=imm2	4-3=op	11-10=i	14-13=Rv	9-5=Zn	19-16=Zm	31-20=0b110000011000
+sme2_mla_ll_array_index_64b	3	mnemonic	op	intrinsic	0
+sme2_mla_ll_array_vg24_index_32b	5	sz	vg4	op	RegisterOperand vector_ty	mnemonic	2	Sched	I	31-24=0b11000001	21-20=0b01	11-10=i	14-13=Rv	2-1=i	19-16=Zm	23-22=sz	5-3=op
+sme2_mla_ll_array_vg2_index_32b	5	mnemonic	sz	op	intrinsic	list<Register> uses=[]	0	9-6=Zn
+sme2_mla_ll_array_vg4_index_32b	5	mnemonic	sz	op	intrinsic	list<Register> uses=[]	0	9-7=Zn
+sme2_mla_ll_array_vg24_index_64b	4	vg4	op	RegisterOperand vector_ty	mnemonic	2	Sched	I	4-3=op	14-13=Rv	2-1=i	19-16=Zm	31-20=0b110000011001	12-11=0b00
+sme2_mla_ll_array_vg2_index_64b	3	mnemonic	op	intrinsic	0	9-6=Zn
+sme2_mla_ll_array_vg4_index_64b	3	mnemonic	op	intrinsic	0	9-7=Zn
+sme2_mla_ll_array_single	5	mnemonic	op	MatrixOperand matrix_ty	ZPRRegOp vector_ty	ZPRRegOp zpr_ty	2	Sched	I	1-0=imm	4-2=op	14-13=Rv	9-5=Zn	19-16=Zm	12-10=0b001	31-23=0b110000010
+sme2_mla_ll_array_single	8	mnemonic	op	MatrixOperand matrix_ty	ZPRRegOp vector_ty	ZPRRegOp zpr_ty	ValueType vt	intrinsic	list<Register> uses=[]	0
+sme2_mla_ll_array_vg24_single	5	op	MatrixOperand matrix_ty	RegisterOperand vector_ty	ZPRRegOp zpr_ty	mnemonic	2	Sched	I	4-1=op	14-13=Rv	9-5=Zn	19-16=Zm	12-10=0b000	31-23=0b110000010
+sme2_mla_ll_array_vg24_single	6	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ZPRRegOp zpr_ty	list<Register> uses	0
+sme2_mla_ll_array_vg2_single	8	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ZPRRegOp zpr_ty	ValueType vt	intrinsic	list<Register> uses=[]	0
+sme2_mla_ll_array_vg4_single	8	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand multi_vector_ty	ZPRRegOp zpr_ty	ValueType vt	intrinsic	list<Register> uses=[]	0
+sme2_mla_ll_array_vg2_multi	4	op	MatrixOperand matrix_ty	RegisterOperand vector_ty	mnemonic	2	Sched	I	14-13=Rv	9-6=Zn	20-17=Zm	5-2=op	12-10=0b000	16-15=0b00	31-23=0b110000011
+sme2_mla_ll_array_vg2_multi	7	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand vector_ty	ValueType vt	intrinsic	list<Register> uses=[]	0
+sme2_mla_ll_array_vg4_multi	4	op	MatrixOperand matrix_ty	RegisterOperand vector_ty	mnemonic	2	Sched	I	17-15=0b010	14-13=Rv	9-7=Zn	20-18=Zm	5-2=op	12-10=0b000	31-23=0b110000011
+sme2_mla_ll_array_vg4_multi	7	mnemonic	op	MatrixOperand matrix_ty	RegisterOperand vector_ty	ValueType vt	intrinsic	list<Register> uses=[]	0
+sme2_int_mopx_tile	3	mnemonic	op	intrinsic	0	1-0=ZAda
+sme2_int_bmopx_tile	3	mnemonic	op	intrinsic	0
+sme_int_sparse_outer_product_i16	4	opc	RegisterOperand zn_ty	RegisterOperand zm_ty	mnemonic	2	Sched	I	31-25=0b1000000	2-1=0b00	20-16=Zm	9-6=Zn	23-22=0b01	5-4=imm	12-10=Zk
+sme_int_sparse_outer_product_i32	4	opc	RegisterOperand zn_ty	RegisterOperand zm_ty	mnemonic	2	Sched	I	1-0=ZAda	31-25=0b1000000	20-16=Zm	9-6=Zn	23-22=0b01	5-4=imm	12-10=Zk
+sme_tmopa_16b	7	opc	RegisterOperand zn_ty	RegisterOperand zm_ty	ValueType vt	mnemonic	intrinsic	list<Register> uses=[]	0
+sme_tmopa_32b	7	opc	RegisterOperand zn_ty	RegisterOperand zm_ty	ValueType vt	mnemonic	intrinsic	list<Register> uses=[]	0
+sme2_zero_zt	2	mnemonic	opc	2	Sched	I	3-0=opc	31-4=0b1100000001001000000000000000
+sme2_zero_zt	2	mnemonic	opc	0
+sme2_spill_fill_vector	2	mnemonic	opc	2	Sched	I	1-0=opc	4-2=0b000	15-10=0b100000	9-5=Rn	21-16=opc	31-22=0b1110000100
+sme2_spill_fill_vector	3	mnemonic	opc	op	0
+sme2_movt_zt_to_scalar	2	mnemonic	opc	2	Sched	I	31-15=0b11000000010011000	4-0=Rt	14-12=imm3	11-5=opc
+sme2_movt_scalar_to_zt	2	mnemonic	opc	2	Sched	I	31-15=0b11000000010011100	4-0=Rt	14-12=imm3	11-5=opc
+sme2_movt_zt_to_zt	2	mnemonic	opc	2	Sched	I	4-0=Zt	13-12=off2	11-5=opc	31-14=0b110000000100111100
+sme2_movt_zt_to_zt	4	mnemonic	opc	intrinsic_lane	intrinsic	0
+sme2_luti_vector_index	5	sz	opc	RegisterOperand vector_ty	AsmVectorIndexOpnd index_ty	mnemonic	2	Sched	I	4-0=Zd	13-12=sz	31-19=0b1100000011001	11-10=opc	18-14=opc	9-5=Zn
+sme2_luti2_vector_index	3	sz	RegisterOperand vector_ty	mnemonic	1	sme2_luti_vector_index	17-14=i
+sme2_luti2_vector_index	2	mnemonic	intrinsic	0
+sme2_luti4_vector_index	3	sz	RegisterOperand vector_ty	mnemonic	1	sme2_luti_vector_index	16-14=i
+sme2_luti4_vector_index	2	mnemonic	intrinsic	0
+sme2_luti_vector_vg2_index	5	sz	opc	RegisterOperand vector_ty	AsmVectorIndexOpnd index_ty	mnemonic	2	Sched	I	13-12=sz	4-1=Zd	31-19=0b1100000010001	11-10=opc	9-5=Zn	18-15=opc
+sme2_luti2_vector_vg2_index	3	sz	RegisterOperand vector_ty	mnemonic	1	sme2_luti_vector_vg2_index	17-15=i
+sme2_luti2_vector_vg2_index	1	mnemonic	0
+sme2_luti4_vector_vg2_index	3	sz	RegisterOperand vector_ty	mnemonic	1	sme2_luti_vector_vg2_index	16-15=i
+sme2_luti4_vector_vg2_index	1	mnemonic	0
+sme2_luti_vector_vg4_index	5	sz	bits<5>opc	RegisterOperand vector_ty	AsmVectorIndexOpnd index_ty	mnemonic	2	Sched	I	1-0=0b00	13-12=sz	4-2=Zd	31-19=0b1100000010001	11-10=opc	9-5=Zn	18-16=opc	15-14=0b10
+sme2_luti2_vector_vg4_index	3	sz	RegisterOperand vector_ty	mnemonic	1	sme2_luti_vector_vg4_index	17-16=i
+sme2_luti2_vector_vg4_index	1	mnemonic	0
+sme2_luti4_vector_vg4_index	3	sz	RegisterOperand vector_ty	mnemonic	1	sme2_luti_vector_vg4_index
+sme2_luti4_vector_vg4_index	1	mnemonic	0
+sme2_lut_single	1	asm	2	Sched	I	4-0=Zd	9-5=Zn	31-10=0b1100000011001000010000
+sme2_lut_single	2	asm	intrinsic	0
+sme2_luti6_zt_base	2	RegisterOperand zd_ty	asm	2	Sched	I	19-10=0b1010000000	6-5=0b00	9-7=Zn	31-21=0b11000000100
+sme2_luti6_zt_consecutive	1	asm	1	sme2_luti6_zt_base	1-0=0b00	4-2=Zd
+sme2_luti6_zt_strided	1	asm	1	sme2_luti6_zt_base	1-0=Zd	3-2=0b00
+sme2_luti6_vector_vg4_base	2	RegisterOperand zd_ty	asm	2	Sched	I	9-5=Zn	20-16=Zm	31-23=0b110000010
+sme2_luti6_vector_vg4_consecutive	1	asm	1	sme2_luti6_vector_vg4_base	1-0=0b00	4-2=Zd	15-10=0b111101
+sme2_luti6_vector_vg4_strided	1	asm	1	sme2_luti6_vector_vg4_base	1-0=Zd	15-10=0b111111	3-2=0b00
+sme2_mova_vec_to_tile_vg2_multi_base	6	sz	v	RegisterOperand tile_ty	index_ty	RegisterOperand vector_ty	mnemonic	2	Sched	I	31-24=0b11000000	14-13=Rs	9-6=Zn	21-16=0b000100	23-22=sz	5-3=0b000	12-10=0b000
+sme2_mova_vec_to_tile_or_array_aliases	8	int prefer	Instruction inst	RegisterOperand tile_or_array_ty	RegisterOperand  rv_ty	index_ty	RegisterOperand vector_ty	mnemonic	vg_acronym=""	0
+sme2_mova_vec_to_tile_vg2_multi_base	3	v	mnemonic	intrinsic	0	1-0=imm	2-0=imm	2-1=ZAd
+sme2_mova_vec_to_tile_vg2_multi	3	mnemonic	int_h	int_v	0
+sme2_mova_vec_to_tile_vg4_multi_base	7	sz	v	op	RegisterOperand tile_ty	index_ty	RegisterOperand vector_ty	mnemonic	2	Sched	I	31-24=0b11000000	6-3=0b0000	2-0=op	14-13=Rs	9-7=Zn	21-16=0b000100	23-22=sz	12-10=0b001
+sme2_mova_vec_to_tile_vg4_multi_base	3	v	mnemonic	intrinsic	0	1-0=imm	2-0=ZAd
+sme2_mova_vec_to_tile_vg4_multi	3	mnemonic	int_h	int_v	0
+sme2_mova_vec_to_array_vg24_multi	5	op	RegisterOperand array_ty	RegisterOperand vector_ty	mnemonic	vg_acronym=""	2	Sched	I	31-15=0b11000000000001000	10-6=op	2-0=imm	14-13=Rs	5-3=0b000	12-11=0b01
+sme2_mova_vec_to_array_vg2_multi	2	mnemonic	intrinsic	0	9-6=Zn
+sme2_mova_vec_to_array_vg4_multi	2	mnemonic	intrinsic	0	9-7=Zn
+sme2_mova_tile_to_vec_vg2_multi_base	7	sz	v	op	RegisterOperand vector_ty	RegisterOperand tile_ty	index_ty	mnemonic	2	Sched	I	31-24=0b11000000	4-1=Zd	10-8=op	14-13=Rs	21-16=0b000110	23-22=sz	12-11=0b00
+sme2_mova_tile_or_array_to_vec_aliases	8	int op	Instruction inst	RegisterOperand vector_ty	RegisterOperand tile_or_array_ty	RegisterOperand rv_ty	index_ty	mnemonic	vg_acronym=""	0
+sme2_mova_tile_to_vec_vg2_multi_inst	3	v	opc	mnemonic	0	6-5=imm	7-5=imm	7-6=ZAn
+sme2_mova_tile_to_vec_vg2_multi	1	mnemonic	0
+sme2p1_movaz_tile_to_vec_vg2	1	mnemonic	0
+sme2_mova_tile_to_vec_vg4_multi_base	7	sz	v	op	RegisterOperand vector_ty	RegisterOperand tile_ty	index_ty	mnemonic	2	Sched	I	1-0=0b00	10-5=op	31-24=0b11000000	4-2=Zd	14-13=Rs	21-16=0b000110	23-22=sz	12-11=0b00
+sme2_mova_tile_to_vec_vg4_multi_base	3	v	opc	mnemonic	0	6-5=imm	7-5=ZAn
+sme2_mova_tile_to_vec_vg4_multi	1	mnemonic	0
+sme2p1_movaz_tile_to_vec_vg4	1	mnemonic	0
+sme2_mova_array_to_vec_vg24_multi	5	bits<4>op	RegisterOperand vector_ty	RegisterOperand array_ty	mnemonic	vg_acronym	2	Sched	I	31-15=0b11000000000001100	10-8=op	14-13=Rs	7-5=imm	12-11=0b01
+sme2_mova_array_to_vec_vg2_multi	2	opc	mnemonic	0	4-1=Zd
+sme2_movaz_array_to_vec_vg2_multi	1	mnemonic	0
+sme2_mova_array_to_vec_vg4_multi	2	opc	mnemonic	0	4-2=Zd
+sme2_movaz_array_to_vec_vg4_multi	1	mnemonic	0
+sme2_sat_shift_vector_vg2	3	mnemonic	op	u	2	Sched	I	4-0=Zd	15-10=0b110101	9-6=Zn	19-16=imm4	31-21=0b11000001111
+sme2_sat_shift_vector_vg2	4	mnemonic	op	u	intrinsic	0
+sme2_sat_shift_vector_vg4	6	sz	op	ZPRRegOp zpr_ty	RegisterOperand vector_ty	imm_ty	mnemonic	2	Sched	I	31-24=0b11000001	4-0=Zd	6-5=op	15-11=0b11011	9-7=Zn	23-22=sz
+sme2_sat_shift_vector_vg4	3	mnemonic	op	intrinsic	0	20-16=imm
+sme2_sel_vector_vg24	4	sz	op	RegisterOperand vector_ty	mnemonic	2	Sched	I	31-24=0b11000001	17-16=op	15-13=0b100	23-22=sz	12-10=PNg
+sme2_sel_vector_vg2	3	sz	RegisterOperand vector_ty	mnemonic	1	sme2_sel_vector_vg24	4-1=Zd	9-6=Zn	20-17=Zm
+sme2_sel_vector_vg2	1	mnemonic	0
+sme2_sel_vector_vg4	3	sz	RegisterOperand vector_ty	mnemonic	1	sme2_sel_vector_vg24	4-2=Zd	9-7=Zn	20-18=Zm
+sme2_sel_vector_vg4	1	mnemonic	0
+sme2_ld_vector_vg2_multi_scalar_scalar	5	msz	n	RegisterOperand multi_vector_ty	RegisterOperand gpr_ty	mnemonic	2	Sched	I	2-0=Zt	14-13=msz	9-5=Rn	20-16=Rm	31-21=0b10100001000	12-10=PNg
+sme2_ld_vector_vg4_multi_scalar_scalar	5	msz	n	RegisterOperand multi_vector_ty	RegisterOperand gpr_ty	mnemonic	2	Sched	I	1-0=Zt	14-13=msz	9-5=Rn	20-16=Rm	31-21=0b10100001000	12-10=PNg
+sme2_ld_vector_vg24_multi_scalar_immediate	6	msz	n	op	RegisterOperand multi_vector_ty	index_ty	mnemonic	2	Sched	I	14-13=msz	9-5=Rn	19-16=imm4	31-20=0b101000010100	12-10=PNg
+sme2_ld_vector_vg2_multi_scalar_immediate	5	msz	n	RegisterOperand multi_vector_ty	index_ty	mnemonic	0	2-0=Zt
+sme2_ld_vector_vg4_multi_scalar_immediate	5	msz	n	RegisterOperand multi_vector_ty	index_ty	mnemonic	0	1-0=Zt
+sme2_st_vector_vg2_multi_scalar_scalar	5	msz	n	RegisterOperand multi_vector_ty	RegisterOperand gpr_ty	mnemonic	2	Sched	I	2-0=Zt	14-13=msz	9-5=Rn	20-16=Rm	31-21=0b10100001001	12-10=PNg
+sme2_st_vector_vg4_multi_scalar_scalar	5	msz	n	RegisterOperand multi_vector_ty	RegisterOperand gpr_ty	mnemonic	2	Sched	I	1-0=Zt	14-13=msz	9-5=Rn	20-16=Rm	31-21=0b10100001001	12-10=PNg
+sme2_st_vector_vg24_multi_scalar_immediate	6	msz	n	op	RegisterOperand multi_vector_ty	index_ty	mnemonic	2	Sched	I	14-13=msz	9-5=Rn	19-16=imm4	31-20=0b101000010110	12-10=PNg
+sme2_st_vector_vg2_multi_scalar_immediate	5	msz	n	RegisterOperand multi_vector_ty	index_ty	mnemonic	0	2-0=Zt
+sme2_st_vector_vg4_multi_scalar_immediate	5	msz	n	RegisterOperand multi_vector_ty	index_ty	mnemonic	0	1-0=Zt
+sme2p1_movaz_tile_to_vec_base	7	sz	q	v	ZPRRegOp vector_ty	RegisterOperand tile_ty	index_ty	mnemonic	2	Sched	I	31-24=0b11000000	4-0=Zd	12-9=0b0001	14-13=Rs	21-17=0b00001	23-22=sz
+sme2p1_movaz_tile_to_vec_base	2	v	mnemonic	0	8-5=imm	8-6=ZAn	8-7=ZAn	6-5=imm	7-5=imm
+sme2p1_movaz_tile_to_vec	5	mnemonic	intrinsic_horiz	intrinsic_vert	intrinsic_horiz_q	intrinsic_vert_q	0
+sme2p1_zero_matrix	4	opc	index_ty	mnemonic	vg_acronym=""	2	Sched	I	31-18=0b11000000000011	17-15=opc	2-0=opc	14-13=Rv	12-3=0b0000000000
+sme2p1_zero_matrix	1	mnemonic	0	1-0=imm	2-0=imm
+sme2p1_luti_vector_vg2_index	5	op	sz	RegisterOperand vector_ty	AsmVectorIndexOpnd index_ty	mnemonic	2	Sched	I	13-12=sz	31-19=0b1100000010011	2-0=Zd	11-10=0b00	9-5=Zn	18-15=op
+sme2p1_luti2_vector_vg2_index	4	sz	RegisterOperand vector_ty	AsmVectorIndexOpnd index_ty	mnemonic	1	sme2p1_luti_vector_vg2_index	17-15=i
+sme2p1_luti2_vector_vg2_index	1	mnemonic	0
+sme2p1_luti4_vector_vg2_index	4	sz	RegisterOperand vector_ty	AsmVectorIndexOpnd index_ty	mnemonic	1	sme2p1_luti_vector_vg2_index	16-15=i
+sme2p1_luti4_vector_vg2_index	1	mnemonic	0
+sme2p1_luti_vector_vg4_index	5	op	sz	RegisterOperand vector_ty	AsmVectorIndexOpnd index_ty	mnemonic	2	Sched	I	1-0=Zd	13-12=sz	31-19=0b1100000010011	11-10=0b00	9-5=Zn	18-16=op	15-14=0b10	3-2=0b00
+sme2p1_luti2_vector_vg4_index	4	sz	RegisterOperand vector_ty	AsmVectorIndexOpnd index_ty	mnemonic	1	sme2p1_luti_vector_vg4_index	17-16=i
+sme2p1_luti2_vector_vg4_index	1	mnemonic	0
+sme2p1_luti4_vector_vg4_index	4	sz	RegisterOperand vector_ty	AsmVectorIndexOpnd index_ty	mnemonic	1	sme2p1_luti_vector_vg4_index
+sme2p1_luti4_vector_vg4_index	1	mnemonic	0
+sme2_luti4_vector_vg4	3	sz	op	mnemonic	2	Sched	I	1-0=0b00	13-12=sz	4-2=Zd	11-10=op	9-6=Zn	31-14=0b110000001000101100
+sme2_luti4_vector_vg4_strided	3	sz	op	mnemonic	2	Sched	I	1-0=Zd	13-12=sz	11-10=op	9-6=Zn	3-2=0b00	31-14=0b110000001001101100
+sme2_bfscale_single	1	mnemonic	0
+sme2_bfscale_multi	1	mnemonic	0
+sme2_bf16_fp32_quarter_tile_outer_product	6	M	N	S	mnemonic	RegisterOperand zn_ty	RegisterOperand zm_ty	2	Sched	I	1-0=ZAda	8-6=Zn	16-10=0b0000000	19-17=Zm	31-21=0b10000001000	3-2=0b00
+sme2_bfmop4as_widening	3	S	mnemonic	op	0
+sme2_multi2_fmul_sm	4	size	mnemonic	RegisterOperand vector_ty	RegisterOperand zpr_ty	2	Sched	I	31-24=0b11000001	4-1=Zd	16-10=0b0111010	9-6=Zn	20-17=Zm	23-22=size
+sme2_multi2_fmul_sm	1	mnemonic	0
+sme2_multi4_fmul_sm	4	size	mnemonic	RegisterOperand vector_ty	RegisterOperand zpr_ty	2	Sched	I	1-0=0b00	31-24=0b11000001	4-2=Zd	6-5=0b00	16-10=0b1111010	20-17=Zm	9-7=Zn	23-22=size
+sme2_multi4_fmul_sm	1	mnemonic	0
+sme2_bfmul_single	1	mnemonic	0
+sme2_multi2_fmul_mm	3	size	mnemonic	RegisterOperand vector_ty	2	Sched	I	31-24=0b11000001	4-1=Zd	16-10=0b0111001	9-6=Zn	20-17=Zm	23-22=size
+sme2_multi2_fmul_mm	1	mnemonic	0
+sme2_multi4_fmul_mm	3	size	mnemonic	RegisterOperand vector_ty	2	Sched	I	1-0=0b00	31-24=0b11000001	4-2=Zd	6-5=0b00	9-7=Zn	20-18=Zm	23-22=size	17-10=0b01111001
+sme2_multi4_fmul_mm	1	mnemonic	0
+sme2_bfmul_multi	1	mnemonic	0
+sme2_fp16_quarter_tile_outer_product	6	M	N	S	mnemonic	RegisterOperand zn_ty	RegisterOperand zm_ty	2	Sched	I	8-6=Zn	16-10=0b0000000	19-17=Zm	31-21=0b10000001000	3-1=0b100
+sme2_fmop4as_fp16_non_widening	3	S	mnemonic	op	0
+sme2_fp8_fp32_quarter_tile_outer_product	5	M	N	mnemonic	RegisterOperand zn_ty	RegisterOperand zm_ty	2	Sched	I	1-0=ZAda	8-6=Zn	16-10=0b0000000	5-2=0b0000	19-17=Zm	31-21=0b10000000001
+sme2_fmop4a_fp8_fp32_4way	2	mnemonic	op	0
+sme2_bf16_fp16_quarter_tile_outer_product	6	M	N	S	mnemonic	RegisterOperand zn_ty	RegisterOperand zm_ty	2	Sched	I	8-6=Zn	16-10=0b0000000	19-17=Zm	31-21=0b10000001001	3-1=0b100
+sme2_bfmop4as_non_widening	3	S	mnemonic	op	0
+sme2_fp32_quarter_tile_outer_product	6	M	N	S	mnemonic	RegisterOperand zn_ty	RegisterOperand zm_ty	2	Sched	I	1-0=ZAda	8-6=Zn	16-10=0b0000000	19-17=Zm	31-21=0b10000000000	3-2=0b00
+sme2_fmop4as_fp32_non_widening	3	S	mnemonic	op	0
+sme2_fp64_quarter_tile_outer_product	6	M	N	S	mnemonic	RegisterOperand zn_ty	RegisterOperand zm_ty	2	Sched	I	8-6=Zn	2-0=ZAda	16-10=0b0000000	19-17=Zm	31-21=0b10000000110
+sme2_fmop4as_fp64_non_widening	3	S	mnemonic	op	0
+sme2_fp16_fp32_quarter_tile_outer_product	6	M	N	S	mnemonic	RegisterOperand zn_ty	RegisterOperand zm_ty	2	Sched	I	1-0=ZAda	8-6=Zn	16-10=0b0000000	19-17=Zm	31-21=0b10000001001	3-2=0b00
+sme2_fmop4as_fp16_fp32_widening	3	S	mnemonic	op	0
+sme2_fp8_fp16_quarter_tile_outer_product	5	M	N	mnemonic	RegisterOperand zn_ty	RegisterOperand zm_ty	2	Sched	I	8-6=Zn	16-10=0b0000000	5-1=0b00100	19-17=Zm	31-21=0b10000000001
+sme2_fmop4a_fp8_fp16_2way	2	mnemonic	op	0
+sme2_fp8_fdot_index_za16_vg1x2	3	mnemonic	op	intrinsic	0	11-10=i
+sme2_fp8_fdot_index_za16_vg1x4	2	mnemonic	intrinsic	0	11-10=i
+sme2_fp8_fdot_index_za32_vg1x2	2	mnemonic	intrinsic	0	11-10=i
+sme2_fp8_fdot_index_za32_vg1x4	2	mnemonic	intrinsic	0	11-10=i
+sme2_fp8_fdotv_index_za32_vg1x4	3	mnemonic	T	intrinsic	0
+sme2_fp8_fdot_single_vg1x2	4	mnemonic	op	MatrixOperand matrix_op	intrinsic	0
+sme2_fp8_fdot_single_vg1x4	4	mnemonic	op	MatrixOperand matrix_op	intrinsic	0
+sme2_fp8_fdot_multi_vg1x2	4	mnemonic	op	MatrixOperand matrix_op	intrinsic	0
+sme2_fp8_fdot_multi_vg1x4	4	mnemonic	op	MatrixOperand matrix_op	intrinsic	0
+NEONType	1	ValueType VT	0
+SVEType	1	ValueType VT	0
+SVELogicalImmOperand	1	int Width	1	AsmOperandClass
+SVEPreferredLogicalImmOperand	1	int Width	1	AsmOperandClass
+SVELogicalImmNotOperand	1	int Width	1	AsmOperandClass
+SVEShiftedImmOperand	3	int ElementWidth	Infix	Predicate	1	AsmOperandClass
+imm8_opt_lsl	3	int ElementWidth	printType	AsmOperandClass OpndClass	1	Operand
+SVEExactFPImm	3	Suffix	ValA	ValB	1	AsmOperandClass
+SVEExactFPImmOperand	3	Suffix	ValA	ValB	1	Operand
+sve_int_ptrue	6	sz8_64	opc	asm	PPRRegOp pprty	ValueType vt	op	2	Sched	I	31-24=0b00100101	15-10=0b111000	9-5=pattern	18-17=opc	23-22=sz8_64	3-0=Pd	21-19=0b011
+sve_int_ptrue	3	opc	asm	op	0
+SVE_1_Op_Pat	4	ValueType vtd	op	ValueType vt1	Instruction inst	1	Pat
+SVE_1_Op_PassthruUndefZero_Pat	5	ValueType vtd	op	ValueType pg	ValueType vts	Instruction inst	0
+SVE_1_Op_Passthru_Round_Pat	5	ValueType vtd	op	ValueType pg	ValueType vts	Instruction inst	1	Pat
+SVE_1_Op_PassthruZero_Pat	5	ValueType vtd	op	ValueType vt1	ValueType vt2	Instruction inst	1	Pat
+SVE_3_Op_UndefZero_Pat	6	ValueType vtd	op	ValueType vt1	ValueType vt2	ValueType vt3	Instruction inst	0
+SVE_4_Op_Pat	7	ValueType vtd	op	ValueType vt1	ValueType vt2	ValueType vt3	ValueType vt4	Instruction inst	1	Pat
+SVE2p1_While_PN_Pat	4	int EltSize	op	ValueType vt1	Instruction inst	0
+SVE_3_Op_Imm_Pat	7	ValueType vtd	op	ValueType vt1	ValueType vt2	ValueType vt3	ImmTy	Instruction inst	1	Pat
+SVE_2_Op_AllActive_Pat	6	ValueType vtd	op	ValueType vt1	ValueType vt2	Instruction inst	Instruction ptrue	1	Pat
+SVE_InReg_Extend_PassthruUndefZero	5	ValueType vt	op	ValueType pt	ValueType inreg_vt	Instruction inst	0
+SVE_Shift_DupImm_Pred_Pat	6	ValueType vt	op	ValueType pt	ValueType it	ComplexPattern cast	Instruction inst	1	Pat
+VSelectCommPredOrPassthruPatFrags	2	intrinsic	sdnode	1	PatFrags
+sve_int_pfalse	2	opc	asm	0
+sve_int_ptest	3	opc	asm	op	2	Sched	I	13-10=Pg	31-24=0b00100101	8-5=Pn	4-0=0b00000	18-16=opc	15-14=0b11	23-22=opc	21-19=0b010
+sve_int_ptest	5	opc	asm	op	op_any	op_first	0
+sve_int_pfirst_next	4	sz8_64	opc	asm	PPRRegOp pprty	2	Sched	I	31-24=0b00100101	8-5=Pg	10-9=opc	15-11=0b11000	18-16=opc	23-22=sz8_64	3-0=Pdn	21-19=0b011
+sve_int_pfirst	3	opc	asm	op	0
+sve_int_pnext	3	opc	asm	op	0
+sve_int_count_r	6	sz8_64	opc	asm	RegisterOperand dty	PPRRegOp pprty	RegisterOperand sty	2	Sched	I	31-24=0b00100101	8-5=Pg	4-0=Rdn	10-9=opc	15-11=0b10001	18-16=opc	23-22=sz8_64	21-19=0b101
+sve_int_count_r_s32	3	opc	asm	op	0
+sve_int_count_r_u32	3	opc	asm	op	0
+sve_int_count_r_x64	4	opc	asm	op	combine_op = null_frag	0
+sve_int_count_v	5	sz8_64	opc	asm	ZPRRegOp zprty	PPRRegOp pprty	2	Sched	I	31-24=0b00100101	8-5=Pm	4-0=Zdn	10-9=opc	15-11=0b10000	18-16=opc	23-22=sz8_64	21-19=0b101
+sve_int_count_v	3	opc	asm	op = null_frag	0
+sve_int_pcount_pred	4	sz8_64	opc	asm	PPRRegOp pprty	2	Sched	I	13-10=Pg	31-24=0b00100101	8-5=Pn	4-0=Rd	18-16=opc	15-14=0b10	23-22=sz8_64	21-19=0b100
+sve_int_pcount_pred	3	opc	asm	int_op	0
+sve_int_count	2	opc	asm	2	Sched	I	31-24=0b00000100	4-0=Rd	21-20=0b10	15-11=0b11100	9-5=pattern	19-16=imm4	23-22=opc
+sve_int_count	3	opc	asm	op	0
+sve_int_countvlv	3	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000100	4-0=Zdn	11-10=opc	9-5=pattern	15-12=0b1100	19-16=imm4	23-22=opc
+sve_int_countvlv	5	opc	asm	ZPRRegOp zprty	op = null_frag	ValueType vt = OtherVT	0
+sve_int_pred_pattern_a	2	opc	asm	2	Sched	I	31-24=0b00000100	4-0=Rdn	21-20=0b11	15-11=0b11100	9-5=pattern	19-16=imm4	23-22=opc
+sve_int_pred_pattern_a	4	opc	asm	op	opcnt	0
+sve_int_pred_pattern_b	4	opc	asm	RegisterOperand dt	RegisterOperand st	2	Sched	I	31-24=0b00000100	4-0=Rdn	11-10=opc	9-5=pattern	15-12=0b1111	19-16=imm4	23-22=opc
+sve_int_pred_pattern_b_s32	3	opc	asm	op	0
+sve_int_pred_pattern_b_u32	3	opc	asm	op	0
+sve_int_pred_pattern_b_x64	3	opc	asm	op	0
+sve_int_perm_dup_r	6	sz8_64	asm	ZPRRegOp zprty	ValueType vt	srcRegType	op	2	Sched	I	31-24=0b00000101	4-0=Zd	21-10=0b100000001110	9-5=Rn	23-22=sz8_64
+sve_int_perm_dup_r	2	asm	op	0
+sve_int_perm_dup_i	4	tsz	immtype	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000101	4-0=Zd	15-10=0b001000	9-5=Zn	20-16=tsz	23-22=?,?
+sve_int_perm_dup_i	1	asm	0	20-17=idx	20-18=idx	20-19=idx	23-22=idx
+sve_int_perm_tbl	5	sz8_64	opc	asm	ZPRRegOp zprty	RegisterOperand VecList	2	Sched	I	31-24=0b00000101	4-0=Zd	9-5=Zn	20-16=Zm	15-13=0b001	23-22=sz8_64	12-11=opc
+sve_int_perm_tbl	2	asm	op	0
+sve2_int_perm_tbl	2	asm	op	0
+sve2_int_perm_tbx	4	sz8_64	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000101	4-0=Zd	9-5=Zn	20-16=Zm	15-13=0b001	23-22=sz8_64	12-11=opc
+sve2_int_perm_tbx	3	asm	opc	op	0
+sve_int_perm_reverse_z	3	sz8_64	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000101	4-0=Zd	21-10=0b111000001110	9-5=Zn	23-22=sz8_64
+sve_int_perm_reverse_z	2	asm	op	0
+sve_int_perm_reverse_p	4	sz8_64	asm	PPRRegOp pprty	op	2	Sched	I	31-24=0b00000101	8-5=Pn	21-9=0b1101000100000	23-22=sz8_64	3-0=Pd
+sve_int_perm_reverse_p	5	asm	ir_op	op_b16	op_b32	op_b64	0
+sve_int_perm_unpk	5	sz16_64	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	2	Sched	I	31-24=0b00000101	4-0=Zd	15-10=0b001110	17-16=opc	9-5=Zn	23-22=sz16_64	21-18=0b1100
+sve_int_perm_unpk	3	opc	asm	op	0
+sve_int_perm_insrs	4	sz8_64	asm	ZPRRegOp zprty	srcRegType	2	Sched	I	31-24=0b00000101	4-0=Zdn	21-10=0b100100001110	9-5=Rm	23-22=sz8_64
+sve_int_perm_insrs	2	asm	op	0
+sve_int_perm_insrv	4	sz8_64	asm	ZPRRegOp zprty	FPRasZPROperand srcOpType	2	Sched	I	31-24=0b00000101	4-0=Zdn	21-10=0b110100001110	9-5=Vm	23-22=sz8_64
+sve_int_perm_insrv	2	asm	op	0
+sve_int_perm_extract_i	1	asm	2	Sched	I	4-0=Zdn	9-5=Zm	20-16=imm8	15-13=0b000	31-21=0b00000101001	12-10=imm8
+sve_int_perm_extract_i	3	asm	op	Ps	0
+sve2_int_perm_extract_i_cons	1	asm	2	Sched	I	4-0=Zd	9-5=Zn	20-16=imm8	15-13=0b000	31-21=0b00000101011	12-10=imm8
+sve_int_sel_vvv	3	sz8_64	asm	ZPRRegOp zprty	2	Sched	I	13-10=Pg	31-24=0b00000101	4-0=Zd	9-5=Zn	20-16=Zm	15-14=0b11	23-22=sz8_64
+sve_int_sel_vvv	2	asm	op	0
+sve_int_pred_log	2	opc	asm	2	Sched	I	13-10=Pg	31-24=0b00100101	8-5=Pn	21-20=0b00	15-14=0b01	19-16=Pm	23-22=opc	3-0=Pd
+sve_int_pred_log	4	opc	asm	op	op_nopred = null_frag	0
+sve_int_pred_log_v2	4	opc	asm	op	op_nopred	1	sve_int_pred_log
+sve_int_log_imm	2	opc	asm	3	Sched	I	SVEPseudo2Instr	17-5=imms13	31-24=0b00000101	4-0=Zdn	23-22=opc	21-18=0b0000
+sve_int_log_imm	4	opc	asm	alias	op	0
+sve_int_log_imm_bic	1	op	0
+sve_int_dup_mask_imm	1	asm	2	Sched	I	17-5=imms	4-0=Zd	31-18=0b00000101110000
+sve_int_dup_mask_imm	1	asm	0
+sve_int_bin_cons_arit_0	4	sz8_64	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000100	4-0=Zd	9-5=Zn	20-16=Zm	15-13=0b000	23-22=sz8_64	12-10=opc
+sve_int_bin_cons_arit_0	3	opc	asm	op	0
+sve_fp_2op_i_p_zds	5	sz	opc	asm	ZPRRegOp zprty	imm_ty	2	Sched	I	31-24=0b01100101	4-0=Zdn	9-6=0b0000	15-13=0b100	18-16=opc	23-22=sz	12-10=Pg	21-19=0b011
+sve_fp_2op_i_p_zds	7	opc	asm	Ps	imm_ty	FPImmLeaf A	FPImmLeaf B	op	0
+sve_fp_2op_p_zds	4	sz	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b01100101	4-0=Zdn	21-20=0b00	9-5=Zm	15-13=0b100	19-16=opc	23-22=sz	12-10=Pg
+sve_fp_2op_p_zds	7	opc	asm	Ps	op	DestructiveInstTypeEnum flags	revname=""	isReverseInstr=0	0
+sve_fp_2op_p_zds_bfloat	7	opc	asm	Ps	op	DestructiveInstTypeEnum flags	revname=""	isReverseInstr=0	0
+sve_fp_2op_p_zds_zeroing_hsd	1	op	0
+sve_fp_2op_p_zds_zeroing_bfloat	1	op	0
+sve_fp_ftmad	3	sz	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b01100101	4-0=Zdn	15-10=0b100000	9-5=Zm	18-16=imm3	23-22=sz	21-19=0b010
+sve_fp_ftmad	2	asm	op	0
+sve_fp_2op_i_p_zds_hfd	4	imm_ty	FPImmLeaf A	FPImmLeaf B	ir_op = null_frag	0
+sve_fp_2op_i_p_zds_zeroing_hfd	4	imm_ty	FPImmLeaf A	FPImmLeaf B	op	0
+sve_fp_3op_u_zd	4	sz	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b01100101	4-0=Zd	9-5=Zn	20-16=Zm	15-13=0b000	23-22=sz	12-10=opc
+sve_fp_3op_u_zd	3	opc	asm	op	0
+sve_fp_3op_u_zd_bfloat	3	opc	asm	op	0
+sve_fp_3op_u_zd_ftsmul	3	opc	asm	op	0
+sve_fp_3op_p_zds_a	4	sz	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b01100101	4-0=Zda	14-13=opc	9-5=Zn	20-16=Zm	23-22=sz	12-10=Pg
+sve_fp_3op_p_zds_a	6	opc	asm	Ps	op	revname	isReverseInstr=0	0
+sve_fp_3op_p_zds_a_bfloat	4	opc	asm	Ps	op	0
+sve_fp_3op_p_zds_b	4	sz	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b01100101	4-0=Zdn	14-13=opc	9-5=Zm	20-16=Za	23-22=sz	12-10=Pg
+sve_fp_3op_p_zds_b	5	opc	asm	op	revname	isReverseInstr	0
+sve_fp_fma_by_indexed_elem	6	sz	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	itype	2	Sched	I	31-24=0b01100100	4-0=Zda	11-10=opc	9-5=Zn	15-12=0b0000	23-22=sz
+sve_fp_fma_by_indexed_elem	3	opc	asm	op	0	18-16=Zm	19-16=Zm	20-19=iop
+sve_fp_fma_by_indexed_elem_bfloat	3	asm	opc	op	0	18-16=Zm	20-19=iop
+sve_fp_fmul_by_indexed_elem	6	sz	o2	asm	ZPRRegOp zprty	ZPRRegOp zprty2	itype	2	Sched	I	31-24=0b01100100	4-0=Zd	9-5=Zn	15-12=0b0010	23-22=sz
+sve_fp_fmul_by_indexed_elem	2	asm	op	0	18-16=Zm	19-16=Zm	20-19=iop
+sve_fp_fmul_by_indexed_elem_bfloat	2	asm	op	0	18-16=Zm	20-19=iop
+sve_fp_fcmla	3	sz	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b01100100	4-0=Zda	14-13=imm	9-5=Zn	20-16=Zm	23-22=sz	12-10=Pg
+sve_fp_fcmla	2	asm	op	0
+sve_fp_fcmla_by_indexed_elem	5	sz	asm	ZPRRegOp zprty	ZPRRegOp zprty2	itype	2	Sched	I	31-24=0b01100100	4-0=Zda	11-10=imm	9-5=Zn	15-12=0b0001	23-22=sz
+sve_fp_fcmla_by_indexed_elem	2	asm	op	0	18-16=Zm	19-16=Zm	20-19=iop
+sve_fp_fcadd	3	sz	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b01100100	4-0=Zdn	9-5=Zm	15-13=0b100	21-17=0	23-22=sz	12-10=Pg
+sve_fp_fcadd	2	asm	op	0
+sve2_fp_convert_precision	6	opc	merging	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	destructive=merging	2	Sched	I	31-24=0b01100100	4-0=Zd	21-20=0b00	17-16=opc	9-5=Zn	15-13=0b101	23-22=opc	12-10=Pg
+sve2_fp_convert_down_narrow	2	asm	op	0
+sve2_fp_convert_up_long	2	asm	op	0
+sve2_fp_convert_down_odd_rounding_top	2	asm	op	0
+sve2_fp_convert_up_long_z	2	asm	op	0
+sve2_fp_convert_down_narrow_z	2	asm	op	0
+sve2_fp_pairwise_pred	4	sz	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b01100100	4-0=Zdn	9-5=Zm	15-13=0b100	18-16=opc	23-22=sz	12-10=Pg	21-19=0b010
+sve2_fp_pairwise_pred	3	opc	asm	op	0
+sve2_fp_mla_long_by_indexed_elem	2	opc	asm	2	Sched	I	4-0=Zda	9-5=Zn	18-16=Zm	15-14=0b01	20-19=iop	31-23=0b011001001
+sve2_fp_mla_long_by_indexed_elem	5	opc	asm	ValueType OutVT	ValueType InVT	op	0
+sve2_fp_mla_long	2	opc	asm	2	Sched	I	4-0=Zda	9-5=Zn	20-16=Zm	15-14=0b10	12-11=0b00	31-23=0b011001001
+sve2_fp_mla_long	5	opc	asm	ValueType OutVT	ValueType InVT	op	0
+sve_int_arith_vl	3	opc	asm	streaming_sve = 0b0	2	Sched	I	10-5=imm6	4-0=Rd	15-12=0b0101	20-16=Rn	31-23=0b000001000
+sve_int_read_vl_a	4	op	opc2	asm	streaming_sve = 0b0	2	Sched	I	10-5=imm6	4-0=Rd	15-12=0b0101	20-16=opc2	31-23=0b000001001
+sve_int_perm_bin_perm_zz	4	opc	sz8_64	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000101	4-0=Zd	9-5=Zn	20-16=Zm	15-13=0b011	23-22=sz8_64	12-10=opc
+sve_int_perm_bin_perm_zz	3	opc	asm	op	0
+sve_fp_2op_p_zd	5	opc	asm	RegisterOperand i_zprtype	RegisterOperand o_zprtype	ElementSizeEnum Sz	2	Sched	I	31-24=0b01100101	4-0=Zd	9-5=Zn	20-16=opc	15-13=0b101	23-22=opc	12-10=Pg
+sve_fp_2op_p_zd	10	opc	asm	RegisterOperand i_zprtype	RegisterOperand o_zprtype	int_op	ir_op	ValueType vt1	ValueType vt2	ValueType vt3	ElementSizeEnum Sz	0
+sve_fp_2op_p_zdr	10	opc	asm	RegisterOperand i_zprtype	RegisterOperand o_zprtype	int_op	ir_op	ValueType vt1	ValueType vt2	ValueType vt3	ElementSizeEnum Sz	0
+sve_fp_2op_p_zd_HSD	3	opc	asm	op	0
+sve2_fp_flogb	3	asm	Ps	op	0
+sve2_fp_un_pred_zeroing_hsd	1	op	0
+sve2_fp_convert_down_odd_rounding	3	asm	op	ir_op = null_frag	0
+sve_fp_2op_p_zd_frint	3	opc	asm	op = null_frag	0
+sve_fp_2op_u_zd	4	sz	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b01100101	4-0=Zd	15-10=0b001100	9-5=Zn	18-16=opc	23-22=sz	21-19=0b001
+sve_fp_2op_u_zd	3	opc	asm	op	0
+sve_fp_z2op_p_zd	4	opc	asm	RegisterOperand i_zprtype	RegisterOperand o_zprtype	2	Sched	I	31-24=0b01100100	4-0=Zd	14-13=opc	9-5=Zn	18-16=opc	23-22=opc	12-10=Pg	21-19=0b011
+sve_fp_z2op_p_zd	2	asm	op	0
+sve_fp_z2op_p_zd_hsd	3	opc	asm	op	0
+sve_fp_z2op_p_zd_frint	3	opc	asm	op = null_frag	0
+sve_fp_z2op_p_zd_bfcvt	2	asm	op	0
+sve_fp_z2op_p_zd_d	4	U	asm	int_op	ir_op	0
+sve_fp_z2op_p_zd_c	4	U	asm	int_op	ir_op	0
+sve_fp_z2op_p_zd_d_flogb	2	asm	op	0
+sve_fp_z2op_p_zd_b_0	2	asm	op	0
+sve_int_bin_pred_arit_log	5	sz8_64	fmt	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000100	4-0=Zdn	9-5=Zm	15-13=0b000	18-16=opc	20-19=fmt	23-22=sz8_64	12-10=Pg
+sve_int_bin_pred_log	5	opc	asm	Ps	op	DestructiveInstTypeEnum flags	0
+sve_int_bin_pred_arit_0	7	opc	asm	Ps	op	DestructiveInstTypeEnum flags	revname=""	isReverseInstr=0	0
+sve_int_bin_pred_arit_1	5	opc	asm	Ps	op	DestructiveInstTypeEnum flags	0
+sve_int_bin_pred_arit_2	5	opc	asm	Ps	op	DestructiveInstTypeEnum flags	0
+sve_int_bin_pred_arit_2_div	7	opc	asm	Ps	op	DestructiveInstTypeEnum flags	revname=""	isReverseInstr=0	0
+sve_int_mladdsub_vvv_pred	4	sz8_64	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000100	4-0=Zdn	9-5=Za	20-16=Zm	15-14=0b11	23-22=sz8_64	12-10=Pg
+sve_int_mladdsub_vvv_pred	5	opc	asm	op	revname	isReverseInstr=0	0
+sve_int_mlas_vvv_pred	4	sz8_64	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000100	4-0=Zda	9-5=Zn	20-16=Zm	15-14=0b01	23-22=sz8_64	12-10=Pg
+sve_int_mlas_vvv_pred	6	opc	asm	op	Ps	revname	isReverseInstr=0	0
+sve_int_3op_p_mladdsub	1	op	0
+sve2_int_mla	5	sz	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	2	Sched	I	31-24=0b01000100	4-0=Zda	14-10=opc	9-5=Zn	20-16=Zm	23-22=sz
+sve2_int_mla	3	S	asm	op	0
+sve2_int_mla_long	3	opc	asm	op	0
+sve2_int_mla_by_indexed_elem	7	sz	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	ZPRRegOp zprty3	itype	2	Sched	I	31-24=0b01000100	4-0=Zda	15-10=opc	9-5=Zn	23-22=sz
+sve2_int_mla_by_indexed_elem	4	opc	S	asm	op	0	18-16=Zm	19-16=Zm	20-19=iop
+sve2_int_mla_long_by_indexed_elem	3	opc	asm	op	0	18-16=Zm	19-16=Zm	20-19=iop
+sve_intx_dot	6	sz	op5	U	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	2	Sched	I	31-24=0b01000100	4-0=Zda	15-11=op5	9-5=Zn	20-16=Zm	23-22=sz
+sve_intx_dot	3	opc	asm	op	0
+sve2p1_two_way_dot_vv	3	mnemonic	u	intrinsic	0
+sve2p3_two_way_dot_vv	3	mnemonic	u	intrinsic	0
+sve_intx_dot_by_indexed_elem	6	U	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	ZPRRegOp zprty3	itype	2	Sched	I	31-24=0b01000100	4-0=Zda	15-11=0	9-5=Zn
+sve_intx_dot_by_indexed_elem	3	opc	asm	op	0	18-16=Zm	19-16=Zm	20-19=iop	23-22=0b10
+sve_intx_dot_by_indexed_elem_x	2	opc	asm	1	sve_intx_dot_by_indexed_elem	18-16=Zm	20-19=iop
+sve2_complex_int_arith	5	sz	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	2	Sched	I	31-24=0b01000100	4-0=Zda	11-10=rot	9-5=Zn	15-12=opc	20-16=Zm	23-22=sz
+sve2_cintx_dot	2	asm	op	0
+sve2_int_cmla	3	opc	asm	op	0
+sve2_complex_int_arith_indexed	7	sz	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	ZPRRegOp zprty3	itype	2	Sched	I	31-24=0b01000100	4-0=Zda	11-10=rot	9-5=Zn	15-12=opc	23-22=sz
+sve2_cintx_dot_by_indexed_elem	2	asm	op	0	18-16=Zm	19-16=Zm	20-19=iop
+sve2_cmla_by_indexed_elem	3	opc	asm	op	0	18-16=Zm	19-16=Zm	20-19=iop
+sve2_int_mul	4	sz	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000100	4-0=Zd	9-5=Zn	20-16=Zm	15-13=0b011	23-22=sz	12-10=opc
+sve2_int_mul	3	opc	asm	op	0
+sve2_int_mul_single	3	opc	asm	op	0
+sve2_int_mul_by_indexed_elem	7	sz	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	ZPRRegOp zprty3	itype	2	Sched	I	13-10=opc	31-24=0b01000100	4-0=Zd	9-5=Zn	15-14=0b11	23-22=sz
+sve2_int_mul_by_indexed_elem	3	opc	asm	op	0	18-16=Zm	19-16=Zm	20-19=iop
+sve2_int_mul_long_by_indexed_elem	3	opc	asm	op	0	18-16=Zm	19-16=Zm	20-19=iop
+sve2_int_arith_pred	4	sz	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b01000100	4-0=Zdn	9-5=Zm	20-16=opc	15-14=0b10	23-22=sz	12-10=Pg
+sve2_int_arith_pred	7	opc	asm	op	Ps = ""	DestructiveInstTypeEnum flags=DestructiveOther	revname=""	isReverseInstr=0	0
+sve2_int_sadd_long_accum_pairwise	5	sz	U	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	2	Sched	I	31-24=0b01000100	4-0=Zda	9-5=Zn	15-13=0b101	21-17=0b00010	23-22=sz	12-10=Pg
+sve2_int_sadd_long_accum_pairwise	3	U	asm	op	0
+sve2_int_un_pred_arit	4	sz	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b01000100	4-0=Zd	21-20=0b00	9-5=Zn	15-13=0b101	18-17=0b00	23-22=sz	12-10=Pg
+sve2_int_un_pred_arit_z	4	sz	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b01000100	4-0=Zd	21-20=0b00	9-5=Zn	15-13=0b101	18-17=0b01	23-22=sz	12-10=Pg
+sve2_int_un_pred_arit_s	3	opc	asm	op	0
+sve2_int_un_pred_arit	3	opc	asm	op	0
+sve2_int_un_pred_arit_z_S	3	opc	asm	op	0
+sve2_int_un_pred_arit_z	3	opc	asm	op	0
+sve2_wide_int_arith	6	sz	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	ZPRRegOp zprty3	2	Sched	I	31-24=0b01000101	4-0=Zd	14-10=opc	9-5=Zn	20-16=Zm	23-22=sz
+sve2_wide_int_arith_long	3	opc	asm	op	0
+sve2_wide_int_arith_wide	3	opc	asm	op	0
+sve2_wide_int_arith_pmul	4	sz	opc	asm	op	0
+sve2_pmul_long	3	opc	asm	op	0
+sve2_misc	5	sz	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	2	Sched	I	13-10=opc	31-24=0b01000101	4-0=Zd	9-5=Zn	20-16=Zm	15-14=0b10	23-22=sz
+sve2_misc_bitwise	3	opc	asm	op	0
+sve2_misc_int_addsub_long_interleaved	3	opc	asm	op	0
+sve2_bitwise_xor_interleaved	5	sz	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	2	Sched	I	31-24=0b01000101	4-0=Zd	15-11=0b10010	9-5=Zn	20-16=Zm	23-22=sz
+sve2_bitwise_xor_interleaved	3	opc	asm	op	0
+sve2_bitwise_shift_left_long	6	tsz8_64	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	immtype	2	Sched	I	4-0=Zd	11-10=opc	9-5=Zn	15-12=0b1010	18-16=imm	20-19=tsz8_64	31-23=0b010001010
+sve2_bitwise_shift_left_long	3	opc	asm	op	0	20-19=imm
+sve2_int_bin_shift_imm	5	tsz8_64	opc	asm	ZPRRegOp zprty	immtype	2	Sched	I	31-24=0b01000101	4-0=Zd	15-11=0b11110	9-5=Zn	18-16=imm	20-19=tsz8_64	23-22=tsz8_64
+sve2_int_bin_shift_imm_left	3	opc	asm	op	0	20-19=imm
+sve2_int_bin_shift_imm_right	3	opc	asm	op	0	20-19=imm
+sve2_int_bin_accum_shift_imm	5	tsz8_64	opc	asm	ZPRRegOp zprty	immtype	2	Sched	I	31-24=0b01000101	4-0=Zda	11-10=opc	9-5=Zn	15-12=0b1110	18-16=imm	20-19=tsz8_64	23-22=tsz8_64
+sve2_int_bin_accum_shift_imm_right	4	opc	asm	op	shift_op = null_frag	0	20-19=imm
+sve2_int_cadd	4	sz	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b01000101	4-0=Zdn	15-11=0b11011	9-5=Zm	21-17=0b00000	23-22=sz
+sve2_int_cadd	3	opc	asm	op	0
+sve2_int_absdiff_accum	5	sz	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	2	Sched	I	13-10=opc	31-25=0b0100010	4-0=Zda	9-5=Zn	20-16=Zm	15-14=0b11	24-22=sz
+sve2_int_absdiff_accum	3	opc	asm	op	0
+sve2_int_absdiff_accum_long	3	opc	asm	op	0
+sve2_int_two_way_absdiff_accum_long	3	U	asm	op	0
+sve2_int_addsub_long_carry	3	opc	asm	op	0
+sve2_int_bin_shift_imm_narrow_bottom	6	tsz8_64	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	immtype	2	Sched	I	13-11=opc	4-0=Zd	9-5=Zn	18-16=imm	15-14=0b00	20-19=tsz8_64	31-23=0b010001010
+sve2_int_bin_shift_imm_right_narrow_bottom	3	opc	asm	op	0	20-19=imm
+sve2_int_bin_shift_imm_narrow_top	6	tsz8_64	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	immtype	2	Sched	I	13-11=opc	4-0=Zd	9-5=Zn	18-16=imm	15-14=0b00	20-19=tsz8_64	31-23=0b010001010
+sve2_int_bin_shift_imm_right_narrow_top	3	opc	asm	op	0	20-19=imm
+sve2_int_addsub_narrow_high_bottom	5	sz	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	2	Sched	I	31-24=0b01000101	4-0=Zd	9-5=Zn	20-16=Zm	15-13=0b011	23-22=sz	12-11=opc
+sve2_int_addsub_narrow_high_bottom	3	opc	asm	op	0
+sve2_int_addsub_narrow_high_top	5	sz	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	2	Sched	I	31-24=0b01000101	4-0=Zd	9-5=Zn	20-16=Zm	15-13=0b011	23-22=sz	12-11=opc
+sve2_int_addsub_narrow_high_top	3	opc	asm	op	0
+sve2_int_sat_extract_narrow_bottom	5	tsz8_64	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	2	Sched	I	4-0=Zd	18-13=0b000010	9-5=Zn	20-19=tsz8_64	12-11=opc	31-23=0b010001010
+sve2_int_sat_extract_narrow_bottom	3	opc	asm	op	0
+sve2_int_sat_extract_narrow_top	5	tsz8_64	opc	asm	ZPRRegOp zprty1	ZPRRegOp zprty2	2	Sched	I	4-0=Zd	18-13=0b000010	9-5=Zn	20-19=tsz8_64	12-11=opc	31-23=0b010001010
+sve2_int_sat_extract_narrow_top	3	opc	asm	op	0
+sve_int_un_pred_arit	4	sz8_64	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000100	4-0=Zd	21-20=0b01	9-5=Zn	15-13=0b101	18-16=opc	23-22=sz8_64	12-10=Pg
+sve_int_un_pred_arit_z	4	sz8_64	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000100	4-0=Zd	21-20=0b00	9-5=Zn	15-13=0b101	18-16=opc	23-22=sz8_64	12-10=Pg
+sve_int_un_pred_arit	3	opc	asm	op	0
+sve_int_un_pred_arit_z	3	opc	asm	op	0
+sve_int_un_pred_arit_h	3	opc	asm	op	0
+sve_int_un_pred_arit_h_z	3	opc	asm	op	0
+sve_int_un_pred_arit_w	3	opc	asm	op	0
+sve_int_un_pred_arit_w_z	3	opc	asm	op	0
+sve_int_un_pred_arit_d	3	opc	asm	op	0
+sve_int_un_pred_arit_d_z	3	opc	asm	op	0
+sve_int_un_pred_arit_bitwise	3	opc	asm	op	0
+sve_int_un_pred_arit_bitwise_z	3	opc	asm	op	0
+sve_int_un_pred_arit_bitwise_fp	3	opc	asm	op	0
+sve_int_un_pred_arit_bitwise_fp_z	3	opc	asm	op	0
+sve_fp_un_pred_arit_hsd	1	op	0
+sve_int_un_pred_arit_bhsd	1	op	0
+sve_int_dup_imm	4	sz8_64	asm	ZPRRegOp zprty	immtype	2	Sched	I	31-24=0b00100101	12-5=imm	4-0=Zd	21-14=0b11100011	23-22=sz8_64
+sve_int_dup_imm	1	asm	0
+sve_int_dup_fpimm	4	sz8_64	fpimmtype	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00100101	12-5=imm8	4-0=Zd	21-14=0b11100111	23-22=sz8_64
+sve_int_dup_fpimm	1	asm	0
+sve_int_arith_imm0	5	sz8_64	opc	asm	ZPRRegOp zprty	immtype	3	Sched	I	SVEPseudo2Instr	31-24=0b00100101	12-5=imm	4-0=Zdn	18-16=opc	15-14=0b11	23-22=sz8_64	21-19=0b100
+sve_int_arith_imm0	4	opc	asm	op	inv_op = null_frag	0
+sve_int_arith_imm0_ssat	4	opc	asm	op	inv_op	0
+sve_int_arith_imm	5	sz8_64	opc	asm	ZPRRegOp zprty	immtype	3	Sched	I	SVEPseudo2Instr	31-24=0b00100101	12-5=imm	4-0=Zdn	15-13=0b110	21-16=opc	23-22=sz8_64
+sve_int_arith_imm1	3	opc	asm	op	0
+sve_int_arith_imm1_unsigned	3	opc	asm	op	0
+sve_int_arith_imm2	2	asm	op	0
+sve_int_bin_cons_log	2	opc	asm	2	Sched	I	31-24=0b00000100	4-0=Zd	15-10=0b001100	9-5=Zn	20-16=Zm	23-22=opc
+sve_int_bin_cons_log	3	opc	asm	op	0
+sve2_int_bitwise_ternary_op_d	2	opc	asm	2	Sched	I	31-24=0b00000100	4-0=Zdn	15-11=0b00111	9-5=Zk	20-16=Zm	23-22=opc
+sve2_int_bitwise_ternary_op	3	opc	asm	op	0
+sve2_int_rotate_right_imm	4	tsz8_64	asm	ZPRRegOp zprty	immtype	2	Sched	I	31-24=0b00000100	4-0=Zdn	15-10=0b001101	9-5=Zm	18-16=imm	20-19=tsz8_64	23-22=tsz8_64
+sve2_int_rotate_right_imm	2	asm	op	0	20-19=imm
+sve_int_dup_fpimm_pred	4	sz	fpimmtype	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000101	12-5=imm8	4-0=Zd	21-20=0b01	15-13=0b110	19-16=Pg	23-22=sz
+sve_int_dup_fpimm_pred	1	asm	0
+sve_int_dup_imm_pred	6	sz8_64	m	asm	ZPRRegOp zprty	pred_qual	iops	2	Sched	I	31-24=0b00000101	12-5=imm	4-0=Zd	21-20=0b01	19-16=Pg	23-22=sz8_64
+sve_int_dup_imm_pred_merge_inst	8	sz8_64	asm	ZPRRegOp zprty	imm8_opt_lsl cpyimm	ValueType intty	ValueType predty	ValueType scalarty	ComplexPattern cpx	0
+sve_int_dup_imm_pred_merge	2	asm	op	0
+sve_int_dup_imm_pred_zero_inst	8	sz8_64	asm	ZPRRegOp zprty	imm8_opt_lsl cpyimm	ValueType intty	ValueType predty	ValueType scalarty	ComplexPattern cpx	0
+sve_int_dup_imm_pred_zero	2	asm	op	0
+sve_int_cmp	7	cmp_1	sz8_64	opc	asm	PPRRegOp pprty	ZPRRegOp zprty1	ZPRRegOp zprty2	2	Sched	I	31-24=0b00100100	9-5=Zn	20-16=Zm	23-22=sz8_64	3-0=Pd	12-10=Pg
+SVE_SETCC_Pat	4	CondCode cc	CondCode invcc	ValueType vt	Instruction cmp	0
+SVE_SETCC_Pat_With_Zero	4	CondCode cc	CondCode invcc	ValueType vt	Instruction cmp	0
+sve_int_cmp_0	4	opc	asm	CondCode cc	CondCode invcc	0
+sve_int_cmp_0_wide	3	opc	asm	op	0
+sve_int_cmp_1_wide	3	opc	asm	op	0
+sve_int_scmp_vi	6	sz8_64	opc	asm	PPRRegOp pprty	ZPRRegOp zprty	immtype	2	Sched	I	31-24=0b00100101	9-5=Zn	20-16=imm5	23-22=sz8_64	3-0=Pd	12-10=Pg
+SVE_SETCC_Imm_Pat	5	CondCode cc	CondCode invcc	ValueType vt	immtype	Instruction cmp	0
+sve_int_scmp_vi	4	opc	asm	CondCode cc	CondCode invcc	0
+sve_int_ucmp_vi	6	sz8_64	opc	asm	PPRRegOp pprty	ZPRRegOp zprty	immtype	2	Sched	I	31-24=0b00100100	20-14=imm7	9-5=Zn	23-22=sz8_64	3-0=Pd	12-10=Pg
+sve_int_ucmp_vi	4	opc	asm	CondCode cc	CondCode invcc	0
+sve_int_cterm	4	sz	opc	asm	rt	2	Sched	I	15-10=0b001000	9-5=Rn	20-16=Rm	3-0=0b0000	31-23=0b001001011
+sve_int_while_rr	5	sz8_64	opc	asm	gprty	PPRRegOp pprty	2	Sched	I	31-24=0b00100101	9-5=Rn	20-16=Rm	15-13=0b000	23-22=sz8_64	3-0=Pd	12-10=opc
+sve_int_while4_rr	4	opc	asm	op	rev_op	0
+sve_int_while8_rr	4	opc	asm	op	rev_op	0
+sve2_int_while_rr	4	sz8_64	rw	asm	PPRRegOp pprty	2	Sched	I	31-24=0b00100101	15-10=0b001100	9-5=Rn	20-16=Rm	23-22=sz8_64	3-0=Pd
+sve2_int_while_rr	3	rw	asm	op	0
+sve_fp_fast_red	5	sz	opc	asm	ZPRRegOp zprty	FPRasZPROperand dstOpType	2	Sched	I	31-24=0b01100101	4-0=Vd	9-5=Zn	15-13=0b001	18-16=opc	23-22=sz	12-10=Pg	21-19=0b000
+sve_fp_fast_red	3	opc	asm	op	0
+sve_fp_2op_p_vd	5	sz	opc	asm	ZPRRegOp zprty	FPRasZPROperand dstOpType	2	Sched	I	31-24=0b01100101	4-0=Vdn	9-5=Zm	15-13=0b001	18-16=opc	23-22=sz	12-10=Pg	21-19=0b011
+sve_fp_2op_p_vd	3	opc	asm	op	0
+sve_fp_3op_p_pd	5	sz	opc	asm	PPRRegOp pprty	ZPRRegOp zprty	2	Sched	I	31-24=0b01100101	9-5=Zn	20-16=Zm	23-22=sz	3-0=Pd	12-10=Pg
+sve_fp_3op_p_pd	3	opc	asm	op	0
+sve_fp_3op_p_pd_cc	6	opc	asm	CondCode cc1	CondCode cc2	CondCode invcc1	CondCode invcc2	0
+sve_fp_2op_p_pd	5	sz	opc	asm	PPRRegOp pprty	ZPRRegOp zprty	2	Sched	I	31-24=0b01100101	17-16=opc	9-5=Zn	15-13=0b001	23-22=sz	3-0=Pd	21-18=0b0100	12-10=Pg
+sve_fp_2op_p_pd	6	opc	asm	CondCode cc1	CondCode cc2	CondCode invcc1	CondCode invcc2	0
+sve_int_index_ii	4	sz8_64	asm	ZPRRegOp zprty	imm_ty	2	Sched	I	31-24=0b00000100	4-0=Zd	15-10=0b010000	9-5=imm5	20-16=imm5b	23-22=sz8_64
+sve_int_index_ii	1	asm	0
+sve_int_index_ir	5	sz8_64	asm	ZPRRegOp zprty	srcRegType	imm_ty	2	Sched	I	31-24=0b00000100	4-0=Zd	15-10=0b010010	9-5=imm5	20-16=Rm	23-22=sz8_64
+sve_int_index_ir	3	asm	mulop	muloneuseop	0
+sve_int_index_ri	5	sz8_64	asm	ZPRRegOp zprty	srcRegType	imm_ty	2	Sched	I	31-24=0b00000100	4-0=Zd	15-10=0b010001	9-5=Rn	20-16=imm5	23-22=sz8_64
+sve_int_index_ri	1	asm	0
+sve_int_index_rr	4	sz8_64	asm	ZPRRegOp zprty	srcRegType	2	Sched	I	31-24=0b00000100	4-0=Zd	15-10=0b010011	9-5=Rn	20-16=Rm	23-22=sz8_64
+sve_int_index_rr	2	asm	mulop	0
+sve_int_bin_pred_shift_imm	5	tsz8_64	opc	asm	ZPRRegOp zprty	immtype	2	Sched	I	31-24=0b00000100	4-0=Zdn	21-20=0b00	15-13=0b100	7-5=imm	9-8=tsz8_64	19-16=opc	23-22=tsz8_64	12-10=Pg
+sve_int_bin_pred_shift_imm_left	4	opc	asm	Ps	op = null_frag	0	9-8=imm
+sve_int_bin_pred_shift_imm_left_dup	4	opc	asm	Ps	op	1	sve_int_bin_pred_shift_imm_left
+sve_int_bin_pred_shift_imm_left_zeroing_bhsd	1	op	0
+sve_int_bin_pred_shift_imm_right	4	opc	asm	Ps	op = null_frag	0	9-8=imm
+sve_int_bin_pred_shift_imm_right_dup	4	opc	asm	Ps	op	1	sve_int_bin_pred_shift_imm_right
+sve_int_bin_pred_shift_imm_right_zeroing_bhsd	1	op = null_frag	0
+sve_int_bin_pred_shift	6	sz8_64	wide	opc	asm	ZPRRegOp zprty	ZPRRegOp zprty2	2	Sched	I	31-24=0b00000100	4-0=Zdn	21-20=0b01	9-5=Zm	15-13=0b100	18-16=opc	23-22=sz8_64	12-10=Pg
+sve_int_bin_pred_shift	6	opc	asm	Ps	op	revname	isReverseInstr = 0	0
+sve_int_bin_pred_zeroing_bhsd	1	op	0
+sve_int_bin_pred_imm_zeroing_bhsd	5	op	ComplexPattern imm_b	ComplexPattern imm_h	ComplexPattern imm_s	ComplexPattern imm_d	0
+sve_int_bin_pred_shift_wide	3	opc	asm	op	0
+sve_int_bin_cons_shift_wide	4	sz8_64	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000100	4-0=Zd	11-10=opc	9-5=Zn	15-12=0b1000	20-16=Zm	23-22=sz8_64
+sve_int_bin_cons_shift_wide	3	opc	asm	op	0
+sve_int_bin_cons_shift_imm	5	tsz8_64	opc	asm	ZPRRegOp zprty	immtype	2	Sched	I	31-24=0b00000100	4-0=Zd	11-10=opc	9-5=Zn	15-12=0b1001	18-16=imm	20-19=tsz8_64	23-22=tsz8_64
+sve_int_bin_cons_shift_imm_left	3	opc	asm	op	0	20-19=imm
+sve_int_bin_cons_shift_imm_right	3	opc	asm	op	0	20-19=imm
+sve_mem_cst_si	5	msz	esz	asm	RegisterOperand VecList	ZPRRegOp zprty	2	Sched	I	31-25=0b1110010	4-0=Zt	9-5=Rn	22-21=esz	15-13=0b111	19-16=imm4	12-10=Pg	24-23=msz
+sve_mem_cst_si	5	msz	esz	asm	RegisterOperand listty	ZPRRegOp zprty	0
+sve_mem_est_si	5	sz	nregs	RegisterOperand VecList	asm	immtype	2	Sched	I	31-25=0b1110010	4-0=Zt	9-5=Rn	22-21=nregs	15-13=0b111	19-16=imm4	12-10=Pg	24-23=sz
+sve_mem_est_si	5	sz	nregs	RegisterOperand VecList	asm	immtype	0
+sve_mem_128b_est_si	4	nregs	RegisterOperand VecList	asm	immtype	2	Sched	I	31-24=0b11100100	4-0=Zt	21-20=0b00	9-5=Rn	15-13=0b000	19-16=imm4	23-22=nregs	12-10=Pg
+sve_mem_128b_est_si	4	nregs	RegisterOperand VecList	asm	immtype	0
+sve_mem_est_ss	5	sz	nregs	RegisterOperand VecList	asm	RegisterOperand gprty	2	Sched	I	31-25=0b1110010	4-0=Zt	9-5=Rn	20-16=Rm	22-21=nregs	15-13=0b011	12-10=Pg	24-23=sz
+sve_mem_128b_est_ss	4	nregs	RegisterOperand VecList	asm	RegisterOperand gprty	2	Sched	I	31-24=0b11100100	4-0=Zt	9-5=Rn	20-16=Rm	15-13=0b000	23-22=nregs	12-10=Pg
+sve_mem_cst_ss_base	5	dtype	asm	RegisterOperand listty	ZPRRegOp zprty	RegisterOperand gprty	2	Sched	I	31-25=0b1110010	4-0=Zt	9-5=Rn	20-16=Rm	15-13=0b010	24-21=dtype	12-10=Pg
+sve_mem_cst_ss	5	dtype	asm	RegisterOperand listty	ZPRRegOp zprty	RegisterOperand gprty	0
+sve_mem_cstnt_si	4	msz	asm	RegisterOperand VecList	ZPRRegOp zprty	2	Sched	I	31-25=0b1110010	4-0=Zt	22-20=0b001	9-5=Rn	15-13=0b111	19-16=imm4	12-10=Pg	24-23=msz
+sve_mem_cstnt_si	4	msz	asm	RegisterOperand listty	ZPRRegOp zprty	0
+sve_mem_cstnt_ss_base	5	msz	asm	RegisterOperand listty	ZPRRegOp zprty	RegisterOperand gprty	2	Sched	I	31-25=0b1110010	4-0=Zt	9-5=Rn	20-16=Rm	22-21=0b00	15-13=0b011	12-10=Pg	24-23=msz
+sve_mem_cstnt_ss	5	msz	asm	RegisterOperand listty	ZPRRegOp zprty	RegisterOperand gprty	0
+sve2_mem_sstnt_vs_base	4	opc	asm	RegisterOperand listty	ZPRRegOp zprty	2	Sched	I	31-25=0b1110010	4-0=Zt	9-5=Zn	20-16=Rm	15-13=0b001	12-10=Pg	24-22=opc
+sve2_mem_sstnt_vs_32_ptrs	4	opc	asm	op	ValueType vt	0
+sve2_mem_sstnt_vs_64_ptrs	4	opc	asm	op	ValueType vt	0
+sve_mem_sst_sv	6	opc	xs	scaled	asm	RegisterOperand VecList	RegisterOperand zprext	2	Sched	I	31-25=0b1110010	4-0=Zt	9-5=Rn	20-16=Zm	12-10=Pg	24-22=opc
+sve_mem_32b_sst_sv_32_scaled	7	opc	asm	sxtw_op	uxtw_op	RegisterOperand sxtw_opnd	RegisterOperand uxtw_opnd	ValueType vt	0
+sve_mem_64b_sst_sv_32_scaled	7	opc	asm	sxtw_op	uxtw_op	RegisterOperand sxtw_opnd	RegisterOperand uxtw_opnd	ValueType vt	0
+sve_mem_64b_sst_sv_32_unscaled	7	opc	asm	sxtw_op	uxtw_op	RegisterOperand sxtw_opnd	RegisterOperand uxtw_opnd	ValueType vt	0
+sve_mem_32b_sst_sv_32_unscaled	7	opc	asm	sxtw_op	uxtw_op	RegisterOperand sxtw_opnd	RegisterOperand uxtw_opnd	ValueType vt	0
+sve_mem_sst_sv2	4	msz	scaled	asm	RegisterOperand zprext	2	Sched	I	31-25=0b1110010	4-0=Zt	9-5=Rn	20-16=Zm	15-13=0b101	12-10=Pg	24-23=msz
+sve_mem_sst_sv_64_scaled	5	msz	asm	op	RegisterOperand zprext	ValueType vt	0
+sve_mem_sst_sv_64_unscaled	4	msz	asm	op	ValueType vt	0
+sve_mem_sst_vi	5	opc	asm	ZPRRegOp zprty	RegisterOperand VecList	imm_ty	2	Sched	I	31-25=0b1110010	4-0=Zt	9-5=Zn	20-16=imm5	15-13=0b101	12-10=Pg	24-23=opc
+sve_mem_32b_sst_vi_ptrs	5	opc	asm	imm_ty	op	ValueType vt	0
+sve_mem_64b_sst_vi_ptrs	5	opc	asm	imm_ty	op	ValueType vt	0
+sve_mem_z_spill	1	asm	2	Sched	I	4-0=Zt	9-5=Rn	15-13=0b010	21-16=imm9	12-10=imm9	31-22=0b1110010110
+sve_mem_z_spill	1	asm	0
+sve_mem_p_spill	1	asm	2	Sched	I	9-5=Rn	15-13=0b000	21-16=imm9	3-0=Pt	12-10=imm9	31-22=0b1110010110
+sve_mem_p_spill	1	asm	0
+sve_int_perm_bin_perm_pp	5	opc	sz8_64	asm	PPRRegOp pprty	op	2	Sched	I	31-24=0b00000101	8-5=Pn	21-20=0b10	15-13=0b010	19-16=Pm	23-22=sz8_64	3-0=Pd	12-10=opc
+sve_int_perm_bin_perm_pp	6	opc	asm	ir_op	op_b16	op_b32	op_b64	0
+sve_int_perm_punpk	2	opc	asm	2	Sched	I	8-5=Pn	31-17=0b000001010011000	15-9=0b0100000	3-0=Pd
+sve_int_perm_punpk	3	opc	asm	op	0
+sve_int_rdffr_pred	3	s	asm	op = null_frag	2	Sched	I	8-5=Pg	21-9=0b0110001111000	3-0=Pd	31-23=0b001001010
+sve_int_rdffr_unpred	2	asm	op	2	Sched	I	3-0=Pd	31-4=0b0010010100011001111100000000
+sve_int_wrffr	2	asm	op	2	Sched	I	8-5=Pn	4-0=0b00000	31-9=0b00100101001010001001000
+sve_int_setffr	2	asm	op	2	Sched	I	31-0=0b00100101001011001001000000000000
+sve_int_perm_clast_rz	5	sz8_64	ab	asm	ZPRRegOp zprty	rt	2	Sched	I	31-24=0b00000101	4-0=Rdn	9-5=Zm	15-13=0b101	21-17=0b11000	23-22=sz8_64	12-10=Pg
+sve_int_perm_clast_rz	3	ab	asm	op	0
+sve_int_perm_clast_vz	5	sz8_64	ab	asm	ZPRRegOp zprty	rt	2	Sched	I	31-24=0b00000101	4-0=Vdn	9-5=Zm	15-13=0b100	21-17=0b10101	23-22=sz8_64	12-10=Pg
+sve_int_perm_clast_vz	3	ab	asm	op	0
+sve_int_perm_clast_zz	4	sz8_64	ab	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000101	4-0=Zdn	9-5=Zm	15-13=0b100	21-17=0b10100	23-22=sz8_64	12-10=Pg
+sve_int_perm_clast_zz	3	ab	asm	op	0
+sve_int_perm_last_r	5	sz8_64	ab	asm	ZPRRegOp zprty	resultRegType	2	Sched	I	31-24=0b00000101	4-0=Rd	9-5=Zn	15-13=0b101	21-17=0b10000	23-22=sz8_64	12-10=Pg
+sve_int_perm_last_r	3	ab	asm	op	0
+sve_int_perm_last_v	5	sz8_64	ab	asm	ZPRRegOp zprty	dstRegtype	2	Sched	I	31-24=0b00000101	4-0=Vd	9-5=Zn	15-13=0b100	21-17=0b10001	23-22=sz8_64	12-10=Pg
+sve_int_perm_last_v	3	ab	asm	op	0
+sve_int_perm_splice	3	sz8_64	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000101	4-0=Zdn	21-13=0b101100100	9-5=Zm	23-22=sz8_64	12-10=Pg
+sve_int_perm_splice	2	asm	op	0
+sve2_int_perm_splice_cons	4	sz8_64	asm	ZPRRegOp zprty	RegisterOperand VecList	2	Sched	I	31-24=0b00000101	4-0=Zd	21-13=0b101101100	9-5=Zn	23-22=sz8_64	12-10=Pg
+sve2_int_perm_splice_cons	2	asm	op	0
+sve2_int_perm_expand	3	sz	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000101	4-0=Zd	21-13=0b110001100	9-5=Zn	23-22=sz	12-10=Pg
+sve2_int_perm_expand	2	asm	op	0
+sve_int_perm_rev	4	sz8_64	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000101	4-0=Zd	17-16=opc	9-5=Zn	15-13=0b100	23-22=sz8_64	21-18=0b1001	12-10=Pg
+sve_int_perm_rev_rbit	2	asm	op	0
+sve_int_perm_rev_revb	2	asm	op	0
+sve_int_perm_rev_revh	2	asm	op	0
+sve_int_perm_rev_revw	2	asm	op	0
+sve_int_perm_rev_z	4	sz	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000101	4-0=Zd	21-20=0b10	9-5=Zn	15-13=0b101	19-16=opc	23-22=sz	12-10=Pg
+sve_int_perm_rev_rbit_z	2	asm	op	0
+sve_int_perm_rev_revb_z	2	asm	op	0
+sve_int_perm_rev_revh_z	2	asm	op	0
+sve_int_perm_rev_revw_z	2	asm	op	0
+sve_int_perm_rev_revd_z	2	asm	op	0
+sve_int_perm_cpy_r	4	sz8_64	asm	ZPRRegOp zprty	srcRegType	2	Sched	I	31-24=0b00000101	4-0=Zd	21-13=0b101000101	9-5=Rn	23-22=sz8_64	12-10=Pg
+sve_int_perm_cpy_r	2	asm	op	0
+sve_int_perm_cpy_v	4	sz8_64	asm	ZPRRegOp zprty	srcRegtype	2	Sched	I	31-24=0b00000101	4-0=Zd	21-13=0b100000100	9-5=Vn	23-22=sz8_64	12-10=Pg
+sve_int_perm_cpy_v	2	asm	op	0
+sve_int_perm_compact	3	sz	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000101	4-0=Zd	21-13=0b100001100	9-5=Zn	23-22=sz	12-10=Pg
+sve_int_perm_compact_sd	2	asm	op	0
+sve_int_perm_compact_bh	2	asm	op	0
+sve_mem_cld_si_base	5	dtype	nf	asm	RegisterOperand VecList	ZPRRegOp zprty	2	Sched	I	31-25=0b1010010	4-0=Zt	9-5=Rn	15-13=0b101	19-16=imm4	24-21=dtype	12-10=Pg
+sve_mem_cld_si_base	5	dtype	nf	asm	RegisterOperand listty	ZPRRegOp zprty	0
+sve_mem_cld_si	4	dtype	asm	RegisterOperand listty	ZPRRegOp zprty	1	sve_mem_cld_si_base	31-25=0b1010010	4-0=Zt	22-20=0b000	9-5=Rn	15-13=0b111	19-16=imm4	12-10=Pg	24-23=msz
+sve_mem_cldnt_si	4	msz	asm	RegisterOperand listty	ZPRRegOp zprty	0
+sve_mem_cldnt_ss_base	5	msz	asm	RegisterOperand VecList	ZPRRegOp zprty	RegisterOperand gprty	2	Sched	I	31-25=0b1010010	4-0=Zt	9-5=Rn	20-16=Rm	22-21=0b00	15-13=0b110	12-10=Pg	24-23=msz
+sve_mem_cldnt_ss	5	msz	asm	RegisterOperand listty	ZPRRegOp zprty	RegisterOperand gprty	0
+sve_mem_ldqr_si	3	sz	asm	RegisterOperand VecList	2	Sched	I	31-25=0b1010010	4-0=Zt	22-20=0	9-5=Rn	15-13=0b001	19-16=imm4	12-10=Pg	24-23=sz
+sve_mem_ldqr_si	4	sz	asm	RegisterOperand listty	ZPRRegOp zprty	0
+sve_mem_ldqr_ss	4	sz	asm	RegisterOperand VecList	RegisterOperand gprty	2	Sched	I	31-25=0b1010010	4-0=Zt	9-5=Rn	20-16=Rm	22-21=0	15-13=0	12-10=Pg	24-23=sz
+sve_mem_ldqr_ss	5	sz	asm	RegisterOperand listty	ZPRRegOp zprty	RegisterOperand gprty	0
+sve_mem_ld_dup	6	dtypeh	dtypel	asm	RegisterOperand VecList	ZPRRegOp zprty	immtype	2	Sched	I	31-25=0b1000010	4-0=Zt	14-13=dtypel	9-5=Rn	21-16=imm6	12-10=Pg	24-23=dtypeh
+sve_mem_ld_dup	6	dtypeh	dtypel	asm	RegisterOperand zlistty	ZPRRegOp zprty	immtype	0
+sve_mem_cld_ss_base	6	dtype	ff	iops	asm	RegisterOperand VecList	ZPRRegOp zprty	2	Sched	I	31-25=0b1010010	4-0=Zt	9-5=Rn	20-16=Rm	15-14=0b01	24-21=dtype	12-10=Pg
+sve_mem_cld_ss	5	dtype	asm	RegisterOperand listty	ZPRRegOp zprty	RegisterOperand gprty	0
+sve_mem_cldff_ss	5	dtype	asm	RegisterOperand listty	ZPRRegOp zprty	RegisterOperand gprty	0
+sve_mem_eld_si	5	sz	nregs	RegisterOperand VecList	asm	immtype	2	Sched	I	31-25=0b1010010	4-0=Zt	9-5=Rn	22-21=nregs	15-13=0b111	19-16=imm4	12-10=Pg	24-23=sz
+sve_mem_eld_si	5	sz	nregs	RegisterOperand VecList	asm	immtype	0
+sve_mem_eld_ss	5	sz	nregs	RegisterOperand VecList	asm	RegisterOperand gprty	2	Sched	I	31-25=0b1010010	4-0=Zt	9-5=Rn	20-16=Rm	22-21=nregs	12-10=Pg	24-23=sz
+sve_mem_32b_gld_sv	5	opc	xs	scaled	asm	RegisterOperand zprext	2	Sched	I	31-25=0b1000010	4-0=Zt	14-13=opc	9-5=Rn	20-16=Zm	12-10=Pg	24-23=opc
+sve_mem_32b_gld_sv_32_scaled	7	opc	asm	sxtw_op	uxtw_op	RegisterOperand sxtw_opnd	RegisterOperand uxtw_opnd	ValueType vt	0
+sve_mem_32b_gld_vs_32_unscaled	7	opc	asm	sxtw_op	uxtw_op	RegisterOperand sxtw_opnd	RegisterOperand uxtw_opnd	ValueType vt	0
+sve_mem_32b_gld_vi	3	opc	asm	imm_ty	2	Sched	I	31-25=0b1000010	4-0=Zt	14-13=opc	9-5=Zn	20-16=imm5	22-21=0b01	12-10=Pg	24-23=opc
+sve_mem_32b_gld_vi_32_ptrs	5	opc	asm	imm_ty	op	ValueType vt	0
+sve_mem_prfm_si	2	msz	asm	2	Sched	I	14-13=msz	9-5=Rn	21-16=imm6	3-0=prfop	12-10=Pg	31-22=0b1000010111
+sve_mem_prfm_si	2	msz	asm	0
+sve_mem_prfm_ss	3	opc	asm	RegisterOperand gprty	2	Sched	I	31-25=0b1000010	9-5=Rn	20-16=Rm	22-21=0b00	3-0=prfop	12-10=Pg	24-23=opc
+sve_mem_32b_prfm_sv	4	msz	xs	asm	RegisterOperand zprext	2	Sched	I	14-13=msz	9-5=Rn	20-16=Zm	3-0=prfop	12-10=Pg	31-23=0b100001000
+sve_mem_32b_prfm_sv_scaled	6	msz	asm	RegisterOperand sxtw_opnd	RegisterOperand uxtw_opnd	op_sxtw	op_uxtw	0
+sve_mem_32b_prfm_vi	3	msz	asm	imm_ty	2	Sched	I	31-25=0b1000010	9-5=Zn	20-16=imm5	22-21=0b00	15-13=0b111	3-0=prfop	12-10=Pg	24-23=msz
+sve_mem_32b_prfm_vi	4	msz	asm	imm_ty	op	0
+sve_mem_z_fill	1	asm	2	Sched	I	4-0=Zt	9-5=Rn	15-13=0b010	21-16=imm9	12-10=imm9	31-22=0b1000010110
+sve_mem_z_fill	1	asm	0
+sve_mem_p_fill	1	asm	2	Sched	I	9-5=Rn	15-13=0b000	21-16=imm9	3-0=Pt	12-10=imm9	31-22=0b1000010110
+sve_mem_p_fill	1	asm	0
+sve2_mem_gldnt_vs_base	4	opc	iops	asm	RegisterOperand VecList	2	Sched	I	4-0=Zt	29-25=0b00010	14-13=opc	9-5=Zn	20-16=Rm	22-21=0b00	12-10=Pg	24-23=opc
+sve2_mem_gldnt_vs_32_ptrs	4	opc	asm	op	ValueType vt	0
+sve2_mem_gldnt_vs_64_ptrs	4	opc	asm	op	ValueType vt	0
+sve_mem_64b_gld_sv	6	opc	xs	scaled	lsl	asm	RegisterOperand zprext	2	Sched	I	31-25=0b1100010	4-0=Zt	14-13=opc	9-5=Rn	20-16=Zm	12-10=Pg	24-23=opc
+sve_mem_64b_gld_sv_32_scaled	7	opc	asm	sxtw_op	uxtw_op	RegisterOperand sxtw_opnd	RegisterOperand uxtw_opnd	ValueType vt	0
+sve_mem_64b_gld_vs_32_unscaled	7	opc	asm	sxtw_op	uxtw_op	RegisterOperand sxtw_opnd	RegisterOperand uxtw_opnd	ValueType vt	0
+sve_mem_64b_gld_sv2_64_scaled	5	opc	asm	op	RegisterOperand zprext	ValueType vt	0
+sve_mem_64b_gld_vs2_64_unscaled	4	opc	asm	op	ValueType vt	0
+sve_mem_64b_gld_vi	3	opc	asm	imm_ty	2	Sched	I	31-25=0b1100010	4-0=Zt	14-13=opc	9-5=Zn	20-16=imm5	22-21=0b01	12-10=Pg	24-23=opc
+sve_mem_64b_gld_vi_64_ptrs	5	opc	asm	imm_ty	op	ValueType vt	0
+sve_mem_64b_prfm_sv	5	msz	xs	lsl	asm	RegisterOperand zprext	2	Sched	I	14-13=msz	9-5=Rn	20-16=Zm	3-0=prfop	12-10=Pg	31-23=0b110001000
+sve_mem_64b_prfm_sv_ext_scaled	6	msz	asm	RegisterOperand sxtw_opnd	RegisterOperand uxtw_opnd	op_sxtw	op_uxtw	0
+sve_mem_64b_prfm_sv_lsl_scaled	4	msz	asm	RegisterOperand zprext	frag	0
+sve_mem_64b_prfm_vi	3	msz	asm	imm_ty	2	Sched	I	31-25=0b1100010	9-5=Zn	20-16=imm5	22-21=0b00	15-13=0b111	3-0=prfop	12-10=Pg	24-23=msz
+sve_mem_64b_prfm_vi	4	msz	asm	imm_ty	op	0
+sve_int_bin_cons_misc_0_a	5	opc	msz	asm	ZPRRegOp zprty	RegisterOperand zprext	2	Sched	I	31-24=0b00000100	4-0=Zd	11-10=msz	9-5=Zn	15-12=0b1010	20-16=Zm	23-22=opc
+sve_int_bin_cons_misc_0_a_uxtw	2	opc	asm	0
+sve_int_bin_cons_misc_0_a_sxtw	2	opc	asm	0
+sve_int_bin_cons_misc_0_a_32_lsl	2	opc	asm	0
+sve_int_bin_cons_misc_0_a_64_lsl	2	opc	asm	0
+sve_int_bin_cons_misc_0_b	3	sz	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000100	4-0=Zd	15-10=0b101100	9-5=Zn	20-16=Zm	23-22=sz
+sve_int_bin_cons_misc_0_b	2	asm	op	0
+sve_int_bin_cons_misc_0_c	3	opc	asm	ZPRRegOp zprty	2	Sched	I	31-24=0b00000100	4-0=Zd	15-11=0b10111	9-5=Zn	20-16=opc	23-22=opc
+sve_int_bin_cons_misc_0_c_fexpa	2	asm	op	0
+sve_int_reduce	6	sz8_32	fmt	opc	asm	ZPRRegOp zprty	FPRasZPROperand dstOpType	2	Sched	I	31-24=0b00000100	4-0=Vd	9-5=Zn	15-13=0b001	18-16=opc	20-19=fmt	23-22=sz8_32	12-10=Pg
+sve_int_reduce_0_saddv	3	opc	asm	op	0
+sve_int_reduce_0_uaddv	3	opc	asm	op	0
+sve_int_reduce_1	3	opc	asm	op	0
+sve_int_reduce_2	3	opc	asm	op	0
+sve_int_movprfx_pred	6	sz8_32	opc	asm	ZPRRegOp zprty	pg_suffix	iops	2	Sched	I	31-24=0b00000100	4-0=Zd	9-5=Zn	15-13=0b001	18-16=opc	23-22=sz8_32	12-10=Pg	21-19=0b010
+sve_int_movprfx_pred_merge	2	opc	asm	0
+sve_int_movprfx_pred_zero	2	opc	asm	0
+sve_int_brkp	2	opc	asm	2	Sched	I	13-10=Pg	31-24=0b00100101	8-5=Pn	21-20=0b00	15-14=0b11	19-16=Pm	3-0=Pd
+sve_int_brkp	3	opc	asm	op	0
+sve_int_brkn	2	S	asm	2	Sched	I	13-10=Pg	8-5=Pn	21-14=0b01100001	3-0=Pdm	31-23=0b001001010
+sve_int_brkn	3	opc	asm	op	0
+sve_int_break	4	opc	asm	suffix	iops	2	Sched	I	13-10=Pg	31-24=0b00100101	8-5=Pn	21-14=0b01000001	23-22=opc	3-0=Pd
+sve_int_break_m	3	opc	asm	op	0
+sve_int_break_z	3	opc	asm	op	0
+sve2_char_match	5	sz	opc	asm	PPRRegOp pprty	ZPRRegOp zprty	2	Sched	I	9-5=Zn	20-16=Zm	15-13=0b100	3-0=Pd	12-10=Pg	31-23=0b010001010
+sve2_char_match	3	opc	asm	op	0
+sve2_hist_gen_segment	2	asm	op	2	Sched	I	4-0=Zd	15-10=0b101000	9-5=Zn	20-16=Zm	31-21=0b01000101001
+sve2_hist_gen_vector	3	sz	asm	ZPRRegOp zprty	2	Sched	I	4-0=Zd	9-5=Zn	20-16=Zm	15-13=0b110	12-10=Pg	31-23=0b010001011
+sve2_hist_gen_vector	2	asm	op	0
+sve2_crypto_cons_bin_op	3	opc	asm	ZPRRegOp zprty	2	Sched	I	4-0=Zd	15-11=0b11110	9-5=Zn	20-16=Zm	31-21=0b01000101001
+sve2_crypto_cons_bin_op	5	opc	asm	ZPRRegOp zprty	op	ValueType vt	0
+sve2_crypto_des_bin_op	5	opc	asm	ZPRRegOp zprty	op	ValueType vt	2	Sched	I	4-0=Zdn	31-17=0b010001010010001	15-11=0b11100	9-5=Zm
+sve2_crypto_unary_op	3	opc	asm	ZPRRegOp zprty	2	Sched	I	4-0=Zdn	9-5=0b00000	31-11=0b010001010010000011100
+sve2_crypto_unary_op	3	opc	asm	op	0
+sve_crypto_binary_multi2	2	opc	asm	2	Sched	I	4-1=Zdn	15-11=0b11101	9-5=Zm	18-17=0b01	20-19=imm2	31-21=0b01000101001
+sve_crypto_binary_multi4	2	opc	asm	2	Sched	I	1-0=opc	4-2=Zdn	15-11=0b11101	9-5=Zm	18-17=0b11	20-19=imm2	31-21=0b01000101001
+sve_crypto_pmlal_multi	1	asm	2	Sched	I	4-1=Zda	15-10=0b111111	9-5=Zn	20-16=Zm	31-21=0b01000101001
+sve_crypto_pmull_multi	1	asm	2	Sched	I	4-1=Zd	15-10=0b111110	9-5=Zn	20-16=Zm	31-21=0b01000101001
+sve_float_dot	5	bf	o2	ZPRRegOp dst_ty	ZPRRegOp src_ty	asm	2	Sched	I	4-0=Zda	15-11=0b10000	9-5=Zn	20-16=Zm	31-23=0b011001000
+sve_float_dot	7	bf	o2	ZPRRegOp dst_ty	ZPRRegOp src_ty	asm	ValueType InVT	op	0
+sve_fp8_dot	5	bf	ZPRRegOp dstrc	asm	ValueType vt	op	0
+sve_float_dot_indexed	6	bf	ZPRRegOp dst_ty	ZPRRegOp src1_ty	ZPRRegOp src2_ty	iop_ty	asm	2	Sched	I	4-0=Zda	9-5=Zn	15-12=0b0100	18-16=Zm	31-23=0b011001000
+sve_float_dot_indexed	7	bf	opc	ZPRRegOp src1_ty	ZPRRegOp src2_ty	asm	ValueType InVT	op	0	11-10=opc	20-19=iop
+sve_bfloat_convert	3	asm	op	ir_op	0
+sve_bfloat_convert_top	4	asm	ir_op	op = true	destructive = op	0
+sve_float_convert_top	2	asm	ir_op	0
+sve_int_matmul	2	uns	asm	2	Sched	I	31-24=0b01000101	4-0=Zda	15-10=0b100110	9-5=Zn	20-16=Zm	23-22=uns
+sve_int_matmul	3	uns	asm	op	0
+sve_int_dot_mixed	1	asm	2	Sched	I	4-0=Zda	15-10=0b011110	9-5=Zn	20-16=Zm	31-21=0b01000100100
+sve_int_dot_mixed	2	asm	op	0
+sve_int_dot_mixed_indexed	2	U	asm	2	Sched	I	4-0=Zda	15-11=0b00011	9-5=Zn	18-16=Zm	20-19=idx	31-21=0b01000100101
+sve_int_dot_mixed_indexed	3	U	asm	op	0
+sve_fp_matrix_mla	4	opc	asm	ZPRRegOp zda_ty	ZPRRegOp reg_ty	2	Sched	I	31-24=0b01100100	4-0=Zda	15-11=0b11100	9-5=Zn	20-16=Zm	23-22=opc
+sve_fp_matrix_mla	7	opc	asm	ZPRRegOp zda_ty	ZPRRegOp reg_ty	op	ValueType zda_vt	ValueType reg_vt	0
+sve_mem_ldor_si	3	sz	asm	RegisterOperand VecList	2	Sched	I	31-25=0b1010010	4-0=Zt	22-20=0b010	9-5=Rn	15-13=0b001	19-16=imm4	12-10=Pg	24-23=sz
+sve_mem_ldor_si	7	sz	asm	RegisterOperand listty	ZPRRegOp zprty	ValueType Ty	ValueType PredTy	SDNode Ld1ro	0
+sve_mem_ldor_ss	4	sz	asm	RegisterOperand VecList	RegisterOperand gprty	2	Sched	I	31-25=0b1010010	4-0=Zt	9-5=Rn	20-16=Rm	22-21=0b01	15-13=0	12-10=Pg	24-23=sz
+sve_mem_ldor_ss	9	sz	asm	RegisterOperand listty	ZPRRegOp zprty	RegisterOperand gprty	ValueType Ty	ValueType PredTy	SDNode Ld1ro	ComplexPattern AddrCP	0
+sve_int_perm_bin_perm_128_zz	3	opc	P	asm	2	Sched	I	4-0=Zd	9-5=Zn	20-16=Zm	15-13=0b000	31-21=0b00000101101	12-11=opc
+sve_int_perm_bin_perm_128_zz	4	opc	P	asm	op	0
+sve_fp_bin_pred_hfd	1	op	0
+sve_fp_bin_pred_hfd_fscale	1	op	0
+sve_fp_bin_pred_bfloat	1	op	0
+sve_fp_bin_pred_bfscale	1	op	0
+sve_fp_3op_pred_hfd	1	op	0
+sve_fp_3op_pred_bfloat	1	op	0
+sve_int_bin_pred_bhsd	1	op	0
+sve_int_bin_pred_sd	1	op	0
+sve_int_shift_pred_bhsd	5	op	ComplexPattern imm_b	ComplexPattern imm_h	ComplexPattern imm_s	ComplexPattern imm_d	0
+sve_int_bin_pred_all_active_bhsd	1	op	0
+sve_fp_clamp	3	asm	sz	ZPRRegOp zpr_ty	2	Sched	I	31-24=0b01100100	4-0=Zd	15-10=0b001001	9-5=Zn	20-16=Zm	23-22=sz
+sve_fp_clamp	2	asm	op	0
+sve_fp_clamp_bfloat	2	asm	op	0
+sve2p1_two_way_dot_vvi	2	mnemonic	u	2	Sched	I	4-0=Zda	15-11=0b11001	9-5=Zn	18-16=Zm	20-19=i2	31-21=0b01000100100
+sve2p1_two_way_dot_vvi	3	mnemonic	u	intrinsic	0
+sve2p3_two_way_dot_vvi	3	mnemonic	u	intrinsic	0
+sve2p1_ptrue_pn	4	mnemonic	sz	PNRP8to15RegOp pnrty	op	2	Sched	I	31-24=0b00100101	2-0=PNd	21-3=0b1000000111100000010	23-22=sz
+sve2p1_ptrue_pn	1	mnemonic	0
+sve2p1_pred_as_ctr_to_mask_base	5	mnemonic	sz	opc	RegisterOperand pprty	idxty	2	Sched	I	31-24=0b00100101	10-8=opc	21-11=0b10000001110	7-5=PNn	23-22=sz	3-0=Pd
+sve2p1_pred_as_ctr_to_mask	3	mnemonic	sz	PPRRegOp pprty	1	sve2p1_pred_as_ctr_to_mask_base	9-8=index
+sve2p1_pred_as_ctr_to_mask	2	mnemonic	op	0
+sve2p1_pred_as_ctr_to_mask_pair	3	mnemonic	sz	RegisterOperand pprty	1	sve2p1_pred_as_ctr_to_mask_base
+sve2p1_pred_as_ctr_to_mask_pair	1	mnemonic	0
+sve2p1_multi_vec_extract_narrow	3	mnemonic	opc	tsz	2	Sched	I	4-0=Zd	18-13=0b001010	9-6=Zn	20-19=tsz	12-11=opc	31-23=0b010001010
+sve2p1_multi_vec_extract_narrow	3	mnemonic	opc	intrinsic	0
+sve_multi_vec_shift_narrow	6	mnemonic	ZPRRegOp ZdRC	RegisterOperand ZSrcOp	immtype	opc	tsz	2	Sched	I	13-11=opc	4-0=Zd	9-6=Zn	18-16=imm	15-14=0b00	31-23=0b010001011
+sve_multi_vec_shift_narrow	3	mnemonic	opc	intrinsic	0
+sve_multi_vec_round_shift_narrow	3	mnemonic	opc	intrinsic	0
+sve2p1_mem_cld_ss_2z	5	mnemonic	msz	n	RegisterOperand vector_ty	RegisterOperand gpr_ty	2	Sched	I	4-1=Zt	14-13=msz	9-5=Rn	20-16=Rm	31-21=0b10100000000	12-10=PNg
+sve2p1_mem_cld_ss_2z	6	mnemonic	msz	n	RegisterOperand vector_ty	RegisterOperand gpr_ty	RegisterOperand vector_pseudo_ty	0
+sve2p1_mem_cld_si_2z	4	mnemonic	msz	n	RegisterOperand vector_ty	2	Sched	I	4-1=Zt	14-13=msz	9-5=Rn	19-16=imm4	31-20=0b101000000100	12-10=PNg
+sve2p1_mem_cld_si_2z	5	mnemonic	msz	n	RegisterOperand vector_ty	RegisterOperand vector_pseudo_ty	0
+sve2p1_mem_cld_ss_4z	5	mnemonic	msz	n	RegisterOperand vector_ty	RegisterOperand gpr_ty	2	Sched	I	4-2=Zt	14-13=msz	9-5=Rn	20-16=Rm	31-21=0b10100000000	12-10=PNg
+sve2p1_mem_cld_ss_4z	6	mnemonic	msz	n	RegisterOperand vector_ty	RegisterOperand gpr_ty	RegisterOperand vector_pseudo_ty	0
+sve2p1_mem_cld_si_4z	4	mnemonic	msz	n	RegisterOperand vector_ty	2	Sched	I	4-2=Zt	14-13=msz	9-5=Rn	19-16=imm4	31-20=0b101000000100	12-10=PNg
+sve2p1_mem_cld_si_4z	5	mnemonic	msz	n	RegisterOperand vector_ty	RegisterOperand vector_pseudo_ty	0
+sve2p1_mem_cst_ss_2z	5	mnemonic	msz	n	RegisterOperand vector_ty	RegisterOperand gpr_ty	2	Sched	I	4-1=Zt	14-13=msz	9-5=Rn	20-16=Rm	31-21=0b10100000001	12-10=PNg
+sve2p1_mem_cst_si_2z	4	mnemonic	msz	n	RegisterOperand vector_ty	2	Sched	I	4-1=Zt	14-13=msz	9-5=Rn	19-16=imm4	31-20=0b101000000110	12-10=PNg
+sve2p1_mem_cst_si_2z	5	mnemonic	msz	n	RegisterOperand vector_ty	RegisterOperand vector_pseudo_ty	0
+sve2p1_mem_cst_ss_4z	5	mnemonic	msz	n	RegisterOperand vector_ty	RegisterOperand gpr_ty	2	Sched	I	4-2=Zt	14-13=msz	9-5=Rn	20-16=Rm	31-21=0b10100000001	12-10=PNg
+sve2p1_mem_cst_si_4z	4	mnemonic	msz	n	RegisterOperand vector_ty	2	Sched	I	4-2=Zt	14-13=msz	9-5=Rn	19-16=imm4	31-20=0b101000000110	12-10=PNg
+sve2p1_mem_cst_si_4z	5	mnemonic	msz	n	RegisterOperand vector_ty	RegisterOperand vector_pseudo_ty	0
+sve2p1_pcount_pn	4	mnemonic	opc	sz	PNRRegOp pnrty	2	Sched	I	31-24=0b00100101	8-5=PNn	4-0=Rd	15-11=0b10000	18-16=opc	23-22=sz	21-19=0b100
+sve2p1_pcount_pn	2	mnemonic	opc	0
+sve2p1_int_while_rr_pn	4	mnemonic	sz	opc	PNRP8to15RegOp pnrty	2	Sched	I	31-24=0b00100101	2-0=PNd	11-10=opc	9-5=Rn	20-16=Rm	15-14=0b01	23-22=sz
+sve2p1_int_while_rr_pn	3	mnemonic	opc	SDNode OpNode	0
+sve2p1_int_while_rr_pair	4	mnemonic	sz	opc	PPR2MulRegOp ppr_ty	2	Sched	I	31-24=0b00100101	11-10=opc	9-5=Rn	15-12=0b0101	20-16=Rm	23-22=sz	3-1=Pd
+sve2p1_int_while_rr_pair	2	mnemonic	opc	0
+sve_mem_128b_gld_64_unscaled	1	mnemonic	2	Sched	I	4-0=Zt	9-5=Zn	20-16=Rm	15-13=0b101	31-21=0b11000100000	12-10=Pg
+sve_mem_128b_gld_64_unscaled	2	mnemonic	op	0
+sve_mem_sst_128b_64_unscaled	1	mnemonic	2	Sched	I	4-0=Zt	9-5=Zn	20-16=Rm	15-13=0b001	31-21=0b11100100001	12-10=Pg
+sve_mem_sst_128b_64_unscaled	2	mnemonic	op	0
+sve_mem_128b_cld_si	2	dtype	mnemonic	2	Sched	I	31-25=0b1010010	4-0=Zt	22-20=0b001	9-5=Rn	15-13=0b001	19-16=imm4	12-10=Pg	24-23=dtype
+sve_mem_128b_cld_si	2	dtype	mnemonic	0
+sve_mem_128b_cld_ss	3	dtype	mnemonic	RegisterOperand gprsh_ty	2	Sched	I	31-25=0b1010010	4-0=Zt	9-5=Rn	20-16=Rm	22-21=0b00	15-13=0b100	12-10=Pg	24-23=dtype
+sve_mem_128b_cld_ss	3	dtype	mnemonic	RegisterOperand gprsh_ty	0
+sve2p1_fp_reduction_q	5	sz	opc	mnemonic	RegisterOperand zpr_ty	vec_sfx	2	Sched	I	31-24=0b01100100	4-0=Vd	9-5=Zn	15-13=0b101	18-16=opc	23-22=sz	12-10=Pg	21-19=0b010
+sve2p1_fp_reduction_q	3	opc	mnemonic	op	0
+sve2p1_dupq	4	ind_tsz	mnemonic	ZPRRegOp zprty	itype	2	Sched	I	4-0=Zd	15-10=0b001001	9-5=Zn	20-16=ind_tsz	31-21=0b00000101001
+sve2p1_dupq	2	mnemonic	Op	0	20-17=index	20-18=index	20-19=index
+sve2p1_extq	1	mnemonic	2	Sched	I	4-0=Zdn	15-10=0b001001	9-5=Zm	19-16=imm4	31-20=0b000001010110
+sve2p1_extq	2	mnemonic	Op	0
+sve2p1_vector_to_pred	4	opc	mnemonic	PPRRegOp ppr_ty	itype	2	Sched	I	31-24=0b00000101	9-5=Zn	16-10=0b0001110	18-17=opc	23-22=opc	3-0=Pd	21-19=0b101
+sve2p1_vector_to_pred	3	mnemonic	Op_lane	Op	0	18-17=index
+sve2p1_pred_to_vector	4	opc	mnemonic	PPRRegOp ppr_ty	itype	2	Sched	I	31-24=0b00000101	8-5=Pn	4-0=Zd	18-17=opc	23-22=opc	21-19=0b101	16-9=0b10011100
+sve2p1_pred_to_vector	3	mnemonic	MergeOp	ZeroOp	0	18-17=index
+sve2p1_int_reduce_q	5	sz	opc	mnemonic	RegisterOperand zpr_ty	vec_sfx	2	Sched	I	31-24=0b00000100	4-0=Vd	17-16=opc	9-5=Zn	15-13=0b001	20-19=opc	23-22=sz	12-10=Pg
+sve2p1_int_reduce_q	3	opc	mnemonic	op	0
+sve2p1_permute_vec_elems_q	5	sz	opc	mnemonic	ZPRRegOp zpr_ty	RegisterOperand src1_ty	2	Sched	I	31-24=0b01000100	4-0=Zd	9-5=Zn	20-16=Zm	15-13=0b111	23-22=sz	12-10=opc
+sve2p1_permute_vec_elems_q	3	opc	mnemonic	op	0
+sve2p1_tblq	2	mnemonic	op	0
+sve2_fp8_cvt_single	5	L	opc	mnemonic	ZPRRegOp dst_ty	ZPRRegOp src_ty	2	Sched	I	4-0=Zd	31-17=0b011001010000100	11-10=opc	9-5=Zn	15-12=0b0011
+sve2_fp8_cvt_single	5	L	opc	mnemonic	ValueType vtd	op	0
+sve2_fp8_down_cvt_single	4	opc	mnemonic	ZPRRegOp dst_ty	RegisterOperand src_ty	2	Sched	I	4-0=Zd	11-10=opc	9-6=Zn	31-12=0b01100101000010100011
+sve2_fp8_down_cvt_single	5	opc	mnemonic	RegisterOperand src	ValueType ty	op	0
+sve2_fp8_down_cvt_single_top	3	opc	mnemonic	RegisterOperand src_ty	2	Sched	I	4-0=Zd	11-10=opc	9-6=Zn	31-12=0b01100101000010100011
+sve2_fp8_down_cvt_single_top	5	opc	mnemonic	RegisterOperand src_ty	ValueType ty	op	0
+sve2_fp8_mla_long_by_indexed_elem	2	T	mnemonic	2	Sched	I	31-24=0b01100100	4-0=Zda	11-10=imm4	9-5=Zn	15-12=0b0101	22-21=0b01	18-16=Zm	20-19=imm4
+sve2_fp8_mla_long_by_indexed_elem	3	T	mnemonic	op	0
+sve2_fp8_mla	3	bits<3>opc	ZPRRegOp dst_ty	mnemonic	2	Sched	I	31-24=0b01100100	4-0=Zda	13-12=opc	11-10=0b10	9-5=Zn	20-16=Zm	22-21=0b01	15-14=0b10
+sve2_fp8_mla	5	opc	ZPRRegOp dst_ty	mnemonic	ValueType vta	op	0
+sve2_fp8_mla_long_long_by_indexed_elem	2	TT	mnemonic	2	Sched	I	31-24=0b01100100	4-0=Zda	11-10=imm4	9-5=Zn	15-12=0b1100	18-16=Zm	20-19=imm4	23-22=TT
+sve2_fp8_mla_long_long_by_indexed_elem	3	TT	mnemonic	op	0
+sve2_fp8_mmla	3	opc	ZPRRegOp dst_ty	mnemonic	2	Sched	I	4-0=Zda	15-10=0b111000	9-5=Zn	20-16=Zm	31-23=0b011001000
+sve2_fp8_fmmla	4	opc	ZPRRegOp zprty	mnemonic	ValueType ResVT	0
+sve_fp8_dot_indexed	4	opc	ZPRRegOp dst_ty	iop_ty	mnemonic	2	Sched	I	4-0=Zda	9-5=Zn	15-12=0b0100	18-16=Zm	20-19=opc	31-23=0b011001000
+sve2_fp8_dot_indexed_h	2	asm	op	0	20-19=iop
+sve2_fp8_dot_indexed_s	2	asm	op	0	20-19=iop
+sve2_lut_vector_index	5	ZPRRegOp zd_ty	RegisterOperand zn_ty	idx_ty	bits<4>opc	mnemonic	2	Sched	I	31-24=0b01000101	4-0=Zd	9-5=Zn	20-16=Zm	15-13=0b101	12-10=opc
+sve2_luti2_vector_index	1	mnemonic	0	23-22=idx
+sve2_luti4_vector_index	1	mnemonic	0	23-22=idx
+sve2_luti4_vector_vg2_index	1	mnemonic	0	23-22=idx
+sve2_luti6_vector_index	2	mnemonic	intrinsic	0
+sve2_luti6_vector	1	mnemonic	2	Sched	I	4-0=Zd	15-10=0b101011	9-5=Zn	20-16=Zm	31-21=0b01000101001
+sve2_luti6_vector	2	mnemonic	intrinsic	0
+sve_int_mad_cpa	1	asm	2	Sched	I	31-24=0b01000100	4-0=Zdn	14-10=0b10110	9-5=Za	20-16=Zm	23-22=0b11
+sve_int_mla_cpa	1	asm	1	sve2_int_mla
+sve2_fp_to_int_downcvt	5	asm	ZPRRegOp ZdRC	RegisterOperand ZSrcOp	size	U	2	Sched	I	31-24=0b01100101	4-0=Zd	21-11=0b00110100110	9-6=Zn	23-22=size
+sve2_fp_to_int_downcvt	3	asm	U	op	0
+sve2_int_to_fp_upcvt	5	asm	ZPRRegOp ZdRC	ZPRRegOp ZnRC	size	U	2	Sched	I	31-24=0b01100101	4-0=Zd	21-12=0b0011000011	11-10=U	9-5=Zn	23-22=size
+sve2_int_to_fp_upcvt	3	asm	U	op	0

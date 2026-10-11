@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULESH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMULESH": {"PowerPC": "VMULESH"}
+  },
+  "INPUTS": {
+    "VMULESH": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMULESH": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMULESH": {"PowerPC": ["VX1_Int_Ty2","840"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULESH": {"PowerPC": ["VX1_Int_Ty2","840"]}
+  }
+}

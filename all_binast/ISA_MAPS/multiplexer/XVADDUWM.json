@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVADDUWM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVADDUWM": {"PowerPC": "XVADDUWM"}
+  },
+  "INPUTS": {
+    "XVADDUWM": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVADDUWM": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVADDUWM": {"PowerPC": ["XX3Form_XTAB6","60","131"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVADDUWM": {"PowerPC": ["XX3Form_XTAB6","60","131"]}
+  }
+}

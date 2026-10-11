@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCLRLB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCLRLB": {"PowerPC": "VCLRLB"}
+  },
+  "INPUTS": {
+    "VCLRLB": {"PowerPC": [["vrrc",0],["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "VCLRLB": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCLRLB": {"PowerPC": ["VXForm_1","397"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCLRLB": {"PowerPC": ["VXForm_1","397"]}
+  }
+}

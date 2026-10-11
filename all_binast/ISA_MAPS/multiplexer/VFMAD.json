@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFMAD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFMAD": {"ARM": "VFMAD"}
+  },
+  "INPUTS": {
+    "VFMAD": {"ARM": [["DPR",0],["DPR",0],["DPR",0]]}
+  },
+  "OUTPUTS": {
+    "VFMAD": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFMAD": {"ARM": ["ADbI","0b11101","0b10","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFMAD": {"ARM": ["ADbI","0b11101","0b10","0","0"]}
+  }
+}

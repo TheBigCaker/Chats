@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FCC",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "FCC": {"Mips": "FCC"}
+  },
+  "INPUTS": {
+    "FCC": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "FCC": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "FCC": {"Mips": ["RegisterClass","32","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCC": {"Mips": ["RegisterClass","32","0"]}
+  }
+}

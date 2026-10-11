@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "ZIP",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "ZIP8P": {"RISCV": "ZIP8P"},
+    "ZIP16P": {"RISCV": "ZIP16P"},
+    "ZIP8HP": {"RISCV": "ZIP8HP"},
+    "ZIP16HP": {"RISCV": "ZIP16HP"},
+    "ZIP_RV32": {"RISCV": "ZIP_RV32"}
+  },
+  "INPUTS": {
+    "ZIP8P": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "ZIP16P": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "ZIP8HP": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "ZIP16HP": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "ZIP_RV32": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "ZIP8P": {"RISCV": [["GPR:$rd",0]]},
+    "ZIP16P": {"RISCV": [["GPR:$rd",0]]},
+    "ZIP8HP": {"RISCV": [["GPR:$rd",0]]},
+    "ZIP16HP": {"RISCV": [["GPR:$rd",0]]},
+    "ZIP_RV32": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "ZIP8P": {"RISCV": ["RVPBinary_rr","0b1110","0b00","0b010"]},
+    "ZIP16P": {"RISCV": ["RVPBinary_rr","0b1110","0b01","0b010"]},
+    "ZIP8HP": {"RISCV": ["RVPBinary_rr","0b1110","0b10","0b010"]},
+    "ZIP16HP": {"RISCV": ["RVPBinary_rr","0b1110","0b11","0b010"]},
+    "ZIP_RV32": {"RISCV": ["Unary_r","0b000010001111","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZIP8P": {"RISCV": ["RVPBinary_rr","0b1110","0b00","0b010"]},
+    "ZIP16P": {"RISCV": ["RVPBinary_rr","0b1110","0b01","0b010"]},
+    "ZIP8HP": {"RISCV": ["RVPBinary_rr","0b1110","0b10","0b010"]},
+    "ZIP16HP": {"RISCV": ["RVPBinary_rr","0b1110","0b11","0b010"]},
+    "ZIP_RV32": {"RISCV": ["Unary_r","0b000010001111","0b001"]}
+  }
+}

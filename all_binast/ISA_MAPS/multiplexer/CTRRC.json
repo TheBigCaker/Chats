@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "CTRRC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "CTRRC": {"PowerPC": "CTRRC"},
+    "CTRRC8": {"PowerPC": "CTRRC8"}
+  },
+  "INPUTS": {
+    "CTRRC": {"PowerPC": []},
+    "CTRRC8": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "CTRRC": {"PowerPC": []},
+    "CTRRC8": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "CTRRC": {"PowerPC": ["PPCNonAllocatableRegisterClass","32"]},
+    "CTRRC8": {"PowerPC": ["PPCNonAllocatableRegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "CTRRC": {"PowerPC": ["PPCNonAllocatableRegisterClass","32"]},
+    "CTRRC8": {"PowerPC": ["PPCNonAllocatableRegisterClass","64"]}
+  }
+}

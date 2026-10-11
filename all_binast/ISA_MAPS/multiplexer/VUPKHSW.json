@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUPKHSW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VUPKHSW": {"PowerPC": "VUPKHSW"}
+  },
+  "INPUTS": {
+    "VUPKHSW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VUPKHSW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VUPKHSW": {"PowerPC": ["VX2_Int_Ty2","1614"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUPKHSW": {"PowerPC": ["VX2_Int_Ty2","1614"]}
+  }
+}

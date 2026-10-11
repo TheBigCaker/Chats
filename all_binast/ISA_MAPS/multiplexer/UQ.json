@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "UQ",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UQf": {"ARM": "UQf"},
+    "UQh": {"ARM": "UQh"}
+  },
+  "INPUTS": {
+    "UQf": {"ARM": []},
+    "UQh": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "UQf": {"ARM": []},
+    "UQh": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "UQf": {"ARM": ["N2VQIntnp","0b10","0b11","1"]},
+    "UQh": {"ARM": ["N2VQIntnp","0b01","0b11","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "UQf": {"ARM": ["N2VQIntnp","0b10","0b11","1"]},
+    "UQh": {"ARM": ["N2VQIntnp","0b01","0b11","1"]}
+  }
+}

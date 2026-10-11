@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXVWSX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXVWSX": {"PowerPC": "LXVWSX"}
+  },
+  "INPUTS": {
+    "LXVWSX": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "LXVWSX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "LXVWSX": {"PowerPC": ["X_XT6_RA5_RB5","31","364"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXVWSX": {"PowerPC": ["X_XT6_RA5_RB5","31","364"]}
+  }
+}

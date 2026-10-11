@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STBU",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STBU8": {"PowerPC": "STBU8"}
+  },
+  "INPUTS": {
+    "STBU8": {"PowerPC": [["g8rc",0],["(memri",0]]}
+  },
+  "OUTPUTS": {
+    "STBU8": {"PowerPC": [["ptr_rc_nor0",0]]}
+  },
+  "INPUT_BYTES": {
+    "STBU8": {"PowerPC": ["DForm_1","39"]}
+  },
+  "OUTPUT_BYTES": {
+    "STBU8": {"PowerPC": ["DForm_1","39"]}
+  }
+}

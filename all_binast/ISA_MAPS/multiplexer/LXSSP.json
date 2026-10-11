@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXSSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXSSP": {"PowerPC": "LXSSP"}
+  },
+  "INPUTS": {
+    "LXSSP": {"PowerPC": [["(memrix",0]]}
+  },
+  "OUTPUTS": {
+    "LXSSP": {"PowerPC": [["vfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LXSSP": {"PowerPC": ["DSForm_1","57","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXSSP": {"PowerPC": ["DSForm_1","57","3"]}
+  }
+}

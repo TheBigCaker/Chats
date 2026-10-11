@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AMDGPUD",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "AMDGPUDivScaleOp": {"AMDGPU": "AMDGPUDivScaleOp"}
+  },
+  "INPUTS": {
+    "AMDGPUDivScaleOp": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "AMDGPUDivScaleOp": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "AMDGPUDivScaleOp": {"AMDGPU": ["SDTypeProfile","2","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "AMDGPUDivScaleOp": {"AMDGPU": ["SDTypeProfile","2","3"]}
+  }
+}

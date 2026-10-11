@@ -1,0 +1,69 @@
+{
+  "CATEGORY": "PUSH",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PUSH16r": {"X86": "PUSH16r"},
+    "PUSH32r": {"X86": "PUSH32r"},
+    "PUSH16rmr": {"X86": "PUSH16rmr"},
+    "PUSH32rmr": {"X86": "PUSH32rmr"},
+    "PUSH16rmm": {"X86": "PUSH16rmm"},
+    "PUSH32rmm": {"X86": "PUSH32rmm"},
+    "PUSH64r": {"X86": "PUSH64r"},
+    "PUSH64rmr": {"X86": "PUSH64rmr"},
+    "PUSH2": {"X86": "PUSH2"},
+    "PUSH2P": {"X86": "PUSH2P"},
+    "PUSH64rmm": {"X86": "PUSH64rmm"}
+  },
+  "INPUTS": {
+    "PUSH16r": {"X86": [["GR16",16]]},
+    "PUSH32r": {"X86": [["GR32",32]]},
+    "PUSH16rmr": {"X86": [["GR16",16]]},
+    "PUSH32rmr": {"X86": [["GR32",32]]},
+    "PUSH16rmm": {"X86": [["i16mem",0]]},
+    "PUSH32rmm": {"X86": [["i32mem",0]]},
+    "PUSH64r": {"X86": [["GR64",64]]},
+    "PUSH64rmr": {"X86": [["GR64",64]]},
+    "PUSH2": {"X86": [["GR64",64],["GR64",64]]},
+    "PUSH2P": {"X86": [["GR64",64],["GR64",64]]},
+    "PUSH64rmm": {"X86": [["i64mem",0]]}
+  },
+  "OUTPUTS": {
+    "PUSH16r": {"X86": []},
+    "PUSH32r": {"X86": []},
+    "PUSH16rmr": {"X86": []},
+    "PUSH32rmr": {"X86": []},
+    "PUSH16rmm": {"X86": []},
+    "PUSH32rmm": {"X86": []},
+    "PUSH64r": {"X86": []},
+    "PUSH64rmr": {"X86": []},
+    "PUSH2": {"X86": []},
+    "PUSH2P": {"X86": []},
+    "PUSH64rmm": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PUSH16r": {"X86": ["0x50"]},
+    "PUSH32r": {"X86": ["0x50"]},
+    "PUSH16rmr": {"X86": ["0xFF"]},
+    "PUSH32rmr": {"X86": ["0xFF"]},
+    "PUSH16rmm": {"X86": ["0xFF"]},
+    "PUSH32rmm": {"X86": ["0xFF"]},
+    "PUSH64r": {"X86": ["0x50"]},
+    "PUSH64rmr": {"X86": ["0xFF"]},
+    "PUSH2": {"X86": ["0xFF"]},
+    "PUSH2P": {"X86": ["0xFF"]},
+    "PUSH64rmm": {"X86": ["0xFF"]}
+  },
+  "OUTPUT_BYTES": {
+    "PUSH16r": {"X86": ["0x50"]},
+    "PUSH32r": {"X86": ["0x50"]},
+    "PUSH16rmr": {"X86": ["0xFF"]},
+    "PUSH32rmr": {"X86": ["0xFF"]},
+    "PUSH16rmm": {"X86": ["0xFF"]},
+    "PUSH32rmm": {"X86": ["0xFF"]},
+    "PUSH64r": {"X86": ["0x50"]},
+    "PUSH64rmr": {"X86": ["0xFF"]},
+    "PUSH2": {"X86": ["0xFF"]},
+    "PUSH2P": {"X86": ["0xFF"]},
+    "PUSH64rmm": {"X86": ["0xFF"]}
+  }
+}

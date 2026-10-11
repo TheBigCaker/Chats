@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FMOVQ",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FMOVQ_XCC": {"Sparc": "FMOVQ_XCC"}
+  },
+  "INPUTS": {
+    "FMOVQ_XCC": {"Sparc": [["QFPRegs",0],["QFPRegs",0],["CCOp",0]]}
+  },
+  "OUTPUTS": {
+    "FMOVQ_XCC": {"Sparc": [["QFPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FMOVQ_XCC": {"Sparc": ["F4_3","0b110101","0b000011"]}
+  },
+  "OUTPUT_BYTES": {
+    "FMOVQ_XCC": {"Sparc": ["F4_3","0b110101","0b000011"]}
+  }
+}

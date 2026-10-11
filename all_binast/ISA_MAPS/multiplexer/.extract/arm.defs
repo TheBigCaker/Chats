@@ -1,0 +1,2510 @@
+FastCC_ARM_APCS|||CallingConv|4,4,4
+CC_ARM_AAPCS_Common|||CallingConv|8,4,4,8,16,8
+CSR_FPRegs|||CalleeSavedRegs|0
+CSR_FP_Interrupt_Regs|||CalleeSavedRegs|15
+CSR_FP_NEON_Interrupt_Regs|||CalleeSavedRegs|31
+CSR_AAPCS|||CalleeSavedRegs|15
+CSR_ATPCS_SplitPush|||CalleeSavedRegs|15
+CSR_Win_SplitFP|||CalleeSavedRegs|15
+CSR_Win_AAPCS_CFGuard_Check|||CalleeSavedRegs|15
+CSR_AAPCS_SplitPush_R11|||CalleeSavedRegs|15
+CSR_AAPCS_SplitPush_R7|||CalleeSavedRegs|15
+CSR_AAPCS_ThisReturn|||CalleeSavedRegs|15
+CSR_iOS_CXX_TLS|||CalleeSavedRegs|12,31
+CSR_GenericInt|||CalleeSavedRegs|12
+CSR_FIQ|||CalleeSavedRegs|7
+imm_3b|||BitWidthImm|3
+imm_4b|||BitWidthImm|4
+imm_6b|||BitWidthImm|6
+imm_7b|||BitWidthImm|7
+imm_9b|||BitWidthImm|9
+imm_11b|||BitWidthImm|11
+imm_12b|||BitWidthImm|12
+imm_13b|||BitWidthImm|13
+cde_cx_params_single_noacc|||CDE_CX_ParamsTemplate|0b0,0b0
+cde_cx_params_single_acc|||CDE_CX_ParamsTemplate|0b0,0b1
+cde_cx_params_dual_noacc|||CDE_CX_ParamsTemplate|0b1,0b0
+cde_cx_params_dual_acc|||CDE_CX_ParamsTemplate|0b1,0b1
+cde_vcx_params_s_noacc|||CDE_VCX_ParamsTemplate|0b0
+cde_vcx_params_s_acc|||CDE_VCX_ParamsTemplate|0b1
+cde_vcx_params_d_noacc|||CDE_VCX_ParamsTemplate|0b0
+cde_vcx_params_d_acc|||CDE_VCX_ParamsTemplate|0b1
+cde_vcx_params_q_noacc|||CDE_VCXQ_ParamsTemplate|0b0
+cde_vcx_params_q_acc|||CDE_VCXQ_ParamsTemplate|0b1
+Pseudo|||Format|0
+MulFrm|||Format|1
+BrFrm|||Format|2
+BrMiscFrm|||Format|3
+DPFrm|||Format|4
+DPSoRegRegFrm|||Format|5
+LdFrm|||Format|6
+StFrm|||Format|7
+LdMiscFrm|||Format|8
+StMiscFrm|||Format|9
+LdStMulFrm|||Format|10
+LdStExFrm|||Format|11
+ArithMiscFrm|||Format|12
+SatFrm|||Format|13
+ExtFrm|||Format|14
+VFPUnaryFrm|||Format|15
+VFPBinaryFrm|||Format|16
+VFPConv1Frm|||Format|17
+VFPConv2Frm|||Format|18
+VFPConv3Frm|||Format|19
+VFPConv4Frm|||Format|20
+VFPConv5Frm|||Format|21
+VFPLdStFrm|||Format|22
+VFPLdStMulFrm|||Format|23
+VFPMiscFrm|||Format|24
+ThumbFrm|||Format|25
+MiscFrm|||Format|26
+NGetLnFrm|||Format|27
+NSetLnFrm|||Format|28
+NDupFrm|||Format|29
+NLdStFrm|||Format|30
+N1RegModImmFrm|||Format|31
+N2RegFrm|||Format|32
+NVCVTFrm|||Format|33
+NVDupLnFrm|||Format|34
+N2RegVShLFrm|||Format|35
+N2RegVShRFrm|||Format|36
+N3RegFrm|||Format|37
+N3RegVShFrm|||Format|38
+NVExtFrm|||Format|39
+NVMulSLFrm|||Format|40
+NVTBLFrm|||Format|41
+DPSoRegImmFrm|||Format|42
+N3RegCplxFrm|||Format|43
+AddrModeNone|||AddrMode|0
+AddrMode1|||AddrMode|1
+AddrMode2|||AddrMode|2
+AddrMode3|||AddrMode|3
+AddrMode4|||AddrMode|4
+AddrMode5|||AddrMode|5
+AddrMode6|||AddrMode|6
+AddrModeT1_1|||AddrMode|7
+AddrModeT1_2|||AddrMode|8
+AddrModeT1_4|||AddrMode|9
+AddrModeT1_s|||AddrMode|10
+AddrModeT2_i12|||AddrMode|11
+AddrModeT2_i8|||AddrMode|12
+AddrModeT2_i8pos|||AddrMode|13
+AddrModeT2_i8neg|||AddrMode|14
+AddrModeT2_so|||AddrMode|15
+AddrModeT2_pc|||AddrMode|16
+AddrModeT2_i8s4|||AddrMode|17
+AddrMode_i12|||AddrMode|18
+AddrMode5FP16|||AddrMode|19
+AddrModeT2_ldrex|||AddrMode|20
+AddrModeT2_i7s4|||AddrMode|21
+AddrModeT2_i7s2|||AddrMode|22
+AddrModeT2_i7|||AddrMode|23
+IndexModeNone|||IndexMode|0
+IndexModePre|||IndexMode|1
+IndexModePost|||IndexMode|2
+IndexModeUpd|||IndexMode|3
+GenericDomain|||Domain|0
+VFPDomain|||Domain|1
+NeonDomain|||Domain|2
+VFPNeonDomain|||Domain|3
+VFPNeonA8Domain|||Domain|5
+MVEDomain|||Domain|8
+SetEndAsmOperand|||ImmAsmOperand|0,1
+shr_imm8_asm_operand|||ImmAsmOperand|1,8
+shr_imm16_asm_operand|||ImmAsmOperand|1,16
+shr_imm32_asm_operand|||ImmAsmOperand|1,32
+shr_imm64_asm_operand|||ImmAsmOperand|1,64
+PKHLSLAsmOperand|||ImmAsmOperand|0,31
+SDT_ARMStructByVal|||SDTypeProfile|0,4
+SDT_ARMSaveCallPC|||SDTypeProfile|0,1
+SDT_ARMcall|||SDTypeProfile|0
+SDT_ARMCMov|||SDTypeProfile|1,4
+SDT_ARMBrcond|||SDTypeProfile|0,3
+SDT_ARMBrJT|||SDTypeProfile|0,2
+SDT_ARMBr2JT|||SDTypeProfile|0,3
+SDT_ARMBCC_i64|||SDTypeProfile|0,6
+SDT_ARMAnd|||SDTypeProfile|1,2
+SDT_ARMCmp|||SDTypeProfile|1,2
+SDT_ARMPICAdd|||SDTypeProfile|1,2
+SDT_ARMThreadPointer|||SDTypeProfile|1,0
+SDT_ARMEH_SJLJ_Setjmp|||SDTypeProfile|1,2
+SDT_ARMEH_SJLJ_Longjmp|||SDTypeProfile|0,2
+SDT_ARMEH_SJLJ_SetupDispatch|||SDTypeProfile|0,0
+SDT_ARMMEMBARRIER|||SDTypeProfile|0,1
+SDT_ARMPREFETCH|||SDTypeProfile|0,3
+SDT_ARMTCRET|||SDTypeProfile|0,2
+SDT_ARMBFI|||SDTypeProfile|1,3
+SDT_WIN__DBZCHK|||SDTypeProfile|0,1
+SDT_ARMMEMCPY|||SDTypeProfile|2,3
+SDTIntUnaryOpWithFlagsOut|||SDTypeProfile|2,1
+SDTIntUnaryOpWithFlagsIn|||SDTypeProfile|1,2
+SDTBinaryArithWithFlags|||SDTypeProfile|2,2
+SDTBinaryArithWithFlagsInOut|||SDTypeProfile|2,3
+SDT_LongMac|||SDTypeProfile|2,4
+SDT_ARMIntShiftParts|||SDTypeProfile|2,3
+SDT_ARMCSel|||SDTypeProfile|1,4
+SDT_MulHSR|||SDTypeProfile|1,3
+SDT_ARMldrd|||SDTypeProfile|2,1
+SDT_ARMstrd|||SDTypeProfile|0,3
+ARMvdup|||SDNode|1
+ARMvduplane|||SDNode|2
+SDTARMVIDUP|||SDTypeProfile|2,2
+SDTARMVSHUF|||SDTypeProfile|1,1
+SDTARMVGETLN|||SDTypeProfile|1,2
+SDTARMVMOVIMM|||SDTypeProfile|1,1
+SDTARMVORRIMM|||SDTypeProfile|1,2
+SDTARMVSHIMM|||SDTypeProfile|1,2
+SDTARMVSH|||SDTypeProfile|1,2
+SDTARMVMULL|||SDTypeProfile|1,2
+SDTARMVCMP|||SDTypeProfile|1,3
+SDTARMVCMPZ|||SDTypeProfile|1,2
+Imm0_1AsmOperand|||ImmAsmOperand|0,1
+Imm0_3AsmOperand|||ImmAsmOperand|0,3
+Imm0_7AsmOperand|||ImmAsmOperand|0,7
+Imm8_255AsmOperand|||ImmAsmOperand|8,255
+Imm8AsmOperand|||ImmAsmOperand|8,8
+Imm16AsmOperand|||ImmAsmOperand|16,16
+Imm32AsmOperand|||ImmAsmOperand|32,32
+Imm1_7AsmOperand|||ImmAsmOperand|1,7
+Imm1_15AsmOperand|||ImmAsmOperand|1,15
+Imm1_31AsmOperand|||ImmAsmOperand|1,31
+Imm0_15AsmOperand|||ImmAsmOperand|0,15
+Imm0_31AsmOperand|||ImmAsmOperand|0,31
+Imm0_32AsmOperand|||ImmAsmOperand|0,32
+Imm0_63AsmOperand|||ImmAsmOperand|0,63
+Imm0_239AsmOperand|||ImmAsmOperand|0,239
+Imm0_255AsmOperand|||ImmAsmOperand|0,255
+Imm0_65535AsmOperand|||ImmAsmOperand|0,65535
+Imm256_65535ExprAsmOperand|||ImmAsmOperand|256,65535
+Imm24bitAsmOperand|||ImmAsmOperand|0,0xffffff
+Imm1_32AsmOperand|||ImmAsmOperandMinusOne|1,32
+Imm1_16AsmOperand|||ImmAsmOperandMinusOne|1,16
+MVEShiftImm1_7AsmOperand|||ImmAsmOperand|1,7
+MVEShiftImm1_15AsmOperand|||ImmAsmOperand|1,15
+am3offset|||MemOperand|2
+addrmode6|||MemOperand|2
+am6offset|||MemOperand|1
+addrmode6oneL32|||MemOperand|2
+addrmode6dup|||MemOperand|2
+ri|GPR|GPR,mod_imm|AsI1|
+rr|GPR|GPR,GPR|AsI1|
+rsi|GPR|GPR,so_reg_imm|AsI1|
+rsr|GPR|GPR,so_reg_reg|AsI1|
+ri|GPR|GPR,mod_imm|AsI1|
+rr|GPR|GPR,GPR|AsI1|
+rsi|GPR|GPR,so_reg_imm|AsI1|
+rsr|GPR|GPR,so_reg_reg|AsI1|
+ri|GPR|GPR,mod_imm,pred|ARMPseudoInst|4
+rr|GPR|GPR,GPR,pred|ARMPseudoInst|4
+rsi|GPR|GPR,so_reg_imm,pred|ARMPseudoInst|4
+rsr|GPR|GPR,so_reg_reg,pred|ARMPseudoInst|4
+ri|GPR|GPR,mod_imm,pred|ARMPseudoInst|4
+rsi|GPR|GPR,so_reg_imm,pred|ARMPseudoInst|4
+rsr|GPR|GPR,so_reg_reg,pred|ARMPseudoInst|4
+ri||GPR,mod_imm|AI1|
+rr||GPR,GPR|AI1|
+rsi||GPR,so_reg_imm|AI1|
+rsr||GPRnopc,so_reg_reg|AI1|
+ri|GPR|GPR,mod_imm|AsI1|
+rr|GPR|GPR,GPR|AsI1|
+rsi|GPR|GPR,so_reg_imm|AsI1|
+rsr|GPRnopc|GPRnopc,so_reg_reg|AsI1|
+ri|GPR|GPR,mod_imm|AsI1|
+rr|GPR|GPR,GPR|AsI1|
+rsi|GPR|GPR,so_reg_imm|AsI1|
+rsr|GPR|GPR,so_reg_reg|AsI1|
+i12|GPR|addrmode_imm12|AI2ldst|0b010,1
+rs|GPR|ldst_so_reg|AI2ldst|0b011,1
+i12|GPRnopc|addrmode_imm12|AI2ldst|0b010,1
+rs|GPRnopc|ldst_so_reg|AI2ldst|0b011,1
+i12||GPR,addrmode_imm12|AI2ldst|0b010,0
+rs||GPR,ldst_so_reg|AI2ldst|0b011,0
+i12||GPRnopc,addrmode_imm12|AI2ldst|0b010,0
+rs||GPRnopc,ldst_so_reg|AI2ldst|0b011,0
+HINT||imm0_239|AI|
+SEL|GPR|GPR,GPR|AI|
+BKPT||imm0_65535|AInoP|
+HLT||imm0_65535|AInoP|
+CPS3p||imod_op,iflags_op,imm0_31|CPS|
+CPS2p||imod_op,iflags_op|CPS|
+CPS1p||imm0_31|CPS|
+i12||addrmode_imm12|AXIM|
+rs||ldst_so_reg|AXI|
+SETEND||setend_op|AXI|
+DBG||imm0_15|AI|
+UDF||imm0_65535|AInoP|
+PICADD|GPR|GPR,pclabel,pred|ARMPseudoInst|4
+PICLDR|GPR|addrmodepc,pred|ARMPseudoInst|4
+PICLDRH|GPR|addrmodepc,pred|ARMPseudoInst|4
+PICLDRB|GPR|addrmodepc,pred|ARMPseudoInst|4
+PICLDRSH|GPR|addrmodepc,pred|ARMPseudoInst|4
+PICLDRSB|GPR|addrmodepc,pred|ARMPseudoInst|4
+PICSTR||GPR,addrmodepc,pred|ARMPseudoInst|4
+PICSTRH||GPR,addrmodepc,pred|ARMPseudoInst|4
+PICSTRB||GPR,addrmodepc,pred|ARMPseudoInst|4
+ADR|GPR|adrlabel|AI1|
+LEApcrel|GPR|i32imm,pred|ARMPseudoInst|4
+LEApcrelJT|GPR|i32imm,pred|ARMPseudoInst|4
+SUBS_PC_LR||i32imm,pred|ARMPseudoInst|4
+BX||GPR|AXI|
+BX_pred||GPR|AI|
+BL||arm_bl_target|ABXI|0b1011
+BL_pred||arm_bl_target|ABI|0b1011
+BLX||GPR|AXI|
+BLX_noip||GPRnoip|ARMPseudoExpand|4
+BLX_pred||GPR|AI|
+BLX_pred_noip||GPRnoip|ARMPseudoExpand|4
+BX_CALL||tGPR|ARMPseudoInst|8
+BMOVPCRX_CALL||tGPR|ARMPseudoInst|8
+BMOVPCB_CALL||arm_bl_target|ARMPseudoInst|8
+BL_PUSHLR||GPRlr,arm_bl_target|ARMPseudoInst|4
+Bcc||arm_br_target|ABI|0b1010
+B||arm_br_target|ARMPseudoExpand|4
+BR_JTr||GPR,i32imm|ARMPseudoInst|0
+BR_JTm_i12||addrmode_imm12,i32imm|ARMPseudoInst|0
+BR_JTm_rs||ldst_so_reg,i32imm|ARMPseudoInst|0
+BR_JTadd||GPR,GPR,i32imm|ARMPseudoInst|0
+BLXi||arm_blx_target|AXI|
+BXJ||GPR|ABI|0b0001
+TCRETURNdi||i32imm,i32imm|PseudoInst|
+TCRETURNri||tcGPR,i32imm|PseudoInst|
+TCRETURNrinotr12||tcGPRnotr12,i32imm|PseudoInst|
+TAILJMPd||arm_br_target|ARMPseudoExpand|4
+TAILJMPr||tcGPR|ARMPseudoExpand|4
+SMC||imm0_15|ABI|0b0001
+SVC||imm24b|ABI|0b1111
+SRSDA||imm0_31:$mode|SRSI|0
+SRSDA_UPD||imm0_31:$mode|SRSI|1
+SRSDB||imm0_31:$mode|SRSI|0
+SRSDB_UPD||imm0_31:$mode|SRSI|1
+SRSIA||imm0_31:$mode|SRSI|0
+SRSIA_UPD||imm0_31:$mode|SRSI|1
+SRSIB||imm0_31:$mode|SRSI|0
+SRSIB_UPD||imm0_31:$mode|SRSI|1
+RFEDA||GPR:$Rn|RFEI|0
+RFEDA_UPD||GPR:$Rn|RFEI|1
+RFEDB||GPR:$Rn|RFEI|0
+RFEDB_UPD||GPR:$Rn|RFEI|1
+RFEIA||GPR:$Rn|RFEI|0
+RFEIA_UPD||GPR:$Rn|RFEI|1
+RFEIB||GPR:$Rn|RFEI|0
+RFEIB_UPD||GPR:$Rn|RFEI|1
+HVC||imm0_65535|AInoP|
+ERET|||ABI|0b0001
+LDRcp|GPR|addrmode_imm12|AI2ldst|0b010,1,0
+LDRH|GPR|addrmode3|AI3ld|0b1011,1
+LDRSH|GPR|addrmode3|AI3ld|0b1111,1
+LDRSB|GPR|addrmode3|AI3ld|0b1101,1
+LDRD|GPR,GPR|addrmode3|AI3ld|0b1101,0
+LOADDUAL|GPRPairOp|addrmode3|ARMPseudoInst|64
+LDA|GPR|addr_offset_none|AIldracq|0b00
+LDAB|GPR|addr_offset_none|AIldracq|0b10
+LDAH|GPR|addr_offset_none|AIldracq|0b11
+_PRE_IMM|GPR,GPR|addrmode_imm12_pre|AI2ldstidx|1,1
+_PRE_REG|GPR,GPR|ldst_so_reg|AI2ldstidx|1,1
+_POST_REG|GPR,GPR|addr_offset_none,am2offset_reg|AI2ldstidx|1,0
+_POST_IMM|GPR,GPR|addr_offset_none,am2offset_imm|AI2ldstidx|1,0
+_PRE|GPR,GPR|addrmode3_pre|AI3ldstidx|1,1
+_POST|GPR,GPR|addr_offset_none,am3offset|AI3ldstidx|1,0
+LDRD_PRE|GPR,GPR,GPR|addrmode3_pre|AI3ldstidx|0b1101,0,1
+LDRD_POST|GPR,GPR,GPR|addr_offset_none,am3offset|AI3ldstidx|0b1101,0,0
+LDRT_POST_REG|GPR,GPR|addr_offset_none,am2offset_reg|AI2ldstidx|1,0,0
+LDRBT_POST_REG|GPR,GPR|addr_offset_none,am2offset_reg|AI2ldstidx|1,1,0
+i|GPR,GPR|addr_offset_none,postidx_imm8|AI3ldstidxT|1
+r|GPRnopc,GPRnopc|addr_offset_none,postidx_reg|AI3ldstidxT|1
+ii|GPR|addr_offset_none,pred|ARMAsmPseudo|
+STRH||GPR,addrmode3|AI3str|0b1011
+STRD||GPR,GPR,addrmode3|AI3str|0b1111
+STOREDUAL||GPRPairOp,addrmode3|ARMPseudoInst|64
+_PRE_IMM|GPR|GPR,addrmode_imm12_pre|AI2ldstidx|0,1
+_PRE_REG|GPR|GPR,ldst_so_reg|AI2ldstidx|0,1
+_POST_REG|GPR|GPR,addr_offset_none,am2offset_reg|AI2ldstidx|0,0
+_POST_IMM|GPR|GPR,addr_offset_none,am2offset_imm|AI2ldstidx|0,0
+STRi_preidx|GPR|GPR,GPR,am2offset_imm,pred|ARMPseudoInst|4
+STRr_preidx|GPR|GPR,GPR,am2offset_reg,pred|ARMPseudoInst|4
+STRBi_preidx|GPR|GPR,GPR,am2offset_imm,pred|ARMPseudoInst|4
+STRBr_preidx|GPR|GPR,GPR,am2offset_reg,pred|ARMPseudoInst|4
+STRH_preidx|GPR|GPR,GPR,am3offset,pred|ARMPseudoInst|4
+STRH_PRE|GPR|GPR,addrmode3_pre|AI3ldstidx|0b1011,0,1
+STRH_POST|GPR|GPR,addr_offset_none,am3offset|AI3ldstidx|0b1011,0,0
+STRD_PRE|GPR|GPR,GPR,addrmode3_pre|AI3ldstidx|0b1111,0,1
+STRD_POST|GPR|GPR,GPR,addr_offset_none,am3offset|AI3ldstidx|0b1111,0,0
+STRBT_POST_REG|GPR|GPR,addr_offset_none,am2offset_reg|AI2ldstidx|0,1,0
+STRT_POST_REG|GPR|GPR,addr_offset_none,am2offset_reg|AI2ldstidx|0,0,0
+i|GPR|GPR,addr_offset_none,postidx_imm8|AI3ldstidxT|0
+r|GPR|GPR,addr_offset_none,postidx_reg|AI3ldstidxT|0
+STL||GPR,addr_offset_none|AIstrrel|0b00
+STLB||GPR,addr_offset_none|AIstrrel|0b10
+STLH||GPR,addr_offset_none|AIstrrel|0b11
+LDMIA_RET|GPR|GPR,pred,reglist,variable_ops|ARMPseudoExpand|4
+MOVr|GPR|GPR|AsI1|0b1101
+MOVr_TC|tcGPR|tcGPR|AsI1|0b1101
+MOVsr|GPRnopc|shift_so_reg_reg|AsI1|0b1101
+MOVsi|GPR|shift_so_reg_imm|AsI1|0b1101
+MOVi|GPR|mod_imm|AsI1|0b1101
+MOVi16|GPR|imm0_65535_expr|AI1|0b1000
+MOVi16_ga_pcrel|GPR|i32imm,pclabel|PseudoInst|
+MOVTi16|GPRnopc|GPR,imm0_65535_expr|AI1|0b1010
+MOVTi16_ga_pcrel|GPR|GPR,i32imm,pclabel|PseudoInst|
+RRX|GPR|GPR|PseudoInst|
+LSRs1|GPR|GPR|PseudoInst|
+ASRs1|GPR|GPR|PseudoInst|
+SXTB|GPRnopc:$Rd|GPRnopc:$Rm, rot_imm:$rot|AI_ext_rrot|0b01101010
+SXTH|GPRnopc:$Rd|GPRnopc:$Rm, rot_imm:$rot|AI_ext_rrot|0b01101011
+SXTAB|GPRnopc:$Rd|GPR:$Rn, GPRnopc:$Rm, rot_imm:$rot|AI_exta_rrot|0b01101010
+SXTAH|GPRnopc:$Rd|GPR:$Rn, GPRnopc:$Rm, rot_imm:$rot|AI_exta_rrot|0b01101011
+SXTB16|GPRnopc:$Rd|GPRnopc:$Rm, rot_imm:$rot|AI_ext_rrot_np|0b01101000
+SXTAB16|GPRnopc:$Rd|GPR:$Rn, GPRnopc:$Rm, rot_imm:$rot|AI_exta_rrot_np|0b01101000
+UXTB|GPRnopc:$Rd|GPRnopc:$Rm, rot_imm:$rot|AI_ext_rrot|0b01101110
+UXTH|GPRnopc:$Rd|GPRnopc:$Rm, rot_imm:$rot|AI_ext_rrot|0b01101111
+UXTB16|GPRnopc:$Rd|GPRnopc:$Rm, rot_imm:$rot|AI_ext_rrot|0b01101100
+UXTAB|GPRnopc:$Rd|GPR:$Rn, GPRnopc:$Rm, rot_imm:$rot|AI_exta_rrot|0b01101110
+UXTAH|GPRnopc:$Rd|GPR:$Rn, GPRnopc:$Rm, rot_imm:$rot|AI_exta_rrot|0b01101111
+UXTAB16|GPRnopc:$Rd|GPR:$Rn, GPRnopc:$Rm, rot_imm:$rot|AI_exta_rrot_np|0b01101100
+SBFX|GPRnopc|GPRnopc,imm0_31,imm1_32|I|4
+UBFX|GPRnopc|GPRnopc,imm0_31,imm1_32|I|4
+QADD8|||AAIIntrinsic|0b01100010,0b11111001
+QADD16|||AAIIntrinsic|0b01100010,0b11110001
+QSUB16|||AAIIntrinsic|0b01100010,0b11110111
+QSUB8|||AAIIntrinsic|0b01100010,0b11111111
+QDADD|||AAIRevOpr|0b00010100,0b00000101
+QDSUB|||AAIRevOpr|0b00010110,0b00000101
+QSUB|||AAIRevOpr|0b00010010,0b00000101
+QADD|||AAIRevOpr|0b00010000,0b00000101
+UQADD16|||AAIIntrinsic|0b01100110,0b11110001
+UQADD8|||AAIIntrinsic|0b01100110,0b11111001
+UQSUB16|||AAIIntrinsic|0b01100110,0b11110111
+UQSUB8|||AAIIntrinsic|0b01100110,0b11111111
+QASX|||AAIIntrinsic|0b01100010,0b11110011
+QSAX|||AAIIntrinsic|0b01100010,0b11110101
+UQASX|||AAIIntrinsic|0b01100110,0b11110011
+UQSAX|||AAIIntrinsic|0b01100110,0b11110101
+SASX|||AAIIntrinsic|0b01100001,0b11110011
+SADD16|||AAIIntrinsic|0b01100001,0b11110001
+SADD8|||AAIIntrinsic|0b01100001,0b11111001
+SSAX|||AAIIntrinsic|0b01100001,0b11110101
+SSUB16|||AAIIntrinsic|0b01100001,0b11110111
+SSUB8|||AAIIntrinsic|0b01100001,0b11111111
+UASX|||AAIIntrinsic|0b01100101,0b11110011
+UADD16|||AAIIntrinsic|0b01100101,0b11110001
+UADD8|||AAIIntrinsic|0b01100101,0b11111001
+USAX|||AAIIntrinsic|0b01100101,0b11110101
+USUB16|||AAIIntrinsic|0b01100101,0b11110111
+USUB8|||AAIIntrinsic|0b01100101,0b11111111
+SHASX|||AAIIntrinsic|0b01100011,0b11110011
+SHADD16|||AAIIntrinsic|0b01100011,0b11110001
+SHADD8|||AAIIntrinsic|0b01100011,0b11111001
+SHSAX|||AAIIntrinsic|0b01100011,0b11110101
+SHSUB16|||AAIIntrinsic|0b01100011,0b11110111
+SHSUB8|||AAIIntrinsic|0b01100011,0b11111111
+UHASX|||AAIIntrinsic|0b01100111,0b11110011
+UHADD16|||AAIIntrinsic|0b01100111,0b11110001
+UHADD8|||AAIIntrinsic|0b01100111,0b11111001
+UHSAX|||AAIIntrinsic|0b01100111,0b11110101
+UHSUB16|||AAIIntrinsic|0b01100111,0b11110111
+UHSUB8|||AAIIntrinsic|0b01100111,0b11111111
+USAD8|GPR|GPR,GPR|AI|
+USADA8|GPR|GPR,GPR,GPR|AI|
+SSAT|GPRnopc|imm1_32,GPRnopc,shift_imm|AI|
+SSAT16|GPRnopc|imm1_16,GPRnopc|AI|
+USAT|GPRnopc|imm0_31,GPRnopc,shift_imm|AI|
+USAT16|GPRnopc|imm0_15,GPRnopc|AI|
+BFC|GPR|GPR,bf_inv_mask_imm|I|4
+BFI|GPRnopc|GPRnopc,GPR,bf_inv_mask_imm|I|4
+MVNr|GPR|GPR|AsI1|0b1111
+MVNsi|GPR|so_reg_imm|AsI1|0b1111
+MVNsr|GPRnopc|so_reg_reg|AsI1|0b1111
+MVNi|GPR|mod_imm|AsI1|0b1111
+MUL|GPRnopc|GPRnopc,GPRnopc|AsMul1I32|0b0000000
+MULv5|GPRnopc|GPRnopc,GPRnopc,pred,cc_out|ARMPseudoExpand|4
+MLA|GPRnopc|GPRnopc,GPRnopc,GPRnopc|AsMul1I32|0b0000001
+MLAv5|GPRnopc|GPRnopc,GPRnopc,GPRnopc,pred,cc_out|ARMPseudoExpand|4
+MLS|GPR|GPR,GPR,GPR|AMul1I|0b0000011
+SMULL|GPR,GPR|GPR,GPR|AsMul1I64|0b0000110
+UMULL|GPR,GPR|GPR,GPR|AsMul1I64|0b0000100
+SMULLv5|GPR,GPR|GPR,GPR,pred,cc_out|ARMPseudoExpand|4
+UMULLv5|GPR,GPR|GPR,GPR,pred,cc_out|ARMPseudoExpand|4
+SMLAL|GPR,GPR|GPR,GPR,GPR,GPR|AsMla1I64|0b0000111
+UMLAL|GPR,GPR|GPR,GPR,GPR,GPR|AsMla1I64|0b0000101
+UMAAL|GPR,GPR|GPR,GPR,GPR,GPR|AMul1I|0b0000010
+SMLALv5|GPR,GPR|GPR,GPR,GPR,GPR,pred,cc_out|ARMPseudoExpand|4
+UMLALv5|GPR,GPR|GPR,GPR,GPR,GPR,pred,cc_out|ARMPseudoExpand|4
+SMMUL|GPR|GPR,GPR|AMul2I|0b0111010,0b0001
+SMMULR|GPR|GPR,GPR|AMul2I|0b0111010,0b0011
+SMMLA|GPR|GPR,GPR,GPR|AMul2Ia|0b0111010,0b0001
+SMMLAR|GPR|GPR,GPR,GPR|AMul2Ia|0b0111010,0b0011
+SMMLS|GPR|GPR,GPR,GPR|AMul2Ia|0b0111010,0b1101
+SMMLSR|GPR|GPR,GPR,GPR|AMul2Ia|0b0111010,0b1111
+BB|GPR|GPR,GPR|AMulxyI|0b0001011,0b00
+BT|GPR|GPR,GPR|AMulxyI|0b0001011,0b10
+TB|GPR|GPR,GPR|AMulxyI|0b0001011,0b01
+TT|GPR|GPR,GPR|AMulxyI|0b0001011,0b11
+WB|GPR|GPR,GPR|AMulxyI|0b0001001,0b01
+WT|GPR|GPR,GPR|AMulxyI|0b0001001,0b11
+BB|GPRnopc|GPRnopc,GPRnopc,GPR|AMulxyIa|0b0001000,0b00
+BT|GPRnopc|GPRnopc,GPRnopc,GPR|AMulxyIa|0b0001000,0b10
+TB|GPRnopc|GPRnopc,GPRnopc,GPR|AMulxyIa|0b0001000,0b01
+TT|GPRnopc|GPRnopc,GPRnopc,GPR|AMulxyIa|0b0001000,0b11
+WB|GPRnopc|GPRnopc,GPRnopc,GPR|AMulxyIa|0b0001001,0b00
+WT|GPRnopc|GPRnopc,GPRnopc,GPR|AMulxyIa|0b0001001,0b10
+SMLALBB|||SMLAL|0b00
+SMLALBT|||SMLAL|0b10
+SMLALTB|||SMLAL|0b01
+SMLALTT|||SMLAL|0b11
+D|GPRnopc|GPRnopc,GPRnopc,GPR|AMulDualIa|0,0
+DX|GPRnopc|GPRnopc,GPRnopc,GPR|AMulDualIa|0,1
+LD|GPRnopc,GPRnopc|GPRnopc,GPRnopc,GPRnopc,GPRnopc|AMulDualI64|1,0
+LDX|GPRnopc,GPRnopc|GPRnopc,GPRnopc,GPRnopc,GPRnopc|AMulDualI64|1,1
+D|GPRnopc|GPRnopc,GPRnopc|AMulDualI|0,0
+DX|GPRnopc|GPRnopc,GPRnopc|AMulDualI|0,1
+SDIV|GPR|GPR,GPR|ADivA1I|0b001
+UDIV|GPR|GPR,GPR|ADivA1I|0b011
+CLZ|GPR|GPR|AMiscA1I|0b00010110,0b0001
+RBIT|GPR|GPR|AMiscA1I|0b01101111,0b0011
+REV|GPR|GPR|AMiscA1I|0b01101011,0b0011
+REV16|GPR|GPR|AMiscA1I|0b01101011,0b1011
+REVSH|GPR|GPR|AMiscA1I|0b01101111,0b1011
+PKHBT|GPRnopc|GPRnopc,GPRnopc,pkh_lsl_amt|APKHI|0b01101000,0
+PKHTB|GPRnopc|GPRnopc,GPRnopc,pkh_asr_amt|APKHI|0b01101000,1
+CRC32B|GPRnopc:$Rd|GPRnopc:$Rn, GPRnopc:$Rm|AI_crc32|0,0b00
+CRC32CB|GPRnopc:$Rd|GPRnopc:$Rn, GPRnopc:$Rm|AI_crc32|1,0b00
+CRC32H|GPRnopc:$Rd|GPRnopc:$Rn, GPRnopc:$Rm|AI_crc32|0,0b01
+CRC32CH|GPRnopc:$Rd|GPRnopc:$Rn, GPRnopc:$Rm|AI_crc32|1,0b01
+CRC32W|GPRnopc:$Rd|GPRnopc:$Rn, GPRnopc:$Rm|AI_crc32|0,0b10
+CRC32CW|GPRnopc:$Rd|GPRnopc:$Rn, GPRnopc:$Rm|AI_crc32|1,0b10
+SETPAN||imm0_1|AInoP|
+CMNri||GPR,mod_imm|AI1|0b1011
+CMNrr||GPR,GPR|AI1|0b1011
+CMNrsi||GPR,so_reg_imm|AI1|0b1011
+CMNrsr||GPRnopc,so_reg_reg|AI1|0b1011
+BCCi64||i32imm,GPR,GPR,GPR,GPR,brtarget|PseudoInst|
+BCCZi64||i32imm,GPR,GPR,brtarget|PseudoInst|0,0
+MOVCCr|GPR|GPR,GPR,pred|ARMPseudoInst|4
+MOVCCsi|GPR|GPR,so_reg_imm,pred|ARMPseudoInst|4
+MOVCCsr|GPR|GPR,so_reg_reg,pred|ARMPseudoInst|4
+MOVCCi|GPR|GPR,mod_imm,pred|ARMPseudoInst|4
+MVNCCi|GPR|GPR,mod_imm,pred|ARMPseudoInst|4
+DMB||memb_opt|AInoP|
+DSB||memb_opt|AInoP|
+ISB||instsyncb_opt|AInoP|
+TSB||tsb_opt|AInoP|
+COPY_STRUCT_BYVAL_I32||GPR,GPR,i32imm,i32imm|PseudoInst|
+MEMCPY|GPR,GPR|GPR,GPR,i32imm,variable_ops|PseudoInst|
+LDREXB|GPR|addr_offset_none|AIldrex|0b10
+LDREXH|GPR|addr_offset_none|AIldrex|0b11
+LDREX|GPR|addr_offset_none|AIldrex|0b00
+LDREXD|GPRPairOp|addr_offset_none|AIldrex|0b01
+LDAEXB|GPR|addr_offset_none|AIldaex|0b10
+LDAEXH|GPR|addr_offset_none|AIldaex|0b11
+LDAEX|GPR|addr_offset_none|AIldaex|0b00
+LDAEXD|GPRPairOp|addr_offset_none|AIldaex|0b01
+STREXB|GPR|GPR,addr_offset_none|AIstrex|0b10
+STREXH|GPR|GPR,addr_offset_none|AIstrex|0b11
+STREX|GPR|GPR,addr_offset_none|AIstrex|0b00
+STREXD|GPR|GPRPairOp,addr_offset_none|AIstrex|0b01
+STLEXB|GPR|GPR,addr_offset_none|AIstlex|0b10
+STLEXH|GPR|GPR,addr_offset_none|AIstlex|0b11
+STLEX|GPR|GPR,addr_offset_none|AIstlex|0b00
+STLEXD|GPR|GPRPairOp,addr_offset_none|AIstlex|0b01
+SWP|GPRnopc|GPRnopc,addr_offset_none|AIswp|0
+SWPB|GPRnopc|GPRnopc,addr_offset_none|AIswp|1
+CDP||p_imm,imm0_15,c_imm,c_imm,c_imm,imm0_7|ABI|0b1110
+CDP2||p_imm,imm0_15,c_imm,c_imm,c_imm,imm0_7|ABXI|0b1110
+_OFFSET||p_imm,c_imm,addrmode5|ACI|
+_PRE||p_imm,c_imm,addrmode5_pre|ACI|
+_POST||p_imm,c_imm,addr_offset_none,postidx_imm8s4|ACI|
+_OPTION||p_imm,c_imm,addr_offset_none,coproc_option_imm|ACI|
+_OFFSET||p_imm,c_imm,addrmode5|ACInoP|
+_PRE||p_imm,c_imm,addrmode5_pre|ACInoP|
+_POST||p_imm,c_imm,addr_offset_none,postidx_imm8s4|ACInoP|
+_OPTION||p_imm,c_imm,addr_offset_none,coproc_option_imm|ACInoP|
+MCR||p_imm,imm0_7,GPR,c_imm,c_imm,imm0_7|MovRCopro|
+MRC|GPRwithAPSR|p_imm,imm0_7,c_imm,c_imm,imm0_7|MovRCopro|
+MCR2||p_imm,imm0_7,GPR,c_imm,c_imm,imm0_7|MovRCopro2|
+MRC2|GPRwithAPSR|p_imm,imm0_7,c_imm,c_imm,imm0_7|MovRCopro2|
+MCRR||p_imm,imm0_15,GPRnopc,GPRnopc,c_imm|MovRRCopro|
+MRRC|GPRnopc,GPRnopc|p_imm,imm0_15,c_imm|MovRRCopro|
+MCRR2||p_imm,imm0_15,GPRnopc,GPRnopc,c_imm|MovRRCopro2|
+MRRC2|GPRnopc,GPRnopc|p_imm,imm0_15,c_imm|MovRRCopro2|
+MRS|GPRnopc||ABI|0b0001
+MRSsys|GPRnopc||ABI|0b0001
+MRSbanked|GPRnopc|banked_reg|ABI|0b0001
+MSR||msr_mask,GPR|ABI|0b0001
+MSRi||msr_mask,mod_imm|ABI|0b0011
+MSRbanked||banked_reg,GPRnopc|ABI|0b0001
+WIN__DBZCHK||tGPR|PseudoInst|
+TPsoft|||ARMPseudoInst|4
+Int_eh_sjlj_setjmp||GPR,GPR|PseudoInst|
+Int_eh_sjlj_setjmp_nofp||GPR,GPR|PseudoInst|
+Int_eh_sjlj_longjmp||GPR,GPR|PseudoInst|
+MOVPCRX||GPR|ARMPseudoExpand|4
+TAILJMPr4||GPR|ARMPseudoExpand|4
+MOVi32imm|GPR|i32imm|PseudoInst|
+LDRLIT_ga_abs|GPR|i32imm|PseudoInst|
+MOV_ga_pcrel|GPR|i32imm|PseudoInst|
+LDRLIT_ga_pcrel|GPR|i32imm|PseudoInst|
+LDRLIT_ga_pcrel_ldr|GPR|i32imm|PseudoInst|
+MOV_ga_pcrel_ldr|GPR|i32imm|PseudoInst|
+ARMLocalRecover|||SDNode|1
+ASRi||GPR,GPR,imm0_32,pred,cc_out|ARMAsmPseudo|
+LSRi||GPR,GPR,imm0_32,pred,cc_out|ARMAsmPseudo|
+LSLi||GPR,GPR,imm0_31,pred,cc_out|ARMAsmPseudo|
+RORi||GPR,GPR,imm0_31,pred,cc_out|ARMAsmPseudo|
+RRXi||GPR,GPR,pred,cc_out|ARMAsmPseudo|
+ASRr||GPRnopc,GPRnopc,GPRnopc,pred,cc_out|ARMAsmPseudo|
+LSRr||GPRnopc,GPRnopc,GPRnopc,pred,cc_out|ARMAsmPseudo|
+LSLr||GPRnopc,GPRnopc,GPRnopc,pred,cc_out|ARMAsmPseudo|
+RORr||GPRnopc,GPRnopc,GPRnopc,pred,cc_out|ARMAsmPseudo|
+ITasm||it_pred,it_mask|ARMAsmPseudo|
+SPACE|GPR|i32imm,GPR|PseudoInst|
+CMP_SWAP_8|GPR,GPR|GPR,GPR,GPR|PseudoInst|
+CMP_SWAP_16|GPR,GPR|GPR,GPR,GPR|PseudoInst|
+CMP_SWAP_32|GPR,GPR|GPR,GPR,GPR|PseudoInst|
+CMP_SWAP_64|GPRPair,GPRPair|GPRPair,GPRPair,GPRPair|PseudoInst|
+SEH_StackAlloc||i32imm,i32imm|PseudoInst|
+SEH_SaveRegs||i32imm,i32imm|PseudoInst|
+SEH_SaveRegs_Ret||i32imm,i32imm|PseudoInst|
+SEH_SaveSP||i32imm|PseudoInst|
+SEH_SaveFRegs||i32imm,i32imm|PseudoInst|
+SEH_SaveLR||i32imm|PseudoInst|
+SEH_Nop||i32imm|PseudoInst|
+SEH_Nop_Ret||i32imm|PseudoInst|
+CATCHRET||arm_br_target,arm_br_target|PseudoInst|
+MemImm7Shift0OffsetAsmOperand|||MemImm7ShiftOffsetAsmOperand|0
+MemImm7Shift1OffsetAsmOperand|||MemImm7ShiftOffsetAsmOperand|1
+MemImm7Shift2OffsetAsmOperand|||MemImm7ShiftOffsetAsmOperand|2
+MemImm7Shift0OffsetWBAsmOperand|||MemImm7ShiftOffsetWBAsmOperand|0
+MemImm7Shift1OffsetWBAsmOperand|||MemImm7ShiftOffsetWBAsmOperand|1
+MemImm7Shift2OffsetWBAsmOperand|||MemImm7ShiftOffsetWBAsmOperand|2
+t2am_imm7shift0OffsetAsmOperand|||t2am_imm7shiftOffsetAsmOperand|0
+t2am_imm7shift1OffsetAsmOperand|||t2am_imm7shiftOffsetAsmOperand|1
+t2am_imm7shift2OffsetAsmOperand|||t2am_imm7shiftOffsetAsmOperand|2
+MemRegRQS0OffsetAsmOperand|||MemRegRQOffsetAsmOperand|0
+MemRegRQS1OffsetAsmOperand|||MemRegRQOffsetAsmOperand|1
+MemRegRQS2OffsetAsmOperand|||MemRegRQOffsetAsmOperand|2
+MemRegRQS3OffsetAsmOperand|||MemRegRQOffsetAsmOperand|3
+MemRegQS2OffsetAsmOperand|||MemRegQOffsetAsmOperand|2
+MemRegQS3OffsetAsmOperand|||MemRegQOffsetAsmOperand|3
+MVE_v16i8|||MVEVectorVTInfo|0b00
+MVE_v8i16|||MVEVectorVTInfo|0b01
+MVE_v4i32|||MVEVectorVTInfo|0b10
+MVE_v2i64|||MVEVectorVTInfo|0b11
+MVE_v16s8|||MVEVectorVTInfo|0b00,0b0
+MVE_v8s16|||MVEVectorVTInfo|0b01,0b0
+MVE_v4s32|||MVEVectorVTInfo|0b10,0b0
+MVE_v2s64|||MVEVectorVTInfo|0b11,0b0
+MVE_v16u8|||MVEVectorVTInfo|0b00,0b1
+MVE_v8u16|||MVEVectorVTInfo|0b01,0b1
+MVE_v4u32|||MVEVectorVTInfo|0b10,0b1
+MVE_v2u64|||MVEVectorVTInfo|0b11,0b1
+MVE_v8f16|||MVEVectorVTInfo|0b01
+MVE_v4f32|||MVEVectorVTInfo|0b10
+MVE_v2f64|||MVEVectorVTInfo|0b11
+MVE_v16p8|||MVEVectorVTInfo|0b11,0b0
+MVE_v8p16|||MVEVectorVTInfo|0b11,0b1
+MVE_SQSHL||rGPR:$RdaSrc, long_shift:$imm|MVE_ScalarShiftSRegImm|0b11
+MVE_SRSHR||rGPR:$RdaSrc, long_shift:$imm|MVE_ScalarShiftSRegImm|0b10
+MVE_UQSHL||rGPR:$RdaSrc, long_shift:$imm|MVE_ScalarShiftSRegImm|0b00
+MVE_URSHR||rGPR:$RdaSrc, long_shift:$imm|MVE_ScalarShiftSRegImm|0b01
+MVE_SQRSHR||rGPR:$RdaSrc, rGPR:$Rm|MVE_ScalarShiftSRegReg|0b10
+MVE_UQRSHL||rGPR:$RdaSrc, rGPR:$Rm|MVE_ScalarShiftSRegReg|0b00
+MVE_ASRLr||tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, rGPR:$Rm|MVE_ScalarShiftDRegReg|0b1
+MVE_ASRLi||tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, long_shift:$imm|MVE_ScalarShiftDRegImm|0b10
+MVE_LSLLr||tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, rGPR:$Rm|MVE_ScalarShiftDRegReg|0b0
+MVE_LSLLi||tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, long_shift:$imm|MVE_ScalarShiftDRegImm|0b00
+MVE_LSRL||tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, long_shift:$imm|MVE_ScalarShiftDRegImm|0b01
+MVE_SQRSHRL||tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, rGPR:$Rm, saturateop:$sat|MVE_ScalarShiftDRegRegWithSat|0b1
+MVE_SQSHLL||tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, long_shift:$imm|MVE_ScalarShiftDRegImm|0b11,0b1
+MVE_SRSHRL||tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, long_shift:$imm|MVE_ScalarShiftDRegImm|0b10,0b1
+MVE_UQRSHLL||tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, rGPR:$Rm, saturateop:$sat|MVE_ScalarShiftDRegRegWithSat|0b0
+MVE_UQSHLL||tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, long_shift:$imm|MVE_ScalarShiftDRegImm|0b00,0b1
+MVE_URSHRL||tGPREven:$RdaLo_src, tGPROdd:$RdaHi_src, long_shift:$imm|MVE_ScalarShiftDRegImm|0b01,0b1
+SDTVecReduceP|||SDTypeProfile|1,2
+acc||tGPREven,MQPR|MVE_VADDV|0b1
+no_acc||MQPR|MVE_VADDV|0b0
+SDTVecReduceL|||SDTypeProfile|2,1
+SDTVecReduceLA|||SDTypeProfile|2,3
+SDTVecReduceLP|||SDTypeProfile|2,2
+SDTVecReduceLPA|||SDTypeProfile|2,4
+acc||tGPREven,tGPROdd,MQPR|MVE_VADDLV|0b1
+no_acc||MQPR|MVE_VADDLV|0b0
+SDTVecReduceR|||SDTypeProfile|1,2
+SDTVecReduce2|||SDTypeProfile|1,2
+SDTVecReduce2L|||SDTypeProfile|2,2
+SDTVecReduce2LA|||SDTypeProfile|2,4
+SDTVecReduce2P|||SDTypeProfile|1,3
+SDTVecReduce2LP|||SDTypeProfile|2,3
+SDTVecReduce2LAP|||SDTypeProfile|2,5
+MVE_VBIC|MQPR|MQPR,MQPR|MVE_bit_arith|0b00
+MVE_VREV64_8|MQPR:$Qd|MQPR:$Qm|MVE_VREV|0b00,0b00,0b11
+MVE_VREV64_16|MQPR:$Qd|MQPR:$Qm|MVE_VREV|0b01,0b00,0b11
+MVE_VREV64_32|MQPR:$Qd|MQPR:$Qm|MVE_VREV|0b10,0b00,0b11
+MVE_VREV32_8|MQPR:$Qd|MQPR:$Qm|MVE_VREV|0b00,0b01,0b10
+MVE_VREV32_16|MQPR:$Qd|MQPR:$Qm|MVE_VREV|0b01,0b01,0b10
+MVE_VREV16_8|MQPR:$Qd|MQPR:$Qm|MVE_VREV|0b00,0b10,0b01
+MVE_VMVN|MQPR|MQPR|MVE_bit_arith|0b00
+MVE_VEOR|MQPR:$Qd|MQPR:$Qn, MQPR:$Qm|MVE_bit_ops|0b00,0b1
+MVE_VORN|MQPR:$Qd|MQPR:$Qn, MQPR:$Qm|MVE_bit_ops|0b11,0b0
+MVE_VORR|MQPR:$Qd|MQPR:$Qn, MQPR:$Qm|MVE_bit_ops|0b10,0b0
+MVE_VAND|MQPR:$Qd|MQPR:$Qn, MQPR:$Qm|MVE_bit_ops|0b00,0b0
+MVE_VORNimmi16|||MVEInstAlias|0
+MVE_VORNimmi32|||MVEInstAlias|0
+MVE_VANDimmi16|||MVEInstAlias|0
+MVE_VANDimmi32|||MVEInstAlias|0
+MVE_VMOV_from_lane_s16||MVEVectorIndex<8>:$Idx|MVE_VMOV_lane_16|0b0
+MVE_VMOV_from_lane_u16||MVEVectorIndex<8>:$Idx|MVE_VMOV_lane_16|0b1
+MVE_VMOV_from_lane_s8||MVEVectorIndex<16>:$Idx|MVE_VMOV_lane_8|0b0
+MVE_VMOV_from_lane_u8||MVEVectorIndex<16>:$Idx|MVE_VMOV_lane_8|0b1
+MVE_VMOV_to_lane_16||MVEVectorIndex<8>:$Idx|MVE_VMOV_lane_16|0b0
+MVE_VMOV_to_lane_8||MVEVectorIndex<16>:$Idx|MVE_VMOV_lane_8|0b0
+ARMVecInsert|||SDTypeProfile|1,3
+MVE_VDUP32|MQPR:$Qd|rGPR:$Rt|MVE_VDUP|0b0,0b0,0b10
+MVE_VDUP16|MQPR:$Qd|rGPR:$Rt|MVE_VDUP|0b0,0b1,0b01
+MVE_VDUP8|MQPR:$Qd|rGPR:$Rt|MVE_VDUP|0b1,0b0,0b00
+MVE_VMOVimmi8||nImmSplatI8|MVE_mod_imm|1,1,0b0,0b00
+MVE_VMOVimmi16||nImmSplatI16|MVE_mod_imm|0,0b0,0b01
+MVE_VMOVimmi32||nImmVMOVI32|MVE_mod_imm|0b0,0b10
+MVE_VMOVimmi64||nImmSplatI64|MVE_mod_imm|1,1,0b1,0b11
+MVE_VMOVimmf32||nImmVMOVF32|MVE_mod_imm|1,1,0b0,0b10
+MVE_VMVNimmi16||nImmSplatI16|MVE_mod_imm|0,0b1,0b01
+MVE_VMVNimmi32||nImmVMOVI32|MVE_mod_imm|0b1,0b10
+MVE_VSHLC|rGPR,MQPR|MQPR,rGPR,long_shift|MVE_p|0b10
+MVE_VSHLL_imms8bh|||MVE_VSHLL_imm8|0b0,0b0
+MVE_VSHLL_imms8th|||MVE_VSHLL_imm8|0b0,0b1
+MVE_VSHLL_immu8bh|||MVE_VSHLL_imm8|0b1,0b0
+MVE_VSHLL_immu8th|||MVE_VSHLL_imm8|0b1,0b1
+MVE_VSHLL_imms16bh|||MVE_VSHLL_imm16|0b0,0b0
+MVE_VSHLL_imms16th|||MVE_VSHLL_imm16|0b0,0b1
+MVE_VSHLL_immu16bh|||MVE_VSHLL_imm16|0b1,0b0
+MVE_VSHLL_immu16th|||MVE_VSHLL_imm16|0b1,0b1
+MVE_VRSHRNi16bh|||MVE_VxSHRN|0b0,0b1,0b01
+MVE_VRSHRNi16th|||MVE_VxSHRN|0b1,0b1,0b01
+MVE_VRSHRNi32bh|||MVE_VxSHRN|0b0,0b1,0b10
+MVE_VRSHRNi32th|||MVE_VxSHRN|0b1,0b1,0b10
+MVE_VSHRNi16bh|||MVE_VxSHRN|0b0,0b0,0b01
+MVE_VSHRNi16th|||MVE_VxSHRN|0b1,0b0,0b01
+MVE_VSHRNi32bh|||MVE_VxSHRN|0b0,0b0,0b10
+MVE_VSHRNi32th|||MVE_VxSHRN|0b1,0b0,0b10
+MVE_VQRSHRUNs16bh|||MVE_VxQRSHRUN|0b1,0b0,0b01
+MVE_VQRSHRUNs16th|||MVE_VxQRSHRUN|0b1,0b1,0b01
+MVE_VQRSHRUNs32bh|||MVE_VxQRSHRUN|0b1,0b0,0b10
+MVE_VQRSHRUNs32th|||MVE_VxQRSHRUN|0b1,0b1,0b10
+MVE_VQSHRUNs16bh|||MVE_VxQRSHRUN|0b0,0b0,0b01
+MVE_VQSHRUNs16th|||MVE_VxQRSHRUN|0b0,0b1,0b01
+MVE_VQSHRUNs32bh|||MVE_VxQRSHRUN|0b0,0b0,0b10
+MVE_VQSHRUNs32th|||MVE_VxQRSHRUN|0b0,0b1,0b10
+s16|||MVE_VxQRSHRN|0b01
+u16|||MVE_VxQRSHRN|0b01
+s32|||MVE_VxQRSHRN|0b10
+u32|||MVE_VxQRSHRN|0b10
+MVE_VSRIimm8|MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qm, immType:$imm|MVE_VSxI_imm|0b0,0b00
+MVE_VSRIimm16|MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qm, immType:$imm|MVE_VSxI_imm|0b0,0b01
+MVE_VSRIimm32|MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qm, immType:$imm|MVE_VSxI_imm|0b0,0b10
+MVE_VSLIimm8|MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qm, immType:$imm|MVE_VSxI_imm|0b1,0b00
+MVE_VSLIimm16|MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qm, immType:$imm|MVE_VSxI_imm|0b1,0b01
+MVE_VSLIimm32|MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qm, immType:$imm|MVE_VSxI_imm|0b1,0b10
+MVE_VSHR_imms8||shr_imm8|MVE_VSHR_imm|0b00
+MVE_VSHR_immu8||shr_imm8|MVE_VSHR_imm|0b00
+MVE_VSHR_imms16||shr_imm16|MVE_VSHR_imm|0b01
+MVE_VSHR_immu16||shr_imm16|MVE_VSHR_imm|0b01
+MVE_VSHR_imms32||shr_imm32|MVE_VSHR_imm|0b10
+MVE_VSHR_immu32||shr_imm32|MVE_VSHR_imm|0b10
+MVE_VSHL_immi8||imm0_7|MVE_VSHL_imm|0b00
+MVE_VSHL_immi16||imm0_15|MVE_VSHL_imm|0b01
+MVE_VSHL_immi32||imm0_31|MVE_VSHL_imm|0b10
+MVE_VCMPf32|||MVE_VCMPqqf|0b0
+MVE_VCMPf16|||MVE_VCMPqqf|0b1
+MVE_VCMPi8|||MVE_VCMPqqi|0b00
+MVE_VCMPi16|||MVE_VCMPqqi|0b01
+MVE_VCMPi32|||MVE_VCMPqqi|0b10
+MVE_VCMPu8|||MVE_VCMPqqu|0b00
+MVE_VCMPu16|||MVE_VCMPqqu|0b01
+MVE_VCMPu32|||MVE_VCMPqqu|0b10
+MVE_VCMPs8|||MVE_VCMPqqs|0b00
+MVE_VCMPs16|||MVE_VCMPqqs|0b01
+MVE_VCMPs32|||MVE_VCMPqqs|0b10
+MVE_VCMPf32r|||MVE_VCMPqrf|0b0
+MVE_VCMPf16r|||MVE_VCMPqrf|0b1
+MVE_VCMPi8r|||MVE_VCMPqri|0b00
+MVE_VCMPi16r|||MVE_VCMPqri|0b01
+MVE_VCMPi32r|||MVE_VCMPqri|0b10
+MVE_VCMPu8r|||MVE_VCMPqru|0b00
+MVE_VCMPu16r|||MVE_VCMPqru|0b01
+MVE_VCMPu32r|||MVE_VCMPqru|0b10
+MVE_VCMPs8r|||MVE_VCMPqrs|0b00
+MVE_VCMPs16r|||MVE_VCMPqrs|0b01
+MVE_VCMPs32r|||MVE_VCMPqrs|0b10
+v16i1||n (i32 (COPY_TO_REGCLASS (v16i1 VCCR|Pat|
+v8i1||n (i32 (COPY_TO_REGCLASS (v8i1 VCCR|Pat|
+v4i1||n (i32 (COPY_TO_REGCLASS (v4i1 VCCR|Pat|
+v2i1||n (i32 (COPY_TO_REGCLASS (v2i1 VCCR|Pat|
+bh|MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qm|MVE_VxMOVxN|0b0
+th|MQPR:$Qd|MQPR:$Qd_src, MQPR:$Qm|MVE_VxMOVxN|0b1
+SDTARMVMOVNQ|||SDTypeProfile|1,3
+SDTARMVCVTL|||SDTypeProfile|1,2
+MVE_VADC||cl_FPSCR_NZCV|MVE_VADCSBC|0b0,0b0
+MVE_VADCI|MQPR:$Qd, cl_FPSCR_NZCV:$carryout|MQPR:$Qn, MQPR:$Qm|MVE_VADCSBC|0b1,0b0
+MVE_VSBC||cl_FPSCR_NZCV|MVE_VADCSBC|0b0,0b1
+MVE_VSBCI|MQPR:$Qd, cl_FPSCR_NZCV:$carryout|MQPR:$Qn, MQPR:$Qm|MVE_VADCSBC|0b1,0b1
+MVE_VBRSR8|||MVE_VBRSR|0b00
+MVE_VBRSR16|||MVE_VBRSR|0b01
+MVE_VBRSR32|||MVE_VBRSR|0b10
+MVE_VIDUPu8|MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, MVE_VIDUP_imm:$imm|MVE_VxDUP|0b00,0b0
+MVE_VIDUPu16|MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, MVE_VIDUP_imm:$imm|MVE_VxDUP|0b01,0b0
+MVE_VIDUPu32|MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, MVE_VIDUP_imm:$imm|MVE_VxDUP|0b10,0b0
+MVE_VDDUPu8|MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, MVE_VIDUP_imm:$imm|MVE_VxDUP|0b00,0b1
+MVE_VDDUPu16|MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, MVE_VIDUP_imm:$imm|MVE_VxDUP|0b01,0b1
+MVE_VDDUPu32|MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, MVE_VIDUP_imm:$imm|MVE_VxDUP|0b10,0b1
+MVE_VIWDUPu8|MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, tGPROdd:$Rm, MVE_VIDUP_imm:$imm|MVE_VxWDUP|0b00,0b0
+MVE_VIWDUPu16|MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, tGPROdd:$Rm, MVE_VIDUP_imm:$imm|MVE_VxWDUP|0b01,0b0
+MVE_VIWDUPu32|MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, tGPROdd:$Rm, MVE_VIDUP_imm:$imm|MVE_VxWDUP|0b10,0b0
+MVE_VDWDUPu8|MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, tGPROdd:$Rm, MVE_VIDUP_imm:$imm|MVE_VxWDUP|0b00,0b1
+MVE_VDWDUPu16|MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, tGPROdd:$Rm, MVE_VIDUP_imm:$imm|MVE_VxWDUP|0b01,0b1
+MVE_VDWDUPu32|MQPR:$Qd, tGPREven:$Rn|tGPREven:$Rn_src, tGPROdd:$Rm, MVE_VIDUP_imm:$imm|MVE_VxWDUP|0b10,0b1
+MVE_VMOV_q_rr|MQPR|MQPR,rGPR,rGPR|MVE_VMOV_64bit|0b1
+MVE_VMOV_rr_q|rGPR,rGPR|MQPR|MVE_VMOV_64bit|0b0
+SDTARMVST2|||SDTypeProfile|1,5
+SDTARMVST4|||SDTypeProfile|1,7
+MVE_ld|MQPR||MVE_ldst_direction|1
+MVE_st||MQPR|MVE_ldst_direction|0
+MVE_memB|||MVE_memsz|0b00,0
+MVE_memH|||MVE_memsz|0b01,1
+MVE_memW|||MVE_memsz|0b10,2
+MVE_memD|||MVE_memsz|0b11,3
+_pre|tGPR|taddrmode_imm7<memsz.shift>|MVE_VLDRSTR_cw|1,1
+_post|tGPR|t_addr_offset_none,t2am_imm7_offset<memsz.shift>|MVE_VLDRSTR_cw|0,1
+_pre|rGPR|t2addrmode_imm7_pre<memsz.shift>|MVE_VLDRSTR_cs|1,1
+_post|rGPR|t2_nosp_addr_offset_none,t2am_imm7_offset<memsz.shift>|MVE_VLDRSTR_cs|0,1
+_u||mve_addr_rq_shift<shift>:$addr|MVE_VLDRSTR_rq|0,0
+_pre|MQPR||MVE_VLDRSTR_qi|1
+MVE_VPTv4i32||vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_i:$fc|MVE_VPTt1i|0b10
+MVE_VPTv8i16||vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_i:$fc|MVE_VPTt1i|0b01
+MVE_VPTv16i8||vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_i:$fc|MVE_VPTt1i|0b00
+MVE_VPTv4u32||vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_u:$fc|MVE_VPTt1u|0b10
+MVE_VPTv8u16||vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_u:$fc|MVE_VPTt1u|0b01
+MVE_VPTv16u8||vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_u:$fc|MVE_VPTt1u|0b00
+MVE_VPTv4s32||vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_s:$fc|MVE_VPTt1s|0b10
+MVE_VPTv8s16||vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_s:$fc|MVE_VPTt1s|0b01
+MVE_VPTv16s8||vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_s:$fc|MVE_VPTt1s|0b00
+MVE_VPTv4i32r||vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_i:$fc|MVE_VPTt2i|0b10
+MVE_VPTv8i16r||vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_i:$fc|MVE_VPTt2i|0b01
+MVE_VPTv16i8r||vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_i:$fc|MVE_VPTt2i|0b00
+MVE_VPTv4u32r||vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_u:$fc|MVE_VPTt2u|0b10
+MVE_VPTv8u16r||vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_u:$fc|MVE_VPTt2u|0b01
+MVE_VPTv16u8r||vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_u:$fc|MVE_VPTt2u|0b00
+MVE_VPTv4s32r||vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_s:$fc|MVE_VPTt2s|0b10
+MVE_VPTv8s16r||vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_s:$fc|MVE_VPTt2s|0b01
+MVE_VPTv16s8r||vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_s:$fc|MVE_VPTt2s|0b00
+MVE_VPTv4f32||vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_fp:$fc|MVE_VPTft1|0b0
+MVE_VPTv8f16||vpt_mask:$Mk, MQPR:$Qn, MQPR:$Qm, pred_basic_fp:$fc|MVE_VPTft1|0b1
+MVE_VPTv4f32r||vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_fp:$fc|MVE_VPTft2|0b0
+MVE_VPTv8f16r||vpt_mask:$Mk, MQPR:$Qn, GPRwithZR:$Rm, pred_basic_fp:$fc|MVE_VPTft2|0b1
+MVE_VPST||vpt_mask|MVE_MI|0b00
+MVE_VPSEL|MQPR|MQPR,MQPR|MVE_p|0b00
+MVE_VPNOT|VCCR|VCCR|MVE_p|0b00
+MVE_MEMCPYLOOPINST||rGPR,rGPR,rGPR|PseudoInst|
+MVE_MEMSETLOOPINST||rGPR,MQPR,rGPR|PseudoInst|
+MVE_DLSTP_8||rGPR:$Rn|MVE_DLSTP|0b00
+MVE_DLSTP_16||rGPR:$Rn|MVE_DLSTP|0b01
+MVE_DLSTP_32||rGPR:$Rn|MVE_DLSTP|0b10
+MVE_DLSTP_64||rGPR:$Rn|MVE_DLSTP|0b11
+MVE_WLSTP_8||rGPR:$Rn, wlslabel_u11:$label|MVE_WLSTP|0b00
+MVE_WLSTP_16||rGPR:$Rn, wlslabel_u11:$label|MVE_WLSTP|0b01
+MVE_WLSTP_32||rGPR:$Rn, wlslabel_u11:$label|MVE_WLSTP|0b10
+MVE_WLSTP_64||rGPR:$Rn, wlslabel_u11:$label|MVE_WLSTP|0b11
+MVE_LETP|GPRlr|GPRlr,lelabel_u11|MVE_loltp_end|
+MVE_LCTP||pred|MVE_loltp_end|
+MQQPRStore||MQQPR,GPRnopc|t2PseudoInst|4
+MQQQQPRStore||MQQQQPR,GPRnopc|t2PseudoInst|4
+MQQPRLoad|MQQPR|GPRnopc|t2PseudoInst|4
+MQQQQPRLoad|MQQQQPR|GPRnopc|t2PseudoInst|4
+MQPRCopy|MQPR|MQPR|t2PseudoInst|8
+SDTARMVTST|||SDTypeProfile|1,2
+SDTARMVSHXIMM|||SDTypeProfile|1,2
+SDTARMVSHINSIMM|||SDTypeProfile|1,3
+NEONvbsp|||SDNode|3
+SDTARMVEXT|||SDTypeProfile|1,3
+SDTARMVSHUF2|||SDTypeProfile|2,2
+SDTARMVTBL1|||SDTypeProfile|1,2
+SDTARMVTBL2|||SDTypeProfile|1,3
+VLD1d8|VecListOneD:$Vd|AddrMode:$Rn|VLD1D|0,0
+VLD1d16|VecListOneD:$Vd|AddrMode:$Rn|VLD1D|1,0
+VLD1d32|VecListOneD:$Vd|AddrMode:$Rn|VLD1D|0,0
+VLD1d64|VecListOneD:$Vd|AddrMode:$Rn|VLD1D|1,0
+VLD1q8|VecListDPair:$Vd|AddrMode:$Rn|VLD1Q|0
+VLD1q16|VecListDPair:$Vd|AddrMode:$Rn|VLD1Q|1
+VLD1q32|VecListDPair:$Vd|AddrMode:$Rn|VLD1Q|0
+VLD1q64|VecListDPair:$Vd|AddrMode:$Rn|VLD1Q|1
+_fixed|VecListOneD,GPR|AddrMode|NLdSt|0,0b10,0b0111
+_register|VecListOneD,GPR|AddrMode,rGPR|NLdSt|0,0b10,0b0111
+_fixed|VecListDPair,GPR|AddrMode|NLdSt|0,0b10,0b1010
+_register|VecListDPair,GPR|AddrMode,rGPR|NLdSt|0,0b10,0b1010
+_fixed|VecListThreeD,GPR|AddrMode|NLdSt|0,0b10,0b0110
+_register|VecListThreeD,GPR|AddrMode,rGPR|NLdSt|0,0b10,0b0110
+VLD1d8T|VecListThreeD:$Vd|AddrMode:$Rn|VLD1D3|0,0
+VLD1d16T|VecListThreeD:$Vd|AddrMode:$Rn|VLD1D3|1,0
+VLD1d32T|VecListThreeD:$Vd|AddrMode:$Rn|VLD1D3|0,0
+VLD1d64T|VecListThreeD:$Vd|AddrMode:$Rn|VLD1D3|1,0
+_fixed|VecListFourD,GPR|AddrMode|NLdSt|0,0b10,0b0010
+_register|VecListFourD,GPR|AddrMode,rGPR|NLdSt|0,0b10,0b0010
+VLD1d8Q|VecListFourD:$Vd|AddrMode:$Rn|VLD1D4|0
+VLD1d16Q|VecListFourD:$Vd|AddrMode:$Rn|VLD1D4|1
+VLD1d32Q|VecListFourD:$Vd|AddrMode:$Rn|VLD1D4|0
+VLD1d64Q|VecListFourD:$Vd|AddrMode:$Rn|VLD1D4|1
+VLD2d8|VdTy:$Vd|AddrMode:$Rn|VLD2|0b1000,0
+VLD2d16|VdTy:$Vd|AddrMode:$Rn|VLD2|0b1000,1
+VLD2d32|VdTy:$Vd|AddrMode:$Rn|VLD2|0b1000,0
+VLD2q8|VdTy:$Vd|AddrMode:$Rn|VLD2|0b0011,0
+VLD2q16|VdTy:$Vd|AddrMode:$Rn|VLD2|0b0011,1
+VLD2q32|VdTy:$Vd|AddrMode:$Rn|VLD2|0b0011,0
+_fixed|VdTy,GPR|AddrMode|NLdSt|0,0b10
+_register|VdTy,GPR|AddrMode,rGPR|NLdSt|0,0b10
+VLD2b8|VdTy:$Vd|AddrMode:$Rn|VLD2|0b1001,0
+VLD2b16|VdTy:$Vd|AddrMode:$Rn|VLD2|0b1001,1
+VLD2b32|VdTy:$Vd|AddrMode:$Rn|VLD2|0b1001,0
+VLD3d8|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6:$Rn|VLD3D|0b0100,0,0
+VLD3d16|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6:$Rn|VLD3D|0b0100,1,0
+VLD3d32|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6:$Rn|VLD3D|0b0100,0,0
+VLD3d8_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|addrmode6:$Rn, am6offset:$Rm|VLD3DWB|0b0100,0,0
+VLD3d16_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|addrmode6:$Rn, am6offset:$Rm|VLD3DWB|0b0100,1,0
+VLD3d32_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|addrmode6:$Rn, am6offset:$Rm|VLD3DWB|0b0100,0,0
+VLD3q8|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6:$Rn|VLD3D|0b0101,0,0
+VLD3q16|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6:$Rn|VLD3D|0b0101,1,0
+VLD3q32|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6:$Rn|VLD3D|0b0101,0,0
+VLD3q8_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|addrmode6:$Rn, am6offset:$Rm|VLD3DWB|0b0101,0,0
+VLD3q16_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|addrmode6:$Rn, am6offset:$Rm|VLD3DWB|0b0101,1,0
+VLD3q32_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|addrmode6:$Rn, am6offset:$Rm|VLD3DWB|0b0101,0,0
+VLD4d8|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6:$Rn|VLD4D|0b0000,0
+VLD4d16|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6:$Rn|VLD4D|0b0000,1
+VLD4d32|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6:$Rn|VLD4D|0b0000,0
+VLD4d8_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6:$Rn, am6offset:$Rm|VLD4DWB|0b0000,0
+VLD4d16_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6:$Rn, am6offset:$Rm|VLD4DWB|0b0000,1
+VLD4d32_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6:$Rn, am6offset:$Rm|VLD4DWB|0b0000,0
+VLD4q8|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6:$Rn|VLD4D|0b0001,0
+VLD4q16|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6:$Rn|VLD4D|0b0001,1
+VLD4q32|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6:$Rn|VLD4D|0b0001,0
+VLD4q8_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6:$Rn, am6offset:$Rm|VLD4DWB|0b0001,0
+VLD4q16_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6:$Rn, am6offset:$Rm|VLD4DWB|0b0001,1
+VLD4q32_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6:$Rn, am6offset:$Rm|VLD4DWB|0b0001,0
+VLD1LNd8|DPR:$Vd|addrmode6:$Rn, DPR:$src, nohash_imm:$lane|VLD1LN|0b0000
+VLD1LNd16|DPR:$Vd|addrmode6:$Rn, DPR:$src, nohash_imm:$lane|VLD1LN|0b0100,0
+VLD1LNd32|DPR:$Vd|addrmode6oneL32:$Rn, DPR:$src, nohash_imm:$lane|VLD1LN32|0b1000,0
+VLD1LNd8_UPD|DPR:$Vd, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src, nohash_imm:$lane|VLD1LNWB|0b0000
+VLD1LNd16_UPD|DPR:$Vd, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src, nohash_imm:$lane|VLD1LNWB|0b0100,0
+VLD1LNd32_UPD|DPR:$Vd, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src, nohash_imm:$lane|VLD1LNWB|0b1000,0
+VLD2LNd8|DPR:$Vd, DPR:$dst2|addrmode6:$Rn, DPR:$src1, DPR:$src2, nohash_imm:$lane|VLD2LN|0b0001
+VLD2LNd16|DPR:$Vd, DPR:$dst2|addrmode6:$Rn, DPR:$src1, DPR:$src2, nohash_imm:$lane|VLD2LN|0b0101,0
+VLD2LNd32|DPR:$Vd, DPR:$dst2|addrmode6:$Rn, DPR:$src1, DPR:$src2, nohash_imm:$lane|VLD2LN|0b1001,0,0
+VLD2LNq16|DPR:$Vd, DPR:$dst2|addrmode6:$Rn, DPR:$src1, DPR:$src2, nohash_imm:$lane|VLD2LN|0b0101,1
+VLD2LNq32|DPR:$Vd, DPR:$dst2|addrmode6:$Rn, DPR:$src1, DPR:$src2, nohash_imm:$lane|VLD2LN|0b1001,1,0
+VLD2LNd8_UPD|DPR:$Vd, DPR:$dst2, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, nohash_imm:$lane|VLD2LNWB|0b0001
+VLD2LNd16_UPD|DPR:$Vd, DPR:$dst2, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, nohash_imm:$lane|VLD2LNWB|0b0101,0
+VLD2LNd32_UPD|DPR:$Vd, DPR:$dst2, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, nohash_imm:$lane|VLD2LNWB|0b1001,0,0
+VLD2LNq16_UPD|DPR:$Vd, DPR:$dst2, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, nohash_imm:$lane|VLD2LNWB|0b0101,1
+VLD2LNq32_UPD|DPR:$Vd, DPR:$dst2, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, nohash_imm:$lane|VLD2LNWB|0b1001,1,0
+VLD3LNd8|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6:$Rn, DPR:$src1, DPR:$src2, DPR:$src3,           nohash_imm:$lane|VLD3LN|0b0010
+VLD3LNd16|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6:$Rn, DPR:$src1, DPR:$src2, DPR:$src3,           nohash_imm:$lane|VLD3LN|0b0110,0
+VLD3LNd32|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6:$Rn, DPR:$src1, DPR:$src2, DPR:$src3,           nohash_imm:$lane|VLD3LN|0b1010,0,0
+VLD3LNq16|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6:$Rn, DPR:$src1, DPR:$src2, DPR:$src3,           nohash_imm:$lane|VLD3LN|0b0110,1
+VLD3LNq32|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6:$Rn, DPR:$src1, DPR:$src2, DPR:$src3,           nohash_imm:$lane|VLD3LN|0b1010,1,0
+VLD3LNd8_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, DPR:$src3, nohash_imm:$lane|VLD3LNWB|0b0010
+VLD3LNd16_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, DPR:$src3, nohash_imm:$lane|VLD3LNWB|0b0110,0
+VLD3LNd32_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, DPR:$src3, nohash_imm:$lane|VLD3LNWB|0b1010,0,0
+VLD3LNq16_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, DPR:$src3, nohash_imm:$lane|VLD3LNWB|0b0110,1
+VLD3LNq32_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, DPR:$src3, nohash_imm:$lane|VLD3LNWB|0b1010,1,0
+VLD4LNd8|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6:$Rn, DPR:$src1, DPR:$src2, DPR:$src3, DPR:$src4,           nohash_imm:$lane|VLD4LN|0b0011
+VLD4LNd16|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6:$Rn, DPR:$src1, DPR:$src2, DPR:$src3, DPR:$src4,           nohash_imm:$lane|VLD4LN|0b0111,0
+VLD4LNd32|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6:$Rn, DPR:$src1, DPR:$src2, DPR:$src3, DPR:$src4,           nohash_imm:$lane|VLD4LN|0b1011,0
+VLD4LNq16|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6:$Rn, DPR:$src1, DPR:$src2, DPR:$src3, DPR:$src4,           nohash_imm:$lane|VLD4LN|0b0111,1
+VLD4LNq32|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6:$Rn, DPR:$src1, DPR:$src2, DPR:$src3, DPR:$src4,           nohash_imm:$lane|VLD4LN|0b1011,1
+VLD4LNd8_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, DPR:$src3, DPR:$src4, nohash_imm:$lane|VLD4LNWB|0b0011
+VLD4LNd16_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, DPR:$src3, DPR:$src4, nohash_imm:$lane|VLD4LNWB|0b0111,0
+VLD4LNd32_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, DPR:$src3, DPR:$src4, nohash_imm:$lane|VLD4LNWB|0b1011,0
+VLD4LNq16_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, DPR:$src3, DPR:$src4, nohash_imm:$lane|VLD4LNWB|0b0111,1
+VLD4LNq32_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$src1, DPR:$src2, DPR:$src3, DPR:$src4, nohash_imm:$lane|VLD4LNWB|0b1011,1
+VLD1DUPd8|VecListOneDAllLanes:$Vd|AddrMode:$Rn|VLD1DUP|0,0
+VLD1DUPd16|VecListOneDAllLanes:$Vd|AddrMode:$Rn|VLD1DUP|1,0
+VLD1DUPd32|VecListOneDAllLanes:$Vd|AddrMode:$Rn|VLD1DUP|0,0
+VLD1DUPq8|VecListDPairAllLanes:$Vd|AddrMode:$Rn|VLD1QDUP|0,1
+VLD1DUPq16|VecListDPairAllLanes:$Vd|AddrMode:$Rn|VLD1QDUP|1,1
+VLD1DUPq32|VecListDPairAllLanes:$Vd|AddrMode:$Rn|VLD1QDUP|0,1
+_fixed|VecListOneDAllLanes,GPR|AddrMode|NLdSt|1,0b10,0b1100
+_register|VecListOneDAllLanes,GPR|AddrMode,rGPR|NLdSt|1,0b10,0b1100
+_fixed|VecListDPairAllLanes,GPR|AddrMode|NLdSt|1,0b10,0b1100
+_register|VecListDPairAllLanes,GPR|AddrMode,rGPR|NLdSt|1,0b10,0b1100
+VLD2DUPd8|VdTy:$Vd|AddrMode:$Rn|VLD2DUP|0,0
+VLD2DUPd16|VdTy:$Vd|AddrMode:$Rn|VLD2DUP|1,0
+VLD2DUPd32|VdTy:$Vd|AddrMode:$Rn|VLD2DUP|0,0
+VLD2DUPd8x2|VdTy:$Vd|AddrMode:$Rn|VLD2DUP|0,1
+VLD2DUPd16x2|VdTy:$Vd|AddrMode:$Rn|VLD2DUP|1,1
+VLD2DUPd32x2|VdTy:$Vd|AddrMode:$Rn|VLD2DUP|0,1
+_fixed|VdTy,GPR|AddrMode|NLdSt|1,0b10,0b1101
+_register|VdTy,GPR|AddrMode,rGPR|NLdSt|1,0b10,0b1101
+VLD3DUPd8|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6dup:$Rn|VLD3DUP|0,0
+VLD3DUPd16|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6dup:$Rn|VLD3DUP|1,0
+VLD3DUPd32|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6dup:$Rn|VLD3DUP|0,0
+VLD3DUPq8|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6dup:$Rn|VLD3DUP|0,1
+VLD3DUPq16|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6dup:$Rn|VLD3DUP|1,1
+VLD3DUPq32|DPR:$Vd, DPR:$dst2, DPR:$dst3|addrmode6dup:$Rn|VLD3DUP|0,1
+VLD3DUPd8_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|AddrMode:$Rn, am6offset:$Rm|VLD3DUPWB|0,0
+VLD3DUPd16_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|AddrMode:$Rn, am6offset:$Rm|VLD3DUPWB|1,0
+VLD3DUPd32_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|AddrMode:$Rn, am6offset:$Rm|VLD3DUPWB|0,0
+VLD3DUPq8_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|AddrMode:$Rn, am6offset:$Rm|VLD3DUPWB|0,1
+VLD3DUPq16_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|AddrMode:$Rn, am6offset:$Rm|VLD3DUPWB|1,1
+VLD3DUPq32_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, GPR:$wb|AddrMode:$Rn, am6offset:$Rm|VLD3DUPWB|0,1
+VLD4DUPd8|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6dup:$Rn|VLD4DUP|0,0
+VLD4DUPd16|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6dup:$Rn|VLD4DUP|1,0
+VLD4DUPd32|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6dup:$Rn|VLD4DUP|0
+VLD4DUPq8|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6dup:$Rn|VLD4DUP|0,1
+VLD4DUPq16|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6dup:$Rn|VLD4DUP|1,1
+VLD4DUPq32|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4|addrmode6dup:$Rn|VLD4DUP|1
+VLD4DUPd8_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6dup:$Rn, am6offset:$Rm|VLD4DUPWB|0,0
+VLD4DUPd16_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6dup:$Rn, am6offset:$Rm|VLD4DUPWB|1,0
+VLD4DUPd32_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6dup:$Rn, am6offset:$Rm|VLD4DUPWB|0
+VLD4DUPq8_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6dup:$Rn, am6offset:$Rm|VLD4DUPWB|0,1
+VLD4DUPq16_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6dup:$Rn, am6offset:$Rm|VLD4DUPWB|1,1
+VLD4DUPq32_UPD|DPR:$Vd, DPR:$dst2, DPR:$dst3, DPR:$dst4, GPR:$wb|addrmode6dup:$Rn, am6offset:$Rm|VLD4DUPWB|1
+VST1d8||AddrMode:$Rn, VecListOneD:$Vd|VST1D|0,0
+VST1d16||AddrMode:$Rn, VecListOneD:$Vd|VST1D|1,0
+VST1d32||AddrMode:$Rn, VecListOneD:$Vd|VST1D|0,0
+VST1d64||AddrMode:$Rn, VecListOneD:$Vd|VST1D|1,0
+VST1q8||AddrMode:$Rn, VecListDPair:$Vd|VST1Q|0
+VST1q16||AddrMode:$Rn, VecListDPair:$Vd|VST1Q|1
+VST1q32||AddrMode:$Rn, VecListDPair:$Vd|VST1Q|0
+VST1q64||AddrMode:$Rn, VecListDPair:$Vd|VST1Q|1
+_fixed|GPR|AddrMode,VecListOneD|NLdSt|0,0b00,0b0111
+_register|GPR|AddrMode,rGPR,VecListOneD|NLdSt|0,0b00,0b0111
+_fixed|GPR|AddrMode,VecListDPair|NLdSt|0,0b00,0b1010
+_register|GPR|AddrMode,rGPR,VecListDPair|NLdSt|0,0b00,0b1010
+_fixed|GPR|AddrMode,VecListThreeD|NLdSt|0,0b00,0b0110
+_register|GPR|AddrMode,rGPR,VecListThreeD|NLdSt|0,0b00,0b0110
+VST1d8T||AddrMode:$Rn, VecListThreeD:$Vd|VST1D3|0,0
+VST1d16T||AddrMode:$Rn, VecListThreeD:$Vd|VST1D3|1,0
+VST1d32T||AddrMode:$Rn, VecListThreeD:$Vd|VST1D3|0,0
+VST1d64T||AddrMode:$Rn, VecListThreeD:$Vd|VST1D3|1,0
+_fixed|GPR|AddrMode,VecListFourD|NLdSt|0,0b00,0b0010
+_register|GPR|AddrMode,rGPR,VecListFourD|NLdSt|0,0b00,0b0010
+VST1d8Q||AddrMode:$Rn, VecListFourD:$Vd|VST1D4|0
+VST1d16Q||AddrMode:$Rn, VecListFourD:$Vd|VST1D4|1
+VST1d32Q||AddrMode:$Rn, VecListFourD:$Vd|VST1D4|0
+VST1d64Q||AddrMode:$Rn, VecListFourD:$Vd|VST1D4|1
+VST2d8||AddrMode:$Rn, VdTy:$Vd|VST2|0b1000,0
+VST2d16||AddrMode:$Rn, VdTy:$Vd|VST2|0b1000,1
+VST2d32||AddrMode:$Rn, VdTy:$Vd|VST2|0b1000,0
+VST2q8||AddrMode:$Rn, VdTy:$Vd|VST2|0b0011,0
+VST2q16||AddrMode:$Rn, VdTy:$Vd|VST2|0b0011,1
+VST2q32||AddrMode:$Rn, VdTy:$Vd|VST2|0b0011,0
+_fixed|GPR|AddrMode,VdTy|NLdSt|0,0b00
+_register|GPR|AddrMode,rGPR,VdTy|NLdSt|0,0b00
+_fixed|GPR|AddrMode,VecListFourD|NLdSt|0,0b00,0b0011
+_register|GPR|AddrMode,rGPR,VecListFourD|NLdSt|0,0b00,0b0011
+VST2b8||AddrMode:$Rn, VdTy:$Vd|VST2|0b1001,0
+VST2b16||AddrMode:$Rn, VdTy:$Vd|VST2|0b1001,1
+VST2b32||AddrMode:$Rn, VdTy:$Vd|VST2|0b1001,0
+VST3d8||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3|VST3D|0b0100,0,0
+VST3d16||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3|VST3D|0b0100,1,0
+VST3d32||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3|VST3D|0b0100,0,0
+VST3d8_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3|VST3DWB|0b0100,0,0
+VST3d16_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3|VST3DWB|0b0100,1,0
+VST3d32_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3|VST3DWB|0b0100,0,0
+VST3q8||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3|VST3D|0b0101,0,0
+VST3q16||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3|VST3D|0b0101,1,0
+VST3q32||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3|VST3D|0b0101,0,0
+VST3q8_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3|VST3DWB|0b0101,0,0
+VST3q16_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3|VST3DWB|0b0101,1,0
+VST3q32_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3|VST3DWB|0b0101,0,0
+VST4d8||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4|VST4D|0b0000,0
+VST4d16||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4|VST4D|0b0000,1
+VST4d32||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4|VST4D|0b0000,0
+VST4d8_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4|VST4DWB|0b0000,0
+VST4d16_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4|VST4DWB|0b0000,1
+VST4d32_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4|VST4DWB|0b0000,0
+VST4q8||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4|VST4D|0b0001,0
+VST4q16||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4|VST4D|0b0001,1
+VST4q32||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4|VST4D|0b0001,0
+VST4q8_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4|VST4DWB|0b0001,0
+VST4q16_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4|VST4DWB|0b0001,1
+VST4q32_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4|VST4DWB|0b0001,0
+VST1LNd8||AddrMode:$Rn, DPR:$Vd, nohash_imm:$lane|VST1LN|0b0000
+VST1LNd16||AddrMode:$Rn, DPR:$Vd, nohash_imm:$lane|VST1LN|0b0100,0
+VST1LNd32||AddrMode:$Rn, DPR:$Vd, nohash_imm:$lane|VST1LN|0b1000,0
+VST1LNd8_UPD|GPR:$wb|AdrMode:$Rn, am6offset:$Rm,            DPR:$Vd, nohash_imm:$lane|VST1LNWB|0b0000
+VST1LNd16_UPD|GPR:$wb|AdrMode:$Rn, am6offset:$Rm,            DPR:$Vd, nohash_imm:$lane|VST1LNWB|0b0100,0
+VST1LNd32_UPD|GPR:$wb|AdrMode:$Rn, am6offset:$Rm,            DPR:$Vd, nohash_imm:$lane|VST1LNWB|0b1000,0
+VST2LNd8||addrmode6:$Rn, DPR:$Vd, DPR:$src2, nohash_imm:$lane|VST2LN|0b0001
+VST2LNd16||addrmode6:$Rn, DPR:$Vd, DPR:$src2, nohash_imm:$lane|VST2LN|0b0101,0
+VST2LNd32||addrmode6:$Rn, DPR:$Vd, DPR:$src2, nohash_imm:$lane|VST2LN|0b1001,0,0
+VST2LNq16||addrmode6:$Rn, DPR:$Vd, DPR:$src2, nohash_imm:$lane|VST2LN|0b0101,1
+VST2LNq32||addrmode6:$Rn, DPR:$Vd, DPR:$src2, nohash_imm:$lane|VST2LN|0b1001,1,0
+VST2LNd8_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, nohash_imm:$lane|VST2LNWB|0b0001
+VST2LNd16_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, nohash_imm:$lane|VST2LNWB|0b0101,0
+VST2LNd32_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, nohash_imm:$lane|VST2LNWB|0b1001,0,0
+VST2LNq16_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, nohash_imm:$lane|VST2LNWB|0b0101,1
+VST2LNq32_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, nohash_imm:$lane|VST2LNWB|0b1001,1,0
+VST3LNd8||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3,            nohash_imm:$lane|VST3LN|0b0010
+VST3LNd16||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3,            nohash_imm:$lane|VST3LN|0b0110,0
+VST3LNd32||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3,            nohash_imm:$lane|VST3LN|0b1010,0,0
+VST3LNq16||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3,            nohash_imm:$lane|VST3LN|0b0110,1
+VST3LNq32||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3,            nohash_imm:$lane|VST3LN|0b1010,1,0
+VST3LNd8_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, nohash_imm:$lane|VST3LNWB|0b0010
+VST3LNd16_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, nohash_imm:$lane|VST3LNWB|0b0110,0
+VST3LNd32_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, nohash_imm:$lane|VST3LNWB|0b1010,0,0
+VST3LNq16_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, nohash_imm:$lane|VST3LNWB|0b0110,1
+VST3LNq32_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, nohash_imm:$lane|VST3LNWB|0b1010,1,0
+VST4LNd8||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4,            nohash_imm:$lane|VST4LN|0b0011
+VST4LNd16||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4,            nohash_imm:$lane|VST4LN|0b0111,0
+VST4LNd32||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4,            nohash_imm:$lane|VST4LN|0b1011,0
+VST4LNq16||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4,            nohash_imm:$lane|VST4LN|0b0111,1
+VST4LNq32||addrmode6:$Rn, DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4,            nohash_imm:$lane|VST4LN|0b1011,1
+VST4LNd8_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4, nohash_imm:$lane|VST4LNWB|0b0011
+VST4LNd16_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4, nohash_imm:$lane|VST4LNWB|0b0111,0
+VST4LNd32_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4, nohash_imm:$lane|VST4LNWB|0b1011,0
+VST4LNq16_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4, nohash_imm:$lane|VST4LNWB|0b0111,1
+VST4LNq32_UPD|GPR:$wb|addrmode6:$Rn, am6offset:$Rm,            DPR:$Vd, DPR:$src2, DPR:$src3, DPR:$src4, nohash_imm:$lane|VST4LNWB|0b1011,1
+v8i8|DPR|DPR|N2V|0b00,0
+v4i16|DPR|DPR|N2V|0b01,0
+v2i32|DPR|DPR|N2V|0b10,0
+v2f32|DPR|DPR|N2V|0b10,0
+v4f16|DPR|DPR|N2V|0b01,0
+v16i8|QPR|QPR|N2V|0b00,1
+v8i16|QPR|QPR|N2V|0b01,1
+v4i32|QPR|QPR|N2V|0b10,1
+v4f32|QPR|QPR|N2V|0b10,1
+v8f16|QPR|QPR|N2V|0b01,1
+v8i8|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD_cmp|0b00
+v4i16|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD_cmp|0b01
+v2i32|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD_cmp|0b10
+v16i8|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ_cmp|0b00
+v8i16|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ_cmp|0b01
+v4i32|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ_cmp|0b10
+v8i8|||N2VDInt|0b00
+v4i16|||N2VDInt|0b01
+v2i32|||N2VDInt|0b10
+v16i8|||N2VQInt|0b00
+v8i16|||N2VQInt|0b01
+v4i32|||N2VQInt|0b10
+v8i8|||N2VN|0b00
+v4i16|||N2VN|0b01
+v2i32|||N2VN|0b10
+v8i8|||N2VNInt|0b00
+v4i16|||N2VNInt|0b01
+v2i32|||N2VNInt|0b10
+v8i16|||N2VL|0b00,0b10,0b00
+v4i32|||N2VL|0b01,0b00,0b00
+v2i64|||N2VL|0b10,0b00,0b00
+v8i8|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD|0b00
+v4i16|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD|0b01
+v2i32|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD|0b10
+v16i8|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ|0b00
+v8i16|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ|0b01
+v4i32|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ|0b10
+v4i16|DPR:$Vd|DPR:$Vn, DPR_8:$Vm, VectorIndex16:$lane|N3VDSL16|0b01
+v2i32|DPR:$Vd|DPR:$Vn, DPR_VFP2:$Vm, VectorIndex32:$lane|N3VDSL|0b10
+v8i16|QPR:$Vd|QPR:$Vn, DPR_8:$Vm, VectorIndex16:$lane|N3VQSL16|0b01
+v4i32|QPR:$Vd|QPR:$Vn, DPR_VFP2:$Vm, VectorIndex32:$lane|N3VQSL|0b10
+v1i64|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD|0b11
+v2i64|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ|0b11
+v4i16|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0b01
+v2i32|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0b10
+v8i16|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|0b01
+v4i32|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|0b10
+v4i16|DPR:$Vd|DPR:$Vm, DPR:$Vn|N3VDIntSh|0b01
+v2i32|DPR:$Vd|DPR:$Vm, DPR:$Vn|N3VDIntSh|0b10
+v8i16|QPR:$Vd|QPR:$Vm, QPR:$Vn|N3VQIntSh|0b01
+v4i32|QPR:$Vd|QPR:$Vm, QPR:$Vn|N3VQIntSh|0b10
+v4i16|DPR:$Vd|DPR:$Vn, DPR_8:$Vm, VectorIndex16:$lane|N3VDIntSL16|0b01
+v2i32|DPR:$Vd|DPR:$Vn, DPR_VFP2:$Vm, VectorIndex32:$lane|N3VDIntSL|0b10
+v8i16|QPR:$Vd|QPR:$Vn, DPR_8:$Vm, VectorIndex16:$lane|N3VQIntSL16|0b01
+v4i32|QPR:$Vd|QPR:$Vn, DPR_VFP2:$Vm, VectorIndex32:$lane|N3VQIntSL|0b10
+v8i8|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0b00
+v16i8|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|0b00
+v8i8|DPR:$Vd|DPR:$Vm, DPR:$Vn|N3VDIntSh|0b00
+v16i8|QPR:$Vd|QPR:$Vm, QPR:$Vn|N3VQIntSh|0b00
+v1i64|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0b11
+v2i64|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|0b11
+v1i64|DPR:$Vd|DPR:$Vm, DPR:$Vn|N3VDIntSh|0b11
+v2i64|QPR:$Vd|QPR:$Vm, QPR:$Vn|N3VQIntSh|0b11
+v8i8|DPR:$Vd|QPR:$Vn, QPR:$Vm|N3VNInt|0b00
+v4i16|DPR:$Vd|QPR:$Vn, QPR:$Vm|N3VNInt|0b01
+v2i32|DPR:$Vd|QPR:$Vn, QPR:$Vm|N3VNInt|0b10
+v8i16|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VL|0b00
+v4i32|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VL|0b01
+v2i64|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VL|0b10
+v4i16|||N3VLSL16|0b01
+v2i32|||N3VLSL|0b10
+v8i16|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VLExt|0b00
+v4i32|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VLExt|0b01
+v2i64|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VLExt|0b10
+v4i32|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VLInt|0b01
+v2i64|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VLInt|0b10
+v4i16|||N3VLIntSL16|0b01
+v2i32|||N3VLIntSL|0b10
+v8i16|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VLInt|0b00
+v8i16|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VLIntExt|0b00
+v4i32|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VLIntExt|0b01
+v2i64|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VLIntExt|0b10
+v8i16|QPR:$Vd|QPR:$Vn, DPR:$Vm|N3VW|0b00
+v4i32|QPR:$Vd|QPR:$Vn, DPR:$Vm|N3VW|0b01
+v2i64|QPR:$Vd|QPR:$Vn, DPR:$Vm|N3VW|0b10
+v8i8|||N3VDMulOp|0b00
+v4i16|||N3VDMulOp|0b01
+v2i32|||N3VDMulOp|0b10
+v16i8|||N3VQMulOp|0b00
+v8i16|||N3VQMulOp|0b01
+v4i32|||N3VQMulOp|0b10
+v4i16|||N3VDMulOpSL16|0b01
+v2i32|||N3VDMulOpSL|0b10
+v8i16|||N3VQMulOpSL16|0b01
+v4i32|||N3VQMulOpSL|0b10
+v8i8|||N3VDIntOp|0b00
+v4i16|||N3VDIntOp|0b01
+v2i32|||N3VDIntOp|0b10
+v16i8|||N3VQIntOp|0b00
+v8i16|||N3VQIntOp|0b01
+v4i32|||N3VQIntOp|0b10
+v4i16|||N3VDInt3|0b01
+v2i32|||N3VDInt3|0b10
+v8i16|||N3VQInt3|0b01
+v4i32|||N3VQInt3|0b10
+v8i8|||N3VDInt3|0b00
+v16i8|||N3VQInt3|0b00
+v8i16|||N3VLMulOp|0b00
+v4i32|||N3VLMulOp|0b01
+v2i64|||N3VLMulOp|0b10
+v4i16|||N3VLMulOpSL16|0b01
+v2i32|||N3VLMulOpSL|0b10
+v4i32|||N3VLInt3|0b01
+v2i64|||N3VLInt3|0b10
+v4i16|||N3VLInt3SL16|0b01
+v2i32|||N3VLInt3SL|0b10
+v8i16|||N3VLInt3|0b00
+v8i16|||N3VLIntExtOp|0b00
+v4i32|||N3VLIntExtOp|0b01
+v2i64|||N3VLIntExtOp|0b10
+v8i8|||N2VDPLInt|0b00
+v4i16|||N2VDPLInt|0b01
+v2i32|||N2VDPLInt|0b10
+v16i8|||N2VQPLInt|0b00
+v8i16|||N2VQPLInt|0b01
+v4i32|||N2VQPLInt|0b10
+v8i8|||N2VDPLInt2|0b00
+v4i16|||N2VDPLInt2|0b01
+v2i32|||N2VDPLInt2|0b10
+v16i8|||N2VQPLInt2|0b00
+v8i16|||N2VQPLInt2|0b01
+v4i32|||N2VQPLInt2|0b10
+v8i8|||N2VDSh|0
+v4i16|||N2VDSh|0
+v2i32|||N2VDSh|0
+v1i64|||N2VDSh|1
+v16i8|||N2VQSh|0
+v8i16|||N2VQSh|0
+v4i32|||N2VQSh|0
+v2i64|||N2VQSh|1
+v8i8|||N2VDSh|0
+v4i16|||N2VDSh|0
+v2i32|||N2VDSh|0
+v1i64|||N2VDSh|1
+v16i8|||N2VQSh|0
+v8i16|||N2VQSh|0
+v4i32|||N2VQSh|0
+v2i64|||N2VQSh|1
+v8i8|||N2VDShAdd|0
+v4i16|||N2VDShAdd|0
+v2i32|||N2VDShAdd|0
+v1i64|||N2VDShAdd|1
+v16i8|||N2VQShAdd|0
+v8i16|||N2VQShAdd|0
+v4i32|||N2VQShAdd|0
+v2i64|||N2VQShAdd|1
+v8i8|||N2VDShIns|0
+v4i16|||N2VDShIns|0
+v2i32|||N2VDShIns|0
+v1i64|||N2VDShIns|1
+v16i8|||N2VQShIns|0
+v8i16|||N2VQShIns|0
+v4i32|||N2VQShIns|0
+v2i64|||N2VQShIns|1
+v8i8|||N2VDShIns|0
+v4i16|||N2VDShIns|0
+v2i32|||N2VDShIns|0
+v1i64|||N2VDShIns|1
+v16i8|||N2VQShIns|0
+v8i16|||N2VQShIns|0
+v4i32|||N2VQShIns|0
+v2i64|||N2VQShIns|1
+VADDfd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD|0,0,0b00,0b1101,0,1
+VADDfq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ|0,0,0b00,0b1101,0,1
+VADDhd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD|0,0,0b01,0b1101,0,1
+VADDhq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ|0,0,0b01,0b1101,0,1
+VMULpd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b00,0b1001,1,1
+VMULpq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|1,0,0b00,0b1001,1,1
+VMULfd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD|1,0,0b00,0b1101,1,1
+VMULfq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ|1,0,0b00,0b1101,1,1
+VMULhd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD|1,0,0b01,0b1101,1,1
+VMULhq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ|1,0,0b01,0b1101,1,1
+VMULslfd|DPR:$Vd|DPR:$Vn, DPR_VFP2:$Vm, VectorIndex32:$lane|N3VDSL|0b10,0b1001
+VMULslfq|QPR:$Vd|QPR:$Vn, DPR_VFP2:$Vm, VectorIndex32:$lane|N3VQSL|0b10,0b1001
+VMULslhd|DPR:$Vd|DPR:$Vn, DPR_8:$Vm, VectorIndex16:$lane|N3VDSL16|0b01,0b1001
+VMULslhq|QPR:$Vd|QPR:$Vn, DPR_8:$Vm, VectorIndex16:$lane|N3VQSL16|0b01,0b1001
+VMULLp8|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VLInt|0,1,0b00,0b1110,0,1
+VMULLp64|QPR:$Vd|DPR:$Vn, DPR:$Vm|N3VLIntnp|0b00101,0b10,0b1110,0,0,1
+VMLAfd|||N3VDMulOp|0,0,0b00,0b1101,1
+VMLAfq|||N3VQMulOp|0,0,0b00,0b1101,1
+VMLAhd|||N3VDMulOp|0,0,0b01,0b1101,1
+VMLAhq|||N3VQMulOp|0,0,0b01,0b1101,1
+VMLAslfd|||N3VDMulOpSL|0b10,0b0001
+VMLAslfq|||N3VQMulOpSL|0b10,0b0001
+VMLAslhd|||N3VDMulOpSL16|0b01,0b0001
+VMLAslhq|||N3VQMulOpSL16|0b01,0b0001
+VMLSfd|||N3VDMulOp|0,0,0b10,0b1101,1
+VMLSfq|||N3VQMulOp|0,0,0b10,0b1101,1
+VMLShd|||N3VDMulOp|0,0,0b11,0b1101,1
+VMLShq|||N3VQMulOp|0,0,0b11,0b1101,1
+VMLSslfd|||N3VDMulOpSL|0b10,0b0101
+VMLSslfq|||N3VQMulOpSL|0b10,0b0101
+VMLSslhd|||N3VDMulOpSL16|0b01,0b0101
+VMLSslhq|||N3VQMulOpSL16|0b01,0b0101
+VFMAfd|||N3VDMulOp|0,0,0b00,0b1100,1
+VFMAfq|||N3VQMulOp|0,0,0b00,0b1100,1
+VFMAhd|||N3VDMulOp|0,0,0b01,0b1100,1
+VFMAhq|||N3VQMulOp|0,0,0b01,0b1100,1
+VFMSfd|||N3VDMulOp|0,0,0b10,0b1100,1
+VFMSfq|||N3VQMulOp|0,0,0b10,0b1100,1
+VFMShd|||N3VDMulOp|0,0,0b11,0b1100,1
+VFMShq|||N3VQMulOp|0,0,0b11,0b1100,1
+VUDOTD|RegTy:$dst|RegTy:$Vd, RegTy:$Vn, RegTy:$Vm|VDOT|0,1,0
+VSDOTD|RegTy:$dst|RegTy:$Vd, RegTy:$Vn, RegTy:$Vm|VDOT|0,0,0
+VUDOTQ|RegTy:$dst|RegTy:$Vd, RegTy:$Vn, RegTy:$Vm|VDOT|1,1,0
+VSDOTQ|RegTy:$dst|RegTy:$Vd, RegTy:$Vn, RegTy:$Vm|VDOT|1,0,0
+VSMMLA|QPR:$dst|QPR:$Vd, QPR:$Vn, QPR:$Vm|N3VMatMul|0,0
+VUMMLA|QPR:$dst|QPR:$Vd, QPR:$Vn, QPR:$Vm|N3VMatMul|0,1
+VUSMMLA|QPR:$dst|QPR:$Vd, QPR:$Vn, QPR:$Vm|N3VMatMul|1,0
+VUSDOTD|RegTy:$dst|RegTy:$Vd, RegTy:$Vn, RegTy:$Vm|VDOT|0,0,1
+VUSDOTQ|RegTy:$dst|RegTy:$Vd, RegTy:$Vn, RegTy:$Vm|VDOT|1,0,1
+v4f16|DPR|DPR,DPR,DPR,complexrotateop|BaseN3VCP8ComplexTied|0,0
+v8f16|QPR|QPR,QPR,QPR,complexrotateop|BaseN3VCP8ComplexTied|0,1
+v2f32|DPR|DPR,DPR,DPR,complexrotateop|BaseN3VCP8ComplexTied|1,0
+v4f32|QPR|QPR,QPR,QPR,complexrotateop|BaseN3VCP8ComplexTied|1,1
+v4f16|DPR|DPR,DPR,complexrotateopodd|BaseN3VCP8ComplexOdd|0,0
+v8f16|QPR|QPR,QPR,complexrotateopodd|BaseN3VCP8ComplexOdd|0,1
+v2f32|DPR|DPR,DPR,complexrotateopodd|BaseN3VCP8ComplexOdd|1,0
+v4f32|QPR|QPR,QPR,complexrotateopodd|BaseN3VCP8ComplexOdd|1,1
+v4f16_indexed|DPR|DPR,DPR,DPR_VFP2,VectorIndex32,complexrotateop|BaseN3VCP8ComplexTiedLane32|0,0
+v8f16_indexed|QPR|QPR,QPR,DPR_VFP2,VectorIndex32,complexrotateop|BaseN3VCP8ComplexTiedLane32|0,1
+v2f32_indexed|DPR|DPR,DPR,DPR,VectorIndex64,complexrotateop|BaseN3VCP8ComplexTiedLane64|1,0
+v4f32_indexed|QPR|QPR,QPR,DPR,VectorIndex64,complexrotateop|BaseN3VCP8ComplexTiedLane64|1,1
+VSUBfd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD|0,0,0b10,0b1101,0,0
+VSUBfq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ|0,0,0b10,0b1101,0,0
+VSUBhd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD|0,0,0b11,0b1101,0,0
+VSUBhq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ|0,0,0b11,0b1101,0,0
+VCEQfd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD_cmp|0,0,0b00,0b1110,0,1
+VCEQfq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ_cmp|0,0,0b00,0b1110,0,1
+VCEQhd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD_cmp|0,0,0b01,0b1110,0,1
+VCEQhq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ_cmp|0,0,0b01,0b1110,0,1
+VCGEfd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD_cmp|1,0,0b00,0b1110,0,0
+VCGEfq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ_cmp|1,0,0b00,0b1110,0,0
+VCGEhd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD_cmp|1,0,0b01,0b1110,0,0
+VCGEhq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ_cmp|1,0,0b01,0b1110,0,0
+VCGTfd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD_cmp|1,0,0b10,0b1110,0,0
+VCGTfq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ_cmp|1,0,0b10,0b1110,0,0
+VCGThd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VD_cmp|1,0,0b11,0b1110,0,0
+VCGThq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQ_cmp|1,0,0b11,0b1110,0,0
+VACGEfd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b00,0b1110,1,0
+VACGEfq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|1,0,0b00,0b1110,1,0
+VACGEhd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b01,0b1110,1,0
+VACGEhq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|1,0,0b01,0b1110,1,0
+VACGTfd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b10,0b1110,1,0
+VACGTfq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|1,0,0b10,0b1110,1,0
+VACGThd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b11,0b1110,1,0
+VACGThq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|1,0,0b11,0b1110,1,0
+VFMALD|||N3VCP8F16Q0|0b00,0b10,1
+VFMSLD|||N3VCP8F16Q0|0b01,0b10,1
+VFMALQ|||N3VCP8F16Q1|0b00,0b10,1
+VFMSLQ|||N3VCP8F16Q1|0b01,0b10,1
+VFMALDI|DPR:$Vd|SPR:$Vn, SPR_8:$Vm, VectorIndex32:$idx|VFMD|0b00
+VFMSLDI|DPR:$Vd|SPR:$Vn, SPR_8:$Vm, VectorIndex32:$idx|VFMD|0b01
+VFMALQI|QPR:$Vd|DPR:$Vn, DPR_8:$Vm, VectorIndex16:$idx|VFMQ|0b00
+VFMSLQI|QPR:$Vd|DPR:$Vn, DPR_8:$Vm, VectorIndex16:$idx|VFMQ|0b01
+VANDd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDX|0,0,0b00,0b0001,1,1
+VANDq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQX|0,0,0b00,0b0001,1,1
+VEORd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDX|1,0,0b00,0b0001,1,1
+VEORq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQX|1,0,0b00,0b0001,1,1
+VORRd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDX|0,0,0b10,0b0001,1,1
+VORRq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQX|0,0,0b10,0b0001,1,1
+VORRiv4i16|DPR|nImmSplatI16,DPR|N1ModImm|1,0b000,0,0,0,0,1
+VORRiv2i32|DPR|nImmSplatI32,DPR|N1ModImm|1,0b000,0,0,0,1
+VORRiv8i16|QPR|nImmSplatI16,QPR|N1ModImm|1,0b000,0,0,1,0,1
+VORRiv4i32|QPR|nImmSplatI32,QPR|N1ModImm|1,0b000,0,1,0,1
+VBICd|DPR|DPR,DPR|N3VX|0,0,0b01,0b0001,0,1
+VBICq|QPR|QPR,QPR|N3VX|0,0,0b01,0b0001,1,1
+VBICiv4i16|DPR|nImmSplatI16,DPR|N1ModImm|1,0b000,0,0,0,1,1
+VBICiv2i32|DPR|nImmSplatI32,DPR|N1ModImm|1,0b000,0,0,1,1
+VBICiv8i16|QPR|nImmSplatI16,QPR|N1ModImm|1,0b000,0,0,1,1,1
+VBICiv4i32|QPR|nImmSplatI32,QPR|N1ModImm|1,0b000,0,1,1,1
+VORNd|DPR|DPR,DPR|N3VX|0,0,0b11,0b0001,0,1
+VORNq|QPR|QPR,QPR|N3VX|0,0,0b11,0b0001,1,1
+VMVNv4i16|DPR|nImmSplatI16|N1ModImm|1,0b000,0,0,0,1,1
+VMVNv8i16|QPR|nImmSplatI16|N1ModImm|1,0b000,0,0,1,1,1
+VMVNv2i32|DPR|nImmVMOVI32|N1ModImm|1,0b000,0,0,1,1
+VMVNv4i32|QPR|nImmVMOVI32|N1ModImm|1,0b000,0,1,1,1
+VMVNd|DPR|DPR|N2VX|0b11,0b11,0b00,0b00,0b01011,0,0
+VMVNq|QPR|QPR|N2VX|0b11,0b11,0b00,0b00,0b01011,1,0
+VBSPd|DPR|DPR,DPR,DPR|PseudoNeonI|
+VBSPq|QPR|QPR,QPR,QPR|PseudoNeonI|
+VBSLd|DPR|DPR,DPR,DPR|N3VX|1,0,0b01,0b0001,0,1
+VBSLq|QPR|QPR,QPR,QPR|N3VX|1,0,0b01,0b0001,1,1
+VBIFd|DPR|DPR,DPR,DPR|N3VX|1,0,0b11,0b0001,0,1
+VBIFq|QPR|QPR,QPR,QPR|N3VX|1,0,0b11,0b0001,1,1
+VBITd|DPR|DPR,DPR,DPR|N3VX|1,0,0b10,0b0001,0,1
+VBITq|QPR|QPR,QPR,QPR|N3VX|1,0,0b10,0b0001,1,1
+VABDfd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b10,0b1101,0,1
+VABDfq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|1,0,0b10,0b1101,0,1
+VABDhd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b11,0b1101,0,1
+VABDhq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|1,0,0b11,0b1101,0,1
+VMAXfd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b00,0b1111,0,1
+VMAXfq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|0,0,0b00,0b1111,0,1
+VMAXhd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b01,0b1111,0,1
+VMAXhq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|0,0,0b01,0b1111,0,1
+NEON_VMAXNMNDf|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDIntnp|0b00110,0b00,0b1111,0,1,1
+NEON_VMAXNMNQf|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQIntnp|0b00110,0b00,0b1111,1,1,1
+NEON_VMAXNMNDh|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDIntnp|0b00110,0b01,0b1111,0,1,1
+NEON_VMAXNMNQh|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQIntnp|0b00110,0b01,0b1111,1,1,1
+VMINfd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b10,0b1111,0,1
+VMINfq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|0,0,0b10,0b1111,0,1
+VMINhd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b11,0b1111,0,1
+VMINhq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|0,0,0b11,0b1111,0,1
+NEON_VMINNMNDf|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDIntnp|0b00110,0b10,0b1111,0,1,1
+NEON_VMINNMNQf|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQIntnp|0b00110,0b10,0b1111,1,1,1
+NEON_VMINNMNDh|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDIntnp|0b00110,0b11,0b1111,0,1,1
+NEON_VMINNMNQh|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQIntnp|0b00110,0b11,0b1111,1,1,1
+VPADDi8|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b00,0b1011,1,0
+VPADDi16|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b01,0b1011,1,0
+VPADDi32|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b10,0b1011,1,0
+VPADDf|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b00,0b1101,0,0
+VPADDh|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b01,0b1101,0,0
+VPMAXs8|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b00,0b1010,0,0
+VPMAXs16|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b01,0b1010,0,0
+VPMAXs32|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b10,0b1010,0,0
+VPMAXu8|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b00,0b1010,0,0
+VPMAXu16|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b01,0b1010,0,0
+VPMAXu32|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b10,0b1010,0,0
+VPMAXf|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b00,0b1111,0,0
+VPMAXh|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b01,0b1111,0,0
+VPMINs8|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b00,0b1010,1,0
+VPMINs16|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b01,0b1010,1,0
+VPMINs32|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b10,0b1010,1,0
+VPMINu8|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b00,0b1010,1,0
+VPMINu16|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b01,0b1010,1,0
+VPMINu32|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b10,0b1010,1,0
+VPMINf|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b10,0b1111,0,0
+VPMINh|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|1,0,0b11,0b1111,0,0
+VRECPEd|||N2VDInt|0b11,0b11,0b10,0b11,0b01000,0
+VRECPEq|||N2VQInt|0b11,0b11,0b10,0b11,0b01000,0
+VRECPEfd|||N2VDInt|0b11,0b11,0b10,0b11,0b01010,0
+VRECPEfq|||N2VQInt|0b11,0b11,0b10,0b11,0b01010,0
+VRECPEhd|||N2VDInt|0b11,0b11,0b01,0b11,0b01010,0
+VRECPEhq|||N2VQInt|0b11,0b11,0b01,0b11,0b01010,0
+VRECPSfd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b00,0b1111,1,1
+VRECPSfq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|0,0,0b00,0b1111,1,1
+VRECPShd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b01,0b1111,1,1
+VRECPShq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|0,0,0b01,0b1111,1,1
+VRSQRTEd|||N2VDInt|0b11,0b11,0b10,0b11,0b01001,0
+VRSQRTEq|||N2VQInt|0b11,0b11,0b10,0b11,0b01001,0
+VRSQRTEfd|||N2VDInt|0b11,0b11,0b10,0b11,0b01011,0
+VRSQRTEfq|||N2VQInt|0b11,0b11,0b10,0b11,0b01011,0
+VRSQRTEhd|||N2VDInt|0b11,0b11,0b01,0b11,0b01011,0
+VRSQRTEhq|||N2VQInt|0b11,0b11,0b01,0b11,0b01011,0
+VRSQRTSfd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b10,0b1111,1,1
+VRSQRTSfq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|0,0,0b10,0b1111,1,1
+VRSQRTShd|DPR:$Vd|DPR:$Vn, DPR:$Vm|N3VDInt|0,0,0b11,0b1111,1,1
+VRSQRTShq|QPR:$Vd|QPR:$Vn, QPR:$Vm|N3VQInt|0,0,0b11,0b1111,1,1
+VSHLLi8|||N2VLShMax|1,1,0b110010,0b0011,0,0,0
+VSHLLi16|||N2VLShMax|1,1,0b110110,0b0011,0,0,0
+VSHLLi32|||N2VLShMax|1,1,0b111010,0b0011,0,0,0
+VABSfd|||N2VD|0b11,0b11,0b10,0b01,0b01110,0
+VABSfq|||N2VQ|0b11,0b11,0b10,0b01,0b01110,0
+VABShd|||N2VD|0b11,0b11,0b01,0b01,0b01110,0
+VABShq|||N2VQ|0b11,0b11,0b01,0b01,0b01110,0
+VNEGs8d|||VNEGD|0b00
+VNEGs16d|||VNEGD|0b01
+VNEGs32d|||VNEGD|0b10
+VNEGs8q|||VNEGQ|0b00
+VNEGs16q|||VNEGQ|0b01
+VNEGs32q|||VNEGQ|0b10
+VNEGfd|DPR|DPR|N2V|0b11,0b11,0b10,0b01,0b01111,0,0
+VNEGf32q|QPR|QPR|N2V|0b11,0b11,0b10,0b01,0b01111,1,0
+VNEGhd|DPR|DPR|N2V|0b11,0b11,0b01,0b01,0b01111,0,0
+VNEGhq|QPR|QPR|N2V|0b11,0b11,0b01,0b01,0b01111,1,0
+VCNTd|||N2VDInt|0b11,0b11,0b00,0b00,0b01010,0
+VCNTq|||N2VQInt|0b11,0b11,0b00,0b00,0b01010,0
+VSWPd|DPR,DPR|DPR,DPR|N2VX|0b11,0b11,0b00,0b10,0b00000,0,0
+VSWPq|QPR,QPR|QPR,QPR|N2VX|0b11,0b11,0b00,0b10,0b00000,1,0
+VMOVv8i8|DPR|nImmSplatI8|N1ModImm|1,0b000,0b1110,0,0,0,1
+VMOVv16i8|QPR|nImmSplatI8|N1ModImm|1,0b000,0b1110,0,1,0,1
+VMOVv4i16|DPR|nImmSplatI16|N1ModImm|1,0b000,0,0,0,0,1
+VMOVv8i16|QPR|nImmSplatI16|N1ModImm|1,0b000,0,0,1,0,1
+VMOVv2i32|DPR|nImmVMOVI32|N1ModImm|1,0b000,0,0,0,1
+VMOVv4i32|QPR|nImmVMOVI32|N1ModImm|1,0b000,0,1,0,1
+VMOVv1i64|DPR|nImmSplatI64|N1ModImm|1,0b000,0b1110,0,0,1,1
+VMOVv2i64|QPR|nImmSplatI64|N1ModImm|1,0b000,0b1110,0,1,1,1
+VMOVv2f32|DPR|nImmVMOVF32|N1ModImm|1,0b000,0b1111,0,0,0,1
+VMOVv4f32|QPR|nImmVMOVF32|N1ModImm|1,0b000,0b1111,0,1,0,1
+VMOVD0|DPR||ARMPseudoExpand|4,0
+VMOVQ0|QPR||ARMPseudoExpand|4,0
+VGETLNs8|GPR|DPR,VectorIndex8|NVGetLane|1,1,0,0,1,0b1011
+VGETLNs16|GPR|DPR,VectorIndex16|NVGetLane|1,1,0,0,0,0b1011
+VGETLNu8|GPR|DPR,VectorIndex8|NVGetLane|1,1,0,1,1,0b1011
+VGETLNu16|GPR|DPR,VectorIndex16|NVGetLane|1,1,0,1,0,0b1011
+VGETLNi32|GPR|DPR,VectorIndex32|NVGetLane|1,1,0,0,0,0b1011,0b00
+VSETLNi8|DPR|DPR,GPR,VectorIndex8|NVSetLane|1,1,0,0,1,0b1011
+VSETLNi16|DPR|DPR,GPR,VectorIndex16|NVSetLane|1,1,0,0,0,0b1011
+VSETLNi32|DPR|DPR,GPR,VectorIndex32|NVSetLane|1,1,0,0,0,0b1011,0b00
+VDUP8d|||VDUPD|0b11101100,0b00
+VDUP16d|||VDUPD|0b11101000,0b01
+VDUP32d|||VDUPD|0b11101000,0b00
+VDUP8q|||VDUPQ|0b11101110,0b00
+VDUP16q|||VDUPQ|0b11101010,0b01
+VDUP32q|||VDUPQ|0b11101010,0b00
+VDUPLN16d|||VDUPLND|1
+VDUPLN32d|||VDUPLND|1,0
+VDUPLN16q|||VDUPLNQ|1
+VDUPLN32q|||VDUPLNQ|1,0
+VCVTf2sd|||N2VD|0b11,0b11,0b10,0b11,0b01110,0
+VCVTf2ud|||N2VD|0b11,0b11,0b10,0b11,0b01111,0
+VCVTs2fd|||N2VD|0b11,0b11,0b10,0b11,0b01100,0
+VCVTu2fd|||N2VD|0b11,0b11,0b10,0b11,0b01101,0
+VCVTf2sq|||N2VQ|0b11,0b11,0b10,0b11,0b01110,0
+VCVTf2uq|||N2VQ|0b11,0b11,0b10,0b11,0b01111,0
+VCVTs2fq|||N2VQ|0b11,0b11,0b10,0b11,0b01100,0
+VCVTu2fq|||N2VQ|0b11,0b11,0b10,0b11,0b01101,0
+VCVTh2sd|||N2VD|0b11,0b11,0b01,0b11,0b01110,0
+VCVTh2ud|||N2VD|0b11,0b11,0b01,0b11,0b01111,0
+VCVTs2hd|||N2VD|0b11,0b11,0b01,0b11,0b01100,0
+VCVTu2hd|||N2VD|0b11,0b11,0b01,0b11,0b01101,0
+VCVTh2sq|||N2VQ|0b11,0b11,0b01,0b11,0b01110,0
+VCVTh2uq|||N2VQ|0b11,0b11,0b01,0b11,0b01111,0
+VCVTs2hq|||N2VQ|0b11,0b11,0b01,0b11,0b01100,0
+VCVTu2hq|||N2VQ|0b11,0b11,0b01,0b11,0b01101,0
+SDf|||N2VDIntnp|0b10,0b11,0
+SQf|||N2VQIntnp|0b10,0b11,0
+UDf|||N2VDIntnp|0b10,0b11,1
+UQf|||N2VQIntnp|0b10,0b11,1
+SDh|||N2VDIntnp|0b01,0b11,0
+SQh|||N2VQIntnp|0b01,0b11,0
+UDh|||N2VDIntnp|0b01,0b11,1
+UQh|||N2VQIntnp|0b01,0b11,1
+VCVTf2xsd|||N2VCvtD|0,1,0b1111,0,1
+VCVTf2xud|||N2VCvtD|1,1,0b1111,0,1
+VCVTxs2fd|||N2VCvtD|0,1,0b1110,0,1
+VCVTxu2fd|||N2VCvtD|1,1,0b1110,0,1
+VCVTh2xsd|||N2VCvtD|0,1,0b1101,0,1
+VCVTh2xud|||N2VCvtD|1,1,0b1101,0,1
+VCVTxs2hd|||N2VCvtD|0,1,0b1100,0,1
+VCVTxu2hd|||N2VCvtD|1,1,0b1100,0,1
+VCVTf2xsq|||N2VCvtQ|0,1,0b1111,0,1
+VCVTf2xuq|||N2VCvtQ|1,1,0b1111,0,1
+VCVTxs2fq|||N2VCvtQ|0,1,0b1110,0,1
+VCVTxu2fq|||N2VCvtQ|1,1,0b1110,0,1
+VCVTh2xsq|||N2VCvtQ|0,1,0b1101,0,1
+VCVTh2xuq|||N2VCvtQ|1,1,0b1101,0,1
+VCVTxs2hq|||N2VCvtQ|0,1,0b1100,0,1
+VCVTxu2hq|||N2VCvtQ|1,1,0b1100,0,1
+VCVTf2h|||N2VNInt|0b11,0b11,0b01,0b10,0b01100,0,0
+VCVTh2f|||N2VLInt|0b11,0b11,0b01,0b10,0b01110,0,0
+VREV64d8|||VREV64D|0b00
+VREV64d16|||VREV64D|0b01
+VREV64d32|||VREV64D|0b10
+VREV64q8|||VREV64Q|0b00
+VREV64q16|||VREV64Q|0b01
+VREV64q32|||VREV64Q|0b10
+VREV32d8|||VREV32D|0b00
+VREV32d16|||VREV32D|0b01
+VREV32q8|||VREV32Q|0b00
+VREV32q16|||VREV32Q|0b01
+VREV16d8|||VREV16D|0b00
+VREV16q8|||VREV16Q|0b00
+VTRNd8|||N2VDShuffle|0b00,0b00001
+VTRNd16|||N2VDShuffle|0b01,0b00001
+VTRNd32|||N2VDShuffle|0b10,0b00001
+VTRNq8|||N2VQShuffle|0b00,0b00001
+VTRNq16|||N2VQShuffle|0b01,0b00001
+VTRNq32|||N2VQShuffle|0b10,0b00001
+VUZPd8|||N2VDShuffle|0b00,0b00010
+VUZPd16|||N2VDShuffle|0b01,0b00010
+VUZPq8|||N2VQShuffle|0b00,0b00010
+VUZPq16|||N2VQShuffle|0b01,0b00010
+VUZPq32|||N2VQShuffle|0b10,0b00010
+VZIPd8|||N2VDShuffle|0b00,0b00011
+VZIPd16|||N2VDShuffle|0b01,0b00011
+VZIPq8|||N2VQShuffle|0b00,0b00011
+VZIPq16|||N2VQShuffle|0b01,0b00011
+VZIPq32|||N2VQShuffle|0b10,0b00011
+Df|||N2VDIntnp|0b10,0b10,0b100,0
+Qf|||N2VQIntnp|0b10,0b10,0b100,0
+Dh|||N2VDIntnp|0b01,0b10,0b100,0
+Qh|||N2VQIntnp|0b01,0b10,0b100,0
+AESD|||AES2Op|0,1
+AESE|||AES2Op|0,0
+AESIMC|||AES|1,1
+AESMC|||AES|1,0
+SHA1H|||N2SHA|0b01,0b010,1,1
+SHA1SU1|||N2SHA2Op|0b10,0b011,1,0
+SHA256SU0|||N2SHA2Op|0b10,0b011,1,1
+SHA1C|||N3SHA3Op|0b00100,0b00
+SHA1M|||N3SHA3Op|0b00100,0b10
+SHA1P|||N3SHA3Op|0b00100,0b01
+SHA1SU0|||N3SHA3Op|0b00100,0b11
+SHA256H|||N3SHA3Op|0b00110,0b00
+SHA256H2|||N3SHA3Op|0b00110,0b01
+SHA256SU1|||N3SHA3Op|0b00110,0b10
+VLD1LNdAsm_8||VecListOneDByteIndexed,addrmode6alignNone,pred|NEONDataTypeAsmPseudoInst|
+VLD1LNdAsm_16||VecListOneDHWordIndexed,addrmode6align16,pred|NEONDataTypeAsmPseudoInst|
+VLD1LNdAsm_32||VecListOneDWordIndexed,addrmode6align32,pred|NEONDataTypeAsmPseudoInst|
+VST1LNdAsm_8||VecListOneDByteIndexed,addrmode6alignNone,pred|NEONDataTypeAsmPseudoInst|
+VST1LNdAsm_16||VecListOneDHWordIndexed,addrmode6align16,pred|NEONDataTypeAsmPseudoInst|
+VST1LNdAsm_32||VecListOneDWordIndexed,addrmode6align32,pred|NEONDataTypeAsmPseudoInst|
+VLD2LNdAsm_8||VecListTwoDByteIndexed,addrmode6align16,pred|NEONDataTypeAsmPseudoInst|
+VLD2LNdAsm_16||VecListTwoDHWordIndexed,addrmode6align32,pred|NEONDataTypeAsmPseudoInst|
+VLD2LNdAsm_32||VecListTwoDWordIndexed,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VLD2LNqAsm_16||VecListTwoQHWordIndexed,addrmode6align32,pred|NEONDataTypeAsmPseudoInst|
+VLD2LNqAsm_32||VecListTwoQWordIndexed,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VST2LNdAsm_8||VecListTwoDByteIndexed,addrmode6align16,pred|NEONDataTypeAsmPseudoInst|
+VST2LNdAsm_16||VecListTwoDHWordIndexed,addrmode6align32,pred|NEONDataTypeAsmPseudoInst|
+VST2LNdAsm_32||VecListTwoDWordIndexed,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VST2LNqAsm_16||VecListTwoQHWordIndexed,addrmode6align32,pred|NEONDataTypeAsmPseudoInst|
+VST2LNqAsm_32||VecListTwoQWordIndexed,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VLD3DUPdAsm_8||VecListThreeDAllLanes,addrmode6dupalignNone,pred|NEONDataTypeAsmPseudoInst|
+VLD3DUPdAsm_16||VecListThreeDAllLanes,addrmode6dupalignNone,pred|NEONDataTypeAsmPseudoInst|
+VLD3DUPdAsm_32||VecListThreeDAllLanes,addrmode6dupalignNone,pred|NEONDataTypeAsmPseudoInst|
+VLD3DUPqAsm_8||VecListThreeQAllLanes,addrmode6dupalignNone,pred|NEONDataTypeAsmPseudoInst|
+VLD3DUPqAsm_16||VecListThreeQAllLanes,addrmode6dupalignNone,pred|NEONDataTypeAsmPseudoInst|
+VLD3DUPqAsm_32||VecListThreeQAllLanes,addrmode6dupalignNone,pred|NEONDataTypeAsmPseudoInst|
+VLD3LNdAsm_8||VecListThreeDByteIndexed,addrmode6alignNone,pred|NEONDataTypeAsmPseudoInst|
+VLD3LNdAsm_16||VecListThreeDHWordIndexed,addrmode6alignNone,pred|NEONDataTypeAsmPseudoInst|
+VLD3LNdAsm_32||VecListThreeDWordIndexed,addrmode6alignNone,pred|NEONDataTypeAsmPseudoInst|
+VLD3LNqAsm_16||VecListThreeQHWordIndexed,addrmode6alignNone,pred|NEONDataTypeAsmPseudoInst|
+VLD3LNqAsm_32||VecListThreeQWordIndexed,addrmode6alignNone,pred|NEONDataTypeAsmPseudoInst|
+VLD3dAsm_8||VecListThreeD,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VLD3dAsm_16||VecListThreeD,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VLD3dAsm_32||VecListThreeD,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VLD3qAsm_8||VecListThreeQ,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VLD3qAsm_16||VecListThreeQ,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VLD3qAsm_32||VecListThreeQ,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VST3LNdAsm_8||VecListThreeDByteIndexed,addrmode6alignNone,pred|NEONDataTypeAsmPseudoInst|
+VST3LNdAsm_16||VecListThreeDHWordIndexed,addrmode6alignNone,pred|NEONDataTypeAsmPseudoInst|
+VST3LNdAsm_32||VecListThreeDWordIndexed,addrmode6alignNone,pred|NEONDataTypeAsmPseudoInst|
+VST3LNqAsm_16||VecListThreeQHWordIndexed,addrmode6alignNone,pred|NEONDataTypeAsmPseudoInst|
+VST3LNqAsm_32||VecListThreeQWordIndexed,addrmode6alignNone,pred|NEONDataTypeAsmPseudoInst|
+VST3dAsm_8||VecListThreeD,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VST3dAsm_16||VecListThreeD,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VST3dAsm_32||VecListThreeD,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VST3qAsm_8||VecListThreeQ,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VST3qAsm_16||VecListThreeQ,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VST3qAsm_32||VecListThreeQ,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VLD4DUPdAsm_8||VecListFourDAllLanes,addrmode6dupalign32,pred|NEONDataTypeAsmPseudoInst|
+VLD4DUPdAsm_16||VecListFourDAllLanes,addrmode6dupalign64,pred|NEONDataTypeAsmPseudoInst|
+VLD4DUPdAsm_32||VecListFourDAllLanes,addrmode6dupalign64or128,pred|NEONDataTypeAsmPseudoInst|
+VLD4DUPqAsm_8||VecListFourQAllLanes,addrmode6dupalign32,pred|NEONDataTypeAsmPseudoInst|
+VLD4DUPqAsm_16||VecListFourQAllLanes,addrmode6dupalign64,pred|NEONDataTypeAsmPseudoInst|
+VLD4DUPqAsm_32||VecListFourQAllLanes,addrmode6dupalign64or128,pred|NEONDataTypeAsmPseudoInst|
+VLD4LNdAsm_8||VecListFourDByteIndexed,addrmode6align32,pred|NEONDataTypeAsmPseudoInst|
+VLD4LNdAsm_16||VecListFourDHWordIndexed,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VLD4LNdAsm_32||VecListFourDWordIndexed,addrmode6align64or128,pred|NEONDataTypeAsmPseudoInst|
+VLD4LNqAsm_16||VecListFourQHWordIndexed,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VLD4LNqAsm_32||VecListFourQWordIndexed,addrmode6align64or128,pred|NEONDataTypeAsmPseudoInst|
+VLD4dAsm_8||VecListFourD,addrmode6align64or128or256,pred|NEONDataTypeAsmPseudoInst|
+VLD4dAsm_16||VecListFourD,addrmode6align64or128or256,pred|NEONDataTypeAsmPseudoInst|
+VLD4dAsm_32||VecListFourD,addrmode6align64or128or256,pred|NEONDataTypeAsmPseudoInst|
+VLD4qAsm_8||VecListFourQ,addrmode6align64or128or256,pred|NEONDataTypeAsmPseudoInst|
+VLD4qAsm_16||VecListFourQ,addrmode6align64or128or256,pred|NEONDataTypeAsmPseudoInst|
+VLD4qAsm_32||VecListFourQ,addrmode6align64or128or256,pred|NEONDataTypeAsmPseudoInst|
+VST4LNdAsm_8||VecListFourDByteIndexed,addrmode6align32,pred|NEONDataTypeAsmPseudoInst|
+VST4LNdAsm_16||VecListFourDHWordIndexed,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VST4LNdAsm_32||VecListFourDWordIndexed,addrmode6align64or128,pred|NEONDataTypeAsmPseudoInst|
+VST4LNqAsm_16||VecListFourQHWordIndexed,addrmode6align64,pred|NEONDataTypeAsmPseudoInst|
+VST4LNqAsm_32||VecListFourQWordIndexed,addrmode6align64or128,pred|NEONDataTypeAsmPseudoInst|
+VST4dAsm_8||VecListFourD,addrmode6align64or128or256,pred|NEONDataTypeAsmPseudoInst|
+VST4dAsm_16||VecListFourD,addrmode6align64or128or256,pred|NEONDataTypeAsmPseudoInst|
+VST4dAsm_32||VecListFourD,addrmode6align64or128or256,pred|NEONDataTypeAsmPseudoInst|
+VST4qAsm_8||VecListFourQ,addrmode6align64or128or256,pred|NEONDataTypeAsmPseudoInst|
+VST4qAsm_16||VecListFourQ,addrmode6align64or128or256,pred|NEONDataTypeAsmPseudoInst|
+VST4qAsm_32||VecListFourQ,addrmode6align64or128or256,pred|NEONDataTypeAsmPseudoInst|
+BF16VDOTS_VDOTD|RegTy:$dst|RegTy:$Vd, RegTy:$Vn, RegTy:$Vm|BF16VDOTS|0
+BF16VDOTS_VDOTQ|RegTy:$dst|RegTy:$Vd, RegTy:$Vn, RegTy:$Vm|BF16VDOTS|1
+VMMLA|RegTy:$dst|RegTy:$Vd, RegTy:$Vn, RegTy:$Vm|BF16MM|1
+VBF16MALTQ|QPR:$dst|QPR:$Vd, QPR:$Vn, QPR:$Vm|VBF16MALQ|1
+VBF16MALBQ|QPR:$dst|QPR:$Vd, QPR:$Vn, QPR:$Vm|VBF16MALQ|0
+BF16_VCVT|DPR|QPR|N2V|0b11,0b11,0b01,0b10,0b01100,1,0
+ThumbSRImmAsmOperand|||ImmAsmOperand|1,32
+AddLikeOrOp|||ComplexPattern|1
+tHINT||imm0_15|T1pI|
+tBKPT||imm0_255|T1I|
+tHLT||imm0_63|T1I|
+tSETEND||setend_op|T1I|
+tCPS||imod_op,iflags_op|T1I|
+tPICADD|GPR|GPR,pclabel|TIt|
+tADDrSPi|tGPR|GPRsp,t_imm0_1020s4|T1pI|
+tADDframe|tGPR|i32imm,i32imm|PseudoInst|
+tADDspi|GPRsp|GPRsp,t_imm0_508s4|T1pIt|
+tSUBspi|GPRsp|GPRsp,t_imm0_508s4|T1pIt|
+tADDrSP|GPR|GPRsp,GPR|T1pI|
+tADDspr|GPRsp|GPRsp,GPR|T1pIt|
+tBX||GPR,pred|TI|
+tBXNS||GPR,pred|TI|
+tBX_RET||pred|tPseudoExpand|2
+tBXNS_RET|||tPseudoInst|2
+tBX_RET_vararg||tGPR,pred|tPseudoExpand|2
+tBL||pred,thumb_bl_target|TIx2|0b11110,0b11,1
+tBLXi||pred,thumb_blx_target|TIx2|0b11110,0b11,0
+tBLXr||pred,GPR|TI|
+tBLXr_noip||pred,GPRnoip|ARMPseudoExpand|2
+tBLXNSr||pred,GPRnopc|TI|
+tBLXNS_CALL||GPRnopc|PseudoInst|
+tBX_CALL||tGPR|tPseudoInst|4
+tBL_PUSHLR||GPRlr,pred,thumb_bl_target|tPseudoInst|4
+tB||t_brtarget|T1pI|
+tBfar||thumb_bl_target,pred|tPseudoExpand|4
+tBR_JTr||tGPR,i32imm|tPseudoInst|0
+tBcc||thumb_bcc_target,pred|T1I|
+tTAILJMPr||GPR|tPseudoExpand|4
+tTAILJMPdND||t_brtarget,pred|tPseudoExpand|4
+tSVC||imm0_255|T1pI|
+tLDRpci|tGPR|t_addrmode_pc|T1pIs|
+tLDRspi|tGPR|t_addrmode_sp|T1pIs|
+tSTRspi||tGPR,t_addrmode_sp|T1pIs|
+tLDMIA||tGPR,pred,reglist,variable_ops|T1I|
+tSTMIA_UPD|tGPR|tGPR,pred,reglist,variable_ops|Thumb1I|2
+tPOP||pred,reglist,variable_ops|T1I|
+tPUSH||pred,reglist,variable_ops|T1I|
+tADCS|tGPR|tGPR,tGPR|tPseudoInst|2
+tADDSi3|tGPR|tGPR,imm0_7|tPseudoInst|2
+tADDSi8|tGPR|tGPR,imm0_255_expr|tPseudoInst|2
+tADDSrr|tGPR|tGPR,tGPR|tPseudoInst|2
+tADDhirr|GPR|GPR,GPR|T1pIt|
+tCMPi8||tGPR,imm0_255|T1pI|
+tCMPhir||GPR,GPR|T1pI|
+tMOVi8|tGPR|imm0_255_expr|T1sI|
+tMOVr|GPR|GPR|Thumb1pI|2
+tMOVSr|tGPR|tGPR|T1I|
+tSBCS|tGPR|tGPR,tGPR|tPseudoInst|2
+tSUBSi3|tGPR|tGPR,imm0_7|tPseudoInst|2
+tSUBSi8|tGPR|tGPR,imm0_255|tPseudoInst|2
+tSUBSrr|tGPR|tGPR,tGPR|tPseudoInst|2
+tRSBS|tGPR|tGPR|tPseudoInst|2
+tLSLSri|tGPR|tGPR,imm0_31|tPseudoInst|2
+tUDF||imm0_255|TI|
+tADR|tGPR|t_adrlabel,pred|T1I|
+tLEApcrel|tGPR|i32imm,pred|tPseudoInst|2
+tLEApcrelJT|tGPR|i32imm,pred|tPseudoInst|2
+tTBB_JT||tGPRwithpc,tGPR,i32imm,i32imm|tPseudoInst|0
+tTBH_JT||tGPRwithpc,tGPR,i32imm,i32imm|tPseudoInst|0
+tTPsoft|||tPseudoInst|4
+tInt_eh_sjlj_setjmp||tGPR,tGPR|ThumbXI|0
+tInt_eh_sjlj_longjmp||tGPR,tGPR|XI|0
+tLDRLIT_ga_pcrel|tGPR|i32imm|PseudoInst|
+tLDRLIT_ga_abs|tGPR|i32imm|PseudoInst|
+tMOVi32imm|rGPR|i32imm|PseudoInst|
+tLDR_postidx|tGPR,tGPR|tGPR,pred|tPseudoInst|4
+tLDRpci_pic|tGPR|i32imm,pclabel|PseudoInst|
+tPOP_RET||pred,reglist,variable_ops|tPseudoExpand|2
+tBRIND||GPR,pred|tPseudoExpand|2
+tCMP_SWAP_8|GPR,tGPR|GPR,tGPR,GPR|PseudoInst|
+tCMP_SWAP_16|GPR,tGPR|GPR,tGPR,GPR|PseudoInst|
+tCMP_SWAP_32|GPR,tGPR|GPR,GPR,GPR|PseudoInst|
+imm0_4095_asmoperand|||ImmAsmOperand|0,4095
+ri|rGPR|rGPR,t2_so_imm|T2sTwoRegImm|
+rr|rGPR|rGPR,rGPR|T2sThreeReg|
+rs|rGPR|rGPR,t2_so_reg|T2sTwoRegShiftedReg|
+ri|rGPR|rGPR,t2_so_imm|T2sTwoRegImm|
+rr|rGPR|rGPR,rGPR|T2sThreeReg|
+rs|rGPR|rGPR,t2_so_reg|T2sTwoRegShiftedReg|
+ri|rGPR|GPRnopc,t2_so_imm,pred|t2PseudoInst|4
+rr|rGPR|GPRnopc,rGPR,pred|t2PseudoInst|4
+rs|rGPR|GPRnopc,t2_so_reg,pred|t2PseudoInst|4
+ri|rGPR|rGPR,t2_so_imm,pred|t2PseudoInst|4
+rs|rGPR|rGPR,t2_so_reg,pred|t2PseudoInst|4
+spImm|GPRsp|GPRsp,t2_so_imm|T2sTwoRegImm|
+ri|rGPR|GPRnopc,t2_so_imm|T2sTwoRegImm|
+ri12|rGPR|GPR,imm0_4095|T2I|
+spImm12|GPRsp|GPRsp,imm0_4095|T2I|
+rr|GPRnopc|GPRnopc,rGPR|T2sThreeReg|
+rs|GPRnopc|GPRnopc,t2_so_reg|T2sTwoRegShiftedReg|
+ri|rGPR|rGPR,t2_so_imm|T2sTwoRegImm|
+rr|rGPR|rGPR,rGPR|T2sThreeReg|
+rs|rGPR|rGPR,t2_so_reg|T2sTwoRegShiftedReg|
+ri|rGPR|rGPR,ty|T2sTwoRegShiftImm|
+rr|rGPR|rGPR,rGPR|T2sThreeReg|
+ri||LHSGPR,t2_so_imm|T2OneRegCmpImm|
+rr||LHSGPR,rGPR|T2TwoRegCmp|
+rs||LHSGPR,t2_so_reg|T2OneRegCmpShiftedReg|
+i12|target|t2addrmode_imm12|T2Ii12|
+i8|target|t2addrmode_negimm8|T2Ii8n|
+s|target|t2addrmode_so_reg|T2Iso|
+pci|target|t2ldrlabel|T2Ipc|
+i12||target,t2addrmode_imm12|T2Ii12|
+i8||target,t2addrmode_negimm8|T2Ii8n|
+s||target,t2addrmode_so_reg|T2Iso|
+t2ADR|rGPR|t2adrlabel,pred|T2PCOneRegImm|
+t2LEApcrel|rGPR|i32imm,pred|t2PseudoInst|4
+t2LEApcrelJT|rGPR|i32imm,pred|t2PseudoInst|4
+t2LDRDi8|rGPR,rGPR|t2addrmode_imm8s4|T2Ii8s4|1,0,1
+t2LDR_PRE|GPR,GPR|t2addrmode_imm8_pre|T2Ipreldst|0,0b10,1,1
+t2LDR_POST|GPR,GPR|addr_offset_none,t2am_imm8_offset|T2Ipostldst|0,0b10,1,0
+t2LDRB_PRE|GPR,GPR|t2addrmode_imm8_pre|T2Ipreldst|0,0b00,1,1
+t2LDRB_POST|GPR,GPR|addr_offset_none,t2am_imm8_offset|T2Ipostldst|0,0b00,1,0
+t2LDRH_PRE|GPR,GPR|t2addrmode_imm8_pre|T2Ipreldst|0,0b01,1,1
+t2LDRH_POST|GPR,GPR|addr_offset_none,t2am_imm8_offset|T2Ipostldst|0,0b01,1,0
+t2LDRSB_PRE|GPR,GPR|t2addrmode_imm8_pre|T2Ipreldst|1,0b00,1,1
+t2LDRSB_POST|GPR,GPR|addr_offset_none,t2am_imm8_offset|T2Ipostldst|1,0b00,1,0
+t2LDRSH_PRE|GPR,GPR|t2addrmode_imm8_pre|T2Ipreldst|1,0b01,1,1
+t2LDRSH_POST|GPR,GPR|addr_offset_none,t2am_imm8_offset|T2Ipostldst|1,0b01,1,0
+t2LDR_PRE_imm||GPR,t2addrmode_imm8_pre,pred|t2AsmPseudo|
+t2LDR_POST_imm||GPR,addr_offset_none,t2am_imm8_offset,pred|t2AsmPseudo|
+t2LDRB_OFFSET_imm||GPR,t2addrmode_negimm8,pred|t2AsmPseudo|
+t2LDRB_PRE_imm||GPR,t2addrmode_imm8_pre,pred|t2AsmPseudo|
+t2LDRB_POST_imm||GPR,addr_offset_none,t2am_imm8_offset,pred|t2AsmPseudo|
+t2LDRH_OFFSET_imm||GPR,t2addrmode_negimm8,pred|t2AsmPseudo|
+t2LDRH_PRE_imm||GPR,t2addrmode_imm8_pre,pred|t2AsmPseudo|
+t2LDRH_POST_imm||GPR,addr_offset_none,t2am_imm8_offset,pred|t2AsmPseudo|
+t2LDRSB_OFFSET_imm||GPR,t2addrmode_negimm8,pred|t2AsmPseudo|
+t2LDRSB_PRE_imm||GPR,t2addrmode_imm8_pre,pred|t2AsmPseudo|
+t2LDRSB_POST_imm||GPR,addr_offset_none,t2am_imm8_offset,pred|t2AsmPseudo|
+t2LDRSH_OFFSET_imm||GPR,t2addrmode_negimm8,pred|t2AsmPseudo|
+t2LDRSH_PRE_imm||GPR,t2addrmode_imm8_pre,pred|t2AsmPseudo|
+t2LDRSH_POST_imm||GPR,addr_offset_none,t2am_imm8_offset,pred|t2AsmPseudo|
+t2LDRT|rGPR:$Rt|t2addrmode_posimm8:$addr|T2IldT|0,0b10
+t2LDRBT|rGPR:$Rt|t2addrmode_posimm8:$addr|T2IldT|0,0b00
+t2LDRHT|rGPR:$Rt|t2addrmode_posimm8:$addr|T2IldT|0,0b01
+t2LDRSBT|rGPR:$Rt|t2addrmode_posimm8:$addr|T2IldT|1,0b00
+t2LDRSHT|rGPR:$Rt|t2addrmode_posimm8:$addr|T2IldT|1,0b01
+t2LDA|rGPR|addr_offset_none|T2Ildacq|0b1101,0b10
+t2LDAB|rGPR|addr_offset_none|T2Ildacq|0b1101,0b00
+t2LDAH|rGPR|addr_offset_none|T2Ildacq|0b1101,0b01
+t2STRDi8||rGPR,rGPR,t2addrmode_imm8s4|T2Ii8s4|1,0,0
+t2STR_PRE|GPRnopc|GPRnopc,t2addrmode_imm8_pre|T2Ipreldst|0,0b10,0,1
+t2STRH_PRE|GPRnopc|rGPR,t2addrmode_imm8_pre|T2Ipreldst|0,0b01,0,1
+t2STRB_PRE|GPRnopc|rGPR,t2addrmode_imm8_pre|T2Ipreldst|0,0b00,0,1
+t2STR_POST|GPRnopc|GPRnopc,addr_offset_none,t2am_imm8_offset|T2Ipostldst|0,0b10,0,0
+t2STRH_POST|GPRnopc|rGPR,addr_offset_none,t2am_imm8_offset|T2Ipostldst|0,0b01,0,0
+t2STRB_POST|GPRnopc|rGPR,addr_offset_none,t2am_imm8_offset|T2Ipostldst|0,0b00,0,0
+t2STR_preidx|GPRnopc|rGPR,GPRnopc,t2am_imm8_offset,pred|t2PseudoInst|4
+t2STRB_preidx|GPRnopc|rGPR,GPRnopc,t2am_imm8_offset,pred|t2PseudoInst|4
+t2STRH_preidx|GPRnopc|rGPR,GPRnopc,t2am_imm8_offset,pred|t2PseudoInst|4
+t2STR_PRE_imm||GPR,t2addrmode_imm8_pre,pred|t2AsmPseudo|
+t2STR_POST_imm||GPR,addr_offset_none,t2am_imm8_offset,pred|t2AsmPseudo|
+t2STRB_OFFSET_imm||GPR,t2addrmode_negimm8,pred|t2AsmPseudo|
+t2STRB_PRE_imm||GPR,t2addrmode_imm8_pre,pred|t2AsmPseudo|
+t2STRB_POST_imm||GPR,addr_offset_none,t2am_imm8_offset,pred|t2AsmPseudo|
+t2STRH_OFFSET_imm||GPR,t2addrmode_negimm8,pred|t2AsmPseudo|
+t2STRH_PRE_imm||GPR,t2addrmode_imm8_pre,pred|t2AsmPseudo|
+t2STRH_POST_imm||GPR,addr_offset_none,t2am_imm8_offset,pred|t2AsmPseudo|
+t2STRT||rGPR:$Rt, t2addrmode_posimm8:$addr|T2IstT|0b10
+t2STRBT||rGPR:$Rt, t2addrmode_posimm8:$addr|T2IstT|0b00
+t2STRHT||rGPR:$Rt, t2addrmode_posimm8:$addr|T2IstT|0b01
+t2LDRD_PRE|rGPR,rGPR,GPR|t2addrmode_imm8s4_pre|T2Ii8s4|1,1,1
+t2LDRD_POST|rGPR,rGPR,GPR|addr_offset_none,t2am_imm8s4_offset|T2Ii8s4post|0,1,1
+t2STRD_PRE|GPR|rGPR,rGPR,t2addrmode_imm8s4_pre|T2Ii8s4|1,1,0
+t2STRD_POST|GPR|rGPR,rGPR,addr_offset_none,t2am_imm8s4_offset|T2Ii8s4post|0,1,0
+t2STL||rGPR,addr_offset_none|T2Istrrel|0b10
+t2STLB||rGPR,addr_offset_none|T2Istrrel|0b00
+t2STLH||rGPR,addr_offset_none|T2Istrrel|0b01
+i12||t2addrmode_imm12|T2Ii12|
+i8||t2addrmode_negimm8|T2Ii8n|
+s||t2addrmode_so_reg|T2Iso|
+t2PLDpci||t2ldrlabel:$addr|T2Iplpci|0
+t2PLIpci||t2ldrlabel:$addr|T2Iplpci|1
+t2MOVr|GPRnopc|GPRnopc|T2sTwoReg|
+t2MOVi|rGPR|t2_so_imm|T2sOneRegImm|
+t2MOVi16|rGPR|imm0_65535_expr|T2I|
+t2MOVi16_ga_pcrel|rGPR|i32imm,pclabel|PseudoInst|
+t2MOVTi16|rGPR|rGPR,imm0_65535_expr|T2I|
+t2MOVTi16_ga_pcrel|rGPR|rGPR,i32imm,pclabel|PseudoInst|
+t2SXTB|||T2I_ext_rrot|0b100
+t2SXTH|||T2I_ext_rrot|0b000
+t2SXTB16|||T2I_ext_rrot_xtb16|0b010
+t2SXTAB|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rot_imm:$rot|T2I_exta_rrot|0b100
+t2SXTAH|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rot_imm:$rot|T2I_exta_rrot|0b000
+t2SXTAB16|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rot_imm:$rot|T2I_exta_rrot|0b010
+t2UXTB|||T2I_ext_rrot|0b101
+t2UXTH|||T2I_ext_rrot|0b001
+t2UXTB16|||T2I_ext_rrot_xtb16|0b011
+t2UXTAB|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rot_imm:$rot|T2I_exta_rrot|0b101
+t2UXTAH|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rot_imm:$rot|T2I_exta_rrot|0b001
+t2UXTAB16|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rot_imm:$rot|T2I_exta_rrot|0b011
+t2SEL|GPR|GPR,GPR|T2ThreeReg|
+t2QADD16|||T2I_pam_intrinsics|0b001,0b0001
+t2QADD8|||T2I_pam_intrinsics|0b000,0b0001
+t2QASX|||T2I_pam_intrinsics|0b010,0b0001
+t2UQSUB8|||T2I_pam_intrinsics|0b100,0b0101
+t2QSAX|||T2I_pam_intrinsics|0b110,0b0001
+t2QSUB16|||T2I_pam_intrinsics|0b101,0b0001
+t2QSUB8|||T2I_pam_intrinsics|0b100,0b0001
+t2UQADD16|||T2I_pam_intrinsics|0b001,0b0101
+t2UQADD8|||T2I_pam_intrinsics|0b000,0b0101
+t2UQASX|||T2I_pam_intrinsics|0b010,0b0101
+t2UQSAX|||T2I_pam_intrinsics|0b110,0b0101
+t2UQSUB16|||T2I_pam_intrinsics|0b101,0b0101
+t2QADD|||T2I_pam_intrinsics_rev|0b000,0b1000
+t2QSUB|||T2I_pam_intrinsics_rev|0b000,0b1010
+t2QDADD|||T2I_pam_intrinsics_rev|0b000,0b1001
+t2QDSUB|||T2I_pam_intrinsics_rev|0b000,0b1011
+t2SASX|||T2I_pam_intrinsics|0b010,0b0000
+t2SADD16|||T2I_pam_intrinsics|0b001,0b0000
+t2SADD8|||T2I_pam_intrinsics|0b000,0b0000
+t2SSAX|||T2I_pam_intrinsics|0b110,0b0000
+t2SSUB16|||T2I_pam_intrinsics|0b101,0b0000
+t2SSUB8|||T2I_pam_intrinsics|0b100,0b0000
+t2UASX|||T2I_pam_intrinsics|0b010,0b0100
+t2UADD16|||T2I_pam_intrinsics|0b001,0b0100
+t2UADD8|||T2I_pam_intrinsics|0b000,0b0100
+t2USAX|||T2I_pam_intrinsics|0b110,0b0100
+t2USUB16|||T2I_pam_intrinsics|0b101,0b0100
+t2USUB8|||T2I_pam_intrinsics|0b100,0b0100
+t2SHASX|||T2I_pam_intrinsics|0b010,0b0010
+t2SHADD16|||T2I_pam_intrinsics|0b001,0b0010
+t2SHADD8|||T2I_pam_intrinsics|0b000,0b0010
+t2SHSAX|||T2I_pam_intrinsics|0b110,0b0010
+t2SHSUB16|||T2I_pam_intrinsics|0b101,0b0010
+t2SHSUB8|||T2I_pam_intrinsics|0b100,0b0010
+t2UHASX|||T2I_pam_intrinsics|0b010,0b0110
+t2UHADD16|||T2I_pam_intrinsics|0b001,0b0110
+t2UHADD8|||T2I_pam_intrinsics|0b000,0b0110
+t2UHSAX|||T2I_pam_intrinsics|0b110,0b0110
+t2UHSUB16|||T2I_pam_intrinsics|0b101,0b0110
+t2UHSUB8|||T2I_pam_intrinsics|0b100,0b0110
+t2USAD8|rGPR|rGPR,rGPR|T2ThreeReg_mac|0,0b111,0b0000
+t2USADA8|rGPR|rGPR,rGPR,rGPR|T2FourReg_mac|0,0b111,0b0000
+t2SSAT||imm1_32,rGPR,t2_shift_imm|T2SatI|
+t2SSAT16||imm1_16,rGPR|T2SatI|
+t2USAT||imm0_31,rGPR,t2_shift_imm|T2SatI|
+t2USAT16||imm0_15,rGPR|T2SatI|
+t2RRX|rGPR|rGPR|T2sTwoReg|
+t2LSRs1|rGPR|rGPR|T2TwoRegShiftImm|
+t2ASRs1|rGPR|rGPR|T2TwoRegShiftImm|
+t2BFC|rGPR|rGPR,bf_inv_mask_imm|T2BitFI|
+t2SBFX|rGPR|rGPR,imm0_31,imm1_32|T2TwoRegBitFI|
+t2UBFX|rGPR|rGPR,imm0_31,imm1_32|T2TwoRegBitFI|
+t2UDF||imm0_65535|T2XI|
+t2BFI|rGPR|rGPR,rGPR,bf_inv_mask_imm|T2TwoRegBitFI|
+i|rGPR|t2_so_imm|T2sOneRegImm|
+r|rGPR|rGPR|T2sTwoReg|
+s|rGPR|t2_so_reg|T2sOneRegShiftedReg|
+t2MUL|rGPR|rGPR,rGPR|T2ThreeReg|
+t2MLA|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra|T2FourRegMLA|0b0000
+t2MLS|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra|T2FourRegMLA|0b0001
+t2SMULL|rGPR:$RdLo, rGPR:$RdHi|rGPR:$Rn, rGPR:$Rm|T2MulLong|0b000,0b0000
+t2UMULL|rGPR:$RdLo, rGPR:$RdHi|rGPR:$Rn, rGPR:$Rm|T2MulLong|0b010,0b0000
+t2SMLAL|rGPR:$RdLo, rGPR:$RdHi|rGPR:$Rn, rGPR:$Rm, rGPR:$RLo, rGPR:$RHi|T2MlaLong|0b100,0b0000
+t2UMLAL|rGPR:$RdLo, rGPR:$RdHi|rGPR:$Rn, rGPR:$Rm, rGPR:$RLo, rGPR:$RHi|T2MlaLong|0b110,0b0000
+t2UMAAL|rGPR:$RdLo, rGPR:$RdHi|rGPR:$Rn, rGPR:$Rm, rGPR:$RLo, rGPR:$RHi|T2MlaLong|0b110,0b0110
+t2SMMUL|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2SMMUL|0b0000
+t2SMMLA|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra|T2FourRegSMMLA|0b101,0b0000
+t2SMMLAR|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra|T2FourRegSMMLA|0b101,0b0001
+t2SMMLS|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra|T2FourRegSMMLA|0b110,0b0000
+t2SMMLSR|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra|T2FourRegSMMLA|0b110,0b0001
+t2SMULBB|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2ThreeRegSMUL|0b001,0b00
+t2SMULBT|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2ThreeRegSMUL|0b001,0b01
+t2SMULTB|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2ThreeRegSMUL|0b001,0b10
+t2SMULTT|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2ThreeRegSMUL|0b001,0b11
+t2SMULWB|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2ThreeRegSMUL|0b011,0b00
+t2SMULWT|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2ThreeRegSMUL|0b011,0b01
+t2SMLABB|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra|T2FourRegSMLA|0b001,0b00
+t2SMLABT|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra|T2FourRegSMLA|0b001,0b01
+t2SMLATB|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra|T2FourRegSMLA|0b001,0b10
+t2SMLATT|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra|T2FourRegSMLA|0b001,0b11
+t2SMLAWB|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra|T2FourRegSMLA|0b011,0b00
+t2SMLAWT|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm, rGPR:$Ra|T2FourRegSMLA|0b011,0b01
+t2SMLALBB|rGPR:$RdLo, rGPR:$RdHi|rGPR:$Rn, rGPR:$Rm, rGPR:$RLo, rGPR:$RHi|T2MlaLong|0b100,0b1000
+t2SMLALBT|rGPR:$RdLo, rGPR:$RdHi|rGPR:$Rn, rGPR:$Rm, rGPR:$RLo, rGPR:$RHi|T2MlaLong|0b100,0b1001
+t2SMLALTB|rGPR:$RdLo, rGPR:$RdHi|rGPR:$Rn, rGPR:$Rm, rGPR:$RLo, rGPR:$RHi|T2MlaLong|0b100,0b1010
+t2SMLALTT|rGPR:$RdLo, rGPR:$RdHi|rGPR:$Rn, rGPR:$Rm, rGPR:$RLo, rGPR:$RHi|T2MlaLong|0b100,0b1011
+t2SMUAD|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2DualHalfMul|0b010,0b0000
+t2SMUADX|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2DualHalfMul|0b010,0b0001
+t2SMUSD|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2DualHalfMul|0b100,0b0000
+t2SMUSDX|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2DualHalfMul|0b100,0b0001
+t2SMLAD|||T2DualHalfMulAdd|0b010,0b0000
+t2SMLADX|||T2DualHalfMulAdd|0b010,0b0001
+t2SMLSD|||T2DualHalfMulAdd|0b100,0b0000
+t2SMLSDX|||T2DualHalfMulAdd|0b100,0b0001
+t2SMLALD|||T2DualHalfMulAddLong|0b100,0b1100
+t2SMLALDX|||T2DualHalfMulAddLong|0b100,0b1101
+t2SMLSLD|||T2DualHalfMulAddLong|0b101,0b1100
+t2SMLSLDX|||T2DualHalfMulAddLong|0b101,0b1101
+t2SDIV|rGPR|rGPR,rGPR|T2ThreeReg|
+t2UDIV|rGPR|rGPR,rGPR|T2ThreeReg|
+t2CLZ|rGPR|rGPR|T2I_misc|0b11,0b00
+t2RBIT|rGPR|rGPR|T2I_misc|0b01,0b10
+t2REV|rGPR|rGPR|T2I_misc|0b01,0b00
+t2REV16|rGPR|rGPR|T2I_misc|0b01,0b01
+t2REVSH|rGPR|rGPR|T2I_misc|0b01,0b11
+t2PKHBT|rGPR|rGPR,rGPR,pkh_lsl_amt|T2ThreeReg|
+t2PKHTB|rGPR|rGPR,rGPR,pkh_asr_amt|T2ThreeReg|
+t2CRC32B|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2I_crc32|0,0b00
+t2CRC32CB|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2I_crc32|1,0b00
+t2CRC32H|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2I_crc32|0,0b01
+t2CRC32CH|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2I_crc32|1,0b01
+t2CRC32W|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2I_crc32|0,0b10
+t2CRC32CW|rGPR:$Rd|rGPR:$Rn, rGPR:$Rm|T2I_crc32|1,0b10
+t2CMNri||GPRnopc,t2_so_imm|T2OneRegCmpImm|
+t2CMNrr||GPRnopc,rGPR|T2TwoRegCmp|
+t2CMNrs||GPRnopc,t2_so_reg|T2OneRegCmpShiftedReg|
+t2MOVCCr|rGPR|rGPR,rGPR,pred|t2PseudoInst|4
+t2DMB||memb_opt|T2I|
+t2DSB||memb_opt|T2I|
+t2ISB||instsyncb_opt|T2I|
+t2TSB||tsb_opt|T2I|
+t2SB|||Thumb2XI|4
+t2LDREXB|rGPR|addr_offset_none|T2I_ldrex|0b0100,4
+t2LDREXH|rGPR|addr_offset_none|T2I_ldrex|0b0101,4
+t2LDREX|rGPR|t2addrmode_imm0_1020s4|Thumb2I|4
+t2LDREXD|rGPR,rGPR|addr_offset_none|T2I_ldrex|0b0111,4
+t2LDAEXB|rGPR|addr_offset_none|T2I_ldrex|0b1100,4
+t2LDAEXH|rGPR|addr_offset_none|T2I_ldrex|0b1101,4
+t2LDAEX|rGPR|addr_offset_none|Thumb2I|4
+t2LDAEXD|rGPR,rGPR|addr_offset_none|T2I_ldrex|0b1111,4
+t2STREXB|rGPR|rGPR,addr_offset_none|T2I_strex|0b0100,4
+t2STREXH|rGPR|rGPR,addr_offset_none|T2I_strex|0b0101,4
+t2STREX|rGPR|rGPR,t2addrmode_imm0_1020s4|Thumb2I|4
+t2STREXD|rGPR|rGPR,rGPR,addr_offset_none|T2I_strex|0b0111,4
+t2STLEXB|rGPR|rGPR,addr_offset_none|T2I_strex|0b1100,4
+t2STLEXH|rGPR|rGPR,addr_offset_none|T2I_strex|0b1101,4
+t2STLEX|rGPR|rGPR,addr_offset_none|Thumb2I|4
+t2STLEXD|rGPR|rGPR,rGPR,addr_offset_none|T2I_strex|0b1111,4
+t2Int_eh_sjlj_setjmp||tGPR,tGPR|Thumb2XI|0
+t2Int_eh_sjlj_setjmp_nofp||tGPR,tGPR|Thumb2XI|0
+t2LDMIA_RET|GPR|GPR,pred,reglist,variable_ops|t2PseudoExpand|4
+t2B||thumb_br_target|T2I|
+t2BR_JT||GPR,GPR,i32imm|t2basePseudoInst|0
+t2TBB_JT||GPR,GPR,i32imm,i32imm|t2PseudoInst|0
+t2TBH_JT||GPR,GPR,i32imm,i32imm|t2PseudoInst|0
+t2TBB||(addrmode_tbb |T2I|
+t2TBH||(addrmode_tbh |T2I|
+t2Bcc||brtarget,pred|Thumb2XI|4
+tTAILJMPd||thumb_br_target,pred|tPseudoExpand|4
+t2IT||it_pred,it_mask|Thumb2XI|2
+t2BXJ||GPRnopc|T2I|
+tCBZ||tGPR,thumb_cb_target|T1I|
+tCBNZ||tGPR,thumb_cb_target|T1I|
+t2CPS3p||imod_op,iflags_op,i32imm|t2CPS|
+t2CPS2p||imod_op,iflags_op|t2CPS|
+t2CPS1p||imm0_31|t2CPS|
+t2HINT||imm0_239|T2I|
+t2DBG||imm0_15|T2I|
+t2SMC||imm0_15|T2I|
+t2DCPS1|||T2DCPS|0b01
+t2DCPS2|||T2DCPS|0b10
+t2DCPS3|||T2DCPS|0b11
+t2SRSDB_UPD||imm0_31|T2SRS|0b00,1
+t2SRSDB||imm0_31|T2SRS|0b00,0
+t2SRSIA_UPD||imm0_31|T2SRS|0b11,1
+t2SRSIA||imm0_31|T2SRS|0b11,0
+t2RFEDBW||GPR|T2RFE|0b111010000011
+t2RFEDB||GPR|T2RFE|0b111010000001
+t2RFEIAW||GPR|T2RFE|0b111010011011
+t2RFEIA||GPR|T2RFE|0b111010011001
+t2SUBS_PC_LR||imm0_255|T2I|
+t2ERET|||InstAlias|1
+t2HVC||imm0_65535|T2XI|
+t2MOVi32imm|rGPR|i32imm|PseudoInst|
+t2MOV_ga_pcrel|rGPR|i32imm|PseudoInst|
+t2LDRLIT_ga_pcrel|rGPR|i32imm|PseudoInst|
+t2LDRpci_pic|rGPR|i32imm,pclabel|PseudoInst|
+_OFFSET||p_imm,c_imm,addrmode5|T2CI|
+_PRE||p_imm,c_imm,addrmode5_pre|T2CI|
+_POST||p_imm,c_imm,addr_offset_none,postidx_imm8s4|T2CI|
+_OPTION||p_imm,c_imm,addr_offset_none,coproc_option_imm|T2CI|
+t2MRS_AR|GPR||T2I|
+t2MRSsys_AR|GPR||T2I|
+t2MRSbanked|rGPR|banked_reg|T2I|
+t2MRS_M|rGPR|msr_mask|T2I|
+t2MSR_AR||msr_mask,rGPR|T2I|
+t2MSRbanked||banked_reg,rGPR|T2I|
+t2MSR_M||msr_mask,rGPR|T2I|
+t2MCR||p_imm,imm0_7,GPR,c_imm,c_imm,imm0_7|t2MovRCopro|0b1110,0
+t2MCR2||p_imm,imm0_7,GPR,c_imm,c_imm,imm0_7|t2MovRCopro|0b1111,0
+t2MRC|GPRwithAPSR|p_imm,imm0_7,c_imm,c_imm,imm0_7|t2MovRCopro|0b1110,1
+t2MRC2|GPRwithAPSR|p_imm,imm0_7,c_imm,c_imm,imm0_7|t2MovRCopro|0b1111,1
+t2MCRR||p_imm,imm0_15,GPR,GPR,c_imm|t2MovRRCopro|0b1110,0
+t2MCRR2||p_imm,imm0_15,GPR,GPR,c_imm|t2MovRRCopro|0b1111,0
+t2MRRC|GPR,GPR|p_imm,imm0_15,c_imm|t2MovRRCopro|0b1110,1
+t2MRRC2|GPR,GPR|p_imm,imm0_15,c_imm|t2MovRRCopro|0b1111,1
+t2CDP||p_imm,imm0_15,c_imm,c_imm,c_imm,imm0_7|T2Cop|0b1110
+t2CDP2||p_imm,imm0_15,c_imm,c_imm,c_imm,imm0_7|T2Cop|0b1111
+t2SETPAN||imm0_1|T1I|
+t2TT|rGPR:$Rt|GPRnopc:$Rn|T2TT|0b00
+t2TTT|rGPR:$Rt|GPRnopc:$Rn|T2TT|0b01
+t2TTA|rGPR:$Rt|GPRnopc:$Rn|T2TT|0b10
+t2TTAT|rGPR:$Rt|GPRnopc:$Rn|T2TT|0b11
+t2MOVsi||rGPR,t2_so_reg,pred|t2AsmPseudo|
+t2MOVSsi||rGPR,t2_so_reg,pred|t2AsmPseudo|
+t2MOVsr||rGPR,so_reg_reg,pred|t2AsmPseudo|
+t2MOVSsr||rGPR,so_reg_reg,pred|t2AsmPseudo|
+t2LDRpcrel||GPR,t2ldr_pcrel_imm12,pred|t2AsmPseudo|
+t2LDRBpcrel||GPRnopc,t2ldr_pcrel_imm12,pred|t2AsmPseudo|
+t2LDRHpcrel||GPRnopc,t2ldr_pcrel_imm12,pred|t2AsmPseudo|
+t2LDRSBpcrel||GPRnopc,t2ldr_pcrel_imm12,pred|t2AsmPseudo|
+t2LDRSHpcrel||GPRnopc,t2ldr_pcrel_imm12,pred|t2AsmPseudo|
+t2CLRM||pred,reglist_with_apsr,variable_ops|V8_1MI|
+t2BFi||bflabel_u4,bflabel_s16,pred|t2BF|
+t2BFic||bflabel_u4,bflabel_s12,bfafter_target,pred_noal|t2BF|
+t2BFr||bflabel_u4,rGPR,pred|t2BF|
+t2BFLi||bflabel_u4,bflabel_s18,pred|t2BF|
+t2BFLr||bflabel_u4,rGPR,pred|t2BF|
+arm_wls|||SDNode|2
+arm_le|||SDNode|2
+t2WLS|GPRlr|rGPR,wlslabel_u11|t2LOL|
+t2DLS|GPRlr|rGPR|t2LOL|
+t2LEUpdate|GPRlr|GPRlr,lelabel_u11|t2LOL|
+t2LE||lelabel_u11|t2LOL|
+t2CSEL|rGPR:$Rd|GPRwithZRnosp:$Rn, GPRwithZRnosp:$Rm, pred_noal:$fcond|CS|0b1000
+t2CSINC|rGPR:$Rd|GPRwithZRnosp:$Rn, GPRwithZRnosp:$Rm, pred_noal:$fcond|CS|0b1001
+t2CSINV|rGPR:$Rd|GPRwithZRnosp:$Rn, GPRwithZRnosp:$Rm, pred_noal:$fcond|CS|0b1010
+t2CSNEG|rGPR:$Rd|GPRwithZRnosp:$Rn, GPRwithZRnosp:$Rm, pred_noal:$fcond|CS|0b1011
+t2PACG|rGPR|pred,GPRnopc,GPRnopc|V8_1MI|
+t2AUTG||pred,GPRnosp,GPRnopc,GPRnopc|PACBTIAut|0
+t2BXAUT||pred,GPRnosp,rGPR,GPRnopc|PACBTIAut|1
+t2BXAUT_RET||pred|tPseudoExpand|4
+t2PAC|||PACBTIHintSpaceDefInst|0b00011101
+t2PACBTI|||PACBTIHintSpaceDefInst|0b00001101
+t2BTI|||PACBTIHintSpaceNoOpsInst|0b00001111
+t2AUT|||PACBTIHintSpaceUseInst|0b00101101
+t2CALL_BTI||pred,thumb_bl_target|PseudoInst|
+SDT_CMPFP|||SDTypeProfile|1,2
+SDT_CMPFP0|||SDTypeProfile|1,1
+SDT_VMOVDRR|||SDTypeProfile|1,2
+SDT_VMOVRRD|||SDTypeProfile|2,1
+SDT_VMOVSR|||SDTypeProfile|1,1
+arm_fmstat|||SDNode|1
+SDT_VMOVhr|||SDTypeProfile|1,1
+SDT_VMOVrh|||SDTypeProfile|1,1
+VLDRD|DPR|addrmode5|ADI5|0b1101,0b01
+VLDRS|SPR|addrmode5|ASI5|0b1101,0b01
+VLDRH|HPR|addrmode5fp16|AHI5|0b1101,0b01
+VSTRD||DPR,addrmode5|ADI5|0b1101,0b00
+VSTRS||SPR,addrmode5|ASI5|0b1101,0b00
+VSTRH||HPR,addrmode5fp16|AHI5|0b1101,0b00
+VLLDM||GPRnopc:$Rn, pred:$p, dpr_reglist:$regs|AXSI4FR|0,1
+VLLDM_T2||GPRnopc:$Rn, pred:$p, dpr_reglist:$regs|AXSI4FR|1,1
+VLSTM||GPRnopc:$Rn, pred:$p, dpr_reglist:$regs|AXSI4FR|0,0
+VLSTM_T2||GPRnopc:$Rn, pred:$p, dpr_reglist:$regs|AXSI4FR|1,0
+VADDD|DPR|DPR,DPR|ADbI|0b11100,0b11,0,0
+VADDS|SPR|SPR,SPR|ASbIn|0b11100,0b11,0,0
+VADDH|HPR|HPR,HPR|AHbI|0b11100,0b11,0,0
+VSUBD|DPR|DPR,DPR|ADbI|0b11100,0b11,1,0
+VSUBS|SPR|SPR,SPR|ASbIn|0b11100,0b11,1,0
+VSUBH|HPR|HPR,HPR|AHbI|0b11100,0b11,1,0
+VDIVD|DPR|DPR,DPR|ADbI|0b11101,0b00,0,0
+VDIVS|SPR|SPR,SPR|ASbI|0b11101,0b00,0,0
+VDIVH|HPR|HPR,HPR|AHbI|0b11101,0b00,0,0
+VMULD|DPR|DPR,DPR|ADbI|0b11100,0b10,0,0
+VMULS|SPR|SPR,SPR|ASbIn|0b11100,0b10,0,0
+VMULH|HPR|HPR,HPR|AHbI|0b11100,0b10,0,0
+VNMULD|DPR|DPR,DPR|ADbI|0b11100,0b10,1,0
+VNMULS|SPR|SPR,SPR|ASbI|0b11100,0b10,1,0
+VNMULH|HPR|HPR,HPR|AHbI|0b11100,0b10,1,0
+H|HPR|HPR,HPR|AHbInp|0b11100,0
+S|SPR|SPR,SPR|ASbInp|0b11100,0
+D|DPR|DPR,DPR|ADbInp|0b11100,0
+H|HPR|HPR,HPR|AHbInp|0b11101,0b00
+S|SPR|SPR,SPR|ASbInp|0b11101,0b00
+D|DPR|DPR,DPR|ADbInp|0b11101,0b00
+VCMPED||DPR,DPR|ADuI|0b11101,0b11,0b0100,0b11,0
+VCMPES||SPR,SPR|ASuI|0b11101,0b11,0b0100,0b11,0
+VCMPEH||HPR,HPR|AHuI|0b11101,0b11,0b0100,0b11,0
+VCMPD||DPR,DPR|ADuI|0b11101,0b11,0b0100,0b01,0
+VCMPS||SPR,SPR|ASuI|0b11101,0b11,0b0100,0b01,0
+VCMPH||HPR,HPR|AHuI|0b11101,0b11,0b0100,0b01,0
+VABSD|DPR|DPR|ADuI|0b11101,0b11,0b0000,0b11,0
+VABSS|SPR|SPR|ASuIn|0b11101,0b11,0b0000,0b11,0
+VABSH|HPR|HPR|AHuI|0b11101,0b11,0b0000,0b11,0
+VCMPEZD||DPR|ADuI|0b11101,0b11,0b0101,0b11,0
+VCMPEZS||SPR|ASuI|0b11101,0b11,0b0101,0b11,0
+VCMPEZH||HPR|AHuI|0b11101,0b11,0b0101,0b11,0
+VCMPZD||DPR|ADuI|0b11101,0b11,0b0101,0b01,0
+VCMPZS||SPR|ASuI|0b11101,0b11,0b0101,0b01,0
+VCMPZH||HPR|AHuI|0b11101,0b11,0b0101,0b01,0
+VCVTDS|DPR|SPR|ASuI|0b11101,0b11,0b0111,0b11,0
+VCVTSD|SPR|DPR|VFPAI|
+VCVTBHS|SPR|SPR|ASuI|0b11101,0b11,0b0010,0b01,0
+VCVTBSH|SPR|SPR,SPR|ASuI|0b11101,0b11,0b0011,0b01,0
+VCVTTHS|SPR|SPR|ASuI|0b11101,0b11,0b0010,0b11,0
+VCVTTSH|SPR|SPR,SPR|ASuI|0b11101,0b11,0b0011,0b11,0
+VCVTBHD|DPR|SPR|ADuI|0b11101,0b11,0b0010,0b01,0
+VCVTBDH|SPR|SPR,DPR|ADuI|0b11101,0b11,0b0011,0b01,0
+VCVTTHD|DPR|SPR|ADuI|0b11101,0b11,0b0010,0b11,0
+VCVTTDH|SPR|SPR,DPR|ADuI|0b11101,0b11,0b0011,0b11,0
+SH|SPR|HPR|AHuInp|0b11101,0b11,0b1100,0b11,0
+UH|SPR|HPR|AHuInp|0b11101,0b11,0b1100,0b01,0
+SS|SPR|SPR|ASuInp|0b11101,0b11,0b1100,0b11,0
+US|SPR|SPR|ASuInp|0b11101,0b11,0b1100,0b01,0
+SD|SPR|DPR|ASuInp|0b11101,0b11,0b1100,0b11,0
+UD|SPR|DPR|ASuInp|0b11101,0b11,0b1100,0b01,0
+VNEGD|DPR|DPR|ADuI|0b11101,0b11,0b0001,0b01,0
+VNEGS|SPR|SPR|ASuIn|0b11101,0b11,0b0001,0b01,0
+VNEGH|HPR|HPR|AHuI|0b11101,0b11,0b0001,0b01,0
+H|HPR|HPR|AHuI|0b11101,0b11,0b0110,0b11,0
+S|SPR|SPR|ASuI|0b11101,0b11,0b0110,0b11,0
+D|DPR|DPR|ADuI|0b11101,0b11,0b0110,0b11,0
+H|HPR|HPR|AHuInp|0b11101,0b11,0b1000,0b01,0
+S|SPR|SPR|ASuInp|0b11101,0b11,0b1000,0b01,0
+D|DPR|DPR|ADuInp|0b11101,0b11,0b1000,0b01,0
+VSQRTD|DPR|DPR|ADuI|0b11101,0b11,0b0001,0b11,0
+VSQRTS|SPR|SPR|ASuI|0b11101,0b11,0b0001,0b11,0
+VSQRTH|HPR|HPR|AHuI|0b11101,0b11,0b0001,0b11,0
+VMOVD|DPR|DPR|ADuI|0b11101,0b11,0b0000,0b01,0
+VMOVS|SPR|SPR|ASuI|0b11101,0b11,0b0000,0b01,0
+VMOVH|SPR|SPR|ASuInp|0b11101,0b11,0b0000,0b01,0
+VINSH|SPR|SPR,SPR|ASuInp|0b11101,0b11,0b0000,0b11,0
+VMOVRS|GPR|SPR|AVConv2I|0b11100001,0b1010
+VMOVSR|SPR|GPR|AVConv4I|0b11100000,0b1010
+VMOVRRD|GPR,GPR|DPR|AVConv3I|0b11000101,0b1011
+VMOVRRS|GPR,GPR|SPR,SPR|AVConv3I|0b11000101,0b1010
+VMOVDRR|DPR|GPR,GPR|AVConv5I|0b11000100,0b1011
+VMOVSRR|SPR,SPR|GPR,GPR|AVConv5I|0b11000100,0b1010
+VMOVRH|rGPR|HPR|AVConv2I|0b11100001,0b1001
+VMOVHR|HPR|rGPR|AVConv4I|0b11100000,0b1001
+VSITOD|DPR|SPR|AVConv1IDs_Encode|0b11101,0b11,0b1000,0b1011
+VSITOS|SPR|SPR|AVConv1InSs_Encode|0b11101,0b11,0b1000,0b1010
+VSITOH|HPR|SPR|AVConv1IHs_Encode|0b11101,0b11,0b1000,0b1001
+VUITOD|DPR|SPR|AVConv1IDs_Encode|0b11101,0b11,0b1000,0b1011
+VUITOS|SPR|SPR|AVConv1InSs_Encode|0b11101,0b11,0b1000,0b1010
+VUITOH|HPR|SPR|AVConv1IHs_Encode|0b11101,0b11,0b1000,0b1001
+VTOSIZD|SPR|DPR|AVConv1IsD_Encode|0b11101,0b11,0b1101,0b1011
+VTOSIZS|SPR|SPR|AVConv1InsS_Encode|0b11101,0b11,0b1101,0b1010
+VTOSIZH|SPR|HPR|AVConv1IsH_Encode|0b11101,0b11,0b1101,0b1001
+VTOUIZD|SPR|DPR|AVConv1IsD_Encode|0b11101,0b11,0b1100,0b1011
+VTOUIZS|SPR|SPR|AVConv1InsS_Encode|0b11101,0b11,0b1100,0b1010
+VTOUIZH|SPR|HPR|AVConv1IsH_Encode|0b11101,0b11,0b1100,0b1001
+VTOSIRD|SPR|DPR|AVConv1IsD_Encode|0b11101,0b11,0b1101,0b1011
+VTOSIRS|SPR|SPR|AVConv1InsS_Encode|0b11101,0b11,0b1101,0b1010
+VTOSIRH|SPR|SPR|AVConv1IsH_Encode|0b11101,0b11,0b1101,0b1001
+VTOUIRD|SPR|DPR|AVConv1IsD_Encode|0b11101,0b11,0b1100,0b1011
+VTOUIRS|SPR|SPR|AVConv1InsS_Encode|0b11101,0b11,0b1100,0b1010
+VTOUIRH|SPR|SPR|AVConv1IsH_Encode|0b11101,0b11,0b1100,0b1001
+VJCVT|SPR|DPR|AVConv1IsD_Encode|0b11101,0b11,0b1001,0b1011
+VTOSHH|SPR|SPR,fbits16|AVConv1XInsS_Encode|0b11101,0b11,0b1110,0b1001,0
+VTOUHH|SPR|SPR,fbits16|AVConv1XInsS_Encode|0b11101,0b11,0b1111,0b1001,0
+VTOSLH|SPR|SPR,fbits32|AVConv1XInsS_Encode|0b11101,0b11,0b1110,0b1001,1
+VTOULH|SPR|SPR,fbits32|AVConv1XInsS_Encode|0b11101,0b11,0b1111,0b1001,1
+VTOSHS|SPR|SPR,fbits16|AVConv1XInsS_Encode|0b11101,0b11,0b1110,0b1010,0
+VTOUHS|SPR|SPR,fbits16|AVConv1XInsS_Encode|0b11101,0b11,0b1111,0b1010,0
+VTOSLS|SPR|SPR,fbits32|AVConv1XInsS_Encode|0b11101,0b11,0b1110,0b1010,1
+VTOULS|SPR|SPR,fbits32|AVConv1XInsS_Encode|0b11101,0b11,0b1111,0b1010,1
+VTOSHD|DPR|DPR,fbits16|AVConv1XInsD_Encode|0b11101,0b11,0b1110,0b1011,0
+VTOUHD|DPR|DPR,fbits16|AVConv1XInsD_Encode|0b11101,0b11,0b1111,0b1011,0
+VTOSLD|DPR|DPR,fbits32|AVConv1XInsD_Encode|0b11101,0b11,0b1110,0b1011,1
+VTOULD|DPR|DPR,fbits32|AVConv1XInsD_Encode|0b11101,0b11,0b1111,0b1011,1
+VSHTOH|SPR|SPR,fbits16|AVConv1XInsS_Encode|0b11101,0b11,0b1010,0b1001,0
+VUHTOH|SPR|SPR,fbits16|AVConv1XInsS_Encode|0b11101,0b11,0b1011,0b1001,0
+VSLTOH|SPR|SPR,fbits32|AVConv1XInsS_Encode|0b11101,0b11,0b1010,0b1001,1
+VULTOH|SPR|SPR,fbits32|AVConv1XInsS_Encode|0b11101,0b11,0b1011,0b1001,1
+VSHTOS|SPR|SPR,fbits16|AVConv1XInsS_Encode|0b11101,0b11,0b1010,0b1010,0
+VUHTOS|SPR|SPR,fbits16|AVConv1XInsS_Encode|0b11101,0b11,0b1011,0b1010,0
+VSLTOS|SPR|SPR,fbits32|AVConv1XInsS_Encode|0b11101,0b11,0b1010,0b1010,1
+VULTOS|SPR|SPR,fbits32|AVConv1XInsS_Encode|0b11101,0b11,0b1011,0b1010,1
+VSHTOD|DPR|DPR,fbits16|AVConv1XInsD_Encode|0b11101,0b11,0b1010,0b1011,0
+VUHTOD|DPR|DPR,fbits16|AVConv1XInsD_Encode|0b11101,0b11,0b1011,0b1011,0
+VSLTOD|DPR|DPR,fbits32|AVConv1XInsD_Encode|0b11101,0b11,0b1010,0b1011,1
+VULTOD|DPR|DPR,fbits32|AVConv1XInsD_Encode|0b11101,0b11,0b1011,0b1011,1
+BF16_VCVTB|SPR:$Sd|SPR:$dst, SPR:$Sm|BF16_VCVT|0b01
+BF16_VCVTT|SPR:$Sd|SPR:$dst, SPR:$Sm|BF16_VCVT|0b11
+VMLAD|DPR|DPR,DPR,DPR|ADbI|0b11100,0b00,0,0
+VMLAS|SPR|SPR,SPR,SPR|ASbIn|0b11100,0b00,0,0
+VMLAH|HPR|HPR,HPR,HPR|AHbI|0b11100,0b00,0,0
+VMLSD|DPR|DPR,DPR,DPR|ADbI|0b11100,0b00,1,0
+VMLSS|SPR|SPR,SPR,SPR|ASbIn|0b11100,0b00,1,0
+VMLSH|HPR|HPR,HPR,HPR|AHbI|0b11100,0b00,1,0
+VNMLAD|DPR|DPR,DPR,DPR|ADbI|0b11100,0b01,1,0
+VNMLAS|SPR|SPR,SPR,SPR|ASbI|0b11100,0b01,1,0
+VNMLAH|HPR|HPR,HPR,HPR|AHbI|0b11100,0b01,1,0
+VNMLSD|DPR|DPR,DPR,DPR|ADbI|0b11100,0b01,0,0
+VNMLSS|SPR|SPR,SPR,SPR|ASbI|0b11100,0b01,0,0
+VNMLSH|HPR|HPR,HPR,HPR|AHbI|0b11100,0b01,0,0
+VFMAD|DPR|DPR,DPR,DPR|ADbI|0b11101,0b10,0,0
+VFMAS|SPR|SPR,SPR,SPR|ASbIn|0b11101,0b10,0,0
+VFMAH|HPR|HPR,HPR,HPR|AHbI|0b11101,0b10,0,0
+VFMSD|DPR|DPR,DPR,DPR|ADbI|0b11101,0b10,1,0
+VFMSS|SPR|SPR,SPR,SPR|ASbIn|0b11101,0b10,1,0
+VFMSH|HPR|HPR,HPR,HPR|AHbI|0b11101,0b10,1,0
+VFNMAD|DPR|DPR,DPR,DPR|ADbI|0b11101,0b01,1,0
+VFNMAS|SPR|SPR,SPR,SPR|ASbI|0b11101,0b01,1,0
+VFNMAH|HPR|HPR,HPR,HPR|AHbI|0b11101,0b01,1,0
+VFNMSD|DPR|DPR,DPR,DPR|ADbI|0b11101,0b01,0,0
+VFNMSS|SPR|SPR,SPR,SPR|ASbI|0b11101,0b01,0,0
+VFNMSH|HPR|HPR,HPR,HPR|AHbI|0b11101,0b01,0,0
+VMOVDcc|DPR|DPR,DPR,pred|PseudoInst|
+VMOVScc|SPR|SPR,SPR,pred|PseudoInst|
+VMOVHcc|HPR|HPR,HPR,pred|PseudoInst|
+VMRS|GPRnopc||MovFromVFP|
+VMRS_FPEXC|GPRnopc||MovFromVFP|
+VMRS_FPSID|GPRnopc||MovFromVFP|
+VMRS_MVFR0|GPRnopc||MovFromVFP|
+VMRS_MVFR1|GPRnopc||MovFromVFP|
+VMRS_MVFR2|GPRnopc||MovFromVFP|
+VMRS_FPINST|GPRnopc||MovFromVFP|
+VMRS_FPINST2|GPRnopc||MovFromVFP|
+VMRS_FPCXTNS|GPR||MovFromVFP|
+VMRS_FPCXTS|GPR||MovFromVFP|
+VMRS_VPR|GPR||MovFromVFP|
+VMRS_P0|GPR|VCCR|MovFromVFP|
+VMSR||GPRnopc|MovToVFP|
+VMSR_FPEXC||GPRnopc|MovToVFP|
+VMSR_FPSID||GPRnopc|MovToVFP|
+VMSR_FPINST||GPRnopc|MovToVFP|
+VMSR_FPINST2||GPRnopc|MovToVFP|
+VMSR_FPCXTNS||GPR|MovToVFP|
+VMSR_FPCXTS||GPR|MovToVFP|
+VMSR_VPR||GPR|MovToVFP|
+VMSR_P0|VCCR|GPR|MovToVFP|
+FCONSTD|DPR|vfp_f64imm|VFPAI|
+FCONSTS|SPR|vfp_f32imm|VFPAI|
+FCONSTH|HPR|vfp_f16imm|VFPAI|
+VSCCLRMD||pred,fp_dreglist_with_vpr,variable_ops|VFPXI|4
+VSCCLRMS||pred,fp_sreglist_with_vpr,variable_ops|VFPXI|4
+qqsub_0|||SubRegIndex|256
+qqsub_1|||SubRegIndex|256,256
+qsub_0|||SubRegIndex|128
+qsub_1|||SubRegIndex|128,128
+dsub_0|||SubRegIndex|64
+dsub_1|||SubRegIndex|64,64
+ssub_0|||SubRegIndex|32
+ssub_1|||SubRegIndex|32,32
+gsub_0|||SubRegIndex|32
+gsub_1|||SubRegIndex|32,32
+R0|||ARMReg|0
+R1|||ARMReg|1
+R2|||ARMReg|2
+R3|||ARMReg|3
+R4|||ARMReg|4
+R5|||ARMReg|5
+R6|||ARMReg|6
+R7|||ARMReg|7
+R8|||ARMReg|8
+R9|||ARMReg|9
+R10|||ARMReg|10
+R11|||ARMReg|11
+R12|||ARMReg|12
+SP|||ARMReg|13
+LR|||ARMReg|14
+PC|||ARMReg|15
+S0|||ARMFReg|0
+S2|||ARMFReg|2
+S4|||ARMFReg|4
+S6|||ARMFReg|6
+S8|||ARMFReg|8
+S10|||ARMFReg|10
+S12|||ARMFReg|12
+S14|||ARMFReg|14
+S16|||ARMFReg|16
+S18|||ARMFReg|18
+S20|||ARMFReg|20
+S22|||ARMFReg|22
+S24|||ARMFReg|24
+S26|||ARMFReg|26
+S28|||ARMFReg|28
+S30|||ARMFReg|30
+D0|||ARMReg|0
+D1|||ARMReg|1
+D2|||ARMReg|2
+D3|||ARMReg|3
+D4|||ARMReg|4
+D5|||ARMReg|5
+D6|||ARMReg|6
+D7|||ARMReg|7
+D8|||ARMReg|8
+D9|||ARMReg|9
+D10|||ARMReg|10
+D11|||ARMReg|11
+D12|||ARMReg|12
+D13|||ARMReg|13
+D14|||ARMReg|14
+D15|||ARMReg|15
+D16|||ARMFReg|16
+D17|||ARMFReg|17
+D18|||ARMFReg|18
+D19|||ARMFReg|19
+D20|||ARMFReg|20
+D21|||ARMFReg|21
+D22|||ARMFReg|22
+D23|||ARMFReg|23
+D24|||ARMFReg|24
+D25|||ARMFReg|25
+D26|||ARMFReg|26
+D27|||ARMFReg|27
+D28|||ARMFReg|28
+D29|||ARMFReg|29
+D30|||ARMFReg|30
+D31|||ARMFReg|31
+Q0|||ARMReg|0
+Q1|||ARMReg|1
+Q2|||ARMReg|2
+Q3|||ARMReg|3
+Q4|||ARMReg|4
+Q5|||ARMReg|5
+Q6|||ARMReg|6
+Q7|||ARMReg|7
+Q8|||ARMReg|8
+Q9|||ARMReg|9
+Q10|||ARMReg|10
+Q11|||ARMReg|11
+Q12|||ARMReg|12
+Q13|||ARMReg|13
+Q14|||ARMReg|14
+Q15|||ARMReg|15
+CPSR|||ARMReg|0
+APSR|||ARMReg|15
+APSR_NZCV|||ARMReg|15
+SPSR|||ARMReg|2
+FPSCR|||ARMReg|3
+FPSCR_NZCV|||ARMReg|3
+FPSCR_RM|||ARMReg|3
+ITSTATE|||ARMReg|4
+FPSID|||ARMReg|0
+MVFR2|||ARMReg|5
+MVFR1|||ARMReg|6
+MVFR0|||ARMReg|7
+FPEXC|||ARMReg|8
+FPINST|||ARMReg|9
+FPINST2|||ARMReg|10
+VPR|||ARMReg|64
+P0|||ARMReg|13
+FPCXTNS|||ARMReg|14
+FPCXTS|||ARMReg|15
+ZR|||ARMReg|15
+RA_AUTH_CODE|||ARMReg|12
+GPR|||RegisterClass|32,0
+GPRnoip|||RegisterClass|32
+GPRnopc|||RegisterClass|32
+GPRwithAPSR|||RegisterClass|32
+GPRnosp|||RegisterClass|32,0
+GPRwithAPSRnosp|||RegisterClass|32,0
+GPRwithZR|||RegisterClass|32
+GPRwithZRnosp|||RegisterClass|32
+GPRsp|||RegisterClass|32
+GPRlr|||RegisterClass|32
+rGPR|||RegisterClass|32
+tGPR|||RegisterClass|32
+tGPRwithpc|||RegisterClass|32
+hGPR|||RegisterClass|32
+tcGPR|||RegisterClass|32
+tcGPRnotr12|||RegisterClass|32
+tGPROdd|||RegisterClass|32
+tGPREven|||RegisterClass|32
+CCR|||RegisterClass|32
+VCCR|||RegisterClass|32
+cl_FPSCR_NZCV|||RegisterClass|32
+FP_STATUS_REGS|||RegisterClass|32
+SPR|||RegisterClass|32,0
+HPR|||RegisterClass|32,0
+SPR_8|||RegisterClass|32,0
+DPR|||RegisterClass|64,0
+FPWithVPR|||RegisterClass|32
+DPR_VFP2|||RegisterClass|64
+DPR_8|||RegisterClass|64
+QPR|||RegisterClass|128,0
+QPR_VFP2|||RegisterClass|128
+QPR_8|||RegisterClass|128
+MQPR|||RegisterClass|128
+DPair|||RegisterClass|128
+GPRPair|||RegisterClass|64
+GPRPairnosp|||RegisterClass|64
+DTriple|||RegisterClass|64
+QQPR|||RegisterClass|256
+MQQPR|||RegisterClass|256
+DQuad|||RegisterClass|256
+QQQQPR|||RegisterClass|256
+MQQQQPR|||RegisterClass|256
+DPairSpc|||RegisterClass|64
+DTripleSpc|||RegisterClass|64
+DQuadSpc|||RegisterClass|64
+FPCXTRegs|||RegisterClass|32
+IsLdrAm3NegRegOffPred|||Am3NegativeRegOffset|2
+IsLdrAm3NegRegOffPredX2|||Am3NegativeRegOffset|3
+IsLdrAm3NegRegOffPredX3|||Am3NegativeRegOffset|4
+A57UnitB|||ProcResource|1
+A57UnitI|||ProcResource|2
+A57UnitM|||ProcResource|1
+A57UnitL|||ProcResource|1
+A57UnitS|||ProcResource|1
+A57UnitX|||ProcResource|1
+A57UnitW|||ProcResource|1
+A57ReadMLA|||SchedReadAdvance|2
+A57ReadVFMA5|||SchedReadAdvance|5
+A57ReadVABAD|||SchedReadAdvance|3
+A57ReadVABAQ|||SchedReadAdvance|3
+A57ReadVABAL|||SchedReadAdvance|3
+A57ReadVPADAL|||SchedReadAdvance|3
+A57ReadVSRA|||SchedReadAdvance|3
+CortexA8Itineraries|||ProcessorItineraries|2,2,1,2,1,2,2,2,1,2,2,1,1,1,1,1,1,1,1,1,1,1,1,6,1,6,1,1,1,1,1,1,2,2,2,1,2,1,2,1,3,1,3,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,3,3,3,1,3,1,3,1,3,1,3,1,1,1,1,1,2,1,2,1,2,1,2,1,1,1,1,20,1,1,1,1,1,1,1,1,1,1,2,2,3,2,3,3,2,2,2,2,3,2,2,3,3,2,1,1,2,1,1,1,2,1,2,2,3,3,3,1,1,1,2,2,1,1,2,3,3,2,3,2,1,1,1,1,2,2,2,1,3,4,4,5,1,1,1,1,3,4,2,4,5,2,1,1,1,1,1,2,3,2,3,2,1,3,4,4,4,5,5,1,1,1,1,2,3,4,4,2,4,5,5,2,1,1,1,1,1,2,2,3,3,2,3,3,2,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,2,1,1,1,2,1,1,1,1,1,2,2,2,2,2,2,1,20,1,2,1,3,1,4,1,3,2,3,2,3,2,3,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,3,3,3,2,3,2,2,2,2,2,3,2,3,2,3,2,3,2,1,1,2,2,2,2,2,3,2,2,3,3,1,2,1,2,2,1,2,2,3,1,2,2,3,3
+CortexA9Itineraries|||ProcessorItineraries|1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,1,5,1,3,1,1,3,1,1,1,2,3,2,1,3,1,3,1,3,1,4,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0,0,1,0,0,1,2,0,0,1,2,2,0,0,2,0,0,1,2,0,0,1,2,2,0,0,1,2,2,2,0,0,1,1,0,0,2,1,1,1,0,0,0,0,2,1,0,0,2,0,0,3,2,3,0,0,3,1,1,1,0,0,2,2,1,1,0,0,3,2,3,2,0,0,3,2,1,1,1,1,0,0,2,0,0,2,2,1,0,0,3,4,0,0,5,6,1,1,1,1,0,0,3,4,2,0,0,5,6,2,1,1,1,1,1,0,0,3,4,0,0,3,4,2,1,0,0,3,4,4,0,0,4,5,5,1,1,1,1,2,0,0,3,4,4,2,0,0,4,5,5,2,1,1,1,1,1,2,0,0,2,3,3,0,0,2,3,3,2,1,0,0,1,0,0,1,1,0,0,1,1,1,0,0,1,1,1,2,0,0,1,1,1,0,0,1,1,1,1,0,0,1,1,1,1,1,0,0,1,1,1,1,1,2,0,0,1,0,0,1,1,1,0,0,1,1,0,0,1,1,1,2,0,0,1,1,1,1,0,0,1,1,1,1,1,2,0,0,1,1,0,0,1,1,1,1,0,0,1,1,1,0,0,1,1,1,1,1,0,0,1,1,1,0,0,1,1,1,1,1,0,0,1,1,1,2,0,0,1,1,1,1,1,2,0,0,1,1,1,2,0,0,1,1,1,1,1,2,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,2,0,0,2,0,0,1,0,0,1,0,0,1,0,0,1,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,2,0,0,3,2,0,0,3,2,0,0,3,0,0,3,0,0,2,0,0,2,0,0,2,0,0,2,0,0,3,2,0,0,3,2,0,0,3,2,0,0,3,2,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,0,0,1,0,0,0,0,0,0,0,0,2,0,0,1,0,0,2,0,0,2,0,0,2,0,0,3,2,0,0,4,2,0,0,3,2,0,0,4,2,0,0,2,0,0,2,0,0,2,1,0,0,3,1,0,0,4,1,0,0,1,0,0,1,0,0,2,0,0,2,2,0,0,2,2,3,0,0,2,2,3,3,0,0,1,2,0,0,1,2,2,0,0,1,2,2,3,0,0,1,2,2,3,3
+A9UnitALU|||ProcResource|2
+A9UnitMul|||ProcResource|1
+A9UnitAGU|||ProcResource|1
+A9UnitLS|||ProcResource|1
+A9UnitFP|||ProcResource|1
+A9UnitB|||ProcResource|1
+A9ReadALU|||SchedReadAdvance|1
+A9Read2|||SchedReadAdvance|1
+A9Read3|||SchedReadAdvance|2
+A9Read4|||SchedReadAdvance|3
+M4Unit|||ProcResource|1
+M55UnitALU|||ProcResource|1
+M55UnitVecALU|||ProcResource|1
+M55UnitVecFPALU|||ProcResource|1
+M55UnitLoadStore|||ProcResource|1
+M55UnitVecSys|||ProcResource|1
+M55Read0|||SchedReadAdvance|0
+M55Read1|||SchedReadAdvance|1
+M7UnitLoadL|||ProcResource|1
+M7UnitLoadH|||ProcResource|1
+M7UnitStore|||ProcResource|1
+M7UnitALU|||ProcResource|2
+M7UnitShift1|||ProcResource|1
+M7UnitShift2|||ProcResource|1
+M7UnitMAC|||ProcResource|1
+M7UnitBranch|||ProcResource|1
+M7UnitVFP|||ProcResource|1
+M7UnitVPortL|||ProcResource|1
+M7UnitVPortH|||ProcResource|1
+M7UnitSIMD|||ProcResource|1
+M7Read_EX2|||SchedReadAdvance|1
+M7Read_EX3|||SchedReadAdvance|2
+M7ReadFPMAC2|||SchedReadAdvance|2
+M85UnitLoadL|||ProcResource|1
+M85UnitLoadH|||ProcResource|1
+M85UnitStoreL|||ProcResource|1
+M85UnitStoreH|||ProcResource|1
+M85UnitALU|||ProcResource|2
+M85UnitShift1|||ProcResource|1
+M85UnitShift2|||ProcResource|1
+M85UnitMAC|||ProcResource|1
+M85UnitBranch|||ProcResource|1
+M85UnitVFPAL|||ProcResource|1
+M85UnitVFPAH|||ProcResource|1
+M85UnitVFPBL|||ProcResource|1
+M85UnitVFPBH|||ProcResource|1
+M85UnitVFPCL|||ProcResource|1
+M85UnitVFPCH|||ProcResource|1
+M85UnitVFPD|||ProcResource|1
+M85UnitVPortL|||ProcResource|1
+M85UnitVPortH|||ProcResource|1
+M85UnitSIMD|||ProcResource|1
+M85UnitLShift|||ProcResource|1
+M85UnitDiv|||ProcResource|1
+M85UnitSlot0|||ProcResource|1
+M85Read_EX1|||SchedReadAdvance|0
+M85Read_EX2|||SchedReadAdvance|1
+M85Read_EX3|||SchedReadAdvance|2
+M85Read_EX4|||SchedReadAdvance|3
+M85ReadFPMAC2|||SchedReadAdvance|2
+R52UnitALU|||ProcResource|2
+R52UnitMAC|||ProcResource|1
+R52UnitDiv|||ProcResource|1
+R52UnitLd|||ProcResource|1
+R52UnitB|||ProcResource|1
+R52UnitFPALU|||ProcResource|2
+R52UnitFPMUL|||ProcResource|2
+R52UnitFPDIV|||ProcResource|1
+SwiftWriteP0TwoCycleTwoUops|||WriteSequence|2
+ARMV6Itineraries|||ProcessorItineraries|2,2,3,2,2,2,3,2,2,3,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,1,2,1,2,1,2,2,2,2,1,1,1,1,1,1,2,1,1,1,2,1,1,1,2,2,2,2,2,1,2,1,2,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,10,2,2,1,1,2,1,1,2,2,2,2,2,2,2

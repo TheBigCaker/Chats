@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MTCTR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MTCTR8": {"PowerPC": "MTCTR8"},
+    "MTCTR8loop": {"PowerPC": "MTCTR8loop"}
+  },
+  "INPUTS": {
+    "MTCTR8": {"PowerPC": [["g8rc",0]]},
+    "MTCTR8loop": {"PowerPC": [["g8rc",0]]}
+  },
+  "OUTPUTS": {
+    "MTCTR8": {"PowerPC": []},
+    "MTCTR8loop": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "MTCTR8": {"PowerPC": ["XFXForm_1_ext","31","467","9"]},
+    "MTCTR8loop": {"PowerPC": ["XFXForm_1_ext","31","467","9"]}
+  },
+  "OUTPUT_BYTES": {
+    "MTCTR8": {"PowerPC": ["XFXForm_1_ext","31","467","9"]},
+    "MTCTR8loop": {"PowerPC": ["XFXForm_1_ext","31","467","9"]}
+  }
+}

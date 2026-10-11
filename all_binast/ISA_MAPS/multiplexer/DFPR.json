@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DFPR",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "DFPRegs": {"Sparc": "DFPRegs"}
+  },
+  "INPUTS": {
+    "DFPRegs": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "DFPRegs": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "DFPRegs": {"Sparc": ["RegisterClass","64","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "DFPRegs": {"Sparc": ["RegisterClass","64","0"]}
+  }
+}

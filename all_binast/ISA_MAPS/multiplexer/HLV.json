@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "HLV",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "HLV_B": {"RISCV": "HLV_B"},
+    "HLV_BU": {"RISCV": "HLV_BU"},
+    "HLV_H": {"RISCV": "HLV_H"},
+    "HLV_HU": {"RISCV": "HLV_HU"},
+    "HLV_W": {"RISCV": "HLV_W"},
+    "HLV_WU": {"RISCV": "HLV_WU"},
+    "HLV_D": {"RISCV": "HLV_D"}
+  },
+  "INPUTS": {
+    "HLV_B": {"RISCV": [["GPRMemZeroOffset:$rs1",0]]},
+    "HLV_BU": {"RISCV": [["GPRMemZeroOffset:$rs1",0]]},
+    "HLV_H": {"RISCV": [["GPRMemZeroOffset:$rs1",0]]},
+    "HLV_HU": {"RISCV": [["GPRMemZeroOffset:$rs1",0]]},
+    "HLV_W": {"RISCV": [["GPRMemZeroOffset:$rs1",0]]},
+    "HLV_WU": {"RISCV": [["GPRMemZeroOffset:$rs1",0]]},
+    "HLV_D": {"RISCV": [["GPRMemZeroOffset:$rs1",0]]}
+  },
+  "OUTPUTS": {
+    "HLV_B": {"RISCV": [["GPR:$rd",0]]},
+    "HLV_BU": {"RISCV": [["GPR:$rd",0]]},
+    "HLV_H": {"RISCV": [["GPR:$rd",0]]},
+    "HLV_HU": {"RISCV": [["GPR:$rd",0]]},
+    "HLV_W": {"RISCV": [["GPR:$rd",0]]},
+    "HLV_WU": {"RISCV": [["GPR:$rd",0]]},
+    "HLV_D": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "HLV_B": {"RISCV": ["HLoad_r","0b0110000","0b00000"]},
+    "HLV_BU": {"RISCV": ["HLoad_r","0b0110000","0b00001"]},
+    "HLV_H": {"RISCV": ["HLoad_r","0b0110010","0b00000"]},
+    "HLV_HU": {"RISCV": ["HLoad_r","0b0110010","0b00001"]},
+    "HLV_W": {"RISCV": ["HLoad_r","0b0110100","0b00000"]},
+    "HLV_WU": {"RISCV": ["HLoad_r","0b0110100","0b00001"]},
+    "HLV_D": {"RISCV": ["HLoad_r","0b0110110","0b00000"]}
+  },
+  "OUTPUT_BYTES": {
+    "HLV_B": {"RISCV": ["HLoad_r","0b0110000","0b00000"]},
+    "HLV_BU": {"RISCV": ["HLoad_r","0b0110000","0b00001"]},
+    "HLV_H": {"RISCV": ["HLoad_r","0b0110010","0b00000"]},
+    "HLV_HU": {"RISCV": ["HLoad_r","0b0110010","0b00001"]},
+    "HLV_W": {"RISCV": ["HLoad_r","0b0110100","0b00000"]},
+    "HLV_WU": {"RISCV": ["HLoad_r","0b0110100","0b00001"]},
+    "HLV_D": {"RISCV": ["HLoad_r","0b0110110","0b00000"]}
+  }
+}

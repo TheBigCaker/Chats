@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "REP",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "REP_MOVSB_32": {"X86": "REP_MOVSB_32"},
+    "REP_MOVSW_32": {"X86": "REP_MOVSW_32"},
+    "REP_MOVSD_32": {"X86": "REP_MOVSD_32"},
+    "REP_MOVSB_64": {"X86": "REP_MOVSB_64"},
+    "REP_MOVSW_64": {"X86": "REP_MOVSW_64"},
+    "REP_MOVSD_64": {"X86": "REP_MOVSD_64"},
+    "REP_PREFIX": {"X86": "REP_PREFIX"}
+  },
+  "INPUTS": {
+    "REP_MOVSB_32": {"X86": []},
+    "REP_MOVSW_32": {"X86": []},
+    "REP_MOVSD_32": {"X86": []},
+    "REP_MOVSB_64": {"X86": []},
+    "REP_MOVSW_64": {"X86": []},
+    "REP_MOVSD_64": {"X86": []},
+    "REP_PREFIX": {"X86": []}
+  },
+  "OUTPUTS": {
+    "REP_MOVSB_32": {"X86": []},
+    "REP_MOVSW_32": {"X86": []},
+    "REP_MOVSD_32": {"X86": []},
+    "REP_MOVSB_64": {"X86": []},
+    "REP_MOVSW_64": {"X86": []},
+    "REP_MOVSD_64": {"X86": []},
+    "REP_PREFIX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "REP_MOVSB_32": {"X86": ["0xA4"]},
+    "REP_MOVSW_32": {"X86": ["0xA5"]},
+    "REP_MOVSD_32": {"X86": ["0xA5"]},
+    "REP_MOVSB_64": {"X86": ["0xA4"]},
+    "REP_MOVSW_64": {"X86": ["0xA5"]},
+    "REP_MOVSD_64": {"X86": ["0xA5"]},
+    "REP_PREFIX": {"X86": ["0xF3"]}
+  },
+  "OUTPUT_BYTES": {
+    "REP_MOVSB_32": {"X86": ["0xA4"]},
+    "REP_MOVSW_32": {"X86": ["0xA5"]},
+    "REP_MOVSD_32": {"X86": ["0xA5"]},
+    "REP_MOVSB_64": {"X86": ["0xA4"]},
+    "REP_MOVSW_64": {"X86": ["0xA5"]},
+    "REP_MOVSD_64": {"X86": ["0xA5"]},
+    "REP_PREFIX": {"X86": ["0xF3"]}
+  }
+}

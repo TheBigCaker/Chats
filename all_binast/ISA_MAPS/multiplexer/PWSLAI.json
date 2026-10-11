@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PWSLAI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PWSLAI_B": {"RISCV": "PWSLAI_B"},
+    "PWSLAI_H": {"RISCV": "PWSLAI_H"}
+  },
+  "INPUTS": {
+    "PWSLAI_B": {"RISCV": []},
+    "PWSLAI_H": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PWSLAI_B": {"RISCV": []},
+    "PWSLAI_H": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PWSLAI_B": {"RISCV": ["RVPWideningShiftB_ri","0b100"]},
+    "PWSLAI_H": {"RISCV": ["RVPWideningShiftH_ri","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "PWSLAI_B": {"RISCV": ["RVPWideningShiftB_ri","0b100"]},
+    "PWSLAI_H": {"RISCV": ["RVPWideningShiftH_ri","0b100"]}
+  }
+}

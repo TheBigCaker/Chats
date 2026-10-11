@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSCVQPSWZ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSCVQPSWZ": {"PowerPC": "XSCVQPSWZ"}
+  },
+  "INPUTS": {
+    "XSCVQPSWZ": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSCVQPSWZ": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSCVQPSWZ": {"PowerPC": ["X_VT5_XO5_VB5","63","9","836"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSCVQPSWZ": {"PowerPC": ["X_VT5_XO5_VB5","63","9","836"]}
+  }
+}

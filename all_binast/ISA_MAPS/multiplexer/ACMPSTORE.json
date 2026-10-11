@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ACMPSTORE",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "ACMPSTORE.i32": {"Mali": "ACMPSTORE.i32"},
+    "ACMPSTORE.i64": {"Mali": "ACMPSTORE.i64"}
+  },
+  "INPUTS": {
+    "ACMPSTORE.i32": {"Mali": [["R32",32],["R32",32]]},
+    "ACMPSTORE.i64": {"Mali": [["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "ACMPSTORE.i32": {"Mali": [["R",32]]},
+    "ACMPSTORE.i64": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "ACMPSTORE.i32": {"Mali": ["Bifrost_add","0x648c0","0xffdc0"]},
+    "ACMPSTORE.i64": {"Mali": ["Bifrost_add","0x64900","0xffdc0"]}
+  },
+  "OUTPUT_BYTES": {
+    "ACMPSTORE.i32": {"Mali": ["Bifrost_add","0x648c0","0xffdc0"]},
+    "ACMPSTORE.i64": {"Mali": ["Bifrost_add","0x64900","0xffdc0"]}
+  }
+}

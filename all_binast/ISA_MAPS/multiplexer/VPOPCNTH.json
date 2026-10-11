@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VPOPCNTH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VPOPCNTH": {"PowerPC": "VPOPCNTH"}
+  },
+  "INPUTS": {
+    "VPOPCNTH": {"PowerPC": [["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VPOPCNTH": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VPOPCNTH": {"PowerPC": ["VXForm_2","1859"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPOPCNTH": {"PowerPC": ["VXForm_2","1859"]}
+  }
+}

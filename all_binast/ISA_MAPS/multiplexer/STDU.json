@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STDU",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STDU": {"PowerPC": "STDU"}
+  },
+  "INPUTS": {
+    "STDU": {"PowerPC": [["g8rc",0],["(memrix",0]]}
+  },
+  "OUTPUTS": {
+    "STDU": {"PowerPC": [["ptr_rc_nor0",0]]}
+  },
+  "INPUT_BYTES": {
+    "STDU": {"PowerPC": ["DSForm_1","62","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "STDU": {"PowerPC": ["DSForm_1","62","1"]}
+  }
+}

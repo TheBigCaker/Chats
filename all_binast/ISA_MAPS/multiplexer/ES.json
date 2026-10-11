@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ES",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "ES_PREFIX": {"X86": "ES_PREFIX"}
+  },
+  "INPUTS": {
+    "ES_PREFIX": {"X86": []}
+  },
+  "OUTPUTS": {
+    "ES_PREFIX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "ES_PREFIX": {"X86": ["0x26"]}
+  },
+  "OUTPUT_BYTES": {
+    "ES_PREFIX": {"X86": ["0x26"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CDTBCD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "CDTBCD8": {"PowerPC": "CDTBCD8"}
+  },
+  "INPUTS": {
+    "CDTBCD8": {"PowerPC": [["g8rc",0]]}
+  },
+  "OUTPUTS": {
+    "CDTBCD8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "CDTBCD8": {"PowerPC": ["XForm_11","31","282"]}
+  },
+  "OUTPUT_BYTES": {
+    "CDTBCD8": {"PowerPC": ["XForm_11","31","282"]}
+  }
+}

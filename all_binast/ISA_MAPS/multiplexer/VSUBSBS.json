@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSUBSBS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSUBSBS": {"PowerPC": "VSUBSBS"}
+  },
+  "INPUTS": {
+    "VSUBSBS": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSUBSBS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSUBSBS": {"PowerPC": ["VX1_Int_Ty","1792"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSUBSBS": {"PowerPC": ["VX1_Int_Ty","1792"]}
+  }
+}

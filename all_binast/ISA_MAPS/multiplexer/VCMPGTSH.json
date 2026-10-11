@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VCMPGTSH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCMPGTSH": {"PowerPC": "VCMPGTSH"},
+    "VCMPGTSH_rec": {"PowerPC": "VCMPGTSH_rec"}
+  },
+  "INPUTS": {
+    "VCMPGTSH": {"PowerPC": []},
+    "VCMPGTSH_rec": {"PowerPC": [["vrrc:$VA",0],["vrrc:$VB",0]]}
+  },
+  "OUTPUTS": {
+    "VCMPGTSH": {"PowerPC": []},
+    "VCMPGTSH_rec": {"PowerPC": [["vrrc:$VD",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCMPGTSH": {"PowerPC": ["VCMP","838"]},
+    "VCMPGTSH_rec": {"PowerPC": ["VCMP_rec","838"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCMPGTSH": {"PowerPC": ["VCMP","838"]},
+    "VCMPGTSH_rec": {"PowerPC": ["VCMP_rec","838"]}
+  }
+}

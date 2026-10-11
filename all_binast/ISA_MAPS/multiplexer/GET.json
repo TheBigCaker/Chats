@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "GET",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "GET_SHADERCYCLESHILO": {"AMDGPU": "GET_SHADERCYCLESHILO"},
+    "GET_GROUPSTATICSIZE": {"AMDGPU": "GET_GROUPSTATICSIZE"},
+    "GET_STACK_BASE": {"AMDGPU": "GET_STACK_BASE"}
+  },
+  "INPUTS": {
+    "GET_SHADERCYCLESHILO": {"AMDGPU": []},
+    "GET_GROUPSTATICSIZE": {"AMDGPU": []},
+    "GET_STACK_BASE": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "GET_SHADERCYCLESHILO": {"AMDGPU": [["SReg_64",0]]},
+    "GET_GROUPSTATICSIZE": {"AMDGPU": [["SReg_32",0]]},
+    "GET_STACK_BASE": {"AMDGPU": [["SGPR_32",0]]}
+  },
+  "INPUT_BYTES": {
+    "GET_SHADERCYCLESHILO": {"AMDGPU": ["SPseudoInstSI"]},
+    "GET_GROUPSTATICSIZE": {"AMDGPU": ["SPseudoInstSI"]},
+    "GET_STACK_BASE": {"AMDGPU": ["SPseudoInstSI"]}
+  },
+  "OUTPUT_BYTES": {
+    "GET_SHADERCYCLESHILO": {"AMDGPU": ["SPseudoInstSI"]},
+    "GET_GROUPSTATICSIZE": {"AMDGPU": ["SPseudoInstSI"]},
+    "GET_STACK_BASE": {"AMDGPU": ["SPseudoInstSI"]}
+  }
+}

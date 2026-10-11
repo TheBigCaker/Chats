@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SETEND",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SETEND": {"ARM": "SETEND"}
+  },
+  "INPUTS": {
+    "SETEND": {"ARM": [["setend_op",0]]}
+  },
+  "OUTPUTS": {
+    "SETEND": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SETEND": {"ARM": ["AXI"]}
+  },
+  "OUTPUT_BYTES": {
+    "SETEND": {"ARM": ["AXI"]}
+  }
+}

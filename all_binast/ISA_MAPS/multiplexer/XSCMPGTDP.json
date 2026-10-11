@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSCMPGTDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSCMPGTDP": {"PowerPC": "XSCMPGTDP"}
+  },
+  "INPUTS": {
+    "XSCMPGTDP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSCMPGTDP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSCMPGTDP": {"PowerPC": ["XX3_XT5_XA5_XB5","60","11"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSCMPGTDP": {"PowerPC": ["XX3_XT5_XA5_XB5","60","11"]}
+  }
+}

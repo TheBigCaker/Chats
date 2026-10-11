@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VERW",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VERWr": {"X86": "VERWr"},
+    "VERWm": {"X86": "VERWm"}
+  },
+  "INPUTS": {
+    "VERWr": {"X86": [["GR16",16]]},
+    "VERWm": {"X86": [["i16mem",0]]}
+  },
+  "OUTPUTS": {
+    "VERWr": {"X86": []},
+    "VERWm": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VERWr": {"X86": ["0x00"]},
+    "VERWm": {"X86": ["0x00"]}
+  },
+  "OUTPUT_BYTES": {
+    "VERWr": {"X86": ["0x00"]},
+    "VERWm": {"X86": ["0x00"]}
+  }
+}

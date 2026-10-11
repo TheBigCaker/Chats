@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DPF",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "DPFrm": {"ARM": "DPFrm"}
+  },
+  "INPUTS": {
+    "DPFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "DPFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "DPFrm": {"ARM": ["Format","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "DPFrm": {"ARM": ["Format","4"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CMPSB",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CMPSB": {"X86": "CMPSB"}
+  },
+  "INPUTS": {
+    "CMPSB": {"X86": [["dstidx8",0],["srcidx8",0]]}
+  },
+  "OUTPUTS": {
+    "CMPSB": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CMPSB": {"X86": ["0xA6"]}
+  },
+  "OUTPUT_BYTES": {
+    "CMPSB": {"X86": ["0xA6"]}
+  }
+}

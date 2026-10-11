@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSRAB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSRAB": {"PowerPC": "VSRAB"}
+  },
+  "INPUTS": {
+    "VSRAB": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSRAB": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSRAB": {"PowerPC": ["VX1_Int_Ty","772"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSRAB": {"PowerPC": ["VX1_Int_Ty","772"]}
+  }
+}

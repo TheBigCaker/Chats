@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FCSR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FCSR": {"RISCV": "FCSR"}
+  },
+  "INPUTS": {
+    "FCSR": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "FCSR": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "FCSR": {"RISCV": ["RISCVReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCSR": {"RISCV": ["RISCVReg","0"]}
+  }
+}

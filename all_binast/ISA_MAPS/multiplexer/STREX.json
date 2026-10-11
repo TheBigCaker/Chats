@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STREX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "STREX": {"ARM": "STREX"}
+  },
+  "INPUTS": {
+    "STREX": {"ARM": [["GPR",64],["addr_offset_none",0]]}
+  },
+  "OUTPUTS": {
+    "STREX": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "STREX": {"ARM": ["AIstrex","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "STREX": {"ARM": ["AIstrex","0b00"]}
+  }
+}

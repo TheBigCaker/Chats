@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SRSDB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SRSDB": {"ARM": "SRSDB"},
+    "SRSDB_UPD": {"ARM": "SRSDB_UPD"}
+  },
+  "INPUTS": {
+    "SRSDB": {"ARM": [["imm0_31:$mode",0]]},
+    "SRSDB_UPD": {"ARM": [["imm0_31:$mode",0]]}
+  },
+  "OUTPUTS": {
+    "SRSDB": {"ARM": []},
+    "SRSDB_UPD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SRSDB": {"ARM": ["SRSI","0"]},
+    "SRSDB_UPD": {"ARM": ["SRSI","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "SRSDB": {"ARM": ["SRSI","0"]},
+    "SRSDB_UPD": {"ARM": ["SRSI","1"]}
+  }
+}

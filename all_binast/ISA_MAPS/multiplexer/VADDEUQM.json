@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VADDEUQM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VADDEUQM": {"PowerPC": "VADDEUQM"}
+  },
+  "INPUTS": {
+    "VADDEUQM": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VADDEUQM": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VADDEUQM": {"PowerPC": ["VA1a_Int_Ty","60"]}
+  },
+  "OUTPUT_BYTES": {
+    "VADDEUQM": {"PowerPC": ["VA1a_Int_Ty","60"]}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "PSSLAI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PSSLAI_H": {"RISCV": "PSSLAI_H"},
+    "PSSLAI_W": {"RISCV": "PSSLAI_W"},
+    "PSSLAI_DH": {"RISCV": "PSSLAI_DH"},
+    "PSSLAI_DW": {"RISCV": "PSSLAI_DW"}
+  },
+  "INPUTS": {
+    "PSSLAI_H": {"RISCV": []},
+    "PSSLAI_W": {"RISCV": []},
+    "PSSLAI_DH": {"RISCV": []},
+    "PSSLAI_DW": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PSSLAI_H": {"RISCV": []},
+    "PSSLAI_W": {"RISCV": []},
+    "PSSLAI_DH": {"RISCV": []},
+    "PSSLAI_DW": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PSSLAI_H": {"RISCV": ["RVPShiftH_ri","0b101","0b010"]},
+    "PSSLAI_W": {"RISCV": ["RVPShiftW_ri","0b101","0b010"]},
+    "PSSLAI_DH": {"RISCV": ["RVPPairShiftH_ri","0b101","0b0"]},
+    "PSSLAI_DW": {"RISCV": ["RVPPairShiftW_ri","0b101","0b0"]}
+  },
+  "OUTPUT_BYTES": {
+    "PSSLAI_H": {"RISCV": ["RVPShiftH_ri","0b101","0b010"]},
+    "PSSLAI_W": {"RISCV": ["RVPShiftW_ri","0b101","0b010"]},
+    "PSSLAI_DH": {"RISCV": ["RVPPairShiftH_ri","0b101","0b0"]},
+    "PSSLAI_DW": {"RISCV": ["RVPPairShiftW_ri","0b101","0b0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NAND",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "NAND_ZZZ": {"AArch64": "NAND_ZZZ"}
+  },
+  "INPUTS": {
+    "NAND_ZZZ": {"AArch64": [["ZPR64",64],["ZPR64",64]]}
+  },
+  "OUTPUTS": {
+    "NAND_ZZZ": {"AArch64": [["ZPR64",64]]}
+  },
+  "INPUT_BYTES": {
+    "NAND_ZZZ": {"AArch64": []}
+  },
+  "OUTPUT_BYTES": {
+    "NAND_ZZZ": {"AArch64": []}
+  }
+}

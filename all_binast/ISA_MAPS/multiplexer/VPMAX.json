@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "VPMAX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VPMAXs8": {"ARM": "VPMAXs8"},
+    "VPMAXs16": {"ARM": "VPMAXs16"},
+    "VPMAXs32": {"ARM": "VPMAXs32"},
+    "VPMAXu8": {"ARM": "VPMAXu8"},
+    "VPMAXu16": {"ARM": "VPMAXu16"},
+    "VPMAXu32": {"ARM": "VPMAXu32"},
+    "VPMAXf": {"ARM": "VPMAXf"},
+    "VPMAXh": {"ARM": "VPMAXh"}
+  },
+  "INPUTS": {
+    "VPMAXs8": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMAXs16": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMAXs32": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMAXu8": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMAXu16": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMAXu32": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMAXf": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VPMAXh": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]}
+  },
+  "OUTPUTS": {
+    "VPMAXs8": {"ARM": [["DPR:$Vd",0]]},
+    "VPMAXs16": {"ARM": [["DPR:$Vd",0]]},
+    "VPMAXs32": {"ARM": [["DPR:$Vd",0]]},
+    "VPMAXu8": {"ARM": [["DPR:$Vd",0]]},
+    "VPMAXu16": {"ARM": [["DPR:$Vd",0]]},
+    "VPMAXu32": {"ARM": [["DPR:$Vd",0]]},
+    "VPMAXf": {"ARM": [["DPR:$Vd",0]]},
+    "VPMAXh": {"ARM": [["DPR:$Vd",0]]}
+  },
+  "INPUT_BYTES": {
+    "VPMAXs8": {"ARM": ["N3VDInt","0","0","0b00","0b1010","0","0"]},
+    "VPMAXs16": {"ARM": ["N3VDInt","0","0","0b01","0b1010","0","0"]},
+    "VPMAXs32": {"ARM": ["N3VDInt","0","0","0b10","0b1010","0","0"]},
+    "VPMAXu8": {"ARM": ["N3VDInt","1","0","0b00","0b1010","0","0"]},
+    "VPMAXu16": {"ARM": ["N3VDInt","1","0","0b01","0b1010","0","0"]},
+    "VPMAXu32": {"ARM": ["N3VDInt","1","0","0b10","0b1010","0","0"]},
+    "VPMAXf": {"ARM": ["N3VDInt","1","0","0b00","0b1111","0","0"]},
+    "VPMAXh": {"ARM": ["N3VDInt","1","0","0b01","0b1111","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPMAXs8": {"ARM": ["N3VDInt","0","0","0b00","0b1010","0","0"]},
+    "VPMAXs16": {"ARM": ["N3VDInt","0","0","0b01","0b1010","0","0"]},
+    "VPMAXs32": {"ARM": ["N3VDInt","0","0","0b10","0b1010","0","0"]},
+    "VPMAXu8": {"ARM": ["N3VDInt","1","0","0b00","0b1010","0","0"]},
+    "VPMAXu16": {"ARM": ["N3VDInt","1","0","0b01","0b1010","0","0"]},
+    "VPMAXu32": {"ARM": ["N3VDInt","1","0","0b10","0b1010","0","0"]},
+    "VPMAXf": {"ARM": ["N3VDInt","1","0","0b00","0b1111","0","0"]},
+    "VPMAXh": {"ARM": ["N3VDInt","1","0","0b01","0b1111","0","0"]}
+  }
+}

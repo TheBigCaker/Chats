@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VCPOP",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VCPOP_M": {"RISCV": "VCPOP_M"},
+    "VCPOP_V": {"RISCV": "VCPOP_V"}
+  },
+  "INPUTS": {
+    "VCPOP_M": {"RISCV": [["VR",0],["VMaskOp",0]]},
+    "VCPOP_V": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VCPOP_M": {"RISCV": [["GPR",64]]},
+    "VCPOP_V": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VCPOP_M": {"RISCV": ["RVInstVUnaryRd","0b010000","0b10000"]},
+    "VCPOP_V": {"RISCV": ["VALUVs2","0b010010","0b01110"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCPOP_M": {"RISCV": ["RVInstVUnaryRd","0b010000","0b10000"]},
+    "VCPOP_V": {"RISCV": ["VALUVs2","0b010010","0b01110"]}
+  }
+}

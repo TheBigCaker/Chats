@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VRLQMI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VRLQMI": {"PowerPC": "VRLQMI"}
+  },
+  "INPUTS": {
+    "VRLQMI": {"PowerPC": [["vrrc",0],["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VRLQMI": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VRLQMI": {"PowerPC": ["VXForm_1","69"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRLQMI": {"PowerPC": ["VXForm_1","69"]}
+  }
+}

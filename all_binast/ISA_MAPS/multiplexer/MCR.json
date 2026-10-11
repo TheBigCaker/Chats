@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MCR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MCR": {"ARM": "MCR"},
+    "MCR2": {"ARM": "MCR2"}
+  },
+  "INPUTS": {
+    "MCR": {"ARM": [["p_imm",0],["imm0_7",0],["GPR",64],["c_imm",0],["c_imm",0],["imm0_7",0]]},
+    "MCR2": {"ARM": [["p_imm",0],["imm0_7",0],["GPR",64],["c_imm",0],["c_imm",0],["imm0_7",0]]}
+  },
+  "OUTPUTS": {
+    "MCR": {"ARM": []},
+    "MCR2": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "MCR": {"ARM": ["MovRCopro"]},
+    "MCR2": {"ARM": ["MovRCopro2"]}
+  },
+  "OUTPUT_BYTES": {
+    "MCR": {"ARM": ["MovRCopro"]},
+    "MCR2": {"ARM": ["MovRCopro2"]}
+  }
+}

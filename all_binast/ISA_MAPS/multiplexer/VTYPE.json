@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VTYPE",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VTYPE": {"RISCV": "VTYPE"}
+  },
+  "INPUTS": {
+    "VTYPE": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VTYPE": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VTYPE": {"RISCV": ["RISCVReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VTYPE": {"RISCV": ["RISCVReg","0"]}
+  }
+}

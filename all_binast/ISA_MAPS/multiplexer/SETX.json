@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SETX",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "SETX": {"Sparc": "SETX"}
+  },
+  "INPUTS": {
+    "SETX": {"Sparc": [["i64imm",64],["I64Regs",0]]}
+  },
+  "OUTPUTS": {
+    "SETX": {"Sparc": [["I64Regs",0]]}
+  },
+  "INPUT_BYTES": {
+    "SETX": {"Sparc": ["AsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "SETX": {"Sparc": ["AsmPseudoInst"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VTOULD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VTOULD": {"ARM": "VTOULD"}
+  },
+  "INPUTS": {
+    "VTOULD": {"ARM": [["DPR",0],["fbits32",0]]}
+  },
+  "OUTPUTS": {
+    "VTOULD": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VTOULD": {"ARM": ["AVConv1XInsD_Encode","0b11101","0b11","0b1111","0b1011","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VTOULD": {"ARM": ["AVConv1XInsD_Encode","0b11101","0b11","0b1111","0b1011","1"]}
+  }
+}

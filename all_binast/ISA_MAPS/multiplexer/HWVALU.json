@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HWVALU",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "HWVALU": {"AMDGPU": "HWVALU"}
+  },
+  "INPUTS": {
+    "HWVALU": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "HWVALU": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "HWVALU": {"AMDGPU": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "HWVALU": {"AMDGPU": ["ProcResource","1"]}
+  }
+}

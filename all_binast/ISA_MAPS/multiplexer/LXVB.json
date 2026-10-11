@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXVB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXVB16X": {"PowerPC": "LXVB16X"}
+  },
+  "INPUTS": {
+    "LXVB16X": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "LXVB16X": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "LXVB16X": {"PowerPC": ["X_XT6_RA5_RB5","31","876"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXVB16X": {"PowerPC": ["X_XT6_RA5_RB5","31","876"]}
+  }
+}

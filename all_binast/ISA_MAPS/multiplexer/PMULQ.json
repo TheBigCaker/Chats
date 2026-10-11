@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PMULQ",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PMULQ_H": {"RISCV": "PMULQ_H"},
+    "PMULQ_W": {"RISCV": "PMULQ_W"}
+  },
+  "INPUTS": {
+    "PMULQ_H": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMULQ_W": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PMULQ_H": {"RISCV": [["GPR:$rd",0]]},
+    "PMULQ_W": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "PMULQ_H": {"RISCV": ["RVPBinary_rr","0b1010","0b00","0b111"]},
+    "PMULQ_W": {"RISCV": ["RVPBinary_rr","0b1010","0b01","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "PMULQ_H": {"RISCV": ["RVPBinary_rr","0b1010","0b00","0b111"]},
+    "PMULQ_W": {"RISCV": ["RVPBinary_rr","0b1010","0b01","0b111"]}
+  }
+}

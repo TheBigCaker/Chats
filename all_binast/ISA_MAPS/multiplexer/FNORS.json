@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FNORS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FNORS": {"Sparc": "FNORS"}
+  },
+  "INPUTS": {
+    "FNORS": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FNORS": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FNORS": {"Sparc": ["VISInst","0b001100011"]}
+  },
+  "OUTPUT_BYTES": {
+    "FNORS": {"Sparc": ["VISInst","0b001100011"]}
+  }
+}

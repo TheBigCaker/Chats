@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LQARXL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LQARXL": {"PowerPC": "LQARXL"}
+  },
+  "INPUTS": {
+    "LQARXL": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LQARXL": {"PowerPC": [["g8prc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LQARXL": {"PowerPC": ["XForm_1","31","276"]}
+  },
+  "OUTPUT_BYTES": {
+    "LQARXL": {"PowerPC": ["XForm_1","31","276"]}
+  }
+}

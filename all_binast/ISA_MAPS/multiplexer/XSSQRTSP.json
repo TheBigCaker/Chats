@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSSQRTSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSSQRTSP": {"PowerPC": "XSSQRTSP"}
+  },
+  "INPUTS": {
+    "XSSQRTSP": {"PowerPC": [["vssrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSSQRTSP": {"PowerPC": [["vssrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSSQRTSP": {"PowerPC": ["XX2Form","60","11"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSSQRTSP": {"PowerPC": ["XX2Form","60","11"]}
+  }
+}

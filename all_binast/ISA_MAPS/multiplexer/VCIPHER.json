@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCIPHER",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCIPHER": {"PowerPC": "VCIPHER"}
+  },
+  "INPUTS": {
+    "VCIPHER": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VCIPHER": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VCIPHER": {"PowerPC": ["VX1_Int_Ty","1288"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCIPHER": {"PowerPC": ["VX1_Int_Ty","1288"]}
+  }
+}

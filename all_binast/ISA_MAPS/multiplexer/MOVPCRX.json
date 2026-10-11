@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVPCRX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MOVPCRX": {"ARM": "MOVPCRX"}
+  },
+  "INPUTS": {
+    "MOVPCRX": {"ARM": [["GPR",64]]}
+  },
+  "OUTPUTS": {
+    "MOVPCRX": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "MOVPCRX": {"ARM": ["ARMPseudoExpand","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVPCRX": {"ARM": ["ARMPseudoExpand","4"]}
+  }
+}

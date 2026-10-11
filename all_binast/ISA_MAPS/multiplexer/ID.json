@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ID",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "IDiv": {"RISCV": "IDiv"}
+  },
+  "INPUTS": {
+    "IDiv": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "IDiv": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "IDiv": {"RISCV": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "IDiv": {"RISCV": ["ProcResource","1"]}
+  }
+}

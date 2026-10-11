@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MULQ",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MULQ": {"RISCV": "MULQ"}
+  },
+  "INPUTS": {
+    "MULQ": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "MULQ": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "MULQ": {"RISCV": ["RVPBinary_rr","0b1010","0b01","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "MULQ": {"RISCV": ["RVPBinary_rr","0b1010","0b01","0b111"]}
+  }
+}

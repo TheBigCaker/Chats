@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "WNP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "WNP": {"PowerPC": "WNP"},
+    "WNP": {"PowerPC": "WNP"}
+  },
+  "INPUTS": {
+    "WNP": {"PowerPC": [["wacc",0]]},
+    "WNP": {"PowerPC": [["wacc",0]]}
+  },
+  "OUTPUTS": {
+    "WNP": {"PowerPC": [["wacc",0]]},
+    "WNP": {"PowerPC": [["wacc",0]]}
+  },
+  "INPUT_BYTES": {
+    "WNP": {"PowerPC": ["XX3Form_AT3_XAB6"]},
+    "WNP": {"PowerPC": ["XX3Form_AT3_XAB6"]}
+  },
+  "OUTPUT_BYTES": {
+    "WNP": {"PowerPC": ["XX3Form_AT3_XAB6"]},
+    "WNP": {"PowerPC": ["XX3Form_AT3_XAB6"]}
+  }
+}

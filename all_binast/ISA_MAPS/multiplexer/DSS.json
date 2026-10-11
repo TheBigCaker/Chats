@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DSS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DSS": {"PowerPC": "DSS"}
+  },
+  "INPUTS": {
+    "DSS": {"PowerPC": [["u5imm",5]]}
+  },
+  "OUTPUTS": {
+    "DSS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "DSS": {"PowerPC": ["DSS_Form","0","822"]}
+  },
+  "OUTPUT_BYTES": {
+    "DSS": {"PowerPC": ["DSS_Form","0","822"]}
+  }
+}

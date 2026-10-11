@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "TT",
+  "BACKENDS": ["ARM","Sparc"],
+  "INDEX": {
+    "TT": {"ARM": "TT"},
+    "TT": {"ARM": "TT"},
+    "TT": {"Sparc": "TT"}
+  },
+  "INPUTS": {
+    "TT": {"ARM": [["GPR",64],["GPR",64]]},
+    "TT": {"ARM": [["GPRnopc",0],["GPRnopc",0],["GPR",64]]},
+    "TT": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "TT": {"ARM": [["GPR",64]]},
+    "TT": {"ARM": [["GPRnopc",0]]},
+    "TT": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "TT": {"ARM": ["AMulxyI","0b0001011","0b11"]},
+    "TT": {"ARM": ["AMulxyIa","0b0001000","0b11"]},
+    "TT": {"Sparc": ["SparcCtrlReg","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "TT": {"ARM": ["AMulxyI","0b0001011","0b11"]},
+    "TT": {"ARM": ["AMulxyIa","0b0001000","0b11"]},
+    "TT": {"Sparc": ["SparcCtrlReg","3"]}
+  }
+}

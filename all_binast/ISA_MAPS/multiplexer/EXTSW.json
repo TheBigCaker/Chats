@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EXTSW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EXTSW_32": {"PowerPC": "EXTSW_32"}
+  },
+  "INPUTS": {
+    "EXTSW_32": {"PowerPC": [["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "EXTSW_32": {"PowerPC": [["gprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EXTSW_32": {"PowerPC": ["XForm_11","31","986"]}
+  },
+  "OUTPUT_BYTES": {
+    "EXTSW_32": {"PowerPC": ["XForm_11","31","986"]}
+  }
+}

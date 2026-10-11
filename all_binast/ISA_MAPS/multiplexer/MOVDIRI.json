@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MOVDIRI",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MOVDIRI32": {"X86": "MOVDIRI32"},
+    "MOVDIRI32_EVEX": {"X86": "MOVDIRI32_EVEX"}
+  },
+  "INPUTS": {
+    "MOVDIRI32": {"X86": [["i32mem",0],["GR32",32]]},
+    "MOVDIRI32_EVEX": {"X86": [["i32mem",0],["GR32",32]]}
+  },
+  "OUTPUTS": {
+    "MOVDIRI32": {"X86": []},
+    "MOVDIRI32_EVEX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "MOVDIRI32": {"X86": ["0xF9"]},
+    "MOVDIRI32_EVEX": {"X86": ["0xF9"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVDIRI32": {"X86": ["0xF9"]},
+    "MOVDIRI32_EVEX": {"X86": ["0xF9"]}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "PMULSU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PMULSU_H_B00": {"RISCV": "PMULSU_H_B00"},
+    "PMULSU_H_B11": {"RISCV": "PMULSU_H_B11"},
+    "PMULSU_W_H00": {"RISCV": "PMULSU_W_H00"},
+    "PMULSU_W_H11": {"RISCV": "PMULSU_W_H11"}
+  },
+  "INPUTS": {
+    "PMULSU_H_B00": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMULSU_H_B11": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMULSU_W_H00": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMULSU_W_H11": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PMULSU_H_B00": {"RISCV": [["GPR:$rd",0]]},
+    "PMULSU_H_B11": {"RISCV": [["GPR:$rd",0]]},
+    "PMULSU_W_H00": {"RISCV": [["GPR:$rd",0]]},
+    "PMULSU_W_H11": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "PMULSU_H_B00": {"RISCV": ["RVPBinary_rr","0b1100","0b00","0b011"]},
+    "PMULSU_H_B11": {"RISCV": ["RVPBinary_rr","0b1110","0b00","0b011"]},
+    "PMULSU_W_H00": {"RISCV": ["RVPBinary_rr","0b1100","0b01","0b011"]},
+    "PMULSU_W_H11": {"RISCV": ["RVPBinary_rr","0b1110","0b01","0b011"]}
+  },
+  "OUTPUT_BYTES": {
+    "PMULSU_H_B00": {"RISCV": ["RVPBinary_rr","0b1100","0b00","0b011"]},
+    "PMULSU_H_B11": {"RISCV": ["RVPBinary_rr","0b1110","0b00","0b011"]},
+    "PMULSU_W_H00": {"RISCV": ["RVPBinary_rr","0b1100","0b01","0b011"]},
+    "PMULSU_W_H11": {"RISCV": ["RVPBinary_rr","0b1110","0b01","0b011"]}
+  }
+}

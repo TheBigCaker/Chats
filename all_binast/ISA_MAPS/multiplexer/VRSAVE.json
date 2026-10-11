@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VRSAVE",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VRSAVE": {"PowerPC": "VRSAVE"}
+  },
+  "INPUTS": {
+    "VRSAVE": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VRSAVE": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VRSAVE": {"PowerPC": ["SPR","256"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRSAVE": {"PowerPC": ["SPR","256"]}
+  }
+}

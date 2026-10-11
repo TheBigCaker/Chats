@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "RESTORE",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "RESTORE_QUADWORD": {"PowerPC": "RESTORE_QUADWORD"},
+    "RESTORE_ACC": {"PowerPC": "RESTORE_ACC"},
+    "RESTORE_UACC": {"PowerPC": "RESTORE_UACC"},
+    "RESTORE_WACC": {"PowerPC": "RESTORE_WACC"},
+    "RESTORE_DMRP": {"PowerPC": "RESTORE_DMRP"},
+    "RESTORE_DMR": {"PowerPC": "RESTORE_DMR"}
+  },
+  "INPUTS": {
+    "RESTORE_QUADWORD": {"PowerPC": [["memrix",0]]},
+    "RESTORE_ACC": {"PowerPC": [["memrix16",0]]},
+    "RESTORE_UACC": {"PowerPC": [["memrix16",0]]},
+    "RESTORE_WACC": {"PowerPC": [["memrix16",0]]},
+    "RESTORE_DMRP": {"PowerPC": [["memrix16",0]]},
+    "RESTORE_DMR": {"PowerPC": [["memrix16",0]]}
+  },
+  "OUTPUTS": {
+    "RESTORE_QUADWORD": {"PowerPC": [["g8prc",0]]},
+    "RESTORE_ACC": {"PowerPC": [["acc",0]]},
+    "RESTORE_UACC": {"PowerPC": [["uacc",0]]},
+    "RESTORE_WACC": {"PowerPC": [["wacc",0]]},
+    "RESTORE_DMRP": {"PowerPC": [["dmrp",0]]},
+    "RESTORE_DMR": {"PowerPC": [["dmr",0]]}
+  },
+  "INPUT_BYTES": {
+    "RESTORE_QUADWORD": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "RESTORE_ACC": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "RESTORE_UACC": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "RESTORE_WACC": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "RESTORE_DMRP": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "RESTORE_DMR": {"PowerPC": ["PPCEmitTimePseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "RESTORE_QUADWORD": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "RESTORE_ACC": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "RESTORE_UACC": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "RESTORE_WACC": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "RESTORE_DMRP": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "RESTORE_DMR": {"PowerPC": ["PPCEmitTimePseudo"]}
+  }
+}

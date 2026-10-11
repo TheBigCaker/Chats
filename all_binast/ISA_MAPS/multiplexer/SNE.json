@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SNE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SNE": {"AMDGPU": "SNE"}
+  },
+  "INPUTS": {
+    "SNE": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SNE": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SNE": {"AMDGPU": ["R600_2OP","0xB"]}
+  },
+  "OUTPUT_BYTES": {
+    "SNE": {"AMDGPU": ["R600_2OP","0xB"]}
+  }
+}

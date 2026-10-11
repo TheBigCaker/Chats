@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FMOVRQ",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FMOVRQ": {"Sparc": "FMOVRQ"}
+  },
+  "INPUTS": {
+    "FMOVRQ": {"Sparc": [["I64Regs",0],["QFPRegs",0],["QFPRegs",0],["RegCCOp",0]]}
+  },
+  "OUTPUTS": {
+    "FMOVRQ": {"Sparc": [["QFPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FMOVRQ": {"Sparc": ["F4_4r","0b110101","0b00111"]}
+  },
+  "OUTPUT_BYTES": {
+    "FMOVRQ": {"Sparc": ["F4_4r","0b110101","0b00111"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "CNDE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "CNDE_eg": {"AMDGPU": "CNDE_eg"},
+    "CNDE_INT": {"AMDGPU": "CNDE_INT"},
+    "CNDE_r600": {"AMDGPU": "CNDE_r600"}
+  },
+  "INPUTS": {
+    "CNDE_eg": {"AMDGPU": []},
+    "CNDE_INT": {"AMDGPU": []},
+    "CNDE_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "CNDE_eg": {"AMDGPU": []},
+    "CNDE_INT": {"AMDGPU": []},
+    "CNDE_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "CNDE_eg": {"AMDGPU": ["CNDE_Common","0x19"]},
+    "CNDE_INT": {"AMDGPU": ["R600_3OP","0x1C","0"]},
+    "CNDE_r600": {"AMDGPU": ["CNDE_Common","0x18"]}
+  },
+  "OUTPUT_BYTES": {
+    "CNDE_eg": {"AMDGPU": ["CNDE_Common","0x19"]},
+    "CNDE_INT": {"AMDGPU": ["R600_3OP","0x1C","0"]},
+    "CNDE_r600": {"AMDGPU": ["CNDE_Common","0x18"]}
+  }
+}

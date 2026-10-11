@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "INSL",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "INSL": {"X86": "INSL"}
+  },
+  "INPUTS": {
+    "INSL": {"X86": [["dstidx32",0]]}
+  },
+  "OUTPUTS": {
+    "INSL": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "INSL": {"X86": ["0x6D"]}
+  },
+  "OUTPUT_BYTES": {
+    "INSL": {"X86": ["0x6D"]}
+  }
+}

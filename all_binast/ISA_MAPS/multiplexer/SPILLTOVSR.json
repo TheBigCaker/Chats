@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "SPILLTOVSR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SPILLTOVSR_STX": {"PowerPC": "SPILLTOVSR_STX"},
+    "SPILLTOVSR_ST": {"PowerPC": "SPILLTOVSR_ST"},
+    "SPILLTOVSR_LDX": {"PowerPC": "SPILLTOVSR_LDX"},
+    "SPILLTOVSR_LD": {"PowerPC": "SPILLTOVSR_LD"}
+  },
+  "INPUTS": {
+    "SPILLTOVSR_STX": {"PowerPC": [["spilltovsrrc",0],["memrr",0]]},
+    "SPILLTOVSR_ST": {"PowerPC": [["spilltovsrrc",0],["memrix",0]]},
+    "SPILLTOVSR_LDX": {"PowerPC": [["memrr",0]]},
+    "SPILLTOVSR_LD": {"PowerPC": [["memrix",0]]}
+  },
+  "OUTPUTS": {
+    "SPILLTOVSR_STX": {"PowerPC": []},
+    "SPILLTOVSR_ST": {"PowerPC": []},
+    "SPILLTOVSR_LDX": {"PowerPC": [["spilltovsrrc",0]]},
+    "SPILLTOVSR_LD": {"PowerPC": [["spilltovsrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "SPILLTOVSR_STX": {"PowerPC": ["PseudoXFormMemOp"]},
+    "SPILLTOVSR_ST": {"PowerPC": ["PPCPostRAExpPseudo"]},
+    "SPILLTOVSR_LDX": {"PowerPC": ["PseudoXFormMemOp"]},
+    "SPILLTOVSR_LD": {"PowerPC": ["PPCPostRAExpPseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "SPILLTOVSR_STX": {"PowerPC": ["PseudoXFormMemOp"]},
+    "SPILLTOVSR_ST": {"PowerPC": ["PPCPostRAExpPseudo"]},
+    "SPILLTOVSR_LDX": {"PowerPC": ["PseudoXFormMemOp"]},
+    "SPILLTOVSR_LD": {"PowerPC": ["PPCPostRAExpPseudo"]}
+  }
+}

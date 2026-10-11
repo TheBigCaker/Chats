@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "WMMAM",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "WMMAModsF32NegAbs": {"AMDGPU": "WMMAModsF32NegAbs"},
+    "WMMAModsF16Neg": {"AMDGPU": "WMMAModsF16Neg"},
+    "WMMAModsF16NegAbs": {"AMDGPU": "WMMAModsF16NegAbs"}
+  },
+  "INPUTS": {
+    "WMMAModsF32NegAbs": {"AMDGPU": []},
+    "WMMAModsF16Neg": {"AMDGPU": []},
+    "WMMAModsF16NegAbs": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "WMMAModsF32NegAbs": {"AMDGPU": []},
+    "WMMAModsF16Neg": {"AMDGPU": []},
+    "WMMAModsF16NegAbs": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "WMMAModsF32NegAbs": {"AMDGPU": ["ComplexPattern","2"]},
+    "WMMAModsF16Neg": {"AMDGPU": ["ComplexPattern","2"]},
+    "WMMAModsF16NegAbs": {"AMDGPU": ["ComplexPattern","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "WMMAModsF32NegAbs": {"AMDGPU": ["ComplexPattern","2"]},
+    "WMMAModsF16Neg": {"AMDGPU": ["ComplexPattern","2"]},
+    "WMMAModsF16NegAbs": {"AMDGPU": ["ComplexPattern","2"]}
+  }
+}

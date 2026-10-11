@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVMSUBADP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVMSUBADP": {"PowerPC": "XVMSUBADP"}
+  },
+  "INPUTS": {
+    "XVMSUBADP": {"PowerPC": [["vsrc",0],["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVMSUBADP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVMSUBADP": {"PowerPC": ["XX3Form","60","113"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVMSUBADP": {"PowerPC": ["XX3Form","60","113"]}
+  }
+}

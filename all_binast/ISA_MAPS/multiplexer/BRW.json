@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BRW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BRW": {"PowerPC": "BRW"},
+    "BRW8": {"PowerPC": "BRW8"}
+  },
+  "INPUTS": {
+    "BRW": {"PowerPC": [["gprc",0]]},
+    "BRW8": {"PowerPC": [["g8rc",0]]}
+  },
+  "OUTPUTS": {
+    "BRW": {"PowerPC": [["gprc",0]]},
+    "BRW8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "BRW": {"PowerPC": ["XForm_11","31","155"]},
+    "BRW8": {"PowerPC": ["XForm_11","31","155"]}
+  },
+  "OUTPUT_BYTES": {
+    "BRW": {"PowerPC": ["XForm_11","31","155"]},
+    "BRW8": {"PowerPC": ["XForm_11","31","155"]}
+  }
+}

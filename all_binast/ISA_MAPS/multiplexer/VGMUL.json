@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VGMUL",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VGMUL_VV": {"RISCV": "VGMUL_VV"},
+    "VGMUL_VS": {"RISCV": "VGMUL_VS"}
+  },
+  "INPUTS": {
+    "VGMUL_VV": {"RISCV": [["VR:$vd",0],["VR:$vs2",0]]},
+    "VGMUL_VS": {"RISCV": [["VR:$vd",0],["VR:$vs2",0]]}
+  },
+  "OUTPUTS": {
+    "VGMUL_VV": {"RISCV": [["VR:$vd_wb",0]]},
+    "VGMUL_VS": {"RISCV": [["VR:$vd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "VGMUL_VV": {"RISCV": ["ZvkALUVs2NoVmBinary","0b101000","0b10001"]},
+    "VGMUL_VS": {"RISCV": ["ZvkALUVs2NoVmBinary","0b101001","0b10001"]}
+  },
+  "OUTPUT_BYTES": {
+    "VGMUL_VV": {"RISCV": ["ZvkALUVs2NoVmBinary","0b101000","0b10001"]},
+    "VGMUL_VS": {"RISCV": ["ZvkALUVs2NoVmBinary","0b101001","0b10001"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "XSCVDPSXWS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSCVDPSXWS": {"PowerPC": "XSCVDPSXWS"},
+    "XSCVDPSXWSs": {"PowerPC": "XSCVDPSXWSs"}
+  },
+  "INPUTS": {
+    "XSCVDPSXWS": {"PowerPC": [["vsfrc",0]]},
+    "XSCVDPSXWSs": {"PowerPC": [["vssrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSCVDPSXWS": {"PowerPC": [["vsfrc",0]]},
+    "XSCVDPSXWSs": {"PowerPC": [["vssrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSCVDPSXWS": {"PowerPC": ["XX2Form","60","88"]},
+    "XSCVDPSXWSs": {"PowerPC": ["XX2Form","60","88"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSCVDPSXWS": {"PowerPC": ["XX2Form","60","88"]},
+    "XSCVDPSXWSs": {"PowerPC": ["XX2Form","60","88"]}
+  }
+}

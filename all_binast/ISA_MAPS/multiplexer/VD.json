@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VD",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VDiv": {"RISCV": "VDiv"}
+  },
+  "INPUTS": {
+    "VDiv": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VDiv": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VDiv": {"RISCV": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VDiv": {"RISCV": ["ProcResource","1"]}
+  }
+}

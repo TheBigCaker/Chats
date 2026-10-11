@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "PPR",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "PPR": {"AArch64": "PPR"},
+    "PPR_3b": {"AArch64": "PPR_3b"},
+    "PPR_p8to15": {"AArch64": "PPR_p8to15"},
+    "PPRorPNRAsmOp8": {"AArch64": "PPRorPNRAsmOp8"},
+    "PPRorPNRAsmOpAny": {"AArch64": "PPRorPNRAsmOpAny"},
+    "PPR2": {"AArch64": "PPR2"},
+    "PPR2Mul2": {"AArch64": "PPR2Mul2"}
+  },
+  "INPUTS": {
+    "PPR": {"AArch64": []},
+    "PPR_3b": {"AArch64": []},
+    "PPR_p8to15": {"AArch64": []},
+    "PPRorPNRAsmOp8": {"AArch64": []},
+    "PPRorPNRAsmOpAny": {"AArch64": []},
+    "PPR2": {"AArch64": []},
+    "PPR2Mul2": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "PPR": {"AArch64": []},
+    "PPR_3b": {"AArch64": []},
+    "PPR_p8to15": {"AArch64": []},
+    "PPRorPNRAsmOp8": {"AArch64": []},
+    "PPRorPNRAsmOpAny": {"AArch64": []},
+    "PPR2": {"AArch64": []},
+    "PPR2Mul2": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "PPR": {"AArch64": ["PPRClass","0","15"]},
+    "PPR_3b": {"AArch64": ["PPRClass","0","7"]},
+    "PPR_p8to15": {"AArch64": ["PPRClass","8","15"]},
+    "PPRorPNRAsmOp8": {"AArch64": ["PPRorPNRAsmOperand","8"]},
+    "PPRorPNRAsmOpAny": {"AArch64": ["PPRorPNRAsmOperand","0"]},
+    "PPR2": {"AArch64": ["RegisterClass","16"]},
+    "PPR2Mul2": {"AArch64": ["RegisterClass","16"]}
+  },
+  "OUTPUT_BYTES": {
+    "PPR": {"AArch64": ["PPRClass","0","15"]},
+    "PPR_3b": {"AArch64": ["PPRClass","0","7"]},
+    "PPR_p8to15": {"AArch64": ["PPRClass","8","15"]},
+    "PPRorPNRAsmOp8": {"AArch64": ["PPRorPNRAsmOperand","8"]},
+    "PPRorPNRAsmOpAny": {"AArch64": ["PPRorPNRAsmOperand","0"]},
+    "PPR2": {"AArch64": ["RegisterClass","16"]},
+    "PPR2Mul2": {"AArch64": ["RegisterClass","16"]}
+  }
+}

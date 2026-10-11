@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VADDSHS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VADDSHS": {"PowerPC": "VADDSHS"}
+  },
+  "INPUTS": {
+    "VADDSHS": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VADDSHS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VADDSHS": {"PowerPC": ["VX1_Int_Ty","832"]}
+  },
+  "OUTPUT_BYTES": {
+    "VADDSHS": {"PowerPC": ["VX1_Int_Ty","832"]}
+  }
+}

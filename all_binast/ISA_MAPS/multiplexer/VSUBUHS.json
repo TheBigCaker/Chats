@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSUBUHS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSUBUHS": {"PowerPC": "VSUBUHS"}
+  },
+  "INPUTS": {
+    "VSUBUHS": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSUBUHS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSUBUHS": {"PowerPC": ["VX1_Int_Ty","1600"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSUBUHS": {"PowerPC": ["VX1_Int_Ty","1600"]}
+  }
+}

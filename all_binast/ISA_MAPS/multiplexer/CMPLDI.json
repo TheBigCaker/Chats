@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CMPLDI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "CMPLDI": {"PowerPC": "CMPLDI"}
+  },
+  "INPUTS": {
+    "CMPLDI": {"PowerPC": [["g8rc",0],["u16imm64",16]]}
+  },
+  "OUTPUTS": {
+    "CMPLDI": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "CMPLDI": {"PowerPC": ["DForm_6_ext","10"]}
+  },
+  "OUTPUT_BYTES": {
+    "CMPLDI": {"PowerPC": ["DForm_6_ext","10"]}
+  }
+}

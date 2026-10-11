@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "UASX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UASX": {"ARM": "UASX"}
+  },
+  "INPUTS": {
+    "UASX": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "UASX": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "UASX": {"ARM": ["AAIIntrinsic","0b01100101","0b11110011"]}
+  },
+  "OUTPUT_BYTES": {
+    "UASX": {"ARM": ["AAIIntrinsic","0b01100101","0b11110011"]}
+  }
+}

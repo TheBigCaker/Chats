@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WMMAUIC",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "WMMAUIClamp": {"AMDGPU": "WMMAUIClamp"}
+  },
+  "INPUTS": {
+    "WMMAUIClamp": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "WMMAUIClamp": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "WMMAUIClamp": {"AMDGPU": ["WMMAType","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "WMMAUIClamp": {"AMDGPU": ["WMMAType","0b01"]}
+  }
+}

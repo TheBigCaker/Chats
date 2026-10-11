@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFMALQ",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFMALQ": {"ARM": "VFMALQ"}
+  },
+  "INPUTS": {
+    "VFMALQ": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VFMALQ": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VFMALQ": {"ARM": ["N3VCP8F16Q1","0b00","0b10","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFMALQ": {"ARM": ["N3VCP8F16Q1","0b00","0b10","1"]}
+  }
+}

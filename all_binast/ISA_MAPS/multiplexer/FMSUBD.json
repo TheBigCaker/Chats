@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FMSUBD",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FMSUBD": {"Sparc": "FMSUBD"}
+  },
+  "INPUTS": {
+    "FMSUBD": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FMSUBD": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FMSUBD": {"Sparc": ["FourOp","0b110111","0b0110"]}
+  },
+  "OUTPUT_BYTES": {
+    "FMSUBD": {"Sparc": ["FourOp","0b110111","0b0110"]}
+  }
+}

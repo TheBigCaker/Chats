@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "OUTSW",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "OUTSW": {"X86": "OUTSW"}
+  },
+  "INPUTS": {
+    "OUTSW": {"X86": [["srcidx16",0]]}
+  },
+  "OUTPUTS": {
+    "OUTSW": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "OUTSW": {"X86": ["0x6F"]}
+  },
+  "OUTPUT_BYTES": {
+    "OUTSW": {"X86": ["0x6F"]}
+  }
+}

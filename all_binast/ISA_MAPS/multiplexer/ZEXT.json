@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ZEXT",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "ZEXT_H_RV32": {"RISCV": "ZEXT_H_RV32"},
+    "ZEXT_H_RV64": {"RISCV": "ZEXT_H_RV64"}
+  },
+  "INPUTS": {
+    "ZEXT_H_RV32": {"RISCV": []},
+    "ZEXT_H_RV64": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "ZEXT_H_RV32": {"RISCV": []},
+    "ZEXT_H_RV64": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "ZEXT_H_RV32": {"RISCV": ["RVBUnaryR","0b0000100","0b100"]},
+    "ZEXT_H_RV64": {"RISCV": ["RVBUnaryR","0b0000100","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZEXT_H_RV32": {"RISCV": ["RVBUnaryR","0b0000100","0b100"]},
+    "ZEXT_H_RV64": {"RISCV": ["RVBUnaryR","0b0000100","0b100"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ZAB",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "ZAB0": {"AArch64": "ZAB0"}
+  },
+  "INPUTS": {
+    "ZAB0": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "ZAB0": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "ZAB0": {"AArch64": ["AArch64Reg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZAB0": {"AArch64": ["AArch64Reg","0"]}
+  }
+}

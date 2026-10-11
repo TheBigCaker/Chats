@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VNMLAH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VNMLAH": {"ARM": "VNMLAH"}
+  },
+  "INPUTS": {
+    "VNMLAH": {"ARM": [["HPR",0],["HPR",0],["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VNMLAH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VNMLAH": {"ARM": ["AHbI","0b11100","0b01","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VNMLAH": {"ARM": ["AHbI","0b11100","0b01","1","0"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "DP",
+  "BACKENDS": ["ARM","PowerPC"],
+  "INDEX": {
+    "DPair": {"ARM": "DPair"},
+    "DPairSpc": {"ARM": "DPairSpc"},
+    "DP": {"PowerPC": "DP"}
+  },
+  "INPUTS": {
+    "DPair": {"ARM": []},
+    "DPairSpc": {"ARM": []},
+    "DP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "DPair": {"ARM": []},
+    "DPairSpc": {"ARM": []},
+    "DP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "DPair": {"ARM": ["RegisterClass","128"]},
+    "DPairSpc": {"ARM": ["RegisterClass","64"]},
+    "DP": {"PowerPC": ["ProcResource","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "DPair": {"ARM": ["RegisterClass","128"]},
+    "DPairSpc": {"ARM": ["RegisterClass","64"]},
+    "DP": {"PowerPC": ["ProcResource","4"]}
+  }
+}

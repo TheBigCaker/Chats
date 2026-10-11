@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DSPCC",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "DSPCC": {"Mips": "DSPCC"}
+  },
+  "INPUTS": {
+    "DSPCC": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "DSPCC": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "DSPCC": {"Mips": ["RegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "DSPCC": {"Mips": ["RegisterClass","32"]}
+  }
+}

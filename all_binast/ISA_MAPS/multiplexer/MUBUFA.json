@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MUBUFA",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "MUBUFAddr64": {"AMDGPU": "MUBUFAddr64"}
+  },
+  "INPUTS": {
+    "MUBUFAddr64": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "MUBUFAddr64": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "MUBUFAddr64": {"AMDGPU": ["ComplexPattern","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "MUBUFAddr64": {"AMDGPU": ["ComplexPattern","4"]}
+  }
+}

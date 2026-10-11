@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "TR": {"RISCV": "TR"}
+  },
+  "INPUTS": {
+    "TR": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "TR": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "TR": {"RISCV": ["RISCVRegisterClass","32","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "TR": {"RISCV": ["RISCVRegisterClass","32","0"]}
+  }
+}

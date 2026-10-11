@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "QK",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "QK_C_LBU": {"RISCV": "QK_C_LBU"},
+    "QK_C_SB": {"RISCV": "QK_C_SB"},
+    "QK_C_LHU": {"RISCV": "QK_C_LHU"},
+    "QK_C_SH": {"RISCV": "QK_C_SH"},
+    "QK_C_LBUSP": {"RISCV": "QK_C_LBUSP"},
+    "QK_C_SBSP": {"RISCV": "QK_C_SBSP"},
+    "QK_C_LHUSP": {"RISCV": "QK_C_LHUSP"},
+    "QK_C_SHSP": {"RISCV": "QK_C_SHSP"}
+  },
+  "INPUTS": {
+    "QK_C_LBU": {"RISCV": [["BasePtrC",0],["uimm5",0]]},
+    "QK_C_SB": {"RISCV": [["GPRC",0],["BasePtrC",0],["uimm5",0]]},
+    "QK_C_LHU": {"RISCV": [["BasePtrC",0],["uimm6_lsb0",0]]},
+    "QK_C_SH": {"RISCV": [["GPRC",0],["BasePtrC",0],["uimm6_lsb0",0]]},
+    "QK_C_LBUSP": {"RISCV": [["SPMem",0],["uimm4",0]]},
+    "QK_C_SBSP": {"RISCV": [["GPRC",0],["SPMem",0],["uimm4",0]]},
+    "QK_C_LHUSP": {"RISCV": [["SPMem",0],["uimm5_lsb0",0]]},
+    "QK_C_SHSP": {"RISCV": [["GPRC",0],["SPMem",0],["uimm5_lsb0",0]]}
+  },
+  "OUTPUTS": {
+    "QK_C_LBU": {"RISCV": [["GPRC",0]]},
+    "QK_C_SB": {"RISCV": []},
+    "QK_C_LHU": {"RISCV": [["GPRC",0]]},
+    "QK_C_SH": {"RISCV": []},
+    "QK_C_LBUSP": {"RISCV": [["GPRC",0]]},
+    "QK_C_SBSP": {"RISCV": []},
+    "QK_C_LHUSP": {"RISCV": [["GPRC",0]]},
+    "QK_C_SHSP": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "QK_C_LBU": {"RISCV": ["RVInst16CL","0b001"]},
+    "QK_C_SB": {"RISCV": ["RVInst16CS","0b101"]},
+    "QK_C_LHU": {"RISCV": ["RVInst16CL","0b001"]},
+    "QK_C_SH": {"RISCV": ["RVInst16CS","0b101"]},
+    "QK_C_LBUSP": {"RISCV": ["QKStackInst","0b00"]},
+    "QK_C_SBSP": {"RISCV": ["QKStackInst","0b10"]},
+    "QK_C_LHUSP": {"RISCV": ["QKStackInst","0b01"]},
+    "QK_C_SHSP": {"RISCV": ["QKStackInst","0b11"]}
+  },
+  "OUTPUT_BYTES": {
+    "QK_C_LBU": {"RISCV": ["RVInst16CL","0b001"]},
+    "QK_C_SB": {"RISCV": ["RVInst16CS","0b101"]},
+    "QK_C_LHU": {"RISCV": ["RVInst16CL","0b001"]},
+    "QK_C_SH": {"RISCV": ["RVInst16CS","0b101"]},
+    "QK_C_LBUSP": {"RISCV": ["QKStackInst","0b00"]},
+    "QK_C_SBSP": {"RISCV": ["QKStackInst","0b10"]},
+    "QK_C_LHUSP": {"RISCV": ["QKStackInst","0b01"]},
+    "QK_C_SHSP": {"RISCV": ["QKStackInst","0b11"]}
+  }
+}

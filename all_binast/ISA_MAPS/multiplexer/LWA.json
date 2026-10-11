@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LWA",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LWA": {"PowerPC": "LWA"},
+    "LWA_32": {"PowerPC": "LWA_32"}
+  },
+  "INPUTS": {
+    "LWA": {"PowerPC": [["(memrix",0]]},
+    "LWA_32": {"PowerPC": [["(memrix",0]]}
+  },
+  "OUTPUTS": {
+    "LWA": {"PowerPC": [["g8rc",0]]},
+    "LWA_32": {"PowerPC": [["gprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LWA": {"PowerPC": ["DSForm_1","58","2"]},
+    "LWA_32": {"PowerPC": ["DSForm_1","58","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "LWA": {"PowerPC": ["DSForm_1","58","2"]},
+    "LWA_32": {"PowerPC": ["DSForm_1","58","2"]}
+  }
+}

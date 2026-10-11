@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MTTACX",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MTTACX": {"Mips": "MTTACX"}
+  },
+  "INPUTS": {
+    "MTTACX": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "OUTPUTS": {
+    "MTTACX": {"Mips": [["ACC64DSPOpnd",0]]}
+  },
+  "INPUT_BYTES": {
+    "MTTACX": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "MTTACX": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

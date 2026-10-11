@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HVC",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "HVC": {"ARM": "HVC"}
+  },
+  "INPUTS": {
+    "HVC": {"ARM": [["imm0_65535",0]]}
+  },
+  "OUTPUTS": {
+    "HVC": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "HVC": {"ARM": ["AInoP"]}
+  },
+  "OUTPUT_BYTES": {
+    "HVC": {"ARM": ["AInoP"]}
+  }
+}

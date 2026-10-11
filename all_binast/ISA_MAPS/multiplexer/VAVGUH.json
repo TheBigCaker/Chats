@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VAVGUH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VAVGUH": {"PowerPC": "VAVGUH"}
+  },
+  "INPUTS": {
+    "VAVGUH": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VAVGUH": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VAVGUH": {"PowerPC": ["VX1_Int_Ty","1090"]}
+  },
+  "OUTPUT_BYTES": {
+    "VAVGUH": {"PowerPC": ["VX1_Int_Ty","1090"]}
+  }
+}

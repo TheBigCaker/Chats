@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXVLL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXVLL": {"PowerPC": "LXVLL"}
+  },
+  "INPUTS": {
+    "LXVLL": {"PowerPC": [["(memr",0]]}
+  },
+  "OUTPUTS": {
+    "LXVLL": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LXVLL": {"PowerPC": ["XX1Form_memOp","31","301"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXVLL": {"PowerPC": ["XX1Form_memOp","31","301"]}
+  }
+}

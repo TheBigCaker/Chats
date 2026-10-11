@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "DUR",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "DURemMacro": {"Mips": "DURemMacro"},
+    "DURemIMacro": {"Mips": "DURemIMacro"}
+  },
+  "INPUTS": {
+    "DURemMacro": {"Mips": [["GPR64Opnd",64],["GPR64Opnd",64]]},
+    "DURemIMacro": {"Mips": [["GPR64Opnd",64],["simm32_relaxed",0]]}
+  },
+  "OUTPUTS": {
+    "DURemMacro": {"Mips": [["GPR64Opnd",64]]},
+    "DURemIMacro": {"Mips": [["GPR64Opnd",64]]}
+  },
+  "INPUT_BYTES": {
+    "DURemMacro": {"Mips": ["MipsAsmPseudoInst"]},
+    "DURemIMacro": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "DURemMacro": {"Mips": ["MipsAsmPseudoInst"]},
+    "DURemIMacro": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

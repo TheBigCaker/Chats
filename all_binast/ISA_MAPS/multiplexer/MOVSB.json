@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVSB",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MOVSB": {"X86": "MOVSB"}
+  },
+  "INPUTS": {
+    "MOVSB": {"X86": [["dstidx8",0],["srcidx8",0]]}
+  },
+  "OUTPUTS": {
+    "MOVSB": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "MOVSB": {"X86": ["0xA4"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVSB": {"X86": ["0xA4"]}
+  }
+}

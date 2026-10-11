@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NVCVTF",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "NVCVTFrm": {"ARM": "NVCVTFrm"}
+  },
+  "INPUTS": {
+    "NVCVTFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "NVCVTFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "NVCVTFrm": {"ARM": ["Format","33"]}
+  },
+  "OUTPUT_BYTES": {
+    "NVCVTFrm": {"ARM": ["Format","33"]}
+  }
+}

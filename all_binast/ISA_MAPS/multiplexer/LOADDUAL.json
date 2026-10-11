@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LOADDUAL",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "LOADDUAL": {"ARM": "LOADDUAL"}
+  },
+  "INPUTS": {
+    "LOADDUAL": {"ARM": [["addrmode3",0]]}
+  },
+  "OUTPUTS": {
+    "LOADDUAL": {"ARM": [["GPRPairOp",0]]}
+  },
+  "INPUT_BYTES": {
+    "LOADDUAL": {"ARM": ["ARMPseudoInst","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "LOADDUAL": {"ARM": ["ARMPseudoInst","64"]}
+  }
+}

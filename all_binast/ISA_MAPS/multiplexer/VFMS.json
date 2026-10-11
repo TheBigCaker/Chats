@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "VFMS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFMSfd": {"ARM": "VFMSfd"},
+    "VFMSfq": {"ARM": "VFMSfq"},
+    "VFMShd": {"ARM": "VFMShd"},
+    "VFMShq": {"ARM": "VFMShq"}
+  },
+  "INPUTS": {
+    "VFMSfd": {"ARM": []},
+    "VFMSfq": {"ARM": []},
+    "VFMShd": {"ARM": []},
+    "VFMShq": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VFMSfd": {"ARM": []},
+    "VFMSfq": {"ARM": []},
+    "VFMShd": {"ARM": []},
+    "VFMShq": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VFMSfd": {"ARM": ["N3VDMulOp","0","0","0b10","0b1100","1"]},
+    "VFMSfq": {"ARM": ["N3VQMulOp","0","0","0b10","0b1100","1"]},
+    "VFMShd": {"ARM": ["N3VDMulOp","0","0","0b11","0b1100","1"]},
+    "VFMShq": {"ARM": ["N3VQMulOp","0","0","0b11","0b1100","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFMSfd": {"ARM": ["N3VDMulOp","0","0","0b10","0b1100","1"]},
+    "VFMSfq": {"ARM": ["N3VQMulOp","0","0","0b10","0b1100","1"]},
+    "VFMShd": {"ARM": ["N3VDMulOp","0","0","0b11","0b1100","1"]},
+    "VFMShq": {"ARM": ["N3VQMulOp","0","0","0b11","0b1100","1"]}
+  }
+}

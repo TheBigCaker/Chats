@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RANT",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "RANT": {"Sparc": "RANT"}
+  },
+  "INPUTS": {
+    "RANT": {"Sparc": [["bprtarget16",0],["RegCCOp",0],["I64Regs",0]]}
+  },
+  "OUTPUTS": {
+    "RANT": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "RANT": {"Sparc": ["F2_4","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "RANT": {"Sparc": ["F2_4","1","0"]}
+  }
+}

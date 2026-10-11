@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YTAGR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YTAGR": {"RISCV": "YTAGR"}
+  },
+  "INPUTS": {
+    "YTAGR": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YTAGR": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YTAGR": {"RISCV": ["RVY_r_xy","0b00100"]}
+  },
+  "OUTPUT_BYTES": {
+    "YTAGR": {"RISCV": ["RVY_r_xy","0b00100"]}
+  }
+}

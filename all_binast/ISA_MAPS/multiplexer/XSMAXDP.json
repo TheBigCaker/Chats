@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSMAXDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSMAXDP": {"PowerPC": "XSMAXDP"}
+  },
+  "INPUTS": {
+    "XSMAXDP": {"PowerPC": [["vsfrc",0],["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSMAXDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSMAXDP": {"PowerPC": ["XX3Form","60","160"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSMAXDP": {"PowerPC": ["XX3Form","60","160"]}
+  }
+}

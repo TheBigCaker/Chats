@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "ADDIS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "ADDIS8": {"PowerPC": "ADDIS8"},
+    "ADDIStocHA8": {"PowerPC": "ADDIStocHA8"},
+    "ADDISgotTprelHA": {"PowerPC": "ADDISgotTprelHA"},
+    "ADDIStlsgdHA": {"PowerPC": "ADDIStlsgdHA"},
+    "ADDIStlsldHA": {"PowerPC": "ADDIStlsldHA"},
+    "ADDISdtprelHA": {"PowerPC": "ADDISdtprelHA"}
+  },
+  "INPUTS": {
+    "ADDIS8": {"PowerPC": [["g8rc_nox0",0],["s17imm64",17]]},
+    "ADDIStocHA8": {"PowerPC": [["g8rc_nox0",0],["tocentry",0]]},
+    "ADDISgotTprelHA": {"PowerPC": [["g8rc_nox0",0],["s16imm64",16]]},
+    "ADDIStlsgdHA": {"PowerPC": [["g8rc_nox0",0],["s16imm64",16]]},
+    "ADDIStlsldHA": {"PowerPC": [["g8rc_nox0",0],["s16imm64",16]]},
+    "ADDISdtprelHA": {"PowerPC": [["g8rc_nox0",0],["s16imm64",16]]}
+  },
+  "OUTPUTS": {
+    "ADDIS8": {"PowerPC": [["g8rc",0]]},
+    "ADDIStocHA8": {"PowerPC": [["g8rc",0]]},
+    "ADDISgotTprelHA": {"PowerPC": [["g8rc",0]]},
+    "ADDIStlsgdHA": {"PowerPC": [["g8rc",0]]},
+    "ADDIStlsldHA": {"PowerPC": [["g8rc",0]]},
+    "ADDISdtprelHA": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "ADDIS8": {"PowerPC": ["DForm_2","15"]},
+    "ADDIStocHA8": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDISgotTprelHA": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDIStlsgdHA": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDIStlsldHA": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDISdtprelHA": {"PowerPC": ["PPCEmitTimePseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADDIS8": {"PowerPC": ["DForm_2","15"]},
+    "ADDIStocHA8": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDISgotTprelHA": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDIStlsgdHA": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDIStlsldHA": {"PowerPC": ["PPCEmitTimePseudo"]},
+    "ADDISdtprelHA": {"PowerPC": ["PPCEmitTimePseudo"]}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "EH",
+  "BACKENDS": ["X86","PowerPC"],
+  "INDEX": {
+    "EH_RETURN": {"X86": "EH_RETURN"},
+    "EH_RETURN64": {"X86": "EH_RETURN64"},
+    "EH_SjLj_SetJmp64": {"PowerPC": "EH_SjLj_SetJmp64"},
+    "EH_SjLj_LongJmp64": {"PowerPC": "EH_SjLj_LongJmp64"}
+  },
+  "INPUTS": {
+    "EH_RETURN": {"X86": [["GR32",32]]},
+    "EH_RETURN64": {"X86": [["GR64",64]]},
+    "EH_SjLj_SetJmp64": {"PowerPC": [["memr",0]]},
+    "EH_SjLj_LongJmp64": {"PowerPC": [["memr",0]]}
+  },
+  "OUTPUTS": {
+    "EH_RETURN": {"X86": []},
+    "EH_RETURN64": {"X86": []},
+    "EH_SjLj_SetJmp64": {"PowerPC": [["gprc",0]]},
+    "EH_SjLj_LongJmp64": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "EH_RETURN": {"X86": ["0xC3"]},
+    "EH_RETURN64": {"X86": ["0xC3"]},
+    "EH_SjLj_SetJmp64": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "EH_SjLj_LongJmp64": {"PowerPC": ["PPCCustomInserterPseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "EH_RETURN": {"X86": ["0xC3"]},
+    "EH_RETURN64": {"X86": ["0xC3"]},
+    "EH_SjLj_SetJmp64": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "EH_SjLj_LongJmp64": {"PowerPC": ["PPCCustomInserterPseudo"]}
+  }
+}

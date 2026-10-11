@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YGPR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YGPR": {"RISCV": "YGPR"}
+  },
+  "INPUTS": {
+    "YGPR": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YGPR": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YGPR": {"RISCV": ["RegisterClass","64","10","5","28","8","18","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "YGPR": {"RISCV": ["RegisterClass","64","10","5","28","8","18","0"]}
+  }
+}

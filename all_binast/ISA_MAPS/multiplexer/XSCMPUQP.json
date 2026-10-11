@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSCMPUQP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSCMPUQP": {"PowerPC": "XSCMPUQP"}
+  },
+  "INPUTS": {
+    "XSCMPUQP": {"PowerPC": [["vrrc:$RA",0],["vrrc:$RB",0]]}
+  },
+  "OUTPUTS": {
+    "XSCMPUQP": {"PowerPC": [["crrc:$BF",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSCMPUQP": {"PowerPC": ["X_BF3_VA5_VB5","63","644"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSCMPUQP": {"PowerPC": ["X_BF3_VA5_VB5","63","644"]}
+  }
+}

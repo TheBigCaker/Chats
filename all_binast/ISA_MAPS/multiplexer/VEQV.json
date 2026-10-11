@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VEQV",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VEQV": {"PowerPC": "VEQV"}
+  },
+  "INPUTS": {
+    "VEQV": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VEQV": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VEQV": {"PowerPC": ["VXForm_1","1668"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEQV": {"PowerPC": ["VXForm_1","1668"]}
+  }
+}

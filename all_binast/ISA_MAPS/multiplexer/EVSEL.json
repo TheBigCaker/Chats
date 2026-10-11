@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVSEL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVSEL": {"PowerPC": "EVSEL"}
+  },
+  "INPUTS": {
+    "EVSEL": {"PowerPC": [["sperc",0],["sperc",0],["crrc",0]]}
+  },
+  "OUTPUTS": {
+    "EVSEL": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVSEL": {"PowerPC": ["EVXForm_4","79"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVSEL": {"PowerPC": ["EVXForm_4","79"]}
+  }
+}

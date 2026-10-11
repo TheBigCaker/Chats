@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PUSHP",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PUSHP64r": {"X86": "PUSHP64r"}
+  },
+  "INPUTS": {
+    "PUSHP64r": {"X86": [["GR64",64]]}
+  },
+  "OUTPUTS": {
+    "PUSHP64r": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PUSHP64r": {"X86": ["0x50"]}
+  },
+  "OUTPUT_BYTES": {
+    "PUSHP64r": {"X86": ["0x50"]}
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "VZIP",
+  "BACKENDS": ["ARM","RISCV"],
+  "INDEX": {
+    "VZIPd8": {"ARM": "VZIPd8"},
+    "VZIPd16": {"ARM": "VZIPd16"},
+    "VZIPq8": {"ARM": "VZIPq8"},
+    "VZIPq16": {"ARM": "VZIPq16"},
+    "VZIPq32": {"ARM": "VZIPq32"},
+    "VZIP_VV": {"RISCV": "VZIP_VV"}
+  },
+  "INPUTS": {
+    "VZIPd8": {"ARM": []},
+    "VZIPd16": {"ARM": []},
+    "VZIPq8": {"ARM": []},
+    "VZIPq16": {"ARM": []},
+    "VZIPq32": {"ARM": []},
+    "VZIP_VV": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VZIPd8": {"ARM": []},
+    "VZIPd16": {"ARM": []},
+    "VZIPq8": {"ARM": []},
+    "VZIPq16": {"ARM": []},
+    "VZIPq32": {"ARM": []},
+    "VZIP_VV": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VZIPd8": {"ARM": ["N2VDShuffle","0b00","0b00011"]},
+    "VZIPd16": {"ARM": ["N2VDShuffle","0b01","0b00011"]},
+    "VZIPq8": {"ARM": ["N2VQShuffle","0b00","0b00011"]},
+    "VZIPq16": {"ARM": ["N2VQShuffle","0b01","0b00011"]},
+    "VZIPq32": {"ARM": ["N2VQShuffle","0b10","0b00011"]},
+    "VZIP_VV": {"RISCV": ["VALUVV","0b111110"]}
+  },
+  "OUTPUT_BYTES": {
+    "VZIPd8": {"ARM": ["N2VDShuffle","0b00","0b00011"]},
+    "VZIPd16": {"ARM": ["N2VDShuffle","0b01","0b00011"]},
+    "VZIPq8": {"ARM": ["N2VQShuffle","0b00","0b00011"]},
+    "VZIPq16": {"ARM": ["N2VQShuffle","0b01","0b00011"]},
+    "VZIPq32": {"ARM": ["N2VQShuffle","0b10","0b00011"]},
+    "VZIP_VV": {"RISCV": ["VALUVV","0b111110"]}
+  }
+}

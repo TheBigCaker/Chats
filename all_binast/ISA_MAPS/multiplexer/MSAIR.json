@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MSAIR",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MSAIR": {"Mips": "MSAIR"}
+  },
+  "INPUTS": {
+    "MSAIR": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "MSAIR": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "MSAIR": {"Mips": ["MipsReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "MSAIR": {"Mips": ["MipsReg","0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TL",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "TL": {"Sparc": "TL"}
+  },
+  "INPUTS": {
+    "TL": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "TL": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "TL": {"Sparc": ["SparcCtrlReg","7"]}
+  },
+  "OUTPUT_BYTES": {
+    "TL": {"Sparc": ["SparcCtrlReg","7"]}
+  }
+}

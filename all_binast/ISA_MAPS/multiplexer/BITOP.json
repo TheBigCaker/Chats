@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BITOP",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "BITOP3_32": {"AMDGPU": "BITOP3_32"},
+    "BITOP3_16": {"AMDGPU": "BITOP3_16"}
+  },
+  "INPUTS": {
+    "BITOP3_32": {"AMDGPU": []},
+    "BITOP3_16": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "BITOP3_32": {"AMDGPU": []},
+    "BITOP3_16": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "BITOP3_32": {"AMDGPU": ["ComplexPattern","4"]},
+    "BITOP3_16": {"AMDGPU": ["ComplexPattern","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "BITOP3_32": {"AMDGPU": ["ComplexPattern","4"]},
+    "BITOP3_16": {"AMDGPU": ["ComplexPattern","4"]}
+  }
+}

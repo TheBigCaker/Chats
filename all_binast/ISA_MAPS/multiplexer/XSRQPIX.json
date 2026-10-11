@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSRQPIX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSRQPIX": {"PowerPC": "XSRQPIX"}
+  },
+  "INPUTS": {
+    "XSRQPIX": {"PowerPC": [["u1imm:$R",1],["vrrc:$VRB",0],["u2imm:$idx",2]]}
+  },
+  "OUTPUTS": {
+    "XSRQPIX": {"PowerPC": [["vrrc:$VRT",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSRQPIX": {"PowerPC": ["Z23_VT5_R1_VB5_RMC2_EX1","63","5","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSRQPIX": {"PowerPC": ["Z23_VT5_R1_VB5_RMC2_EX1","63","5","1"]}
+  }
+}

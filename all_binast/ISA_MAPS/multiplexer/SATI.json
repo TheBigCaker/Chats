@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SATI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SATI_RV32": {"RISCV": "SATI_RV32"},
+    "SATI_RV64": {"RISCV": "SATI_RV64"}
+  },
+  "INPUTS": {
+    "SATI_RV32": {"RISCV": []},
+    "SATI_RV64": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SATI_RV32": {"RISCV": []},
+    "SATI_RV64": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SATI_RV32": {"RISCV": ["RVPShiftW_ri","0b110","0b100"]},
+    "SATI_RV64": {"RISCV": ["RVPShiftD_ri","0b110","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "SATI_RV32": {"RISCV": ["RVPShiftW_ri","0b110","0b100"]},
+    "SATI_RV64": {"RISCV": ["RVPShiftD_ri","0b110","0b100"]}
+  }
+}

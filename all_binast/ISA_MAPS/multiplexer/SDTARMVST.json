@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SDTARMVST",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SDTARMVST2": {"ARM": "SDTARMVST2"},
+    "SDTARMVST4": {"ARM": "SDTARMVST4"}
+  },
+  "INPUTS": {
+    "SDTARMVST2": {"ARM": []},
+    "SDTARMVST4": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SDTARMVST2": {"ARM": []},
+    "SDTARMVST4": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SDTARMVST2": {"ARM": ["SDTypeProfile","1","5"]},
+    "SDTARMVST4": {"ARM": ["SDTypeProfile","1","7"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTARMVST2": {"ARM": ["SDTypeProfile","1","5"]},
+    "SDTARMVST4": {"ARM": ["SDTypeProfile","1","7"]}
+  }
+}

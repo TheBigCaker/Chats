@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFIRST",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFIRST_M": {"RISCV": "VFIRST_M"}
+  },
+  "INPUTS": {
+    "VFIRST_M": {"RISCV": [["VR",0],["VMaskOp",0]]}
+  },
+  "OUTPUTS": {
+    "VFIRST_M": {"RISCV": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "VFIRST_M": {"RISCV": ["RVInstVUnaryRd","0b010000","0b10001"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFIRST_M": {"RISCV": ["RVInstVUnaryRd","0b010000","0b10001"]}
+  }
+}

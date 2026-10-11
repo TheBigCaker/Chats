@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "PREDSUMU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PREDSUMU_HS": {"RISCV": "PREDSUMU_HS"},
+    "PREDSUMU_BS": {"RISCV": "PREDSUMU_BS"},
+    "PREDSUMU_WS": {"RISCV": "PREDSUMU_WS"},
+    "PREDSUMU_DHS": {"RISCV": "PREDSUMU_DHS"},
+    "PREDSUMU_DBS": {"RISCV": "PREDSUMU_DBS"}
+  },
+  "INPUTS": {
+    "PREDSUMU_HS": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PREDSUMU_BS": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PREDSUMU_WS": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PREDSUMU_DHS": {"RISCV": [["GPRPairRV32:$rs1",0],["GPR:$rs2",0]]},
+    "PREDSUMU_DBS": {"RISCV": [["GPRPairRV32:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PREDSUMU_HS": {"RISCV": [["GPR:$rd",0]]},
+    "PREDSUMU_BS": {"RISCV": [["GPR:$rd",0]]},
+    "PREDSUMU_WS": {"RISCV": [["GPR:$rd",0]]},
+    "PREDSUMU_DHS": {"RISCV": [["GPR:$rd",0]]},
+    "PREDSUMU_DBS": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "PREDSUMU_HS": {"RISCV": ["RVPBinaryScalar_rr","0b011","0b00","0b100"]},
+    "PREDSUMU_BS": {"RISCV": ["RVPBinaryScalar_rr","0b011","0b10","0b100"]},
+    "PREDSUMU_WS": {"RISCV": ["RVPBinaryScalar_rr","0b011","0b01","0b100"]},
+    "PREDSUMU_DHS": {"RISCV": ["RVPNarrowingBinary_rr","0b011","0b00"]},
+    "PREDSUMU_DBS": {"RISCV": ["RVPNarrowingBinary_rr","0b011","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "PREDSUMU_HS": {"RISCV": ["RVPBinaryScalar_rr","0b011","0b00","0b100"]},
+    "PREDSUMU_BS": {"RISCV": ["RVPBinaryScalar_rr","0b011","0b10","0b100"]},
+    "PREDSUMU_WS": {"RISCV": ["RVPBinaryScalar_rr","0b011","0b01","0b100"]},
+    "PREDSUMU_DHS": {"RISCV": ["RVPNarrowingBinary_rr","0b011","0b00"]},
+    "PREDSUMU_DBS": {"RISCV": ["RVPNarrowingBinary_rr","0b011","0b10"]}
+  }
+}

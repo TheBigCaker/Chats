@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DAS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "DAS": {"X86": "DAS"}
+  },
+  "INPUTS": {
+    "DAS": {"X86": []}
+  },
+  "OUTPUTS": {
+    "DAS": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "DAS": {"X86": ["0x2F"]}
+  },
+  "OUTPUT_BYTES": {
+    "DAS": {"X86": ["0x2F"]}
+  }
+}

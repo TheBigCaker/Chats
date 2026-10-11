@@ -1,0 +1,2 @@
+.backend powerpc
+ADDG r0, r1, r2

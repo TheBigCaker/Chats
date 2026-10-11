@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STXVP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STXVP": {"PowerPC": "STXVP"}
+  },
+  "INPUTS": {
+    "STXVP": {"PowerPC": [["vsrprc",0],["(memrix16",0]]}
+  },
+  "OUTPUTS": {
+    "STXVP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STXVP": {"PowerPC": ["DQForm_XTp5_RA17_MEM","6","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "STXVP": {"PowerPC": ["DQForm_XTp5_RA17_MEM","6","1"]}
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "IABS",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "IABS.s32": {"Mali": "IABS.s32"},
+    "IABS.v2s16": {"Mali": "IABS.v2s16"},
+    "IABS.v4s8": {"Mali": "IABS.v4s8"},
+    "IABS.s32": {"Mali": "IABS.s32"},
+    "IABS.v2s16": {"Mali": "IABS.v2s16"},
+    "IABS.v4s8": {"Mali": "IABS.v4s8"}
+  },
+  "INPUTS": {
+    "IABS.s32": {"Mali": [["R32",32]]},
+    "IABS.v2s16": {"Mali": [["R32",32]]},
+    "IABS.v4s8": {"Mali": [["R32",32]]},
+    "IABS.s32": {"Mali": [["R32",32]]},
+    "IABS.v2s16": {"Mali": [["R32",32]]},
+    "IABS.v4s8": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "IABS.s32": {"Mali": [["R",32]]},
+    "IABS.v2s16": {"Mali": [["R",32]]},
+    "IABS.v4s8": {"Mali": [["R",32]]},
+    "IABS.s32": {"Mali": [["R",32]]},
+    "IABS.v2s16": {"Mali": [["R",32]]},
+    "IABS.v4s8": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "IABS.s32": {"Mali": ["Bifrost_add","0x3dea0","0xffff8"]},
+    "IABS.v2s16": {"Mali": ["Bifrost_add","0x3de88","0xfffc8"]},
+    "IABS.v4s8": {"Mali": ["Bifrost_add","0x3deb0","0xffff8"]},
+    "IABS.s32": {"Mali": ["Valhall_CVT"]},
+    "IABS.v2s16": {"Mali": ["Valhall_CVT"]},
+    "IABS.v4s8": {"Mali": ["Valhall_CVT"]}
+  },
+  "OUTPUT_BYTES": {
+    "IABS.s32": {"Mali": ["Bifrost_add","0x3dea0","0xffff8"]},
+    "IABS.v2s16": {"Mali": ["Bifrost_add","0x3de88","0xfffc8"]},
+    "IABS.v4s8": {"Mali": ["Bifrost_add","0x3deb0","0xffff8"]},
+    "IABS.s32": {"Mali": ["Valhall_CVT"]},
+    "IABS.v2s16": {"Mali": ["Valhall_CVT"]},
+    "IABS.v4s8": {"Mali": ["Valhall_CVT"]}
+  }
+}

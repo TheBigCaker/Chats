@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BFC",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "BFC": {"ARM": "BFC"}
+  },
+  "INPUTS": {
+    "BFC": {"ARM": [["GPR",64],["bf_inv_mask_imm",0]]}
+  },
+  "OUTPUTS": {
+    "BFC": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "BFC": {"ARM": ["I","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "BFC": {"ARM": ["I","4"]}
+  }
+}

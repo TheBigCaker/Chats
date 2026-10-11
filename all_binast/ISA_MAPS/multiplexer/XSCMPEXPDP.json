@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSCMPEXPDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSCMPEXPDP": {"PowerPC": "XSCMPEXPDP"}
+  },
+  "INPUTS": {
+    "XSCMPEXPDP": {"PowerPC": [["vsfrc",0],["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSCMPEXPDP": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSCMPEXPDP": {"PowerPC": ["XX3Form_1","60","59"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSCMPEXPDP": {"PowerPC": ["XX3Form_1","60","59"]}
+  }
+}

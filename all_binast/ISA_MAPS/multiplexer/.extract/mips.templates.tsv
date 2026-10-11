@@ -1,0 +1,644 @@
+MMR6Arch	1	|
+MMDecodeDisambiguatedBy	1	|
+BEQZC_BNEZC_FM_MM16R6	1	|
+POOL16C_JALRC_FM_MM16R6	1	|
+POP35_BOVC_FM_MMR6	1	|
+POP37_BNVC_FM_MMR6	1	|
+POOL16C_JRCADDIUSP_FM_MM16R6	1	|
+POOL16C_LWM_SWM_FM_MM16R6	1	|
+POOL32A_BITSWAP_FM_MMR6	1	|
+CACHE_PREF_FM_MMR6	2	|
+ARITH_FM_MMR6	2	|
+ADDI_FM_MMR6	2	|
+PCREL19_FM_MMR6	1	|
+PCREL16_FM_MMR6	1	|
+POOL32A_FM_MMR6	1	|
+POOL32A_PAUSE_FM_MMR6	2	|
+POOL32A_RDPGPR_FM_MMR6	1	|
+POOL32A_2R_FM_MMR6	1	|
+SPECIAL_2R_FM_MMR6	1	|
+POOL32A_ALIGN_FM_MMR6	1	|
+POOL32A_LSA_FM	1	|
+SB32_SH32_STORE_FM_MMR6	1	|
+CMP_BRANCH_1R_RT_OFF16_FM_MMR6	2	|
+CMP_BRANCH_1R_BOTH_OFF16_FM_MMR6	2	|
+POOL32A_JALRC_FM_MMR6	2	|
+POOL32A_EXT_INS_FM_MMR6	2	|
+POOL32A_ERET_FM_MMR6	2	|
+ERETNC_FM_MMR6	1	|
+BREAK_MMR6_ENC	1	|
+BARRIER_MMR6_ENC	2	|
+POOL32A_EIDI_MMR6_ENC	2	|
+SHIFT_MMR6_ENC	3	|
+SW32_FM_MMR6	2	|
+POOL32F_ARITH_FM_MMR6	3	|
+POOL32F_ARITHF_FM_MMR6	3	|
+POOL32F_MOV_NEG_FM_MMR6	3	|
+POOL32F_MINMAX_FM	3	|
+POOL32F_CMP_FM	3	|
+POOL32F_CVT_LW_FM	3	|
+POOL32F_CVT_DS_FM	3	|
+POOL32F_ABS_FM_MMR6	3	|
+POOL32F_MATH_FM_MMR6	3	|
+POOL16C_OR16_XOR16_FM_MMR6	1	|
+POOL16C_BREAKPOINT_FM_MMR6	1	|
+POOL32A_WRPGPR_WSBH_FM_MMR6	2	|
+POOL32F_RECIP_ROUND_FM_MMR6	3	|
+POOL32F_RINT_FM_MMR6	2	|
+POOL32F_SEL_FM_MMR6	3	|
+POOL32F_CLASS_FM_MMR6	3	|
+POOL32A_TLBINV_FM_MMR6	2	|
+POOL32A_MFTC0_FM_MMR6	3	|
+POOL32A_GINV_FM_MMR6	2	|
+POOL32F_MFTC1_FM_MMR6	2	|
+POOL32A_MFTC2_FM_MMR6	2	|
+CMP_BRANCH_2R_OFF16_FM_MMR6	2	|
+POOL32A_DVPEVP_FM_MMR6	2	|
+CMP_BRANCH_OFF21_FM_MMR6	1	|
+POOL32I_BRANCH_COP_1_2_FM_MMR6	2	|
+LDWC1_SDWC1_FM_MMR6	2	|
+POOL32B_LDWC2_SDWC2_FM_MMR6	2	|
+POOL32C_LL_E_SC_E_FM_MMR6	3	|
+CMP_CBR_RT_Z_MMR6_DESC_BASE	3	|GPROpnd:$rt, opnd:$offset
+BEQZALC_MMR6_DESC	3	|
+BGEZALC_MMR6_DESC	3	|
+BGTZALC_MMR6_DESC	3	|
+BLEZALC_MMR6_DESC	3	|
+BLTZALC_MMR6_DESC	3	|
+BNEZALC_MMR6_DESC	3	|
+CMP_CBR_2R_MMR6_DESC_BASE	3	|GPROpnd:$rs, GPROpnd:$rt, opnd:$offset
+BC_MMR6_DESC_BASE	2	|opnd:$offset
+BALC_MMR6_DESC	2	|
+BC_MMR6_DESC	2	|
+BEQZC_BNEZC_MM16R6_DESC_BASE	1	|
+BITSWAP_MMR6_DESC_BASE	2	GPROpnd:$rd|GPROpnd:$rt
+CACHE_HINT_MMR6_DESC	2	|MemOpnd:$addr, uimm5:$hint
+LB_LBU_MMR6_DESC_BASE	3	GPROpnd:$rt|MemOpnd:$addr
+CLO_CLZ_MMR6_DESC_BASE	2	GPROpnd:$rt|GPROpnd:$rs
+JALRC16_MMR6_DESC_BASE	2	|RO:$rs
+JMP_MMR6_IDX_COMPACT_DESC_BASE	3	|GPROpnd:$rt, opnd:$offset
+JIALC_MMR6_DESC	3	|
+JIC_MMR6_DESC	3	|
+JRC16_MMR6_DESC_BASE	2	|RO:$rs
+ALIGN_MMR6_DESC_BASE	3	GPROpnd:$rd|GPROpnd:$rs, GPROpnd:$rt, ImmOpnd:$bp
+AUI_MMR6_DESC_BASE	2	GPROpnd:$rt|GPROpnd:$rs, uimm16:$imm
+ALUIPC_MMR6_DESC_BASE	2	GPROpnd:$rt|simm16:$imm
+LSA_MMR6_DESC_BASE	3	GPROpnd:$rd|GPROpnd:$rs, GPROpnd:$rt, ImmOpnd:$imm2
+PCREL_MMR6_DESC_BASE	3	GPROpnd:$rt|ImmOpnd:$imm
+SELEQNE_Z_MMR6_DESC_BASE	2	GPROpnd:$rd|GPROpnd:$rs, GPROpnd:$rt
+DIVMOD_MMR6_DESC_BASE	3	GPROpnd:$rd|GPROpnd:$rs, GPROpnd:$rt
+ORI_MMR6_DESC	5	|
+WRPGPR_WSBH_MMR6_DESC_BASE	2	RO:$rt|RO:$rs
+MTC0_MMR6_DESC_BASE	3	DstRC:$rs|SrcRC:$rt, uimm3:$sel
+MTC1_MMR6_DESC_BASE	4	DstRC:$fs|SrcRC:$rt
+MTC1_64_MMR6_DESC_BASE	3	DstRC:$fs|DstRC:$fs_in, SrcRC:$rt
+MTC2_MMR6_DESC_BASE	3	DstRC:$impl|SrcRC:$rt
+MFC0_MMR6_DESC_BASE	3	DstRC:$rt|SrcRC:$rs, uimm3:$sel
+MFC1_MMR6_DESC_BASE	4	DstRC:$rt|SrcRC:$fs
+MFC2_MMR6_DESC_BASE	3	DstRC:$rt|SrcRC:$impl
+LDC2_LWC2_MMR6_DESC_BASE	1	COP2Opnd:$rt|mem_mm_11:$addr
+SDC2_SWC2_MMR6_DESC_BASE	1	|COP2Opnd:$rt, mem_mm_11:$addr
+GINV_MMR6_DESC_BASE	2	|SrcRC:$rs, uimm2:$type
+GINVI_MMR6_DESC	2	|GPR32Opnd:$rs
+SC_MMR6_DESC_BASE	1	GPR32Opnd:$dst|GPR32Opnd:$rt, mem_mm_9:$addr
+LL_MMR6_DESC_BASE	1	GPR32Opnd:$rt|mem_mm_9:$addr
+FARITH_MMR6_DESC_BASE	4	RC:$fd|RC:$ft, RC:$fs
+FMOV_FNEG_MMR6_DESC_BASE	4	DstRC:$ft|SrcRC:$fs
+CVT_MMR6_DESC_BASE	4	DstRC:$ft|SrcRC:$fs
+ABSS_FT_MMR6_DESC_BASE	4	DstRC:$ft|SrcRC:$fs
+STORE_MMR6_DESC_BASE	2	|
+SYNCI_MMR6_DESC	2	|
+SB16_MMR6_DESC_BASE	3	|RTOpnd:$rt, MemOpnd:$addr
+TLBINV_MMR6_DESC_BASE	1	|
+DVPEVP_MMR6_DESC_BASE	1	GPR32Opnd:$rs|
+BRANCH_COP1_MMR6_DESC_BASE	1	|FGR64Opnd:$rt, brtarget_mm:$offset
+BRANCH_COP2_MMR6_DESC_BASE	1	|COP2Opnd:$rt, brtarget_mm:$offset
+BOVC_BNVC_MMR6_DESC_BASE	3	|GPROpnd:$rt, GPROpnd:$rs, opnd:$offset
+MMDSPInst	1	|
+MMDSPInstAlias	3	|
+POOL32A_3R_FMT	2	|
+POOL32A_2R_FMT	2	|
+POOL32A_2RAC_FMT	2	|
+POOL32A_3RB0_FMT	2	|
+POOL32A_2RSA4_FMT	2	|
+POOL32A_2RSA3_FMT	2	|
+POOL32A_2RSA5B0_FMT	2	|
+POOL32A_2RSA4B0_FMT	2	|
+POOL32A_2RSA4OP6_FMT	2	|
+POOL32A_1RIMM5AC_FMT	2	|
+POOL32A_2RSA5_FMT	2	|
+POOL32A_1RMEMB0_FMT	2	|
+POOL32A_1RAC_FMT	2	|
+POOL32A_1RMASK7_FMT	2	|
+POOL32A_1RIMM10_FMT	2	|
+POOL32A_1RIMM8_FMT	2	|
+POOL32A_4B0SHIFT6AC4B0_FMT	2	|
+POOL32A_5B01RAC_FMT	2	|
+POOL32I_IMMB0_FMT	2	|
+POOL32A_2RBP_FMT	1	|
+POOL32A_2RB0_FMT	2	|
+POOL32S_3RB0_FMT	2	|
+POOL32A_2R2B0_FMT	2	|
+ABSQ_S_PH_MM_R2_DESC_BASE	4	ROD:$rt|ROS:$rs
+SHLL_R2_MM_DESC_BASE	5	RO:$rt|RO:$rs, ImmOpnd:$sa
+SHLLV_R3_MM_DESC_BASE	3	RO:$rd|RO:$rt, GPR32Opnd:$rs
+EXT_MM_2R_DESC_BASE	1	GPR32Opnd:$rt|ACC64DSPOpnd:$ac, GPR32Opnd:$rs
+EXT_MM_1R_DESC_BASE	1	GPR32Opnd:$rt|ACC64DSPOpnd:$ac, uimm5:$imm
+MFHI_MM_DESC_BASE	3	GPR32Opnd:$rs|RO:$ac
+for	5	|
+for	5	|
+ARITH_FM_MM16	1	|
+ANDI_FM_MM16	1	|
+LOGIC_FM_MM16	1	|
+SHIFT_FM_MM16	1	|
+LOAD_STORE_FM_MM16	1	|
+LOAD_STORE_SP_FM_MM16	1	|
+LOAD_GP_FM_MM16	1	|
+MOVE_FM_MM16	1	|
+JALR_FM_MM16	1	|
+MFHILO_FM_MM16	1	|
+JRADDIUSP_FM_MM16	1	|
+BRKSDBBP16_FM_MM	1	|
+BEQNEZ_FM_MM16	1	|
+MMArch	2	|
+ADDI_FM_MM	1	|
+SLTI_FM_MM	1	|
+MULT_FM_MM	1	|
+SRA_FM_MM	2	|
+SRLV_FM_MM	2	|
+LW_FM_MM	1	|
+POOL32C_LHUE_FM_MM	3	|
+LWL_FM_MM	1	|
+POOL32C_STEVA_LDEVA_FM_MM	2	|
+CMov_F_I_FM_MM	1	|
+MTLO_FM_MM	1	|
+MFLO_FM_MM	1	|
+CLO_FM_MM	1	|
+SEB_FM_MM	1	|
+EXT_FM_MM	1	|
+J_FM_MM	1	|
+JR_FM_MM	1	|
+JALR_FM_MM	1	|
+BEQ_FM_MM	1	|
+BGEZ_FM_MM	1	|
+BGEZAL_FM_MM	1	|
+ER_FM_MM	1	|
+EI_FM_MM	1	|
+TEQ_FM_MM	1	|
+TEQI_FM_MM	1	|
+LL_FM_MM	1	|
+LLE_FM_MM	1	|
+ADDS_FM_MM	2	|
+LWXC1_FM_MM	1	|
+SWXC1_FM_MM	1	|
+CEQS_FM_MM	1	|
+C_COND_FM_MM	2	|
+BC1F_FM_MM	1	|
+ROUND_W_FM_MM	2	|
+ABS_FM_MM	2	|
+CMov_F_F_FM_MM	2	|
+CMov_I_F_FM_MM	2	|
+MFC1_FM_MM	1	|
+MADDS_FM_MM	1	|
+COMPACT_BRANCH_FM_MM	1	|
+COP0_TLB_FM_MM	1	|
+LWXS_FM_MM	1	|
+LWM_FM_MM	1	|
+LWM_FM_MM16	1	|
+CACHE_PREF_FM_MM	2	|
+CACHE_PREFE_FM_MM	2	|
+POOL32F_PREFX_FM_MM	2	|
+BARRIER_FM_MM	1	|
+POOL32A_CFTC2_FM_MM	1	|
+POOL32A_TLBINV_FM_MM	1	|
+POOL32A_MFTC0_FM_MM	2	|
+mem_mm_4_generic	1	|
+CompactBranchMM	3	|RO:$rs, opnd:$offset
+LoadLeftRightMM	4	RO:$rt|MemOpnd:$addr, RO:$src
+StoreLeftRightMM	4	|RO:$rt, MemOpnd:$addr
+MovePMM16	4	RO1:$rd1, RO2:$rd2|RO3:$rs, RO3:$rt
+StorePairMM	1	|GPR32Opnd:$rt, GPR32Opnd:$rt2, mem_simm12:$addr
+LoadPairMM	1	GPR32Opnd:$rt, GPR32Opnd:$rt2|mem_simm12:$addr
+LLBaseMM	2	RO:$rt|mem_mm_12:$addr
+LLEBaseMM	2	RO:$rt|mem_simm9:$addr
+SCBaseMM	2	RO:$dst|RO:$rt, mem_mm_12:$addr
+SCEBaseMM	2	RO:$dst|RO:$rt, mem_simm9:$addr
+LoadMM	4	RO:$rt|MO:$addr
+ArithRMM16	4	RO:$rd|RO:$rs, RO:$rt
+LogicRMM16	3	RO:$dst|RO:$rs, RO:$rt
+LoadMM16	3	RO:$rt|MemOpnd:$addr
+StoreMM16	3	|RTOpnd:$rt, MemOpnd:$addr
+LoadSPMM16	3	RO:$rt|MemOpnd:$offset
+StoreSPMM16	3	|RO:$rt, MemOpnd:$offset
+LoadGPMM16	3	RO:$rt|MemOpnd:$offset
+AddImmUR2	2	RO:$rd|RO:$rs, simm3_lsa2:$imm
+AddImmUS5	2	RO:$dst|RO:$rd, simm4:$imm
+MoveFromHILOMM	3	RO:$rd|
+MoveMM16	2	RO:$rd|RO:$rs
+LoadImmMM16	3	RO:$rd|Od:$imm
+JumpLinkRegMM16	2	|RO:$rs
+JumpRegMM16	2	|RO:$rs
+for	5	|
+JumpLinkRegSMM16	2	|RO:$rs
+JumpRegCMM16	2	|RO:$rs
+CBranchZeroMM	3	|RO:$rs, opnd:$offset
+JumpLinkMM	2	|opnd:$target
+StoreMultMM	1	|reglist:$rt, mem_mm_12:$addr
+LoadMultMM	1	reglist:$rt|mem_mm_12:$addr
+StoreMultMM16	1	|reglist16:$rt, mem_mm_4sp:$addr
+LoadMultMM16	1	reglist16:$rt|mem_mm_4sp:$addr
+UncondBranchMM16	1	|brtarget10_mm:$offset
+HypcallMM	1	|uimm10:$code_
+TLBINVMM	1	|
+MfCop0MM	3	DstRC:$rt|SrcRC:$rs, uimm3:$sel
+MtCop0MM	3	DstRC:$rs|SrcRC:$rt, uimm3:$sel
+AdditionalRequires	1	|
+for	4	|
+MipsInst16	4	|
+MipsInst16_32	4	|
+MipsInst16_EXTEND	4	|
+MipsPseudo16	4	|
+FI16	5	|
+FRI16	5	|
+FRR16	5	|
+FRRBreak16	4	|
+FRR_SF16	6	|
+FC16	5	|
+FRR16_JALRC	7	|
+FRRI16	5	|
+FRRR16	5	|
+FRRI_A16	5	|
+FSHIFT16	5	|
+FI816	5	|
+FI8_MOVR3216	4	|
+FI8_MOV32R16	4	|
+FI8_SVRS16	5	|
+FJAL16	5	|
+FEXT_I16	5	|
+FASMACRO16	4	|
+FEXT_RI16	5	|
+FEXT_RRI16	5	|
+FEXT_RRI_A16	5	|
+FEXT_SHIFT16	5	|
+FEXT_I816	5	|
+FEXT_I8_SVRS16	5	|
+F2RI16_ins	2	CPU16Regs:$rx|CPU16Regs:$rx_, simm16:$imm8
+FEXT_CCRXI16_ins	1	CPU16Regs:$cc|CPU16Regs:$rx, simm16:$imm
+FJAL16_ins	2	|uimm26:$imm26
+FJALB16_ins	2	|uimm26:$imm26
+FCCRR16_ins	1	CPU16Regs:$cc|CPU16Regs:$rx, CPU16Regs:$ry
+FEXT_2RI16_ins	2	CPU16Regs:$rx|CPU16Regs:$rx_, simm16:$imm16
+FEXT_T8I816_ins	2	|CPU16Regs:$rx, CPU16Regs:$ry, brtarget:$imm
+FEXT_T8I8I16_ins	2	|CPU16Regs:$rx, simm16:$imm, brtarget:$targ
+FMULT16_LO_ins	1	CPU16Regs:$rz|CPU16Regs:$rx, CPU16Regs:$ry
+FRR16_ins	2	CPU16Regs:$rx|CPU16Regs:$ry
+FRRBreakNull16_ins	1	|
+FRR16R_ins	2	|CPU16Regs:$rx, CPU16Regs:$ry
+FRxRxRy16_ins	2	CPU16Regs:$rz|CPU16Regs:$rx, CPU16Regs:$ry
+FRR_SF16_ins	3	CPU16Regs:$rx|CPU16Regs:$rx_
+only	1	CPU16Regs:$rd_|CPU16Regs:$rd, CPU16Regs:$rs,                CPU16Regs:$rt
+SeliT	2	CPU16Regs:$rd_|CPU16Regs:$rd, CPU16Regs:$rs,                                        CPU16Regs:$rl, simm16:$imm
+SelT	2	CPU16Regs:$rd_|CPU16Regs:$rd, CPU16Regs:$rs,                 CPU16Regs:$rl, CPU16Regs:$rr
+info	1	|
+Mips16Pat	2	|
+UncondBranch16_pat	2	|
+R6MMR6Rel	1	|
+MipsR6Inst	5	|
+OPGROUP	1	|
+OPCODE2	1	|
+OPCODE3	1	|
+OPCODE5	1	|
+OPCODE6	1	|
+FIELD_FMT	1	|
+FIELD_CMP_COND	1	|
+FIELD_CMP_FORMAT	1	|
+DecodeDisambiguates	1	|
+DecodeDisambiguatedBy	1	|
+COP0_EVP_DVP_FM	1	|
+COP1_2R_FM	2	|
+COP1_3R_FM	2	|
+COP1_BCCZ_FM	1	|
+COP2_BCCZ_FM	1	|
+PCREL16_FM	1	|
+PCREL19_FM	1	|
+PCREL18_FM	1	|
+SPECIAL3_2R_FM	1	|
+SPECIAL3_MEM_FM	1	|
+SPECIAL_2R_FM	1	|
+SPECIAL_3R_FM	2	|
+SIGRIE_ENC	5	FGRCCOpnd:$fd|FGROpnd:$fs, FGROpnd:$ft
+PCREL_DESC_BASE	3	GPROpnd:$rs|ImmOpnd:$imm
+ALIGN_DESC_BASE	3	GPROpnd:$rd|GPROpnd:$rs, GPROpnd:$rt, ImmOpnd:$bp
+ALUIPC_DESC_BASE	2	GPROpnd:$rs|simm16:$imm
+AUI_DESC_BASE	2	GPROpnd:$rt|GPROpnd:$rs, uimm16:$imm
+BRANCH_DESC_BASE	2	|opnd:$offset
+NAL_DESC_BASE	1	|
+CMP_BC_DESC_BASE	3	|GPROpnd:$rs, GPROpnd:$rt, opnd:$offset
+CMP_CBR_EQNE_Z_DESC_BASE	3	|GPROpnd:$rs, opnd:$offset
+CMP_CBR_RT_Z_DESC_BASE	3	|GPROpnd:$rt, opnd:$offset
+BAL_DESC	2	|
+NAL_DESC	1	|
+BALC_DESC	2	|
+COP1_BCCZ_DESC_BASE	1	|FGR64Opnd:$ft, brtarget:$offset
+COP2_BCCZ_DESC_BASE	1	|COP2Opnd:$ct, brtarget:$offset
+JMP_IDX_COMPACT_DESC_BASE	3	|GPROpnd:$rt, opnd:$offset
+JIALC_DESC	3	|
+JIC_DESC	3	|
+JR_HB_R6_DESC	2	|
+BITSWAP_DESC_BASE	2	GPROpnd:$rd|GPROpnd:$rt
+DIVMOD_DESC_BASE	3	GPROpnd:$rd|GPROpnd:$rs, GPROpnd:$rt
+DVPEVP_DESC_BASE	1	GPR32Opnd:$rt|
+BEQZALC_DESC	3	|
+BGEZALC_DESC	3	|
+BGTZALC_DESC	3	|
+BLEZALC_DESC	3	|
+BLTZALC_DESC	3	|
+BNEZALC_DESC	3	|
+MUL_R6_DESC_BASE	3	GPROpnd:$rd|GPROpnd:$rs, GPROpnd:$rt
+COP1_SEL_DESC_BASE	3	FGROpnd:$fd|FGRCCOpnd:$fd_in, FGROpnd:$fs, FGROpnd:$ft
+SELEQNE_Z_DESC_BASE	2	GPROpnd:$rd|GPROpnd:$rs, GPROpnd:$rt
+COP1_4R_DESC_BASE	2	FGROpnd:$fd|FGROpnd:$fd_in, FGROpnd:$fs, FGROpnd:$ft
+MAX_MIN_DESC_BASE	2	FGROpnd:$fd|FGROpnd:$fs, FGROpnd:$ft
+SELEQNEZ_DESC_BASE	2	FGROpnd:$fd|FGROpnd:$fs, FGROpnd:$ft
+CLASS_RINT_DESC_BASE	2	FGROpnd:$fd|FGROpnd:$fs
+CACHE_HINT_DESC	2	|MemOpnd:$addr, uimm5:$hint
+COP2LD_DESC_BASE	2	COPOpnd:$rt|mem_simm11:$addr
+COP2ST_DESC_BASE	2	|COPOpnd:$rt, mem_simm11:$addr
+LSA_R6_DESC_BASE	3	GPROpnd:$rd|GPROpnd:$rs, GPROpnd:$rt, ImmOpnd:$imm2
+LL_R6_DESC_BASE	3	GPROpnd:$rt|MemOpnd:$addr
+SC_R6_DESC_BASE	2	GPROpnd:$dst|GPROpnd:$rt, mem_simm9_exp:$addr
+CLO_CLZ_R6_DESC_BASE	2	GPROpnd:$rd|GPROpnd:$rs
+CLO_R6_DESC_BASE	2	|
+CLZ_R6_DESC_BASE	2	|
+CRC_DESC_BASE	2	GPROpnd:$rd|GPROpnd:$rs, GPROpnd:$rt
+GINV_DESC_BASE	2	|GPROpnd:$rs, uimm2:$type_
+GINVI_DESC	2	|GPR32Opnd:$rs
+PseudoIndirectBranchBaseR6	3	|RO:$rs
+Count1s	2	RO:$rd|RO:$rs
+ExtsCins	4	RO:$rt|RO:$rs, uimm5:$pos, uimm5:$lenm1
+SetCC64_R	2	GPR64Opnd:$rd|GPR64Opnd:$rs, GPR64Opnd:$rt
+SetCC64_I	2	GPR64Opnd:$rt|GPR64Opnd:$rs, simm10_64:$imm10
+CBranchBitNum	6	|RO:$rs, ImmOp:$p, opnd:$offset
+AHI_ATI_DESC_BASE	2	GPROpnd:$rs|GPROpnd:$rt, uimm16_altrelaxed:$imm
+JIALC64_DESC	3	|
+JIC64_DESC	3	|
+JR_HB64_R6_DESC	2	|
+CMov_I_I_FT	3	DRC:$rd|DRC:$rs, CRC:$rt, DRC:$F
+CMov_I_F_FT	3	DRC:$fd|DRC:$fs, CRC:$rt, DRC:$F
+CMov_F_I_FT	3	RC:$rd|RC:$rs, FCCRegsOpnd:$fcc, RC:$F
+CMov_F_F_FT	3	RC:$fd|RC:$fs, FCCRegsOpnd:$fcc, RC:$F
+Field6	1	|
+DSPInst	1	|
+PseudoDSP	3	|
+DSPInstAlias	3	|
+format	1	|
+RADDU_W_QB_FMT	1	|
+format	1	|
+CMP_EQ_QB_R3_FMT	1	|
+PRECR_SRA_PH_W_FMT	1	|
+format	1	|
+REPL_FMT	1	|
+format	1	|
+format	1	|
+format	1	|
+format	1	|
+format	1	|
+format	2	|
+format	1	|
+format	1	|
+format	1	|
+format	1	|
+SHILO_R2_FMT	1	|
+RDDSP_FMT	1	|
+WRDSP_FMT	1	|
+BPOSGE32_FMT	1	|
+format	1	|
+Uses	1	|
+Defs	1	|
+ADDU_QB_DESC_BASE	5	ROD:$rd|ROS:$rs, ROT:$rt
+RADDU_W_QB_DESC_BASE	4	ROD:$rd|ROS:$rs
+CMP_EQ_QB_R2_DESC_BASE	4	|ROS:$rs, ROT:$rt
+CMP_EQ_QB_R3_DESC_BASE	5	ROD:$rd|ROS:$rs, ROT:$rt
+PRECR_SRA_PH_W_DESC_BASE	4	ROT:$rt|ROS:$rs, uimm5:$sa, ROS:$src
+ABSQ_S_PH_R2_DESC_BASE	4	ROD:$rd|ROT:$rt
+REPL_DESC_BASE	5	RO:$rd|ImmOp:$imm
+SHLL_QB_R3_DESC_BASE	3	RO:$rd|RO:$rt, GPR32Opnd:$rs_sa
+SHLL_QB_R2_DESC_BASE	5	RO:$rd|RO:$rt, ImmOpnd:$rs_sa
+LX_DESC_BASE	2	GPR32Opnd:$rd|PtrRC:$base, PtrRC:$index
+ADDUH_QB_DESC_BASE	5	ROD:$rd|ROS:$rs, ROT:$rt
+APPEND_DESC_BASE	4	GPR32Opnd:$rt|GPR32Opnd:$rs, ImmOp:$sa, GPR32Opnd:$src
+EXTR_W_TY1_R2_DESC_BASE	1	GPR32Opnd:$rt|ACC64DSPOpnd:$ac, GPR32Opnd:$shift_rs
+EXTR_W_TY1_R1_DESC_BASE	1	GPR32Opnd:$rt|ACC64DSPOpnd:$ac, uimm5:$shift_rs
+SHILO_R1_DESC_BASE	2	ACC64DSPOpnd:$ac|simm6:$shift, ACC64DSPOpnd:$acin
+SHILO_R2_DESC_BASE	2	ACC64DSPOpnd:$ac|GPR32Opnd:$rs, ACC64DSPOpnd:$acin
+MTHLIP_DESC_BASE	2	ACC64DSPOpnd:$ac|GPR32Opnd:$rs, ACC64DSPOpnd:$acin
+RDDSP_DESC_BASE	2	GPR32Opnd:$rd|uimm10:$mask
+WRDSP_DESC_BASE	2	|GPR32Opnd:$rs, uimm10:$mask
+DPA_DESC_BASE	3	ACC64DSPOpnd:$ac|DSPROpnd:$rs, DSPROpnd:$rt, ACC64DSPOpnd:$acin
+MULT_DESC_BASE	2	ACC64DSPOpnd:$ac|GPR32Opnd:$rs, GPR32Opnd:$rt
+MADD_DESC_BASE	2	ACC64DSPOpnd:$ac|GPR32Opnd:$rs, GPR32Opnd:$rt, ACC64DSPOpnd:$acin
+MFHI_DESC_BASE	3	GPR32Opnd:$rd|RO:$ac
+MTHI_DESC_BASE	2	RO:$ac|GPR32Opnd:$rs
+BPOSGE32_PSEUDO_DESC_BASE	1	GPR32Opnd:$dst|
+BPOSGE32_DESC_BASE	2	|opnd:$offset
+INSV_DESC_BASE	2	GPR32Opnd:$rt|GPR32Opnd:$src, GPR32Opnd:$rs
+SPECIAL3_EVA_LOAD_STORE_FM	1	|
+TLB_FM	1	|
+LOAD_EVA_DESC_BASE	2	GPROpnd:$rt|mem_simm9:$addr
+STORE_EVA_DESC_BASE	2	|GPROpnd:$rt, mem_simm9:$addr
+LOAD_LEFT_RIGHT_EVA_DESC_BASE	2	GPROpnd:$rt|mem_simm9:$addr, GPROpnd:$src
+STORE_LEFT_RIGHT_EVA_DESC_BASE	2	|GPROpnd:$rt, mem_simm9:$addr
+LLE_DESC_BASE	2	GPROpnd:$rt|mem_simm9:$addr
+SCE_DESC_BASE	2	GPROpnd:$dst|GPROpnd:$rt, mem_simm9:$addr
+TLB_DESC_BASE	1	|
+CACHEE_DESC_BASE	2	|MemOpnd:$addr, uimm5:$hint
+ADDS_FT	4	RC:$fd|RC:$fs, RC:$ft
+CVT_PS_S_FT	5	DstRC:$fd|SrcRC:$fs, SrcRC:$ft
+MFC1_FT	4	DstRC:$rt|SrcRC:$fs
+MTC1_FT	4	DstRC:$fs|SrcRC:$rt
+MTC1_64_FT	3	DstRC:$fs|DstRC:$fs_in, SrcRC:$rt
+LW_FT	4	RC:$rt|MO:$addr
+SW_FT	4	|RC:$rt, MO:$addr
+LWXC1_FT	3	DRC:$fd|PtrRC:$base, PtrRC:$index
+SWXC1_FT	3	|DRC:$fs, PtrRC:$base, PtrRC:$index
+BC1F_FT	3	|FCCRegsOpnd:$fcc, opnd:$offset
+BC1XL_FT	2	|FCCRegsOpnd:$fcc, opnd:$offset
+CEQS_FT	3	|RC:$fs, RC:$ft, condcode:$cond
+C_COND_FT	3	FCCRegsOpnd:$fcc|RC:$fs, RC:$ft
+Format	1	|
+MMRel	5	|
+InstSE	6	|
+MipsPseudo	3	|
+PseudoSE	3	|
+MipsAsmPseudoInst	3	|
+FR	6	|
+FJ	1	|
+MFC3OP_FM	3	|
+MFC2OP_FM	2	|
+ADD_FM	2	|
+ADDI_FM	1	|
+SRA_FM	2	|
+SRLV_FM	2	|
+BEQ_FM	1	|
+BGEZ_FM	2	|
+BBIT_FM	1	|
+SLTI_FM	1	|
+MFLO_FM	1	|
+MTLO_FM	1	|
+SEB_FM	2	|
+CLO_FM	1	|
+BGEZAL_FM	1	|
+IsCommutable	3	|
+SimmLslAsmOperandClass	3	|
+ConstantUImmAsmOperandClass	3	|
+ConstantUImmRangeAsmOperandClass	3	|
+SImmAsmOperandClass	2	|
+UImmAsmOperandClass	2	|
+UImmAnyAsmOperandClass	2	|
+MipsMemSimmAsmOperand	2	|
+mem_generic	1	|
+ArithLogicR	4	RO:$rd|RO:$rs, RO:$rt
+ArithLogicI	5	RO:$rt|RO:$rs, Od:$imm16
+MArithR	2	|GPR32Opnd:$rs, GPR32Opnd:$rt
+LogicNOR	2	RO:$rd|RO:$rs, RO:$rt
+shift_rotate_imm	5	RO:$rd|RO:$rt, ImmOpnd:$shamt
+LoadUpper	3	RO:$rt|Imm:$imm16
+LoadMemory	5	RO:$rt|MO:$addr
+StoreMemory	5	|RO:$rt, MO:$addr
+LoadLeftRight	3	RO:$rt|mem:$addr, RO:$src
+StoreLeftRight	3	|RO:$rt, mem:$addr
+LW_FT2	3	RC:$rt|mem_simm16:$addr
+SW_FT2	3	|RC:$rt, mem_simm16:$addr
+LW_FT3	3	RC:$rt|mem:$addr
+SW_FT3	3	|RC:$rt, mem:$addr
+CBranch	4	|RO:$rs, RO:$rt, opnd:$offset
+CBranchLikely	3	|RO:$rs, RO:$rt, opnd:$offset
+CBranchZero	4	|RO:$rs, opnd:$offset
+CBranchZeroLikely	3	|RO:$rs, opnd:$offset
+JumpFJ	5	|opnd:$target
+UncondBranch	2	|brtarget:$offset
+IndirectBranch	2	|
+JumpLink	2	|opnd:$target
+JumpLinkRegPseudo	4	|RO:$rs
+JumpLinkReg	2	RO:$rd|RO:$rs
+BGEZAL_FT	3	|RO:$rs, opnd:$offset
+TailCallReg	2	|RO:$rs
+BAL_BR_Pseudo	2	|opnd:$offset
+SYNCI_FT	2	|MO:$addr
+Mult	3	|RO:$rs, RO:$rt
+MultDivPseudo	7	R0:$ac|R1:$rs, R1:$rt
+MAddSubPseudo	2	ACC64:$ac|GPR32Opnd:$rs, GPR32Opnd:$rt, ACC64:$acin
+Div	3	|RO:$rs, RO:$rt
+MoveFromLOHI	3	RO:$rd|
+MoveToLOHI	3	|RO:$rs
+EffectiveAddress	2	RO:$rt|mem_ea:$addr
+SubwordSwap	2	RO:$rd|RO:$rt
+InsBase	6	RO:$rt|RO:$rs, PosOpnd:$pos, SizeOpnd:$size, RO:$src
+Atomic2Ops	2	DRC:$dst|PtrRC:$ptr, DRC:$incr
+Atomic2OpsPostRA	1	RC:$dst|PtrRC:$ptr, RC:$incr
+Atomic2OpsSubwordPostRA	1	RC:$dst|PtrRC:$ptr, RC:$incr, RC:$mask, RC:$mask2, RC:$shiftamnt
+AtomicCmpSwap	2	DRC:$dst|PtrRC:$ptr, DRC:$cmp, DRC:$swap
+AtomicCmpSwapPostRA	1	RC:$dst|PtrRC:$ptr, RC:$cmp, RC:$swap
+AtomicCmpSwapSubwordPostRA	1	RC:$dst|PtrRC:$ptr, RC:$mask, RC:$ShiftCmpVal,                                 RC:$mask2, RC:$ShiftNewVal, RC:$ShiftAmt
+LLBase	3	RO:$rt|MO:$addr
+SCBase	2	RO:$dst|RO:$rt, mem:$addr
+MFC3OP	3	RO:$rt|RD:$rd, uimm3:$sel
+MTC3OP	3	RO:$rd|RD:$rt, uimm3:$sel
+TrapBase	1	|
+PseudoIndirectBranchBase	2	|RO:$rs
+PseudoReturnBase	1	|RO:$rs
+JR_HB_DESC_BASE	2	|GPROpnd:$rs
+JALR_HB_DESC_BASE	2	GPROpnd:$rd|GPROpnd:$rs
+JR_HB_DESC	1	|
+JALR_HB_DESC	1	|
+CacheOp	2	|MemOpnd:$addr, uimm5:$hint
+HYPCALL_FT	1	|uimm10:$code_
+MSACBranch	3	|
+MSA_BIT_B_FMT	2	|
+MSA_BIT_H_FMT	2	|
+MSA_BIT_W_FMT	2	|
+MSA_BIT_D_FMT	2	|
+MSA_2R_FILL_FMT	3	|
+MSA_2R_FILL_D_FMT	3	|
+MSA_2R_FMT	3	|
+MSA_2RF_FMT	3	|
+MSA_3R_FMT	3	|
+MSA_3RF_FMT	3	|
+MSA_3R_INDEX_FMT	3	|
+MSA_ELM_FMT	2	|
+MSA_ELM_CFCMSA_FMT	2	|
+MSA_ELM_CTCMSA_FMT	2	|
+MSA_ELM_B_FMT	2	|
+MSA_ELM_H_FMT	2	|
+MSA_ELM_W_FMT	2	|
+MSA_ELM_D_FMT	2	|
+MSA_ELM_COPY_B_FMT	2	|
+MSA_ELM_COPY_H_FMT	2	|
+MSA_ELM_COPY_W_FMT	2	|
+MSA_ELM_COPY_D_FMT	2	|
+MSA_ELM_INSERT_B_FMT	2	|
+MSA_ELM_INSERT_H_FMT	2	|
+MSA_ELM_INSERT_W_FMT	2	|
+MSA_ELM_INSERT_D_FMT	2	|
+MSA_I5_FMT	3	|
+MSA_I8_FMT	2	|
+MSA_I10_FMT	3	|
+MSA_MI10_FMT	2	|
+MSA_VEC_FMT	2	|
+MSA_CBRANCH_FMT	2	|
+MSA_CBRANCH_V_FMT	1	|
+SPECIAL_LSA_FMT	1	|
+SPECIAL_DLSA_FMT	1	|
+SplatComplexPattern	6	|
+MSA_BIT_B_DESC_BASE	5	ROWD:$wd|ROWS:$ws, vsplat_uimm3:$m
+MSA_BIT_H_DESC_BASE	5	ROWD:$wd|ROWS:$ws, vsplat_uimm4:$m
+MSA_BIT_W_DESC_BASE	5	ROWD:$wd|ROWS:$ws, vsplat_uimm5:$m
+MSA_BIT_D_DESC_BASE	5	ROWD:$wd|ROWS:$ws, vsplat_uimm6:$m
+MSA_BIT_X_DESC_BASE	6	ROWD:$wd|ROWS:$ws, ImmOp:$m
+MSA_BIT_BINSXI_DESC_BASE	5	ROWD:$wd|ROWD:$wd_in, ROWS:$ws, Mask.OpClass:$m
+MSA_BIT_SPLAT_DESC_BASE	5	ROWD:$wd|ROWS:$ws, SplatImm.OpClass:$m
+MSA_COPY_DESC_BASE	7	ROD:$rd|ROWS:$ws, ImmOp:$n
+MSA_ELM_SLD_DESC_BASE	6	ROWD:$wd|ROWD:$wd_in, ROWS:$ws, ImmOp:$n
+MSA_COPY_PSEUDO_BASE	6	RCD:$wd|RCWS:$ws, ImmOp:$n
+MSA_I5_DESC_BASE	5	ROWD:$wd|ROWS:$ws, SplatImm.OpClass:$imm
+MSA_I8_DESC_BASE	5	ROWD:$wd|ROWS:$ws, SplatImm.OpClass:$u8
+MSA_I8_SHF_DESC_BASE	3	ROWD:$wd|ROWS:$ws, uimm8:$u8
+MSA_I10_LDI_DESC_BASE	2	ROWD:$wd|vsplat_simm10:$s10
+MSA_2R_DESC_BASE	4	ROWD:$wd|ROWS:$ws
+MSA_2R_FILL_DESC_BASE	5	ROWD:$wd|ROS:$rs
+MSA_2R_FILL_PSEUDO_BASE	3	RCWD:$wd|RCWS:$fs
+MSA_2RF_DESC_BASE	4	ROWD:$wd|ROWS:$ws
+MSA_3R_DESC_BASE	5	ROWD:$wd|ROWS:$ws, ROWT:$wt
+MSA_3R_BINSX_DESC_BASE	5	ROWD:$wd|ROWD:$wd_in, ROWS:$ws, ROWT:$wt
+MSA_3R_SPLAT_DESC_BASE	4	ROWD:$wd|ROWS:$ws, GPR32Opnd:$rt
+MSA_3R_VSHF_DESC_BASE	4	ROWD:$wd|ROWD:$wd_in, ROWS:$ws, ROWT:$wt
+MSA_3R_SLD_DESC_BASE	4	ROWD:$wd|ROWD:$wd_in, ROWS:$ws, GPR32Opnd:$rt
+MSA_3R_4R_DESC_BASE	5	ROWD:$wd|ROWD:$wd_in, ROWS:$ws, ROWT:$wt
+MSA_CBRANCH_DESC_BASE	2	|ROWD:$wt, brtarget:$offset
+MSA_INSERT_DESC_BASE	6	ROWD:$wd|ROWD:$wd_in, ROS:$rs, ImmOp:$n
+MSA_INSERT_PSEUDO_BASE	6	ROWD:$wd|ROWD:$wd_in, ImmOp:$n, ROFS:$fs
+MSA_INSERT_VIDX_PSEUDO_BASE	5	ROWD:$wd|ROWD:$wd_in, ROIdx:$n, ROFS:$fs
+MSA_INSVE_DESC_BASE	6	ROWD:$wd|ROWD:$wd_in, ImmOp:$n, ROWS:$ws, uimmz:$n2
+MSA_VEC_DESC_BASE	5	ROWD:$wd|ROWS:$ws, ROWT:$wt
+MSA_ELM_SPLAT_DESC_BASE	4	ROWD:$wd|ROWS:$ws, SplatImm.OpClass:$n
+LD_DESC_BASE	6	ROWD:$wd|MemOpnd:$addr
+MSA_LOAD_PSEUDO_BASE	2	RO:$dst|PtrRC:$ptr, GPR32:$imm
+LSA_DESC_BASE	2	RORD:$rd|RORD:$rs, RORD:$rt, uimm2_plus1:$sa
+ST_DESC_BASE	6	|ROWD:$wd, MemOpnd:$addr
+MSA_STORE_PSEUDO_BASE	2	|RO:$dst, PtrRC:$ptr, GPR32:$imm
+MSA_BSEL_PSEUDO_BASE	2	RO:$wd|RO:$wd_in, RO:$ws, RO:$wt
+MSA_CBRANCH_PSEUDO_DESC_BASE	3	GPR32:$dst|RCWS:$ws
+MipsMTInst	5	|
+OPCODE1	1	|
+FIELD5	1	|
+COP0_MFMC0_MT	3	|
+COP0_MFTTR_MT	1	|
+MT_1R_DESC_BASE	1	GPR32Opnd:$rt|
+Unallocatable	2	|
+MipsRegWithSubRegs	3	|
+Mips64GPRReg	3	|
+AFPR	3	|
+AFPR64	3	|
+AFPR128	3	|
+ACCReg	3	|
+MipsAsmRegOperand	1	|

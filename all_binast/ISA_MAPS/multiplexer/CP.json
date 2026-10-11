@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "CP",
+  "BACKENDS": ["PowerPC","NVPTX","AMDGPU"],
+  "INDEX": {
+    "CP_COPY8": {"PowerPC": "CP_COPY8"},
+    "CP_PASTE8_rec": {"PowerPC": "CP_PASTE8_rec"},
+    "CP_ASYNC_BULK_CTA_TO_CLUSTER": {"NVPTX": "CP_ASYNC_BULK_CTA_TO_CLUSTER"},
+    "CPol": {"AMDGPU": "CPol"},
+    "CPol_0": {"AMDGPU": "CPol_0"},
+    "CPol_GLC1": {"AMDGPU": "CPol_GLC1"},
+    "CPol_NonGLC": {"AMDGPU": "CPol_NonGLC"},
+    "CPol_NonGLC_WithDefault": {"AMDGPU": "CPol_NonGLC_WithDefault"}
+  },
+  "INPUTS": {
+    "CP_COPY8": {"PowerPC": [["ty:$RA",0],["ty:$RB",0]]},
+    "CP_PASTE8_rec": {"PowerPC": []},
+    "CP_ASYNC_BULK_CTA_TO_CLUSTER": {"NVPTX": [["ADDR",0],["ADDR",0],["ADDR",0],["B32",0]]},
+    "CPol": {"AMDGPU": []},
+    "CPol_0": {"AMDGPU": []},
+    "CPol_GLC1": {"AMDGPU": []},
+    "CPol_NonGLC": {"AMDGPU": []},
+    "CPol_NonGLC_WithDefault": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "CP_COPY8": {"PowerPC": []},
+    "CP_PASTE8_rec": {"PowerPC": []},
+    "CP_ASYNC_BULK_CTA_TO_CLUSTER": {"NVPTX": []},
+    "CPol": {"AMDGPU": []},
+    "CPol_0": {"AMDGPU": []},
+    "CPol_GLC1": {"AMDGPU": []},
+    "CPol_NonGLC": {"AMDGPU": []},
+    "CPol_NonGLC_WithDefault": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "CP_COPY8": {"PowerPC": ["X_RA5_RB5","31","774"]},
+    "CP_PASTE8_rec": {"PowerPC": ["X_L1_RA5_RB5","31","902"]},
+    "CP_ASYNC_BULK_CTA_TO_CLUSTER": {"NVPTX": ["NVPTXInst"]},
+    "CPol": {"AMDGPU": ["CustomOperand","1"]},
+    "CPol_0": {"AMDGPU": ["DefaultOperand","0"]},
+    "CPol_GLC1": {"AMDGPU": ["DefaultOperand","1"]},
+    "CPol_NonGLC": {"AMDGPU": ["ValuePredicatedOperand","1"]},
+    "CPol_NonGLC_WithDefault": {"AMDGPU": ["DefaultOperand","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "CP_COPY8": {"PowerPC": ["X_RA5_RB5","31","774"]},
+    "CP_PASTE8_rec": {"PowerPC": ["X_L1_RA5_RB5","31","902"]},
+    "CP_ASYNC_BULK_CTA_TO_CLUSTER": {"NVPTX": ["NVPTXInst"]},
+    "CPol": {"AMDGPU": ["CustomOperand","1"]},
+    "CPol_0": {"AMDGPU": ["DefaultOperand","0"]},
+    "CPol_GLC1": {"AMDGPU": ["DefaultOperand","1"]},
+    "CPol_NonGLC": {"AMDGPU": ["ValuePredicatedOperand","1"]},
+    "CPol_NonGLC_WithDefault": {"AMDGPU": ["DefaultOperand","0"]}
+  }
+}

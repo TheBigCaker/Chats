@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FFBL",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "FFBL_INT": {"AMDGPU": "FFBL_INT"}
+  },
+  "INPUTS": {
+    "FFBL_INT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "FFBL_INT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "FFBL_INT": {"AMDGPU": ["R600_1OP_Helper","0xAC"]}
+  },
+  "OUTPUT_BYTES": {
+    "FFBL_INT": {"AMDGPU": ["R600_1OP_Helper","0xAC"]}
+  }
+}

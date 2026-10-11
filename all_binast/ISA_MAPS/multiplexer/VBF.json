@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "VBF",
+  "BACKENDS": ["ARM","RISCV"],
+  "INDEX": {
+    "VBF16MALTQ": {"ARM": "VBF16MALTQ"},
+    "VBF16MALBQ": {"ARM": "VBF16MALBQ"},
+    "VBF16MF4": {"RISCV": "VBF16MF4"},
+    "VBF16MF2": {"RISCV": "VBF16MF2"},
+    "VBF16M1": {"RISCV": "VBF16M1"},
+    "VBF16M2": {"RISCV": "VBF16M2"},
+    "VBF16M4": {"RISCV": "VBF16M4"},
+    "VBF16M8": {"RISCV": "VBF16M8"}
+  },
+  "INPUTS": {
+    "VBF16MALTQ": {"ARM": [["QPR:$Vd",0],["QPR:$Vn",0],["QPR:$Vm",0]]},
+    "VBF16MALBQ": {"ARM": [["QPR:$Vd",0],["QPR:$Vn",0],["QPR:$Vm",0]]},
+    "VBF16MF4": {"RISCV": []},
+    "VBF16MF2": {"RISCV": []},
+    "VBF16M1": {"RISCV": []},
+    "VBF16M2": {"RISCV": []},
+    "VBF16M4": {"RISCV": []},
+    "VBF16M8": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VBF16MALTQ": {"ARM": [["QPR:$dst",0]]},
+    "VBF16MALBQ": {"ARM": [["QPR:$dst",0]]},
+    "VBF16MF4": {"RISCV": []},
+    "VBF16MF2": {"RISCV": []},
+    "VBF16M1": {"RISCV": []},
+    "VBF16M2": {"RISCV": []},
+    "VBF16M4": {"RISCV": []},
+    "VBF16M8": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VBF16MALTQ": {"ARM": ["VBF16MALQ","1"]},
+    "VBF16MALBQ": {"ARM": ["VBF16MALQ","0"]},
+    "VBF16MF4": {"RISCV": ["VTypeInfo","16"]},
+    "VBF16MF2": {"RISCV": ["VTypeInfo","16"]},
+    "VBF16M1": {"RISCV": ["VTypeInfo","16"]},
+    "VBF16M2": {"RISCV": ["GroupVTypeInfo","16"]},
+    "VBF16M4": {"RISCV": ["GroupVTypeInfo","16"]},
+    "VBF16M8": {"RISCV": ["GroupVTypeInfo","16"]}
+  },
+  "OUTPUT_BYTES": {
+    "VBF16MALTQ": {"ARM": ["VBF16MALQ","1"]},
+    "VBF16MALBQ": {"ARM": ["VBF16MALQ","0"]},
+    "VBF16MF4": {"RISCV": ["VTypeInfo","16"]},
+    "VBF16MF2": {"RISCV": ["VTypeInfo","16"]},
+    "VBF16M1": {"RISCV": ["VTypeInfo","16"]},
+    "VBF16M2": {"RISCV": ["GroupVTypeInfo","16"]},
+    "VBF16M4": {"RISCV": ["GroupVTypeInfo","16"]},
+    "VBF16M8": {"RISCV": ["GroupVTypeInfo","16"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSBOX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSBOX": {"PowerPC": "VSBOX"}
+  },
+  "INPUTS": {
+    "VSBOX": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSBOX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSBOX": {"PowerPC": ["VXBX_Int_Ty","1480"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSBOX": {"PowerPC": ["VXBX_Int_Ty","1480"]}
+  }
+}

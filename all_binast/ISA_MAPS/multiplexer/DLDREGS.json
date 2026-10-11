@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DLDREGS",
+  "BACKENDS": ["AVR"],
+  "INDEX": {
+    "DLDREGS": {"AVR": "DLDREGS"}
+  },
+  "INPUTS": {
+    "DLDREGS": {"AVR": []}
+  },
+  "OUTPUTS": {
+    "DLDREGS": {"AVR": []}
+  },
+  "INPUT_BYTES": {
+    "DLDREGS": {"AVR": ["RegisterClass","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "DLDREGS": {"AVR": ["RegisterClass","8"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "KILL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "KILL_PAIR": {"PowerPC": "KILL_PAIR"}
+  },
+  "INPUTS": {
+    "KILL_PAIR": {"PowerPC": [["vsrprc",0]]}
+  },
+  "OUTPUTS": {
+    "KILL_PAIR": {"PowerPC": [["vsrprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "KILL_PAIR": {"PowerPC": ["PPCPostRAExpPseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "KILL_PAIR": {"PowerPC": ["PPCPostRAExpPseudo"]}
+  }
+}

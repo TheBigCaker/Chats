@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AMDGPUFPP",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "AMDGPUFPPackOp": {"AMDGPU": "AMDGPUFPPackOp"}
+  },
+  "INPUTS": {
+    "AMDGPUFPPackOp": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "AMDGPUFPPackOp": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "AMDGPUFPPackOp": {"AMDGPU": ["SDTypeProfile","1","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "AMDGPUFPPackOp": {"AMDGPU": ["SDTypeProfile","1","2"]}
+  }
+}

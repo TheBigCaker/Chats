@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ADR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "ADR": {"ARM": "ADR"}
+  },
+  "INPUTS": {
+    "ADR": {"ARM": [["adrlabel",0]]}
+  },
+  "OUTPUTS": {
+    "ADR": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "ADR": {"ARM": ["AI1"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADR": {"ARM": ["AI1"]}
+  }
+}

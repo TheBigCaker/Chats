@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VPKUHUS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VPKUHUS": {"PowerPC": "VPKUHUS"}
+  },
+  "INPUTS": {
+    "VPKUHUS": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VPKUHUS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VPKUHUS": {"PowerPC": ["VX1_Int_Ty2","142"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPKUHUS": {"PowerPC": ["VX1_Int_Ty2","142"]}
+  }
+}

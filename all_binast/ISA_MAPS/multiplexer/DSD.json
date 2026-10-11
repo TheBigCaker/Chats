@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DSD",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "DSDivMacro": {"Mips": "DSDivMacro"}
+  },
+  "INPUTS": {
+    "DSDivMacro": {"Mips": [["GPR64Opnd",64],["GPR64Opnd",64]]}
+  },
+  "OUTPUTS": {
+    "DSDivMacro": {"Mips": [["GPR64Opnd",64]]}
+  },
+  "INPUT_BYTES": {
+    "DSDivMacro": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "DSDivMacro": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

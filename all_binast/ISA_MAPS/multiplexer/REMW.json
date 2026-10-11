@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "REMW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "REMW": {"RISCV": "REMW"}
+  },
+  "INPUTS": {
+    "REMW": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "REMW": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "REMW": {"RISCV": ["ALUW_rr","0b0000001","0b110"]}
+  },
+  "OUTPUT_BYTES": {
+    "REMW": {"RISCV": ["ALUW_rr","0b0000001","0b110"]}
+  }
+}

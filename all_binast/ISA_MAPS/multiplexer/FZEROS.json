@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FZEROS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FZEROS": {"Sparc": "FZEROS"}
+  },
+  "INPUTS": {
+    "FZEROS": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FZEROS": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FZEROS": {"Sparc": ["VISInstD","0b001100001"]}
+  },
+  "OUTPUT_BYTES": {
+    "FZEROS": {"Sparc": ["VISInstD","0b001100001"]}
+  }
+}

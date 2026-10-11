@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "PUSATI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PUSATI_H": {"RISCV": "PUSATI_H"},
+    "PUSATI_W": {"RISCV": "PUSATI_W"},
+    "PUSATI_DH": {"RISCV": "PUSATI_DH"},
+    "PUSATI_DW": {"RISCV": "PUSATI_DW"}
+  },
+  "INPUTS": {
+    "PUSATI_H": {"RISCV": []},
+    "PUSATI_W": {"RISCV": []},
+    "PUSATI_DH": {"RISCV": []},
+    "PUSATI_DW": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PUSATI_H": {"RISCV": []},
+    "PUSATI_W": {"RISCV": []},
+    "PUSATI_DH": {"RISCV": []},
+    "PUSATI_DW": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PUSATI_H": {"RISCV": ["RVPShiftH_ri","0b010","0b100"]},
+    "PUSATI_W": {"RISCV": ["RVPShiftW_ri","0b010","0b100"]},
+    "PUSATI_DH": {"RISCV": ["RVPPairShiftH_ri","0b010","0b1"]},
+    "PUSATI_DW": {"RISCV": ["RVPPairShiftW_ri","0b010","0b1"]}
+  },
+  "OUTPUT_BYTES": {
+    "PUSATI_H": {"RISCV": ["RVPShiftH_ri","0b010","0b100"]},
+    "PUSATI_W": {"RISCV": ["RVPShiftW_ri","0b010","0b100"]},
+    "PUSATI_DH": {"RISCV": ["RVPPairShiftH_ri","0b010","0b1"]},
+    "PUSATI_DW": {"RISCV": ["RVPPairShiftW_ri","0b010","0b1"]}
+  }
+}

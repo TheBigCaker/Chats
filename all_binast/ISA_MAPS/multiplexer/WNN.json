@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "WNN",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "WNN": {"PowerPC": "WNN"},
+    "WNN": {"PowerPC": "WNN"}
+  },
+  "INPUTS": {
+    "WNN": {"PowerPC": [["wacc",0]]},
+    "WNN": {"PowerPC": [["wacc",0]]}
+  },
+  "OUTPUTS": {
+    "WNN": {"PowerPC": [["wacc",0]]},
+    "WNN": {"PowerPC": [["wacc",0]]}
+  },
+  "INPUT_BYTES": {
+    "WNN": {"PowerPC": ["XX3Form_AT3_XAB6"]},
+    "WNN": {"PowerPC": ["XX3Form_AT3_XAB6"]}
+  },
+  "OUTPUT_BYTES": {
+    "WNN": {"PowerPC": ["XX3Form_AT3_XAB6"]},
+    "WNN": {"PowerPC": ["XX3Form_AT3_XAB6"]}
+  }
+}

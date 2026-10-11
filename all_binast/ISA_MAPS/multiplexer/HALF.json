@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HALF",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "HALF": {"AMDGPU": "HALF"}
+  },
+  "INPUTS": {
+    "HALF": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "HALF": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "HALF": {"AMDGPU": ["R600Reg","252"]}
+  },
+  "OUTPUT_BYTES": {
+    "HALF": {"AMDGPU": ["R600Reg","252"]}
+  }
+}

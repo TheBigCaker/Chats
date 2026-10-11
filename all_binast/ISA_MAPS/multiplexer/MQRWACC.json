@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MQRWACC",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MQRWACC": {"RISCV": "MQRWACC"}
+  },
+  "INPUTS": {
+    "MQRWACC": {"RISCV": [["GPRPairRV32:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "MQRWACC": {"RISCV": [["GPRPairRV32:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "MQRWACC": {"RISCV": ["RVPWideningTernary_rrr","0b1111","0b11"]}
+  },
+  "OUTPUT_BYTES": {
+    "MQRWACC": {"RISCV": ["RVPWideningTernary_rrr","0b1111","0b11"]}
+  }
+}

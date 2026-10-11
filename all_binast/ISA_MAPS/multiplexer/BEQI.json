@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BEQI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "BEQI": {"RISCV": "BEQI"}
+  },
+  "INPUTS": {
+    "BEQI": {"RISCV": [["GPR:$rs1",0],["imm5_zibi:$cimm",0],["bare_simm13_lsb0:$imm12",0]]}
+  },
+  "OUTPUTS": {
+    "BEQI": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "BEQI": {"RISCV": ["Branch_imm","0b010"]}
+  },
+  "OUTPUT_BYTES": {
+    "BEQI": {"RISCV": ["Branch_imm","0b010"]}
+  }
+}

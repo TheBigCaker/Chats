@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "VFPC",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFPConv1Frm": {"ARM": "VFPConv1Frm"},
+    "VFPConv2Frm": {"ARM": "VFPConv2Frm"},
+    "VFPConv3Frm": {"ARM": "VFPConv3Frm"},
+    "VFPConv4Frm": {"ARM": "VFPConv4Frm"},
+    "VFPConv5Frm": {"ARM": "VFPConv5Frm"}
+  },
+  "INPUTS": {
+    "VFPConv1Frm": {"ARM": []},
+    "VFPConv2Frm": {"ARM": []},
+    "VFPConv3Frm": {"ARM": []},
+    "VFPConv4Frm": {"ARM": []},
+    "VFPConv5Frm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VFPConv1Frm": {"ARM": []},
+    "VFPConv2Frm": {"ARM": []},
+    "VFPConv3Frm": {"ARM": []},
+    "VFPConv4Frm": {"ARM": []},
+    "VFPConv5Frm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VFPConv1Frm": {"ARM": ["Format","17"]},
+    "VFPConv2Frm": {"ARM": ["Format","18"]},
+    "VFPConv3Frm": {"ARM": ["Format","19"]},
+    "VFPConv4Frm": {"ARM": ["Format","20"]},
+    "VFPConv5Frm": {"ARM": ["Format","21"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFPConv1Frm": {"ARM": ["Format","17"]},
+    "VFPConv2Frm": {"ARM": ["Format","18"]},
+    "VFPConv3Frm": {"ARM": ["Format","19"]},
+    "VFPConv4Frm": {"ARM": ["Format","20"]},
+    "VFPConv5Frm": {"ARM": ["Format","21"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ICMPM",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "ICMPM.i32": {"Mali": "ICMPM.i32"}
+  },
+  "INPUTS": {
+    "ICMPM.i32": {"Mali": [["R32",32],["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "ICMPM.i32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "ICMPM.i32": {"Mali": ["Bifrost_add","0x7ba00","0xffe00"]}
+  },
+  "OUTPUT_BYTES": {
+    "ICMPM.i32": {"Mali": ["Bifrost_add","0x7ba00","0xffe00"]}
+  }
+}

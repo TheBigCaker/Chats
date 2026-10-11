@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FCONSTD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "FCONSTD": {"ARM": "FCONSTD"}
+  },
+  "INPUTS": {
+    "FCONSTD": {"ARM": [["vfp_f64imm",0]]}
+  },
+  "OUTPUTS": {
+    "FCONSTD": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "FCONSTD": {"ARM": ["VFPAI"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCONSTD": {"ARM": ["VFPAI"]}
+  }
+}

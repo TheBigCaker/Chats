@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "FREXPE",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FREXPE.f32": {"Mali": "FREXPE.f32"},
+    "FREXPE.v2f16": {"Mali": "FREXPE.v2f16"},
+    "FREXPE.f32": {"Mali": "FREXPE.f32"},
+    "FREXPE.v2f16": {"Mali": "FREXPE.v2f16"},
+    "FREXPE.f32": {"Mali": "FREXPE.f32"},
+    "FREXPE.v2f16": {"Mali": "FREXPE.v2f16"}
+  },
+  "INPUTS": {
+    "FREXPE.f32": {"Mali": [["R32",32]]},
+    "FREXPE.v2f16": {"Mali": [["R32",32]]},
+    "FREXPE.f32": {"Mali": [["R32",32]]},
+    "FREXPE.v2f16": {"Mali": [["R32",32]]},
+    "FREXPE.f32": {"Mali": []},
+    "FREXPE.v2f16": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "FREXPE.f32": {"Mali": [["R",32]]},
+    "FREXPE.v2f16": {"Mali": [["R",32]]},
+    "FREXPE.f32": {"Mali": [["R",32]]},
+    "FREXPE.v2f16": {"Mali": [["R",32]]},
+    "FREXPE.f32": {"Mali": [["R",32]]},
+    "FREXPE.v2f16": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FREXPE.f32": {"Mali": ["Bifrost_fma"]},
+    "FREXPE.v2f16": {"Mali": ["Bifrost_fma"]},
+    "FREXPE.f32": {"Mali": ["Bifrost_add"]},
+    "FREXPE.v2f16": {"Mali": ["Bifrost_add"]},
+    "FREXPE.f32": {"Mali": ["Valhall_"]},
+    "FREXPE.v2f16": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "FREXPE.f32": {"Mali": ["Bifrost_fma"]},
+    "FREXPE.v2f16": {"Mali": ["Bifrost_fma"]},
+    "FREXPE.f32": {"Mali": ["Bifrost_add"]},
+    "FREXPE.v2f16": {"Mali": ["Bifrost_add"]},
+    "FREXPE.f32": {"Mali": ["Valhall_"]},
+    "FREXPE.v2f16": {"Mali": ["Valhall_"]}
+  }
+}

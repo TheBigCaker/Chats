@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "END",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "END_LOOP_EG": {"AMDGPU": "END_LOOP_EG"},
+    "END_LOOP_R600": {"AMDGPU": "END_LOOP_R600"}
+  },
+  "INPUTS": {
+    "END_LOOP_EG": {"AMDGPU": [["i32imm",32]]},
+    "END_LOOP_R600": {"AMDGPU": [["i32imm",32]]}
+  },
+  "OUTPUTS": {
+    "END_LOOP_EG": {"AMDGPU": []},
+    "END_LOOP_R600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "END_LOOP_EG": {"AMDGPU": ["CF_CLAUSE_EG","5"]},
+    "END_LOOP_R600": {"AMDGPU": ["CF_CLAUSE_R600","5"]}
+  },
+  "OUTPUT_BYTES": {
+    "END_LOOP_EG": {"AMDGPU": ["CF_CLAUSE_EG","5"]},
+    "END_LOOP_R600": {"AMDGPU": ["CF_CLAUSE_R600","5"]}
+  }
+}

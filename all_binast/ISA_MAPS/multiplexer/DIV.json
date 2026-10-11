@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "DIV",
+  "BACKENDS": ["ARM","RISCV","Mips","PowerPC"],
+  "INDEX": {
+    "SDIV": {"ARM": "SDIV"},
+    "UDIV": {"ARM": "UDIV"},
+    "DIV": {"RISCV": "DIV"},
+    "FDIV_S_MM": {"Mips": "FDIV_S_MM"},
+    "SDIV_MM_Pseudo": {"Mips": "SDIV_MM_Pseudo"},
+    "UDIV_MM_Pseudo": {"Mips": "UDIV_MM_Pseudo"},
+    "DIV": {"PowerPC": "DIV"}
+  },
+  "INPUTS": {
+    "SDIV": {"ARM": [["GPR",64],["GPR",64]]},
+    "UDIV": {"ARM": [["GPR",64],["GPR",64]]},
+    "DIV": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "FDIV_S_MM": {"Mips": []},
+    "SDIV_MM_Pseudo": {"Mips": [["R1:$rs",1],["R1:$rt",1]]},
+    "UDIV_MM_Pseudo": {"Mips": [["R1:$rs",1],["R1:$rt",1]]},
+    "DIV": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "SDIV": {"ARM": [["GPR",64]]},
+    "UDIV": {"ARM": [["GPR",64]]},
+    "DIV": {"RISCV": [["GPR:$rd",0]]},
+    "FDIV_S_MM": {"Mips": []},
+    "SDIV_MM_Pseudo": {"Mips": [["R0:$ac",0]]},
+    "UDIV_MM_Pseudo": {"Mips": [["R0:$ac",0]]},
+    "DIV": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "SDIV": {"ARM": ["ADivA1I","0b001"]},
+    "UDIV": {"ARM": ["ADivA1I","0b011"]},
+    "DIV": {"RISCV": ["ALU_rr","0b0000001","0b100"]},
+    "FDIV_S_MM": {"Mips": ["MMRel","0"]},
+    "SDIV_MM_Pseudo": {"Mips": ["MultDivPseudo","0","1","1"]},
+    "UDIV_MM_Pseudo": {"Mips": ["MultDivPseudo","0","1","1"]},
+    "DIV": {"PowerPC": ["ProcResource","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDIV": {"ARM": ["ADivA1I","0b001"]},
+    "UDIV": {"ARM": ["ADivA1I","0b011"]},
+    "DIV": {"RISCV": ["ALU_rr","0b0000001","0b100"]},
+    "FDIV_S_MM": {"Mips": ["MMRel","0"]},
+    "SDIV_MM_Pseudo": {"Mips": ["MultDivPseudo","0","1","1"]},
+    "UDIV_MM_Pseudo": {"Mips": ["MultDivPseudo","0","1","1"]},
+    "DIV": {"PowerPC": ["ProcResource","2"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ORN",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "ORN": {"RISCV": "ORN"}
+  },
+  "INPUTS": {
+    "ORN": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "ORN": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "ORN": {"RISCV": ["ALU_rr","0b0100000","0b110"]}
+  },
+  "OUTPUT_BYTES": {
+    "ORN": {"RISCV": ["ALU_rr","0b0100000","0b110"]}
+  }
+}

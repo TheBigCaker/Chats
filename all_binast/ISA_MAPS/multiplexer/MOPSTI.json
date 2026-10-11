@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MOPSTI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MOPSTIndexedUnord": {"RISCV": "MOPSTIndexedUnord"},
+    "MOPSTIndexedOrder": {"RISCV": "MOPSTIndexedOrder"}
+  },
+  "INPUTS": {
+    "MOPSTIndexedUnord": {"RISCV": []},
+    "MOPSTIndexedOrder": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "MOPSTIndexedUnord": {"RISCV": []},
+    "MOPSTIndexedOrder": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "MOPSTIndexedUnord": {"RISCV": ["RISCVMOP","0b01"]},
+    "MOPSTIndexedOrder": {"RISCV": ["RISCVMOP","0b11"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOPSTIndexedUnord": {"RISCV": ["RISCVMOP","0b01"]},
+    "MOPSTIndexedOrder": {"RISCV": ["RISCVMOP","0b11"]}
+  }
+}

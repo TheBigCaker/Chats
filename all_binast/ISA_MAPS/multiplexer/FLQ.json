@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FLQ",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FLQ": {"RISCV": "FLQ"}
+  },
+  "INPUTS": {
+    "FLQ": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "FLQ": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "FLQ": {"RISCV": ["FPLoad_r","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "FLQ": {"RISCV": ["FPLoad_r","0b100"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PSR",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "PSR": {"Sparc": "PSR"}
+  },
+  "INPUTS": {
+    "PSR": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "PSR": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "PSR": {"Sparc": ["SparcCtrlReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "PSR": {"Sparc": ["SparcCtrlReg","0"]}
+  }
+}

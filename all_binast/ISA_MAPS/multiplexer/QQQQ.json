@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "QQQQ",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "QQQQ": {"AArch64": "QQQQ"}
+  },
+  "INPUTS": {
+    "QQQQ": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "QQQQ": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "QQQQ": {"AArch64": ["RegisterClass","128"]}
+  },
+  "OUTPUT_BYTES": {
+    "QQQQ": {"AArch64": ["RegisterClass","128"]}
+  }
+}

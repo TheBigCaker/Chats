@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SXTAB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SXTAB": {"ARM": "SXTAB"},
+    "SXTAB16": {"ARM": "SXTAB16"}
+  },
+  "INPUTS": {
+    "SXTAB": {"ARM": [["GPR:$Rn",0],["GPRnopc:$Rm",0],["rot_imm:$rot",0]]},
+    "SXTAB16": {"ARM": [["GPR:$Rn",0],["GPRnopc:$Rm",0],["rot_imm:$rot",0]]}
+  },
+  "OUTPUTS": {
+    "SXTAB": {"ARM": [["GPRnopc:$Rd",0]]},
+    "SXTAB16": {"ARM": [["GPRnopc:$Rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "SXTAB": {"ARM": ["AI_exta_rrot","0b01101010"]},
+    "SXTAB16": {"ARM": ["AI_exta_rrot_np","0b01101000"]}
+  },
+  "OUTPUT_BYTES": {
+    "SXTAB": {"ARM": ["AI_exta_rrot","0b01101010"]},
+    "SXTAB16": {"ARM": ["AI_exta_rrot_np","0b01101000"]}
+  }
+}

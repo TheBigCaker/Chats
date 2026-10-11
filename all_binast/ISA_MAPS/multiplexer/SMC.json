@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SMC",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SMC": {"ARM": "SMC"}
+  },
+  "INPUTS": {
+    "SMC": {"ARM": [["imm0_15",0]]}
+  },
+  "OUTPUTS": {
+    "SMC": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SMC": {"ARM": ["ABI","0b0001"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMC": {"ARM": ["ABI","0b0001"]}
+  }
+}

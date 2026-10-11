@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SYSENTER",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SYSENTER": {"X86": "SYSENTER"}
+  },
+  "INPUTS": {
+    "SYSENTER": {"X86": []}
+  },
+  "OUTPUTS": {
+    "SYSENTER": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SYSENTER": {"X86": ["0x34"]}
+  },
+  "OUTPUT_BYTES": {
+    "SYSENTER": {"X86": ["0x34"]}
+  }
+}

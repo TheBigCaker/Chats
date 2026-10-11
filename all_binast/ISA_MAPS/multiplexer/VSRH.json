@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSRH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSRH": {"PowerPC": "VSRH"}
+  },
+  "INPUTS": {
+    "VSRH": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSRH": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSRH": {"PowerPC": ["VX1_Int_Ty","580"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSRH": {"PowerPC": ["VX1_Int_Ty","580"]}
+  }
+}

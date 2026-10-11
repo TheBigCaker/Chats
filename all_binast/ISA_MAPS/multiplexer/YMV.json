@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YMV",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YMV": {"RISCV": "YMV"}
+  },
+  "INPUTS": {
+    "YMV": {"RISCV": [["rs1Op:$rs1",0]]}
+  },
+  "OUTPUTS": {
+    "YMV": {"RISCV": [["rdOp:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "YMV": {"RISCV": ["RVYInst2Op","0b0000011","0b00000"]}
+  },
+  "OUTPUT_BYTES": {
+    "YMV": {"RISCV": ["RVYInst2Op","0b0000011","0b00000"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RMPADJUST",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "RMPADJUST": {"X86": "RMPADJUST"}
+  },
+  "INPUTS": {
+    "RMPADJUST": {"X86": []}
+  },
+  "OUTPUTS": {
+    "RMPADJUST": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "RMPADJUST": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "RMPADJUST": {"X86": ["0x01"]}
+  }
+}

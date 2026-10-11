@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PRFB",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "PRFB_PRR": {"AArch64": "PRFB_PRR"}
+  },
+  "INPUTS": {
+    "PRFB_PRR": {"AArch64": [["sve_prfop:$prfop",0],["PPR3bAny:$Pg",3],["GPR64sp:$Rn",64],["gprty:$Rm",0]]}
+  },
+  "OUTPUTS": {
+    "PRFB_PRR": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "PRFB_PRR": {"AArch64": ["sve_mem_prfm_ss","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "PRFB_PRR": {"AArch64": ["sve_mem_prfm_ss","0b001"]}
+  }
+}

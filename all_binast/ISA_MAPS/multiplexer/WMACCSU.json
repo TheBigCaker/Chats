@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WMACCSU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "WMACCSU": {"RISCV": "WMACCSU"}
+  },
+  "INPUTS": {
+    "WMACCSU": {"RISCV": [["GPRPairRV32:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "WMACCSU": {"RISCV": [["GPRPairRV32:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "WMACCSU": {"RISCV": ["RVPWideningTernary_rrr","0b1101","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "WMACCSU": {"RISCV": ["RVPWideningTernary_rrr","0b1101","0b01"]}
+  }
+}

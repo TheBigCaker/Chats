@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMLSD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMLSD": {"ARM": "VMLSD"}
+  },
+  "INPUTS": {
+    "VMLSD": {"ARM": [["DPR",0],["DPR",0],["DPR",0]]}
+  },
+  "OUTPUTS": {
+    "VMLSD": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMLSD": {"ARM": ["ADbI","0b11100","0b00","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMLSD": {"ARM": ["ADbI","0b11100","0b00","1","0"]}
+  }
+}

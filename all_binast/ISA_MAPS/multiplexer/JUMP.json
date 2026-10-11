@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "JUMP",
+  "BACKENDS": ["AMDGPU","Mali"],
+  "INDEX": {
+    "JUMP_COND": {"AMDGPU": "JUMP_COND"},
+    "JUMP": {"AMDGPU": "JUMP"},
+    "JUMP_EX": {"Mali": "JUMP_EX"},
+    "JUMP": {"Mali": "JUMP"}
+  },
+  "INPUTS": {
+    "JUMP_COND": {"AMDGPU": [["brtarget",0],["R600_Predicate_Bit",600]]},
+    "JUMP": {"AMDGPU": [["brtarget",0]]},
+    "JUMP_EX": {"Mali": [["R32",32],["R32",32],["R32",32]]},
+    "JUMP": {"Mali": [["R32",32]]}
+  },
+  "OUTPUTS": {
+    "JUMP_COND": {"AMDGPU": []},
+    "JUMP": {"AMDGPU": []},
+    "JUMP_EX": {"Mali": [["R",32]]},
+    "JUMP": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "JUMP_COND": {"AMDGPU": ["InstR600"]},
+    "JUMP": {"AMDGPU": ["InstR600"]},
+    "JUMP_EX": {"Mali": ["Bifrost_fma","0x2eb000","0x7ff000"]},
+    "JUMP": {"Mali": ["Bifrost_add","0x6fe34","0xffe3f"]}
+  },
+  "OUTPUT_BYTES": {
+    "JUMP_COND": {"AMDGPU": ["InstR600"]},
+    "JUMP": {"AMDGPU": ["InstR600"]},
+    "JUMP_EX": {"Mali": ["Bifrost_fma","0x2eb000","0x7ff000"]},
+    "JUMP": {"Mali": ["Bifrost_add","0x6fe34","0xffe3f"]}
+  }
+}

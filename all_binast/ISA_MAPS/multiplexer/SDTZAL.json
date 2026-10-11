@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SDTZAL",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "SDTZALoadStore": {"AArch64": "SDTZALoadStore"}
+  },
+  "INPUTS": {
+    "SDTZALoadStore": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "SDTZALoadStore": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "SDTZALoadStore": {"AArch64": ["SDTypeProfile","0","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTZALoadStore": {"AArch64": ["SDTypeProfile","0","3"]}
+  }
+}

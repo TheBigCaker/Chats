@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SWPB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SWPB": {"ARM": "SWPB"}
+  },
+  "INPUTS": {
+    "SWPB": {"ARM": [["GPRnopc",0],["addr_offset_none",0]]}
+  },
+  "OUTPUTS": {
+    "SWPB": {"ARM": [["GPRnopc",0]]}
+  },
+  "INPUT_BYTES": {
+    "SWPB": {"ARM": ["AIswp","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "SWPB": {"ARM": ["AIswp","1"]}
+  }
+}

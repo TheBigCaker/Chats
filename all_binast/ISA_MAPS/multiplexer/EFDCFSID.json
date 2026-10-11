@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFDCFSID",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFDCFSID": {"PowerPC": "EFDCFSID"}
+  },
+  "INPUTS": {
+    "EFDCFSID": {"PowerPC": [["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "EFDCFSID": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFDCFSID": {"PowerPC": ["EFXForm_2a","739"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFDCFSID": {"PowerPC": ["EFXForm_2a","739"]}
+  }
+}

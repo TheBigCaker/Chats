@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WRMSR",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "WRMSR": {"X86": "WRMSR"}
+  },
+  "INPUTS": {
+    "WRMSR": {"X86": []}
+  },
+  "OUTPUTS": {
+    "WRMSR": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "WRMSR": {"X86": ["0x30"]}
+  },
+  "OUTPUT_BYTES": {
+    "WRMSR": {"X86": ["0x30"]}
+  }
+}

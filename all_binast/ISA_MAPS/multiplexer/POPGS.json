@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "POPGS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "POPGS16": {"X86": "POPGS16"},
+    "POPGS32": {"X86": "POPGS32"},
+    "POPGS64": {"X86": "POPGS64"}
+  },
+  "INPUTS": {
+    "POPGS16": {"X86": []},
+    "POPGS32": {"X86": []},
+    "POPGS64": {"X86": []}
+  },
+  "OUTPUTS": {
+    "POPGS16": {"X86": []},
+    "POPGS32": {"X86": []},
+    "POPGS64": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "POPGS16": {"X86": ["0xa9"]},
+    "POPGS32": {"X86": ["0xa9"]},
+    "POPGS64": {"X86": ["0xa9"]}
+  },
+  "OUTPUT_BYTES": {
+    "POPGS16": {"X86": ["0xa9"]},
+    "POPGS32": {"X86": ["0xa9"]},
+    "POPGS64": {"X86": ["0xa9"]}
+  }
+}

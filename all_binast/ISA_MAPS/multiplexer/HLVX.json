@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "HLVX",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "HLVX_HU": {"RISCV": "HLVX_HU"},
+    "HLVX_WU": {"RISCV": "HLVX_WU"}
+  },
+  "INPUTS": {
+    "HLVX_HU": {"RISCV": [["GPRMemZeroOffset:$rs1",0]]},
+    "HLVX_WU": {"RISCV": [["GPRMemZeroOffset:$rs1",0]]}
+  },
+  "OUTPUTS": {
+    "HLVX_HU": {"RISCV": [["GPR:$rd",0]]},
+    "HLVX_WU": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "HLVX_HU": {"RISCV": ["HLoad_r","0b0110010","0b00011"]},
+    "HLVX_WU": {"RISCV": ["HLoad_r","0b0110100","0b00011"]}
+  },
+  "OUTPUT_BYTES": {
+    "HLVX_HU": {"RISCV": ["HLoad_r","0b0110010","0b00011"]},
+    "HLVX_WU": {"RISCV": ["HLoad_r","0b0110100","0b00011"]}
+  }
+}

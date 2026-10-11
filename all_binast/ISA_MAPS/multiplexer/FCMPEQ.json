@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FCMPEQ",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FCMPEQ16": {"Sparc": "FCMPEQ16"},
+    "FCMPEQ32": {"Sparc": "FCMPEQ32"}
+  },
+  "INPUTS": {
+    "FCMPEQ16": {"Sparc": []},
+    "FCMPEQ32": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FCMPEQ16": {"Sparc": []},
+    "FCMPEQ32": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FCMPEQ16": {"Sparc": ["VISInstID","0b000101010"]},
+    "FCMPEQ32": {"Sparc": ["VISInstID","0b000101110"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCMPEQ16": {"Sparc": ["VISInstID","0b000101010"]},
+    "FCMPEQ32": {"Sparc": ["VISInstID","0b000101110"]}
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "CATEGORY": "SELECT",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SELECT_CC_SPE4": {"PowerPC": "SELECT_CC_SPE4"},
+    "SELECT_CC_SPE": {"PowerPC": "SELECT_CC_SPE"},
+    "SELECT_SPE4": {"PowerPC": "SELECT_SPE4"},
+    "SELECT_SPE": {"PowerPC": "SELECT_SPE"},
+    "SELECT_CC_VSRC": {"PowerPC": "SELECT_CC_VSRC"},
+    "SELECT_VSRC": {"PowerPC": "SELECT_VSRC"},
+    "SELECT_CC_VSFRC": {"PowerPC": "SELECT_CC_VSFRC"},
+    "SELECT_VSFRC": {"PowerPC": "SELECT_VSFRC"},
+    "SELECT_CC_VSSRC": {"PowerPC": "SELECT_CC_VSSRC"},
+    "SELECT_VSSRC": {"PowerPC": "SELECT_VSSRC"}
+  },
+  "INPUTS": {
+    "SELECT_CC_SPE4": {"PowerPC": [["crrc",0],["spe4rc",0],["spe4rc",0],["i32imm",32]]},
+    "SELECT_CC_SPE": {"PowerPC": [["crrc",0],["sperc",0],["sperc",0],["i32imm",32]]},
+    "SELECT_SPE4": {"PowerPC": [["crbitrc",0],["spe4rc",0],["spe4rc",0]]},
+    "SELECT_SPE": {"PowerPC": [["crbitrc",0],["sperc",0],["sperc",0]]},
+    "SELECT_CC_VSRC": {"PowerPC": [["crrc",0],["vsrc",0],["vsrc",0],["i32imm",32]]},
+    "SELECT_VSRC": {"PowerPC": [["crbitrc",0],["vsrc",0],["vsrc",0]]},
+    "SELECT_CC_VSFRC": {"PowerPC": [["crrc",0],["f8rc",0],["f8rc",0],["i32imm",32]]},
+    "SELECT_VSFRC": {"PowerPC": [["crbitrc",0],["f8rc",0],["f8rc",0]]},
+    "SELECT_CC_VSSRC": {"PowerPC": [["crrc",0],["f4rc",0],["f4rc",0],["i32imm",32]]},
+    "SELECT_VSSRC": {"PowerPC": [["crbitrc",0],["f4rc",0],["f4rc",0]]}
+  },
+  "OUTPUTS": {
+    "SELECT_CC_SPE4": {"PowerPC": [["spe4rc",0]]},
+    "SELECT_CC_SPE": {"PowerPC": [["sperc",0]]},
+    "SELECT_SPE4": {"PowerPC": [["spe4rc",0]]},
+    "SELECT_SPE": {"PowerPC": [["sperc",0]]},
+    "SELECT_CC_VSRC": {"PowerPC": [["vsrc",0]]},
+    "SELECT_VSRC": {"PowerPC": [["vsrc",0]]},
+    "SELECT_CC_VSFRC": {"PowerPC": [["f8rc",0]]},
+    "SELECT_VSFRC": {"PowerPC": [["f8rc",0]]},
+    "SELECT_CC_VSSRC": {"PowerPC": [["f4rc",0]]},
+    "SELECT_VSSRC": {"PowerPC": [["f4rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "SELECT_CC_SPE4": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_CC_SPE": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_SPE4": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_SPE": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_CC_VSRC": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_VSRC": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_CC_VSFRC": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_VSFRC": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_CC_VSSRC": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_VSSRC": {"PowerPC": ["PPCCustomInserterPseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "SELECT_CC_SPE4": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_CC_SPE": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_SPE4": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_SPE": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_CC_VSRC": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_VSRC": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_CC_VSFRC": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_VSFRC": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_CC_VSSRC": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "SELECT_VSSRC": {"PowerPC": ["PPCCustomInserterPseudo"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMRGLH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMRGLH": {"PowerPC": "VMRGLH"}
+  },
+  "INPUTS": {
+    "VMRGLH": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMRGLH": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMRGLH": {"PowerPC": ["VXForm_1","332"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMRGLH": {"PowerPC": ["VXForm_1","332"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "IN",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "IN8rr": {"X86": "IN8rr"},
+    "IN16rr": {"X86": "IN16rr"},
+    "IN32rr": {"X86": "IN32rr"}
+  },
+  "INPUTS": {
+    "IN8rr": {"X86": []},
+    "IN16rr": {"X86": []},
+    "IN32rr": {"X86": []}
+  },
+  "OUTPUTS": {
+    "IN8rr": {"X86": []},
+    "IN16rr": {"X86": []},
+    "IN32rr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "IN8rr": {"X86": ["0xEC"]},
+    "IN16rr": {"X86": ["0xED"]},
+    "IN32rr": {"X86": ["0xED"]}
+  },
+  "OUTPUT_BYTES": {
+    "IN8rr": {"X86": ["0xEC"]},
+    "IN16rr": {"X86": ["0xED"]},
+    "IN32rr": {"X86": ["0xED"]}
+  }
+}

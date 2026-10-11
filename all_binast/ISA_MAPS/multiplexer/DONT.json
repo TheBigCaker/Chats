@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DONT",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "DONT_CARE_ALTFMT": {"RISCV": "DONT_CARE_ALTFMT"}
+  },
+  "INPUTS": {
+    "DONT_CARE_ALTFMT": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "DONT_CARE_ALTFMT": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "DONT_CARE_ALTFMT": {"RISCV": ["AltFmtType","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "DONT_CARE_ALTFMT": {"RISCV": ["AltFmtType","0"]}
+  }
+}

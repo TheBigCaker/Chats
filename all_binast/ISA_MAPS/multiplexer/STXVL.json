@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STXVL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STXVL": {"PowerPC": "STXVL"}
+  },
+  "INPUTS": {
+    "STXVL": {"PowerPC": [["vsrc",0],["(memr",0]]}
+  },
+  "OUTPUTS": {
+    "STXVL": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STXVL": {"PowerPC": ["XX1Form_memOp","31","397"]}
+  },
+  "OUTPUT_BYTES": {
+    "STXVL": {"PowerPC": ["XX1Form_memOp","31","397"]}
+  }
+}

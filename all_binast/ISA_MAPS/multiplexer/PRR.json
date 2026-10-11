@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PRR",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "PRRegs": {"Sparc": "PRRegs"}
+  },
+  "INPUTS": {
+    "PRRegs": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "PRRegs": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "PRRegs": {"Sparc": ["RegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "PRRegs": {"Sparc": ["RegisterClass","64"]}
+  }
+}

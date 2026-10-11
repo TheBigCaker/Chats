@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSDIVDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSDIVDP": {"PowerPC": "XSDIVDP"}
+  },
+  "INPUTS": {
+    "XSDIVDP": {"PowerPC": [["vsfrc",0],["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSDIVDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSDIVDP": {"PowerPC": ["XX3Form","60","56"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSDIVDP": {"PowerPC": ["XX3Form","60","56"]}
+  }
+}

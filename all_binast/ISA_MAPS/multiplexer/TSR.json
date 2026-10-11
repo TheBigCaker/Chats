@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TSR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "TSR": {"PowerPC": "TSR"}
+  },
+  "INPUTS": {
+    "TSR": {"PowerPC": [["u1imm",1]]}
+  },
+  "OUTPUTS": {
+    "TSR": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "TSR": {"PowerPC": ["XForm_htm2","31","750"]}
+  },
+  "OUTPUT_BYTES": {
+    "TSR": {"PowerPC": ["XForm_htm2","31","750"]}
+  }
+}

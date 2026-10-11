@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AMDGPUK",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "AMDGPUKillSDT": {"AMDGPU": "AMDGPUKillSDT"}
+  },
+  "INPUTS": {
+    "AMDGPUKillSDT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "AMDGPUKillSDT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "AMDGPUKillSDT": {"AMDGPU": ["SDTypeProfile","0","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "AMDGPUKillSDT": {"AMDGPU": ["SDTypeProfile","0","1"]}
+  }
+}

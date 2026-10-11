@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FHSUBS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FHSUBS": {"Sparc": "FHSUBS"}
+  },
+  "INPUTS": {
+    "FHSUBS": {"Sparc": [["FPRegs",0],["FPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FHSUBS": {"Sparc": [["FPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FHSUBS": {"Sparc": ["F3_3","0b10","0b110100","0b001100101"]}
+  },
+  "OUTPUT_BYTES": {
+    "FHSUBS": {"Sparc": ["F3_3","0b10","0b110100","0b001100101"]}
+  }
+}

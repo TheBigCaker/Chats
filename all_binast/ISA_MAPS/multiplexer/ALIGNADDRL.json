@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ALIGNADDRL",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "ALIGNADDRL": {"Sparc": "ALIGNADDRL"}
+  },
+  "INPUTS": {
+    "ALIGNADDRL": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "ALIGNADDRL": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "ALIGNADDRL": {"Sparc": ["VISInst","0b000011010"]}
+  },
+  "OUTPUT_BYTES": {
+    "ALIGNADDRL": {"Sparc": ["VISInst","0b000011010"]}
+  }
+}

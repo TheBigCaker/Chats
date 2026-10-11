@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ACTIVEMASK",
+  "BACKENDS": ["NVPTX"],
+  "INDEX": {
+    "ACTIVEMASK": {"NVPTX": "ACTIVEMASK"}
+  },
+  "INPUTS": {
+    "ACTIVEMASK": {"NVPTX": []}
+  },
+  "OUTPUTS": {
+    "ACTIVEMASK": {"NVPTX": [["B32",0]]}
+  },
+  "INPUT_BYTES": {
+    "ACTIVEMASK": {"NVPTX": ["BasicNVPTXInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "ACTIVEMASK": {"NVPTX": ["BasicNVPTXInst"]}
+  }
+}

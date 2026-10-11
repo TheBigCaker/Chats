@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VEXPTEFP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VEXPTEFP": {"PowerPC": "VEXPTEFP"}
+  },
+  "INPUTS": {
+    "VEXPTEFP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VEXPTEFP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VEXPTEFP": {"PowerPC": ["VX2_Int_SP","394"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEXPTEFP": {"PowerPC": ["VX2_Int_SP","394"]}
+  }
+}

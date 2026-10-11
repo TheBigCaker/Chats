@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "IMULD",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "IMULD": {"Mali": "IMULD"},
+    "IMULD.u64": {"Mali": "IMULD.u64"}
+  },
+  "INPUTS": {
+    "IMULD": {"Mali": [["R32",32],["R32",32]]},
+    "IMULD.u64": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "IMULD": {"Mali": [["R",32]]},
+    "IMULD.u64": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "IMULD": {"Mali": ["Bifrost_fma","0x70f100","0x7fff80"]},
+    "IMULD.u64": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "IMULD": {"Mali": ["Bifrost_fma","0x70f100","0x7fff80"]},
+    "IMULD.u64": {"Mali": ["Valhall_"]}
+  }
+}

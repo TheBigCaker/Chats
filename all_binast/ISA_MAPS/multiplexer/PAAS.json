@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "PAAS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PAAS_HX": {"RISCV": "PAAS_HX"},
+    "PAAS_WX": {"RISCV": "PAAS_WX"},
+    "PAAS_DHX": {"RISCV": "PAAS_DHX"}
+  },
+  "INPUTS": {
+    "PAAS_HX": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PAAS_WX": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PAAS_DHX": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PAAS_HX": {"RISCV": [["GPR:$rd",0]]},
+    "PAAS_WX": {"RISCV": [["GPR:$rd",0]]},
+    "PAAS_DHX": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PAAS_HX": {"RISCV": ["RVPBinary_rr","0b0011","0b00","0b110"]},
+    "PAAS_WX": {"RISCV": ["RVPBinary_rr","0b0011","0b01","0b110"]},
+    "PAAS_DHX": {"RISCV": ["RVPPairBinaryExchanged_rr","0b0011","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "PAAS_HX": {"RISCV": ["RVPBinary_rr","0b0011","0b00","0b110"]},
+    "PAAS_WX": {"RISCV": ["RVPBinary_rr","0b0011","0b01","0b110"]},
+    "PAAS_DHX": {"RISCV": ["RVPPairBinaryExchanged_rr","0b0011","0b00"]}
+  }
+}

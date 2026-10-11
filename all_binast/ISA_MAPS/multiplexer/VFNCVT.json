@@ -1,0 +1,64 @@
+{
+  "CATEGORY": "VFNCVT",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFNCVT_XU_F_W": {"RISCV": "VFNCVT_XU_F_W"},
+    "VFNCVT_X_F_W": {"RISCV": "VFNCVT_X_F_W"},
+    "VFNCVT_RTZ_XU_F_W": {"RISCV": "VFNCVT_RTZ_XU_F_W"},
+    "VFNCVT_RTZ_X_F_W": {"RISCV": "VFNCVT_RTZ_X_F_W"},
+    "VFNCVT_F_XU_W": {"RISCV": "VFNCVT_F_XU_W"},
+    "VFNCVT_F_X_W": {"RISCV": "VFNCVT_F_X_W"},
+    "VFNCVT_F_F_W": {"RISCV": "VFNCVT_F_F_W"},
+    "VFNCVT_ROD_F_F_W": {"RISCV": "VFNCVT_ROD_F_F_W"},
+    "VFNCVT_F_F_Q": {"RISCV": "VFNCVT_F_F_Q"},
+    "VFNCVT_SAT_F_F_Q": {"RISCV": "VFNCVT_SAT_F_F_Q"}
+  },
+  "INPUTS": {
+    "VFNCVT_XU_F_W": {"RISCV": []},
+    "VFNCVT_X_F_W": {"RISCV": []},
+    "VFNCVT_RTZ_XU_F_W": {"RISCV": []},
+    "VFNCVT_RTZ_X_F_W": {"RISCV": []},
+    "VFNCVT_F_XU_W": {"RISCV": []},
+    "VFNCVT_F_X_W": {"RISCV": []},
+    "VFNCVT_F_F_W": {"RISCV": []},
+    "VFNCVT_ROD_F_F_W": {"RISCV": []},
+    "VFNCVT_F_F_Q": {"RISCV": []},
+    "VFNCVT_SAT_F_F_Q": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VFNCVT_XU_F_W": {"RISCV": []},
+    "VFNCVT_X_F_W": {"RISCV": []},
+    "VFNCVT_RTZ_XU_F_W": {"RISCV": []},
+    "VFNCVT_RTZ_X_F_W": {"RISCV": []},
+    "VFNCVT_F_XU_W": {"RISCV": []},
+    "VFNCVT_F_X_W": {"RISCV": []},
+    "VFNCVT_F_F_W": {"RISCV": []},
+    "VFNCVT_ROD_F_F_W": {"RISCV": []},
+    "VFNCVT_F_F_Q": {"RISCV": []},
+    "VFNCVT_SAT_F_F_Q": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VFNCVT_XU_F_W": {"RISCV": ["VNCVTI_FV_VS2","0b010010","0b10000"]},
+    "VFNCVT_X_F_W": {"RISCV": ["VNCVTI_FV_VS2","0b010010","0b10001"]},
+    "VFNCVT_RTZ_XU_F_W": {"RISCV": ["VNCVTI_FV_VS2","0b010010","0b10110"]},
+    "VFNCVT_RTZ_X_F_W": {"RISCV": ["VNCVTI_FV_VS2","0b010010","0b10111"]},
+    "VFNCVT_F_XU_W": {"RISCV": ["VNCVTF_IV_VS2","0b010010","0b10010"]},
+    "VFNCVT_F_X_W": {"RISCV": ["VNCVTF_IV_VS2","0b010010","0b10011"]},
+    "VFNCVT_F_F_W": {"RISCV": ["VNCVTF_FV_VS2","0b010010","0b10100"]},
+    "VFNCVT_ROD_F_F_W": {"RISCV": ["VNCVTF_FV_VS2","0b010010","0b10101"]},
+    "VFNCVT_F_F_Q": {"RISCV": ["VNCVTF_FV_VS2","0b010010","0b11001"]},
+    "VFNCVT_SAT_F_F_Q": {"RISCV": ["VNCVTF_FV_VS2","0b010010","0b11011"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFNCVT_XU_F_W": {"RISCV": ["VNCVTI_FV_VS2","0b010010","0b10000"]},
+    "VFNCVT_X_F_W": {"RISCV": ["VNCVTI_FV_VS2","0b010010","0b10001"]},
+    "VFNCVT_RTZ_XU_F_W": {"RISCV": ["VNCVTI_FV_VS2","0b010010","0b10110"]},
+    "VFNCVT_RTZ_X_F_W": {"RISCV": ["VNCVTI_FV_VS2","0b010010","0b10111"]},
+    "VFNCVT_F_XU_W": {"RISCV": ["VNCVTF_IV_VS2","0b010010","0b10010"]},
+    "VFNCVT_F_X_W": {"RISCV": ["VNCVTF_IV_VS2","0b010010","0b10011"]},
+    "VFNCVT_F_F_W": {"RISCV": ["VNCVTF_FV_VS2","0b010010","0b10100"]},
+    "VFNCVT_ROD_F_F_W": {"RISCV": ["VNCVTF_FV_VS2","0b010010","0b10101"]},
+    "VFNCVT_F_F_Q": {"RISCV": ["VNCVTF_FV_VS2","0b010010","0b11001"]},
+    "VFNCVT_SAT_F_F_Q": {"RISCV": ["VNCVTF_FV_VS2","0b010010","0b11011"]}
+  }
+}

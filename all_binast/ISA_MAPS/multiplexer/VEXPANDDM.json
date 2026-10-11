@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VEXPANDDM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VEXPANDDM": {"PowerPC": "VEXPANDDM"}
+  },
+  "INPUTS": {
+    "VEXPANDDM": {"PowerPC": [["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VEXPANDDM": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VEXPANDDM": {"PowerPC": ["VXForm_RD5_XO5_RS5","1602","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEXPANDDM": {"PowerPC": ["VXForm_RD5_XO5_RS5","1602","3"]}
+  }
+}

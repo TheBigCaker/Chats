@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MQPRC",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MQPRCopy": {"ARM": "MQPRCopy"}
+  },
+  "INPUTS": {
+    "MQPRCopy": {"ARM": [["MQPR",0]]}
+  },
+  "OUTPUTS": {
+    "MQPRCopy": {"ARM": [["MQPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "MQPRCopy": {"ARM": ["t2PseudoInst","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "MQPRCopy": {"ARM": ["t2PseudoInst","8"]}
+  }
+}

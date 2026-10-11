@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MUBUFS",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "MUBUFScratchOffen": {"AMDGPU": "MUBUFScratchOffen"},
+    "MUBUFScratchOffset": {"AMDGPU": "MUBUFScratchOffset"}
+  },
+  "INPUTS": {
+    "MUBUFScratchOffen": {"AMDGPU": []},
+    "MUBUFScratchOffset": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "MUBUFScratchOffen": {"AMDGPU": []},
+    "MUBUFScratchOffset": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "MUBUFScratchOffen": {"AMDGPU": ["ComplexPattern","4"]},
+    "MUBUFScratchOffset": {"AMDGPU": ["ComplexPattern","3","20"]}
+  },
+  "OUTPUT_BYTES": {
+    "MUBUFScratchOffen": {"AMDGPU": ["ComplexPattern","4"]},
+    "MUBUFScratchOffset": {"AMDGPU": ["ComplexPattern","3","20"]}
+  }
+}

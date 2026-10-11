@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SYSCALL",
+  "BACKENDS": ["X86","ARM"],
+  "INDEX": {
+    "SYSCALL": {"X86": "SYSCALL"},
+    "SVC": {"ARM": "SVC"}
+  },
+  "INPUTS": {
+    "SYSCALL": {"X86": []},
+    "SVC": {"ARM": [["imm24b",0]]}
+  },
+  "OUTPUTS": {
+    "SYSCALL": {"X86": []},
+    "SVC": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SYSCALL": {"X86": ["0x05"]},
+    "SVC": {"ARM": ["ABI","0b1111"]}
+  },
+  "OUTPUT_BYTES": {
+    "SYSCALL": {"X86": ["0x05"]},
+    "SVC": {"ARM": ["ABI","0b1111"]}
+  }
+}

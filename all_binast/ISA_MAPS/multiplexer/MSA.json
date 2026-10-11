@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "MSA",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MSA128B": {"Mips": "MSA128B"},
+    "MSA128H": {"Mips": "MSA128H"},
+    "MSA128W": {"Mips": "MSA128W"},
+    "MSA128D": {"Mips": "MSA128D"},
+    "MSA128WEvens": {"Mips": "MSA128WEvens"}
+  },
+  "INPUTS": {
+    "MSA128B": {"Mips": []},
+    "MSA128H": {"Mips": []},
+    "MSA128W": {"Mips": []},
+    "MSA128D": {"Mips": []},
+    "MSA128WEvens": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "MSA128B": {"Mips": []},
+    "MSA128H": {"Mips": []},
+    "MSA128W": {"Mips": []},
+    "MSA128D": {"Mips": []},
+    "MSA128WEvens": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "MSA128B": {"Mips": ["RegisterClass","128","0"]},
+    "MSA128H": {"Mips": ["RegisterClass","128","0"]},
+    "MSA128W": {"Mips": ["RegisterClass","128","0"]},
+    "MSA128D": {"Mips": ["RegisterClass","128","0"]},
+    "MSA128WEvens": {"Mips": ["RegisterClass","128","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "MSA128B": {"Mips": ["RegisterClass","128","0"]},
+    "MSA128H": {"Mips": ["RegisterClass","128","0"]},
+    "MSA128W": {"Mips": ["RegisterClass","128","0"]},
+    "MSA128D": {"Mips": ["RegisterClass","128","0"]},
+    "MSA128WEvens": {"Mips": ["RegisterClass","128","0"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "NOT",
+  "BACKENDS": ["AMDGPU","Mali"],
+  "INDEX": {
+    "NOT_INT": {"AMDGPU": "NOT_INT"},
+    "NOT_OLD.i32": {"Mali": "NOT_OLD.i32"},
+    "NOT_OLD.i64": {"Mali": "NOT_OLD.i64"}
+  },
+  "INPUTS": {
+    "NOT_INT": {"AMDGPU": []},
+    "NOT_OLD.i32": {"Mali": []},
+    "NOT_OLD.i64": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "NOT_INT": {"AMDGPU": []},
+    "NOT_OLD.i32": {"Mali": [["R",32]]},
+    "NOT_OLD.i64": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "NOT_INT": {"AMDGPU": ["R600_1OP_Helper","0x33"]},
+    "NOT_OLD.i32": {"Mali": ["Valhall_SFU"]},
+    "NOT_OLD.i64": {"Mali": ["Valhall_SFU"]}
+  },
+  "OUTPUT_BYTES": {
+    "NOT_INT": {"AMDGPU": ["R600_1OP_Helper","0x33"]},
+    "NOT_OLD.i32": {"Mali": ["Valhall_SFU"]},
+    "NOT_OLD.i64": {"Mali": ["Valhall_SFU"]}
+  }
+}

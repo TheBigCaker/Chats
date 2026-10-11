@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCVTBHD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VCVTBHD": {"ARM": "VCVTBHD"}
+  },
+  "INPUTS": {
+    "VCVTBHD": {"ARM": [["SPR",0]]}
+  },
+  "OUTPUTS": {
+    "VCVTBHD": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCVTBHD": {"ARM": ["ADuI","0b11101","0b11","0b0010","0b01","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCVTBHD": {"ARM": ["ADuI","0b11101","0b11","0b0010","0b01","0"]}
+  }
+}

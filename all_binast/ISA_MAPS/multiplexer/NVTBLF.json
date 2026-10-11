@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NVTBLF",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "NVTBLFrm": {"ARM": "NVTBLFrm"}
+  },
+  "INPUTS": {
+    "NVTBLFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "NVTBLFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "NVTBLFrm": {"ARM": ["Format","41"]}
+  },
+  "OUTPUT_BYTES": {
+    "NVTBLFrm": {"ARM": ["Format","41"]}
+  }
+}

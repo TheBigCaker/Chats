@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MTLPL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MTLPL": {"PowerPC": "MTLPL"},
+    "MTLPL8": {"PowerPC": "MTLPL8"}
+  },
+  "INPUTS": {
+    "MTLPL": {"PowerPC": [["gprc",0],["gprc",0]]},
+    "MTLPL8": {"PowerPC": [["g8rc",0],["g8rc",0]]}
+  },
+  "OUTPUTS": {
+    "MTLPL": {"PowerPC": []},
+    "MTLPL8": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "MTLPL": {"PowerPC": ["XForm_RBS5","31","275"]},
+    "MTLPL8": {"PowerPC": ["XForm_RBS5","31","275"]}
+  },
+  "OUTPUT_BYTES": {
+    "MTLPL": {"PowerPC": ["XForm_RBS5","31","275"]},
+    "MTLPL8": {"PowerPC": ["XForm_RBS5","31","275"]}
+  }
+}

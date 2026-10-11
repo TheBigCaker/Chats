@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AAA",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "AAA": {"X86": "AAA"}
+  },
+  "INPUTS": {
+    "AAA": {"X86": []}
+  },
+  "OUTPUTS": {
+    "AAA": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "AAA": {"X86": ["0x37"]}
+  },
+  "OUTPUT_BYTES": {
+    "AAA": {"X86": ["0x37"]}
+  }
+}

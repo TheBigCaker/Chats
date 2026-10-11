@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFSABS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFSABS": {"PowerPC": "EFSABS"}
+  },
+  "INPUTS": {
+    "EFSABS": {"PowerPC": [["spe4rc",0]]}
+  },
+  "OUTPUTS": {
+    "EFSABS": {"PowerPC": [["spe4rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFSABS": {"PowerPC": ["EFXForm_2","708"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFSABS": {"PowerPC": ["EFXForm_2","708"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SDTARMVSHINSIMM",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SDTARMVSHINSIMM": {"ARM": "SDTARMVSHINSIMM"}
+  },
+  "INPUTS": {
+    "SDTARMVSHINSIMM": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SDTARMVSHINSIMM": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SDTARMVSHINSIMM": {"ARM": ["SDTypeProfile","1","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTARMVSHINSIMM": {"ARM": ["SDTypeProfile","1","3"]}
+  }
+}

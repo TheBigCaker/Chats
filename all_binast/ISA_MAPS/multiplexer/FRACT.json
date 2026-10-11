@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FRACT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "FRACT": {"AMDGPU": "FRACT"}
+  },
+  "INPUTS": {
+    "FRACT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "FRACT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "FRACT": {"AMDGPU": ["R600_1OP_Helper","0x10"]}
+  },
+  "OUTPUT_BYTES": {
+    "FRACT": {"AMDGPU": ["R600_1OP_Helper","0x10"]}
+  }
+}

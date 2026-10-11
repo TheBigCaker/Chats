@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MLA",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MLA": {"ARM": "MLA"},
+    "MLAv5": {"ARM": "MLAv5"}
+  },
+  "INPUTS": {
+    "MLA": {"ARM": [["GPRnopc",0],["GPRnopc",0],["GPRnopc",0]]},
+    "MLAv5": {"ARM": [["GPRnopc",0],["GPRnopc",0],["GPRnopc",0],["pred",0],["cc_out",0]]}
+  },
+  "OUTPUTS": {
+    "MLA": {"ARM": [["GPRnopc",0]]},
+    "MLAv5": {"ARM": [["GPRnopc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MLA": {"ARM": ["AsMul1I32","0b0000001"]},
+    "MLAv5": {"ARM": ["ARMPseudoExpand","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "MLA": {"ARM": ["AsMul1I32","0b0000001"]},
+    "MLAv5": {"ARM": ["ARMPseudoExpand","4"]}
+  }
+}

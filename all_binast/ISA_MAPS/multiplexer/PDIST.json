@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PDIST",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "PDIST": {"Sparc": "PDIST"}
+  },
+  "INPUTS": {
+    "PDIST": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "PDIST": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "PDIST": {"Sparc": ["VISInst","0b000111110"]}
+  },
+  "OUTPUT_BYTES": {
+    "PDIST": {"Sparc": ["VISInst","0b000111110"]}
+  }
+}

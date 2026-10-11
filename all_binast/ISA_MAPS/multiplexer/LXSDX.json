@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXSDX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXSDX": {"PowerPC": "LXSDX"}
+  },
+  "INPUTS": {
+    "LXSDX": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LXSDX": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LXSDX": {"PowerPC": ["XX1Form_memOp","31","588"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXSDX": {"PowerPC": ["XX1Form_memOp","31","588"]}
+  }
+}

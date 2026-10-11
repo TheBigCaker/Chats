@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MFCR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MFCR8": {"PowerPC": "MFCR8"}
+  },
+  "INPUTS": {
+    "MFCR8": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "MFCR8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MFCR8": {"PowerPC": ["XFXForm_3","31","19"]}
+  },
+  "OUTPUT_BYTES": {
+    "MFCR8": {"PowerPC": ["XFXForm_3","31","19"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VASTART",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VASTART_SAVE_XMM_REGS": {"X86": "VASTART_SAVE_XMM_REGS"}
+  },
+  "INPUTS": {
+    "VASTART_SAVE_XMM_REGS": {"X86": [["GR8",8],["i8mem",0],["variable_ops",0]]}
+  },
+  "OUTPUTS": {
+    "VASTART_SAVE_XMM_REGS": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VASTART_SAVE_XMM_REGS": {"X86": ["0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VASTART_SAVE_XMM_REGS": {"X86": ["0"]}
+  }
+}

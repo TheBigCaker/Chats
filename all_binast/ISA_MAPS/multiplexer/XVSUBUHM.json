@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVSUBUHM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVSUBUHM": {"PowerPC": "XVSUBUHM"}
+  },
+  "INPUTS": {
+    "XVSUBUHM": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVSUBUHM": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVSUBUHM": {"PowerPC": ["XX3Form_XTAB6","60","155"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVSUBUHM": {"PowerPC": ["XX3Form_XTAB6","60","155"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LTR",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LTRr": {"X86": "LTRr"},
+    "LTRm": {"X86": "LTRm"}
+  },
+  "INPUTS": {
+    "LTRr": {"X86": [["GR16",16]]},
+    "LTRm": {"X86": [["i16mem",0]]}
+  },
+  "OUTPUTS": {
+    "LTRr": {"X86": []},
+    "LTRm": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "LTRr": {"X86": ["0x00"]},
+    "LTRm": {"X86": ["0x00"]}
+  },
+  "OUTPUT_BYTES": {
+    "LTRr": {"X86": ["0x00"]},
+    "LTRm": {"X86": ["0x00"]}
+  }
+}

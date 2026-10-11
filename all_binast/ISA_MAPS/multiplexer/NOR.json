@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NOR",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "NOR_ZZZ": {"AArch64": "NOR_ZZZ"}
+  },
+  "INPUTS": {
+    "NOR_ZZZ": {"AArch64": [["ZPR64",64],["ZPR64",64]]}
+  },
+  "OUTPUTS": {
+    "NOR_ZZZ": {"AArch64": [["ZPR64",64]]}
+  },
+  "INPUT_BYTES": {
+    "NOR_ZZZ": {"AArch64": []}
+  },
+  "OUTPUT_BYTES": {
+    "NOR_ZZZ": {"AArch64": []}
+  }
+}

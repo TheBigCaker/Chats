@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LOCK",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LOCK_PREFIX": {"X86": "LOCK_PREFIX"}
+  },
+  "INPUTS": {
+    "LOCK_PREFIX": {"X86": []}
+  },
+  "OUTPUTS": {
+    "LOCK_PREFIX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "LOCK_PREFIX": {"X86": ["0xF0"]}
+  },
+  "OUTPUT_BYTES": {
+    "LOCK_PREFIX": {"X86": ["0xF0"]}
+  }
+}

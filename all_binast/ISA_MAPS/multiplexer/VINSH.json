@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VINSH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VINSH": {"ARM": "VINSH"}
+  },
+  "INPUTS": {
+    "VINSH": {"ARM": [["SPR",0],["SPR",0]]}
+  },
+  "OUTPUTS": {
+    "VINSH": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VINSH": {"ARM": ["ASuInp","0b11101","0b11","0b0000","0b11","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VINSH": {"ARM": ["ASuInp","0b11101","0b11","0b0000","0b11","0"]}
+  }
+}

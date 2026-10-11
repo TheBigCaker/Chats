@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VCTSXS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCTSXS": {"PowerPC": "VCTSXS"},
+    "VCTSXS_0": {"PowerPC": "VCTSXS_0"}
+  },
+  "INPUTS": {
+    "VCTSXS": {"PowerPC": [["u5imm",5],["vrrc",0]]},
+    "VCTSXS_0": {"PowerPC": [["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VCTSXS": {"PowerPC": [["vrrc",0]]},
+    "VCTSXS_0": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCTSXS": {"PowerPC": ["VXForm_1","970"]},
+    "VCTSXS_0": {"PowerPC": ["VXForm_1","970"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCTSXS": {"PowerPC": ["VXForm_1","970"]},
+    "VCTSXS_0": {"PowerPC": ["VXForm_1","970"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DTSTSFI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DTSTSFI": {"PowerPC": "DTSTSFI"}
+  },
+  "INPUTS": {
+    "DTSTSFI": {"PowerPC": [["u6imm",6],["f8rc",0]]}
+  },
+  "OUTPUTS": {
+    "DTSTSFI": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "DTSTSFI": {"PowerPC": ["XForm_BF3_UIM6_FRB5","59","675"]}
+  },
+  "OUTPUT_BYTES": {
+    "DTSTSFI": {"PowerPC": ["XForm_BF3_UIM6_FRB5","59","675"]}
+  }
+}

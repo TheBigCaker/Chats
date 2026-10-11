@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CS_PREFIX": {"X86": "CS_PREFIX"}
+  },
+  "INPUTS": {
+    "CS_PREFIX": {"X86": []}
+  },
+  "OUTPUTS": {
+    "CS_PREFIX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CS_PREFIX": {"X86": ["0x2E"]}
+  },
+  "OUTPUT_BYTES": {
+    "CS_PREFIX": {"X86": ["0x2E"]}
+  }
+}

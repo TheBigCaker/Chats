@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FNMULD",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FNMULD": {"Sparc": "FNMULD"}
+  },
+  "INPUTS": {
+    "FNMULD": {"Sparc": [["DFPRegs",0],["DFPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FNMULD": {"Sparc": [["DFPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FNMULD": {"Sparc": ["F3_3","0b10","0b110100","0b001011010"]}
+  },
+  "OUTPUT_BYTES": {
+    "FNMULD": {"Sparc": ["F3_3","0b10","0b110100","0b001011010"]}
+  }
+}

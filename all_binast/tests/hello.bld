@@ -1,0 +1,13 @@
+# hello, written as catalog blocks. No assembler, compiler or linker.
+# Build:  make binastbuild && ./binastbuild tests/hello.bld tmp/hello.elf 0x400000
+MOVZ_X 0 1 0              # x0 = 1   (stdout)
+ADRP_X 1 msg              # x1 = page of msg          (resolved by the layout)
+ADD_X_imm 1 1 msg@lo12    # x1 += within-page offset  (resolved by the layout)
+MOVZ_X 2 3 0              # x2 = 3   (length)
+MOVZ_X 8 64 0             # x8 = 64  (write)
+SVC 0                     # syscall
+MOVZ_X 0 0 0              # x0 = 0   (exit status)
+MOVZ_X 8 93 0             # x8 = 93  (exit)
+SVC 0
+.align 2
+msg: .ascii "hi\n"

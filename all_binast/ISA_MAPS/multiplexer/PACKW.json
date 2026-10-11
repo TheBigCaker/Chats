@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PACKW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PACKW": {"RISCV": "PACKW"}
+  },
+  "INPUTS": {
+    "PACKW": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PACKW": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "PACKW": {"RISCV": ["ALUW_rr","0b0000100","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "PACKW": {"RISCV": ["ALUW_rr","0b0000100","0b100"]}
+  }
+}

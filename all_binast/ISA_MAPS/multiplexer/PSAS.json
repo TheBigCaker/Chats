@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "PSAS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PSAS_HX": {"RISCV": "PSAS_HX"},
+    "PSAS_WX": {"RISCV": "PSAS_WX"},
+    "PSAS_DHX": {"RISCV": "PSAS_DHX"}
+  },
+  "INPUTS": {
+    "PSAS_HX": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PSAS_WX": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PSAS_DHX": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PSAS_HX": {"RISCV": [["GPR:$rd",0]]},
+    "PSAS_WX": {"RISCV": [["GPR:$rd",0]]},
+    "PSAS_DHX": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PSAS_HX": {"RISCV": ["RVPBinary_rr","0b0010","0b00","0b110"]},
+    "PSAS_WX": {"RISCV": ["RVPBinary_rr","0b0010","0b01","0b110"]},
+    "PSAS_DHX": {"RISCV": ["RVPPairBinaryExchanged_rr","0b0010","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "PSAS_HX": {"RISCV": ["RVPBinary_rr","0b0010","0b00","0b110"]},
+    "PSAS_WX": {"RISCV": ["RVPBinary_rr","0b0010","0b01","0b110"]},
+    "PSAS_DHX": {"RISCV": ["RVPPairBinaryExchanged_rr","0b0010","0b00"]}
+  }
+}

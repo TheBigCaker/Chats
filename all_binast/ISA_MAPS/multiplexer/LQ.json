@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LQ": {"PowerPC": "LQ"}
+  },
+  "INPUTS": {
+    "LQ": {"PowerPC": [["(memrix16",0]]}
+  },
+  "OUTPUTS": {
+    "LQ": {"PowerPC": [["g8prc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LQ": {"PowerPC": ["DQForm_RTp5_RA17_MEM","56","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "LQ": {"PowerPC": ["DQForm_RTp5_RA17_MEM","56","0"]}
+  }
+}

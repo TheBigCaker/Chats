@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "LWAXTLS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LWAXTLS": {"PowerPC": "LWAXTLS"},
+    "LWAXTLS_32": {"PowerPC": "LWAXTLS_32"},
+    "LWAXTLS_": {"PowerPC": "LWAXTLS_"}
+  },
+  "INPUTS": {
+    "LWAXTLS": {"PowerPC": [["ptr_rc_nor0",0],["tlsreg",0]]},
+    "LWAXTLS_32": {"PowerPC": [["ptr_rc_nor0",0],["tlsreg",0]]},
+    "LWAXTLS_": {"PowerPC": [["ptr_rc_nor0",0],["tlsreg",0]]}
+  },
+  "OUTPUTS": {
+    "LWAXTLS": {"PowerPC": [["g8rc",0]]},
+    "LWAXTLS_32": {"PowerPC": [["gprc",0]]},
+    "LWAXTLS_": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LWAXTLS": {"PowerPC": ["XForm_1","31","341"]},
+    "LWAXTLS_32": {"PowerPC": ["XForm_1","31","341"]},
+    "LWAXTLS_": {"PowerPC": ["XForm_1","31","341"]}
+  },
+  "OUTPUT_BYTES": {
+    "LWAXTLS": {"PowerPC": ["XForm_1","31","341"]},
+    "LWAXTLS_32": {"PowerPC": ["XForm_1","31","341"]},
+    "LWAXTLS_": {"PowerPC": ["XForm_1","31","341"]}
+  }
+}

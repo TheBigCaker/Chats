@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RNT",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "RNT": {"Sparc": "RNT"}
+  },
+  "INPUTS": {
+    "RNT": {"Sparc": [["bprtarget16",0],["RegCCOp",0],["I64Regs",0]]}
+  },
+  "OUTPUTS": {
+    "RNT": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "RNT": {"Sparc": ["F2_4","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "RNT": {"Sparc": ["F2_4","0","0"]}
+  }
+}

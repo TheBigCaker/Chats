@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FSH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FSH": {"RISCV": "FSH"}
+  },
+  "INPUTS": {
+    "FSH": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "FSH": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "FSH": {"RISCV": ["FPStore_r","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "FSH": {"RISCV": ["FPStore_r","0b001"]}
+  }
+}

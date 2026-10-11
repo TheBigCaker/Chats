@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SWZ",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "SWZ.v2i16": {"Mali": "SWZ.v2i16"},
+    "SWZ.v4i8": {"Mali": "SWZ.v4i8"}
+  },
+  "INPUTS": {
+    "SWZ.v2i16": {"Mali": [["R32",32]]},
+    "SWZ.v4i8": {"Mali": [["R32",32]]}
+  },
+  "OUTPUTS": {
+    "SWZ.v2i16": {"Mali": [["R",32]]},
+    "SWZ.v4i8": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "SWZ.v2i16": {"Mali": ["Bifrost_add","0x3d948","0xfffc8"]},
+    "SWZ.v4i8": {"Mali": ["Bifrost_add","0x3df40","0xfffc0"]}
+  },
+  "OUTPUT_BYTES": {
+    "SWZ.v2i16": {"Mali": ["Bifrost_add","0x3d948","0xfffc8"]},
+    "SWZ.v4i8": {"Mali": ["Bifrost_add","0x3df40","0xfffc0"]}
+  }
+}

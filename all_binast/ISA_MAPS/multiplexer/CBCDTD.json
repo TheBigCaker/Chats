@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CBCDTD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "CBCDTD8": {"PowerPC": "CBCDTD8"}
+  },
+  "INPUTS": {
+    "CBCDTD8": {"PowerPC": [["g8rc",0]]}
+  },
+  "OUTPUTS": {
+    "CBCDTD8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "CBCDTD8": {"PowerPC": ["XForm_11","31","314"]}
+  },
+  "OUTPUT_BYTES": {
+    "CBCDTD8": {"PowerPC": ["XForm_11","31","314"]}
+  }
+}

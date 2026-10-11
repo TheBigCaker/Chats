@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PREFETCHWT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PREFETCHWT1": {"X86": "PREFETCHWT1"}
+  },
+  "INPUTS": {
+    "PREFETCHWT1": {"X86": [["i8mem",0]]}
+  },
+  "OUTPUTS": {
+    "PREFETCHWT1": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PREFETCHWT1": {"X86": ["0x0D"]}
+  },
+  "OUTPUT_BYTES": {
+    "PREFETCHWT1": {"X86": ["0x0D"]}
+  }
+}

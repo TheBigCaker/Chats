@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFMSLQ",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFMSLQ": {"ARM": "VFMSLQ"}
+  },
+  "INPUTS": {
+    "VFMSLQ": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VFMSLQ": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VFMSLQ": {"ARM": ["N3VCP8F16Q1","0b01","0b10","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFMSLQ": {"ARM": ["N3VCP8F16Q1","0b01","0b10","1"]}
+  }
+}

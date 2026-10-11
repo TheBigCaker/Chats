@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FCMPNE",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FCMPNE16": {"Sparc": "FCMPNE16"},
+    "FCMPNE32": {"Sparc": "FCMPNE32"}
+  },
+  "INPUTS": {
+    "FCMPNE16": {"Sparc": []},
+    "FCMPNE32": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FCMPNE16": {"Sparc": []},
+    "FCMPNE32": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FCMPNE16": {"Sparc": ["VISInstID","0b000100010"]},
+    "FCMPNE32": {"Sparc": ["VISInstID","0b000100110"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCMPNE16": {"Sparc": ["VISInstID","0b000100010"]},
+    "FCMPNE32": {"Sparc": ["VISInstID","0b000100110"]}
+  }
+}

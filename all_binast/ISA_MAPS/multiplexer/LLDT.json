@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LLDT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LLDT16r": {"X86": "LLDT16r"},
+    "LLDT16m": {"X86": "LLDT16m"}
+  },
+  "INPUTS": {
+    "LLDT16r": {"X86": [["GR16",16]]},
+    "LLDT16m": {"X86": [["i16mem",0]]}
+  },
+  "OUTPUTS": {
+    "LLDT16r": {"X86": []},
+    "LLDT16m": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "LLDT16r": {"X86": ["0x00"]},
+    "LLDT16m": {"X86": ["0x00"]}
+  },
+  "OUTPUT_BYTES": {
+    "LLDT16r": {"X86": ["0x00"]},
+    "LLDT16m": {"X86": ["0x00"]}
+  }
+}

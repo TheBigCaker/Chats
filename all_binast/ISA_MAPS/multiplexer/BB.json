@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "BB": {"ARM": "BB"},
+    "BB": {"ARM": "BB"}
+  },
+  "INPUTS": {
+    "BB": {"ARM": [["GPR",64],["GPR",64]]},
+    "BB": {"ARM": [["GPRnopc",0],["GPRnopc",0],["GPR",64]]}
+  },
+  "OUTPUTS": {
+    "BB": {"ARM": [["GPR",64]]},
+    "BB": {"ARM": [["GPRnopc",0]]}
+  },
+  "INPUT_BYTES": {
+    "BB": {"ARM": ["AMulxyI","0b0001011","0b00"]},
+    "BB": {"ARM": ["AMulxyIa","0b0001000","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "BB": {"ARM": ["AMulxyI","0b0001011","0b00"]},
+    "BB": {"ARM": ["AMulxyIa","0b0001000","0b00"]}
+  }
+}

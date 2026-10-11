@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "WPN",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "WPN": {"PowerPC": "WPN"},
+    "WPN": {"PowerPC": "WPN"}
+  },
+  "INPUTS": {
+    "WPN": {"PowerPC": [["wacc",0]]},
+    "WPN": {"PowerPC": [["wacc",0]]}
+  },
+  "OUTPUTS": {
+    "WPN": {"PowerPC": [["wacc",0]]},
+    "WPN": {"PowerPC": [["wacc",0]]}
+  },
+  "INPUT_BYTES": {
+    "WPN": {"PowerPC": ["XX3Form_AT3_XAB6"]},
+    "WPN": {"PowerPC": ["XX3Form_AT3_XAB6"]}
+  },
+  "OUTPUT_BYTES": {
+    "WPN": {"PowerPC": ["XX3Form_AT3_XAB6"]},
+    "WPN": {"PowerPC": ["XX3Form_AT3_XAB6"]}
+  }
+}

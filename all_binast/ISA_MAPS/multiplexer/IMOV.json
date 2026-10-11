@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "IMOV",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "IMOV_FMA": {"Mali": "IMOV_FMA"}
+  },
+  "INPUTS": {
+    "IMOV_FMA": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "IMOV_FMA": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "IMOV_FMA": {"Mali": ["Bifrost_add","0xd7820","0xffff7"]}
+  },
+  "OUTPUT_BYTES": {
+    "IMOV_FMA": {"Mali": ["Bifrost_add","0xd7820","0xffff7"]}
+  }
+}

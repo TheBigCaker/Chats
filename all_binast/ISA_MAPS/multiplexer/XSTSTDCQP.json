@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSTSTDCQP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSTSTDCQP": {"PowerPC": "XSTSTDCQP"}
+  },
+  "INPUTS": {
+    "XSTSTDCQP": {"PowerPC": [["u7imm",7],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSTSTDCQP": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSTSTDCQP": {"PowerPC": ["X_BF3_DCMX7_RS5","63","708"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSTSTDCQP": {"PowerPC": ["X_BF3_DCMX7_RS5","63","708"]}
+  }
+}

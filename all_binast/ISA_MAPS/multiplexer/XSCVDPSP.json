@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSCVDPSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSCVDPSP": {"PowerPC": "XSCVDPSP"}
+  },
+  "INPUTS": {
+    "XSCVDPSP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSCVDPSP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSCVDPSP": {"PowerPC": ["XX2Form","60","265"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSCVDPSP": {"PowerPC": ["XX2Form","60","265"]}
+  }
+}

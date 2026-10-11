@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "DYN",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "DYN_ALLOCA_32": {"X86": "DYN_ALLOCA_32"},
+    "DYN_ALLOCA_64": {"X86": "DYN_ALLOCA_64"}
+  },
+  "INPUTS": {
+    "DYN_ALLOCA_32": {"X86": [["GR32",32]]},
+    "DYN_ALLOCA_64": {"X86": [["GR64",64]]}
+  },
+  "OUTPUTS": {
+    "DYN_ALLOCA_32": {"X86": []},
+    "DYN_ALLOCA_64": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "DYN_ALLOCA_32": {"X86": ["0"]},
+    "DYN_ALLOCA_64": {"X86": ["0"]}
+  },
+  "OUTPUT_BYTES": {
+    "DYN_ALLOCA_32": {"X86": ["0"]},
+    "DYN_ALLOCA_64": {"X86": ["0"]}
+  }
+}

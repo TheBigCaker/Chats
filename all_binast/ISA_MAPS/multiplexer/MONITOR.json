@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MONITOR",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MONITOR32rrr": {"X86": "MONITOR32rrr"},
+    "MONITOR64rrr": {"X86": "MONITOR64rrr"}
+  },
+  "INPUTS": {
+    "MONITOR32rrr": {"X86": []},
+    "MONITOR64rrr": {"X86": []}
+  },
+  "OUTPUTS": {
+    "MONITOR32rrr": {"X86": []},
+    "MONITOR64rrr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "MONITOR32rrr": {"X86": ["0x01"]},
+    "MONITOR64rrr": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "MONITOR32rrr": {"X86": ["0x01"]},
+    "MONITOR64rrr": {"X86": ["0x01"]}
+  }
+}

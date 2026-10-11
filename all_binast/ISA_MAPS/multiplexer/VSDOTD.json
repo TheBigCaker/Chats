@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSDOTD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VSDOTD": {"ARM": "VSDOTD"}
+  },
+  "INPUTS": {
+    "VSDOTD": {"ARM": [["RegTy:$Vd",0],["RegTy:$Vn",0],["RegTy:$Vm",0]]}
+  },
+  "OUTPUTS": {
+    "VSDOTD": {"ARM": [["RegTy:$dst",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSDOTD": {"ARM": ["VDOT","0","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSDOTD": {"ARM": ["VDOT","0","0","0"]}
+  }
+}

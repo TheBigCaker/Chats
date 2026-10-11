@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BCNT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "BCNT_INT": {"AMDGPU": "BCNT_INT"}
+  },
+  "INPUTS": {
+    "BCNT_INT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "BCNT_INT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "BCNT_INT": {"AMDGPU": ["R600_1OP_Helper","0xAA"]}
+  },
+  "OUTPUT_BYTES": {
+    "BCNT_INT": {"AMDGPU": ["R600_1OP_Helper","0xAA"]}
+  }
+}

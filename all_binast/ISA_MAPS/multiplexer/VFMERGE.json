@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFMERGE",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFMERGE_VFM": {"RISCV": "VFMERGE_VFM"}
+  },
+  "INPUTS": {
+    "VFMERGE_VFM": {"RISCV": [["VR",0],["FPR32",32],["VMaskCarryInOp",0]]}
+  },
+  "OUTPUTS": {
+    "VFMERGE_VFM": {"RISCV": [["VR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFMERGE_VFM": {"RISCV": ["RVInstVX","0b010111"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFMERGE_VFM": {"RISCV": ["RVInstVX","0b010111"]}
+  }
+}

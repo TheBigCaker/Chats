@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "AT",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "AT": {"Mips": "AT"},
+    "AT_64": {"Mips": "AT_64"}
+  },
+  "INPUTS": {
+    "AT": {"Mips": []},
+    "AT_64": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "AT": {"Mips": []},
+    "AT_64": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "AT": {"Mips": ["MipsGPRReg","1"]},
+    "AT_64": {"Mips": ["Mips64GPRReg","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "AT": {"Mips": ["MipsGPRReg","1"]},
+    "AT_64": {"Mips": ["Mips64GPRReg","1"]}
+  }
+}

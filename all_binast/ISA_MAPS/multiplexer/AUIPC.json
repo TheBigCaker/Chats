@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "AUIPC",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "AUIPC": {"RISCV": "AUIPC"}
+  },
+  "INPUTS": {
+    "AUIPC": {"RISCV": [["uimm20_auipc",0]]}
+  },
+  "OUTPUTS": {
+    "AUIPC": {"RISCV": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "AUIPC": {"RISCV": ["RVInstU"]}
+  },
+  "OUTPUT_BYTES": {
+    "AUIPC": {"RISCV": ["RVInstU"]}
+  }
+}

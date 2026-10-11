@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VADDUHS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VADDUHS": {"PowerPC": "VADDUHS"}
+  },
+  "INPUTS": {
+    "VADDUHS": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VADDUHS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VADDUHS": {"PowerPC": ["VX1_Int_Ty","576"]}
+  },
+  "OUTPUT_BYTES": {
+    "VADDUHS": {"PowerPC": ["VX1_Int_Ty","576"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SEED",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SEED": {"RISCV": "SEED"}
+  },
+  "INPUTS": {
+    "SEED": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SEED": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SEED": {"RISCV": ["SysReg","0x015"]}
+  },
+  "OUTPUT_BYTES": {
+    "SEED": {"RISCV": ["SysReg","0x015"]}
+  }
+}

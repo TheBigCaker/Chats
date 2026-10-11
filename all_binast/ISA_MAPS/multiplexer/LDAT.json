@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "LDAT",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LDAT": {"PowerPC": "LDAT"},
+    "LDAT_CSNE": {"PowerPC": "LDAT_CSNE"},
+    "LDAT_CSNE_PSEUDO": {"PowerPC": "LDAT_CSNE_PSEUDO"}
+  },
+  "INPUTS": {
+    "LDAT": {"PowerPC": [["g8prc",0],["ptr_rc_nor0",0],["u5imm",5]]},
+    "LDAT_CSNE": {"PowerPC": [["ptr_rc_nor0",0]]},
+    "LDAT_CSNE_PSEUDO": {"PowerPC": [["ptr_rc_nor0",0]]}
+  },
+  "OUTPUTS": {
+    "LDAT": {"PowerPC": [["g8prc",0]]},
+    "LDAT_CSNE": {"PowerPC": [["g8rc",0]]},
+    "LDAT_CSNE_PSEUDO": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LDAT": {"PowerPC": ["X_RD5_RS5_IM5","31","614"]},
+    "LDAT_CSNE": {"PowerPC": ["X_RD5_RS5_IM5","31","614"]},
+    "LDAT_CSNE_PSEUDO": {"PowerPC": ["PPCPostRAExpPseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "LDAT": {"PowerPC": ["X_RD5_RS5_IM5","31","614"]},
+    "LDAT_CSNE": {"PowerPC": ["X_RD5_RS5_IM5","31","614"]},
+    "LDAT_CSNE_PSEUDO": {"PowerPC": ["PPCPostRAExpPseudo"]}
+  }
+}

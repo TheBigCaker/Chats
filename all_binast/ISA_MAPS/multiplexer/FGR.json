@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "FGR",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "FGR32": {"Mips": "FGR32"},
+    "FGR64": {"Mips": "FGR64"},
+    "FGR32CC": {"Mips": "FGR32CC"},
+    "FGR64CC": {"Mips": "FGR64CC"}
+  },
+  "INPUTS": {
+    "FGR32": {"Mips": []},
+    "FGR64": {"Mips": []},
+    "FGR32CC": {"Mips": []},
+    "FGR64CC": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "FGR32": {"Mips": []},
+    "FGR64": {"Mips": []},
+    "FGR32CC": {"Mips": []},
+    "FGR64CC": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "FGR32": {"Mips": ["RegisterClass","32","0"]},
+    "FGR64": {"Mips": ["RegisterClass","64","0"]},
+    "FGR32CC": {"Mips": ["RegisterClass","32","0"]},
+    "FGR64CC": {"Mips": ["RegisterClass","64","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FGR32": {"Mips": ["RegisterClass","32","0"]},
+    "FGR64": {"Mips": ["RegisterClass","64","0"]},
+    "FGR32CC": {"Mips": ["RegisterClass","32","0"]},
+    "FGR64CC": {"Mips": ["RegisterClass","64","0"]}
+  }
+}

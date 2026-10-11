@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SPR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SPR": {"ARM": "SPR"},
+    "SPR_8": {"ARM": "SPR_8"}
+  },
+  "INPUTS": {
+    "SPR": {"ARM": []},
+    "SPR_8": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SPR": {"ARM": []},
+    "SPR_8": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SPR": {"ARM": ["RegisterClass","32","0"]},
+    "SPR_8": {"ARM": ["RegisterClass","32","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "SPR": {"ARM": ["RegisterClass","32","0"]},
+    "SPR_8": {"ARM": ["RegisterClass","32","0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "REPNE",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "REPNE_PREFIX": {"X86": "REPNE_PREFIX"}
+  },
+  "INPUTS": {
+    "REPNE_PREFIX": {"X86": []}
+  },
+  "OUTPUTS": {
+    "REPNE_PREFIX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "REPNE_PREFIX": {"X86": ["0xF2"]}
+  },
+  "OUTPUT_BYTES": {
+    "REPNE_PREFIX": {"X86": ["0xF2"]}
+  }
+}

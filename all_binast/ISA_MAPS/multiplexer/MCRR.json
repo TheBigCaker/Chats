@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "MCRR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MCRR": {"ARM": "MCRR"},
+    "MCRR2": {"ARM": "MCRR2"}
+  },
+  "INPUTS": {
+    "MCRR": {"ARM": [["p_imm",0],["imm0_15",0],["GPRnopc",0],["GPRnopc",0],["c_imm",0]]},
+    "MCRR2": {"ARM": [["p_imm",0],["imm0_15",0],["GPRnopc",0],["GPRnopc",0],["c_imm",0]]}
+  },
+  "OUTPUTS": {
+    "MCRR": {"ARM": []},
+    "MCRR2": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "MCRR": {"ARM": ["MovRRCopro"]},
+    "MCRR2": {"ARM": ["MovRRCopro2"]}
+  },
+  "OUTPUT_BYTES": {
+    "MCRR": {"ARM": ["MovRRCopro"]},
+    "MCRR2": {"ARM": ["MovRRCopro2"]}
+  }
+}

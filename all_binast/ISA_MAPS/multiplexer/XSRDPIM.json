@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSRDPIM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSRDPIM": {"PowerPC": "XSRDPIM"}
+  },
+  "INPUTS": {
+    "XSRDPIM": {"PowerPC": [["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSRDPIM": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSRDPIM": {"PowerPC": ["XX2Form","60","121"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSRDPIM": {"PowerPC": ["XX2Form","60","121"]}
+  }
+}

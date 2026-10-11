@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VNAND",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VNAND": {"PowerPC": "VNAND"}
+  },
+  "INPUTS": {
+    "VNAND": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VNAND": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VNAND": {"PowerPC": ["VXForm_1","1412"]}
+  },
+  "OUTPUT_BYTES": {
+    "VNAND": {"PowerPC": ["VXForm_1","1412"]}
+  }
+}

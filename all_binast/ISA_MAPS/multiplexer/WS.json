@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WS",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "WSeqPairsClass": {"AArch64": "WSeqPairsClass"}
+  },
+  "INPUTS": {
+    "WSeqPairsClass": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "WSeqPairsClass": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "WSeqPairsClass": {"AArch64": ["RegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "WSeqPairsClass": {"AArch64": ["RegisterClass","32"]}
+  }
+}

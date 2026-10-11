@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WQM",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "WQM": {"AMDGPU": "WQM"}
+  },
+  "INPUTS": {
+    "WQM": {"AMDGPU": [["unknown",0]]}
+  },
+  "OUTPUTS": {
+    "WQM": {"AMDGPU": [["unknown",0]]}
+  },
+  "INPUT_BYTES": {
+    "WQM": {"AMDGPU": ["PseudoInstSI"]}
+  },
+  "OUTPUT_BYTES": {
+    "WQM": {"AMDGPU": ["PseudoInstSI"]}
+  }
+}

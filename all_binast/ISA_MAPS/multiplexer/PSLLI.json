@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "PSLLI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PSLLI_B": {"RISCV": "PSLLI_B"},
+    "PSLLI_H": {"RISCV": "PSLLI_H"},
+    "PSLLI_W": {"RISCV": "PSLLI_W"},
+    "PSLLI_DB": {"RISCV": "PSLLI_DB"},
+    "PSLLI_DH": {"RISCV": "PSLLI_DH"},
+    "PSLLI_DW": {"RISCV": "PSLLI_DW"}
+  },
+  "INPUTS": {
+    "PSLLI_B": {"RISCV": []},
+    "PSLLI_H": {"RISCV": []},
+    "PSLLI_W": {"RISCV": []},
+    "PSLLI_DB": {"RISCV": []},
+    "PSLLI_DH": {"RISCV": []},
+    "PSLLI_DW": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PSLLI_B": {"RISCV": []},
+    "PSLLI_H": {"RISCV": []},
+    "PSLLI_W": {"RISCV": []},
+    "PSLLI_DB": {"RISCV": []},
+    "PSLLI_DH": {"RISCV": []},
+    "PSLLI_DW": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PSLLI_B": {"RISCV": ["RVPShiftB_ri","0b000","0b010"]},
+    "PSLLI_H": {"RISCV": ["RVPShiftH_ri","0b000","0b010"]},
+    "PSLLI_W": {"RISCV": ["RVPShiftW_ri","0b000","0b010"]},
+    "PSLLI_DB": {"RISCV": ["RVPPairShiftB_ri","0b000","0b0"]},
+    "PSLLI_DH": {"RISCV": ["RVPPairShiftH_ri","0b000","0b0"]},
+    "PSLLI_DW": {"RISCV": ["RVPPairShiftW_ri","0b000","0b0"]}
+  },
+  "OUTPUT_BYTES": {
+    "PSLLI_B": {"RISCV": ["RVPShiftB_ri","0b000","0b010"]},
+    "PSLLI_H": {"RISCV": ["RVPShiftH_ri","0b000","0b010"]},
+    "PSLLI_W": {"RISCV": ["RVPShiftW_ri","0b000","0b010"]},
+    "PSLLI_DB": {"RISCV": ["RVPPairShiftB_ri","0b000","0b0"]},
+    "PSLLI_DH": {"RISCV": ["RVPPairShiftH_ri","0b000","0b0"]},
+    "PSLLI_DW": {"RISCV": ["RVPPairShiftW_ri","0b000","0b0"]}
+  }
+}

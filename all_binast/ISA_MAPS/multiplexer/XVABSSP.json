@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVABSSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVABSSP": {"PowerPC": "XVABSSP"}
+  },
+  "INPUTS": {
+    "XVABSSP": {"PowerPC": [["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVABSSP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVABSSP": {"PowerPC": ["XX2Form","60","409"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVABSSP": {"PowerPC": ["XX2Form","60","409"]}
+  }
+}

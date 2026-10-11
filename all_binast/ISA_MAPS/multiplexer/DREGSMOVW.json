@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DREGSMOVW",
+  "BACKENDS": ["AVR"],
+  "INDEX": {
+    "DREGSMOVW": {"AVR": "DREGSMOVW"}
+  },
+  "INPUTS": {
+    "DREGSMOVW": {"AVR": []}
+  },
+  "OUTPUTS": {
+    "DREGSMOVW": {"AVR": []}
+  },
+  "INPUT_BYTES": {
+    "DREGSMOVW": {"AVR": ["RegisterClass","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "DREGSMOVW": {"AVR": ["RegisterClass","8"]}
+  }
+}

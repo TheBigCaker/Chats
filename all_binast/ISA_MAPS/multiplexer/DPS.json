@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "DPS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "DPSoRegRegFrm": {"ARM": "DPSoRegRegFrm"},
+    "DPSoRegImmFrm": {"ARM": "DPSoRegImmFrm"}
+  },
+  "INPUTS": {
+    "DPSoRegRegFrm": {"ARM": []},
+    "DPSoRegImmFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "DPSoRegRegFrm": {"ARM": []},
+    "DPSoRegImmFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "DPSoRegRegFrm": {"ARM": ["Format","5"]},
+    "DPSoRegImmFrm": {"ARM": ["Format","42"]}
+  },
+  "OUTPUT_BYTES": {
+    "DPSoRegRegFrm": {"ARM": ["Format","5"]},
+    "DPSoRegImmFrm": {"ARM": ["Format","42"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSAVES",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XSAVES": {"X86": "XSAVES"}
+  },
+  "INPUTS": {
+    "XSAVES": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "XSAVES": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "XSAVES": {"X86": ["0xC7"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSAVES": {"X86": ["0xC7"]}
+  }
+}

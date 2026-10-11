@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSABSDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSABSDP": {"PowerPC": "XSABSDP"}
+  },
+  "INPUTS": {
+    "XSABSDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSABSDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSABSDP": {"PowerPC": ["XX2Form","60","345"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSABSDP": {"PowerPC": ["XX2Form","60","345"]}
+  }
+}

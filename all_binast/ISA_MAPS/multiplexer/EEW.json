@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EEW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "EEW1": {"RISCV": "EEW1"}
+  },
+  "INPUTS": {
+    "EEW1": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "EEW1": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "EEW1": {"RISCV": ["EEW","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "EEW1": {"RISCV": ["EEW","0"]}
+  }
+}

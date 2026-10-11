@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VTOSHH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VTOSHH": {"ARM": "VTOSHH"}
+  },
+  "INPUTS": {
+    "VTOSHH": {"ARM": [["SPR",0],["fbits16",0]]}
+  },
+  "OUTPUTS": {
+    "VTOSHH": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VTOSHH": {"ARM": ["AVConv1XInsS_Encode","0b11101","0b11","0b1110","0b1001","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VTOSHH": {"ARM": ["AVConv1XInsS_Encode","0b11101","0b11","0b1110","0b1001","0"]}
+  }
+}

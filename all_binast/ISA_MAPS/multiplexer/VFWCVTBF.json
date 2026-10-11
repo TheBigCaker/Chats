@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFWCVTBF",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFWCVTBF16_F_F_V": {"RISCV": "VFWCVTBF16_F_F_V"}
+  },
+  "INPUTS": {
+    "VFWCVTBF16_F_F_V": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VFWCVTBF16_F_F_V": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VFWCVTBF16_F_F_V": {"RISCV": ["VWCVTF_FV_VS2","0b010010","0b01101"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFWCVTBF16_F_F_V": {"RISCV": ["VWCVTF_FV_VS2","0b010010","0b01101"]}
+  }
+}

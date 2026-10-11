@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ZREG",
+  "BACKENDS": ["AVR"],
+  "INDEX": {
+    "ZREG": {"AVR": "ZREG"}
+  },
+  "INPUTS": {
+    "ZREG": {"AVR": []}
+  },
+  "OUTPUTS": {
+    "ZREG": {"AVR": []}
+  },
+  "INPUT_BYTES": {
+    "ZREG": {"AVR": ["RegisterClass","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZREG": {"AVR": ["RegisterClass","8"]}
+  }
+}

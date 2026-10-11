@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFMALD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFMALD": {"ARM": "VFMALD"}
+  },
+  "INPUTS": {
+    "VFMALD": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VFMALD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VFMALD": {"ARM": ["N3VCP8F16Q0","0b00","0b10","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFMALD": {"ARM": ["N3VCP8F16Q0","0b00","0b10","1"]}
+  }
+}

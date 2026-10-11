@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WSLLI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "WSLLI": {"RISCV": "WSLLI"}
+  },
+  "INPUTS": {
+    "WSLLI": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "WSLLI": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "WSLLI": {"RISCV": ["RVPWideningShiftW_ri","0b000"]}
+  },
+  "OUTPUT_BYTES": {
+    "WSLLI": {"RISCV": ["RVPWideningShiftW_ri","0b000"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LFENCE",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LFENCE": {"X86": "LFENCE"}
+  },
+  "INPUTS": {
+    "LFENCE": {"X86": []}
+  },
+  "OUTPUTS": {
+    "LFENCE": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "LFENCE": {"X86": ["0xAE"]}
+  },
+  "OUTPUT_BYTES": {
+    "LFENCE": {"X86": ["0xAE"]}
+  }
+}

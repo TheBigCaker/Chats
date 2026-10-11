@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LVEBX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LVEBX": {"PowerPC": "LVEBX"}
+  },
+  "INPUTS": {
+    "LVEBX": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LVEBX": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LVEBX": {"PowerPC": ["XForm_1_memOp","31","7"]}
+  },
+  "OUTPUT_BYTES": {
+    "LVEBX": {"PowerPC": ["XForm_1_memOp","31","7"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VGHSH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VGHSH_VV": {"RISCV": "VGHSH_VV"},
+    "VGHSH_VS": {"RISCV": "VGHSH_VS"}
+  },
+  "INPUTS": {
+    "VGHSH_VV": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["VR:$vs1",0]]},
+    "VGHSH_VS": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["VR:$vs1",0]]}
+  },
+  "OUTPUTS": {
+    "VGHSH_VV": {"RISCV": [["VR:$vd_wb",0]]},
+    "VGHSH_VS": {"RISCV": [["VR:$vd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "VGHSH_VV": {"RISCV": ["ZvkALUVVNoVmTernary","0b101100"]},
+    "VGHSH_VS": {"RISCV": ["ZvkALUVVNoVmTernary","0b100011"]}
+  },
+  "OUTPUT_BYTES": {
+    "VGHSH_VV": {"RISCV": ["ZvkALUVVNoVmTernary","0b101100"]},
+    "VGHSH_VS": {"RISCV": ["ZvkALUVVNoVmTernary","0b100011"]}
+  }
+}

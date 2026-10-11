@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "DX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "DX": {"ARM": "DX"},
+    "DX": {"ARM": "DX"}
+  },
+  "INPUTS": {
+    "DX": {"ARM": [["GPRnopc",0],["GPRnopc",0],["GPR",64]]},
+    "DX": {"ARM": [["GPRnopc",0],["GPRnopc",0]]}
+  },
+  "OUTPUTS": {
+    "DX": {"ARM": [["GPRnopc",0]]},
+    "DX": {"ARM": [["GPRnopc",0]]}
+  },
+  "INPUT_BYTES": {
+    "DX": {"ARM": ["AMulDualIa","0","1"]},
+    "DX": {"ARM": ["AMulDualI","0","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "DX": {"ARM": ["AMulDualIa","0","1"]},
+    "DX": {"ARM": ["AMulDualI","0","1"]}
+  }
+}

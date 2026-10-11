@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMLAH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMLAH": {"ARM": "VMLAH"}
+  },
+  "INPUTS": {
+    "VMLAH": {"ARM": [["HPR",0],["HPR",0],["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VMLAH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMLAH": {"ARM": ["AHbI","0b11100","0b00","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMLAH": {"ARM": ["AHbI","0b11100","0b00","0","0"]}
+  }
+}

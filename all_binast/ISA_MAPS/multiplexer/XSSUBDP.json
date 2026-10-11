@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSSUBDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSSUBDP": {"PowerPC": "XSSUBDP"}
+  },
+  "INPUTS": {
+    "XSSUBDP": {"PowerPC": [["vsfrc",0],["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSSUBDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSSUBDP": {"PowerPC": ["XX3Form","60","40"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSSUBDP": {"PowerPC": ["XX3Form","60","40"]}
+  }
+}

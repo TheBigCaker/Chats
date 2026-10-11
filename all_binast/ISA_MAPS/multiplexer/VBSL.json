@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VBSL",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VBSLd": {"ARM": "VBSLd"},
+    "VBSLq": {"ARM": "VBSLq"}
+  },
+  "INPUTS": {
+    "VBSLd": {"ARM": [["DPR",0],["DPR",0],["DPR",0]]},
+    "VBSLq": {"ARM": [["QPR",0],["QPR",0],["QPR",0]]}
+  },
+  "OUTPUTS": {
+    "VBSLd": {"ARM": [["DPR",0]]},
+    "VBSLq": {"ARM": [["QPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VBSLd": {"ARM": ["N3VX","1","0","0b01","0b0001","0","1"]},
+    "VBSLq": {"ARM": ["N3VX","1","0","0b01","0b0001","1","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VBSLd": {"ARM": ["N3VX","1","0","0b01","0b0001","0","1"]},
+    "VBSLq": {"ARM": ["N3VX","1","0","0b01","0b0001","1","1"]}
+  }
+}

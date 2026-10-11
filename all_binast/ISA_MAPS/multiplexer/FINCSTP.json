@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FINCSTP",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "FINCSTP": {"X86": "FINCSTP"}
+  },
+  "INPUTS": {
+    "FINCSTP": {"X86": []}
+  },
+  "OUTPUTS": {
+    "FINCSTP": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "FINCSTP": {"X86": ["0xD9"]}
+  },
+  "OUTPUT_BYTES": {
+    "FINCSTP": {"X86": ["0xD9"]}
+  }
+}

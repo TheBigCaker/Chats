@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSNMADDMDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSNMADDMDP": {"PowerPC": "XSNMADDMDP"}
+  },
+  "INPUTS": {
+    "XSNMADDMDP": {"PowerPC": [["vsfrc",0],["vsfrc",0],["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSNMADDMDP": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSNMADDMDP": {"PowerPC": ["XX3Form","60","169"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSNMADDMDP": {"PowerPC": ["XX3Form","60","169"]}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "FLI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FLI_S": {"RISCV": "FLI_S"},
+    "FLI_D": {"RISCV": "FLI_D"},
+    "FLI_H": {"RISCV": "FLI_H"},
+    "FLI_Q": {"RISCV": "FLI_Q"}
+  },
+  "INPUTS": {
+    "FLI_S": {"RISCV": [["loadfpimm:$imm",0]]},
+    "FLI_D": {"RISCV": [["loadfpimm:$imm",0]]},
+    "FLI_H": {"RISCV": [["loadfpimm:$imm",0]]},
+    "FLI_Q": {"RISCV": [["loadfpimm:$imm",0]]}
+  },
+  "OUTPUTS": {
+    "FLI_S": {"RISCV": [["rdty:$rd",0]]},
+    "FLI_D": {"RISCV": [["rdty:$rd",0]]},
+    "FLI_H": {"RISCV": [["rdty:$rd",0]]},
+    "FLI_Q": {"RISCV": [["rdty:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "FLI_S": {"RISCV": ["FPFLI_r","0b1111000","0b00001","0b000"]},
+    "FLI_D": {"RISCV": ["FPFLI_r","0b1111001","0b00001","0b000"]},
+    "FLI_H": {"RISCV": ["FPFLI_r","0b1111010","0b00001","0b000"]},
+    "FLI_Q": {"RISCV": ["FPFLI_r","0b1111011","0b00001","0b000"]}
+  },
+  "OUTPUT_BYTES": {
+    "FLI_S": {"RISCV": ["FPFLI_r","0b1111000","0b00001","0b000"]},
+    "FLI_D": {"RISCV": ["FPFLI_r","0b1111001","0b00001","0b000"]},
+    "FLI_H": {"RISCV": ["FPFLI_r","0b1111010","0b00001","0b000"]},
+    "FLI_Q": {"RISCV": ["FPFLI_r","0b1111011","0b00001","0b000"]}
+  }
+}

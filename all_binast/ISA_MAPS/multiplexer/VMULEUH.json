@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULEUH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMULEUH": {"PowerPC": "VMULEUH"}
+  },
+  "INPUTS": {
+    "VMULEUH": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMULEUH": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMULEUH": {"PowerPC": ["VX1_Int_Ty2","584"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULEUH": {"PowerPC": ["VX1_Int_Ty2","584"]}
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "XCHG",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XCHG8rr": {"X86": "XCHG8rr"},
+    "XCHG16rr": {"X86": "XCHG16rr"},
+    "XCHG32rr": {"X86": "XCHG32rr"},
+    "XCHG16ar": {"X86": "XCHG16ar"},
+    "XCHG32ar": {"X86": "XCHG32ar"}
+  },
+  "INPUTS": {
+    "XCHG8rr": {"X86": [["GR8",8],["GR8",8]]},
+    "XCHG16rr": {"X86": [["GR16",16],["GR16",16]]},
+    "XCHG32rr": {"X86": [["GR32",32],["GR32",32]]},
+    "XCHG16ar": {"X86": [["GR16",16]]},
+    "XCHG32ar": {"X86": [["GR32",32]]}
+  },
+  "OUTPUTS": {
+    "XCHG8rr": {"X86": [["GR8",8],["GR8",8]]},
+    "XCHG16rr": {"X86": [["GR16",16],["GR16",16]]},
+    "XCHG32rr": {"X86": [["GR32",32],["GR32",32]]},
+    "XCHG16ar": {"X86": [["GR16",16]]},
+    "XCHG32ar": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "XCHG8rr": {"X86": ["0x86"]},
+    "XCHG16rr": {"X86": ["0x87"]},
+    "XCHG32rr": {"X86": ["0x87"]},
+    "XCHG16ar": {"X86": ["0x90"]},
+    "XCHG32ar": {"X86": ["0x90"]}
+  },
+  "OUTPUT_BYTES": {
+    "XCHG8rr": {"X86": ["0x86"]},
+    "XCHG16rr": {"X86": ["0x87"]},
+    "XCHG32rr": {"X86": ["0x87"]},
+    "XCHG16ar": {"X86": ["0x90"]},
+    "XCHG32ar": {"X86": ["0x90"]}
+  }
+}

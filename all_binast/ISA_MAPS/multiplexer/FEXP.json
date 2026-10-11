@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "FEXP",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FEXP.f32": {"Mali": "FEXP.f32"},
+    "FEXP_TABLE.u4": {"Mali": "FEXP_TABLE.u4"},
+    "FEXP_TABLE.u4": {"Mali": "FEXP_TABLE.u4"},
+    "FEXP.f32": {"Mali": "FEXP.f32"}
+  },
+  "INPUTS": {
+    "FEXP.f32": {"Mali": [["R32",32],["R32",32]]},
+    "FEXP_TABLE.u4": {"Mali": [["R32",32]]},
+    "FEXP_TABLE.u4": {"Mali": []},
+    "FEXP.f32": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "FEXP.f32": {"Mali": [["R",32]]},
+    "FEXP_TABLE.u4": {"Mali": [["R",32]]},
+    "FEXP_TABLE.u4": {"Mali": [["R",32]]},
+    "FEXP.f32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FEXP.f32": {"Mali": ["Bifrost_add","0x66ac0","0xfffc0"]},
+    "FEXP_TABLE.u4": {"Mali": ["Bifrost_add","0x67ac0","0xfffe0"]},
+    "FEXP_TABLE.u4": {"Mali": ["Valhall_"]},
+    "FEXP.f32": {"Mali": ["Valhall_SFU"]}
+  },
+  "OUTPUT_BYTES": {
+    "FEXP.f32": {"Mali": ["Bifrost_add","0x66ac0","0xfffc0"]},
+    "FEXP_TABLE.u4": {"Mali": ["Bifrost_add","0x67ac0","0xfffe0"]},
+    "FEXP_TABLE.u4": {"Mali": ["Valhall_"]},
+    "FEXP.f32": {"Mali": ["Valhall_SFU"]}
+  }
+}

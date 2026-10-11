@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "MOVRS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MOVRS8rm": {"X86": "MOVRS8rm"},
+    "MOVRS16rm": {"X86": "MOVRS16rm"},
+    "MOVRS32rm": {"X86": "MOVRS32rm"},
+    "MOVRS8rm_EVEX": {"X86": "MOVRS8rm_EVEX"},
+    "MOVRS16rm_EVEX": {"X86": "MOVRS16rm_EVEX"},
+    "MOVRS32rm_EVEX": {"X86": "MOVRS32rm_EVEX"},
+    "MOVRS64rm_EVEX": {"X86": "MOVRS64rm_EVEX"}
+  },
+  "INPUTS": {
+    "MOVRS8rm": {"X86": [["i8mem",0]]},
+    "MOVRS16rm": {"X86": [["i16mem",0]]},
+    "MOVRS32rm": {"X86": [["i32mem",0]]},
+    "MOVRS8rm_EVEX": {"X86": [["i8mem",0]]},
+    "MOVRS16rm_EVEX": {"X86": [["i16mem",0]]},
+    "MOVRS32rm_EVEX": {"X86": [["i32mem",0]]},
+    "MOVRS64rm_EVEX": {"X86": [["i64mem",0]]}
+  },
+  "OUTPUTS": {
+    "MOVRS8rm": {"X86": [["GR8",8]]},
+    "MOVRS16rm": {"X86": [["GR16",16]]},
+    "MOVRS32rm": {"X86": [["GR32",32]]},
+    "MOVRS8rm_EVEX": {"X86": [["GR8",8]]},
+    "MOVRS16rm_EVEX": {"X86": [["GR16",16]]},
+    "MOVRS32rm_EVEX": {"X86": [["GR32",32]]},
+    "MOVRS64rm_EVEX": {"X86": [["GR64",64]]}
+  },
+  "INPUT_BYTES": {
+    "MOVRS8rm": {"X86": ["0x8A"]},
+    "MOVRS16rm": {"X86": ["0x8B"]},
+    "MOVRS32rm": {"X86": ["0x8B"]},
+    "MOVRS8rm_EVEX": {"X86": ["0x8A"]},
+    "MOVRS16rm_EVEX": {"X86": ["0x8B"]},
+    "MOVRS32rm_EVEX": {"X86": ["0x8B"]},
+    "MOVRS64rm_EVEX": {"X86": ["0x8B"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVRS8rm": {"X86": ["0x8A"]},
+    "MOVRS16rm": {"X86": ["0x8B"]},
+    "MOVRS32rm": {"X86": ["0x8B"]},
+    "MOVRS8rm_EVEX": {"X86": ["0x8A"]},
+    "MOVRS16rm_EVEX": {"X86": ["0x8B"]},
+    "MOVRS32rm_EVEX": {"X86": ["0x8B"]},
+    "MOVRS64rm_EVEX": {"X86": ["0x8B"]}
+  }
+}

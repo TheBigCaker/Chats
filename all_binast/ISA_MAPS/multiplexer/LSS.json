@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LSS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LSS16rm": {"X86": "LSS16rm"},
+    "LSS32rm": {"X86": "LSS32rm"}
+  },
+  "INPUTS": {
+    "LSS16rm": {"X86": [["opaquemem",0]]},
+    "LSS32rm": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "LSS16rm": {"X86": [["GR16",16]]},
+    "LSS32rm": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "LSS16rm": {"X86": ["0xb2"]},
+    "LSS32rm": {"X86": ["0xb2"]}
+  },
+  "OUTPUT_BYTES": {
+    "LSS16rm": {"X86": ["0xb2"]},
+    "LSS32rm": {"X86": ["0xb2"]}
+  }
+}

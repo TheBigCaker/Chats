@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DSSALL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DSSALL": {"PowerPC": "DSSALL"}
+  },
+  "INPUTS": {
+    "DSSALL": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "DSSALL": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "DSSALL": {"PowerPC": ["DSS_Form","1","822"]}
+  },
+  "OUTPUT_BYTES": {
+    "DSSALL": {"PowerPC": ["DSS_Form","1","822"]}
+  }
+}

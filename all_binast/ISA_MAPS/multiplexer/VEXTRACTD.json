@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VEXTRACTD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VEXTRACTD": {"PowerPC": "VEXTRACTD"}
+  },
+  "INPUTS": {
+    "VEXTRACTD": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VEXTRACTD": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VEXTRACTD": {"PowerPC": ["VX1_VT5_UIM5_VB5","717"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEXTRACTD": {"PowerPC": ["VX1_VT5_UIM5_VB5","717"]}
+  }
+}

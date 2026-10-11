@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "BSWAP",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "BSWAP16r_BAD": {"X86": "BSWAP16r_BAD"},
+    "BSWAP32r": {"X86": "BSWAP32r"}
+  },
+  "INPUTS": {
+    "BSWAP16r_BAD": {"X86": [["GR16",16]]},
+    "BSWAP32r": {"X86": [["GR32",32]]}
+  },
+  "OUTPUTS": {
+    "BSWAP16r_BAD": {"X86": [["GR16",16]]},
+    "BSWAP32r": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "BSWAP16r_BAD": {"X86": ["0xC8"]},
+    "BSWAP32r": {"X86": ["0xC8"]}
+  },
+  "OUTPUT_BYTES": {
+    "BSWAP16r_BAD": {"X86": ["0xC8"]},
+    "BSWAP32r": {"X86": ["0xC8"]}
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "VDUP",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VDUP8d": {"ARM": "VDUP8d"},
+    "VDUP16d": {"ARM": "VDUP16d"},
+    "VDUP32d": {"ARM": "VDUP32d"},
+    "VDUP8q": {"ARM": "VDUP8q"},
+    "VDUP16q": {"ARM": "VDUP16q"},
+    "VDUP32q": {"ARM": "VDUP32q"}
+  },
+  "INPUTS": {
+    "VDUP8d": {"ARM": []},
+    "VDUP16d": {"ARM": []},
+    "VDUP32d": {"ARM": []},
+    "VDUP8q": {"ARM": []},
+    "VDUP16q": {"ARM": []},
+    "VDUP32q": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VDUP8d": {"ARM": []},
+    "VDUP16d": {"ARM": []},
+    "VDUP32d": {"ARM": []},
+    "VDUP8q": {"ARM": []},
+    "VDUP16q": {"ARM": []},
+    "VDUP32q": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VDUP8d": {"ARM": ["VDUPD","0b11101100","0b00"]},
+    "VDUP16d": {"ARM": ["VDUPD","0b11101000","0b01"]},
+    "VDUP32d": {"ARM": ["VDUPD","0b11101000","0b00"]},
+    "VDUP8q": {"ARM": ["VDUPQ","0b11101110","0b00"]},
+    "VDUP16q": {"ARM": ["VDUPQ","0b11101010","0b01"]},
+    "VDUP32q": {"ARM": ["VDUPQ","0b11101010","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "VDUP8d": {"ARM": ["VDUPD","0b11101100","0b00"]},
+    "VDUP16d": {"ARM": ["VDUPD","0b11101000","0b01"]},
+    "VDUP32d": {"ARM": ["VDUPD","0b11101000","0b00"]},
+    "VDUP8q": {"ARM": ["VDUPQ","0b11101110","0b00"]},
+    "VDUP16q": {"ARM": ["VDUPQ","0b11101010","0b01"]},
+    "VDUP32q": {"ARM": ["VDUPQ","0b11101010","0b00"]}
+  }
+}

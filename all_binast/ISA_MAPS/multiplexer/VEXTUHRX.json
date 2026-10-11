@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VEXTUHRX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VEXTUHRX": {"PowerPC": "VEXTUHRX"}
+  },
+  "INPUTS": {
+    "VEXTUHRX": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VEXTUHRX": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VEXTUHRX": {"PowerPC": ["VX1_RT5_RA5_VB5","1869"]}
+  },
+  "OUTPUT_BYTES": {
+    "VEXTUHRX": {"PowerPC": ["VX1_RT5_RA5_VB5","1869"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VMULL",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMULLp8": {"ARM": "VMULLp8"},
+    "VMULLp64": {"ARM": "VMULLp64"}
+  },
+  "INPUTS": {
+    "VMULLp8": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]},
+    "VMULLp64": {"ARM": [["DPR:$Vn",0],["DPR:$Vm",0]]}
+  },
+  "OUTPUTS": {
+    "VMULLp8": {"ARM": [["QPR:$Vd",0]]},
+    "VMULLp64": {"ARM": [["QPR:$Vd",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMULLp8": {"ARM": ["N3VLInt","0","1","0b00","0b1110","0","1"]},
+    "VMULLp64": {"ARM": ["N3VLIntnp","0b00101","0b10","0b1110","0","0","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULLp8": {"ARM": ["N3VLInt","0","1","0b00","0b1110","0","1"]},
+    "VMULLp64": {"ARM": ["N3VLIntnp","0b00101","0b10","0b1110","0","0","1"]}
+  }
+}

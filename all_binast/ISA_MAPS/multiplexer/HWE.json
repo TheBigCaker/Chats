@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HWE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "HWExport": {"AMDGPU": "HWExport"}
+  },
+  "INPUTS": {
+    "HWExport": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "HWExport": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "HWExport": {"AMDGPU": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "HWExport": {"AMDGPU": ["ProcResource","1"]}
+  }
+}

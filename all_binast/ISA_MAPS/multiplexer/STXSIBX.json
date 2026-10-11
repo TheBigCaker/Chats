@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "STXSIBX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STXSIBX": {"PowerPC": "STXSIBX"},
+    "STXSIBXv": {"PowerPC": "STXSIBXv"}
+  },
+  "INPUTS": {
+    "STXSIBX": {"PowerPC": []},
+    "STXSIBXv": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "STXSIBX": {"PowerPC": []},
+    "STXSIBXv": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STXSIBX": {"PowerPC": ["X_XS6_RA5_RB5","31","909"]},
+    "STXSIBXv": {"PowerPC": ["X_XS6_RA5_RB5","31","909"]}
+  },
+  "OUTPUT_BYTES": {
+    "STXSIBX": {"PowerPC": ["X_XS6_RA5_RB5","31","909"]},
+    "STXSIBXv": {"PowerPC": ["X_XS6_RA5_RB5","31","909"]}
+  }
+}

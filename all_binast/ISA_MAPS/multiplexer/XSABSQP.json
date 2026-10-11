@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSABSQP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSABSQP": {"PowerPC": "XSABSQP"}
+  },
+  "INPUTS": {
+    "XSABSQP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSABSQP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSABSQP": {"PowerPC": ["X_VT5_XO5_VB5","63","0","804"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSABSQP": {"PowerPC": ["X_VT5_XO5_VB5","63","0","804"]}
+  }
+}

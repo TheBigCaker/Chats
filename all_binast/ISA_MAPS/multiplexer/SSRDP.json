@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SSRDP",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SSRDP": {"RISCV": "SSRDP"}
+  },
+  "INPUTS": {
+    "SSRDP": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SSRDP": {"RISCV": [["GPRNoX0",0]]}
+  },
+  "INPUT_BYTES": {
+    "SSRDP": {"RISCV": ["RVInstI","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "SSRDP": {"RISCV": ["RVInstI","0b100"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ICC",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "ICC": {"Sparc": "ICC"}
+  },
+  "INPUTS": {
+    "ICC": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "ICC": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "ICC": {"Sparc": ["SparcCtrlReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "ICC": {"Sparc": ["SparcCtrlReg","0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VLDRH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VLDRH": {"ARM": "VLDRH"}
+  },
+  "INPUTS": {
+    "VLDRH": {"ARM": [["addrmode5fp16",0]]}
+  },
+  "OUTPUTS": {
+    "VLDRH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VLDRH": {"ARM": ["AHI5","0b1101","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "VLDRH": {"ARM": ["AHI5","0b1101","0b01"]}
+  }
+}

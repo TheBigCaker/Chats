@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VRFIP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VRFIP": {"PowerPC": "VRFIP"}
+  },
+  "INPUTS": {
+    "VRFIP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VRFIP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VRFIP": {"PowerPC": ["VX2_Int_SP","650"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRFIP": {"PowerPC": ["VX2_Int_SP","650"]}
+  }
+}

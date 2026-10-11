@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUPKLSNTOB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VUPKLSNTOB": {"PowerPC": "VUPKLSNTOB"}
+  },
+  "INPUTS": {
+    "VUPKLSNTOB": {"PowerPC": [["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VUPKLSNTOB": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VUPKLSNTOB": {"PowerPC": ["VXForm_VRTB5","387","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUPKLSNTOB": {"PowerPC": ["VXForm_VRTB5","387","1"]}
+  }
+}

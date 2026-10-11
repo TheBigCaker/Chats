@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FXTOQ",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FXTOQ": {"Sparc": "FXTOQ"}
+  },
+  "INPUTS": {
+    "FXTOQ": {"Sparc": [["DFPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FXTOQ": {"Sparc": [["QFPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FXTOQ": {"Sparc": ["F3_3u","2","0b110100","0b010001100"]}
+  },
+  "OUTPUT_BYTES": {
+    "FXTOQ": {"Sparc": ["F3_3u","2","0b110100","0b010001100"]}
+  }
+}

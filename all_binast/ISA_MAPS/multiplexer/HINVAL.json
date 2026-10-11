@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "HINVAL",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "HINVAL_VVMA": {"RISCV": "HINVAL_VVMA"},
+    "HINVAL_GVMA": {"RISCV": "HINVAL_GVMA"}
+  },
+  "INPUTS": {
+    "HINVAL_VVMA": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "HINVAL_GVMA": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "HINVAL_VVMA": {"RISCV": []},
+    "HINVAL_GVMA": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "HINVAL_VVMA": {"RISCV": ["Priv_rr","0b0010011"]},
+    "HINVAL_GVMA": {"RISCV": ["Priv_rr","0b0110011"]}
+  },
+  "OUTPUT_BYTES": {
+    "HINVAL_VVMA": {"RISCV": ["Priv_rr","0b0010011"]},
+    "HINVAL_GVMA": {"RISCV": ["Priv_rr","0b0110011"]}
+  }
+}

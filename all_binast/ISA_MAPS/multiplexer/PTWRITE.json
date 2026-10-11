@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PTWRITE",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PTWRITEm": {"X86": "PTWRITEm"},
+    "PTWRITEr": {"X86": "PTWRITEr"}
+  },
+  "INPUTS": {
+    "PTWRITEm": {"X86": [["i32mem",0]]},
+    "PTWRITEr": {"X86": [["GR32",32]]}
+  },
+  "OUTPUTS": {
+    "PTWRITEm": {"X86": []},
+    "PTWRITEr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PTWRITEm": {"X86": ["0xAE"]},
+    "PTWRITEr": {"X86": ["0xAE"]}
+  },
+  "OUTPUT_BYTES": {
+    "PTWRITEm": {"X86": ["0xAE"]},
+    "PTWRITEr": {"X86": ["0xAE"]}
+  }
+}

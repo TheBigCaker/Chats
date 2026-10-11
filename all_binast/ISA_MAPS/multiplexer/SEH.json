@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "SEH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SEH_StackAlloc": {"ARM": "SEH_StackAlloc"},
+    "SEH_SaveRegs": {"ARM": "SEH_SaveRegs"},
+    "SEH_SaveRegs_Ret": {"ARM": "SEH_SaveRegs_Ret"},
+    "SEH_SaveSP": {"ARM": "SEH_SaveSP"},
+    "SEH_SaveFRegs": {"ARM": "SEH_SaveFRegs"},
+    "SEH_SaveLR": {"ARM": "SEH_SaveLR"},
+    "SEH_Nop": {"ARM": "SEH_Nop"},
+    "SEH_Nop_Ret": {"ARM": "SEH_Nop_Ret"}
+  },
+  "INPUTS": {
+    "SEH_StackAlloc": {"ARM": [["i32imm",32],["i32imm",32]]},
+    "SEH_SaveRegs": {"ARM": [["i32imm",32],["i32imm",32]]},
+    "SEH_SaveRegs_Ret": {"ARM": [["i32imm",32],["i32imm",32]]},
+    "SEH_SaveSP": {"ARM": [["i32imm",32]]},
+    "SEH_SaveFRegs": {"ARM": [["i32imm",32],["i32imm",32]]},
+    "SEH_SaveLR": {"ARM": [["i32imm",32]]},
+    "SEH_Nop": {"ARM": [["i32imm",32]]},
+    "SEH_Nop_Ret": {"ARM": [["i32imm",32]]}
+  },
+  "OUTPUTS": {
+    "SEH_StackAlloc": {"ARM": []},
+    "SEH_SaveRegs": {"ARM": []},
+    "SEH_SaveRegs_Ret": {"ARM": []},
+    "SEH_SaveSP": {"ARM": []},
+    "SEH_SaveFRegs": {"ARM": []},
+    "SEH_SaveLR": {"ARM": []},
+    "SEH_Nop": {"ARM": []},
+    "SEH_Nop_Ret": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SEH_StackAlloc": {"ARM": ["PseudoInst"]},
+    "SEH_SaveRegs": {"ARM": ["PseudoInst"]},
+    "SEH_SaveRegs_Ret": {"ARM": ["PseudoInst"]},
+    "SEH_SaveSP": {"ARM": ["PseudoInst"]},
+    "SEH_SaveFRegs": {"ARM": ["PseudoInst"]},
+    "SEH_SaveLR": {"ARM": ["PseudoInst"]},
+    "SEH_Nop": {"ARM": ["PseudoInst"]},
+    "SEH_Nop_Ret": {"ARM": ["PseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "SEH_StackAlloc": {"ARM": ["PseudoInst"]},
+    "SEH_SaveRegs": {"ARM": ["PseudoInst"]},
+    "SEH_SaveRegs_Ret": {"ARM": ["PseudoInst"]},
+    "SEH_SaveSP": {"ARM": ["PseudoInst"]},
+    "SEH_SaveFRegs": {"ARM": ["PseudoInst"]},
+    "SEH_SaveLR": {"ARM": ["PseudoInst"]},
+    "SEH_Nop": {"ARM": ["PseudoInst"]},
+    "SEH_Nop_Ret": {"ARM": ["PseudoInst"]}
+  }
+}

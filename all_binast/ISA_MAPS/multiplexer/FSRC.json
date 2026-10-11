@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "FSRC",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FSRC1": {"Sparc": "FSRC1"},
+    "FSRC1S": {"Sparc": "FSRC1S"},
+    "FSRC2": {"Sparc": "FSRC2"},
+    "FSRC2S": {"Sparc": "FSRC2S"}
+  },
+  "INPUTS": {
+    "FSRC1": {"Sparc": []},
+    "FSRC1S": {"Sparc": []},
+    "FSRC2": {"Sparc": []},
+    "FSRC2S": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FSRC1": {"Sparc": []},
+    "FSRC1S": {"Sparc": []},
+    "FSRC2": {"Sparc": []},
+    "FSRC2S": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FSRC1": {"Sparc": ["VISInst1","0b001110100"]},
+    "FSRC1S": {"Sparc": ["VISInst1","0b001110101"]},
+    "FSRC2": {"Sparc": ["VISInst2","0b001111000"]},
+    "FSRC2S": {"Sparc": ["VISInst2","0b001111001"]}
+  },
+  "OUTPUT_BYTES": {
+    "FSRC1": {"Sparc": ["VISInst1","0b001110100"]},
+    "FSRC1S": {"Sparc": ["VISInst1","0b001110101"]},
+    "FSRC2": {"Sparc": ["VISInst2","0b001111000"]},
+    "FSRC2S": {"Sparc": ["VISInst2","0b001111001"]}
+  }
+}

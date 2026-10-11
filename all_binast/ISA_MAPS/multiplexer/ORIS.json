@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ORIS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "ORIS8": {"PowerPC": "ORIS8"}
+  },
+  "INPUTS": {
+    "ORIS8": {"PowerPC": [["g8rc",0],["u16imm64",16]]}
+  },
+  "OUTPUTS": {
+    "ORIS8": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "ORIS8": {"PowerPC": ["DForm_4","25"]}
+  },
+  "OUTPUT_BYTES": {
+    "ORIS8": {"PowerPC": ["DForm_4","25"]}
+  }
+}

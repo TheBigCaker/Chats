@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FNHADDS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FNHADDS": {"Sparc": "FNHADDS"}
+  },
+  "INPUTS": {
+    "FNHADDS": {"Sparc": [["FPRegs",0],["FPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FNHADDS": {"Sparc": [["FPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FNHADDS": {"Sparc": ["F3_3","0b10","0b110100","0b001110001"]}
+  },
+  "OUTPUT_BYTES": {
+    "FNHADDS": {"Sparc": ["F3_3","0b10","0b110100","0b001110001"]}
+  }
+}

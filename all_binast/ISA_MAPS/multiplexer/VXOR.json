@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VXOR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VXOR": {"PowerPC": "VXOR"}
+  },
+  "INPUTS": {
+    "VXOR": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VXOR": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VXOR": {"PowerPC": ["VXForm_1","1220"]}
+  },
+  "OUTPUT_BYTES": {
+    "VXOR": {"PowerPC": ["VXForm_1","1220"]}
+  }
+}

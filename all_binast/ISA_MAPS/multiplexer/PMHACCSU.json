@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "PMHACCSU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PMHACCSU_H_B0": {"RISCV": "PMHACCSU_H_B0"},
+    "PMHACCSU_H_B1": {"RISCV": "PMHACCSU_H_B1"},
+    "PMHACCSU_H": {"RISCV": "PMHACCSU_H"},
+    "PMHACCSU_W_H0": {"RISCV": "PMHACCSU_W_H0"},
+    "PMHACCSU_W_H1": {"RISCV": "PMHACCSU_W_H1"},
+    "PMHACCSU_W": {"RISCV": "PMHACCSU_W"}
+  },
+  "INPUTS": {
+    "PMHACCSU_H_B0": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMHACCSU_H_B1": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMHACCSU_H": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMHACCSU_W_H0": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMHACCSU_W_H1": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMHACCSU_W": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PMHACCSU_H_B0": {"RISCV": [["GPR:$rd_wb",0]]},
+    "PMHACCSU_H_B1": {"RISCV": [["GPR:$rd_wb",0]]},
+    "PMHACCSU_H": {"RISCV": [["GPR:$rd_wb",0]]},
+    "PMHACCSU_W_H0": {"RISCV": [["GPR:$rd_wb",0]]},
+    "PMHACCSU_W_H1": {"RISCV": [["GPR:$rd_wb",0]]},
+    "PMHACCSU_W": {"RISCV": [["GPR:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "PMHACCSU_H_B0": {"RISCV": ["RVPTernary_rrr","0b0101","0b10","0b111"]},
+    "PMHACCSU_H_B1": {"RISCV": ["RVPTernary_rrr","0b0111","0b10","0b111"]},
+    "PMHACCSU_H": {"RISCV": ["RVPTernary_rrr","0b1001","0b00","0b111"]},
+    "PMHACCSU_W_H0": {"RISCV": ["RVPTernary_rrr","0b0101","0b11","0b111"]},
+    "PMHACCSU_W_H1": {"RISCV": ["RVPTernary_rrr","0b0111","0b11","0b111"]},
+    "PMHACCSU_W": {"RISCV": ["RVPTernary_rrr","0b1001","0b01","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "PMHACCSU_H_B0": {"RISCV": ["RVPTernary_rrr","0b0101","0b10","0b111"]},
+    "PMHACCSU_H_B1": {"RISCV": ["RVPTernary_rrr","0b0111","0b10","0b111"]},
+    "PMHACCSU_H": {"RISCV": ["RVPTernary_rrr","0b1001","0b00","0b111"]},
+    "PMHACCSU_W_H0": {"RISCV": ["RVPTernary_rrr","0b0101","0b11","0b111"]},
+    "PMHACCSU_W_H1": {"RISCV": ["RVPTernary_rrr","0b0111","0b11","0b111"]},
+    "PMHACCSU_W": {"RISCV": ["RVPTernary_rrr","0b1001","0b01","0b111"]}
+  }
+}

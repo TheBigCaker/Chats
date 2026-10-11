@@ -1,0 +1,359 @@
+RecFormRel	0	0
+CCIfNotSubtarget	2	F	CCAction A	1	CCIf
+AtomicRMW128	1	asmstr	1	PPCPostRAExpPseudo
+PatAtomicRMWI128	2	OpNode	AtomicRMW128 Inst	1	Pat
+GETtlsADDRPseudo	1	asmstr	2	PPCEmitTimePseudo	isPPC64
+X_RA5_RB5	6	opcode	xo	opc	RegisterOperand ty	InstrItinClass itin	pattern	1	X_L1_RS5_RS5
+X_L1_RA5_RB5	6	opcode	xo	opc	RegisterOperand ty	InstrItinClass itin	pattern	1	X_L1_RS5_RS5
+VA1a_Int_Ty	4	xo	opc	Intrinsic IntID	ValueType Ty	1	VAForm_1a
+VX_VT5_VA5_VB5_PS1_XO9_o	3	xo	opc	pattern	1	VX_RD5_RSp5_PS1_XO9
+VX_VT5_VA5_VB5_XO9_o	3	xo	opc	pattern	1	VX_RD5_RSp5_PS1_XO9
+VX1_VT5_UIM5_VB5	3	xo	opc	pattern	1	VXForm_1
+VX_VT5_EO5_VB5	4	xo	eo	opc	pattern	1	VXForm_RD5_XO5_RS5
+VX1_VT5_VA5_VB5	3	xo	opc	pattern	1	VXForm_1
+VX_VT5_EO5_VB5_XO9_o	4	eo	xo	opc	pattern	1	VX_RD5_EO5_RS5_PS1_XO9
+I	5	opcode	OOL	IOL	asmstr	InstrItinClass itin	1	Instruction
+PPC970_DGroup_First	1	1	0
+IXFormMemOp	5	opcode	OOL	IOL	asmstr	InstrItinClass itin	2	I	XFormMemOp
+BForm	6	opcode	aa	lk	OOL	IOL	asmstr	1	I
+BForm_1	7	opcode	bo	aa	lk	OOL	IOL	asmstr	1	BForm
+BForm_2	8	opcode	bo	bi	aa	lk	OOL	IOL	asmstr	1	I
+BForm_3	6	opcode	aa	lk	OOL	IOL	asmstr	1	I
+BForm_3_at	6	opcode	aa	lk	OOL	IOL	asmstr	1	I
+BForm_4	7	opcode	bo	aa	lk	OOL	IOL	asmstr	1	I
+SCForm	8	opcode	xo1	xo2	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+DForm_base	6	opcode	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+DForm_1	6	opcode	OOL	IOL	asmstr	InstrItinClass itin	pattern	2	MemriOp	DForm_base
+DForm_2	6	opcode	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	DForm_base
+DForm_2_r0	6	opcode	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+DForm_4	6	opcode	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+DForm_4_zero	6	opcode	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	DForm_1
+DForm_4_fixedreg_zero	7	opcode	R	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	DForm_4
+IForm_and_DForm_1	9	opcode1	aa	lk	opcode2	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I2
+IForm_and_DForm_4_zero	9	opcode1	aa	lk	opcode2	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	IForm_and_DForm_1
+DForm_5	5	opcode	OOL	IOL	asmstr	InstrItinClass itin	1	I
+DForm_5_ext	5	opcode	OOL	IOL	asmstr	InstrItinClass itin	1	DForm_5
+DForm_6	5	opcode	OOL	IOL	asmstr	InstrItinClass itin	1	DForm_5
+DSForm_1	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	2	MemriOp	I
+DXForm	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+DQ_RD6_RS5_DQ12	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	2	MemriOp	I
+DQForm_RTp5_RA17_MEM	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	2	MemriOp	I
+XForm_base_r3xo	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XForm_base_r3xo_memOp	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	2	XForm_base_r3xo	XFormMemOp
+XForm_tlbilx	5	xo	OOL	IOL	asmstr	InstrItinClass itin	1	XForm_base_r3xo
+XForm_attn	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_base_r3xo_swapped	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_1	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+XForm_rs	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+XForm_tlbws	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XForm_6	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo_swapped
+XForm_8	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+XForm_11	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo_swapped
+XForm_16	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_icbt	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_sr	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_mbar	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_srin	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_mtmsr	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_16_ext	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	XForm_16
+XForm_17	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_17a	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_17
+XForm_18	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XForm_19	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_18
+XForm_20	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XForm_24	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XForm_24_sync	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XForm_IMM2_IMM2	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XForm_IMM3_IMM2	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XForm_24_eieio	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_24_sync
+XForm_25	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+XForm_25_memOp	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo_memOp
+XForm_26	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+XForm_28_memOp	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo_memOp
+XForm_28	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+XForm_42	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+XForm_43	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+XForm_44	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_45	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_RSB5_UIMM2	6	opcode	xo	OOL	IOL	asmstr	pattern	1	I
+XForm_RSB5_UIMM2_2UIMM1	6	opcode	xo	OOL	IOL	asmstr	pattern	1	XForm_RSB5_UIMM2
+X_FRT5_XO2_XO3_XO10	9	opcode	xo1	xo2	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+X_FRT5_XO2_XO3_FRB5_XO10	9	opcode	xo1	xo2	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+X_FRT5_XO2_XO3_DRM3_XO10	9	opcode	xo1	xo2	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+X_FRT5_XO2_XO3_RM2_X10	9	opcode	xo1	xo2	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+XForm_0	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+XForm_16b	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+XForm_htm0	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_htm1	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_htm2	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XForm_htm3	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+X_BF3_L1_RS5_RS5	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+X_BF3_RS5_RS5	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+X_RD5_XO5_RS5	8	opcode	xo2	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+X_BF3_DCMX7_RS5	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+X_RD6_IMM8	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+X_RD5_RS5_IM5	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	XForm_base_r3xo_memOp
+X_BF3	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	XForm_17
+X_L1_RS5_RS5	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_16
+XX1Form	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX1Form_memOp	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	2	XX1Form	XFormMemOp
+XX2Form	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX2Form_1	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX2Form_2	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX2_RD6_UIM5_RS6	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX2_RD5_XO5_RS6	8	opcode	xo2	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX2_RD6_XO5_RS6	8	opcode	xo2	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX2_BF3_DCMX7_RS6	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX2_RD6_DCMX7_RS6	8	opcode	xo1	xo2	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XForm_XD6_RA5_RB5	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	2	MemriOp	I
+XForm_BF3_UIM6_FRB5	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XForm_SP2_FRTB5	7	opcode	xo	OOL	IOL	asmstr	pattern	InstrItinClass itin	1	I
+XForm_S1_FRTB5	7	opcode	xo	OOL	IOL	asmstr	pattern	InstrItinClass itin	1	I
+XX3Form	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX3Form_SameOp	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XX3Form
+XX3Form_1	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX3Form_2	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX3Form_Rc	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX4Form	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+DCB_Form	7	xo	immfield	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+DCB_Form_hint	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+DSS_Form	7	T	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XLForm_1	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XLForm_1s	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XLForm_1
+XLForm_1_np	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XLForm_1
+XLForm_1_gen	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XLForm_1
+XLForm_1_ext	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XLForm_2	8	opcode	xo	lk	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XLForm_2_br	8	opcode	xo	lk	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XLForm_2
+XLForm_2_br2	9	opcode	xo	bo	lk	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XLForm_2
+XLForm_2_ext	10	opcode	xo	bo	bi	lk	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XLForm_2
+XLForm_3	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XLForm_4	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XLForm_S	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XLForm_2_and_DSForm_1	10	opcode1	xo1	lk	opcode2	xo2	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I2
+XLForm_2_ext_and_DSForm_1	12	opcode1	xo1	bo	bi	lk	opcode2	xo2	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XLForm_2_and_DSForm_1
+XLForm_2_ext_and_DForm_1	11	opcode1	xo1	bo	bi	lk	opcode2	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I2
+XFXForm_1	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XFXForm_1_ext	7	opcode	xo	spr	OOL	IOL	asmstr	InstrItinClass itin	1	XFXForm_1
+XFXForm_3	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XFXForm_3p	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XFXForm_5	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XFXForm_5a	6	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+XFLForm	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	list<dag>pattern	1	I
+XFLForm_1	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	list<dag>pattern	1	I
+XSForm_1	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XOForm_1	8	opcode	xo	oe	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XOForm_3	8	opcode	xo	oe	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XOForm_1
+AForm_1	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+AForm_2	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	AForm_1
+AForm_3	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	AForm_1
+AForm_4	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+MForm_1	6	opcode	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+MForm_2	6	opcode	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+MDForm_1	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+MDSForm_1	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VAForm_1	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VAForm_1a	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VAForm_2	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VXForm_1	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VXForm_setzero	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	VXForm_1
+VXForm_2	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VXForm_3	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VXForm_4	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VXForm_5	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VXForm_RD5_XO5_RS5	7	xo	eo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VXForm_CR	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VXForm_BX	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VXRForm_1	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VX_RD5_EO5_RS5_PS1_XO9	7	eo	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VX_RD5_RSp5_PS1_XO9	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+Z22Form_BF3_FRA5_DCM6	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+Z22Form_FRTA5_SH6	7	opcode	xo	OOL	IOL	asmstr	pattern	InstrItinClass itin	1	I
+Z23Form_8	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+Z23Form_RTAB5_CY2	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+Z23Form_FRTAB5_RMC2	6	opcode	xo	OOL	IOL	asmstr	pattern	1	I
+Z23Form_TE5_FRTB5_RMC2	6	opcode	xo	OOL	IOL	asmstr	pattern	1	Z23Form_FRTAB5_RMC2
+Z23Form_FRTB5_R1_RMC2	6	opcode	xo	OOL	IOL	asmstr	pattern	1	I
+PPCEmitTimePseudo	4	OOL	IOL	asmstr	pattern	1	I
+PPCCustomInserterPseudo	4	OOL	IOL	asmstr	pattern	1	PPCEmitTimePseudo
+PPCPostRAExpPseudo	4	OOL	IOL	pattern = []	asmstr = "#" # NAME	1	PPCEmitTimePseudo
+PseudoXFormMemOp	4	OOL	IOL	pattern = []	asmstr = "#" # NAME	2	PPCPostRAExpPseudo	XFormMemOp
+XOForm_RTAB5_L1	6	opcode	xo	OOL	IOL	asmstr	pattern	1	I
+XOForm_RTAB5_L1r	7	opcode	xo	OOL	IOL	asmbase	asmstr	pattern	0
+VXForm_VRTB5_Base	5	xo	OOL	IOL	asmstr	pattern	1	I
+VXForm_VRTB5	6	xo	R	OOL	IOL	asmstr	pattern	1	VXForm_VRTB5_Base
+VXForm_VRTB5_UIM2	6	xo	R	OOL	IOL	asmstr	pattern	1	VXForm_VRTB5_Base
+VXForm_VRTB5_UIM1	6	xo	R	OOL	IOL	asmstr	pattern	1	VXForm_VRTB5_Base
+VXForm_VRTB5_UIM3	6	xo	R	OOL	IOL	asmstr	pattern	1	VXForm_VRTB5_Base
+VXForm_VRTAB5	5	xo	OOL	IOL	asmstr	pattern	1	VXForm_VRTB5_Base
+XX3Form_XTBp5_M2	5	xo	OOL	IOL	asmstr	pattern	1	I
+XX3Form_XTABp5_M2	5	xo	OOL	IOL	asmstr	pattern	1	I
+XX3Form_XTAB6_P1	5	xo	OOL	IOL	asmstr	pattern	1	I
+XX3Form_XTAB6	6	opcode	xo	OOL	IOL	asmstr	pattern	1	I
+XForm_RBS5	7	opCode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX3Form_XTAB6_S	5	xo	OOL	IOL	asmstr	pattern	1	I
+XX3Form_XTAB6_S3	5	xo	OOL	IOL	asmstr	pattern	1	XX3Form_XTAB6_S
+XX3Form_XTAB6_3S1	5	xo	OOL	IOL	asmstr	pattern	1	XX3Form_XTAB6_S
+XX3Form_XTAB6_2S1	5	xo	OOL	IOL	asmstr	pattern	1	XX3Form_XTAB6_S
+XX3Form_XTAB6_P	5	xo	OOL	IOL	asmstr	pattern	1	I
+MLS_DForm_R_SI32_RTA5	6	opcode	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	PI
+MLS_DForm_R_SI32_RTA5_p	6	opcode	OOL	IOL	PCRel_IOL	asmstr	InstrItinClass itin	0
+XX3Form_AT3_XABp5_P1	6	opcode	xo	OOL	IOL	asmstr	pattern	1	I
+XX2Form_AT3_XBp5_P2	6	opcode	xo	OOL	IOL	asmstr	pattern	1	I
+XForm_ATB3	7	opcode	o	xo	OOL	IOL	asmstr	pattern	1	I
+XX3Form_AT3_XAp5B6	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+MMIRR_XX3Form_X8YP4_XAp5B6	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	PI
+MMIRR_XX3Form_X8Y4P2_XAp5B6	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	PI
+DMR_UM_XOEO	5	opcode	xo	IOL	asmbase	asmstr	0
+DMR_UM_M448_XOEO	5	opcode	xo	IOL	asmbase	asmstr	0
+DMR_BF16_UM_XOEO	5	opcode	xo	IOL	asmbase	asmstr	0
+DMR_BF16_UM_M284_XOEO	5	opcode	xo	IOL	asmbase	asmstr	0
+DMR_F16_UM_M284_XOEO	5	opcode	xo	IOL	asmbase	asmstr	0
+DMR_NEG_UM_M284_XOXORf939a0	5	opcode	xo	IOL	asmbase	asmstr	0
+DMR_NEG_UM_M284_XOXORd11188	5	opcode	xo	IOL	asmbase	asmstr	0
+XForm_AT3_T1_AB3	7	opcode	o	xo	OOL	IOL	asmstr	pattern	1	I
+XForm_ATp2_SR5	7	opcode	o	xo	OOL	IOL	asmstr	pattern	1	I
+XX2Form_AT3_XB6_ID2_E1_BL2	6	opcode	xo	OOL	IOL	asmstr	pattern	1	I
+BinOpWithoutSImm16Operand	1	SDNode opcode	1	PatFrag
+XForm_6r	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XForm_6rc	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XForm_10rc	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XForm_11r	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XOForm_1r	9	opcode	xo	oe	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XOForm_1rx	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XOForm_1rcr	9	opcode	xo	oe	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XOForm_1rc	9	opcode	xo	oe	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XOForm_3r	9	opcode	xo	oe	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XOForm_3rc	9	opcode	xo	oe	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+MForm_1r	7	opcode	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+MForm_2r	7	opcode	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+MDForm_1r	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+MDSForm_1r	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XSForm_1rc	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XSForm_1r	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XForm_26r	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XForm_28r	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+XForm_SP2_FRTB5r	7	opcode	xo	OOL	IOL	asmbase	asmstr	pattern	0
+XForm_S1_FRTB5r	7	opcode	xo	OOL	IOL	asmbase	asmstr	pattern	0
+AForm_1r	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+AForm_2r	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+AForm_3r	8	opcode	xo	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+Z23Form_TE5_FRTB5_RMC2r	7	opcode	xo	OOL	IOL	asmbase	asmstr	pattern	0
+Z23Form_FRTAB5_RMC2r	7	opcode	xo	OOL	IOL	asmbase	asmstr	pattern	0
+Z23Form_FRTB5_R1_RMC2r	7	opcode	xo	OOL	IOL	asmbase	asmstr	pattern	0
+Z22Form_FRTA5_SH6r	7	opcode	xo	OOL	IOL	asmbase	asmstr	pattern	0
+BCC_class	11	16	0	0	(outs)	(ins (pred $BIBO	$CR):$cond	condbrtarget:$BD)	"b${cond:cc}${cond:pm} ${cond:reg}	$BD"                             /*[(PPCcondbranch crrc:$crS	imm:$opc	bb:$BD)]*/	0
+PPCAsmPseudo	2	asm	iops	1	Instruction
+CRNotPat	2	pattern	result	0
+ExtSetCCPat	4	CondCode cc	PatFrag pfrag	OutPatFrag rfrag	OutPatFrag rfrag8	0
+ExtSetCCShiftPat	4	CondCode cc	PatFrag pfrag	OutPatFrag rfrag	OutPatFrag rfrag8	0
+FSetCCPat	3	SetCC	ValueType Ty	I FCmp	0
+BranchSimpleMnemonicAT	2	pm	int at	0
+BranchSimpleMnemonic1	3	name	pm	int bo	0
+BranchSimpleMnemonic2	3	name	pm	int bo	1	BranchSimpleMnemonic1
+BranchExtendedMnemonicPM	3	name	pm	int bibo	0
+BranchExtendedMnemonic	2	name	int bibo	0
+TrapExtendedMnemonic	2	name	int to	0
+ACC_UM_XOEO	5	opcode	xo	IOL	asmbase	asmstr	0
+ACC_UM_M844_XOEO	5	opcode	xo	IOL	asmbase	asmstr	0
+ACC_UM_M444_XOEO	5	opcode	xo	IOL	asmbase	asmstr	0
+ACC_UM_M244_XOEO	5	opcode	xo	IOL	asmbase	asmstr	0
+ACC_UM_M244_XO46	5	opcode	xo	IOL	asmbase	asmstr	0
+ACC_NEG_UM_M244_XOM84C	5	opcode	xo	IOL	asmbase	asmstr	0
+ACC_NEG_UM_XOM84C	5	opcode	xo	IOL	asmbase	asmstr	0
+ACC_NEG_UM_M44_XOM84C	5	opcode	xo	IOL	asmbase	asmstr	0
+ACC_NEG_UM_M42_XOM84C	5	opcode	xo	IOL	asmbase	asmstr	0
+isPCRel	0	0
+VXForm_VTB5_RC	7	xo	R	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VXForm_VTB5_RCr	8	xo	R	OOL	IOL	asmbase	asmstr	InstrItinClass itin	pattern	0
+MLS_DForm_R_SI34_RTA5_MEM	6	opcode	OOL	IOL	asmstr	InstrItinClass itin	pattern	2	MemriOp	PI
+MLS_DForm_R_SI34_RTA5	6	opcode	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	PI
+MLS_DForm_SI34_RT5	6	opcode	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	PI
+MLS_DForm_R_SI34_RTA5_p	6	opcode	OOL	IOL	PCRel_IOL	asmstr	InstrItinClass itin	0
+XForm_XT6_IMM5_VB5	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VXForm_RD5_N3_VB5	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VXForm_VTB5_RA5_ins	3	xo	opc	pattern	2	RegConstraint	VXForm_1
+VNForm_VTAB5_SD3	7	xo	ps	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+VXForm_RD5_MP_VB5	7	xo	eo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX2_BF3_XO5_XB6_XO9	8	opcode	xo2	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XForm_XT5_BI5	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XForm_base_r3xo
+MLS_DForm_R_SI34_RTA5_MEM_p	8	opcode	OOL	IOL	PCRel_IOL	PCRelOnly_IOL	asmstr	asmstr_pcext	InstrItinClass itin	0
+DQForm_XTp5_RA17_MEM	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	2	MemriOp	I
+XForm_XTp5_RAB5	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	2	I	XFormMemOp
+XForm_AT3	8	opcode	xo2	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XForm_XT6_IMM5	8	opcode	eo	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+XX3Form_AT3_XAB6	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+MMIRR_XX3Form_XY4P2_XAB6	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	PI
+MMIRR_XX3Form_XY4_XAB6	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	PI
+MMIRR_XX3Form_X4Y2_XAB6	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	PI
+MMIRR_XX3Form_XY4P8_XAB6	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	PI
+MMIRR_XX3Form_XYP4_XAB6	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	PI
+P10ReverseSetBool	2	pattern	result	0
+IntSetP10RevSetBool	8	SDNode SetCC	ValueType Ty	PatLeaf ZExtTy	ImmLeaf SExtTy	I Cmpi	I Cmpli	I Cmp	I Cmpl	0
+FSetP10RevSetBool	3	SDNode SetCC	ValueType Ty	I FCmp	0
+XXEvalPattern	3	ValueType Vt	InputPattern	Imm	1	Pat
+XXEvalTernarySelectAnd	1	ValueType Vt	0
+XXEvalTernarySelectB	1	ValueType Vt	0
+XXEvalTernarySelectC	1	ValueType Vt	0
+XXEvalTernarySelectXor	1	ValueType Vt	0
+XXEvalTernarySelectOr	1	ValueType Vt	0
+XXEvalTernarySelectNor	1	ValueType Vt	0
+XXEvalTernarySelectEqv	1	ValueType Vt	0
+XXEvalTernarySelectNotC	1	ValueType Vt	0
+XXEvalTernarySelectNotB	1	ValueType Vt	0
+XXEvalTernarySelectNand	1	ValueType Vt	0
+EFXForm_1	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+EFXForm_2	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	EFXForm_1
+EFXForm_2a	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	EFXForm_1
+EFXForm_3	5	xo	OOL	IOL	asmstr	InstrItinClass itin	1	I
+EVXForm_1	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+EVXForm_2	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	EVXForm_1
+EVXForm_2a	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	EVXForm_1
+EVXForm_3	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+EVXForm_4	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	I
+EVXForm_D	6	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	2	MemriOp	I
+XX3Form_Rcr	8	opcode	xo	asmbase	asmstr	InstrItinClass itin	Intrinsic Int	ValueType OutTy	ValueType InTy	0
+XX3Form_2s	7	opcode	xo	OOL	IOL	asmstr	InstrItinClass itin	pattern	1	XX3Form_2
+X_VT5_XO5_VB5	5	opcode	xo2	xo	opc	pattern	1	X_RD5_XO5_RS5
+X_BF3_VA5_VB5	4	opcode	xo	opc	pattern	1	XForm_17
+X_XT6_RA5_RB5	5	opcode	xo	opc	RegisterOperand vtype	pattern	1	XX1Form_memOp
+ImmediateAsmOperand	2	predicate	render="addImmOperands"	1	AsmOperandClass
+ImmediateOp	3	ValueType vt	asmop	int width	1	Operand
+UImmediateOp	3	ValueType vt	asmop	int width	1	ImmediateOp
+ImmediateRelocOp	5	ValueType vt	asmop	int width	fixup	decoder = ""	1	Operand
+UImmediateRelocOp	5	ValueType vt	asmop	int width	fixup	decoder = ""	1	ImmediateRelocOp
+ImmPatterns	3	ValueType vt	code pred	SDNodeXForm xform	0
+SignedImmediate	5	ValueType vt	code pred	SDNodeXForm xform	asmop	int width	1	ImmPatterns
+UnsignedImmediate	5	ValueType vt	code pred	SDNodeXForm xform	asmop	int width	1	ImmPatterns
+SignedImmediateReloc	6	ValueType vt	code pred	SDNodeXForm xform	asmop	int width	fixup	1	ImmPatterns
+UnsignedImmediateReloc	6	ValueType vt	code pred	SDNodeXForm xform	asmop	int width	fixup	1	ImmPatterns
+SignedImmediateWithPCRel	7	ValueType vt	code pred	SDNodeXForm xform	asmop	int width	fixup_imm	fixup_pcrel	1	SignedImmediateReloc
+PPCRegisterClass	3	list<ValueType> regTypes	int alignment	regList	1	RegisterClass
+PPCRegisterClassWithSize	4	list<ValueType> regTypes	int alignment	regList	int size	1	PPCRegisterClass
+PPCRegisterClassWithPriority	6	list<ValueType> regTypes	int alignment	regList	int allocPriority	globalPriority	int size	1	PPCRegisterClass
+PPCGPRRegisterClass	5	list<ValueType> regTypes	int alignment	regList	altOrder1	altOrder2	1	PPCRegisterClass
+PPCRegOperandOnly	1	regClassName	1	RegisterOperand
+PPCRegOperand	2	predicate	operandName = ""	0
+PPCReg	1	n	1	Register
+GPR	2	num	n	1	PPCReg
+GP8	2	GPR SubReg	n	1	PPCReg
+SPE	3	n	Enc	list<Register> subregs = []	1	PPCReg
+SPR	2	num	n	1	PPCReg
+FPR	2	num	n	1	PPCReg
+FPPair	2	n	EvenIndex	1	PPCReg
+VF	2	num	n	1	PPCReg
+VR	3	VF SubReg	VF SubRegH	n	1	PPCReg
+VSRL	3	FPR SubReg	FPR SubRegH	n	1	PPCReg
+VSXReg	2	num	n	1	PPCReg
+CR	3	num	n	list<Register> subregs	1	PPCReg
+CRBIT	1	num	1	PPCReg
+VSRPair	3	num	n	list<Register> subregs	1	PPCReg
+GP8Pair	2	n	EvenIndex	1	PPCReg
+DMRROW	2	num	n	1	PPCReg
+DMRROWp	3	num	n	list<Register> subregs	1	PPCReg
+WACC	3	num	n	list<Register> subregs	1	PPCReg
+WACC_HI	3	num	n	list<Register> subregs	1	PPCReg
+DMR	3	num	n	list<Register> subregs	1	PPCReg
+DMRp	3	num	n	list<Register> subregs	1	PPCReg
+ACC	3	num	n	list<Register> subregs	1	PPCReg
+UACC	3	num	n	list<Register> subregs	1	PPCReg

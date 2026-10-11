@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DTSEL",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "DTSEL_IMM": {"Mali": "DTSEL_IMM"}
+  },
+  "INPUTS": {
+    "DTSEL_IMM": {"Mali": [["R32",32]]}
+  },
+  "OUTPUTS": {
+    "DTSEL_IMM": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "DTSEL_IMM": {"Mali": ["Bifrost_fma","0x70f3e0","0x7fffe0"]}
+  },
+  "OUTPUT_BYTES": {
+    "DTSEL_IMM": {"Mali": ["Bifrost_fma","0x70f3e0","0x7fffe0"]}
+  }
+}

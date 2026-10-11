@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TRECLAIM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "TRECLAIM": {"PowerPC": "TRECLAIM"}
+  },
+  "INPUTS": {
+    "TRECLAIM": {"PowerPC": [["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "TRECLAIM": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "TRECLAIM": {"PowerPC": ["XForm_base_r3xo","31","942"]}
+  },
+  "OUTPUT_BYTES": {
+    "TRECLAIM": {"PowerPC": ["XForm_base_r3xo","31","942"]}
+  }
+}

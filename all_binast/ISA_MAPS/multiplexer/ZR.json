@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ZR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "ZR": {"ARM": "ZR"}
+  },
+  "INPUTS": {
+    "ZR": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "ZR": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "ZR": {"ARM": ["ARMReg","15"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZR": {"ARM": ["ARMReg","15"]}
+  }
+}

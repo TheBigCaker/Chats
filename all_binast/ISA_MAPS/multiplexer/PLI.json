@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "PLI",
+  "BACKENDS": ["RISCV","PowerPC"],
+  "INDEX": {
+    "PLI_H": {"RISCV": "PLI_H"},
+    "PLI_W": {"RISCV": "PLI_W"},
+    "PLI_B": {"RISCV": "PLI_B"},
+    "PLI_DH": {"RISCV": "PLI_DH"},
+    "PLI_DB": {"RISCV": "PLI_DB"},
+    "PLI8": {"PowerPC": "PLI8"},
+    "PLI": {"PowerPC": "PLI"}
+  },
+  "INPUTS": {
+    "PLI_H": {"RISCV": [["imm:$imm10",0]]},
+    "PLI_W": {"RISCV": [["imm:$imm10",0]]},
+    "PLI_B": {"RISCV": [["simm8_pli_b",0]]},
+    "PLI_DH": {"RISCV": [["simm10_pli_h",0]]},
+    "PLI_DB": {"RISCV": [["simm8_pli_b",0]]},
+    "PLI8": {"PowerPC": [["s34imm64",34]]},
+    "PLI": {"PowerPC": [["s34imm",34]]}
+  },
+  "OUTPUTS": {
+    "PLI_H": {"RISCV": []},
+    "PLI_W": {"RISCV": []},
+    "PLI_B": {"RISCV": []},
+    "PLI_DH": {"RISCV": []},
+    "PLI_DB": {"RISCV": []},
+    "PLI8": {"PowerPC": [["g8rc",0]]},
+    "PLI": {"PowerPC": [["gprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "PLI_H": {"RISCV": ["PLI_i","0b1011000"]},
+    "PLI_W": {"RISCV": ["PLI_i","0b1011001"]},
+    "PLI_B": {"RISCV": ["RVPLoadImm_i","0b1011010"]},
+    "PLI_DH": {"RISCV": ["RVPPairLoadImm_i","0b0011000"]},
+    "PLI_DB": {"RISCV": ["RVPPairLoadImm_i","0b0011010"]},
+    "PLI8": {"PowerPC": ["MLS_DForm_SI34_RT5","14"]},
+    "PLI": {"PowerPC": ["MLS_DForm_SI34_RT5","14"]}
+  },
+  "OUTPUT_BYTES": {
+    "PLI_H": {"RISCV": ["PLI_i","0b1011000"]},
+    "PLI_W": {"RISCV": ["PLI_i","0b1011001"]},
+    "PLI_B": {"RISCV": ["RVPLoadImm_i","0b1011010"]},
+    "PLI_DH": {"RISCV": ["RVPPairLoadImm_i","0b0011000"]},
+    "PLI_DB": {"RISCV": ["RVPPairLoadImm_i","0b0011010"]},
+    "PLI8": {"PowerPC": ["MLS_DForm_SI34_RT5","14"]},
+    "PLI": {"PowerPC": ["MLS_DForm_SI34_RT5","14"]}
+  }
+}

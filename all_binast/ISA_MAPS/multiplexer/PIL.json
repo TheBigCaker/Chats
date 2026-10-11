@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PIL",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "PIL": {"Sparc": "PIL"}
+  },
+  "INPUTS": {
+    "PIL": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "PIL": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "PIL": {"Sparc": ["SparcCtrlReg","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "PIL": {"Sparc": ["SparcCtrlReg","8"]}
+  }
+}

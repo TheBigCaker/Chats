@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VPKUHUM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VPKUHUM": {"PowerPC": "VPKUHUM"}
+  },
+  "INPUTS": {
+    "VPKUHUM": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VPKUHUM": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VPKUHUM": {"PowerPC": ["VXForm_1","14"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPKUHUM": {"PowerPC": ["VXForm_1","14"]}
+  }
+}

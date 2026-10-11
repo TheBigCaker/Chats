@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "XFSTORE",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XFSTOREf64": {"PowerPC": "XFSTOREf64"},
+    "XFSTOREf32": {"PowerPC": "XFSTOREf32"}
+  },
+  "INPUTS": {
+    "XFSTOREf64": {"PowerPC": [["vsfrc",0],["(memrr",0]]},
+    "XFSTOREf32": {"PowerPC": [["vssrc",0],["memrr",0]]}
+  },
+  "OUTPUTS": {
+    "XFSTOREf64": {"PowerPC": []},
+    "XFSTOREf32": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XFSTOREf64": {"PowerPC": ["PseudoXFormMemOp"]},
+    "XFSTOREf32": {"PowerPC": ["PseudoXFormMemOp"]}
+  },
+  "OUTPUT_BYTES": {
+    "XFSTOREf64": {"PowerPC": ["PseudoXFormMemOp"]},
+    "XFSTOREf32": {"PowerPC": ["PseudoXFormMemOp"]}
+  }
+}

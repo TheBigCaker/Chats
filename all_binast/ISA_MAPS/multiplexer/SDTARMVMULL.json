@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SDTARMVMULL",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SDTARMVMULL": {"ARM": "SDTARMVMULL"}
+  },
+  "INPUTS": {
+    "SDTARMVMULL": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SDTARMVMULL": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SDTARMVMULL": {"ARM": ["SDTypeProfile","1","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "SDTARMVMULL": {"ARM": ["SDTypeProfile","1","2"]}
+  }
+}

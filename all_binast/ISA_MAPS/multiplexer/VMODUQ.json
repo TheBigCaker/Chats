@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMODUQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMODUQ": {"PowerPC": "VMODUQ"}
+  },
+  "INPUTS": {
+    "VMODUQ": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMODUQ": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMODUQ": {"PowerPC": ["VXForm_1","1547"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMODUQ": {"PowerPC": ["VXForm_1","1547"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BIT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "BIT_ALIGN_INT_eg": {"AMDGPU": "BIT_ALIGN_INT_eg"}
+  },
+  "INPUTS": {
+    "BIT_ALIGN_INT_eg": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "BIT_ALIGN_INT_eg": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "BIT_ALIGN_INT_eg": {"AMDGPU": ["R600_3OP","0xC"]}
+  },
+  "OUTPUT_BYTES": {
+    "BIT_ALIGN_INT_eg": {"AMDGPU": ["R600_3OP","0xC"]}
+  }
+}

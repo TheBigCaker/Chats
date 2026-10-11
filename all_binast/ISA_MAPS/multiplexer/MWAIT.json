@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MWAIT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MWAITrr": {"X86": "MWAITrr"}
+  },
+  "INPUTS": {
+    "MWAITrr": {"X86": []}
+  },
+  "OUTPUTS": {
+    "MWAITrr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "MWAITrr": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "MWAITrr": {"X86": ["0x01"]}
+  }
+}

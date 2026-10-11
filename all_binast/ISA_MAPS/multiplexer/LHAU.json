@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LHAU",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LHAU8": {"PowerPC": "LHAU8"}
+  },
+  "INPUTS": {
+    "LHAU8": {"PowerPC": [["(memri",0]]}
+  },
+  "OUTPUTS": {
+    "LHAU8": {"PowerPC": [["g8rc",0],["ptr_rc_nor0",0]]}
+  },
+  "INPUT_BYTES": {
+    "LHAU8": {"PowerPC": ["DForm_1","43"]}
+  },
+  "OUTPUT_BYTES": {
+    "LHAU8": {"PowerPC": ["DForm_1","43"]}
+  }
+}

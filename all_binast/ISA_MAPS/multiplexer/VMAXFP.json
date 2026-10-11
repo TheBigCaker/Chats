@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMAXFP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMAXFP": {"PowerPC": "VMAXFP"}
+  },
+  "INPUTS": {
+    "VMAXFP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMAXFP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMAXFP": {"PowerPC": ["VX1_Int_Ty","1034"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMAXFP": {"PowerPC": ["VX1_Int_Ty","1034"]}
+  }
+}

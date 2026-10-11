@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSUMSWS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSUMSWS": {"PowerPC": "VSUMSWS"}
+  },
+  "INPUTS": {
+    "VSUMSWS": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSUMSWS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSUMSWS": {"PowerPC": ["VX1_Int_Ty","1928"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSUMSWS": {"PowerPC": ["VX1_Int_Ty","1928"]}
+  }
+}

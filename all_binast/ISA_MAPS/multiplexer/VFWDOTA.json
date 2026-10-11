@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFWDOTA",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFWDOTA_VV": {"RISCV": "VFWDOTA_VV"}
+  },
+  "INPUTS": {
+    "VFWDOTA_VV": {"RISCV": [["VR:$vd",0],["VR:$vs2",0],["VR:$vs1",0],["VMaskOp:$vm",0]]}
+  },
+  "OUTPUTS": {
+    "VFWDOTA_VV": {"RISCV": [["VR:$vd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFWDOTA_VV": {"RISCV": ["ZvdotVALUVV","0b100100"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFWDOTA_VV": {"RISCV": ["ZvdotVALUVV","0b100100"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "UMULL",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UMULL": {"ARM": "UMULL"},
+    "UMULLv5": {"ARM": "UMULLv5"}
+  },
+  "INPUTS": {
+    "UMULL": {"ARM": [["GPR",64],["GPR",64]]},
+    "UMULLv5": {"ARM": [["GPR",64],["GPR",64],["pred",0],["cc_out",0]]}
+  },
+  "OUTPUTS": {
+    "UMULL": {"ARM": [["GPR",64],["GPR",64]]},
+    "UMULLv5": {"ARM": [["GPR",64],["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "UMULL": {"ARM": ["AsMul1I64","0b0000100"]},
+    "UMULLv5": {"ARM": ["ARMPseudoExpand","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "UMULL": {"ARM": ["AsMul1I64","0b0000100"]},
+    "UMULLv5": {"ARM": ["ARMPseudoExpand","4"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NL",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "NLdStFrm": {"ARM": "NLdStFrm"}
+  },
+  "INPUTS": {
+    "NLdStFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "NLdStFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "NLdStFrm": {"ARM": ["Format","30"]}
+  },
+  "OUTPUT_BYTES": {
+    "NLdStFrm": {"ARM": ["Format","30"]}
+  }
+}

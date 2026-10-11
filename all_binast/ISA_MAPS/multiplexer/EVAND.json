@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVAND",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVAND": {"PowerPC": "EVAND"}
+  },
+  "INPUTS": {
+    "EVAND": {"PowerPC": [["sperc",0],["sperc",0]]}
+  },
+  "OUTPUTS": {
+    "EVAND": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVAND": {"PowerPC": ["EVXForm_1","529"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVAND": {"PowerPC": ["EVXForm_1","529"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ANDIS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "ANDIS8_rec": {"PowerPC": "ANDIS8_rec"}
+  },
+  "INPUTS": {
+    "ANDIS8_rec": {"PowerPC": [["g8rc",0],["u16imm64",16]]}
+  },
+  "OUTPUTS": {
+    "ANDIS8_rec": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "ANDIS8_rec": {"PowerPC": ["DForm_4","29"]}
+  },
+  "OUTPUT_BYTES": {
+    "ANDIS8_rec": {"PowerPC": ["DForm_4","29"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFMSLD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFMSLD": {"ARM": "VFMSLD"}
+  },
+  "INPUTS": {
+    "VFMSLD": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VFMSLD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VFMSLD": {"ARM": ["N3VCP8F16Q0","0b01","0b10","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFMSLD": {"ARM": ["N3VCP8F16Q0","0b01","0b10","1"]}
+  }
+}

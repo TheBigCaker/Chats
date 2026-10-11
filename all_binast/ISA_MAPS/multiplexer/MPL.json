@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "MPL",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MPL0": {"Mips": "MPL0"},
+    "MPL1": {"Mips": "MPL1"},
+    "MPL2": {"Mips": "MPL2"}
+  },
+  "INPUTS": {
+    "MPL0": {"Mips": []},
+    "MPL1": {"Mips": []},
+    "MPL2": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "MPL0": {"Mips": []},
+    "MPL1": {"Mips": []},
+    "MPL2": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "MPL0": {"Mips": ["MipsReg","0"]},
+    "MPL1": {"Mips": ["MipsReg","1"]},
+    "MPL2": {"Mips": ["MipsReg","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "MPL0": {"Mips": ["MipsReg","0"]},
+    "MPL1": {"Mips": ["MipsReg","1"]},
+    "MPL2": {"Mips": ["MipsReg","2"]}
+  }
+}

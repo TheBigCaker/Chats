@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FONES",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FONES": {"Sparc": "FONES"}
+  },
+  "INPUTS": {
+    "FONES": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FONES": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FONES": {"Sparc": ["VISInstD","0b001111111"]}
+  },
+  "OUTPUT_BYTES": {
+    "FONES": {"Sparc": ["VISInstD","0b001111111"]}
+  }
+}

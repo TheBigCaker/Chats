@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSMINCQP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSMINCQP": {"PowerPC": "XSMINCQP"}
+  },
+  "INPUTS": {
+    "XSMINCQP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSMINCQP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSMINCQP": {"PowerPC": ["X_VT5_VA5_VB5","63","740"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSMINCQP": {"PowerPC": ["X_VT5_VA5_VB5","63","740"]}
+  }
+}

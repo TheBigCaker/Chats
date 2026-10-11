@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BCLR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "BCLR": {"RISCV": "BCLR"}
+  },
+  "INPUTS": {
+    "BCLR": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "BCLR": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "BCLR": {"RISCV": ["ALU_rr","0b0100100","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "BCLR": {"RISCV": ["ALU_rr","0b0100100","0b001"]}
+  }
+}

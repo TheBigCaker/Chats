@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FCMPGT",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FCMPGT16": {"Sparc": "FCMPGT16"},
+    "FCMPGT32": {"Sparc": "FCMPGT32"}
+  },
+  "INPUTS": {
+    "FCMPGT16": {"Sparc": []},
+    "FCMPGT32": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FCMPGT16": {"Sparc": []},
+    "FCMPGT32": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FCMPGT16": {"Sparc": ["VISInstID","0b000101000"]},
+    "FCMPGT32": {"Sparc": ["VISInstID","0b000101100"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCMPGT16": {"Sparc": ["VISInstID","0b000101000"]},
+    "FCMPGT32": {"Sparc": ["VISInstID","0b000101100"]}
+  }
+}

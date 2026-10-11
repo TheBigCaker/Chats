@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "VGETLN",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VGETLNs8": {"ARM": "VGETLNs8"},
+    "VGETLNs16": {"ARM": "VGETLNs16"},
+    "VGETLNu8": {"ARM": "VGETLNu8"},
+    "VGETLNu16": {"ARM": "VGETLNu16"},
+    "VGETLNi32": {"ARM": "VGETLNi32"}
+  },
+  "INPUTS": {
+    "VGETLNs8": {"ARM": [["DPR",0],["VectorIndex8",0]]},
+    "VGETLNs16": {"ARM": [["DPR",0],["VectorIndex16",0]]},
+    "VGETLNu8": {"ARM": [["DPR",0],["VectorIndex8",0]]},
+    "VGETLNu16": {"ARM": [["DPR",0],["VectorIndex16",0]]},
+    "VGETLNi32": {"ARM": [["DPR",0],["VectorIndex32",0]]}
+  },
+  "OUTPUTS": {
+    "VGETLNs8": {"ARM": [["GPR",64]]},
+    "VGETLNs16": {"ARM": [["GPR",64]]},
+    "VGETLNu8": {"ARM": [["GPR",64]]},
+    "VGETLNu16": {"ARM": [["GPR",64]]},
+    "VGETLNi32": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "VGETLNs8": {"ARM": ["NVGetLane","1","1","0","0","1","0b1011"]},
+    "VGETLNs16": {"ARM": ["NVGetLane","1","1","0","0","0","0b1011"]},
+    "VGETLNu8": {"ARM": ["NVGetLane","1","1","0","1","1","0b1011"]},
+    "VGETLNu16": {"ARM": ["NVGetLane","1","1","0","1","0","0b1011"]},
+    "VGETLNi32": {"ARM": ["NVGetLane","1","1","0","0","0","0b1011","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "VGETLNs8": {"ARM": ["NVGetLane","1","1","0","0","1","0b1011"]},
+    "VGETLNs16": {"ARM": ["NVGetLane","1","1","0","0","0","0b1011"]},
+    "VGETLNu8": {"ARM": ["NVGetLane","1","1","0","1","1","0b1011"]},
+    "VGETLNu16": {"ARM": ["NVGetLane","1","1","0","1","0","0b1011"]},
+    "VGETLNi32": {"ARM": ["NVGetLane","1","1","0","0","0","0b1011","0b00"]}
+  }
+}

@@ -1,0 +1,682 @@
+MMR6Arch	1	opstr	0
+MMDecodeDisambiguatedBy	1	Name	1	DecodeDisambiguates
+BC16_FM_MM16R6	0	0
+BEQZC_BNEZC_FM_MM16R6	1	op	0	15-10=op	9-7=rs	6-0=offset
+POOL16C_JALRC_FM_MM16R6	1	op	0	4-0=op	15-10=0x11	9-5=rs
+POP35_BOVC_FM_MMR6	1	instr_asm	2	MMR6Arch	MipsR6Inst	31-26=0b011101	20-16=rs	15-0=offset	25-21=rt
+POP37_BNVC_FM_MMR6	1	instr_asm	2	MMR6Arch	MipsR6Inst	31-26=0b011111	20-16=rs	15-0=offset	25-21=rt
+POOL16C_JRCADDIUSP_FM_MM16R6	1	op	0	4-0=op	15-10=0x11	9-5=imm
+POOL16C_LWM_SWM_FM_MM16R6	1	funct	0	15-10=0x11	7-4=addr	9-8=rt	3-0=funct
+POOL32A_BITSWAP_FM_MMR6	1	funct	1	MipsR6Inst	31-26=0b000000	15-12=0b0000	20-16=rd	5-0=0b111100	11-6=funct	25-21=rt
+CACHE_PREF_FM_MMR6	2	opgroup	funct	1	MipsR6Inst	31-26=opgroup	11-0=addr	15-12=funct	20-16=addr	25-21=hint
+ARITH_FM_MMR6	2	instr_asm	funct	1	MMR6Arch	9-0=funct	31-26=0	15-11=rd	20-16=rs	25-21=rt
+ADDI_FM_MMR6	2	instr_asm	op	1	MMR6Arch	31-26=op	20-16=rs	15-0=imm16	25-21=rt
+LB32_FM_MMR6	0	0
+LBU32_FM_MMR6	0	0
+PCREL19_FM_MMR6	1	funct	1	MipsR6Inst	18-0=imm	31-26=0b011110	20-19=funct	25-21=rt
+PCREL16_FM_MMR6	1	funct	1	MipsR6Inst	31-26=0b011110	20-16=funct	15-0=imm	25-21=rt
+POOL32A_FM_MMR6	1	funct	1	MipsR6Inst	9-0=funct	31-26=0b000000	15-11=rd	20-16=rs	25-21=rt
+POOL32A_PAUSE_FM_MMR6	2	instr_asm	op	1	MMR6Arch	10-6=0	31-26=0	15-11=op	20-16=0	5-0=0	25-21=0
+POOL32A_RDPGPR_FM_MMR6	1	funct	0	31-26=0	15-6=funct	20-16=rd	5-0=0b111100	25-21=rt
+POOL32A_RDHWR_FM_MMR6	0	0
+POOL32A_SYNC_FM_MMR6	0	0
+POOL32I_SYNCI_FM_MMR6	0	0
+POOL32A_2R_FM_MMR6	1	funct	1	MipsR6Inst	31-26=0b000000	15-6=funct	20-16=rs	5-0=0b111100	25-21=rt
+SPECIAL_2R_FM_MMR6	1	funct	1	MipsR6Inst	10-6=0b00001	31-26=0b000000	15-11=rt	20-16=0b00000	5-0=funct	25-21=rs
+POOL32A_ALIGN_FM_MMR6	1	funct	1	MipsR6Inst	8-6=0b000	31-26=0b000000	10-9=bp	15-11=rd	20-16=rt	5-0=funct	25-21=rs
+AUI_FM_MMR6	0	0
+POOL32A_LSA_FM	1	funct	1	MipsR6Inst	8-6=0b000	31-26=0b000000	10-9=imm2	15-11=rd	20-16=rs	5-0=funct	25-21=rt
+SB32_SH32_STORE_FM_MMR6	1	op	0	31-26=op	20-16=base	15-0=offset	25-21=rt
+LOAD_WORD_FM_MMR6	0	0
+LOAD_UPPER_IMM_FM_MMR6	0	0
+CMP_BRANCH_1R_RT_OFF16_FM_MMR6	2	instr_asm	funct	2	MMR6Arch	MipsR6Inst	31-26=funct	20-16=0b00000	15-0=offset	25-21=rt
+CMP_BRANCH_1R_BOTH_OFF16_FM_MMR6	2	instr_asm	funct	2	MMR6Arch	MipsR6Inst	31-26=funct	20-16=rt	15-0=offset	25-21=rt
+POOL32A_JALRC_FM_MMR6	2	instr_asm	funct	2	MMR6Arch	MipsR6Inst	31-26=0	15-6=funct	20-16=rs	5-0=0b111100	25-21=rt
+POOL32A_EXT_INS_FM_MMR6	2	instr_asm	funct	2	MMR6Arch	MipsR6Inst	10-6=pos	31-26=0	15-11=size	20-16=rs	5-0=funct	25-21=rt
+POOL32A_ERET_FM_MMR6	2	instr_asm	funct	1	MMR6Arch	31-26=0x00	25-16=0x00	15-6=funct	5-0=0x3c
+ERETNC_FM_MMR6	1	instr_asm	1	MMR6Arch	31-26=0x00	15-6=0x3cd	25-17=0x00	5-0=0x3c	16-16=0x01
+BREAK_MMR6_ENC	1	instr_asm	1	MMR6Arch	31-26=0x0	25-16=code_1	15-6=code_2	5-0=0x07
+BARRIER_MMR6_ENC	2	instr_asm	op	1	MMR6Arch	10-6=0x0	31-26=0x0	15-11=op	20-16=0x0	5-0=0x0	25-21=0x0
+POOL32A_EIDI_MMR6_ENC	2	instr_asm	funct	1	MMR6Arch	31-26=0x00	15-6=funct	20-16=rt	5-0=0x3c	25-21=0x00
+SHIFT_MMR6_ENC	3	instr_asm	funct	rotate	1	MMR6Arch	9-0=funct	31-26=0	15-11=shamt	20-16=rt	25-21=rd
+SW32_FM_MMR6	2	instr_asm	op	1	MMR6Arch	31-26=op	20-16=addr	15-0=addr	25-21=rt
+POOL32F_ARITH_FM_MMR6	3	instr_asm	fmt	funct	2	MMR6Arch	MipsR6Inst	31-26=0b010101	7-0=funct	15-11=fd	20-16=fs	9-8=fmt	25-21=ft
+POOL32F_ARITHF_FM_MMR6	3	instr_asm	fmt	funct	2	MMR6Arch	MipsR6Inst	31-26=0b010101	10-9=fmt	15-11=fd	20-16=fs	8-0=funct	25-21=ft
+POOL32F_MOV_NEG_FM_MMR6	3	instr_asm	fmt	funct	2	MMR6Arch	MipsR6Inst	12-6=funct	31-26=0b010101	14-13=fmt	20-16=fs	5-0=0b111011	25-21=ft
+POOL32F_MINMAX_FM	3	instr_asm	fmt	funct	2	MMR6Arch	MipsR6Inst	31-26=0b010101	10-9=fmt	15-11=fd	20-16=fs	8-0=funct	25-21=ft
+POOL32F_CMP_FM	3	instr_asm	format	FIELD_CMP_COND Cond	2	MMR6Arch	MipsR6Inst	10-6=Cond.Value	31-26=0b010101	15-11=fd	20-16=fs	5-0=format	25-21=ft
+POOL32F_CVT_LW_FM	3	instr_asm	fmt	funct	2	MMR6Arch	MipsR6Inst	31-26=0b010101	20-16=fs	5-0=0b111011	13-6=funct	25-21=ft
+POOL32F_CVT_DS_FM	3	instr_asm	fmt	funct	2	MMR6Arch	MipsR6Inst	12-6=funct	31-26=0b010101	14-13=fmt	20-16=fs	5-0=0b111011	25-21=ft
+POOL32F_ABS_FM_MMR6	3	instr_asm	fmt	funct	2	MMR6Arch	MipsR6Inst	12-6=funct	31-26=0b010101	14-13=fmt	20-16=fs	5-0=0b111011	25-21=ft
+POOL32F_MATH_FM_MMR6	3	instr_asm	fmt	funct	2	MMR6Arch	MipsR6Inst	31-26=0b010101	20-16=fs	5-0=0b111011	13-6=funct	25-21=ft
+POOL16A_ADDU16_FM_MMR6	0	0
+POOL16C_AND16_FM_MMR6	0	0
+POOL16C_NOT16_FM_MMR6	0	0
+POOL16C_MOVEP16_FM_MMR6	0	0
+POOL16C_OR16_XOR16_FM_MMR6	1	op	0	6-4=rs	15-10=0b010001	9-7=rt	3-0=op
+POOL16C_BREAKPOINT_FM_MMR6	1	op	0	15-10=0b010001	5-0=op	9-6=code_
+POOL16A_SUBU16_FM_MMR6	0	0
+POOL32A_WRPGPR_WSBH_FM_MMR6	2	instr_asm	funct	2	MMR6Arch	MipsR6Inst	31-26=0x00	15-6=funct	20-16=rs	5-0=0x3c	25-21=rt
+POOL32F_RECIP_ROUND_FM_MMR6	3	instr_asm	fmt	funct	2	MMR6Arch	MipsR6Inst	31-26=0b010101	20-16=fs	5-0=0b111011	13-6=funct	25-21=ft
+POOL32F_RINT_FM_MMR6	2	instr_asm	fmt	2	MMR6Arch	MipsR6Inst	31-26=0b010101	10-9=fmt	15-11=0	20-16=fd	8-0=0b000100000	25-21=fs
+POOL32F_SEL_FM_MMR6	3	instr_asm	fmt	funct	2	MMR6Arch	MipsR6Inst	31-26=0b010101	10-9=fmt	15-11=fd	20-16=fs	8-0=funct	25-21=ft
+POOL32F_CLASS_FM_MMR6	3	instr_asm	fmt	funct	2	MMR6Arch	MipsR6Inst	31-26=0b010101	10-9=fmt	15-11=0b00000	20-16=fd	8-0=funct	25-21=fs
+POOL32A_TLBINV_FM_MMR6	2	instr_asm	funct	2	MMR6Arch	MipsR6Inst	31-26=0x0	25-16=0x0	15-6=funct	5-0=0b111100
+POOL32A_MFTC0_FM_MMR6	3	instr_asm	funct	opcode	2	MMR6Arch	MipsR6Inst	10-6=funct	13-11=sel	31-26=0b000000	20-16=rs	5-0=opcode	15-14=0	25-21=rt
+POOL32A_GINV_FM_MMR6	2	instr_asm	ginv	2	MMR6Arch	MipsR6Inst	8-6=0b101	31-26=0x0	10-9=type	20-16=rs	5-0=0b111100	15-13=0b011	12-11=ginv	25-21=0x0
+POOL32F_MFTC1_FM_MMR6	2	instr_asm	funct	1	MMR6Arch	31-26=0b010101	20-16=fs	5-0=0b111011	13-6=funct	15-14=0	25-21=rt
+POOL32A_MFTC2_FM_MMR6	2	instr_asm	funct	2	MMR6Arch	MipsR6Inst	31-26=0b000000	15-6=funct	20-16=impl	5-0=0b111100	25-21=rt
+CMP_BRANCH_2R_OFF16_FM_MMR6	2	opstr	funct	2	MMR6Arch	MipsR6Inst	31-26=funct	20-16=rs	15-0=offset	25-21=rt
+POOL32A_DVPEVP_FM_MMR6	2	instr_asm	funct	2	MMR6Arch	MipsR6Inst	31-26=0b000000	15-6=funct	20-16=rs	5-0=0b111100	25-21=0b00000
+CMP_BRANCH_OFF21_FM_MMR6	1	funct	1	MipsR6Inst	20-0=offset	31-26=funct	25-21=rs
+POOL32I_BRANCH_COP_1_2_FM_MMR6	2	instr_asm	funct	1	MMR6Arch	31-26=0b010000	20-16=rt	15-0=offset	25-21=funct
+LDWC1_SDWC1_FM_MMR6	2	instr_asm	funct	1	MMR6Arch	31-26=funct	20-16=base	15-0=offset	25-21=ft
+POOL32B_LDWC2_SDWC2_FM_MMR6	2	instr_asm	funct	2	MMR6Arch	MipsR6Inst	31-26=0b001000	15-12=funct	20-16=base	10-0=offset	25-21=rt
+POOL32C_LL_E_SC_E_FM_MMR6	3	instr_asm	majorFunc	minorFunc	2	MMR6Arch	MipsR6Inst	11-9=minorFunc	31-26=0b011000	15-12=majorFunc	20-16=base	8-0=offset	25-21=rt
+ADD_MMR6_ENC	2	"add"	0x110	0
+BEQZALC_MMR6_DESC	3	"beqzalc"	brtarget_mm	GPR32Opnd	0
+BGEZALC_MMR6_DESC	3	"bgezalc"	brtarget_mm	GPR32Opnd	0
+BGTZALC_MMR6_DESC	3	"bgtzalc"	brtarget_mm	GPR32Opnd	0
+BLEZALC_MMR6_DESC	3	"blezalc"	brtarget_mm	GPR32Opnd	0
+BLTZALC_MMR6_DESC	3	"bltzalc"	brtarget_mm	GPR32Opnd	0
+BNEZALC_MMR6_DESC	3	"bnezalc"	brtarget_mm	GPR32Opnd	0
+BLTZC_MMR6_DESC	3	"bltzc"	brtarget_lsl2_mm	GPR32Opnd	0
+BGEC_MMR6_DESC	3	"bgec"	brtarget_lsl2_mm	GPR32Opnd	0
+BALC_MMR6_DESC	2	"balc"	brtarget26_mm	0
+BC_MMR6_DESC	2	"bc"	brtarget26_mm	0
+BC16_MMR6_DESC	6	(outs)	(ins brtarget10_mm:$offset)	!strconcat("bc16"	"\t$offset")	[]	FrmI	0
+BEQZC_BNEZC_MM16R6_DESC_BASE	1	instr_asm	2	MMR6Arch	CBranchZeroMM
+BEQZC16_MMR6_DESC	1	"beqzc16"	0
+BITSWAP_MMR6_DESC	2	"bitswap"	GPR32Opnd	0
+CACHE_MMR6_DESC	2	"cache"	mem_mm_12	0
+LB_MMR6_DESC	3	"lb"	mem_mm_16	GPR32Opnd	0
+CLO_MMR6_DESC	2	"clo"	GPR32Opnd	0
+JALRC16_MMR6_DESC	2	"jalr"	GPR32Opnd	0
+JIALC_MMR6_DESC	3	"jialc"	calloffset16	GPR32Opnd	0
+JIC_MMR6_DESC	3	"jic"	jmpoffset16	GPR32Opnd	0
+JRC16_MMR6_DESC_BASE	2	opstr	RegisterOperand RO	2	MMR6Arch	MicroMipsInst16
+JRC16_MMR6_DESC	2	"jrc16"	GPR32Opnd	0
+ALIGN_MMR6_DESC_BASE	3	instr_asm	RegisterOperand GPROpnd	ImmOpnd	1	MMR6Arch
+ALIGN_MMR6_DESC	3	"align"	GPR32Opnd	uimm2	0
+AUI_MMR6_DESC	2	"aui"	GPR32Opnd	0
+ALUIPC_MMR6_DESC	2	"aluipc"	GPR32Opnd	0
+LSA_MMR6_DESC	3	"lsa"	GPR32Opnd	uimm2_plus1	0
+ADDIUPC_MMR6_DESC	3	"addiupc"	GPR32Opnd	simm19_lsl2	0
+SELEQZ_MMR6_DESC	2	"seleqz"	GPR32Opnd	0
+WAIT_MMR6_DESC	1	"wait"	0
+DIV_MMR6_DESC	3	"div"	GPR32Opnd	sdiv	0
+XOR_MMR6_DESC	4	"xor"	GPR32Opnd	1	xor	0
+WRPGPR_MMR6_DESC	2	"wrpgpr"	GPR32Opnd	0
+MTC1_MMR6_DESC_BASE	4	opstr	RegisterOperand DstRC	RegisterOperand SrcRC	OpNode = null_frag	1	MipsR6Inst
+MTC1_64_MMR6_DESC_BASE	3	opstr	RegisterOperand DstRC	RegisterOperand SrcRC	1	MipsR6Inst
+MTC2_MMR6_DESC_BASE	3	opstr	RegisterOperand DstRC	RegisterOperand SrcRC	0
+MTC0_MMR6_DESC	3	"mtc0"	COP0Opnd	GPR32Opnd	0
+MFC1_MMR6_DESC_BASE	4	opstr	RegisterOperand DstRC	RegisterOperand SrcRC	OpNode = null_frag	1	MipsR6Inst
+MFC2_MMR6_DESC_BASE	3	opstr	RegisterOperand DstRC	RegisterOperand SrcRC	0
+MFC0_MMR6_DESC	3	"mfc0"	GPR32Opnd	COP0Opnd	0
+SDC1_D64_MMR6_DESC	2	class SDC1_D64_MMR6_DESC : MipsR6Inst	HARDFLOAT	0
+ABSS_FT_MMR6_DESC_BASE	4	instr_asm	RegisterOperand DstRC	RegisterOperand SrcRC	OpNode = null_frag	2	NeverHasSideEffects	HARDFLOAT
+FLOOR_L_S_MMR6_DESC	3	"floor.l.s"	FGR64Opnd	FGR32Opnd	0
+SB_MMR6_DESC	2	"sb"	GPR32Opnd	0
+AND16_MMR6_DESC	2	"and16"	GPRMM16Opnd	0
+OR16_MMR6_DESC	2	"or16"	GPRMM16Opnd	0
+XOR16_MMR6_DESC	2	"xor16"	GPRMM16Opnd	0
+LUI_MMR6_DESC	1	"lui"	0
+SYNC_MMR6_DESC	1	"sync"	0
+SYNCI_MMR6_DESC	2	"synci"	mem_mm_16	0
+RDPGPR_MMR6_DESC	1	"rdpgpr"	0
+SDBBP_MMR6_DESC	0	0
+JumpLinkMMR6	2	Instruction JumpInst	DAGOperand Opnd	2	PseudoInstExpansion	PseudoSE
+POOL32A_2R_FMT	2	opstr	op	1	MMDSPInst	31-26=0b000000	15-6=op	20-16=rs	5-0=0b111100	25-21=rt
+POOL32A_2RAC_FMT	2	opstr	op	1	MMDSPInst	31-26=0b000000	20-16=rs	5-0=0b111100	13-6=op	15-14=ac	25-21=rt
+POOL32A_3RB0_FMT	2	opstr	op	1	MMDSPInst	9-0=op	31-26=0b000000	15-11=rd	20-16=rs	25-21=rt
+POOL32A_2RSA4_FMT	2	opstr	op	1	MMDSPInst	31-26=0b000000	11-0=op	15-12=sa	20-16=rs	25-21=rt
+POOL32A_2RSA3_FMT	2	opstr	op	1	MMDSPInst	12-6=op	31-26=0b000000	20-16=rs	5-0=0b111100	15-13=sa	25-21=rt
+POOL32A_2RSA5B0_FMT	2	opstr	op	1	MMDSPInst	9-0=op	31-26=0b000000	15-11=sa	20-16=rs	25-21=rt
+POOL32A_2RSA4B0_FMT	2	opstr	op	1	MMDSPInst	31-26=0b000000	15-12=sa	20-16=rs	10-0=op	25-21=rt
+POOL32A_2RSA4OP6_FMT	2	opstr	op	1	MMDSPInst	31-26=0b000000	15-12=sa	20-16=rs	5-0=0b111100	11-6=op	25-21=rt
+POOL32A_1RIMM5AC_FMT	2	opstr	funct	1	MMDSPInst	31-26=0b000000	20-16=imm	5-0=0b111100	13-6=funct	15-14=ac	25-21=rt
+POOL32A_2RSA5_FMT	2	opstr	op	1	MMDSPInst	31-26=0b000000	15-11=sa	20-16=rs	10-0=op	25-21=rt
+POOL32A_1RMEMB0_FMT	2	opstr	funct	1	MMDSPInst	9-0=funct	31-26=0	15-11=rd	20-16=base	25-21=index
+POOL32A_1RAC_FMT	2	instr_asm	funct	1	MMDSPInst	31-26=0	20-16=rs	5-0=0b111100	13-6=funct	15-14=ac	25-21=0
+POOL32A_1RMASK7_FMT	2	opstr	op	1	MMDSPInst	31-26=0b000000	20-14=mask	5-0=0b111100	13-6=op	25-21=rt
+POOL32A_1RIMM10_FMT	2	opstr	op	1	MMDSPInst	9-0=op	31-26=0	25-16=imm	15-11=rd
+POOL32A_1RIMM8_FMT	2	opstr	op	1	MMDSPInst	31-26=0	20-13=imm	5-0=0b111100	11-6=op	25-21=rt
+POOL32A_4B0SHIFT6AC4B0_FMT	2	opstr	op	1	MMDSPInst	13-10=0b0000	25-22=0b0000	9-0=op	31-26=0b000000	15-14=ac	21-16=shift
+POOL32A_5B01RAC_FMT	2	opstr	op	1	MMDSPInst	31-26=0b000000	20-16=rs	5-0=0b111100	13-6=op	15-14=ac	25-21=0b00000
+POOL32I_IMMB0_FMT	2	opstr	op	1	MMDSPInst	31-26=0b010000	20-16=0	15-0=offset	25-21=op
+POOL32A_2RBP_FMT	1	opstr	1	MMDSPInst	31-26=0	20-16=rs	5-0=0b111100	13-6=0b00100010	15-14=bp	25-21=rt
+POOL32A_2RB0_FMT	2	opstr	op	1	MMDSPInst	9-0=op	31-26=0	15-10=0	20-16=rs	25-21=rt
+POOL32S_3RB0_FMT	2	opstr	op	1	MMDSPInst	9-0=op	31-26=0b010110	15-11=rd	20-16=rs	25-21=rt
+POOL32A_2R2B0_FMT	2	opstr	op	1	MMDSPInst	9-0=op	31-26=0	15-11=0	20-16=rs	25-21=rt
+ADDQ_PH_MM_ENC	2	"addq.ph"	0b00000001101	0
+ABSQ_S_PH_MM_DESC	3	"absq_s.ph"	int_mips_absq_s_ph	DSPROpnd	0
+SHLL_PH_MM_DESC	5	"shll.ph"	null_frag	immZExt4	DSPROpnd	uimm4	0
+SHLLV_PH_MM_DESC	3	"shllv.ph"	int_mips_shll_ph	DSPROpnd	0
+EXT_MM_1R_DESC_BASE	1	instr_asm	0
+EXTP_MM_DESC	1	"extp"	0
+MFHI_MM_DESC	3	"mfhi"	ACC64DSPOpnd	MipsMFHI	0
+RDDSP_MM_DESC	0	0
+ABSS_MMM	2	opstr	OpNode = null_frag	0
+C_COND_MM	3	TypeStr	RegisterOperand RC	fmt	0
+MicroMipsInstBase	5	outs	ins	asmstr	pattern	Format f	2	PredicateControl	Instruction
+MicroMipsInst16	5	outs	ins	asmstr	pattern	Format f	1	MicroMipsInstBase
+ARITH_FM_MM16	1	funct	0	6-4=rt	15-10=0x01	9-7=rd	3-1=rs
+ANDI_FM_MM16	1	funct	0	6-4=rs	15-10=funct	9-7=rd	3-0=imm
+LOGIC_FM_MM16	1	funct	0	15-10=0x11	2-0=rs	9-6=funct	5-3=rt
+SHIFT_FM_MM16	1	funct	0	6-4=rt	15-10=0x09	9-7=rd	3-1=shamt
+ADDIUR2_FM_MM16	0	0
+LOAD_STORE_FM_MM16	1	op	0	6-4=addr	15-10=op	9-7=rt	3-0=addr
+LOAD_STORE_SP_FM_MM16	1	op	0	4-0=offset	15-10=op	9-5=rt
+LOAD_GP_FM_MM16	1	op	0	15-10=op	9-7=rt	6-0=offset
+ADDIUS5_FM_MM16	0	0
+ADDIUSP_FM_MM16	0	0
+MOVE_FM_MM16	1	funct	0	4-0=rs	15-10=funct	9-5=rd
+LI_FM_MM16	0	0
+JALR_FM_MM16	1	op	0	4-0=rs	15-10=0x11	9-5=op
+MFHILO_FM_MM16	1	funct	0	4-0=rd	15-10=0x11	9-5=funct
+JRADDIUSP_FM_MM16	1	op	0	4-0=imm	15-10=0x11	9-5=op
+ADDIUR1SP_FM_MM16	0	0
+BRKSDBBP16_FM_MM	1	op	0	15-10=0x11	9-4=op	3-0=code_
+BEQNEZ_FM_MM16	1	op	0	15-10=op	9-7=rs	6-0=offset
+B16_FM	0	0
+MOVEP_FM_MM16	0	0
+MMArch	0	0
+ADDI_FM_MM	1	op	1	MMArch	31-26=op	20-16=rs	15-0=imm16	25-21=rt
+SLTI_FM_MM	1	op	1	MMArch	31-26=op	20-16=rs	15-0=imm16	25-21=rt
+LUI_FM_MM	0	0
+MULT_FM_MM	1	funct	1	MMArch	31-26=0x00	15-6=funct	20-16=rs	5-0=0x3c	25-21=rt
+SRA_FM_MM	2	funct	rotate	1	MMArch	9-0=funct	31-26=0	15-11=shamt	20-16=rt	25-21=rd
+SRLV_FM_MM	2	funct	rotate	1	MMArch	9-0=funct	31-26=0	15-11=rd	20-16=rs	25-21=rt
+LW_FM_MM	1	op	1	MMArch	31-26=op	20-16=base	15-0=offset	25-21=rt
+POOL32C_LHUE_FM_MM	3	op	fmt	funct	1	MMArch	11-9=funct	31-26=op	15-12=fmt	20-16=base	8-0=offset	25-21=rt
+LWL_FM_MM	1	funct	1	MMArch	31-26=0x18	11-0=addr	15-12=funct	20-16=addr	25-21=rt
+POOL32C_STEVA_LDEVA_FM_MM	2	type	funct	1	MMArch	11-9=funct	31-26=0x18	15-12=type	20-16=base	8-0=offset	25-21=rt
+CMov_F_I_FM_MM	1	func	1	MMArch	12-6=func	31-26=0x15	20-16=rs	5-0=0x3b	15-13=fcc	25-21=rd
+MTLO_FM_MM	1	funct	1	MMArch	31-26=0x00	15-6=funct	20-16=rs	5-0=0x3c	25-21=0x00
+MFLO_FM_MM	1	funct	1	MMArch	31-26=0x00	15-6=funct	20-16=rd	5-0=0x3c	25-21=0x00
+CLO_FM_MM	1	funct	1	MMArch	31-26=0x00	15-6=funct	20-16=rs	5-0=0x3c	25-21=rd
+SEB_FM_MM	1	funct	1	MMArch	31-26=0x00	15-6=funct	20-16=rt	5-0=0x3c	25-21=rd
+EXT_FM_MM	1	funct	1	MMArch	10-6=pos	31-26=0x00	15-11=size	20-16=rs	5-0=funct	25-21=rt
+J_FM_MM	1	op	1	MMArch	25-0=target	31-26=op
+JR_FM_MM	1	funct	1	MMArch	20-16=rs	5-0=0x3c	13-6=funct	15-14=0x0	31-21=0x00
+JALR_FM_MM	1	funct	0	31-26=0x00	15-6=funct	20-16=rs	5-0=0x3c	25-21=rd
+BEQ_FM_MM	1	op	1	MMArch	31-26=op	20-16=rs	15-0=offset	25-21=rt
+BGEZ_FM_MM	1	funct	1	MMArch	31-26=0x10	20-16=rs	15-0=offset	25-21=funct
+BGEZAL_FM_MM	1	funct	1	MMArch	31-26=0x10	20-16=rs	15-0=offset	25-21=funct
+SYNC_FM_MM	0	0
+SYNCI_FM_MM	0	0
+BRK_FM_MM	0	0
+SYS_FM_MM	0	0
+WAIT_FM_MM	0	0
+ER_FM_MM	1	funct	1	MMArch	31-26=0x00	25-16=0x00	15-6=funct	5-0=0x3c
+EI_FM_MM	1	funct	1	MMArch	31-26=0x00	15-6=funct	20-16=rt	5-0=0x3c	25-21=0x00
+TEQ_FM_MM	1	funct	1	MMArch	31-26=0x00	15-12=code_	20-16=rs	5-0=0x3c	11-6=funct	25-21=rt
+TEQI_FM_MM	1	funct	1	MMArch	31-26=0x10	20-16=rs	15-0=imm16	25-21=funct
+LL_FM_MM	1	funct	1	MMArch	31-26=0x18	11-0=addr	15-12=funct	20-16=addr	25-21=rt
+LLE_FM_MM	1	funct	1	MMArch	11-9=0x6	31-26=0x18	15-12=funct	20-16=base	8-0=offset	25-21=rt
+ADDS_FM_MM	2	fmt	funct	1	MMArch	31-26=0x15	7-0=funct	15-11=fd	20-16=fs	9-8=fmt	25-21=ft
+LWXC1_FM_MM	1	funct	1	MMArch	31-26=0x15	10-9=0x0	15-11=fd	20-16=base	8-0=funct	25-21=index
+SWXC1_FM_MM	1	funct	1	MMArch	31-26=0x15	10-9=0x0	15-11=fs	20-16=base	8-0=funct	25-21=index
+CEQS_FM_MM	1	fmt	1	MMArch	31-26=0x15	11-10=fmt	20-16=fs	5-0=0x3c	9-6=cond	15-13=fcc	25-21=ft
+C_COND_FM_MM	2	bits <2> fmt	c	1	CEQS_FM_MM
+BC1F_FM_MM	1	tf	1	MMArch	31-26=0x10	17-16=0x0	20-18=fcc	15-0=offset	25-21=tf
+ROUND_W_FM_MM	2	fmt	funct	1	MMArch	31-26=0x15	20-16=fs	5-0=0x3b	13-6=funct	25-21=fd
+ABS_FM_MM	2	fmt	funct	1	MMArch	12-6=funct	31-26=0x15	14-13=fmt	20-16=fs	5-0=0x3b	25-21=fd
+CMov_F_F_FM_MM	2	func	fmt	1	MMArch	31-26=0x15	10-9=fmt	20-16=fs	15-13=fcc	8-0=func	12-11=0x0	25-21=fd
+CMov_I_F_FM_MM	2	funct	fmt	1	MMArch	31-26=0x15	7-0=funct	15-11=fd	20-16=fs	9-8=fmt	25-21=rt
+MFC1_FM_MM	1	funct	1	MMArch	31-26=0x15	20-16=fs	5-0=0x3b	13-6=funct	15-14=0x0	25-21=rt
+MADDS_FM_MM	1	funct	1	MMArch	10-6=fr	31-26=0x15	15-11=fd	20-16=fs	5-0=funct	25-21=ft
+COMPACT_BRANCH_FM_MM	1	funct	0	31-26=0x10	20-16=rs	15-0=offset	25-21=funct
+COP0_TLB_FM_MM	1	op	1	MMArch	31-26=0x0	25-16=0x0	15-6=op	5-0=0x3c
+SDBBP_FM_MM	0	0
+SIGRIE_FM_MM	0	0
+RDHWR_FM_MM	0	0
+LWXS_FM_MM	1	funct	0	9-0=funct	31-26=0x0	15-11=rd	20-16=base	25-21=index
+LWM_FM_MM	1	funct	1	MMArch	31-26=0x8	11-0=addr	15-12=funct	20-16=addr	25-21=rt
+LWM_FM_MM16	1	funct	1	MMArch	15-10=0x11	9-6=funct	3-0=addr	5-4=rt
+CACHE_PREF_FM_MM	2	op	funct	1	MMArch	31-26=op	11-0=offset	15-12=funct	20-16=base	25-21=hint
+CACHE_PREFE_FM_MM	2	op	funct	1	MMArch	11-9=funct	31-26=op	15-12=0xA	20-16=base	8-0=offset	25-21=hint
+POOL32F_PREFX_FM_MM	2	op	funct	1	MMArch	31-26=op	10-9=0x0	15-11=hint	20-16=base	8-0=funct	25-21=index
+BARRIER_FM_MM	1	op	1	MMArch	10-6=0x0	31-26=0x0	15-11=op	20-16=0x0	5-0=0x0	25-21=0x0
+ADDIUPC_FM_MM	0	0
+POOL32A_CFTC2_FM_MM	1	funct	1	MMArch	31-26=0b000000	15-6=funct	20-16=impl	5-0=0b111100	25-21=rt
+POOL32A_TLBINV_FM_MM	1	funct	1	MMArch	31-26=0x0	25-16=0x0	15-6=funct	5-0=0b111100
+POOL32A_MFTC0_FM_MM	2	funct	opcode	1	MMArch	10-6=funct	13-11=sel	31-26=0b000000	20-16=rs	5-0=opcode	15-14=0	25-21=rt
+POOL32A_HYPCALL_FM_MM	0	0
+mem_mm_4_generic	1	i32	0
+CompactBranchMM	3	opstr	DAGOperand opnd	RegisterOperand RO	1	InstSE
+StoreLeftRightMM	4	opstr	SDNode OpNode	RegisterOperand RO	MemOpnd	1	InstSE
+MovePMM16	4	opstr	RegisterOperand RO1	RegisterOperand RO2	RegisterOperand RO3	1	MicroMipsInst16
+StorePairMM	1	opstr	1	InstSE
+LoadPairMM	1	opstr	1	InstSE
+LLBaseMM	2	opstr	RegisterOperand RO	1	InstSE
+LLEBaseMM	2	opstr	RegisterOperand RO	1	InstSE
+SCBaseMM	2	opstr	RegisterOperand RO	1	InstSE
+SCEBaseMM	2	opstr	RegisterOperand RO	1	InstSE
+LoadMM	4	opstr	DAGOperand RO	OpNode = null_frag	DAGOperand MO = mem_mm_12	1	InstSE
+ArithRMM16	4	opstr	RegisterOperand RO	isComm = 0	OpNode = null_frag	1	MicroMipsInst16
+AndImmMM16	2	opstr	RegisterOperand RO	1	MicroMipsInst16
+NotMM16	2	opstr	RegisterOperand RO	1	MicroMipsInst16
+StoreMM16	3	opstr	DAGOperand RTOpnd	MemOpnd	1	MicroMipsInst16
+LoadSPMM16	3	opstr	DAGOperand RO	MemOpnd	1	MicroMipsInst16
+StoreSPMM16	3	opstr	DAGOperand RO	MemOpnd	1	MicroMipsInst16
+LoadGPMM16	3	opstr	DAGOperand RO	MemOpnd	1	MicroMipsInst16
+AddImmUR2	2	opstr	RegisterOperand RO	1	MicroMipsInst16
+AddImmUS5	2	opstr	RegisterOperand RO	1	MicroMipsInst16
+AddImmUR1SP	2	opstr	RegisterOperand RO	1	MicroMipsInst16
+MoveMM16	2	opstr	RegisterOperand RO	1	MicroMipsInst16
+LoadImmMM16	3	opstr	Od	RegisterOperand RO	1	MicroMipsInst16
+JumpLinkRegMM16	2	opstr	RegisterOperand RO	1	MicroMipsInst16
+JumpRegMM16	2	opstr	RegisterOperand RO	1	MicroMipsInst16
+JumpRAddiuStackMM16	5	(outs)	(ins uimm5_lsl2:$imm)	"jraddiusp\t$imm"	[]	FrmR	0
+JumpLinkRegSMM16	2	opstr	RegisterOperand RO	1	MicroMipsInst16
+JumpRegCMM16	2	opstr	RegisterOperand RO	1	MicroMipsInst16
+BrkSdbbp16MM	1	opstr	1	MicroMipsInst16
+JumpLinkMM	2	opstr	DAGOperand opnd	1	InstSE
+JumpLinkRegMM	2	opstr	RegisterOperand RO	1	InstSE
+LoadWordMultMM	1	instr_asm	1	MipsAsmPseudoInst
+UncondBranchMMPseudo	1	opstr	1	MipsAsmPseudoInst
+AdditionalRequires	1	list<Predicate> preds	0
+Proc	2	Name	list<SubtargetFeature> Features	1	ProcessorModel
+MipsInst16	4	outs	ins	asmstr	pattern	1	MipsInst16_Base	15-11=Opcode
+MipsInst16_32	4	outs	ins	asmstr	pattern	1	MipsInst16_Base
+MipsInst16_EXTEND	4	outs	ins	asmstr	pattern	1	MipsInst16_32	31-27=0b11110
+MipsPseudo16	4	outs	ins	asmstr	pattern	1	MipsInst16
+FI16	5	op	outs	ins	asmstr	pattern	1	MipsInst16	10-0=imm11
+FRI16	5	op	outs	ins	asmstr	pattern	1	MipsInst16	10-8=rx	7-0=imm8
+FRR16	5	_funct	outs	ins	asmstr	pattern	1	MipsInst16	4-0=funct	10-8=rx	7-5=ry
+FRRBreak16	4	outs	ins	asmstr	pattern	1	MipsInst16	10-5=Code	4-0=funct
+FRR_SF16	6	_funct	_subfunct	outs	ins	asmstr	pattern	1	MipsInst16	4-0=funct	10-8=rx	7-5=subfunct
+FC16	5	_funct	outs	ins	asmstr	pattern	1	MipsInst16	10-5=_code	4-0=funct
+FRR16_JALRC	7	_nd	_l	r_a	outs	ins	asmstr	pattern	1	MipsInst16	4-0=0	10-8=rx
+FRRI16	5	op	outs	ins	asmstr	pattern	1	MipsInst16	4-0=imm5	10-8=rx	7-5=ry
+FRRR16	5	_f	outs	ins	asmstr	pattern	1	MipsInst16	1-0=f	10-8=rx	4-2=rz	7-5=ry
+FRRI_A16	5	_f	outs	ins	asmstr	pattern	1	MipsInst16	10-8=rx	7-5=ry	3-0=imm4
+FSHIFT16	5	_f	outs	ins	asmstr	pattern	1	MipsInst16	1-0=f	10-8=rx	4-2=sa	7-5=ry
+FI816	5	_func	outs	ins	asmstr	pattern	1	MipsInst16	10-8=func	7-0=imm8
+FI8_MOVR3216	4	outs	ins	asmstr	pattern	1	MipsInst16	10-8=0b111	7-4=ry	3-0=r32
+FI8_MOV32R16	4	outs	ins	asmstr	pattern	1	MipsInst16	10-8=0b101	2-0=rz	4-3=r32	7-5=r32
+FI8_SVRS16	5	_s	outs	ins	asmstr	pattern	1	MipsInst16	10-8=0b100	3-0=framesize
+FJAL16	5	_X	outs	ins	asmstr	pattern	1	MipsInst16_32	31-27=0b00011	20-16=imm26	15-0=imm26	25-21=imm26
+FEXT_I16	5	_eop	outs	ins	asmstr	pattern	1	MipsInst16_EXTEND	10-5=0	4-0=imm16	15-11=eop	26-21=imm16	20-16=imm16
+FASMACRO16	4	outs	ins	asmstr	pattern	1	MipsInst16_EXTEND	4-0=p0	10-8=p2	15-11=RRR	20-16=p3	23-21=p4	26-24=select	7-5=p1
+FEXT_RI16	5	_op	outs	ins	asmstr	pattern	1	MipsInst16_EXTEND	4-0=imm16	10-8=rx	15-11=op	26-21=imm16	20-16=imm16	7-5=0
+FEXT_RRI16	5	_op	outs	ins	asmstr	pattern	1	MipsInst16_EXTEND	4-0=imm16	10-8=rx	15-11=op	26-21=imm16	20-16=imm16	7-5=ry
+FEXT_RRI_A16	5	_f	outs	ins	asmstr	pattern	1	MipsInst16_EXTEND	10-8=rx	26-20=imm15	15-11=0b01000	7-5=ry	19-16=imm15	3-0=imm15
+FEXT_SHIFT16	5	_f	outs	ins	asmstr	pattern	1	MipsInst16_EXTEND	1-0=f	10-8=rx	4-2=0	15-11=0b00110	20-16=0	26-22=sa6	7-5=ry
+FEXT_I816	5	_funct	outs	ins	asmstr	pattern	1	MipsInst16_EXTEND	4-0=imm16	10-8=funct	15-11=I8	26-21=imm16	20-16=imm16	7-5=0
+FEXT_I8_SVRS16	5	s_	outs	ins	asmstr	pattern	1	MipsInst16_EXTEND	10-8=SVRS	15-11=I8	18-16=aregs	23-20=framesize	26-24=xsregs	3-0=framesize
+FI16_ins	2	op	asmstr	1	FI16
+FRI16_B_ins	2	_op	asmstr	1	FRI16
+FJAL16_ins	2	_X	asmstr	1	FJAL16
+FJALB16_ins	2	_X	asmstr	1	FJAL16
+FEXT_I16_ins	2	eop	asmstr	1	FEXT_I16
+FEXT_RI16_ins_base	3	_op	asmstr	asmstr2	1	FEXT_RI16
+FEXT_RRI16_mem_ins	3	op	asmstr	MemOpnd	1	FEXT_RRI16
+FEXT_T8I8I16_ins	2	asmstr	asmstr2	1	MipsPseudo16
+FI8_MOVR3216_ins	1	asmstr	1	FI8_MOVR3216
+FRR16_ins	2	f	asmstr	1	FRR16
+FRRBreakNull16_ins	1	asmstr	1	FRRBreak16
+FRR16R_ins	2	f	asmstr	1	FRR16
+FRRTR16_ins	1	asmstr	1	MipsPseudo16
+FRR16_JALRC_ins	4	nd	l	ra	asmstr	1	FRR16_JALRC
+FRRR16_ins	2	_f	asmstr	1	FRRR16
+SeliT	2	op1	op2	1	MipsPseudo16
+SelT	2	op1	op2	1	MipsPseudo16
+ArithLogic16Defs	1	isCom=0	0
+branch16	0	0
+DAUI_FM	0	0
+BAL_FM	0	0
+NAL_FM	0	0
+COP0_EVP_DVP_FM	1	sc	1	MipsR6Inst	10-6=0b00000	31-26=OPGROUP_COP0.Value	2-0=0b100	4-3=0b00	15-11=0b00000	20-16=rt	25-21=0b01011
+COP1_2R_FM	2	funct	FIELD_FMT Format	1	MipsR6Inst	10-6=fd	31-26=OPGROUP_COP1.Value	15-11=fs	20-16=0b00000	5-0=funct	25-21=Format.Value
+COP1_3R_FM	2	funct	FIELD_FMT Format	1	MipsR6Inst	10-6=fd	31-26=OPGROUP_COP1.Value	15-11=fs	20-16=ft	5-0=funct	25-21=Format.Value
+COP1_BCCZ_FM	1	OPCODE5 Operation	1	MipsR6Inst	31-26=OPGROUP_COP1.Value	20-16=ft	15-0=offset	25-21=Operation.Value
+COP2_BCCZ_FM	1	OPCODE5 Operation	1	MipsR6Inst	31-26=OPGROUP_COP2.Value	20-16=ct	15-0=offset	25-21=Operation.Value
+PCREL16_FM	1	OPCODE5 Operation	1	MipsR6Inst	31-26=OPGROUP_PCREL.Value	20-16=Operation.Value	15-0=imm	25-21=rs
+PCREL19_FM	1	OPCODE2 Operation	1	MipsR6Inst	18-0=imm	31-26=OPGROUP_PCREL.Value	20-19=Operation.Value	25-21=rs
+PCREL18_FM	1	OPCODE3 Operation	1	MipsR6Inst	31-26=OPGROUP_PCREL.Value	17-0=imm	20-18=Operation.Value	25-21=rs
+SPECIAL3_2R_FM	1	OPCODE6 Operation	1	MipsR6Inst	10-6=0b00000	31-26=OPGROUP_SPECIAL3.Value	15-11=rd	20-16=rt	5-0=Operation.Value	25-21=0b00000
+SPECIAL3_MEM_FM	1	OPCODE6 Operation	1	MipsR6Inst	31-26=OPGROUP_SPECIAL3.Value	15-7=offset	20-16=hint	5-0=Operation.Value	25-21=base
+SPECIAL_2R_FM	1	OPCODE6 Operation	1	MipsR6Inst	10-6=0b00001	31-26=OPGROUP_SPECIAL.Value	15-11=rd	20-16=0b00000	5-0=Operation.Value	25-21=rs
+SPECIAL_3R_FM	2	mulop	funct	1	MipsR6Inst	10-6=mulop	31-26=OPGROUP_SPECIAL.Value	15-11=rd	20-16=rt	5-0=funct	25-21=rs
+SPECIAL_SDBBP_FM	0	0
+CMP_BRANCH_2R_OFF16_FM	1	OPGROUP funct	1	MipsR6Inst	31-26=funct.Value	20-16=rt	15-0=offset	25-21=rs
+CMP_BRANCH_1R_RT_OFF16_FM	1	OPGROUP funct	1	MipsR6Inst	31-26=funct.Value	20-16=rt	15-0=offset	25-21=0b00000
+CMP_BRANCH_1R_BOTH_OFF16_FM	1	OPGROUP funct	1	MipsR6Inst	31-26=funct.Value	20-16=rt	15-0=offset	25-21=rt
+CMP_BRANCH_OFF21_FM	1	funct	1	MipsR6Inst	20-0=offset	31-26=funct	25-21=rs
+JMP_IDX_COMPACT_FM	1	funct	1	MipsR6Inst	31-26=funct	20-16=rt	15-0=offset	25-21=0b00000
+BRANCH_OFF26_FM	1	funct	1	MipsR6Inst	25-0=offset	31-26=funct
+SPECIAL3_ALIGN_FM	1	OPCODE6 Operation	1	MipsR6Inst	31-26=OPGROUP_SPECIAL3.Value	10-8=0b010	15-11=rd	20-16=rt	5-0=Operation.Value	7-6=bp	25-21=rs
+SPECIAL3_DALIGN_FM	1	OPCODE6 Operation	1	MipsR6Inst	8-6=bp	31-26=OPGROUP_SPECIAL3.Value	10-9=0b01	15-11=rd	20-16=rt	5-0=Operation.Value	25-21=rs
+SPECIAL3_LL_SC_FM	1	OPCODE6 Operation	1	MipsR6Inst	31-26=OPGROUP_SPECIAL3.Value	15-7=offset	20-16=rt	5-0=Operation.Value	25-21=base
+SPECIAL_LSA_FM	1	OPCODE6 Operation	1	MipsR6Inst	31-26=OPGROUP_SPECIAL.Value	10-8=0b000	15-11=rd	20-16=rt	5-0=Operation.Value	7-6=imm2	25-21=rs
+REGIMM_FM	1	OPCODE5 Operation	1	MipsR6Inst	31-26=OPGROUP_REGIMM.Value	20-16=Operation.Value	15-0=imm	25-21=rs
+COP1_CMP_CONDN_FM	2	FIELD_CMP_FORMAT Format	FIELD_CMP_COND Cond	1	MipsR6Inst	10-6=fd	4-0=Cond.Value	31-26=OPGROUP_COP1.Value	15-11=fs	20-16=ft	25-21=Format.Value
+JR_HB_R6_FM	1	OPCODE6 Operation	1	MipsR6Inst	31-26=OPGROUP_SPECIAL.Value	15-11=0	20-16=0	5-0=Operation.Value	9-6=0	25-21=rs
+COP2LDST_FM	1	OPCODE5 Operation	1	MipsR6Inst	31-26=OPGROUP_COP2LDST.Value	15-11=base	20-16=rt	10-0=offset	25-21=Operation.Value
+SPECIAL3_2R_SZ_CRC	2	sz	direction	1	MipsR6Inst	31-26=OPGROUP_SPECIAL3.Value	10-8=direction	15-11=0b00000	20-16=rt	5-0=0b001111	7-6=sz	25-21=rs
+SPECIAL3_GINV	1	ginv	1	MipsR6Inst	20-10=0x0	31-26=OPGROUP_SPECIAL3.Value	5-0=0b111101	9-8=type_	7-6=ginv	25-21=rs
+SIGRIE_FM	0	0
+ADDIUPC_ENC	1	OPCODE2_ADDIUPC	0
+CMP_CC_M	4	FIELD_CMP_FORMAT Format	Typestr	RegisterOperand FGROpnd	RegisterOperand FGRCCOpnd	0
+PCREL_DESC_BASE	3	instr_asm	RegisterOperand GPROpnd	ImmOpnd	1	MipsR6Arch
+ADDIUPC_DESC	3	"addiupc"	GPR32Opnd	simm19_lsl2	0
+ALIGN_DESC	3	"align"	GPR32Opnd	uimm2	0
+ALUIPC_DESC	2	"aluipc"	GPR32Opnd	0
+AUI_DESC	2	"aui"	GPR32Opnd	0
+BC_DESC_BASE	2	instr_asm	DAGOperand opnd	2	BRANCH_DESC_BASE	MipsR6Arch
+NAL_DESC_BASE	1	instr_asm	2	BRANCH_DESC_BASE	MipsR6Arch
+CMP_BC_DESC_BASE	3	instr_asm	DAGOperand opnd	RegisterOperand GPROpnd	2	BRANCH_DESC_BASE	MipsR6Arch
+CMP_CBR_EQNE_Z_DESC_BASE	3	instr_asm	DAGOperand opnd	RegisterOperand GPROpnd	2	BRANCH_DESC_BASE	MipsR6Arch
+CMP_CBR_RT_Z_DESC_BASE	3	instr_asm	DAGOperand opnd	RegisterOperand GPROpnd	2	BRANCH_DESC_BASE	MipsR6Arch
+BAL_DESC	2	"bal"	brtarget	0
+NAL_DESC	1	"nal"	0
+BALC_DESC	2	"balc"	brtarget26	0
+BC_DESC	2	"bc"	brtarget26	0
+BC1EQZ_DESC	2	"bc1eqz $ft	$offset"	0
+BC2EQZ_DESC	2	"bc2eqz $ct	$offset"	0
+JIALC_DESC	3	"jialc"	calloffset16	GPR32Opnd	0
+JIC_DESC	3	"jic"	jmpoffset16	GPR32Opnd	0
+JR_HB_R6_DESC	2	"jr.hb"	GPR32Opnd	0
+BITSWAP_DESC_BASE	2	instr_asm	RegisterOperand GPROpnd	1	MipsR6Arch
+BITSWAP_DESC	2	"bitswap"	GPR32Opnd	0
+DVPEVP_DESC_BASE	1	instr_asm	1	MipsR6Arch
+DVP_DESC	1	"dvp"	0
+BGEZALC_DESC	3	"bgezalc"	brtarget	GPR32Opnd	0
+BGTZALC_DESC	3	"bgtzalc"	brtarget	GPR32Opnd	0
+BLEZALC_DESC	3	"blezalc"	brtarget	GPR32Opnd	0
+BLTZALC_DESC	3	"bltzalc"	brtarget	GPR32Opnd	0
+BNEZALC_DESC	3	"bnezalc"	brtarget	GPR32Opnd	0
+MUL_R6_DESC_BASE	3	instr_asm	RegisterOperand GPROpnd	Op=null_frag	1	MipsR6Arch
+MUH_DESC	3	"muh"	GPR32Opnd	mulhs	0
+SEL_D_DESC	3	"sel.d"	FGR64Opnd	FGR64CCOpnd	0
+SELEQZ_DESC	2	"seleqz"	GPR32Opnd	0
+MADDF_S_DESC	2	"maddf.s"	FGR32Opnd	0
+MAX_S_DESC	2	"max.s"	FGR32Opnd	0
+SELEQZ_S_DESC	2	"seleqz.s"	FGR32Opnd	0
+RINT_S_DESC	2	"rint.s"	FGR32Opnd	0
+CACHE_DESC	2	"cache"	mem_simm9	0
+LDC2_R6_DESC	2	"ldc2"	COP2Opnd	0
+SDC2_R6_DESC	2	"sdc2"	COP2Opnd	0
+LSA_R6_DESC	3	"lsa"	GPR32Opnd	uimm2_plus1	0
+LL_R6_DESC	3	"ll"	GPR32Opnd	mem_simm9_exp	0
+SC_R6_DESC	2	"sc"	GPR32Opnd	0
+CLO_R6_DESC_BASE	2	instr_asm	RegisterOperand GPROpnd	1	CLO_CLZ_R6_DESC_BASE
+CLZ_R6_DESC_BASE	2	instr_asm	RegisterOperand GPROpnd	1	CLO_CLZ_R6_DESC_BASE
+CLO_R6_DESC	2	"clo"	GPR32Opnd	0
+CRC_DESC_BASE	2	instr_asm	RegisterOperand GPROpnd	1	MipsR6Arch
+CRC32B_DESC	2	"crc32b"	GPR32Opnd	0
+GINVI_DESC	2	"ginvi"	GPR32Opnd	0
+GINVT_DESC	2	"ginvt"	GPR32Opnd	0
+Cmp_Pats	1	ValueType VT	0
+SelectInt_Pats	9	ValueType RC	Instruction OROp	Instruction XORiOp	Instruction SLTiOp	Instruction SLTiuOp	Instruction SELEQZOp	Instruction SELNEZOp	imm_type	ValueType Opg	0
+TailCallRegR6	3	Instruction JumpInst	Register RT	RegisterOperand RO	2	PseudoInstExpansion	PseudoSE
+Count1s	2	opstr	RegisterOperand RO	1	InstSE
+ExtsCins	4	opstr	RegisterOperand RO	PatFrag PosImm	Op = null_frag	1	InstSE
+SetCC64_R	2	opstr	PatFrag cond_op	1	InstSE
+SetCC64_I	2	opstr	PatFrag cond_op	1	InstSE
+CBranchBitNum	6	opstr	DAGOperand opnd	PatFrag cond_op	RegisterOperand RO	ImmOp	shift = 1	1	InstSE
+MFC2OP	2	asmstr	RegisterOperand RO	1	InstSE
+Saa	1	opstr	1	InstSE
+Select_Pseudo	1	RegisterOperand RC	2	PseudoSE	ISA_MIPS1_NOT_4_32
+RADDU_W_QB_FMT	1	op	1	DSPInst	10-6=op	15-11=rd	20-16=0	5-0=0b010000	25-21=rs
+CMP_EQ_QB_R2_FMT	1	op	1	DSPInst	10-6=op	15-11=0	20-16=rt	5-0=0b010001	25-21=rs
+CMP_EQ_QB_R3_FMT	1	op	1	DSPInst	10-6=op	15-11=rd	20-16=rt	5-0=0b010001	25-21=rs
+PRECR_SRA_PH_W_FMT	1	op	1	DSPInst	10-6=op	15-11=sa	20-16=rt	5-0=0b010001	25-21=rs
+ABSQ_S_PH_R2_FMT	1	op	1	DSPInst	10-6=op	15-11=rd	20-16=rt	5-0=0b010010	25-21=0
+REPL_FMT	1	op	1	DSPInst	10-6=op	25-16=imm	15-11=rd	5-0=0b010010
+SHLL_QB_FMT	1	op	1	DSPInst	10-6=op	15-11=rd	20-16=rt	5-0=0b010011	25-21=rs_sa
+LX_FMT	1	op	1	DSPInst	10-6=op	15-11=rd	20-16=index	5-0=0b001010	25-21=base
+ADDUH_QB_FMT	1	op	1	DSPInst	10-6=op	15-11=rd	20-16=rt	5-0=0b011000	25-21=rs
+APPEND_FMT	1	op	1	DSPInst	10-6=op	15-11=sa	20-16=rt	5-0=0b110001	25-21=rs
+DPA_W_PH_FMT	1	op	1	DSPInst	10-6=op	20-16=rt	5-0=0b110000	15-13=0	12-11=ac	25-21=rs
+MULT_FMT	2	opcode	funct	1	DSPInst	10-6=0	20-16=rt	5-0=funct	15-13=0	12-11=ac	25-21=rs
+MFHI_FMT	1	funct	1	DSPInst	10-6=0	25-23=0	31-26=0	15-11=rd	20-16=0	22-21=ac	5-0=funct
+MTHI_FMT	1	funct	1	DSPInst	10-6=0	31-26=0	20-13=0	5-0=funct	12-11=ac	25-21=rs
+EXTR_W_TY1_FMT	1	op	1	DSPInst	10-6=op	20-16=rt	5-0=0b111000	15-13=0	12-11=ac	25-21=shift_rs
+SHILO_R1_FMT	1	op	1	DSPInst	10-6=op	19-13=0	5-0=0b111000	25-20=shift	12-11=ac
+SHILO_R2_FMT	1	op	1	DSPInst	10-6=op	20-13=0	5-0=0b111000	12-11=ac	25-21=rs
+RDDSP_FMT	1	op	1	DSPInst	10-6=op	25-16=mask	15-11=rd	5-0=0b111000
+WRDSP_FMT	1	op	1	DSPInst	10-6=op	20-11=mask	5-0=0b111000	25-21=rs
+BPOSGE32_FMT	1	op	1	DSPInst	20-16=op	15-0=offset	25-21=0
+INSV_FMT	1	op	1	DSPInst	15-6=0	20-16=rt	5-0=op	25-21=rs
+MipsDSPBase	2	Opc	SDTypeProfile Prof	1	SDNode
+Defs	1	list<Register> Regs	0
+ADDU_QB_ENC	1	0b00000	0
+RADDU_W_QB_DESC_BASE	4	instr_asm	OpNode	RegisterOperand ROD	RegisterOperand ROS = ROD	0
+CMP_EQ_QB_R2_DESC_BASE	4	instr_asm	OpNode	RegisterOperand ROS	RegisterOperand ROT = ROS	0
+CMP_EQ_QB_R3_DESC_BASE	5	instr_asm	OpNode	RegisterOperand ROD	RegisterOperand ROS	RegisterOperand ROT = ROS	0
+PRECR_SRA_PH_W_DESC_BASE	4	instr_asm	OpNode	RegisterOperand ROT	RegisterOperand ROS = ROT	0
+ABSQ_S_PH_R2_DESC_BASE	4	instr_asm	OpNode	RegisterOperand ROD	RegisterOperand ROT = ROD	0
+REPL_DESC_BASE	5	instr_asm	OpNode	ImmOp	ImmLeaf immPat	RegisterOperand RO	0
+SHLL_QB_R3_DESC_BASE	3	instr_asm	OpNode	RegisterOperand RO	0
+SHLL_QB_R2_DESC_BASE	5	instr_asm	OpNode	ImmPat	RegisterOperand RO	ImmOpnd	0
+LX_DESC_BASE	2	instr_asm	OpNode	0
+ADDUH_QB_DESC_BASE	5	instr_asm	OpNode	RegisterOperand ROD	RegisterOperand ROS = ROD	RegisterOperand ROT = ROD	0
+APPEND_DESC_BASE	4	instr_asm	OpNode	ImmOp	Imm	0
+EXTR_W_TY1_R2_DESC_BASE	1	instr_asm	0
+EXTR_W_TY1_R1_DESC_BASE	1	instr_asm	0
+SHILO_R1_DESC_BASE	2	instr_asm	OpNode	0
+SHILO_R2_DESC_BASE	2	instr_asm	OpNode	0
+MTHLIP_DESC_BASE	2	instr_asm	OpNode	0
+RDDSP_DESC_BASE	2	instr_asm	OpNode	0
+WRDSP_DESC_BASE	2	instr_asm	OpNode	0
+DPA_DESC_BASE	3	instr_asm	OpNode	ValueType VT	0
+MULT_DESC_BASE	2	instr_asm	OpNode	0
+MADD_DESC_BASE	2	instr_asm	OpNode	0
+MFHI_DESC_BASE	3	instr_asm	RegisterOperand RO	SDNode OpNode	0
+MTHI_DESC_BASE	2	instr_asm	RegisterOperand RO	0
+BPOSGE32_PSEUDO_DESC_BASE	1	OpNode	1	MipsPseudo
+BPOSGE32_DESC_BASE	2	instr_asm	DAGOperand opnd	0
+INSV_DESC_BASE	2	instr_asm	OpNode	0
+ADDU_QB_DESC	4	"addu.qb"	null_frag	DSPROpnd	DSPROpnd	0
+PseudoCMP	1	Instruction RealInst	3	PseudoInstExpansion	NeverHasSideEffects	PseudoDSP
+DSPPat	3	pattern	result	Predicate pred = HasDSP	2	Pat	Requires
+MipsEVAInst	5	(outs)	(ins)	""	[]	FrmOther	0
+SPECIAL3_EVA_LOAD_STORE_FM	1	OPCODE6 Operation	1	MipsEVAInst	31-26=OPGROUP_SPECIAL3.Value	15-7=offset	20-16=rt	5-0=Operation.Value	25-21=base
+TLB_FM	1	OPCODE6 Operation	1	MipsEVAInst	24-6=0	31-26=OPGROUP_COP0_TLB.Value	5-0=Operation.Value
+LBE_ENC	1	OPCODE6_LBE	0
+LBE_DESC	2	"lbe"	GPR32Opnd	0
+SBE_DESC	2	"sbe"	GPR32Opnd	0
+LWLE_DESC	2	"lwle"	GPR32Opnd	0
+SWLE_DESC	2	"swle"	GPR32Opnd	0
+LLE_DESC	2	"lle"	GPR32Opnd	0
+SCE_DESC	2	"sce"	GPR32Opnd	0
+TLBINV_DESC	1	"tlbinv"	0
+CACHEE_DESC	2	"cachee"	mem_simm9	0
+FGR_32	1	Predicate	0
+ABSS_FT_PatFrag	1	OpNode	1	PatFrag
+ROUND_M	1	opstr	0
+MFC1_FT	4	opstr	RegisterOperand DstRC	RegisterOperand SrcRC	OpNode= null_frag	2	HARDFLOAT	InstSE
+MTC1_FT	4	opstr	RegisterOperand DstRC	RegisterOperand SrcRC	OpNode= null_frag	2	HARDFLOAT	InstSE
+MTC1_64_FT	3	opstr	RegisterOperand DstRC	RegisterOperand SrcRC	2	HARDFLOAT	InstSE
+LW_FT	4	opstr	RegisterOperand RC	DAGOperand MO	OpNode = null_frag	2	HARDFLOAT	InstSE
+SW_FT	4	opstr	RegisterOperand RC	DAGOperand MO	OpNode = null_frag	2	HARDFLOAT	InstSE
+MADDS_FT	3	opstr	RegisterOperand RC	OpNode = null_frag	2	HARDFLOAT	InstSE
+NMADDS_FT	3	opstr	RegisterOperand RC	OpNode = null_frag	2	HARDFLOAT	InstSE
+SWXC1_FT	3	opstr	RegisterOperand DRC	OpNode = null_frag	2	HARDFLOAT	InstSE
+BC1F_FT	3	opstr	DAGOperand opnd	Op = null_frag	2	HARDFLOAT	InstSE
+BC1XL_FT	2	opstr	DAGOperand opnd	2	HARDFLOAT	InstSE
+CEQS_FT	3	typestr	RC	OpNode = null_frag	2	HARDFLOAT	InstSE
+C_COND_FT	3	CondStr	Typestr	RegisterOperand RC	2	HARDFLOAT	InstSE
+C_COND_M	3	TypeStr	RegisterOperand RC	fmt	0
+C_COND_NOTR5900_M	3	TypeStr	RegisterOperand RC	fmt	0
+BuildPairF64Base	1	RegisterOperand RO	1	PseudoSE
+C_COND_NOTR5900_ALIASES	2	TypeStr	RegisterOperand RC	0
+BC1_ALIASES	4	Instruction BCTrue	BCTrueString	Instruction BCFalse	BCFalseString	0
+NMADD_NMSUB_PatFrag	1	OpNode	1	PatFrag
+Format	1	val	0
+MMRel	0	0
+StdMMR6Rel	0	0
+StdArch	0	0
+InstSE	6	outs	ins	asmstr	pattern	Format f	opstr = ""	1	MipsInst
+MipsPseudo	3	outs	ins	pattern	1	MipsInst
+PseudoSE	3	outs	ins	pattern	1	MipsPseudo
+MipsAsmPseudoInst	3	outs	ins	asmstr	1	MipsInst
+FR	6	op	_funct	outs	ins	asmstr	pattern	1	InstSE	10-6=shamt	15-11=rd	20-16=rt	5-0=funct	25-21=rs
+FJ	1	op	1	StdArch	25-0=target	31-26=op
+MFC3OP_FM	3	op	mfmt	guest	1	StdArch	31-26=op	10-8=guest	2-0=sel	15-11=rd	20-16=rt	7-3=0	25-21=mfmt
+MFC2OP_FM	2	op	mfmt	1	StdArch	31-26=op	20-16=rt	15-0=imm16	25-21=mfmt
+ADD_FM	2	op	funct	1	StdArch	10-6=0	31-26=op	15-11=rd	20-16=rt	5-0=funct	25-21=rs
+ADDI_FM	1	op	1	StdArch	31-26=op	20-16=rt	15-0=imm16	25-21=rs
+SRA_FM	2	funct	rotate	1	StdArch	25-22=0	10-6=shamt	31-26=0	15-11=rd	20-16=rt	5-0=funct
+SRLV_FM	2	funct	rotate	1	StdArch	10-7=0	31-26=0	15-11=rd	20-16=rt	5-0=funct	25-21=rs
+BEQ_FM	1	op	1	StdArch	31-26=op	20-16=rt	15-0=offset	25-21=rs
+BGEZ_FM	2	op	funct	1	StdArch	31-26=op	20-16=funct	15-0=offset	25-21=rs
+BBIT_FM	1	op	1	StdArch	31-26=op	20-16=p	15-0=offset	25-21=rs
+SLTI_FM	1	op	1	StdArch	31-26=op	20-16=rt	15-0=imm16	25-21=rs
+MFLO_FM	1	funct	1	StdArch	10-6=0	31-26=0	25-16=0	15-11=rd	5-0=funct
+MTLO_FM	1	funct	1	StdArch	31-26=0	5-0=funct	20-6=0	25-21=rs
+SEB_FM	2	funct	funct2	1	StdArch	10-6=funct	31-26=0x1f	15-11=rd	20-16=rt	5-0=funct2	25-21=0
+CLO_FM	1	funct	1	StdArch	10-6=0	31-26=0x1c	15-11=rd	20-16=rt	5-0=funct	25-21=rs
+LUI_FM	0	0
+JALR_FM	0	0
+BGEZAL_FM	1	funct	1	StdArch	31-26=1	20-16=funct	15-0=offset	25-21=rs
+SYNC_FM	0	0
+SYNCI_FM	0	0
+MULT_FM	2	op	funct	1	StdArch	31-26=op	15-6=0	20-16=rt	5-0=funct	25-21=rs
+EXT_FM	1	funct	1	StdArch	10-6=pos	31-26=0x1f	15-11=size	20-16=rt	5-0=funct	25-21=rs
+RDHWR_FM	0	0
+TEQ_FM	1	funct	1	StdArch	31-26=0	15-6=code_	20-16=rt	5-0=funct	25-21=rs
+TEQI_FM	1	funct	1	StdArch	31-26=1	20-16=funct	15-0=imm16	25-21=rs
+WAIT_FM	0	0
+EXTS_FM	1	funct	1	StdArch	10-6=pos	31-26=0x1c	15-11=lenm1	20-16=rt	5-0=funct	25-21=rs
+MTMR_FM	1	funct	1	StdArch	31-26=0x1c	5-0=funct	20-6=0	25-21=rs
+POP_FM	1	funct	1	StdArch	10-6=0	31-26=0x1c	15-11=rd	20-16=0	5-0=funct	25-21=rs
+SEQ_FM	1	funct	1	StdArch	10-6=0	31-26=0x1c	15-11=rd	20-16=rt	5-0=funct	25-21=rs
+SEQI_FM	1	funct	1	StdArch	31-26=0x1c	15-6=imm10	20-16=rt	5-0=funct	25-21=rs
+SAA_FM	1	funct	1	StdArch	31-26=0x1c	15-6=0	20-16=rt	5-0=funct	25-21=rs
+SYS_FM	1	funct	1	StdArch	31-26=0x0	25-6=code_	5-0=funct
+BRK_FM	1	funct	1	StdArch	31-26=0x0	25-16=code_1	15-6=code_2	5-0=funct
+ER_FM	2	funct	LLBit	1	StdArch	24-7=0	31-26=0x10	5-0=funct
+EI_FM	1	sc	1	StdArch	10-6=0	4-0=0	31-26=0x10	15-11=0xc	20-16=rt	25-21=0xb
+ADDS_FM	2	funct	fmt	1	StdArch	10-6=fd	31-26=0x11	15-11=fs	20-16=ft	5-0=funct	25-21=fmt
+ABSS_FM	2	funct	fmt	1	StdArch	10-6=fd	31-26=0x11	15-11=fs	20-16=0	5-0=funct	25-21=fmt
+MFC1_FM	1	funct	1	StdArch	31-26=0x11	15-11=fs	20-16=rt	10-0=0	25-21=funct
+LW_FM	1	op	1	StdArch	31-26=op	20-16=rt	15-0=addr	25-21=addr
+MADDS_FM	2	funct	fmt	1	StdArch	10-6=fd	31-26=0x13	2-0=fmt	15-11=fs	20-16=ft	5-3=funct	25-21=fr
+LWXC1_FM	1	funct	1	StdArch	10-6=fd	31-26=0x13	15-11=0	20-16=index	5-0=funct	25-21=base
+SWXC1_FM	1	funct	1	StdArch	10-6=0	31-26=0x13	15-11=fs	20-16=index	5-0=funct	25-21=base
+BC1F_FM	2	nd	tf	1	StdArch	31-26=0x11	20-18=fcc	15-0=offset	25-21=0x8
+CEQS_FM	1	fmt	1	StdArch	31-26=0x11	10-8=fcc	15-11=fs	20-16=ft	7-4=0x3	3-0=cond	25-21=fmt
+C_COND_FM	2	fmt	c	1	CEQS_FM
+CMov_I_F_FM	2	funct	fmt	1	StdArch	10-6=fd	31-26=0x11	15-11=fs	20-16=rt	5-0=funct	25-21=fmt
+CMov_F_I_FM	1	tf	1	StdArch	10-6=0	31-26=0	15-11=rd	5-0=1	20-18=fcc	25-21=rs
+CMov_F_F_FM	2	fmt	tf	1	StdArch	10-6=fd	31-26=0x11	15-11=fs	5-0=0x11	20-18=fcc	25-21=fmt
+BARRIER_FM	1	op	1	StdArch	10-6=op	31-26=0	15-11=0	20-16=0	5-0=0	25-21=0
+SDBBP_FM	0	0
+JR_HB_FM	1	op	1	StdArch	20-11=0	31-26=0	5-0=op	9-6=0	25-21=rs
+JALR_HB_FM	1	op	1	StdArch	31-26=0	15-11=rd	20-16=0	5-0=op	9-6=0	25-21=rs
+COP0_TLB_FM	1	op	1	StdArch	24-6=0	31-26=0x10	5-0=op
+CACHEOP_FM	1	op	1	StdArch	31-26=op	20-16=hint	15-0=offset	25-21=base
+HYPCALL_FM	1	op	1	StdArch	20-11=code_	31-26=0b010000	5-0=op
+GPR_32	1	Predicate	0
+JumpLinkRegPseudo	4	RegisterOperand RO	Instruction JALRInst	Register RetReg	RegisterOperand ResRO = RO	2	PseudoInstExpansion	PseudoSE
+JumpLinkReg	2	opstr	RegisterOperand RO	1	InstSE
+BGEZAL_FT	3	opstr	DAGOperand opnd	RegisterOperand RO	1	InstSE
+TailCall	2	Instruction JumpInst	DAGOperand Opnd	2	PseudoInstExpansion	PseudoSE
+BAL_BR_Pseudo	2	Instruction RealInst	DAGOperand opnd	2	PseudoInstExpansion	PseudoSE
+SYS_FT	2	opstr	ImmOp	1	InstSE
+PseudoIndirectBranchBase	2	Instruction JumpInst	RegisterOperand RO	2	PseudoInstExpansion	MipsPseudo
+PseudoReturnBase	1	RegisterOperand RO	1	MipsPseudo
+Barrier	1	asmstr	1	InstSE
+JR_HB_DESC_BASE	2	instr_asm	RegisterOperand GPROpnd	0
+JALR_HB_DESC_BASE	2	instr_asm	RegisterOperand GPROpnd	0
+JR_HB_DESC	1	RegisterOperand RO	2	JR_HB_DESC_BASE	InstSE
+JALR_HB_DESC	1	RegisterOperand RO	2	JALR_HB_DESC_BASE	InstSE
+JR_HB_ENC	1	8	0
+TLB	1	asmstr	1	InstSE
+CacheOp	2	instr_asm	MemOpnd	1	InstSE
+HYPCALL_FT	1	opstr	1	InstSE
+OneOrTwoOperandMacroImmediateAlias	4	Memnomic	Instruction Opcode	RegisterOperand RO = GPR32Opnd	Imm = simm32_relaxed	0
+LoadImmediate32	3	instr_asm	Od	RegisterOperand RO	1	MipsAsmPseudoInst
+LoadRegImmPat	3	Instruction LoadInst	ValueType ValTy	PatFrag Node	1	MipsPat
+MipsHiLoRelocs	4	Instruction Lui	Instruction Addiu	Register ZeroReg	RegisterOperand GPROpnd	0
+WrapperPat	3	SDNode node	Instruction ADDiuOp	RC	1	MipsPat
+BrcondPats	9	RC	Instruction BEQOp	Instruction BEQOp1	Instruction BNEOp	Instruction SLTOp	Instruction SLTuOp	Instruction SLTiOp	Instruction SLTiuOp	Register ZEROReg	0
+SeteqPats	5	RC	Instruction SLTiuOp	Instruction XOROp	Instruction SLTuOp	Register ZEROReg	0
+SetlePats	4	RC	Instruction XORiOp	Instruction SLTOp	Instruction SLTuOp	0
+SetgtPats	3	RC	Instruction SLTOp	Instruction SLTuOp	0
+SetgePats	4	RC	Instruction XORiOp	Instruction SLTOp	Instruction SLTuOp	0
+SetgeImmPats	4	RC	Instruction XORiOp	Instruction SLTiOp	Instruction SLTiuOp	0
+MSACBranch	0	0
+MSASpecial	0	0
+MSAPseudo	3	outs	ins	pattern	1	MipsPseudo
+MSA_BIT_B_FMT	2	major	minor	1	MSAInst	22-19=0b1110	10-6=wd	25-23=major	15-11=ws	5-0=minor	18-16=m
+MSA_BIT_H_FMT	2	major	minor	1	MSAInst	10-6=wd	25-23=major	15-11=ws	22-20=0b110	5-0=minor	19-16=m
+MSA_BIT_W_FMT	2	major	minor	1	MSAInst	10-6=wd	25-23=major	15-11=ws	20-16=m	22-21=0b10	5-0=minor
+MSA_BIT_D_FMT	2	major	minor	1	MSAInst	10-6=wd	25-23=major	15-11=ws	5-0=minor	21-16=m
+MSA_2R_FILL_FMT	3	major	df	minor	1	MSAInst	10-6=wd	15-11=rs	17-16=df	25-18=major	5-0=minor
+MSA_2R_FILL_D_FMT	3	major	df	minor	1	MSAInst	10-6=wd	15-11=rs	17-16=df	25-18=major	5-0=minor
+MSA_2R_FMT	3	major	df	minor	1	MSAInst	10-6=wd	15-11=ws	17-16=df	25-18=major	5-0=minor
+MSA_2RF_FMT	3	major	df	minor	1	MSAInst	10-6=wd	25-17=major	15-11=ws	5-0=minor
+MSA_3R_FMT	3	major	df	minor	1	MSAInst	10-6=wd	25-23=major	15-11=ws	20-16=wt	22-21=df	5-0=minor
+MSA_3RF_FMT	3	major	df	minor	1	MSAInst	25-22=major	10-6=wd	15-11=ws	20-16=wt	5-0=minor
+MSA_3R_INDEX_FMT	3	major	df	minor	1	MSAInst	10-6=wd	25-23=major	15-11=ws	20-16=rt	22-21=df	5-0=minor
+MSA_ELM_FMT	2	major	minor	1	MSAInst	10-6=wd	25-16=major	15-11=ws	5-0=minor
+MSA_ELM_CFCMSA_FMT	2	major	minor	1	MSAInst	10-6=rd	25-16=major	15-11=cs	5-0=minor
+MSA_ELM_CTCMSA_FMT	2	major	minor	1	MSAInst	10-6=cd	25-16=major	15-11=rs	5-0=minor
+MSA_ELM_B_FMT	2	major	minor	1	MSAInst	25-22=major	10-6=wd	21-20=0b00	15-11=ws	5-0=minor	19-16=n
+MSA_ELM_H_FMT	2	major	minor	1	MSAInst	25-22=major	10-6=wd	15-11=ws	5-0=minor	18-16=n	21-19=0b100
+MSA_ELM_W_FMT	2	major	minor	1	MSAInst	25-22=major	10-6=wd	15-11=ws	17-16=n	5-0=minor	21-18=0b1100
+MSA_ELM_D_FMT	2	major	minor	1	MSAInst	25-22=major	10-6=wd	15-11=ws	5-0=minor	21-17=0b11100
+MSA_ELM_COPY_B_FMT	2	major	minor	1	MSAInst	25-22=major	10-6=rd	21-20=0b00	15-11=ws	5-0=minor	19-16=n
+MSA_ELM_COPY_H_FMT	2	major	minor	1	MSAInst	25-22=major	10-6=rd	15-11=ws	5-0=minor	18-16=n	21-19=0b100
+MSA_ELM_COPY_W_FMT	2	major	minor	1	MSAInst	25-22=major	10-6=rd	15-11=ws	17-16=n	5-0=minor	21-18=0b1100
+MSA_ELM_COPY_D_FMT	2	major	minor	1	MSAInst	25-22=major	10-6=rd	15-11=ws	5-0=minor	21-17=0b11100
+MSA_ELM_INSERT_B_FMT	2	major	minor	1	MSAInst	25-22=major	10-6=wd	21-20=0b00	15-11=rs	5-0=minor	19-16=n
+MSA_ELM_INSERT_H_FMT	2	major	minor	1	MSAInst	25-22=major	10-6=wd	15-11=rs	5-0=minor	18-16=n	21-19=0b100
+MSA_ELM_INSERT_W_FMT	2	major	minor	1	MSAInst	25-22=major	10-6=wd	15-11=rs	17-16=n	5-0=minor	21-18=0b1100
+MSA_ELM_INSERT_D_FMT	2	major	minor	1	MSAInst	25-22=major	10-6=wd	15-11=rs	5-0=minor	21-17=0b11100
+MSA_I5_FMT	3	major	df	minor	1	MSAInst	10-6=wd	25-23=major	15-11=ws	20-16=imm	22-21=df	5-0=minor
+MSA_I8_FMT	2	major	minor	1	MSAInst	10-6=wd	25-24=major	15-11=ws	5-0=minor	23-16=u8
+MSA_I10_FMT	3	major	df	minor	1	MSAInst	10-6=wd	20-11=s10	25-23=major	22-21=df	5-0=minor
+MSA_MI10_FMT	2	df	minor	1	MSAInst	1-0=df	10-6=wd	25-16=addr	15-11=addr	5-2=minor
+MSA_VEC_FMT	2	major	minor	1	MSAInst	10-6=wd	15-11=ws	20-16=wt	5-0=minor	25-21=major
+MSA_CBRANCH_FMT	2	major	df	1	MSACBranch	25-23=major	20-16=wt	22-21=df	15-0=offset
+MSA_CBRANCH_V_FMT	1	major	1	MSACBranch	20-16=wt	15-0=offset	25-21=major
+SPECIAL_LSA_FMT	1	minor	1	MSASpecial	10-8=0b000	15-11=rd	20-16=rt	5-0=minor	7-6=sa	25-21=rs
+SPECIAL_DLSA_FMT	1	minor	1	MSASpecial	10-8=0b000	15-11=rd	20-16=rt	5-0=minor	7-6=sa	25-21=rs
+vfsetcc_type	3	ValueType ResTy	ValueType OpTy	CondCode CC	1	PatFrag
+ADD_A_B_ENC	3	0b000	0b00	0b010000	0
+MSA_BIT_H_DESC_BASE	5	instr_asm	OpNode	ComplexPattern Imm	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_BIT_W_DESC_BASE	5	instr_asm	OpNode	ComplexPattern Imm	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_BIT_D_DESC_BASE	5	instr_asm	OpNode	ComplexPattern Imm	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_BIT_X_DESC_BASE	6	instr_asm	OpNode	ImmOp	ImmLeaf Imm	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_BIT_BINSXI_DESC_BASE	5	instr_asm	ValueType Ty	SplatComplexPattern Mask	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_BIT_BINSLI_DESC_BASE	5	instr_asm	ValueType Ty	SplatComplexPattern ImmOp	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	1	MSA_BIT_BINSXI_DESC_BASE
+MSA_COPY_DESC_BASE	7	instr_asm	OpNode	ValueType VecTy	ImmOp	ImmLeaf Imm	RegisterOperand ROD	RegisterOperand ROWS	0
+MSA_ELM_SLD_DESC_BASE	6	instr_asm	OpNode	RegisterOperand ROWD	RegisterOperand ROWS	ImmOp	ImmLeaf Imm	0
+MSA_COPY_PSEUDO_BASE	6	OpNode	ValueType VecTy	ImmOp	ImmLeaf Imm	RCD	RCWS	1	MSAPseudo
+MSA_I5_DESC_BASE	5	instr_asm	OpNode	SplatComplexPattern SplatImm	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_I8_DESC_BASE	5	instr_asm	OpNode	SplatComplexPattern SplatImm	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_I8_SHF_DESC_BASE	3	instr_asm	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_I10_LDI_DESC_BASE	2	instr_asm	RegisterOperand ROWD	0
+MSA_2R_DESC_BASE	4	instr_asm	OpNode	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_2R_FILL_DESC_BASE	5	instr_asm	ValueType VT	OpNode	RegisterOperand ROWD	RegisterOperand ROS = ROWD	0
+MSA_2R_FILL_PSEUDO_BASE	3	OpNode	RCWD	RCWS	1	MSAPseudo
+MSA_2RF_DESC_BASE	4	instr_asm	OpNode	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_3R_DESC_BASE	5	instr_asm	OpNode	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	RegisterOperand ROWT = ROWD	0
+MSA_3R_BINSX_DESC_BASE	5	instr_asm	OpNode	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	RegisterOperand ROWT = ROWD	0
+MSA_3R_SPLAT_DESC_BASE	4	instr_asm	OpNode	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_3R_VSHF_DESC_BASE	4	instr_asm	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	RegisterOperand ROWT = ROWD	0
+MSA_3R_SLD_DESC_BASE	4	instr_asm	OpNode	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_3R_4R_DESC_BASE	5	instr_asm	OpNode	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	RegisterOperand ROWT = ROWD	0
+MSA_3RF_DESC_BASE	5	instr_asm	OpNode	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	RegisterOperand ROWT = ROWD	1	MSA_3R_DESC_BASE
+MSA_INSERT_DESC_BASE	6	instr_asm	OpNode	ImmOp	ImmLeaf Imm	RegisterOperand ROWD	RegisterOperand ROS	0
+MSA_INSERT_PSEUDO_BASE	6	OpNode	ValueType Ty	ImmOp	ImmLeaf Imm	RegisterOperand ROWD	RegisterOperand ROFS	1	MSAPseudo
+MSA_INSERT_VIDX_PSEUDO_BASE	5	OpNode	ValueType Ty	RegisterOperand ROWD	RegisterOperand ROFS	RegisterOperand ROIdx	1	MSAPseudo
+MSA_INSVE_DESC_BASE	6	instr_asm	OpNode	ImmOp	ImmLeaf Imm	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_VEC_DESC_BASE	5	instr_asm	OpNode	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	RegisterOperand ROWT = ROWD	0
+MSA_ELM_SPLAT_DESC_BASE	4	instr_asm	SplatComplexPattern SplatImm	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	0
+MSA_VEC_PSEUDO_BASE	4	OpNode	RegisterOperand ROWD	RegisterOperand ROWS = ROWD	RegisterOperand ROWT = ROWD	1	MSAPseudo
+BMNZI_B_DESC	0	0
+COP0_MFTTR_MT	1	FIELD5 Op	1	MipsMTInst	10-6=0b00000	31-26=0b010000	2-0=sel	15-11=rd	20-16=rt	25-21=Op.Value
+SPECIAL3_MT_FORK	0	0
+SPECIAL3_MT_YIELD	0	0
+DMT_ENC	3	FIELD5_1_DMT_EMT	FIELD5_2_DMT_EMT	OPCODE_SC_D	0
+MFTR_DESC	0	0
+GPR32Class	1	list<ValueType> regTypes	1	RegisterClass
+MipsAsmRegOperand	0	0

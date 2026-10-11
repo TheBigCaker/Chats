@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PKHLSLA",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "PKHLSLAsmOperand": {"ARM": "PKHLSLAsmOperand"}
+  },
+  "INPUTS": {
+    "PKHLSLAsmOperand": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "PKHLSLAsmOperand": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "PKHLSLAsmOperand": {"ARM": ["ImmAsmOperand","0","31"]}
+  },
+  "OUTPUT_BYTES": {
+    "PKHLSLAsmOperand": {"ARM": ["ImmAsmOperand","0","31"]}
+  }
+}

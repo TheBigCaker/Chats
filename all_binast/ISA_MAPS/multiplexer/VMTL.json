@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMTL",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VMTL_V": {"RISCV": "VMTL_V"}
+  },
+  "INPUTS": {
+    "VMTL_V": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VMTL_V": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VMTL_V": {"RISCV": ["VTileLoad","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMTL_V": {"RISCV": ["VTileLoad","0b00"]}
+  }
+}

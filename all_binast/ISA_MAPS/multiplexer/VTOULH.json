@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VTOULH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VTOULH": {"ARM": "VTOULH"}
+  },
+  "INPUTS": {
+    "VTOULH": {"ARM": [["SPR",0],["fbits32",0]]}
+  },
+  "OUTPUTS": {
+    "VTOULH": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VTOULH": {"ARM": ["AVConv1XInsS_Encode","0b11101","0b11","0b1111","0b1001","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VTOULH": {"ARM": ["AVConv1XInsS_Encode","0b11101","0b11","0b1111","0b1001","1"]}
+  }
+}

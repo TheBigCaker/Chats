@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WIM",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "WIM": {"Sparc": "WIM"}
+  },
+  "INPUTS": {
+    "WIM": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "WIM": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "WIM": {"Sparc": ["SparcCtrlReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "WIM": {"Sparc": ["SparcCtrlReg","0"]}
+  }
+}

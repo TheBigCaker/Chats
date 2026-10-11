@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FPACKFIX",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FPACKFIX": {"Sparc": "FPACKFIX"}
+  },
+  "INPUTS": {
+    "FPACKFIX": {"Sparc": [["DFPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "FPACKFIX": {"Sparc": [["FPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FPACKFIX": {"Sparc": ["VISInstFormat","0b000111101"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPACKFIX": {"Sparc": ["VISInstFormat","0b000111101"]}
+  }
+}

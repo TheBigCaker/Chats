@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFDCFSI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFDCFSI": {"PowerPC": "EFDCFSI"}
+  },
+  "INPUTS": {
+    "EFDCFSI": {"PowerPC": [["gprc",0]]}
+  },
+  "OUTPUTS": {
+    "EFDCFSI": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFDCFSI": {"PowerPC": ["EFXForm_2a","753"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFDCFSI": {"PowerPC": ["EFXForm_2a","753"]}
+  }
+}

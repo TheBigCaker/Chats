@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSRO",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSRO": {"PowerPC": "VSRO"}
+  },
+  "INPUTS": {
+    "VSRO": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSRO": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSRO": {"PowerPC": ["VX1_Int_Ty","1100"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSRO": {"PowerPC": ["VX1_Int_Ty","1100"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "VFMV",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VFMV_V_F": {"RISCV": "VFMV_V_F"},
+    "VFMV_F_S": {"RISCV": "VFMV_F_S"},
+    "VFMV_S_F": {"RISCV": "VFMV_S_F"}
+  },
+  "INPUTS": {
+    "VFMV_V_F": {"RISCV": [["FPR32",32]]},
+    "VFMV_F_S": {"RISCV": [["VR",0]]},
+    "VFMV_S_F": {"RISCV": [["VR",0],["FPR32",32]]}
+  },
+  "OUTPUTS": {
+    "VFMV_V_F": {"RISCV": [["VR",0]]},
+    "VFMV_F_S": {"RISCV": [["FPR32",32]]},
+    "VFMV_S_F": {"RISCV": [["VR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFMV_V_F": {"RISCV": ["RVInstVX","0b010111"]},
+    "VFMV_F_S": {"RISCV": ["RVInstVUnaryRd","0b010000","0b00000"]},
+    "VFMV_S_F": {"RISCV": ["RVInstVX","0b010000"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFMV_V_F": {"RISCV": ["RVInstVX","0b010111"]},
+    "VFMV_F_S": {"RISCV": ["RVInstVUnaryRd","0b010000","0b00000"]},
+    "VFMV_S_F": {"RISCV": ["RVInstVX","0b010000"]}
+  }
+}

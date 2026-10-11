@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STXSSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STXSSP": {"PowerPC": "STXSSP"}
+  },
+  "INPUTS": {
+    "STXSSP": {"PowerPC": [["vfrc",0],["(memrix",0]]}
+  },
+  "OUTPUTS": {
+    "STXSSP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "STXSSP": {"PowerPC": ["DSForm_1","61","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "STXSSP": {"PowerPC": ["DSForm_1","61","3"]}
+  }
+}

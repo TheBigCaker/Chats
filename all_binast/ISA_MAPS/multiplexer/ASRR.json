@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ASRR",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "ASRRegs": {"Sparc": "ASRRegs"}
+  },
+  "INPUTS": {
+    "ASRRegs": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "ASRRegs": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "ASRRegs": {"Sparc": ["RegisterClass","32","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "ASRRegs": {"Sparc": ["RegisterClass","32","1"]}
+  }
+}

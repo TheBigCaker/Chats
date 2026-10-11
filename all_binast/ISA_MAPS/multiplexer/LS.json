@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LS": {"PowerPC": "LS"}
+  },
+  "INPUTS": {
+    "LS": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "LS": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "LS": {"PowerPC": ["ProcResource","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "LS": {"PowerPC": ["ProcResource","4"]}
+  }
+}

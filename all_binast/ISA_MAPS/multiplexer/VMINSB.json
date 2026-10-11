@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMINSB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMINSB": {"PowerPC": "VMINSB"}
+  },
+  "INPUTS": {
+    "VMINSB": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMINSB": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMINSB": {"PowerPC": ["VX1_Int_Ty","770"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMINSB": {"PowerPC": ["VX1_Int_Ty","770"]}
+  }
+}

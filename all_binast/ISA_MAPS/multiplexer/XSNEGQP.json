@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSNEGQP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSNEGQP": {"PowerPC": "XSNEGQP"}
+  },
+  "INPUTS": {
+    "XSNEGQP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSNEGQP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSNEGQP": {"PowerPC": ["X_VT5_XO5_VB5","63","16","804"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSNEGQP": {"PowerPC": ["X_VT5_XO5_VB5","63","16","804"]}
+  }
+}

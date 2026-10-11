@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VLO",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VLOp": {"RISCV": "VLOp"}
+  },
+  "INPUTS": {
+    "VLOp": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VLOp": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VLOp": {"RISCV": ["ComplexPattern","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VLOp": {"RISCV": ["ComplexPattern","1"]}
+  }
+}

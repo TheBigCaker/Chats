@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "SP",
+  "BACKENDS": ["AArch64","ARM","Mips","AVR","AMDGPU"],
+  "INDEX": {
+    "SP": {"AArch64": "SP"},
+    "SP": {"ARM": "SP"},
+    "SP": {"Mips": "SP"},
+    "SP_64": {"Mips": "SP_64"},
+    "SP32": {"Mips": "SP32"},
+    "SP64": {"Mips": "SP64"},
+    "SP": {"AVR": "SP"},
+    "SP_REG": {"AMDGPU": "SP_REG"}
+  },
+  "INPUTS": {
+    "SP": {"AArch64": []},
+    "SP": {"ARM": []},
+    "SP": {"Mips": []},
+    "SP_64": {"Mips": []},
+    "SP32": {"Mips": []},
+    "SP64": {"Mips": []},
+    "SP": {"AVR": []},
+    "SP_REG": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SP": {"AArch64": []},
+    "SP": {"ARM": []},
+    "SP": {"Mips": []},
+    "SP_64": {"Mips": []},
+    "SP32": {"Mips": []},
+    "SP64": {"Mips": []},
+    "SP": {"AVR": []},
+    "SP_REG": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SP": {"AArch64": ["AArch64Reg","31"]},
+    "SP": {"ARM": ["ARMReg","13"]},
+    "SP": {"Mips": ["MipsGPRReg","29"]},
+    "SP_64": {"Mips": ["Mips64GPRReg","29"]},
+    "SP32": {"Mips": ["RegisterClass","32"]},
+    "SP64": {"Mips": ["RegisterClass","64"]},
+    "SP": {"AVR": ["AVRReg","16"]},
+    "SP_REG": {"AMDGPU": ["SIReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "SP": {"AArch64": ["AArch64Reg","31"]},
+    "SP": {"ARM": ["ARMReg","13"]},
+    "SP": {"Mips": ["MipsGPRReg","29"]},
+    "SP_64": {"Mips": ["Mips64GPRReg","29"]},
+    "SP32": {"Mips": ["RegisterClass","32"]},
+    "SP64": {"Mips": ["RegisterClass","64"]},
+    "SP": {"AVR": ["AVRReg","16"]},
+    "SP_REG": {"AMDGPU": ["SIReg","0"]}
+  }
+}

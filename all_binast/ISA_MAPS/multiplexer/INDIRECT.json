@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "INDIRECT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "INDIRECT_BASE_ADDR": {"AMDGPU": "INDIRECT_BASE_ADDR"}
+  },
+  "INPUTS": {
+    "INDIRECT_BASE_ADDR": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "INDIRECT_BASE_ADDR": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "INDIRECT_BASE_ADDR": {"AMDGPU": ["R600Reg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "INDIRECT_BASE_ADDR": {"AMDGPU": ["R600Reg","0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VNCIPHERLAST",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VNCIPHERLAST": {"PowerPC": "VNCIPHERLAST"}
+  },
+  "INPUTS": {
+    "VNCIPHERLAST": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VNCIPHERLAST": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VNCIPHERLAST": {"PowerPC": ["VX1_Int_Ty","1353"]}
+  },
+  "OUTPUT_BYTES": {
+    "VNCIPHERLAST": {"PowerPC": ["VX1_Int_Ty","1353"]}
+  }
+}

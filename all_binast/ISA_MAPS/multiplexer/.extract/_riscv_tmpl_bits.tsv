@@ -1,0 +1,1236 @@
+RISCVExtension	9	int major	int minor	desc	list<SubtargetFeature> implies = []	fieldname = !subst("Feature"	"Has"	NAME)	value = "true"	IsExperimental = false	1	SubtargetFeature
+RISCVExtensionBitmask	2	groupID	int bitPos	0
+RISCVExperimentalExtension	8	int major	int minor	desc	list<RISCVExtension> implies = []	fieldname = !subst("Feature"	"Has"	NAME)	value = "true"	1	RISCVExtension
+RISCVTuneFeature	8	name	pos_directive	neg_directive	field_name	value	description	list<RISCVTuneFeature> implied_features = []	InlineBehavior ib = InlineIgnore	1	SubtargetFeature
+RISCVSimpleTuneFeature	6	name	field_name	value	description	list<RISCVTuneFeature> implied_features = []	InlineBehavior ib = InlineIgnore	1	RISCVTuneFeature
+InstFormat	1	val	0
+RISCVVConstraint	2	VS2 = 0	VS1 = 0	0
+RISCVSMTConstraint	1	DiffClassReg = 0	0
+RISCVOpcode	2	name	val	0
+EltDeps	2	vl	mask	0
+EEW	1	val	0
+AltFmtType	1	val	0
+RVInstCommon	6	outs	ins	opcodestr	argstr	pattern	InstFormat format	1	Instruction
+RVInst	6	outs	ins	opcodestr	argstr	pattern	InstFormat format	1	RVInstCommon
+RVInst48	6	outs	ins	opcodestr	argstr	pattern	InstFormat format	1	RVInstCommon
+RVInst64	6	outs	ins	opcodestr	argstr	pattern	InstFormat format	1	RVInstCommon
+Pseudo	5	outs	ins	pattern	opcodestr = ""	argstr = ""	1	RVInstCommon
+PseudoQuietFCMP	1	DAGOperand Ty	1	Pseudo
+PseudoLoad	2	opcodestr	DAGOperand rdty = GPR	1	Pseudo
+PseudoFloatLoad	2	opcodestr	rdty	1	Pseudo
+PseudoStore	2	opcodestr	DAGOperand rsty = GPR	1	Pseudo
+RVInstRBase	6	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	14-12=funct3	19-15=rs1	24-20=rs2	11-7=rd	6-0=opcode.Value
+RVInstR	7	funct7	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInstRBase	31-25=funct7
+RVInstRAtomic	9	funct5	aq	rl	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInstRBase	31-27=funct5
+RVInstRFrm	6	funct7	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-25=funct7	14-12=frm	19-15=rs1	24-20=rs2	11-7=rd	6-0=opcode.Value
+RVInstR4	7	funct2	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-27=rs3	14-12=funct3	19-15=rs1	24-20=rs2	26-25=funct2	11-7=rd	6-0=opcode.Value
+RVInstR4Frm	6	funct2	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-27=rs3	14-12=frm	19-15=rs1	24-20=rs2	26-25=funct2	11-7=rd	6-0=opcode.Value
+RVInstIBase	6	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	14-12=funct3	19-15=rs1	11-7=rd	6-0=opcode.Value
+RVInstI	6	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInstIBase	31-20=imm12
+RVInstIShift	7	imm11_7	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInstIBase	31-27=imm11_7	25-20=shamt
+RVInstIShiftW	7	imm11_5	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInstIBase	31-25=imm11_5	24-20=shamt
+RVInstIUnary	7	imm12	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInstIBase	31-20=imm12
+RVInstS	6	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-25=imm12	14-12=funct3	19-15=rs1	24-20=rs2	11-7=imm12	6-0=opcode.Value
+RVInstB	6	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	14-12=funct3	19-15=rs1	24-20=rs2	6-0=opcode.Value	11-8=imm12	30-25=imm12
+RVInstBIMM	6	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	14-12=funct3	19-15=rs1	24-20=cimm	6-0=opcode.Value	11-8=imm12	30-25=imm12
+RVInstU	5	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-12=imm20	11-7=rd	6-0=opcode.Value
+RVInstJ	5	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	19-12=imm20	30-21=imm20	11-7=rd	6-0=opcode.Value
+DirectiveInsnR	3	outs	ins	argstr	1	RVInst	31-25=funct7	14-12=funct3	19-15=rs1	24-20=rs2	11-7=rd	6-0=opcode
+DirectiveInsnR4	3	outs	ins	argstr	1	RVInst	31-27=rs3	14-12=funct3	19-15=rs1	24-20=rs2	26-25=funct2	11-7=rd	6-0=opcode
+DirectiveInsnI	3	outs	ins	argstr	1	RVInst	14-12=funct3	19-15=rs1	31-20=imm12	11-7=rd	6-0=opcode
+DirectiveInsnS	3	outs	ins	argstr	1	RVInst	31-25=imm12	14-12=funct3	19-15=rs1	24-20=rs2	11-7=imm12	6-0=opcode
+DirectiveInsnB	3	outs	ins	argstr	1	RVInst	14-12=funct3	19-15=rs1	24-20=rs2	6-0=opcode	11-8=imm12	30-25=imm12
+DirectiveInsnU	3	outs	ins	argstr	1	RVInst	31-12=imm20	11-7=rd	6-0=opcode
+DirectiveInsnJ	3	outs	ins	argstr	1	RVInst	31-12=imm20	11-7=rd	6-0=opcode
+RISCVCOpcode	2	name	val	0
+RVInst16	6	outs	ins	opcodestr	argstr	pattern	InstFormat format	1	RVInstCommon
+RVInst16CR	6	funct4	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	6-2=rs2	15-12=funct4	11-7=rs1
+RVInst16CI	6	funct3	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	6-2=imm	15-13=funct3	11-7=rd
+RVInst16CSS	6	funct3	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	6-2=rs2	12-7=imm	15-13=funct3
+RVInst16CIW	6	funct3	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	4-2=rd	15-13=funct3
+RVInst16CL	6	funct3	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	4-2=rd	15-13=funct3	9-7=rs1
+RVInst16CS	6	funct3	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	4-2=rs2	15-13=funct3	9-7=rs1
+RVInst16CA	7	funct6	funct2	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	4-2=rs2	6-5=funct2	15-10=funct6	9-7=rs1
+RVInst16CB	6	funct3	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	15-13=funct3	9-7=rs1
+RVInst16CJ	6	funct3	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	10-9=offset	15-13=funct3	5-3=offset
+RVInst16CU	7	funct6	funct5	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	6-2=funct5	15-10=funct6	9-7=rd
+RVInst16CLB	6	funct6	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	4-2=rd	15-10=funct6	9-7=rs1
+RVInst16CLH	7	funct6	funct1	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	4-2=rd	15-10=funct6	9-7=rs1
+RVInst16CSB	6	funct6	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	4-2=rs2	15-10=funct6	9-7=rs1
+RVInst16CSH	7	funct6	funct1	RISCVCOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst16	1-0=opcode.Value	4-2=rs2	15-10=funct6	9-7=rs1
+DirectiveInsnCR	3	outs	ins	argstr	1	RVInst16	1-0=opcode	6-2=rs2	15-12=funct4	11-7=rd
+DirectiveInsnCI	3	outs	ins	argstr	1	RVInst16	1-0=opcode	6-2=imm6	15-13=funct3	11-7=rd
+DirectiveInsnCIW	3	outs	ins	argstr	1	RVInst16	1-0=opcode	12-5=imm8	4-2=rd	15-13=funct3
+DirectiveInsnCSS	3	outs	ins	argstr	1	RVInst16	1-0=opcode	6-2=rs2	12-7=imm6	15-13=funct3
+DirectiveInsnCL	3	outs	ins	argstr	1	RVInst16	1-0=opcode	4-2=rd	6-5=imm5	15-13=funct3	9-7=rs1	12-10=imm5
+DirectiveInsnCS	3	outs	ins	argstr	1	RVInst16	1-0=opcode	4-2=rs2	6-5=imm5	15-13=funct3	9-7=rs1	12-10=imm5
+DirectiveInsnCA	3	outs	ins	argstr	1	RVInst16	1-0=opcode	4-2=rs2	6-5=funct2	15-10=funct6	9-7=rd
+DirectiveInsnCB	3	outs	ins	argstr	1	RVInst16	1-0=opcode	6-5=imm8	4-3=imm8	11-10=imm8	15-13=funct3	9-7=rs1
+DirectiveInsnCJ	3	outs	ins	argstr	1	RVInst16	1-0=opcode	10-9=imm11	15-13=funct3	5-3=imm11
+SMTVDotOpcode	1	val	0
+VTypeEncode	2	encoding	name	0
+SlideEncode	2	encoding	name	0
+HPEncode	2	encoding	name	0
+SMTVMADot	3	sign	opcodestr	EarlyClobber = 0	1	RVInst	31-25=OPMMA.Value	13-12=sign	19-15=vs1	24-20=vs2	11-7=vd	6-0=OPC_CUSTOM_1.Value
+SMTVMADotSlide	4	funct2	sign	opcodestr	EarlyClobber = 0	1	RVInst	31-25=OPMMA_SLIDE.Value	13-12=sign	15-14=funct2	19-16=vs1	24-20=vs2	11-7=vd	6-0=OPC_CUSTOM_1.Value
+SMTVMADotII	3	sign	opcodestr	EarlyClobber = 0	1	RVInst	28-25=0b0001	13-12=sign	30-29=vtype	19-15=vs1	24-20=vs2	11-7=vd	6-0=OPC_CUSTOM_1.Value
+SMTVMADotSlideII	4	slide	sign	opcodestr	EarlyClobber = 0	1	RVInst	28-25=0b0011	13-12=sign	30-29=vtype	15-14=slide	19-16=vs1	24-20=vs2	11-7=vd	6-0=OPC_CUSTOM_1.Value
+SMTVMADOTSP	4	sign	opcodestr	argstr	EarlyClobber = 0	1	RVInst	28-26=0b010	13-12=sign	30-29=vtype	19-16=vs1	24-20=vs2	6-0=OPC_CUSTOM_1.Value	11-8=vd
+SMTVMADOTHP	4	funct3	opcodestr	argstr	EarlyClobber = 0	1	RVInst	28-26=funct3	30-29=vtype	14-12=imm3	19-15=vs1	24-20=vs2	11-7=vd	6-0=OPC_CUSTOM_1.Value
+SMTVFWMADOT	5	funct3	outs	ins	opcodestr	argstr	1	RVInst	28-25=0b1111	30-29=0b00	14-12=funct3	19-15=vs1	24-20=vs2	11-7=vd	6-0=OPC_CUSTOM_1.Value
+SMTVPACK	6	funct7	funct1	outs	ins	opcodestr	argstr	1	RVInst	31-25=funct7	13-12=imm2	19-15=vs1	24-20=vs2	11-7=vd	6-0=OPC_CUSTOM_1.Value
+RISCVVFormat	1	val	0
+RISCVMOP	1	val	0
+RISCVLUMOP	1	val	0
+RISCVSUMOP	1	val	0
+RISCVWidth	1	val	0
+RVInstVSetiVLi	4	outs	ins	opcodestr	argstr	1	RVInstIBase	29-20=vtypei
+RVInstVSetVLi	4	outs	ins	opcodestr	argstr	1	RVInstIBase	30-20=vtypei
+RVInstVSetVL	4	outs	ins	opcodestr	argstr	1	RVInstR
+RVInstVBase	6	funct6	RISCVVFormat opv	outs	ins	opcodestr	argstr	1	RVInst	31-26=funct6	14-12=opv.Value	11-7=vd	6-0=OPC_OP_V.Value
+RVInstVV	6	funct6	RISCVVFormat opv	outs	ins	opcodestr	argstr	1	RVInstVBase	19-15=vs1	24-20=vs2
+RVInstVX	6	funct6	RISCVVFormat opv	outs	ins	opcodestr	argstr	1	RVInstVBase	19-15=rs1	24-20=vs2
+RVInstIVI	5	funct6	outs	ins	opcodestr	argstr	1	RVInstVBase	19-15=imm	24-20=vs2
+RVInstVUnary	7	funct6	vs1	RISCVVFormat opv	outs	ins	opcodestr	argstr	1	RVInstVBase	19-15=vs1	24-20=vs2
+RVInstVUnaryRd	7	funct6	vs1	RISCVVFormat opv	outs	ins	opcodestr	argstr	1	RVInst	31-26=funct6	14-12=opv.Value	19-15=vs1	24-20=vs2	11-7=rd	6-0=OPC_OP_V.Value
+RVInstVLoadBase	7	nf	RISCVWidth width	RISCVMOP mop	outs	ins	opcodestr	argstr	1	RVInst	14-12=width.Value	31-29=nf	19-15=rs1	11-7=vd	6-0=OPC_LOAD_FP.Value	27-26=mop.Value
+RVInstVLU	7	nf	RISCVWidth width	RISCVLUMOP lumop	outs	ins	opcodestr	argstr	1	RVInstVLoadBase	24-20=lumop.Value
+RVInstVLS	6	nf	RISCVWidth width	outs	ins	opcodestr	argstr	1	RVInstVLoadBase	24-20=rs2
+RVInstVLX	7	nf	RISCVWidth width	RISCVMOP mop	outs	ins	opcodestr	argstr	1	RVInstVLoadBase	24-20=vs2
+RVInstVStoreBase	7	nf	RISCVWidth width	RISCVMOP mop	outs	ins	opcodestr	argstr	1	RVInst	14-12=width.Value	31-29=nf	19-15=rs1	11-7=vs3	6-0=OPC_STORE_FP.Value	27-26=mop.Value
+RVInstVSU	7	nf	RISCVWidth width	RISCVSUMOP sumop	outs	ins	opcodestr	argstr	1	RVInstVStoreBase	24-20=sumop.Value
+RVInstVSS	6	nf	RISCVWidth width	outs	ins	opcodestr	argstr	1	RVInstVStoreBase	24-20=rs2
+RVInstVSX	7	nf	RISCVWidth width	RISCVMOP mop	outs	ins	opcodestr	argstr	1	RVInstVStoreBase	24-20=vs2
+RVInstET1	6	funct7	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-25=funct7	14-12=imm	19-15=rs1	24-20=imm	11-7=rd	6-0=opcode.Value
+RVInstET2	6	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-27=imm	14-12=funct3	19-15=rs1	24-20=imm	26-25=0b10	11-7=rd	6-0=opcode.Value
+RVInstET3	6	funct7	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-25=funct7	14-12=rm	19-15=rs1	24-20=rs2	11-7=rd	6-0=opcode.Value
+RVInstET4	6	funct2	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-27=rs3	14-12=rm	19-15=rs1	24-20=rs2	26-25=funct2	11-7=rd	6-0=opcode.Value
+RVInstET5	7	funct7	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-25=funct7	14-12=funct3	22-20=idx	19-15=rs1	11-7=rd	6-0=opcode.Value	24-23=0
+RVInstET6	6	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-25=0b0100111	14-12=funct3	19-15=rs1	24-20=imm	11-7=rd	6-0=opcode.Value
+RVInstET7	5	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	14-12=rm	19-15=rs1	31-20=0b010110000001	11-7=rd	6-0=opcode.Value
+RVInstET8	5	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-25=0b0101011	14-12=imm	11-10=0b00	9-7=rd	19-15=rs1	24-20=imm	6-0=opcode.Value
+RVInstET9	6	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-25=0b0110011	14-12=funct3	17-15=rs1	11-10=0b00	22-20=rs2	9-7=rd	19-18=0b00	6-0=opcode.Value	24-23=0b00
+RVInstET10	6	funct2	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	24-18=0b0000000	31-27=0b01010	14-12=0b000	17-15=rs1	26-25=funct2	11-7=rd	6-0=opcode.Value
+RVInstET11	5	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-25=0b0101111	14-12=0b000	17-15=rs1	22-20=rs2	11-7=rd	19-18=imm	6-0=opcode.Value	24-23=imm
+RVInstET12	7	funct7	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-25=funct7	14-12=funct3	19-15=rs1	24-20=rs2	11-7=rs3	6-0=opcode.Value
+RVInstET13	7	funct7	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-25=funct7	14-12=funct3	19-15=rs1	24-20=rs2	11-7=0b00000	6-0=opcode.Value
+RVInstET14	7	funct7	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInst	31-25=funct7	14-12=funct3	19-15=rs1	24-20=0b00000	11-7=fs3	6-0=opcode.Value
+RISCVGenericInstruction	0	0
+ImmXLenAsmOperand	2	prefix	suffix = ""	1	AsmOperandClass
+ImmAsmOperand	3	prefix	int width	suffix	1	AsmOperandClass
+MemOperand	1	regClass	1	RegisterOperand
+SImmAsmOperand	2	int width	suffix = ""	1	ImmAsmOperand
+UImmAsmOperand	2	int width	suffix = ""	1	ImmAsmOperand
+BareSImmNLsb0AsmOperand	1	int width	1	ImmAsmOperand
+OptionalMemOffsetAsmOperand	1	AsmOperandClass base	1	AsmOperandClass
+RISCVOp	1	ValueType vt = XLenVT	1	Operand
+RISCVUImmOp	1	int bitsNum	1	RISCVOp
+RISCVUImmLeafOp	1	int bitsNum	2	RISCVUImmOp	ImmLeaf
+RISCVUImmLsbZeroOp	2	int width	int zeros	2	RISCVOp	ImmLeaf
+OptionalUImmLsbZeroOp	2	int width	int zeros	1	RISCVUImmLsbZeroOp
+RISCVSImmOp	1	int bitsNum	1	RISCVOp
+RISCVSImmLeafOp	1	int bitsNum	2	RISCVSImmOp	ImmLeaf
+Simm12LoOp	1	12	0
+BareSImm13Lsb0MaybeSym	1	OtherVT	0
+UImm20OperandMaybeSym	1	20	0
+AddrRegRegScale	1	int N	1	ComplexPattern
+Load_ri	3	funct3	opcodestr	DAGOperand rty = GPR	1	RVInstI
+Store_rri	3	funct3	opcodestr	DAGOperand rty = GPR	1	RVInstS
+PatGpr	3	OpNode	RVInst Inst	ValueType vt = XLenVT	1	Pat
+binop_oneuse	1	operator	1	PatFrag
+unop_oneuse	1	operator	1	PatFrag
+immop_oneuse	1	ImmLeaf leaf	1	PatLeaf
+PatGprShiftMask	4	OpNode	RVInst Inst	ComplexPattern ShiftMask	ValueType vt = XLenVT	1	Pat
+SelectCC_GPR_rrirr	3	DAGOperand valty	ValueType vt	ValueType cmpvt = XLenVT	0
+SelectCC_GPR_riirr	2	DAGOperand valty	DAGOperand imm	0
+BccPat	2	CondCode Cond	RVInstB Inst	0
+BrccCompressOpt	2	CondCode Cond	RVInstB Inst	1	Pat
+LongBccPseudo	5	(outs)	(ins GPR:$rs1	GPR:$rs2	simm21_lsb0_jal:$imm20)	[]	0
+LongBcciPseudo	2	DAGOperand InTyImm	int size	1	Pseudo
+LdPat	4	PatFrag LoadOp	RVInst Inst	ValueType vt = XLenVT	ValueType PtrVT = XLenVT	1	Pat
+WriteSysReg	2	SysReg SR	list<Register> Regs	2	PseudoInstExpansion	Pseudo
+WriteSysRegImm	2	SysReg SR	list<Register> Regs	2	PseudoInstExpansion	Pseudo
+SwapSysReg	2	SysReg SR	list<Register> Regs	2	PseudoInstExpansion	Pseudo
+SwapSysRegImm	2	SysReg SR	list<Register> Regs	2	PseudoInstExpansion	Pseudo
+ClearSysReg	2	SysReg SR	list<Register> Regs	2	PseudoInstExpansion	Pseudo
+ClearSysRegImm	2	SysReg SR	list<Register> Regs	2	PseudoInstExpansion	Pseudo
+SetSysReg	2	SysReg SR	list<Register> Regs	2	PseudoInstExpansion	Pseudo
+SetSysRegImm	2	SysReg SR	list<Register> Regs	2	PseudoInstExpansion	Pseudo
+binop_allhusers	1	operator	1	PatFrag
+binop_allwusers	1	operator	1	PatFrag
+LR_r_aq_rl	2	funct3	opcodestr	0
+SC_r_aq_rl	2	funct3	opcodestr	0
+AMO_rr_aq_rl	3	funct5	funct3	opcodestr	0
+relaxed_load	1	PatFrags base	1	PatFrag
+acquiring_load	1	PatFrags base	1	PatFrag
+seq_cst_load	1	PatFrags base	1	PatFrag
+relaxed_store	1	PatFrag base	1	PatFrag
+releasing_store	1	PatFrag base	1	PatFrag
+seq_cst_store	1	PatFrag base	1	PatFrag
+PatAMO	3	OpNode	RVInst Inst	ValueType vt = XLenVT	1	Pat
+PseudoAMO	6	(outs GPR:$res	GPR:$scratch)	(ins GPR:$addr	GPR:$incr	ordering:$ordering)	[]	0
+PseudoMaskedAMO	7	(outs GPR:$res	GPR:$scratch)	(ins GPR:$addr	GPR:$incr	GPR:$mask	ordering:$ordering)	[]	0
+PseudoMaskedAMOMinMax	9	(outs GPR:$res	GPR:$scratch1	GPR:$scratch2)	(ins GPR:$addr	GPR:$incr	GPR:$mask	GPR:$sextshamt	ordering:$ordering)	[]	0
+PseudoMaskedAMOUMinUMax	8	(outs GPR:$res	GPR:$scratch1	GPR:$scratch2)	(ins GPR:$addr	GPR:$incr	GPR:$mask	ordering:$ordering)	[]	0
+PseudoAMOPat	3	AtomicOp	Pseudo AMOInst	ValueType vt = XLenVT	0
+PseudoMaskedAMOPat	2	Intrinsic intrin	Pseudo AMOInst	1	Pat
+PseudoCmpXchg	7	(outs GPR:$res	GPR:$scratch)	(ins GPR:$addr	GPR:$cmpval	GPR:$newval	ordering:$ordering)	[]	0
+PseudoCmpXchgPat	3	Op	Pseudo CmpXchgInst	ValueType vt = XLenVT	0
+ExtInfo	9	suffix	space	list<Predicate> predicates	ValueType primaryvt	DAGOperand primaryty	DAGOperand f32ty	DAGOperand f64ty	DAGOperand f16ty	ValueType intvt = XLenVT	0
+FPFMA_rrr_frm_m	4	RISCVOpcode opcode	funct2	opcodestr	ExtInfo Ext	0
+FPALU_rr_m	5	funct7	funct3	opcodestr	ExtInfo Ext	Commutable = 0	0
+FPALU_rr_frm_m	4	funct7	opcodestr	ExtInfo Ext	Commutable = 0	0
+FPUnaryOp_r_m	7	funct7	rs2val	funct3	ExtInfo Ext	DAGOperand rdty	DAGOperand rs1ty	opcodestr	0
+FPUnaryOp_r_frm_m	7	funct7	rs2val	ExtInfo Ext	DAGOperand rdty	DAGOperand rs1ty	opcodestr	list<Predicate> ExtraPreds = []	0
+FPUnaryOp_r_frmlegacy_m	7	funct7	rs2val	ExtInfo Ext	DAGOperand rdty	DAGOperand rs1ty	opcodestr	list<Predicate> ExtraPreds = []	0
+FPCmp_rr_m	5	funct7	funct3	opcodestr	ExtInfo Ext	Commutable = 0	0
+PseudoFROUND	3	DAGOperand Ty	ValueType vt	ValueType intvt = XLenVT	1	Pseudo
+PatSetCC	6	DAGOperand Ty	OpNode	CondCode Cond	RVInstCommon Inst	ValueType vt	ValueType intvt = XLenVT	1	Pat
+PatFprFpr	4	OpNode	RVInstR Inst	DAGOperand RegTy	ValueType vt	1	Pat
+PatFprFprDynFrm	5	OpNode	RVInstRFrm Inst	DAGOperand RegTy	ValueType vt	ValueType intvt	1	Pat
+UImmPlus1AsmOperand	1	int width	1	AsmOperandClass
+RISCVUImmPlus1Op	1	int bitsNum	2	RISCVOp	ImmLeaf
+RVPLoadImm_i	4	funct7	ins	opcodestr	argstr	1	RVInst	31-25=funct7	14-12=0b010	11-7=rd	6-0=OPC_OP_IMM_32.Value
+PLI_i	3	funct7	opcodestr	DAGOperand imm	1	RVPLoadImm_i	24-16=imm10
+PLUI_i	2	funct7	opcodestr	1	RVPLoadImm_i	23-15=imm10
+RVPWideningBase	6	f	w	arith_shift	outs	ins	opcodestr	1	RVInst	30-27=f	14-12=0b010	19-15=rs1	24-20=rs2	26-25=w	6-0=OPC_OP_IMM_32.Value	11-8=rd
+RVPNarrowingBase	8	f	r	funct4	outs	ins	opcodestr	argstr	DefVXSAT = 0	1	RVInst	30-28=f	15-12=funct4	19-16=rs1	11-7=rd	6-0=OPC_OP_IMM_32.Value
+RVPPairBase	7	f	bit15	outs	ins	opcodestr	argstr	DefVXSAT	1	RVInst	30-27=f	14-12=0b110	19-16=rs1	6-0=OPC_OP_IMM_32.Value	11-8=rd
+RVPPairBinaryBase_rr	6	f	w	bit20	bit15	opcodestr	DefVXSAT = 0	1	RVPPairBase	26-25=w	24-21=rs2
+RVPShiftD_ri	5	f	funct3	opcodestr	ImmType = uimm6	DefVXSAT = 0	1	RVPShift_ri	25-20=shamt
+RVPShiftW_ri	5	f	funct3	opcodestr	ImmType = uimm5	DefVXSAT = 0	1	RVPShift_ri	24-20=shamt	26-25=0b01
+RVPShiftH_ri	5	f	funct3	opcodestr	ImmType = uimm4	DefVXSAT = 0	1	RVPShift_ri	23-20=shamt	26-24=0b001
+RVPShiftB_ri	4	f	funct3	opcodestr	ImmType = uimm3	1	RVPShift_ri	22-20=shamt	26-23=0b0001
+RVPWideningShiftW_ri	2	f	opcodestr	1	RVPWideningShift_ri	25-20=shamt
+RVPWideningShiftH_ri	2	f	opcodestr	1	RVPWideningShift_ri	24-20=shamt	26-25=0b01
+RVPWideningShiftB_ri	2	f	opcodestr	1	RVPWideningShift_ri	23-20=shamt	26-24=0b001
+RVPNarrowingShiftW_ri	3	f	opcodestr	DefVXSAT = 0	1	RVPNarrowingShift_ri	25-20=shamt
+RVPNarrowingShiftH_ri	3	f	opcodestr	DefVXSAT = 0	1	RVPNarrowingShift_ri	24-20=shamt	26-25=0b01
+RVPNarrowingShiftB_ri	3	f	opcodestr	DefVXSAT = 0	1	RVPNarrowingShift_ri	23-20=shamt	26-24=0b001
+RVPPairShiftW_ri	4	f	direction	opcodestr	DefVXSAT = 0	1	RVPPairShift_ri	24-20=shamt	26-25=0b01
+RVPPairShiftH_ri	4	f	direction	opcodestr	DefVXSAT = 0	1	RVPPairShift_ri	23-20=shamt	26-24=0b001
+RVPPairShiftB_ri	3	f	direction	opcodestr	1	RVPPairShift_ri	22-20=shamt	26-23=0b0001
+RVPPairLoadImm_i	4	funct7	ins	opcodestr	argstr	1	RVInst	31-25=funct7	14-12=0b010	6-0=OPC_OP_IMM_32.Value	11-8=rd
+PatGprSplatGpr	4	OpNode	RVInst Inst	ValueType VecVT	ValueType ScalarVT = XLenVT	1	Pat
+PatPSh1Add	2	RVInst Inst	ValueType vt	1	Pat
+SFBALU_rr	8	(outs GPR:$dst)	(ins GPR:$falsev	GPR:$rs1	GPR:$rs2	bcc_opcode:$bcc	GPR:$lhs	sfb_rhs:$rhs)	[]	0
+SFBALU_ri	8	(outs GPR:$dst)	(ins GPR:$falsev	GPR:$rs1	simm12_lo:$imm	bcc_opcode:$bcc	GPR:$lhs	sfb_rhs:$rhs)	[]	0
+SFBLUI	7	(outs GPR:$dst)	(ins GPR:$falsev	uimm20_lui:$imm	bcc_opcode:$bcc	GPR:$lhs	sfb_rhs:$rhs)	[]	0
+SFBLoad	8	(outs GPR:$dst)	(ins GPR:$falsev	GPR:$rs1	simm12_lo:$imm	bcc_opcode:$bcc	GPR:$lhs	sfb_rhs:$rhs)	[]	0
+SFBShift_ri	8	(outs GPR:$dst)	(ins GPR:$falsev	GPR:$rs1	uimmlog2xlen:$imm	bcc_opcode:$bcc	GPR:$lhs	sfb_rhs:$rhs)	[]	0
+SFBShiftW_ri	8	(outs GPR:$dst)	(ins GPR:$falsev	GPR:$rs1	uimm5:$imm	bcc_opcode:$bcc	GPR:$lhs	sfb_rhs:$rhs)	[]	0
+VTypeIAsmOperand	1	int VTypeINum	1	AsmOperandClass
+VTypeIOp	1	int VTypeINum	1	RISCVOp
+SchedCommon	6	list<SchedWrite> writes	list<SchedRead> reads	mx = "WorstCase"	int sew = 0	forceMasked = 0	forcePassthruRead = 0	1	Sched
+SchedNary	6	write	list<string> reads	mx	int sew = 0	forceMasked = 0	forcePassthruRead = 0	1	SchedCommon
+VUnitStrideLoad	2	RISCVWidth width	opcodestr	1	RVInstVLU
+VUnitStrideMaskLoad	1	opcodestr	1	RVInstVLU
+VUnitStrideLoadFF	2	RISCVWidth width	opcodestr	1	RVInstVLU
+VUnitStrideSegmentLoadFF	3	int nfields	RISCVWidth width	opcodestr	1	RVInstVLU
+VStridedSegmentLoad	3	int nfields	RISCVWidth width	opcodestr	1	RVInstVLS
+VIndexedSegmentLoad	4	int nfields	RISCVMOP mop	RISCVWidth width	opcodestr	1	RVInstVLX
+VUnitStrideStore	2	RISCVWidth width	opcodestr	1	RVInstVSU
+VUnitStrideMaskStore	1	opcodestr	1	RVInstVSU
+VStridedStore	2	RISCVWidth width	opcodestr	1	RVInstVSS
+VStridedSegmentStore	3	int nfields	RISCVWidth width	opcodestr	1	RVInstVSS
+VIndexedSegmentStore	4	int nfields	RISCVMOP mop	RISCVWidth width	opcodestr	1	RVInstVSX
+VALUVV	3	funct6	RISCVVFormat opv	opcodestr	1	RVInstVV
+VMACVV	4	funct6	RISCVVFormat opv	opcodestr	EarlyClobber = 0	1	RVInstVV
+VALUVVNoVm	3	funct6	RISCVVFormat opv	opcodestr	1	RVInstVV
+VALUVX	3	funct6	RISCVVFormat opv	opcodestr	1	RVInstVX
+VMACVX	4	funct6	RISCVVFormat opv	opcodestr	EarlyClobber = 0	1	RVInstVX
+VALUVXNoVm	3	funct6	RISCVVFormat opv	opcodestr	1	RVInstVX
+VALUVI	3	funct6	opcodestr	optype = simm5	1	RVInstIVI
+VALUVINoVm	3	funct6	opcodestr	optype = simm5	1	RVInstIVI
+VALUVF	3	funct6	RISCVVFormat opv	opcodestr	1	RVInstVX
+VALUVs2	4	funct6	vs1	RISCVVFormat opv	opcodestr	1	RVInstVUnary
+VALUm_IV_V_X	2	opcodestr	funct6	0
+VALUm_IV_V_X_I	2	opcodestr	funct6	1	VALUm_IV_V_X
+VALUNoVm_IV_V_X	2	opcodestr	funct6	0
+VALUNoVm_IV_V_X_I	2	opcodestr	funct6	1	VALUNoVm_IV_V_X
+VALU_FV_F	2	opcodestr	funct6	0
+VALU_FV_V_F	2	opcodestr	funct6	1	VALU_FV_F
+VWALU_FV_V_F	3	opcodestr	funct6	vw	0
+VMUL_FV_V_F	2	opcodestr	funct6	0
+VDIV_FV_F	2	opcodestr	funct6	0
+VDIV_FV_V_F	2	opcodestr	funct6	1	VDIV_FV_F
+VWMUL_FV_V_F	2	opcodestr	funct6	0
+VMAC_FV_V_F	2	opcodestr	funct6	0
+VWMAC_FV_V_F	2	opcodestr	funct6	0
+VSQR_FV_VS2	3	opcodestr	funct6	vs1	2	SchedUnaryMC	VALUVs2
+VCMP_FV_F	2	opcodestr	funct6	0
+VCMP_FV_V_F	2	opcodestr	funct6	1	VCMP_FV_F
+VSGNJ_FV_V_F	2	opcodestr	funct6	0
+VCLS_FV_VS2	3	opcodestr	funct6	vs1	2	SchedUnaryMC	VALUVs2
+VREDMINMAX_MV_V	2	opcodestr	funct6	0
+VWRED_IV_V	2	opcodestr	funct6	0
+VRED_FV_V	2	opcodestr	funct6	0
+VREDMINMAX_FV_V	2	opcodestr	funct6	0
+VREDO_FV_V	2	opcodestr	funct6	0
+VWRED_FV_V	2	opcodestr	funct6	0
+VWREDO_FV_V	2	opcodestr	funct6	0
+VMALU_MV_Mask	3	opcodestr	funct6	vm = "v"	0
+VMSFS_MV_VS2	3	opcodestr	funct6	vs1	2	SchedUnaryMC	VALUVs2
+VNSHT_IV_V_X_I	2	opcodestr	funct6	0
+VMINMAX_IV_V_X	2	opcodestr	funct6	0
+VCMP_IV_V	2	opcodestr	funct6	0
+VCMP_IV_X	2	opcodestr	funct6	0
+VCMP_IV_I	2	opcodestr	funct6	0
+VCMP_IV_V_X_I	2	opcodestr	funct6	3	VCMP_IV_X	VCMP_IV_I	VCMP_IV_V
+VWMUL_MV_V_X	2	opcodestr	funct6	0
+VDIV_MV_V_X	2	opcodestr	funct6	0
+VSALU_IV_V_X	2	opcodestr	funct6	0
+VSALU_IV_V_X_I	2	opcodestr	funct6	1	VSALU_IV_V_X
+VAALU_MV_V_X	2	opcodestr	funct6	0
+VSMUL_IV_V_X	2	opcodestr	funct6	0
+VSSHF_IV_V_X_I	2	opcodestr	funct6	0
+VNCLP_IV_V_X_I	2	opcodestr	funct6	0
+VSLD_IV_X_I	3	opcodestr	funct6	slidesUp	0
+VSLD1_MV_X	3	opcodestr	funct6	slidesUp	0
+VSLD1_FV_F	3	opcodestr	funct6	slidesUp	0
+VGTR_IV_V_X_I	2	opcodestr	funct6	0
+VCPR_MV_Mask	3	opcodestr	funct6	vm = "v"	0
+VWholeLoadN	4	int eew	int lmul	opcodestr	VRC	0
+PseudoToVInst	1	PseudoInst	0
+LMULInfo	8	int lmul	int oct	VReg regclass	VReg wregclass	VReg f2regclass	VReg f4regclass	VReg f8regclass	mx	0
+MxSet	1	int eew	0
+FPR_Info	1	int sew	0
+NFSet	1	LMULInfo m	0
+octuple_to_str	1	int octuple	0
+SegRegClass	2	LMULInfo m	int nf	0
+VTypeInfo	6	ValueType Vec	ValueType Mas	int Sew	LMULInfo M	ValueType Scal = XLenVT	ScalarReg = GPR	0
+GroupVTypeInfo	7	ValueType Vec	ValueType VecM1	ValueType Mas	int Sew	LMULInfo M	ValueType Scal = XLenVT	ScalarReg = GPR	1	VTypeInfo
+GetIntVTypeInfo	1	VTypeInfo vti	0
+MTypeInfo	3	ValueType Mas	LMULInfo M	Bx	0
+VTypeInfoToWide	2	VTypeInfo vti	VTypeInfo wti	0
+VTypeInfoToFraction	2	VTypeInfo vti	VTypeInfo fti	0
+RISCVVPseudo	5	outs	ins	pattern = []	opcodestr = ""	argstr = ""	1	Pseudo
+RISCVMaskedPseudo	1	MaskIdx	0
+RISCVVLE	5	M	Str	F	S	L	0
+RISCVVSE	4	M	Str	S	L	0
+RISCVVLX_VSX	5	M	O	S	L	IL	0
+RISCVVLX	5	M	O	S	L	IL	1	RISCVVLX_VSX
+RISCVVLSEG	6	N	M	Str	F	S	L	0
+RISCVVLXSEG	6	N	M	O	S	L	IL	0
+RISCVVSSEG	5	N	M	Str	S	L	0
+RISCVVSXSEG	6	N	M	O	S	L	IL	0
+GetVRegNoV0	1	VReg VRegClass	0
+GetVTypePredicates	1	VTypeInfo vti	0
+GetVTypeMinimalPredicates	1	VTypeInfo vti	0
+VPseudoUSLoadNoMask	3	VReg RetClass	int EEW	DAGOperand sewop = sew	2	RISCVVPseudo	RISCVVLE
+VPseudoUSLoadMask	2	VReg RetClass	int EEW	2	RISCVVPseudo	RISCVVLE
+VPseudoUSLoadFFNoMask	2	VReg RetClass	int EEW	2	RISCVVPseudo	RISCVVLE
+VPseudoUSLoadFFMask	2	VReg RetClass	int EEW	2	RISCVVPseudo	RISCVVLE
+VPseudoSLoadNoMask	2	VReg RetClass	int EEW	2	RISCVVPseudo	RISCVVLE
+VPseudoSLoadMask	2	VReg RetClass	int EEW	2	RISCVVPseudo	RISCVVLE
+VPseudoILoadNoMask	7	VReg RetClass	VReg IdxClass	int EEW	LMUL	Ordered	EarlyClobber	TargetConstraintType = 1	2	RISCVVLX	RISCVVPseudo
+VPseudoILoadMask	7	VReg RetClass	VReg IdxClass	int EEW	LMUL	Ordered	EarlyClobber	TargetConstraintType = 1	2	RISCVVLX	RISCVVPseudo
+VPseudoUSStoreNoMask	3	VReg StClass	int EEW	DAGOperand sewop = sew	2	RISCVVSE	RISCVVPseudo
+VPseudoUSStoreMask	2	VReg StClass	int EEW	2	RISCVVSE	RISCVVPseudo
+VPseudoSStoreNoMask	2	VReg StClass	int EEW	2	RISCVVSE	RISCVVPseudo
+VPseudoSStoreMask	2	VReg StClass	int EEW	2	RISCVVSE	RISCVVPseudo
+VPseudoNullaryNoMask	1	VReg RegClass	1	RISCVVPseudo
+VPseudoNullaryMask	1	VReg RegClass	1	RISCVVPseudo
+VPseudoNullaryPseudoM	1	BaseInst	1	RISCVVPseudo
+VPseudoUnaryNoMask	4	DAGOperand RetClass	DAGOperand OpClass	Constraint = ""	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoUnaryNoMaskNoPolicy	4	DAGOperand RetClass	DAGOperand OpClass	Constraint = ""	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoUnaryNoMaskRoundingMode	4	DAGOperand RetClass	DAGOperand OpClass	Constraint = ""	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoUnaryMask	5	VReg RetClass	VReg OpClass	Constraint = ""	TargetConstraintType = 1	DAGOperand sewop = sew	1	RISCVVPseudo
+VPseudoUnaryMaskRoundingMode	4	VReg RetClass	VReg OpClass	Constraint = ""	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoUnaryMask_NoExcept	3	VReg RetClass	VReg OpClass	Constraint = ""	1	Pseudo
+VPseudoUnaryNoMaskGPROut	4	(outs GPR:$rd)	(ins VR:$rs2	AVL:$vl	sew_mask:$sew)	0
+VPseudoUnaryMaskGPROut	5	(outs GPR:$rd)	(ins VR:$rs1	VMV0:$vm	AVL:$vl	sew_mask:$sew)	0
+VPseudoUnaryAnyMask	2	VReg RetClass	VReg Op1Class	1	RISCVVPseudo
+VPseudoBinaryNoMask	6	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	Constraint	TargetConstraintType = 1	DAGOperand sewop = sew	1	RISCVVPseudo
+VPseudoBinaryNoMaskPolicy	5	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	Constraint	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoBinaryNoMaskRoundingMode	6	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	Constraint	UsesVXRM_ = 1	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoBinaryMaskPolicyRoundingMode	6	VReg RetClass	Op1Class	DAGOperand Op2Class	Constraint	UsesVXRM_	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoTiedBinaryNoMask	4	VReg RetClass	DAGOperand Op2Class	Constraint	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoTiedBinaryNoMaskRoundingMode	4	VReg RetClass	DAGOperand Op2Class	Constraint	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoIStoreNoMask	5	VReg StClass	VReg IdxClass	int EEW	LMUL	Ordered	2	RISCVVPseudo	RISCVVSX
+VPseudoIStoreMask	5	VReg StClass	VReg IdxClass	int EEW	LMUL	Ordered	2	RISCVVPseudo	RISCVVSX
+VPseudoBinaryMaskPolicy	5	VReg RetClass	Op1Class	DAGOperand Op2Class	Constraint	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoReductionMaskPolicy	3	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	1	RISCVVPseudo
+VPseudoReductionMaskPolicyRoundingMode	3	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	1	RISCVVPseudo
+VPseudoBinaryMOutMask	5	VReg RetClass	Op1Class	DAGOperand Op2Class	Constraint	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoTiedBinaryMask	4	VReg RetClass	DAGOperand Op2Class	Constraint	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoTiedBinaryMaskRoundingMode	4	VReg RetClass	DAGOperand Op2Class	Constraint	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoBinaryCarry	7	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	LMULInfo MInfo	CarryIn	Constraint	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoTiedBinaryCarryIn	5	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	LMULInfo MInfo	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoTernaryNoMaskWithPolicy	5	VReg RetClass	Op1Class	DAGOperand Op2Class	Constraint = ""	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoTernaryNoMaskWithPolicyRoundingMode	5	VReg RetClass	Op1Class	DAGOperand Op2Class	Constraint = ""	TargetConstraintType = 1	1	RISCVVPseudo
+VPseudoUSSegLoadNoMask	3	VReg RetClass	int EEW	NF	2	RISCVVPseudo	RISCVVLSEG
+VPseudoUSSegLoadMask	3	VReg RetClass	int EEW	NF	2	RISCVVPseudo	RISCVVLSEG
+VPseudoUSSegLoadFFNoMask	3	VReg RetClass	int EEW	NF	2	RISCVVPseudo	RISCVVLSEG
+VPseudoUSSegLoadFFMask	3	VReg RetClass	int EEW	NF	2	RISCVVPseudo	RISCVVLSEG
+VPseudoSSegLoadNoMask	3	VReg RetClass	int EEW	NF	2	RISCVVPseudo	RISCVVLSEG
+VPseudoSSegLoadMask	3	VReg RetClass	int EEW	NF	2	RISCVVPseudo	RISCVVLSEG
+VPseudoISegLoadNoMask	6	VReg RetClass	VReg IdxClass	int EEW	LMUL	NF	Ordered	2	RISCVVPseudo	RISCVVLXSEG
+VPseudoISegLoadMask	6	VReg RetClass	VReg IdxClass	int EEW	LMUL	NF	Ordered	2	RISCVVPseudo	RISCVVLXSEG
+VPseudoUSSegStoreNoMask	3	VReg ValClass	int EEW	NF	2	RISCVVPseudo	RISCVVSSEG
+VPseudoUSSegStoreMask	3	VReg ValClass	int EEW	NF	2	RISCVVPseudo	RISCVVSSEG
+VPseudoSSegStoreNoMask	3	VReg ValClass	int EEW	NF	2	RISCVVPseudo	RISCVVSSEG
+VPseudoSSegStoreMask	3	VReg ValClass	int EEW	NF	2	RISCVVPseudo	RISCVVSSEG
+VPseudoISegStoreNoMask	6	VReg ValClass	VReg IdxClass	int EEW	LMUL	NF	Ordered	2	RISCVVPseudo	RISCVVSXSEG
+VPseudoISegStoreMask	6	VReg ValClass	VReg IdxClass	int EEW	LMUL	NF	Ordered	2	RISCVVPseudo	RISCVVSXSEG
+VPseudoUSLoad	0	0
+VPseudoFFLoad	0	0
+VPseudoMaskLoad	0	0
+VPseudoSLoad	0	0
+VPseudoILoad	1	Ordered	0
+VPseudoUSStore	0	0
+VPseudoMaskStore	0	0
+VPseudoSStore	0	0
+VPseudoIStore	1	Ordered	0
+VPseudoVPOP_M	0	0
+VPseudoV1ST_M	0	0
+VPseudoVSFS_M	0	0
+VPseudoVID_V	0	0
+VPseudoNullaryPseudoM	1	BaseInst	0
+VPseudoVIOTA_M	0	0
+VPseudoVCPR_V	0	0
+VPseudoBinary	8	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	LMULInfo MInfo	Constraint = ""	int sew = 0	TargetConstraintType = 1	Commutable = 0	0
+VPseudoBinaryRoundingMode	9	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	LMULInfo MInfo	Constraint = ""	int sew = 0	UsesVXRM = 1	TargetConstraintType = 1	Commutable = 0	0
+VPseudoBinaryEmul	7	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	LMULInfo lmul	LMULInfo emul	Constraint = ""	int sew	0
+VPseudoTiedBinary	5	VReg RetClass	DAGOperand Op2Class	LMULInfo MInfo	Constraint = ""	TargetConstraintType = 1	0
+VPseudoTiedBinaryRoundingMode	6	VReg RetClass	DAGOperand Op2Class	LMULInfo MInfo	Constraint = ""	int sew = 0	TargetConstraintType = 1	0
+VPseudoBinaryV_VV	4	LMULInfo m	Constraint = ""	int sew = 0	Commutable = 0	0
+VPseudoBinaryV_VV_RM	3	LMULInfo m	Constraint = ""	Commutable = 0	0
+VPseudoBinaryFV_VV_RM	2	LMULInfo m	int sew	0
+VPseudoVGTR_EI16_VV	0	0
+VPseudoBinaryV_VX	3	LMULInfo m	Constraint = ""	int sew = 0	0
+VPseudoBinaryV_VX_RM	2	LMULInfo m	Constraint = ""	0
+VPseudoVSLD1_VX	2	slidesUp = false	Constraint = ""	0
+VPseudoBinaryV_VF	3	LMULInfo m	FPR_Info f	int sew	0
+VPseudoBinaryV_VF_RM	3	LMULInfo m	FPR_Info f	int sew	0
+VPseudoVSLD1_VF	2	slidesUp = false	Constraint = ""	0
+VPseudoBinaryV_VI	3	ImmType	LMULInfo m	Constraint = ""	0
+VPseudoBinaryV_VI_RM	3	ImmType	LMULInfo m	Constraint = ""	0
+VPseudoVALU_MM	1	Commutable = 0	0
+VPseudoBinaryW_VV	2	LMULInfo m	Commutable = 0	0
+VPseudoBinaryW_VV_RM	2	LMULInfo m	int sew	0
+VPseudoBinaryW_VX	1	LMULInfo m	0
+VPseudoBinaryW_VI	2	ImmType	LMULInfo m	0
+VPseudoBinaryW_VF_RM	3	LMULInfo m	FPR_Info f	int sew	0
+VPseudoBinaryW_WV	1	LMULInfo m	0
+VPseudoBinaryW_WV_RM	2	LMULInfo m	int sew	0
+VPseudoBinaryW_WX	1	LMULInfo m	0
+VPseudoBinaryW_WF_RM	3	LMULInfo m	FPR_Info f	int sew	0
+VPseudoBinaryV_WV	1	LMULInfo m	0
+VPseudoBinaryV_WV_RM	1	LMULInfo m	0
+VPseudoBinaryV_WX	1	LMULInfo m	0
+VPseudoBinaryV_WX_RM	1	LMULInfo m	0
+VPseudoBinaryV_WI	1	LMULInfo m	0
+VPseudoBinaryV_WI_RM	1	LMULInfo m	0
+VPseudoBinaryV_VM	6	LMULInfo m	CarryOut = 0	CarryIn = 1	Constraint = ""	Commutable = 0	TargetConstraintType = 1	0
+VPseudoTiedBinaryV_VM	2	LMULInfo m	Commutable = 0	0
+VPseudoBinaryV_XM	5	LMULInfo m	CarryOut = 0	CarryIn = 1	Constraint = ""	TargetConstraintType = 1	0
+VPseudoTiedBinaryV_XM	1	LMULInfo m	0
+VPseudoVMRG_FM	0	0
+VPseudoBinaryV_IM	5	LMULInfo m	CarryOut = 0	CarryIn = 1	Constraint = ""	TargetConstraintType = 1	0
+VPseudoTiedBinaryV_IM	1	LMULInfo m	0
+VPseudoUnaryVMV_V_X_I	0	0
+VPseudoVMV_F	0	0
+VPseudoVCLS_V	0	0
+VPseudoVSQR_V_RM	0	0
+VPseudoVRCP_V	0	0
+VPseudoVRCP_V_RM	0	0
+PseudoVEXT_VF2	0	0
+PseudoVEXT_VF4	0	0
+PseudoVEXT_VF8	0	0
+VPseudoBinaryM	3	DAGOperand Op2Class	LMULInfo m	Commutable = 0	0
+VPseudoBinaryM_VV	2	LMULInfo m	Commutable = 0	0
+VPseudoBinaryM_VX	1	LMULInfo m	0
+VPseudoBinaryM_VF	2	LMULInfo m	FPR_Info f	0
+VPseudoBinaryM_VI	1	LMULInfo m	0
+VPseudoVGTR_VV_VX_VI	0	0
+VPseudoVSALU_VV_VX_VI	1	Commutable = 0	0
+VPseudoVSHT_VV_VX_VI	0	0
+VPseudoVSSHT_VV_VX_VI_RM	0	0
+VPseudoVALU_VV_VX_VI	1	Commutable = 0	0
+VPseudoVSALU_VV_VX	0	0
+VPseudoVSMUL_VV_VX_RM	0	0
+VPseudoVAALU_VV_VX_RM	1	Commutable = 0	0
+VPseudoVMINMAX_VV_VX	0	0
+VPseudoVMUL_VV_VX	1	Commutable = 0	0
+VPseudoVDIV_VV_VX	0	0
+VPseudoVFMUL_VV_VF_RM	0	0
+VPseudoVFDIV_VV_VF_RM	0	0
+VPseudoVFRDIV_VF_RM	0	0
+VPseudoVALU_VV	1	Commutable = 0	0
+VPseudoVALU_VV_VX	1	Commutable = 0	1	VPseudoVALU_VV
+VPseudoVSGNJ_VV_VF	0	0
+VPseudoVMAX_VV_VF	0	0
+VPseudoVALU_VV_VF_RM	0	0
+VPseudoVALU_VF_RM	0	0
+VPseudoVALU_VX_VI	0	0
+VPseudoVWALU_VV_VX	1	Commutable = 0	0
+VPseudoVWMUL_VV_VX	1	Commutable = 0	0
+VPseudoVWMUL_VV_VF_RM	0	0
+VPseudoVWALU_WV_WX	0	0
+VPseudoVFWALU_VV_VF_RM	0	0
+VPseudoVFWALU_WV_WF_RM	0	0
+VPseudoVMRG_VM_XM_IM	0	0
+VPseudoVCALU_VM_XM_IM	0	0
+VPseudoVCALU_VM_XM	0	0
+VPseudoVCALUM_VM_XM_IM	0	0
+VPseudoVCALUM_VM_XM	0	0
+VPseudoVCALUM_V_X_I	0	0
+VPseudoVCALUM_V_X	0	0
+VPseudoVNCLP_WV_WX_WI_RM	0	0
+VPseudoVNSHT_WV_WX_WI	0	0
+VPseudoReductionWithTailPolicy	5	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	LMULInfo MInfo	int sew	0
+VPseudoReductionWithTailPolicyRoundingMode	5	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	LMULInfo MInfo	int sew	0
+VPseudoTernaryWithPolicy	7	VReg RetClass	Op1Class	DAGOperand Op2Class	LMULInfo MInfo	Constraint = ""	Commutable = 0	TargetConstraintType = 1	0
+VPseudoTernaryWithPolicyRoundingMode	8	VReg RetClass	Op1Class	DAGOperand Op2Class	LMULInfo MInfo	Constraint = ""	int sew = 0	Commutable = 0	TargetConstraintType = 1	0
+VPseudoTernaryV_VV_AAXA	1	LMULInfo m	0
+VPseudoTernaryV_VV_AAXA_RM	2	LMULInfo m	int sew	0
+VPseudoTernaryV_VX_AAXA	1	LMULInfo m	0
+VPseudoTernaryV_VF_AAXA_RM	3	LMULInfo m	FPR_Info f	int sew	0
+VPseudoTernaryW_VV	2	LMULInfo m	Commutable = 0	0
+VPseudoTernaryW_VV_RM	2	LMULInfo m	int sew	0
+VPseudoTernaryW_VX	1	LMULInfo m	0
+VPseudoTernaryW_VF_RM	3	LMULInfo m	FPR_Info f	int sew	0
+VPseudoVSLDVWithPolicy	5	VReg RetClass	Op1Class	DAGOperand Op2Class	LMULInfo MInfo	Constraint = ""	0
+VPseudoVSLDV_VX	2	LMULInfo m	Constraint = ""	0
+VPseudoVSLDV_VI	2	LMULInfo m	Constraint = ""	0
+VPseudoVMAC_VV_VX_AAXA	0	0
+VPseudoVMAC_VV_VF_AAXA_RM	0	0
+VPseudoVSLD_VX_VI	2	slidesUp = false	Constraint = ""	0
+VPseudoVWMAC_VV_VX	1	Commutable = 0	0
+VPseudoVWMAC_VX	0	0
+VPseudoVWMAC_VV_VF_RM	0	0
+VPseudoVWMAC_VV_VF_BF_RM	0	0
+VPseudoVCMPM_VV_VX_VI	1	Commutable = 0	0
+VPseudoVCMPM_VV_VX	0	0
+VPseudoVCMPM_VX_VI	0	0
+VPseudoVCMPM_VV_VF	0	0
+VPseudoVCMPM_VF	0	0
+VPseudoVRED_VS	0	0
+VPseudoVREDMINMAX_VS	0	0
+VPseudoVWRED_VS	0	0
+VPseudoVFRED_VS_RM	0	0
+VPseudoVFREDMINMAX_VS	0	0
+VPseudoVFREDO_VS_RM	0	0
+VPseudoVFWRED_VS_RM	0	0
+VPseudoVFWREDO_VS_RM	0	0
+VPseudoConversion	6	VReg RetClass	VReg Op1Class	LMULInfo MInfo	Constraint = ""	int sew = 0	TargetConstraintType = 1	0
+VPseudoConversionRoundingMode	6	VReg RetClass	VReg Op1Class	LMULInfo MInfo	Constraint = ""	int sew = 0	TargetConstraintType = 1	0
+VPseudoConversionNoExcept	4	VReg RetClass	VReg Op1Class	LMULInfo MInfo	Constraint = ""	0
+VPseudoVCVTI_V	0	0
+VPseudoVCVTI_V_RM	0	0
+VPseudoVFROUND_NOEXCEPT_V	0	0
+VPseudoVCVTF_V_RM	0	0
+VPseudoVWCVTI_V	0	0
+VPseudoVWCVTI_V_RM	0	0
+VPseudoVWCVTF_V	0	0
+VPseudoVWCVTD_V	0	0
+VPseudoVNCVTI_W	0	0
+VPseudoVNCVTI_W_RM	0	0
+VPseudoVNCVTF_W_RM	0	0
+VPseudoVNCVTD_W	0	0
+VPseudoVNCVTD_W_RM	0	0
+VPseudoUSSegLoad	0	0
+VPseudoUSSegLoadFF	0	0
+VPseudoSSegLoad	0	0
+VPseudoISegLoad	1	Ordered	0
+VPseudoUSSegStore	0	0
+VPseudoSSegStore	0	0
+VPseudoISegStore	1	Ordered	0
+VPatUnaryNoMask	10	intrinsic_name	inst	kind	ValueType result_type	ValueType op2_type	int log2sew	LMULInfo vlmul	VReg result_reg_class	VReg op2_reg_class	isSEWAware = 0	1	Pat
+VPatUnaryV_V_AnyMask	3	intrinsic	instruction	list<VTypeInfo> vtilist	0
+VPatUnaryM_M	2	intrinsic	inst	0
+VPatUnaryV_M	2	intrinsic	instruction	0
+VPatUnaryV_VF	4	intrinsic	instruction	suffix	list<VTypeInfoToFraction> fractionList	0
+VPatUnaryV_V	5	intrinsic	instruction	list<VTypeInfo> vtilist	isSEWAware = 0	list<Predicate> ExtraPreds = []	0
+VPatUnaryV_V_RM	4	intrinsic	instruction	list<VTypeInfo> vtilist	isSEWAware = 0	0
+VPatNullaryV	2	intrinsic	instruction	0
+VPatNullaryM	2	intrinsic	inst	0
+VPatBinaryM	10	intrinsic	inst	ValueType result_type	ValueType op1_type	ValueType op2_type	ValueType mask_type	int sew	VReg result_reg_class	VReg op1_reg_class	DAGOperand op2_kind	0
+VPatBinary	10	intrinsic	inst	ValueType result_type	ValueType op1_type	ValueType op2_type	ValueType mask_type	int sew	VReg result_reg_class	VReg op1_reg_class	DAGOperand op2_kind	0
+VPatBinaryRoundingMode	10	intrinsic	inst	ValueType result_type	ValueType op1_type	ValueType op2_type	ValueType mask_type	int sew	VReg result_reg_class	VReg op1_reg_class	DAGOperand op2_kind	0
+VPatBinaryMSwapped	10	intrinsic	inst	ValueType result_type	ValueType op1_type	ValueType op2_type	ValueType mask_type	int sew	VReg result_reg_class	VReg op1_reg_class	DAGOperand op2_kind	0
+VPatBinaryCarryInTAIL	12	intrinsic	inst	kind	ValueType result_type	ValueType op1_type	ValueType op2_type	ValueType mask_type	int sew	LMULInfo vlmul	VReg result_reg_class	VReg op1_reg_class	DAGOperand op2_kind	0
+VPatBinaryCarryIn	11	intrinsic	inst	kind	ValueType result_type	ValueType op1_type	ValueType op2_type	ValueType mask_type	int sew	LMULInfo vlmul	VReg op1_reg_class	DAGOperand op2_kind	0
+VPatBinaryMaskOut	10	intrinsic	inst	kind	ValueType result_type	ValueType op1_type	ValueType op2_type	int sew	LMULInfo vlmul	VReg op1_reg_class	DAGOperand op2_kind	0
+VPatConversion	11	intrinsic	inst	kind	ValueType result_type	ValueType op1_type	ValueType mask_type	int log2sew	LMULInfo vlmul	VReg result_reg_class	VReg op1_reg_class	isSEWAware = 0	0
+VPatConversionRoundingMode	11	intrinsic	inst	kind	ValueType result_type	ValueType op1_type	ValueType mask_type	int log2sew	LMULInfo vlmul	VReg result_reg_class	VReg op1_reg_class	isSEWAware = 0	0
+VPatConversionRTZ	11	intrinsic	inst	kind	ValueType result_type	ValueType op1_type	ValueType mask_type	int log2sew	LMULInfo vlmul	VReg result_reg_class	VReg op1_reg_class	isSEWAware = 0	0
+VPatBinaryV_VV	6	intrinsic	instruction	list<VTypeInfo> vtilist	isSEWAware = 0	list<Predicate> ExtraPreds = []	requireMinimal = false	0
+VPatBinaryV_VV_RM	4	intrinsic	instruction	list<VTypeInfo> vtilist	isSEWAware = 0	0
+VPatBinaryV_VV_INT	3	intrinsic	instruction	list<VTypeInfo> vtilist	0
+VPatBinaryV_VV_INT_EEW	4	intrinsic	instruction	int eew	list<VTypeInfo> vtilist	0
+VPatBinaryV_VX	5	intrinsic	instruction	list<VTypeInfo> vtilist	isSEWAware = 0	list<Predicate> ExtraPreds = []	0
+VPatBinaryV_VX_RM	4	intrinsic	instruction	list<VTypeInfo> vtilist	isSEWAware = 0	0
+VPatBinaryV_VX_INT	3	intrinsic	instruction	list<VTypeInfo> vtilist	0
+VPatBinaryV_VI	5	intrinsic	instruction	list<VTypeInfo> vtilist	imm_type	list<Predicate> ExtraPreds = []	0
+VPatBinaryV_VI_RM	4	intrinsic	instruction	list<VTypeInfo> vtilist	imm_type	0
+VPatBinaryV_VI_INT	4	intrinsic	instruction	list<VTypeInfo> vtilist	imm_type	0
+VPatBinaryM_MM	2	intrinsic	instruction	0
+VPatBinaryW_VV	5	intrinsic	instruction	list<VTypeInfoToWide> vtilist	list<Predicate> ExtraPreds = []	requireMinimal = false	0
+VPatBinaryW_VV_RM	4	intrinsic	instruction	list<VTypeInfoToWide> vtilist	isSEWAware = 0	0
+VPatBinaryW_VX	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+VPatBinaryW_VX_RM	4	intrinsic	instruction	list<VTypeInfoToWide> vtilist	isSEWAware = 0	0
+VPatBinaryW_WV	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+VPatBinaryW_WV_RM	4	intrinsic	instruction	list<VTypeInfoToWide> vtilist	isSEWAware = 0	0
+VPatBinaryW_WX	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+VPatBinaryW_WX_RM	4	intrinsic	instruction	list<VTypeInfoToWide> vtilist	isSEWAware = 0	0
+VPatBinaryV_WV	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+VPatBinaryV_WV_RM	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+VPatBinaryV_WX	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+VPatBinaryV_WX_RM	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+VPatBinaryV_WI	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+VPatBinaryV_WI_RM	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+VPatBinaryV_VM	4	intrinsic	instruction	CarryOut = 0	list<VTypeInfo> vtilist = AllIntegerVectors	0
+VPatBinaryV_XM	4	intrinsic	instruction	CarryOut = 0	list<VTypeInfo> vtilist = AllIntegerVectors	0
+VPatBinaryV_IM	3	intrinsic	instruction	CarryOut = 0	0
+VPatBinaryV_VM_TAIL	2	intrinsic	instruction	0
+VPatBinaryV_XM_TAIL	2	intrinsic	instruction	0
+VPatBinaryV_IM_TAIL	2	intrinsic	instruction	0
+VPatBinaryV_V	2	intrinsic	instruction	0
+VPatBinaryV_X	2	intrinsic	instruction	0
+VPatBinaryV_I	2	intrinsic	instruction	0
+VPatBinaryM_VV	3	intrinsic	instruction	list<VTypeInfo> vtilist	0
+VPatBinarySwappedM_VV	3	intrinsic	instruction	list<VTypeInfo> vtilist	0
+VPatBinaryM_VX	3	intrinsic	instruction	list<VTypeInfo> vtilist	0
+VPatBinaryM_VI	3	intrinsic	instruction	list<VTypeInfo> vtilist	0
+VPatBinaryV_VV_VX_VI	5	intrinsic	instruction	list<VTypeInfo> vtilist	ImmType = simm5	list<Predicate> ExtraPreds = []	3	VPatBinaryV_VX	VPatBinaryV_VI	VPatBinaryV_VV
+VPatTernaryWithPolicyRoundingMode	13	intrinsic	inst	kind	ValueType result_type	ValueType op1_type	ValueType op2_type	ValueType mask_type	int sew	LMULInfo vlmul	VReg result_reg_class	op1_reg_class	DAGOperand op2_kind	isSEWAware = 0	0
+VPatTernaryTU	12	intrinsic	inst	kind	ValueType result_type	ValueType op1_type	ValueType op2_type	ValueType mask_type	int log2sew	LMULInfo vlmul	VReg result_reg_class	op1_reg_class	DAGOperand op2_kind	0
+VPatTernaryTURoundingMode	12	intrinsic	inst	kind	ValueType result_type	ValueType op1_type	ValueType op2_type	ValueType mask_type	int log2sew	LMULInfo vlmul	VReg result_reg_class	op1_reg_class	DAGOperand op2_kind	0
+VPatTernaryV_VV_AAXA	3	intrinsic	instruction	list<VTypeInfo> vtilist	0
+VPatTernaryV_VV_AAXA_RM	4	intrinsic	instruction	list<VTypeInfo> vtilist	isSEWAware = 0	0
+VPatTernaryV_VX	3	intrinsic	instruction	list<VTypeInfo> vtilist	0
+VPatTernaryV_VX_AAXA	3	intrinsic	instruction	list<VTypeInfo> vtilist	0
+VPatTernaryV_VX_AAXA_RM	4	intrinsic	instruction	list<VTypeInfo> vtilist	isSEWAware = 0	0
+VPatTernaryV_VI	4	intrinsic	instruction	list<VTypeInfo> vtilist	Imm_type	0
+VPatTernaryW_VV	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+VPatTernaryW_VV_RM	4	intrinsic	instruction	list<VTypeInfoToWide> vtilist	isSEWAware = 0	0
+VPatTernaryW_VX	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+VPatTernaryW_VX_RM	4	intrinsic	instruction	list<VTypeInfoToWide> vtilist	isSEWAware = 0	0
+VPatTernaryV_VV_VX_AAXA	3	intrinsic	instruction	list<VTypeInfo> vtilist	2	VPatTernaryV_VV_AAXA	VPatTernaryV_VX_AAXA
+VPatReductionV_VS_RM	3	intrinsic	instruction	IsFloat = 0	0
+VPatReductionW_VS	3	intrinsic	instruction	IsFloat = 0	0
+VPatReductionW_VS_RM	3	intrinsic	instruction	IsFloat = 0	0
+VPatConversionVI_VF	2	intrinsic	instruction	0
+VPatConversionVI_VF_RM	2	intrinsic	instruction	0
+VPatConversionVI_VF_RTZ	2	intrinsic	instruction	0
+VPatConversionVF_VI_RM	3	intrinsic	instruction	isSEWAware = 0	0
+VPatConversionWI_VF	2	intrinsic	instruction	0
+VPatConversionWI_VF_RM	2	intrinsic	instruction	0
+VPatConversionWI_VF_RTZ	2	intrinsic	instruction	0
+VPatConversionWF_VI	3	intrinsic	instruction	isSEWAware = 0	0
+VPatConversionWF_VF	4	intrinsic	instruction	list<VTypeInfoToWide> wlist = AllWidenableFloatVectors	isSEWAware = 0	0
+VPatConversionVI_WF	2	intrinsic	instruction	0
+VPatConversionVI_WF_RM	2	intrinsic	instruction	0
+VPatConversionVI_WF_RTZ	2	intrinsic	instruction	0
+VPatConversionVF_WI_RM	3	intrinsic	instruction	isSEWAware = 0	0
+VPatConversionVF_WF	3	intrinsic	instruction	isSEWAware = 0	0
+VPatConversionVF_WF_RM	4	intrinsic	instruction	list<VTypeInfoToWide> wlist = AllWidenableFloatVectors	isSEWAware = 0	0
+VPatConversionVF_WF_RTZ	4	intrinsic	instruction	list<VTypeInfoToWide> wlist = AllWidenableFloatVectors	isSEWAware = 0	0
+VPatCompare_VI	3	intrinsic	inst	ImmLeaf ImmType	0
+VPatUSLoadStoreSDNode	8	ValueType type	regclass	int log2sew	LMULInfo vlmul	OutPatFrag avl	VReg reg_class	int sew = !shl(1	log2sew)	0
+VPatUSMaskLoadStoreSDNode	1	MTypeInfo m	0
+VPatBinarySDNode_VV	9	vop	instruction_name	ValueType result_type	ValueType op_type	int log2sew	LMULInfo vlmul	OutPatFrag avl	VReg op_reg_class	isSEWAware = 0	1	Pat
+VPatBinarySDNode_VV_VX	5	vop	instruction_name	list<VTypeInfo> vtilist = AllIntegerVectors	isSEWAware = 0	list<Predicate> ExtraPreds = []	1	VPatBinarySDNode_VV
+VPatBinarySDNode_VV_VX_VI	4	vop	instruction_name	ImmType = simm5	list<Predicate> ExtraPreds = []	1	VPatBinarySDNode_VV_VX
+VPatBinaryMaskedSDNode_VV	2	vop	instruction_name	0
+VPatBinaryMaskedSDNode_VV_VX	2	vop	instruction_name	1	VPatBinaryMaskedSDNode_VV
+VPatBinarySDNode_VF	11	vop	instruction_name	ValueType result_type	ValueType vop_type	ValueType xop_type	int log2sew	LMULInfo vlmul	OutPatFrag avl	VReg vop_reg_class	DAGOperand xop_kind	isSEWAware = 0	1	Pat
+VPatBinaryFPSDNode_VV_VF_RM	4	vop	instruction_name	list<VTypeInfo> vtilist = AllFloatVectors	isSEWAware = 0	0
+VPatBinaryFPSDNode_R_VF	3	vop	instruction_name	isSEWAware = 0	0
+VPatBinaryFPSDNode_R_VF_RM	4	vop	instruction_name	list<VTypeInfo> vtilist = AllFloatVectors	isSEWAware = 0	0
+VPatIntegerSetCCSDNode_VV	2	instruction_name	CondCode cc	0
+VPatIntegerSetCCSDNode_VV_Swappable	3	instruction_name	CondCode cc	CondCode invcc	1	VPatIntegerSetCCSDNode_VV
+VPatIntegerSetCCSDNode_XI_Swappable	6	instruction_name	CondCode cc	CondCode invcc	kind	ComplexPattern SplatPatKind	DAGOperand xop_kind	0
+VPatIntegerSetCCSDNode_VX_Swappable	3	instruction_name	CondCode cc	CondCode invcc	1	VPatIntegerSetCCSDNode_XI_Swappable
+VPatExtendSDNode_V	4	list<SDNode> ops	inst_name	suffix	list <VTypeInfoToFraction> fraction_list	0
+VPatConvertI2FPSDNode_V_RM	2	vop	instruction_name	0
+VPatConvertFP2ISDNode_V	2	vop	instruction_name	0
+VPatWConvertI2FPSDNode_V	2	vop	instruction_name	0
+VPatWConvertFP2ISDNode_V	2	vop	instruction_name	0
+VPatNConvertI2FPSDNode_W_RM	2	vop	instruction_name	0
+VPatNConvertFP2ISDNode_W	2	vop	instruction_name	0
+VPatWidenBinarySDNode_VV_VX	4	SDNode op	PatFrags extop1	PatFrags extop2	instruction_name	0
+VPatWidenBinarySDNode_WV_WX	3	SDNode op	PatFrags extop	instruction_name	0
+VPatWidenBinarySDNode_VV_VX_WV_WX	3	SDNode op	PatFrags extop	instruction_name	2	VPatWidenBinarySDNode_WV_WX	VPatWidenBinarySDNode_VV_VX
+VPatWidenMulAddSDNode_VX	3	PatFrags extop1	PatFrags extop2	instruction_name	0
+VPatWidenBinaryFPSDNode_VV_VF	2	SDNode op	instruction_name	0
+VPatWidenBinaryFPSDNode_VV_VF_RM	2	SDNode op	instruction_name	0
+VPatWidenBinaryFPSDNode_WV_WF_RM	2	SDNode op	instruction_name	0
+VPatWidenBinaryFPSDNode_VV_VF_WV_WF_RM	2	SDNode op	instruction_name	2	VPatWidenBinaryFPSDNode_WV_WF_RM	VPatWidenBinaryFPSDNode_VV_VF_RM
+VPatWidenFPNegMulAccSDNode_VV_VF_RM	1	instruction_name	0
+VPatWidenFPMulSacSDNode_VV_VF_RM	1	instruction_name	0
+VPatWidenFPNegMulSacSDNode_VV_VF_RM	1	instruction_name	0
+VPatMultiplyAddSDNode_VV_VX	2	SDNode op	instruction_name	0
+VPatAVGADD_VV_VX_RM	3	SDNode vop	int vxrm	suffix = ""	0
+VPatWidenOrDisjoint_VV_VX	2	SDNode extop	instruction_name	0
+VPatUnaryVL_V	11	vop	instruction_name	suffix	ValueType result_type	ValueType op1_type	ValueType mask_type	int log2sew	LMULInfo vlmul	VReg result_reg_class	VReg op1_reg_class	isSEWAware = 0	1	Pat
+VPatTiedBinaryMaskVL_V	10	SDNode vop	instruction_name	suffix	ValueType result_type	ValueType op2_type	ValueType mask_type	int sew	LMULInfo vlmul	VReg result_reg_class	VReg op2_reg_class	1	Pat
+VPatBinaryVL_XI	14	vop	instruction_name	suffix	ValueType result_type	ValueType vop1_type	ValueType vop2_type	ValueType mask_type	int log2sew	LMULInfo vlmul	VReg result_reg_class	VReg vop_reg_class	ComplexPattern SplatPatKind	DAGOperand xop_kind	isSEWAware = 0	1	Pat
+VPatBinaryVL_VV_VX	5	vop	instruction_name	list<VTypeInfo> vtilist = AllIntegerVectors	isSEWAware = 0	list<Predicate> ExtraPreds = []	1	VPatBinaryVL_VV
+VPatBinaryVL_VV_VX_VI	4	vop	instruction_name	ImmType = simm5	list<Predicate> ExtraPreds = []	1	VPatBinaryVL_VV_VX
+VPatBinaryWVL_VV_VX	2	vop	instruction_name	0
+VPatBinaryWVL_VV_VX_WV_WX	3	vop	SDNode vop_w	instruction_name	1	VPatBinaryWVL_VV_VX
+VPatBinaryVL_VF	12	vop	instruction_name	ValueType result_type	ValueType vop1_type	ValueType vop2_type	ValueType mask_type	int log2sew	LMULInfo vlmul	VReg result_reg_class	VReg vop_reg_class	scalar_reg_class	isSEWAware = 0	1	Pat
+VPatBinaryFPVL_VV_VF_RM	4	vop	instruction_name	list<VTypeInfo> vtilist = AllFloatVectors	isSEWAware = 0	0
+VPatBinaryFPVL_R_VF	3	vop	instruction_name	isSEWAware = 0	0
+VPatBinaryFPVL_R_VF_RM	4	vop	instruction_name	list<VTypeInfo> vtilist = AllFloatVectors	isSEWAware = 0	0
+VPatIntegerSetCCVL_VV	3	VTypeInfo vti	instruction_name	CondCode cc	0
+VPatIntegerSetCCVL_VV_Swappable	4	VTypeInfo vti	instruction_name	CondCode cc	CondCode invcc	1	VPatIntegerSetCCVL_VV
+VPatIntegerSetCCVL_VX_Swappable	4	VTypeInfo vti	instruction_name	CondCode cc	CondCode invcc	0
+VPatIntegerSetCCVL_VI_Swappable	5	VTypeInfo vti	instruction_name	CondCode cc	CondCode invcc	ComplexPattern splatpat_kind = SplatPat_simm5	0
+VPatFPSetCCVL_VV_VF_FV	4	vop	CondCode cc	inst_name	swapped_op_inst_name	0
+VPatExtendVL_V	4	SDNode vop	inst_name	suffix	list <VTypeInfoToFraction> fraction_list	0
+VPatConvertFP2IVL_V	2	vop	instruction_name	0
+VPatConvertFP2I_RM_VL_V	2	vop	instruction_name	0
+VPatConvertI2FPVL_V_RM	2	vop	instruction_name	0
+VPatConvertI2FP_RM_VL_V	2	SDNode vop	instruction_name	0
+VPatWConvertFP2IVL_V	2	vop	instruction_name	0
+VPatWConvertFP2I_RM_VL_V	2	SDNode vop	instruction_name	0
+VPatWConvertI2FPVL_V	2	vop	instruction_name	0
+VPatNConvertFP2IVL_W	2	vop	instruction_name	0
+VPatNConvertFP2I_RM_VL_W	2	SDNode vop	instruction_name	0
+VPatNConvertI2FPVL_W_RM	2	vop	instruction_name	0
+VPatNConvertI2FP_RM_VL_W	2	SDNode vop	instruction_name	0
+VPatReductionVL	3	SDNode vop	instruction_name	is_float	0
+VPatReductionVL_RM	3	SDNode vop	instruction_name	is_float	0
+VPatBinaryVL_WV_WX_WI	2	SDNode op	instruction_name	0
+VPatWidenReductionVL	4	SDNode vop	PatFrags extop	instruction_name	is_float	0
+VPatWidenReductionVL_Ext_VL	4	SDNode vop	PatFrags extop	instruction_name	is_float	0
+VPatWidenReductionVL_Ext_VL_RM	4	SDNode vop	PatFrags extop	instruction_name	is_float	0
+VPatBinaryFPWVL_VV_VF	2	SDNode vop	instruction_name	0
+VPatBinaryFPWVL_VV_VF_RM	3	SDNode vop	instruction_name	isSEWAware = 0	0
+VPatBinaryFPWVL_VV_VF_WV_WF	3	SDNode vop	SDNode vop_w	instruction_name	1	VPatBinaryFPWVL_VV_VF
+VPatBinaryFPWVL_VV_VF_WV_WF_RM	4	SDNode vop	SDNode vop_w	instruction_name	isSEWAware = 0	1	VPatBinaryFPWVL_VV_VF_RM
+VPatNarrowShiftSplatExt_WX	3	SDNode op	PatFrags extop	instruction_name	0
+VPatNarrowShiftExtVL_WV	3	SDNode op	PatFrags extop	instruction_name	0
+VPatNarrowShiftVL_WV	2	SDNode op	instruction_name	0
+VPatMultiplyAddVL_VV_VX	2	SDNode op	instruction_name	0
+VPatWidenMultiplyAddVL_VV	3	SDNode vwmacc_op	instr_name	list<VTypeInfoToWide> vtilist = AllWidenableIntVectors	0
+VPatWidenMultiplyAddVL_VV_VX	2	SDNode vwmacc_op	instr_name	1	VPatWidenMultiplyAddVL_VV
+VPatNarrowShiftSplat_WX_WI	2	SDNode op	instruction_name	0
+VPatFPMulAddVL_VV_VF	2	vop	instruction_name	0
+VPatFPMulAddVL_VV_VF_RM	2	vop	instruction_name	0
+VPatWidenFPMulAccVL_VV_VF_RM	3	SDNode vop	instruction_name	list<VTypeInfoToWide> vtiToWtis =                                         AllWidenableFloatAndBF16Vectors	0
+VPatSlideVL_VX_VI	2	SDNode vop	instruction_name	0
+VPatSlide1VL_VX	2	SDNode vop	instruction_name	0
+VPatSlide1VL_VF	2	SDNode vop	instruction_name	0
+VPatAVGADDVL_VV_VX_RM	3	SDNode vop	int vxrm	suffix = ""	0
+VPatUnaryVL_V	3	op	instruction_name	Predicate predicate = HasStdExtZvbb	0
+VPatWidenOrDisjointVL_VV_VX	2	SDNode extop	instruction_name	0
+ETOpsRdF1R2G	2	funct7	opcodestr	0
+ETOpsR3R1R2	3	funct7	funct3	opcodestr	0
+ETOpsRdR1R2Rm	3	funct7	RISCVOpcode opcode	opcodestr	0
+ETOpsRdR1R2	4	funct7	funct3	RISCVOpcode opcode	opcodestr	0
+ETOpsRdR1R2R3Rm	3	funct2	RISCVOpcode opcode	opcodestr	0
+ETOpsRdR1Rm	4	funct7	funct1	RISCVOpcode opcode	opcodestr	0
+ETOpsRdR1Idx	4	funct7	funct3	RISCVOpcode opcode	opcodestr	1	RVInstET5
+ETOpsRdR1	5	funct7	funct5	funct3	RISCVOpcode opcode	opcodestr	0
+ETOpsCvt	3	funct7	funct5	opcodestr	0
+ETOpsMdR1	4	funct7	funct3	RISCVOpcode opcode	opcodestr	0
+ETOpsRdR1I10	3	funct3	RISCVOpcode opcode	opcodestr	0
+ETOpsRdR1I5	3	funct3	RISCVOpcode opcode	opcodestr	0
+ETOpsMdM1M2	2	funct3	codestr	1	RVInstET9
+ETOpsRdM1	2	funct2	opcodestr	1	RVInstET10
+ETOpsR3R1R2SC32	2	funct7	opcodestr	0
+ETOpsFdR1	2	funct7	opcodestr	0
+ETOpsFs3Rs1	2	funct7	opcodestr	0
+ETOpsRdR1R2FG	3	funct7	funct3	opcodestr	0
+ETOpsR3R1R2FS	3	funct7	funct3	opcodestr	0
+ETOpsR2R1	3	funct7	funct3	opcodestr	1	RVInstR
+ETOpsR1R2S	3	funct7	funct3	opcodestr	1	RVInstR
+RISCVNDSVLN	4	M	U	S	L	0
+NDSRVInstBB	2	cs	opcodestr	2	Sched	RVInst	29-25=imm10	14-12=0b111	19-15=rs1	24-20=cimm	6-0=OPC_CUSTOM_2.Value	11-8=imm10
+NDSRVInstBC	2	funct3	opcodestr	2	Sched	RVInst	29-25=imm10	14-12=funct3	19-15=rs1	24-20=cimm	6-0=OPC_CUSTOM_2.Value	11-8=imm10
+NDSRVInstBFO	2	funct3	opcodestr	2	Sched	RVInst	31-26=msb	14-12=funct3	19-15=rs1	11-7=rd	25-20=lsb	6-0=OPC_CUSTOM_2.Value
+NDSRVInstRR	2	funct7	opcodestr	2	Sched	RVInstR
+NDSRVInstLEA	2	funct7	opcodestr	2	Sched	RVInstR
+NDSRVInstLBGP	2	funct2	opcodestr	1	RVInst	13-12=funct2	30-21=imm18	19-17=imm18	11-7=rd	16-15=imm18	6-0=OPC_CUSTOM_0.Value
+NDSRVInstLHGP	2	funct3	opcodestr	1	RVInst	14-12=funct3	30-21=imm17	19-17=imm17	11-7=rd	16-15=imm17	6-0=OPC_CUSTOM_1.Value
+NDSRVInstLWGP	2	funct3	opcodestr	1	RVInst	14-12=funct3	30-22=imm17	19-17=imm17	11-7=rd	16-15=imm17	6-0=OPC_CUSTOM_1.Value
+NDSRVInstLDGP	2	funct3	opcodestr	1	RVInst	14-12=funct3	22-21=imm17	19-17=imm17	30-23=imm17	11-7=rd	16-15=imm17	6-0=OPC_CUSTOM_1.Value
+NDSRVInstSBGP	2	funct2	opcodestr	1	RVInst	13-12=funct2	24-20=rs2	19-17=imm18	16-15=imm18	6-0=OPC_CUSTOM_0.Value	11-8=imm18	30-25=imm18
+NDSRVInstSHGP	2	funct3	opcodestr	1	RVInst	14-12=funct3	24-20=rs2	19-17=imm17	16-15=imm17	6-0=OPC_CUSTOM_1.Value	11-8=imm17	30-25=imm17
+NDSRVInstSWGP	2	funct3	opcodestr	1	RVInst	11-9=imm17	14-12=funct3	24-20=rs2	19-17=imm17	16-15=imm17	6-0=OPC_CUSTOM_1.Value	30-25=imm17
+NDSRVInstSDGP	2	funct3	opcodestr	1	RVInst	14-12=funct3	11-10=imm17	9-8=imm17	24-20=rs2	19-17=imm17	16-15=imm17	6-0=OPC_CUSTOM_1.Value	30-25=imm17
+NDSRVInstVSINTLN	2	funct5	opcodestr	2	RVInst	VLESchedMC	31-26=0b000001	14-12=0b100	19-15=rs1	24-20=funct5	11-7=vd	6-0=OPC_CUSTOM_2.Value
+NDSRVInstVSINTCvt	2	funct5	opcodestr	1	RVInst	31-26=0b000000	14-12=0b100	19-15=funct5	24-20=vs	11-7=vd	6-0=OPC_CUSTOM_2.Value
+NDSRVInstBFHCvt	5	funct7	rs1val	DAGOperand rdty	DAGOperand rs2ty	opcodestr	1	RVInstR
+NDSRVInstVFPMAD	2	funct6	opcodestr	2	SchedBinaryMC	RVInst	31-26=funct6	14-12=0b100	19-15=rs1	24-20=vs2	11-7=vd	6-0=OPC_CUSTOM_2.Value
+NDSRVInstVD4DOT	2	funct6	opcodestr	2	SchedBinaryMC	RVInst	31-26=funct6	14-12=0b100	19-15=vs1	24-20=vs2	11-7=vd	6-0=OPC_CUSTOM_2.Value
+NDSRVInstVBFHCvt	2	vs1	opcodestr	1	RVInst	31-25=0b0000000	14-12=0b100	19-15=vs1	24-20=vs2	11-7=vd	6-0=OPC_CUSTOM_2.Value
+NDSRVInstVLN	2	funct5	opcodestr	2	RVInst	VLESchedMC	31-26=0b000001	14-12=0b100	19-15=rs1	24-20=funct5	11-7=vd	6-0=OPC_CUSTOM_2.Value
+VPseudoVLN8NoMask	2	VReg RetClass	U	2	RISCVVPseudo	RISCVNDSVLN
+VPseudoVLN8Mask	2	VReg RetClass	U	2	RISCVVPseudo	RISCVNDSVLN
+VPseudoVWCVT_S_BF16	0	0
+VPseudoVNCVT_BF16_S	0	0
+VPatConversionS_BF16	2	intrinsic	instruction	0
+VPatConversionBF16_S	2	intrinsic	instruction	0
+VPseudoVLN8	1	U	0
+VPatVFPMADBinaryV_VX_RM	3	intrinsic	instruction	list<VTypeInfo> vtilist	0
+VPseudoVD4DOT_VV	0	0
+VPatTernaryVD4DOT_VV	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+NDS_BBPat	2	CondCode Cond	NDSRVInstBB Inst	1	Pat
+SFBNDS_BFO	9	(outs GPR:$dst)	(ins GPR:$falsev	GPR:$rs1	uimmlog2xlen:$msb	uimmlog2xlen:$lsb	bcc_opcode:$bcc	GPR:$lhs	sfb_rhs:$rhs)	[]	0
+CVInstBitManipRII	6	funct2	funct3	outs	ins	opcodestr	argstr	1	RVInstIBase	29-25=is3	24-20=is2	31-30=funct2
+CVBitManipRII	4	funct2	funct3	opcodestr	i3type = uimm5	1	CVInstBitManipRII
+CVInstMac	3	funct7	funct3	opcodestr	1	RVInstR
+CVInstMacMulN	5	funct2	funct3	outs	ins	opcodestr	1	RVInstRBase	29-25=imm5	31-30=funct2
+CVInstMacN	3	funct2	funct3	opcodestr	1	CVInstMacMulN
+CVInstMulN	3	funct2	funct3	opcodestr	1	CVInstMacMulN	31-25=funct7	29-25=imm5	24-20=imm5	31-30=funct2
+CVInstSIMDRR	9	funct5	F	funct1	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInstRBase	31-27=funct5
+CVInstSIMDRI	8	funct5	F	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInstIBase	31-27=funct5	24-20=imm6
+CVSIMDRR	5	funct5	F	funct1	funct3	opcodestr	1	CVInstSIMDRR
+CVSIMDRI	5	funct5	F	funct3	opcodestr	immtype = simm6	1	CVInstSIMDRI
+CVSIMDRU	4	funct5	F	funct3	opcodestr	1	CVSIMDRI
+CVSIMDBinarySigned	4	funct5	F	funct1	mnemonic	0
+CVSIMDBinaryUnsigned	4	funct5	F	funct1	mnemonic	0
+CVSIMDShift	4	funct5	F	funct1	mnemonic	0
+CVSIMDBinarySignedWb	4	funct5	F	funct1	mnemonic	0
+CVSIMDBinaryUnsignedWb	4	funct5	F	funct1	mnemonic	0
+CVInstImmBranch	5	funct3	outs	ins	opcodestr	argstr	1	RVInstB
+CVLoad_ri_inc	2	funct3	opcodestr	1	RVInstI
+CVLoad_rr_inc	3	funct7	funct3	opcodestr	1	RVInstR
+CVLoad_rr	3	funct7	funct3	opcodestr	1	RVInstR
+CVStore_rr_inc	3	funct3	funct7	opcodestr	1	RVInst	31-25=funct7	14-12=funct3	19-15=rs1	24-20=rs2	11-7=rs3	6-0=OPC_CUSTOM_1.Value
+CVStore_rr	3	funct3	funct7	opcodestr	1	RVInst	31-25=funct7	14-12=funct3	19-15=rs1	24-20=rs2	11-7=rs3	6-0=OPC_CUSTOM_1.Value
+CVLoad_ri	2	funct3	opcodestr	1	RVInstI
+CVLdrrPat	2	PatFrag LoadOp	RVInst Inst	1	Pat
+PatCoreVBitManip	1	Intrinsic intr	0
+PatCoreVAluGpr	2	intr	asm	1	PatGpr
+PatCoreVAluGprGprImm	1	Intrinsic intr	0
+PatCoreVMacGprGprGpr	2	intr	asm	1	Pat
+LDPFormat	4	outs	ins	opcodestr	argstr	1	RVInst	31-27=rd2	14-12=0b100	22-20=0b000	26-23=imm7	19-15=rs1	11-7=rd1	6-0=OPC_CUSTOM_0.Value
+LWPFormat	4	outs	ins	opcodestr	argstr	1	RVInst	21-20=0b01	31-27=rd2	14-12=0b100	26-22=imm7	19-15=rs1	11-7=rd1	6-0=OPC_CUSTOM_0.Value
+SDPFormat	4	outs	ins	opcodestr	argstr	1	RVInst	31-27=rs3	14-12=0b101	11-10=imm7	9-7=0b000	19-15=rs1	24-20=rs2	26-25=imm7	6-0=OPC_CUSTOM_0.Value
+SWPFormat	4	outs	ins	opcodestr	argstr	1	RVInst	11-9=imm7	8-7=0b01	31-27=rs3	14-12=0b101	19-15=rs1	24-20=rs2	26-25=imm7	6-0=OPC_CUSTOM_0.Value
+VCIXType	2	val	suffix	0
+VCIXRs1Info	5	DAGOperand ty	funct3	prefix	name	op	0
+PayloadOp	1	int bitsNum	2	RISCVOp	TImmLeaf
+VCIXInfo	3	VCIXType type	VCIXRs1Info rs1info	hasOutput	0
+RVInstVCCustom2Base	1	VCIXInfo info	1	RVInst	14-12=info.Funct3	31-28=info.Funct6_hi4	24-20=vs2	11-7=vd	6-0=OPC_CUSTOM_2.Value
+RVInstVCCustom2_X	1	VCIXInfo info	1	RVInstVCCustom2Base	19-15=rs1	27-26=funct6_lo2
+RVInstVCCustom2_V	1	VCIXInfo info	1	RVInstVCCustom2Base	19-15=vs1	27-26=funct6_lo2
+RVInstVCCustom2_I	1	VCIXInfo info	1	RVInstVCCustom2Base	19-15=imm	27-26=funct6_lo2
+RVInstVCFCustom2_F	1	VCIXInfo info	1	RVInstVCCustom2Base	19-15=rs1
+CustomSiFiveVCIXorVCIF	1	VCIXInfo info	0
+CustomSiFiveVCIX	2	VCIXType type	VCIXRs1Info rs1	0
+SiFiveVMACCScheds	1	name	0
+CustomSiFiveVMACC	3	funct6	RISCVVFormat opv	opcodestr	2	RVInstVV	SchedTernaryMC	6-0=OPC_CUSTOM_2.Value
+CustomSiFiveVFNRCLIP	3	funct6	RISCVVFormat opv	opcodestr	2	SchedBinaryMC	VALUVF	6-0=OPC_CUSTOM_2.Value
+VPseudoVC_X	2	OpClass	DAGOperand RS1Class	1	RISCVVPseudo
+VPseudoVC_XV	3	OpClass	VReg RS2Class	DAGOperand RS1Class	1	RISCVVPseudo
+VPseudoVC_XVV	4	OpClass	VReg RDClass	VReg RS2Class	DAGOperand RS1Class	1	RISCVVPseudo
+VPseudoVC_V_X	3	OpClass	VReg RDClass	DAGOperand RS1Class	1	RISCVVPseudo
+VPseudoVC_V_XV	4	OpClass	VReg RDClass	VReg RS2Class	DAGOperand RS1Class	1	RISCVVPseudo
+VPseudoVC_V_XVV	4	OpClass	VReg RDClass	VReg RS2Class	DAGOperand RS1Class	1	RISCVVPseudo
+VPseudoVC_X	3	LMULInfo m	DAGOperand RS1Class	OpClass = payload2	0
+VPseudoVC_XV	3	LMULInfo m	DAGOperand RS1Class	OpClass = payload2	0
+VPseudoVC_XVV	3	LMULInfo m	DAGOperand RS1Class	OpClass = payload2	0
+VPseudoVC_XVW	3	LMULInfo m	DAGOperand RS1Class	OpClass = payload2	0
+VPseudoSiFiveVMACC	3	mx	VReg vd_type	VReg vs2_type	0
+VPseudoSiFiveVQMACCDOD	0	0
+VFExpSchedSEWSet	3	mx	IsBF16	IsApprox	0
+VPseudoVFExp_V	2	IsBF16 = false	IsApprox = false	0
+VPatVC_OP4_ISD	10	op	inst	ValueType op2_type	ValueType op3_type	ValueType op4_type	int sew	DAGOperand op2_kind	DAGOperand op3_kind	DAGOperand op4_kind	op1_kind = payload2	1	Pat
+VPatVC_XV	6	intrinsic_suffix	instruction_suffix	VTypeInfo vti	ValueType type	DAGOperand kind	op1_kind = payload2	0
+VPatVC_XVV	7	intrinsic_suffix	instruction_suffix	VTypeInfo wti	VTypeInfo vti	ValueType type	DAGOperand kind	op1_kind = payload2	0
+GetFTypeInfo	1	int Sew	0
+VPatVMACC	5	intrinsic	instruction	kind	list<VTypeInfoToWide> info_pairs	ValueType vec_m1	0
+VPatVQMACCDOD	3	intrinsic	instruction	kind	1	VPatVMACC
+VPatVFNRCLIP	2	intrinsic	instruction	0
+SFInstTileMemOp	6	outs	ins	nf	RISCVOpcode opcode	opcodestr	argstr	1	RVInst	14-12=0b111	31-29=nf	19-15=rs1	24-20=rs2	11-7=0b00000	6-0=opcode.Value	27-26=MOPLDUnitStride.Value
+F8Encode	2	encoding	name	0
+I8Encode	2	encoding	name	0
+VPseudoSF_VTileLoad	6	(outs)	(ins GPR:$rs2	GPR:$rs1	GPRNoX0:$atn	sew:$sew	twiden:$twiden)	0
+VPseudoSF_VTileStore	6	(outs)	(ins GPR:$rs2	GPR:$rs1	GPRNoX0:$atn	sew:$sew	twiden:$twiden)	0
+VPseudoSF_VTileMove_V_T	5	(outs VRM8:$vd)	(ins GPR:$rs1	GPRNoX0:$atn	sew:$sew	twiden:$twiden)	0
+VPseudoSF_VTileMove_T_V	6	(outs)	(ins GPR:$rs1	VRM8:$vs2	GPRNoX0:$atn	sew:$sew	twiden:$twiden)	0
+VPseudoSF_MatMul	1	mtd_class	1	RISCVVPseudo
+VPseudoSF_MatMul_FRM	1	mtd_class	1	RISCVVPseudo
+VPatXSfmmTileStore	3	intrinsic_name	inst_name	int log2sew	1	Pat
+VFWMADTSLIDE_INSN	2	funct3	opcodestr	2	Sched	SMTVFWMADOT
+THInstVdotVV	6	funct6	RISCVVFormat opv	outs	ins	opcodestr	argstr	1	RVInstVV	6-0=OPC_CUSTOM_0.Value
+THInstVdotVX	6	funct6	RISCVVFormat opv	outs	ins	opcodestr	argstr	1	RVInstVX	6-0=OPC_CUSTOM_0.Value
+THVdotALUrVV	4	funct6	RISCVVFormat opv	opcodestr	EarlyClobber	1	THInstVdotVV
+THVdotALUrVX	4	funct6	RISCVVFormat opv	opcodestr	EarlyClobber	1	THInstVdotVX
+THLoadIndexed	3	Ty	funct5	opcodestr	1	RVInstRBase	31-27=funct5	26-25=uimm2
+THLoadUpdate	2	funct5	opcodestr	1	RVInstIBase	31-27=funct5	24-20=simm5	26-25=uimm2
+THStoreIndexed	3	StTy	funct5	opcodestr	1	RVInstRBase	31-27=funct5	26-25=uimm2
+THStoreUpdate	2	funct5	opcodestr	1	RVInstIBase	31-27=funct5	24-20=simm5	26-25=uimm2
+THVdotVMAQA_VX	2	opcodestr	funct6	0
+THVdotVMAQA	2	opcodestr	funct6	1	THVdotVMAQA_VX
+VPseudoVMAQA_VV_VX	0	0
+VPseudoVMAQA_VX	0	0
+VPatTernaryVMAQA_VV	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+VPatTernaryVMAQA_VX	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	0
+VPatTernaryVMAQA_VV_VX	3	intrinsic	instruction	list<VTypeInfoToWide> vtilist	2	VPatTernaryVMAQA_VV	VPatTernaryVMAQA_VX
+LdIdxPat	3	PatFrag LoadOp	RVInst Inst	ValueType vt = XLenVT	0
+LdZextIdxPat	3	PatFrag LoadOp	RVInst Inst	ValueType vt = i64	0
+StIdxPat	4	PatFrag StoreOp	RVInst Inst	StTy	ValueType vt = XLenVT	0
+StZextIdxPat	4	PatFrag StoreOp	RVInst Inst	StTy	ValueType vt = i64	0
+StoreUpdatePat	3	PatFrag st	Instruction Inst	ValueType vt = XLenVT	0
+RVInstXqccmpCPPPFP	3	funct5	opcodestr	DAGOperand immtype = stackadj	1	RVInst16	1-0=0b10	12-8=funct5	15-13=0b101	7-4=rlist	3-2=stackadj
+BareSImmNAsmOperand	1	int width	1	ImmAsmOperand
+DirectiveInsnQC_EAI	3	outs	ins	argstr	1	RVInst48	14-12=func3	47-16=imm32	11-7=rd	6-0=opcode
+DirectiveInsnQC_EI	3	outs	ins	argstr	1	RVInst48	14-12=func3	19-15=rs1	47-32=imm26	29-20=imm26	31-30=func2	11-7=rd	6-0=opcode
+DirectiveInsnQC_EB	3	outs	ins	argstr	1	RVInst48	14-12=func3	19-15=rs1	47-32=imm16	24-20=func5	6-0=opcode	11-8=imm12	30-25=imm12
+DirectiveInsnQC_EJ	3	outs	ins	argstr	1	RVInst48	14-12=func3	47-32=imm31	24-20=func5	19-17=imm31	16-15=func2	6-0=opcode	11-8=imm31	30-25=imm31
+DirectiveInsnQC_ES	3	outs	ins	argstr	1	RVInst48	29-25=imm26	14-12=func3	19-15=rs1	47-32=imm26	24-20=rs2	31-30=func2	11-7=imm26	6-0=opcode
+QCILoad_ScaleIdx	2	funct4	opcodestr	1	RVInstRBase	31-28=funct4	27-25=shamt
+QCIStore_ScaleIdx	2	funct4	opcodestr	1	RVInstRBase	31-28=funct4	27-25=shamt
+QCIRVInstI	2	funct4	opcodestr	2	Sched	RVInstIUnary
+QCIRVInstRR	3	funct5	DAGOperand InTyRs1	opcodestr	2	Sched	RVInstR
+QCIBitManipRII	4	funct3	funct2	DAGOperand InTyRs1	opcodestr	2	RVInstIBase	Sched	29-25=width	24-20=shamt	31-30=funct2
+QCIBitManipRIITied	4	funct3	funct2	DAGOperand InTyRs1	opcodestr	2	RVInstIBase	Sched	29-25=width	24-20=shamt	31-30=funct2
+QCIRVInstRI	3	funct1	DAGOperand InTyImm11	opcodestr	2	RVInstIBase	Sched	30-20=imm11	31-31=funct1
+QCI_RVInst16CB_BM	2	funct2	opcodestr	1	RVInst16CB	6-2=shamt	11-10=funct2
+QCIBranchInst_rii	3	funct3	DAGOperand InTyImm5	opcodestr	1	RVInstB
+QCIBranchInst48_rii	3	funct5	DAGOperand InTyImm16	opcodestr	1	RVInst48	14-12=0b100	19-15=rs1	47-32=imm16	24-20=funct5	6-0=0b0011111	11-8=imm12	30-25=imm12
+QCISim_NONE	2	imm11_8	opcodestr	1	RVInstI
+QCISim_RS1	2	imm11_8	opcodestr	1	RVInstI
+QCIRVInstEIBase	6	funct3	funct2	outs	ins	opcodestr	argstr	1	RVInst48	14-12=funct3	19-15=rs1	47-32=imm	29-20=imm	31-30=funct2	11-7=rd	6-0=0b0011111
+QCIRVInstESBase	6	funct3	funct2	outs	ins	opcodestr	argstr	1	RVInst48	29-25=imm	14-12=funct3	19-15=rs1	47-32=imm	24-20=rs2	31-30=funct2	11-7=imm	6-0=0b0011111
+QCIRVInstEAI	3	funct3	funct1	opcodestr	2	RVInst48	Sched	14-12=funct3	47-16=imm	11-7=rd	6-0=0b0011111
+QCIRVInstEI	3	funct3	funct2	opcodestr	2	Sched	QCIRVInstEIBase	14-12=0b100	47-32=imm31	24-20=0b00000	19-17=imm31	16-15=func2	6-0=0b0011111	11-8=imm31	30-25=imm31
+SFBQC_LI	7	(outs GPR:$dst)	(ins GPR:$falsev	simm20_li:$imm	bcc_opcode:$bcc	GPR:$lhs	sfb_rhs:$rhs)	[]	0
+SFBQC_E_LI	7	(outs GPR:$dst)	(ins GPR:$falsev	bare_simm32:$imm	bcc_opcode:$bcc	GPR:$lhs	sfb_rhs:$rhs)	[]	0
+SFBQCLoad	8	(outs GPR:$dst)	(ins GPR:$falsev	GPR:$rs1	simm26:$imm	bcc_opcode:$bcc	GPR:$lhs	sfb_rhs:$rhs)	[]	0
+PatGprNoX0Simm26NoSimm12	2	OpNode	RVInst48 Inst	1	Pat
+SelectQCbi	3	PatLeaf Cond	DAGOperand InTyImm	Pseudo OpNode	1	Pat
+QKStackInst	5	funct2	outs	ins	opcodestr	argstr	1	RVInst16	1-0=0b00	4-2=rd_rs2	6-5=funct2	15-11=0b10000
+RVY_rr	5	funct7	opcodestr	DAGOperand rdOp	DAGOperand rs1Op	DAGOperand rs2Op	1	RVInstR	31-25=funct7	14-12=0b000	19-15=rs1	24-20=funct5	11-7=rd	6-0=OPC_RVY_A.Value
+RVY_r_xx	2	funct5	opcodestr	1	RVYInst2Op	31-29=0b111	28-20=imm
+RVY_srli	1	opcodestr	1	RVInstIBase	31-27=0b00000	26-20=shamt
+AMO_cas_aq_rl	4	funct5	funct3	opcodestr	DAGOperand RC	0
+AMOCASPat	4	AtomicOp	BaseInst	ValueType vt = XLenVT	list<Predicate> ExtraPreds = []	0
+LAQ_r_aq_rl	2	funct3	opcodestr	0
+SRL_r_aq_rl	2	funct3	opcodestr	0
+PatLAQ	3	OpNode	RVInst Inst	ValueType vt = XLenVT	1	Pat
+binop_with_non_imm12	1	binop	1	PatFrag
+ShxAddPat	2	int i	Instruction shxadd	0
+CSImm12MulBy4Pat	1	Instruction sh2add	1	Pat
+ADD_UWPat	1	Instruction add_uw	0
+ShxAdd_UWPat	2	int i	Instruction shxadd_uw	0
+Sh1Add_UWPat	1	Instruction sh1add_uw	0
+Sh2Add_UWPat	1	Instruction sh2add_uw	0
+Sh3Add_UWPat	1	Instruction sh3add_uw	0
+Sh1AddPat	1	Instruction sh1add	1	Pat
+RVInstZcCPPP	3	funct5	opcodestr	DAGOperand immtype = stackadj	1	RVInst16	1-0=0b10	12-8=funct5	15-13=0b101	7-4=rlist	3-2=stackadj
+Branch_imm	2	funct3	opcodestr	2	RVInstBIMM	Sched
+BccImmPat	2	CondCode Cond	Branch_imm Inst	0
+RVC_SSInst	3	rs1val	reg_class	opcodestr	1	RVInst16	1-0=0b01	6-2=0b00000	15-13=0b011	11-7=rs1val
+AddrRegReg	1	int N	1	ComplexPattern
+RVInstIMopr	8	imm7	imm5	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInstIBase	25-22=imm7	21-20=imm5	29-28=imm7	27-26=imm5
+RVInstRMoprr	8	imm4	imm3	funct3	RISCVOpcode opcode	outs	ins	opcodestr	argstr	1	RVInstRBase	29-28=imm4	27-26=imm3
+PatGprGprByteSelect	2	OpNode	RVInst Inst	1	Pat
+PseudoVABS	0	0
+VPseudoVWABD_VV	0	0
+VBdotVV	2	opcodestr	funct6	0
+VBdotFVV	2	opcodestr	funct6	0
+VDOT4AVV	3	funct6	RISCVVFormat opv	opcodestr	1	RVInstVV
+VDOT4AVX	3	funct6	RISCVVFormat opv	opcodestr	1	RVInstVX
+VPseudoVDOT4A_VX	0	0
+VPseudoVDOT4A_VV_VX	1	Commutable = 0	1	VPseudoVDOT4A_VX
+VPatTernaryV_VX_AAAX	4	intrinsic	instruction	list<VTypeInfo> vtilist	list<Predicate> ExtraPreds	0
+VPatTernaryV_VV_AAAX	4	intrinsic	instruction	list<VTypeInfo> vtilist	list<Predicate> ExtraPreds	0
+VPatTernaryV_VV_VX_AAAX	4	intrinsic	instruction	list<VTypeInfo> vtilist	list<Predicate> ExtraPreds	2	VPatTernaryV_VV_AAAX	VPatTernaryV_VX_AAAX	6-0=OPC_OP_VE.Value
+VPseudoVALU_VV_VF_RM_BF16	0	0
+VPseudoVALU_VF_RM_BF16	0	0
+VPseudoVFWALU_VV_VF_RM_BF16	0	0
+VPseudoVFWALU_WV_WF_RM_BF16	0	0
+VPseudoVFMUL_VV_VF_RM_BF16	0	0
+VPseudoVWMUL_VV_VF_RM_BF16	0	0
+VPseudoVMAC_VV_VF_AAXA_RM_BF16	0	0
+VPseudoVWMAC_VV_VF_RM_BF16	0	0
+VPseudoVRCP_V_BF16	0	0
+VPseudoVRCP_V_RM_BF16	0	0
+VPseudoVMAX_VV_VF_BF16	0	0
+VPseudoVSGNJ_VV_VF_BF16	0	0
+VPseudoVWCVTF_V_BF16	0	0
+VPatConversionWF_VF_BF	3	intrinsic	instruction	isSEWAware = 0	0
+VPatConversionVF_WF_BF_RM	3	intrinsic	instruction	isSEWAware = 0	0
+VPatConversionVI_VF_BF16	2	intrinsic	instruction	0
+VPatConversionWF_VI_BF16	3	intrinsic	instruction	isSEWAware = 0	0
+VPatConversionWF_VF_BF16	3	intrinsic	instruction	isSEWAware = 0	0
+VPatConversionVI_WF_BF16	2	intrinsic	instruction	0
+VPatConversionVI_WF_RM_BF16	2	intrinsic	instruction	0
+VPatConversionVF_WF_BF16	3	intrinsic	instruction	isSEWAware = 0	0
+QVRClass	1	LMULInfo m	0
+VPseudoVWCVTD_V_NoSched_Zvfofp8min	0	0
+VPseudoVNCVTD_W_RM_NoSched_Zvfofp8min	0	0
+VPseudoVNCVTD_Q_RM_NoSched_Zvfofp8min	0	0
+VPatConversionQF_RM	3	intrinsic	instruction	isSEWAware = 0	0
+VCLMUL_MV_V_X	2	opcodestr	funct6	0
+RVInstIVI_VROR	5	funct6	outs	ins	opcodestr	argstr	1	RVInstVBase	19-15=imm	24-20=vs2
+VROR_IV_V_X_I	2	opcodestr	funct6	1	VALU_IV_V_X
+ZvkALUVVNoVm	3	funct6	RISCVVFormat opv	opcodestr	1	VALUVVNoVm	6-0=OPC_OP_VE.Value
+ZvkALUVVNoVmTernary	3	funct6	RISCVVFormat opv	opcodestr	1	RVInstVV	6-0=OPC_OP_VE.Value
+ZvkALUVINoVm	3	funct6	opcodestr	optype	1	VALUVINoVm	14-12=OPMVV.Value	6-0=OPC_OP_VE.Value
+ZvkALUVINoVmBinary	3	funct6	opcodestr	optype	1	RVInstIVI	14-12=OPMVV.Value	6-0=OPC_OP_VE.Value
+ZvkALUVs2NoVmBinary	4	funct6	vs1	RISCVVFormat opv	opcodestr	1	RVInstVUnary	6-0=OPC_OP_VE.Value
+VAES_MV_V_S	5	funct6_vv	funct6_vs	vs1	RISCVVFormat opv	opcodestr	0
+ZvkI32IntegerVectors	1	vd_lmul	0
+ZvkMxSet	1	vd_lmul	0
+VPseudoBinaryNoMask_Zvk	2	DAGOperand RetClass	VReg OpClass	1	RISCVVPseudo
+VPseudoTernaryNoMask_Zvk	3	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	1	RISCVVPseudo
+VPseudoBinaryNoMaskPolicy_Zvk	5	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	LMULInfo MInfo	Constraint = ""	0
+VPseudoTernaryNoMask_Zvk	5	VReg RetClass	VReg Op1Class	DAGOperand Op2Class	LMULInfo MInfo	int sew = 0	0
+VPseudoBinaryV_V_NoMask_Zvk	1	LMULInfo m	0
+VPseudoBinaryV_S_NoMask_Zvk	1	LMULInfo m	0
+VPseudoVGMUL	0	0
+VPseudoVAESMV	0	0
+VPseudoVSM4R	0	0
+VPseudoVGHSH	0	0
+VPseudoVSHA2CH	0	0
+VPseudoVSHA2CL	0	0
+VPseudoVSHA2MS	1	int sew = 0	0
+VPseudoVAESKF1	0	0
+VPseudoVAESKF2	0	0
+VPseudoVAESZ	0	0
+VPseudoVSM3C	0	0
+VPseudoVSM4K	0	0
+VPseudoVSM3ME	0	0
+VPseudoVCLMUL_VV_VX	0	0
+VPseudoUnaryV_V	1	LMULInfo m	0
+VPseudoVBREV	0	0
+VPseudoVCLZ	0	0
+VPseudoVCTZ	0	0
+VPseudoVCPOP	0	0
+VPseudoVWSLL	0	0
+VPseudoVANDN	0	0
+VPseudoVBREV8	0	0
+VPseudoVREV8	0	0
+VPseudoVROT_VV_VX	0	0
+VPseudoVROT_VV_VX_VI	0	0
+VPatUnarySDNode_V	3	op	instruction_name	Predicate predicate = HasStdExtZvbb	0
+VPatUnaryNoMask_Zvk	9	intrinsic_name	inst	kind	ValueType result_type	ValueType op2_type	int sew	LMULInfo vlmul	VReg result_reg_class	VReg op2_reg_class	1	Pat
+VPatUnaryV_S_NoMaskVectorCrypto	4	intrinsic	instruction	list<VTypeInfo> vtilist	list<Predicate> ExtraPreds	0
+VPatUnaryV_V_S_NoMask_Zvk	4	intrinsic	instruction	list<VTypeInfo> vtilist	list<Predicate> ExtraPreds	0
+VPatBinaryV_VV_NoMask	5	intrinsic	instruction	list<VTypeInfo> vtilist	list<Predicate> ExtraPreds	isSEWAware = false	0
+VPatBinaryV_VI_NoMask	5	intrinsic	instruction	list<VTypeInfo> vtilist	list<Predicate> ExtraPreds	imm_type = tuimm5	0
+VPatBinaryV_VI_NoMaskTU	5	intrinsic	instruction	list<VTypeInfo> vtilist	list<Predicate> ExtraPreds	imm_type = tuimm5	0
+VPatBinaryV_VV_NoMaskTU	4	intrinsic	instruction	list<VTypeInfo> vtilist	list<Predicate> ExtraPreds	0
+VPatBinaryV_VX_VROTATE	4	intrinsic	instruction	list<VTypeInfo> vtilist	isSEWAware = 0	0
+VPatBinaryV_VI_VROL	5	intrinsic	instruction	list<VTypeInfo> vtilist	isSEWAware = 0	list<Predicate> ExtraPreds = []	0
+VPatBinaryV_VV_VX_VROL	5	intrinsic	instruction	instruction2	list<VTypeInfo> vtilist	list<Predicate> ExtraPreds	2	VPatBinaryV_VV_VX	VPatBinaryV_VI_VROL
+VTileLoadBase	4	mop	ins	opcodestr	argstr	1	RVInst	14-12=0b111	31-29=vlambda	19-15=rs1	24-20=rs2	11-7=vd	6-0=OPC_LOAD_FP.Value	27-26=mop
+VTileStoreBase	4	mop	ins	opcodestr	argstr	1	RVInst	14-12=0b111	31-29=vlambda	19-15=rs1	24-20=rs2	11-7=vs3	6-0=OPC_STORE_FP.Value	27-26=mop
+VTileLoad	2	mop	opcodestr	1	VTileLoadBase
+VFMEMACVV	2	funct6	opcodestr	1	RVInstVV
+VFMEMACScaleVV	2	funct6	opcodestr	1	RVInstVV
+VIFMEMACScaleVV	2	funct6	opcodestr	1	RVInstVV
+VPseudoVZIP	0	0
+VPatVUnzipIntrinsic	2	intrinsic_name	instruction_name	0
+VPatVZIP	2	vop	instruction_name	0
+VPatVUNZIP	2	op	instruction_name	0
+RISCVTuneInfo	0	0
+RISCVRegWithSubRegs	4	Enc	n	list<Register> subregs	list<string> alt = []	1	RegisterWithSubRegs
+RISCVReg16	3	Enc	n	list<string> alt = []	1	Register
+RISCVReg32	1	RISCVReg16 subreg	1	RISCVRegWithSubRegs
+RISCVReg64	1	RISCVReg32 subreg	1	RISCVRegWithSubRegs
+RISCVReg128	1	RISCVReg64 subreg	1	RISCVRegWithSubRegs
+RISCVCapReg	3	RISCVRegWithSubRegs subreg	n	list<string> alt = []	1	RISCVRegWithSubRegs
+RISCVRegisterClass	3	list<ValueType> regTypes	int align	regList	1	RegisterClass
+GPRRegisterClass	1	regList	1	RISCVRegisterClass
+FPRRegisterClass	3	list<ValueType> regTypes	int align	regSuffix	1	RISCVRegisterClass
+FPRCRegisterClass	3	list<ValueType> regTypes	int align	regSuffix	1	RISCVRegisterClass
+NFList	1	int lmul	0
+SubRegSet	2	int nf	int lmul	0
+IndexSet	4	int tuple_index	int nf	int lmul	isV0 = false	0
+VRegList	5	LIn	int start	int nf	int lmul	isV0	0
+VReg	4	list<ValueType> regTypes	regList	int Vlmul	int nf = 1	1	RISCVRegisterClass
+VTupRegList	2	int LMUL	int NF	0
+RISCVReg256	1	RISCVReg128 subreg	1	RISCVRegWithSubRegs
+Andes45IsWorstCaseMX	2	mx	list<string> MxList	0
+Andes45IsWorstCaseMXSEW	4	mx	int sew	list<string> MxList	isF = 0	0
+Andes45GetCyclesLoadStore	1	mx	0
+Andes45GetCyclesOnePerElement	2	mx	int sew	0
+Andes45GetLMULValue	1	mx	0
+Andes45GetCyclesDefault	1	mx	0
+Andes45GetCyclesWidening	1	mx	0
+Andes45GetLatencyDiv	1	int sew	0
+Andes45GetCyclesDiv	2	mx	int sew	0
+Andes45GetCyclesNarrowing	1	mx	0
+Andes45GetLatencyNarrowing	1	mx	0
+Andes45GetFDivFactor	1	int sew	0
+Andes45GetFSqrtFactor	1	int sew	0
+Andes45GetReductionCycles	2	mx	int sew	0
+Andes45GetReductionCyclesWidening	2	mx	int sew	0
+Andes45GetFReductionCycles	2	mx	int sew	0
+Andes45GetOrderedFReductionCycles	2	mx	int sew	0
+Andes45GetFWReductionCycles	2	mx	int sew	0
+Andes45GetOrderedFWReductionCycles	2	mx	int sew	0
+SiFive7IsWorstCaseMX	2	mx	list<string> MxList	0
+SiFive7IsWorstCaseMXSEW	4	mx	int sew	list<string> MxList	isF = 0	0
+SiFive7GetCyclesDefault	1	mx	0
+SiFive7GetCyclesNarrowing	1	mx	0
+SiFive7GetCyclesVMask	1	mx	0
+SiFive7GetMaskLoadStoreCycles	1	mx	0
+SiFive7GetCyclesSegmentedSeg2	1	mx	0
+SiFive7GetCyclesSegmented	4	mx	int sew	int nf	int VLEN	0
+SiFive7GetCyclesOnePerElement	3	mx	int sew	int VLEN	0
+SiFive7GetDivOrSqrtFactor	1	int sew	0
+SiFive7GetReductionCycles	3	mx	int sew	int VLEN	0
+SiFive7GetOrderedReductionCycles	3	mx	int sew	int VLEN	0
+isSingleDLEN	1	mx	0
+SiFive7GetCyclesVRGatherVV	4	mx	int sew	int VLEN	hasFastGather	0
+SiFive7GetCyclesVCompress	4	mx	int sew	int VLEN	hasFastGather	0
+SiFive7GetSiFiveVFNRClipCycles	2	mx	int VLEN	0
+SiFive7FPLatencies	0	0
+SiFive7WriteResBase	13	int VLEN	ProcResourceKind PipeA	ProcResourceKind PipeB	ProcResourceKind PipeAB	ProcResourceKind IDiv	ProcResourceKind FDiv	ProcResourceKind VA1	ProcResourceKind VA1OrVA2	ProcResourceKind VL	ProcResourceKind VS	ProcResourceKind VCQ	SiFive7FPLatencies fpLatencies	hasFastGather = false	0
+SiFive7ReadAdvance	0	0
+SiFive7SchedResources	4	int vlen	dualVALU	SiFive7FPLatencies fpLatencies	hasFastGather	0
+SiFive7SchedMachineModel	1	int vlen	1	SchedMachineModel
+SiFive8IntProcResources	0	0
+SiFive8VecIsWorstCaseMX	2	mx	list<string> MxList	0
+SiFive8VecIsWorstCaseMXSEW	4	mx	int sew	list<string> MxList	isF = 0	0
+SiFive8VecGetLMulCycles	1	mx	0
+SiFive8VecGetVLMAX	2	mx	int sew	0
+SiFive8VecStridedLdStLatency	2	mx	int sew	0
+SiFive8VecSegmentedLdStCycles	3	mx	int sew	int nf	0
+SiFive8VecBaseWriteRes	2	SiFive8IntProcResources IntProcRes	SiFive8VecProcResources VecProcRes	0
+SiFive8BaseReadAdvances	0	0
+SiFiveP400VFReduceBaseCycles	1	int sew	0
+SiFiveP400AdvancedVFReduceCycles	2	int sew	mx	0
+SiFiveP400SimpleVIReduceCycles	1	mx	0
+SiFiveP400AdvancedVIReduceCycles	2	int sew	mx	0
+SiFiveP400VSM3CCycles	1	mx	0
+SiFiveP600IsWorstCaseMX	2	mx	list<string> MxList	0
+SiFiveP600IsWorstCaseMXSEW	4	mx	int sew	list<string> MxList	isF = 0	0
+SiFiveP600GetLMulCycles	1	mx	0
+SiFiveP600GetVLMAX	2	mx	int sew	0
+SiFiveP600StridedLdStLatency	2	mx	int sew	0
+SiFiveP600SegmentedLdStCycles	3	mx	int sew	int nf	0
+SiFiveP600VSM3CCycles	1	mx	0
+SiFiveP600RVVMultiplier	1	mx	0
+SiFiveP600VCryptoLatency	1	mx	0
+SiFiveP600VFMinMaxReduction	2	mx	int sew	0
+SiFiveP600VFUnorderedReduction	2	mx	int sew	0
+SiFiveP600VFWidenUnorderedReduction	1	mx	0
+SiFiveP600VFOrderedReduction	2	mx	int sew	0
+SiFiveP600VIReductionLatency	1	mx	0
+SiFiveP600VIMinMaxReductionLatency	2	mx	int sew	0
+SiFiveP600VIMinMaxReductionCycles	2	mx	int sew	0
+SiFiveP600VSlide1	1	mx	0
+SiFiveP600VSlideI	1	mx	0
+SiFiveP600VSlideXComplex	2	mx	isUp = false	0
+SiFiveP600VPermutationComplex	1	mx	0
+SiFiveP600VSHA2MSCycles	2	mx	int sew	0
+SiFiveP800IsWorstCaseMX	2	mx	list<string> MxList	0
+SiFiveP800IsWorstCaseMXSEW	4	mx	int sew	list<string> MxList	isF = 0	0
+SiFiveP800GetLMulCycles	1	mx	0
+SiFiveP800GetCyclesSegmented	2	mx	int sew	0
+SiFiveP800VSM3CCycles	1	mx	0
+Get2348Latency	1	mx	0
+SMTX100IsWorstCaseMX	2	mx	list<string> MxList	0
+SMTX100IsWorstCaseMXSEW	4	mx	int sew	list<string> MxList	isF = 0	0
+SMTX100GetLMulCycles	1	mx	0
+SMTX100GetVLMAX	2	mx	int sew	0
+SMTX100SegmentedLdStCycles	3	mx	int sew	int nf	0
+SMTX100GetVLDSLat	2	mx	int sew	0
+GetLMULValue	2	list<int> Values	LMUL	0
+ConstValueUntilLMULThenDoubleBase	4	startLMUL	int BaseValue	int Value	currentLMUL	0
+ConstValueUntilLMULThenDouble	3	startLMUL	int Value	currentLMUL	0
+ConstOneUntilMF4ThenDouble	1	mx	0
+ConstOneUntilMF2ThenDouble	1	mx	0
+ConstOneUntilM1ThenDouble	1	mx	0
+Get4458Latency	1	mx	0
+Get4588Latency	1	mx	0
+Get461018Latency	1	mx	0
+Get6678Latency	1	mx	0
+SMX60IsWorstCaseMX	2	mx	list<string> MxList	0
+SMX60IsWorstCaseMXSEW	4	mx	int sew	list<string> MxList	isF = 0	0
+SMX60GetLMulCycles	1	mx	0
+SMX60GetVLMAX	2	mx	int sew	0
+SMX60SegmentedLdStCycles	3	mx	int sew	int nf	0
+SyntacoreSchedModel	0	0
+SCR_IntDiv	2	ProcResourceKind DIV	int DivLatency	0
+SCR_BasicMemory	2	ProcResourceKind LSU	int LoadStoreLatency	0
+SCR_FPMemory	2	ProcResourceKind LSU	int FPLoadStoreLatency	0
+SCR_AtomicMemory	1	ProcResourceKind LSU	0
+SCR_FPU	1	ProcResourceKind FPU	0
+SCR_FDU	1	ProcResourceKind FDU	0
+SCR_Other	0	0
+SCR7_Branching	1	ProcResourceKind BRU	0
+SCR7_IntALU	1	ProcResourceKind ALU	0
+SCR7_IntMul	1	list<ProcResourceKind> Resources	0
+SCR7_IntDivImpl	5	list<ProcResourceKind> Resources	list<int> ReleaseCycles	int DivLatency	SchedWrite DivWrite	SchedWrite RemWrite	0
+SCR7_IntDiv	3	list<ProcResourceKind> Resources	list<int> ReleaseCycles	int DivLatency	0
+SCR7_IntDiv32	3	list<ProcResourceKind> Resources	list<int> ReleaseCycles	int DivLatency	0
+SCR7_Bitmanip	1	ProcResourceKind BMU	0
+SCR7_ScalarCrypto	1	ProcResourceKind SCU	0
+SCR7_IntPipeline	5	ProcResourceKind ALU_Any	ProcResourceKind ALU_DIV_IS	ProcResourceKind DIV	ProcResourceKind ALU_MUL_IS	ProcResourceKind MUL	0
+SCR7_BasicMemory	1	ProcResourceKind LSU	0
+SCR7_AtomicMemory	1	ProcResourceKind LSU	0
+SCR7_FPU	4	ProcResourceKind FPU_IS	ProcResourceKind FALU	ProcResourceKind FMA	ProcResourceKind FDIVSQRT	0
+SCR7_Other	0	0
+AscalonIsWorstCaseMX	2	mx	list<string> MxList	0
+AscalonIsWorstCaseMXSEW	4	mx	int sew	list<string> MxList	isF = 0	0
+AscalonGetCyclesLMUL	2	mx	int base	0
+AscalonGetCyclesLMULFractional	2	mx	int base	0
+AscalonGetCyclesDefault	1	mx	0
+AscalonGetCyclesNarrowing	1	mx	0
+AscalonGetCyclesDivOrSqrt	2	mx	int sew	0
+AscalonGetCyclesVRGatherVV	1	mx	0
+AscalonGetCyclesStridedSegmented	2	mx	int sew	0
+XSWriteStore	1	SchedWrite write	1	WriteRes
+XSLDUtoAnyBypass	2	SchedRead read	int cycles = 2	1	ReadAdvance
+XS2LoadToALUBypass	1	SchedRead read	1	ReadAdvance
+UnsupportedSchedZfhmin	0	0
+UnsupportedSchedQ	0	0
+UnsupportedSchedD	0	0
+UnsupportedSchedF	1	multiclass UnsupportedSchedF : UnsupportedSchedD	0
+UnsupportedSchedSFB	0	0
+UnsupportedSchedZfaWithQ	0	0
+UnsupportedSchedZfaWithD	0	0
+UnsupportedSchedZfaWithZfh	0	0
+UnsupportedSchedZfa	1	multiclass UnsupportedSchedZfa : UnsupportedSchedZfaWithD	0
+UnsupportedSchedZabha	0	0
+UnsupportedSchedA	0	0
+SchedSEWSet	3	mx	isF = 0	isWidening = 0	0
+LargestLMUL	1	list<string> MxList	0
+SmallestSEW	2	mx	isF = 0	0
+LMULWriteResMX	4	name	list<ProcResourceKind> resources	mx	IsWorstCase	0
+LMULSEWWriteResMXSEW	5	name	list<ProcResourceKind> resources	mx	int sew	IsWorstCase	0
+LMULWriteResVariantImpl	12	name	writeResName	SchedPredicateBase Pred	list<ProcResourceKind> predResources	int predLat	list<int> predAcquireCycles	list<int> predReleaseCycles	list<ProcResourceKind> noPredResources	int noPredLat	list<int> noPredAcquireCycles	list<int> noPredReleaseCycles	IsWorstCase	0
+LMULWriteResMXVariant	12	name	SchedPredicateBase Pred	list<ProcResourceKind> predResources	int predLat	list<int> predAcquireCycles	list<int> predReleaseCycles	list<ProcResourceKind> noPredResources	int noPredLat	list<int> noPredAcquireCycles	list<int> noPredReleaseCycles	mx	IsWorstCase	0
+LMULSEWWriteResMXSEWVariant	13	name	SchedPredicateBase Pred	list<ProcResourceKind> predResources	int predLat	list<int> predAcquireCycles	list<int> predReleaseCycles	list<ProcResourceKind> noPredResources	int noPredLat	list<int> noPredAcquireCycles	list<int> noPredReleaseCycles	mx	int sew	IsWorstCase	0
+LMULSchedWritesImpl	2	name	list<string> MxList	0
+LMULSchedReadsImpl	2	name	list<string> MxList	0
+LMULWriteResImpl	2	name	list<ProcResourceKind> resources	0
+LMULReadAdvanceImpl	3	name	int val	list<SchedWrite> writes = []	0
+LMULSEWSchedWritesImpl	4	name	list<string> MxList	isF = 0	isWidening = 0	0
+LMULSEWSchedReadsImpl	4	name	list<string> MxList	isF = 0	isWidening = 0	0
+LMULSEWWriteResImpl	5	name	list<ProcResourceKind> resources	list<string> MxList	isF = 0	isWidening = 0	0
+LMULSEWReadAdvanceImpl	6	name	int val	list<SchedWrite> writes = []	list<string> MxList	isF = 0	isWidening = 0	0
+LMULSchedWriteListImpl	2	list<string> names	list<string> MxList	0
+LMULSchedWrites	1	name	1	LMULSchedWritesImpl
+UnsupportedSchedV	0	0
+LMULSchedWritesVCIX	1	id	0
+LMULWriteResVCIX	2	id	list<ProcResourceKind> resources	0
+UnsupportedSchedXsfvcp	0	0
+UnsupportedSchedXSfvfnrclipxfqf	0	0
+UnsupportedSchedXSfvqmaccdod	0	0
+UnsupportedSchedXSfvqmaccqoq	0	0
+UnsupportedSchedXSfvfwmaccqqq	0	0
+UnsupportedSchedXSfvfexp	0	0
+UnsupportedSchedXSfvfexpa	0	0
+UnsupportedSchedZba	0	0
+UnsupportedSchedZbb	0	0
+UnsupportedSchedZbc	0	0
+UnsupportedSchedZbs	0	0
+UnsupportedSchedZbkb	0	0
+UnsupportedSchedZbkx	0	0
+UnsupportedSchedZvbb	0	0
+UnsupportedSchedZvbc	0	0
+UnsupportedSchedZvkb	0	0
+UnsupportedSchedZvkg	0	0
+UnsupportedSchedZvknhaOrZvknhb	0	0
+UnsupportedSchedZvkned	0	0
+UnsupportedSchedZvksed	0	0
+UnsupportedSchedZvksh	0	0
+UnsupportedSchedZvk	0	0
+AltSysRegName	3	name	op	RV32Only = false	1	SysReg
+DeprecatedSysRegName	3	name	op	RV32Only = false	1	SysReg

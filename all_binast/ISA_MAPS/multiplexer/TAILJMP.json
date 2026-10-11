@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "TAILJMP",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "TAILJMPd": {"ARM": "TAILJMPd"},
+    "TAILJMPr": {"ARM": "TAILJMPr"},
+    "TAILJMPr4": {"ARM": "TAILJMPr4"}
+  },
+  "INPUTS": {
+    "TAILJMPd": {"ARM": [["arm_br_target",0]]},
+    "TAILJMPr": {"ARM": [["tcGPR",0]]},
+    "TAILJMPr4": {"ARM": [["GPR",64]]}
+  },
+  "OUTPUTS": {
+    "TAILJMPd": {"ARM": []},
+    "TAILJMPr": {"ARM": []},
+    "TAILJMPr4": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "TAILJMPd": {"ARM": ["ARMPseudoExpand","4"]},
+    "TAILJMPr": {"ARM": ["ARMPseudoExpand","4"]},
+    "TAILJMPr4": {"ARM": ["ARMPseudoExpand","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "TAILJMPd": {"ARM": ["ARMPseudoExpand","4"]},
+    "TAILJMPr": {"ARM": ["ARMPseudoExpand","4"]},
+    "TAILJMPr4": {"ARM": ["ARMPseudoExpand","4"]}
+  }
+}

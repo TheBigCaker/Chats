@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "OR",
+  "BACKENDS": ["RISCV","Mips","PowerPC","AMDGPU"],
+  "INDEX": {
+    "ORI": {"RISCV": "ORI"},
+    "OR": {"RISCV": "OR"},
+    "OR_MM": {"Mips": "OR_MM"},
+    "OR64": {"Mips": "OR64"},
+    "ORI8": {"PowerPC": "ORI8"},
+    "OR_INT": {"AMDGPU": "OR_INT"}
+  },
+  "INPUTS": {
+    "ORI": {"RISCV": []},
+    "OR": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "OR_MM": {"Mips": []},
+    "OR64": {"Mips": [["RO:$rs",0],["RO:$rt",0]]},
+    "ORI8": {"PowerPC": [["g8rc",0],["u16imm64",16]]},
+    "OR_INT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "ORI": {"RISCV": []},
+    "OR": {"RISCV": [["GPR:$rd",0]]},
+    "OR_MM": {"Mips": []},
+    "OR64": {"Mips": [["RO:$rd",0]]},
+    "ORI8": {"PowerPC": [["g8rc",0]]},
+    "OR_INT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "ORI": {"RISCV": ["ALU_ri","0b110"]},
+    "OR": {"RISCV": ["ALU_rr","0b0000000","0b110"]},
+    "OR_MM": {"Mips": ["MMRel","1"]},
+    "OR64": {"Mips": ["ArithLogicR","1"]},
+    "ORI8": {"PowerPC": ["DForm_4","24"]},
+    "OR_INT": {"AMDGPU": ["R600_2OP_Helper","0x31"]}
+  },
+  "OUTPUT_BYTES": {
+    "ORI": {"RISCV": ["ALU_ri","0b110"]},
+    "OR": {"RISCV": ["ALU_rr","0b0000000","0b110"]},
+    "OR_MM": {"Mips": ["MMRel","1"]},
+    "OR64": {"Mips": ["ArithLogicR","1"]},
+    "ORI8": {"PowerPC": ["DForm_4","24"]},
+    "OR_INT": {"AMDGPU": ["R600_2OP_Helper","0x31"]}
+  }
+}

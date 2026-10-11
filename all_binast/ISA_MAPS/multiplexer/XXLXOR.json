@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "XXLXOR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXLXOR": {"PowerPC": "XXLXOR"},
+    "XXLXORz": {"PowerPC": "XXLXORz"},
+    "XXLXORdpz": {"PowerPC": "XXLXORdpz"},
+    "XXLXORspz": {"PowerPC": "XXLXORspz"}
+  },
+  "INPUTS": {
+    "XXLXOR": {"PowerPC": [["vsrc",0],["vsrc",0]]},
+    "XXLXORz": {"PowerPC": []},
+    "XXLXORdpz": {"PowerPC": []},
+    "XXLXORspz": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XXLXOR": {"PowerPC": [["vsrc",0]]},
+    "XXLXORz": {"PowerPC": [["vsrc",0]]},
+    "XXLXORdpz": {"PowerPC": [["vsfrc",0]]},
+    "XXLXORspz": {"PowerPC": [["vssrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XXLXOR": {"PowerPC": ["XX3Form","60","154"]},
+    "XXLXORz": {"PowerPC": ["XX3Form_SameOp","60","154"]},
+    "XXLXORdpz": {"PowerPC": ["XX3Form_SameOp","60","154"]},
+    "XXLXORspz": {"PowerPC": ["XX3Form_SameOp","60","154"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXLXOR": {"PowerPC": ["XX3Form","60","154"]},
+    "XXLXORz": {"PowerPC": ["XX3Form_SameOp","60","154"]},
+    "XXLXORdpz": {"PowerPC": ["XX3Form_SameOp","60","154"]},
+    "XXLXORspz": {"PowerPC": ["XX3Form_SameOp","60","154"]}
+  }
+}

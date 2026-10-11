@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFMSLDI",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFMSLDI": {"ARM": "VFMSLDI"}
+  },
+  "INPUTS": {
+    "VFMSLDI": {"ARM": [["SPR:$Vn",0],["SPR_8:$Vm",0],["VectorIndex32:$idx",0]]}
+  },
+  "OUTPUTS": {
+    "VFMSLDI": {"ARM": [["DPR:$Vd",0]]}
+  },
+  "INPUT_BYTES": {
+    "VFMSLDI": {"ARM": ["VFMD","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFMSLDI": {"ARM": ["VFMD","0b01"]}
+  }
+}

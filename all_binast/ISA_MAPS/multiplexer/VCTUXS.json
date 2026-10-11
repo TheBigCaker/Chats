@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VCTUXS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCTUXS": {"PowerPC": "VCTUXS"},
+    "VCTUXS_0": {"PowerPC": "VCTUXS_0"}
+  },
+  "INPUTS": {
+    "VCTUXS": {"PowerPC": [["u5imm",5],["vrrc",0]]},
+    "VCTUXS_0": {"PowerPC": [["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VCTUXS": {"PowerPC": [["vrrc",0]]},
+    "VCTUXS_0": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCTUXS": {"PowerPC": ["VXForm_1","906"]},
+    "VCTUXS_0": {"PowerPC": ["VXForm_1","906"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCTUXS": {"PowerPC": ["VXForm_1","906"]},
+    "VCTUXS_0": {"PowerPC": ["VXForm_1","906"]}
+  }
+}

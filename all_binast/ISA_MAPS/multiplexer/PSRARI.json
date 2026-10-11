@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "PSRARI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PSRARI_H": {"RISCV": "PSRARI_H"},
+    "PSRARI_W": {"RISCV": "PSRARI_W"},
+    "PSRARI_DH": {"RISCV": "PSRARI_DH"},
+    "PSRARI_DW": {"RISCV": "PSRARI_DW"}
+  },
+  "INPUTS": {
+    "PSRARI_H": {"RISCV": []},
+    "PSRARI_W": {"RISCV": []},
+    "PSRARI_DH": {"RISCV": []},
+    "PSRARI_DW": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PSRARI_H": {"RISCV": []},
+    "PSRARI_W": {"RISCV": []},
+    "PSRARI_DH": {"RISCV": []},
+    "PSRARI_DW": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PSRARI_H": {"RISCV": ["RVPShiftH_ri","0b101","0b100"]},
+    "PSRARI_W": {"RISCV": ["RVPShiftW_ri","0b101","0b100"]},
+    "PSRARI_DH": {"RISCV": ["RVPPairShiftH_ri","0b101","0b1"]},
+    "PSRARI_DW": {"RISCV": ["RVPPairShiftW_ri","0b101","0b1"]}
+  },
+  "OUTPUT_BYTES": {
+    "PSRARI_H": {"RISCV": ["RVPShiftH_ri","0b101","0b100"]},
+    "PSRARI_W": {"RISCV": ["RVPShiftW_ri","0b101","0b100"]},
+    "PSRARI_DH": {"RISCV": ["RVPPairShiftH_ri","0b101","0b1"]},
+    "PSRARI_DW": {"RISCV": ["RVPPairShiftW_ri","0b101","0b1"]}
+  }
+}

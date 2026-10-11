@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TEND",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "TEND": {"PowerPC": "TEND"}
+  },
+  "INPUTS": {
+    "TEND": {"PowerPC": [["u1imm",1]]}
+  },
+  "OUTPUTS": {
+    "TEND": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "TEND": {"PowerPC": ["XForm_htm1","31","686"]}
+  },
+  "OUTPUT_BYTES": {
+    "TEND": {"PowerPC": ["XForm_htm1","31","686"]}
+  }
+}

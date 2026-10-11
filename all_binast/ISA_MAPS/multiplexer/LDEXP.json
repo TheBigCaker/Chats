@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "LDEXP",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "LDEXP.f32": {"Mali": "LDEXP.f32"},
+    "LDEXP.v2f16": {"Mali": "LDEXP.v2f16"},
+    "LDEXP.f32": {"Mali": "LDEXP.f32"},
+    "LDEXP.v2f16": {"Mali": "LDEXP.v2f16"}
+  },
+  "INPUTS": {
+    "LDEXP.f32": {"Mali": [["R32",32],["R32",32]]},
+    "LDEXP.v2f16": {"Mali": [["R32",32],["R32",32]]},
+    "LDEXP.f32": {"Mali": []},
+    "LDEXP.v2f16": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "LDEXP.f32": {"Mali": [["R",32]]},
+    "LDEXP.v2f16": {"Mali": [["R",32]]},
+    "LDEXP.f32": {"Mali": [["R",32]]},
+    "LDEXP.v2f16": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "LDEXP.f32": {"Mali": ["Bifrost_add","0x74c00","0xffe00"]},
+    "LDEXP.v2f16": {"Mali": ["Bifrost_add","0x74e00","0xffe00"]},
+    "LDEXP.f32": {"Mali": ["Valhall_"]},
+    "LDEXP.v2f16": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "LDEXP.f32": {"Mali": ["Bifrost_add","0x74c00","0xffe00"]},
+    "LDEXP.v2f16": {"Mali": ["Bifrost_add","0x74e00","0xffe00"]},
+    "LDEXP.f32": {"Mali": ["Valhall_"]},
+    "LDEXP.v2f16": {"Mali": ["Valhall_"]}
+  }
+}

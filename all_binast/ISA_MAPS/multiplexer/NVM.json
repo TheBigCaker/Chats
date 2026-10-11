@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NVM",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "NVMulSLFrm": {"ARM": "NVMulSLFrm"}
+  },
+  "INPUTS": {
+    "NVMulSLFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "NVMulSLFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "NVMulSLFrm": {"ARM": ["Format","40"]}
+  },
+  "OUTPUT_BYTES": {
+    "NVMulSLFrm": {"ARM": ["Format","40"]}
+  }
+}

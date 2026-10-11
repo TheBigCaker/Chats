@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FPCXTNS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "FPCXTNS": {"ARM": "FPCXTNS"}
+  },
+  "INPUTS": {
+    "FPCXTNS": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "FPCXTNS": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "FPCXTNS": {"ARM": ["ARMReg","14"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPCXTNS": {"ARM": ["ARMReg","14"]}
+  }
+}

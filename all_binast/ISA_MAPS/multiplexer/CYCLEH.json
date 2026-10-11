@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CYCLEH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "CYCLEH": {"RISCV": "CYCLEH"}
+  },
+  "INPUTS": {
+    "CYCLEH": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "CYCLEH": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "CYCLEH": {"RISCV": ["SysReg","0xC80"]}
+  },
+  "OUTPUT_BYTES": {
+    "CYCLEH": {"RISCV": ["SysReg","0xC80"]}
+  }
+}

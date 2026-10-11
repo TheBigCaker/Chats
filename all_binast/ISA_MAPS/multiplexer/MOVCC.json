@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "MOVCC",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MOVCCr": {"ARM": "MOVCCr"},
+    "MOVCCsi": {"ARM": "MOVCCsi"},
+    "MOVCCsr": {"ARM": "MOVCCsr"},
+    "MOVCCi": {"ARM": "MOVCCi"}
+  },
+  "INPUTS": {
+    "MOVCCr": {"ARM": [["GPR",64],["GPR",64],["pred",0]]},
+    "MOVCCsi": {"ARM": [["GPR",64],["so_reg_imm",0],["pred",0]]},
+    "MOVCCsr": {"ARM": [["GPR",64],["so_reg_reg",0],["pred",0]]},
+    "MOVCCi": {"ARM": [["GPR",64],["mod_imm",0],["pred",0]]}
+  },
+  "OUTPUTS": {
+    "MOVCCr": {"ARM": [["GPR",64]]},
+    "MOVCCsi": {"ARM": [["GPR",64]]},
+    "MOVCCsr": {"ARM": [["GPR",64]]},
+    "MOVCCi": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "MOVCCr": {"ARM": ["ARMPseudoInst","4"]},
+    "MOVCCsi": {"ARM": ["ARMPseudoInst","4"]},
+    "MOVCCsr": {"ARM": ["ARMPseudoInst","4"]},
+    "MOVCCi": {"ARM": ["ARMPseudoInst","4"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVCCr": {"ARM": ["ARMPseudoInst","4"]},
+    "MOVCCsi": {"ARM": ["ARMPseudoInst","4"]},
+    "MOVCCsr": {"ARM": ["ARMPseudoInst","4"]},
+    "MOVCCi": {"ARM": ["ARMPseudoInst","4"]}
+  }
+}

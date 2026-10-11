@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSFRC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSFRC": {"PowerPC": "VSFRC"}
+  },
+  "INPUTS": {
+    "VSFRC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSFRC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSFRC": {"PowerPC": ["PPCRegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSFRC": {"PowerPC": ["PPCRegisterClass","64"]}
+  }
+}

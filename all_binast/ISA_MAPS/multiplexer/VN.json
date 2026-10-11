@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "VN",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "VN_ASST1.f16": {"Mali": "VN_ASST1.f16"},
+    "VN_ASST1.f32": {"Mali": "VN_ASST1.f32"},
+    "VN_ASST2.f32": {"Mali": "VN_ASST2.f32"},
+    "VN_ASST2.v2f16": {"Mali": "VN_ASST2.v2f16"}
+  },
+  "INPUTS": {
+    "VN_ASST1.f16": {"Mali": [["R32",32],["R32",32],["R32",32]]},
+    "VN_ASST1.f32": {"Mali": [["R32",32],["R32",32],["R32",32],["R32",32]]},
+    "VN_ASST2.f32": {"Mali": [["R32",32]]},
+    "VN_ASST2.v2f16": {"Mali": [["R32",32]]}
+  },
+  "OUTPUTS": {
+    "VN_ASST1.f16": {"Mali": [["R",32]]},
+    "VN_ASST1.f32": {"Mali": [["R",32]]},
+    "VN_ASST2.f32": {"Mali": [["R",32]]},
+    "VN_ASST2.v2f16": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "VN_ASST1.f16": {"Mali": ["Bifrost_fma","0x6eb000","0x7ff000"]},
+    "VN_ASST1.f32": {"Mali": ["Bifrost_fma","0x27c000","0x7fe000"]},
+    "VN_ASST2.f32": {"Mali": ["Bifrost_add"]},
+    "VN_ASST2.v2f16": {"Mali": ["Bifrost_add","0x3dfa0","0xffff0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VN_ASST1.f16": {"Mali": ["Bifrost_fma","0x6eb000","0x7ff000"]},
+    "VN_ASST1.f32": {"Mali": ["Bifrost_fma","0x27c000","0x7fe000"]},
+    "VN_ASST2.f32": {"Mali": ["Bifrost_add"]},
+    "VN_ASST2.v2f16": {"Mali": ["Bifrost_add","0x3dfa0","0xffff0"]}
+  }
+}

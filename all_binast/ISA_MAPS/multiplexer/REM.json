@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "REM",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "REM": {"RISCV": "REM"}
+  },
+  "INPUTS": {
+    "REM": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "REM": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "REM": {"RISCV": ["ALU_rr","0b0000001","0b110"]}
+  },
+  "OUTPUT_BYTES": {
+    "REM": {"RISCV": ["ALU_rr","0b0000001","0b110"]}
+  }
+}

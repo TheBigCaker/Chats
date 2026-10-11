@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DTSTSF",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DTSTSF": {"PowerPC": "DTSTSF"}
+  },
+  "INPUTS": {
+    "DTSTSF": {"PowerPC": [["f8rc",0],["f8rc",0]]}
+  },
+  "OUTPUTS": {
+    "DTSTSF": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "DTSTSF": {"PowerPC": ["XForm_17","59","674"]}
+  },
+  "OUTPUT_BYTES": {
+    "DTSTSF": {"PowerPC": ["XForm_17","59","674"]}
+  }
+}

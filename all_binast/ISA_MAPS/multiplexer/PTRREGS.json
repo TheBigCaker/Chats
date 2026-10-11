@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PTRREGS",
+  "BACKENDS": ["AVR"],
+  "INDEX": {
+    "PTRREGS": {"AVR": "PTRREGS"}
+  },
+  "INPUTS": {
+    "PTRREGS": {"AVR": []}
+  },
+  "OUTPUTS": {
+    "PTRREGS": {"AVR": []}
+  },
+  "INPUT_BYTES": {
+    "PTRREGS": {"AVR": ["RegisterClass","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "PTRREGS": {"AVR": ["RegisterClass","8"]}
+  }
+}

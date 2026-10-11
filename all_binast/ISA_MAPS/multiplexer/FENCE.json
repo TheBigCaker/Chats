@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "FENCE",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FENCE": {"RISCV": "FENCE"},
+    "FENCE_TSO": {"RISCV": "FENCE_TSO"},
+    "FENCE_I": {"RISCV": "FENCE_I"}
+  },
+  "INPUTS": {
+    "FENCE": {"RISCV": [["fencearg",0],["fencearg",0]]},
+    "FENCE_TSO": {"RISCV": []},
+    "FENCE_I": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "FENCE": {"RISCV": []},
+    "FENCE_TSO": {"RISCV": []},
+    "FENCE_I": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "FENCE": {"RISCV": ["RVInstI","0b000"]},
+    "FENCE_TSO": {"RISCV": ["RVInstI","0b000"]},
+    "FENCE_I": {"RISCV": ["RVInstI","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "FENCE": {"RISCV": ["RVInstI","0b000"]},
+    "FENCE_TSO": {"RISCV": ["RVInstI","0b000"]},
+    "FENCE_I": {"RISCV": ["RVInstI","0b001"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SSPUSH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SSPUSH": {"RISCV": "SSPUSH"}
+  },
+  "INPUTS": {
+    "SSPUSH": {"RISCV": [["GPRX1X5",0]]}
+  },
+  "OUTPUTS": {
+    "SSPUSH": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SSPUSH": {"RISCV": ["RVInstR","0b1100111","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "SSPUSH": {"RISCV": ["RVInstR","0b1100111","0b100"]}
+  }
+}

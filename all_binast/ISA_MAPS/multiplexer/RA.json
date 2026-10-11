@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "RA",
+  "BACKENDS": ["ARM","Mips","Sparc"],
+  "INDEX": {
+    "RA_AUTH_CODE": {"ARM": "RA_AUTH_CODE"},
+    "RA": {"Mips": "RA"},
+    "RA_64": {"Mips": "RA_64"},
+    "RA": {"Sparc": "RA"}
+  },
+  "INPUTS": {
+    "RA_AUTH_CODE": {"ARM": []},
+    "RA": {"Mips": []},
+    "RA_64": {"Mips": []},
+    "RA": {"Sparc": [["bprtarget16",0],["RegCCOp",0],["I64Regs",0]]}
+  },
+  "OUTPUTS": {
+    "RA_AUTH_CODE": {"ARM": []},
+    "RA": {"Mips": []},
+    "RA_64": {"Mips": []},
+    "RA": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "RA_AUTH_CODE": {"ARM": ["ARMReg","12"]},
+    "RA": {"Mips": ["MipsGPRReg","31"]},
+    "RA_64": {"Mips": ["Mips64GPRReg","31"]},
+    "RA": {"Sparc": ["F2_4","1","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "RA_AUTH_CODE": {"ARM": ["ARMReg","12"]},
+    "RA": {"Mips": ["MipsGPRReg","31"]},
+    "RA_64": {"Mips": ["Mips64GPRReg","31"]},
+    "RA": {"Sparc": ["F2_4","1","1"]}
+  }
+}

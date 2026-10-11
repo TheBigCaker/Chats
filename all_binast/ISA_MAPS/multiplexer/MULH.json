@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "MULH",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MULH": {"RISCV": "MULH"},
+    "MULH_H0": {"RISCV": "MULH_H0"},
+    "MULH_H1": {"RISCV": "MULH_H1"}
+  },
+  "INPUTS": {
+    "MULH": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "MULH_H0": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "MULH_H1": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "MULH": {"RISCV": [["GPR:$rd",0]]},
+    "MULH_H0": {"RISCV": [["GPR:$rd",0]]},
+    "MULH_H1": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "MULH": {"RISCV": ["ALU_rr","0b0000001","0b001"]},
+    "MULH_H0": {"RISCV": ["RVPBinary_rr","0b0100","0b01","0b111"]},
+    "MULH_H1": {"RISCV": ["RVPBinary_rr","0b0110","0b01","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "MULH": {"RISCV": ["ALU_rr","0b0000001","0b001"]},
+    "MULH_H0": {"RISCV": ["RVPBinary_rr","0b0100","0b01","0b111"]},
+    "MULH_H1": {"RISCV": ["RVPBinary_rr","0b0110","0b01","0b111"]}
+  }
+}

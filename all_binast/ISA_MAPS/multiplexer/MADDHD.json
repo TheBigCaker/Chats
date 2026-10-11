@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MADDHD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MADDHD": {"PowerPC": "MADDHD"}
+  },
+  "INPUTS": {
+    "MADDHD": {"PowerPC": [["g8rc",0],["g8rc",0],["g8rc",0]]}
+  },
+  "OUTPUTS": {
+    "MADDHD": {"PowerPC": [["g8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MADDHD": {"PowerPC": ["VAForm_1a","48"]}
+  },
+  "OUTPUT_BYTES": {
+    "MADDHD": {"PowerPC": ["VAForm_1a","48"]}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "BLA",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BLA8": {"PowerPC": "BLA8"},
+    "BLA8_NOP": {"PowerPC": "BLA8_NOP"},
+    "BLA8_RM": {"PowerPC": "BLA8_RM"},
+    "BLA8_NOP_RM": {"PowerPC": "BLA8_NOP_RM"}
+  },
+  "INPUTS": {
+    "BLA8": {"PowerPC": [["abscalltarget",0]]},
+    "BLA8_NOP": {"PowerPC": [["abscalltarget",0]]},
+    "BLA8_RM": {"PowerPC": [["abscalltarget",0]]},
+    "BLA8_NOP_RM": {"PowerPC": [["abscalltarget",0]]}
+  },
+  "OUTPUTS": {
+    "BLA8": {"PowerPC": []},
+    "BLA8_NOP": {"PowerPC": []},
+    "BLA8_RM": {"PowerPC": []},
+    "BLA8_NOP_RM": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "BLA8": {"PowerPC": ["IForm","18","1","1"]},
+    "BLA8_NOP": {"PowerPC": ["IForm_and_DForm_4_zero","18","1","1","24"]},
+    "BLA8_RM": {"PowerPC": ["IForm","18","1","1"]},
+    "BLA8_NOP_RM": {"PowerPC": ["IForm_and_DForm_4_zero","18","1","1","24"]}
+  },
+  "OUTPUT_BYTES": {
+    "BLA8": {"PowerPC": ["IForm","18","1","1"]},
+    "BLA8_NOP": {"PowerPC": ["IForm_and_DForm_4_zero","18","1","1","24"]},
+    "BLA8_RM": {"PowerPC": ["IForm","18","1","1"]},
+    "BLA8_NOP_RM": {"PowerPC": ["IForm_and_DForm_4_zero","18","1","1","24"]}
+  }
+}

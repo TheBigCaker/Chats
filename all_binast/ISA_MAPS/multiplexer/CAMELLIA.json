@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "CAMELLIA",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "CAMELLIA_F": {"Sparc": "CAMELLIA_F"},
+    "CAMELLIA_FL": {"Sparc": "CAMELLIA_FL"},
+    "CAMELLIA_FLI": {"Sparc": "CAMELLIA_FLI"}
+  },
+  "INPUTS": {
+    "CAMELLIA_F": {"Sparc": []},
+    "CAMELLIA_FL": {"Sparc": [["DFPRegs",0],["DFPRegs",0]]},
+    "CAMELLIA_FLI": {"Sparc": [["DFPRegs",0],["DFPRegs",0]]}
+  },
+  "OUTPUTS": {
+    "CAMELLIA_F": {"Sparc": []},
+    "CAMELLIA_FL": {"Sparc": [["DFPRegs",0]]},
+    "CAMELLIA_FLI": {"Sparc": [["DFPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "CAMELLIA_F": {"Sparc": ["FourOp","0b011001","0b1100"]},
+    "CAMELLIA_FL": {"Sparc": ["F3_3","2","0b110110","0b100111100"]},
+    "CAMELLIA_FLI": {"Sparc": ["F3_3","2","0b110110","0b100111101"]}
+  },
+  "OUTPUT_BYTES": {
+    "CAMELLIA_F": {"Sparc": ["FourOp","0b011001","0b1100"]},
+    "CAMELLIA_FL": {"Sparc": ["F3_3","2","0b110110","0b100111100"]},
+    "CAMELLIA_FLI": {"Sparc": ["F3_3","2","0b110110","0b100111101"]}
+  }
+}

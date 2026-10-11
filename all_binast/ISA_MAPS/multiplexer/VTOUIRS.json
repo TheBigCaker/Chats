@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VTOUIRS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VTOUIRS": {"ARM": "VTOUIRS"}
+  },
+  "INPUTS": {
+    "VTOUIRS": {"ARM": [["SPR",0]]}
+  },
+  "OUTPUTS": {
+    "VTOUIRS": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VTOUIRS": {"ARM": ["AVConv1InsS_Encode","0b11101","0b11","0b1100","0b1010"]}
+  },
+  "OUTPUT_BYTES": {
+    "VTOUIRS": {"ARM": ["AVConv1InsS_Encode","0b11101","0b11","0b1100","0b1010"]}
+  }
+}

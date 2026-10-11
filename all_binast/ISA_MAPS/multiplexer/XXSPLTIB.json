@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XXSPLTIB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXSPLTIB": {"PowerPC": "XXSPLTIB"}
+  },
+  "INPUTS": {
+    "XXSPLTIB": {"PowerPC": [["u8imm_trunc",8]]}
+  },
+  "OUTPUTS": {
+    "XXSPLTIB": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XXSPLTIB": {"PowerPC": ["X_RD6_IMM8","60","360"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXSPLTIB": {"PowerPC": ["X_RD6_IMM8","60","360"]}
+  }
+}

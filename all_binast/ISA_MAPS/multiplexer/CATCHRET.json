@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CATCHRET",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "CATCHRET": {"ARM": "CATCHRET"}
+  },
+  "INPUTS": {
+    "CATCHRET": {"ARM": [["arm_br_target",0],["arm_br_target",0]]}
+  },
+  "OUTPUTS": {
+    "CATCHRET": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "CATCHRET": {"ARM": ["PseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "CATCHRET": {"ARM": ["PseudoInst"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "DFSTORE",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DFSTOREf32": {"PowerPC": "DFSTOREf32"},
+    "DFSTOREf64": {"PowerPC": "DFSTOREf64"}
+  },
+  "INPUTS": {
+    "DFSTOREf32": {"PowerPC": [["vssrc",0],["memrix",0]]},
+    "DFSTOREf64": {"PowerPC": [["vsfrc",0],["memrix",0]]}
+  },
+  "OUTPUTS": {
+    "DFSTOREf32": {"PowerPC": []},
+    "DFSTOREf64": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "DFSTOREf32": {"PowerPC": ["PPCPostRAExpPseudo"]},
+    "DFSTOREf64": {"PowerPC": ["PPCPostRAExpPseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "DFSTOREf32": {"PowerPC": ["PPCPostRAExpPseudo"]},
+    "DFSTOREf64": {"PowerPC": ["PPCPostRAExpPseudo"]}
+  }
+}

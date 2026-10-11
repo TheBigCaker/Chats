@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "AMDGPUE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "AMDGPUElseOp": {"AMDGPU": "AMDGPUElseOp"},
+    "AMDGPUExportOp": {"AMDGPU": "AMDGPUExportOp"}
+  },
+  "INPUTS": {
+    "AMDGPUElseOp": {"AMDGPU": []},
+    "AMDGPUExportOp": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "AMDGPUElseOp": {"AMDGPU": []},
+    "AMDGPUExportOp": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "AMDGPUElseOp": {"AMDGPU": ["SDTypeProfile","1","2"]},
+    "AMDGPUExportOp": {"AMDGPU": ["SDTypeProfile","0","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "AMDGPUElseOp": {"AMDGPU": ["SDTypeProfile","1","2"]},
+    "AMDGPUExportOp": {"AMDGPU": ["SDTypeProfile","0","8"]}
+  }
+}

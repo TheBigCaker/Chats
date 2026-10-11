@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FANDS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FANDS": {"Sparc": "FANDS"}
+  },
+  "INPUTS": {
+    "FANDS": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FANDS": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FANDS": {"Sparc": ["VISInst","0b001110001"]}
+  },
+  "OUTPUT_BYTES": {
+    "FANDS": {"Sparc": ["VISInst","0b001110001"]}
+  }
+}

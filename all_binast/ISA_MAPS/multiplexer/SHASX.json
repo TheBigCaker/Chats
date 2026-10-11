@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SHASX",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SHASX": {"ARM": "SHASX"}
+  },
+  "INPUTS": {
+    "SHASX": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "SHASX": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "SHASX": {"ARM": ["AAIIntrinsic","0b01100011","0b11110011"]}
+  },
+  "OUTPUT_BYTES": {
+    "SHASX": {"ARM": ["AAIIntrinsic","0b01100011","0b11110011"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CTTC",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "CTTC1": {"Mips": "CTTC1"}
+  },
+  "INPUTS": {
+    "CTTC1": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "OUTPUTS": {
+    "CTTC1": {"Mips": [["FGR32CCOpnd",32]]}
+  },
+  "INPUT_BYTES": {
+    "CTTC1": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "CTTC1": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVMSUBMSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVMSUBMSP": {"PowerPC": "XVMSUBMSP"}
+  },
+  "INPUTS": {
+    "XVMSUBMSP": {"PowerPC": [["vsrc",0],["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVMSUBMSP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVMSUBMSP": {"PowerPC": ["XX3Form","60","89"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVMSUBMSP": {"PowerPC": ["XX3Form","60","89"]}
+  }
+}

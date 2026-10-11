@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "CPU",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "CPU16Regs": {"Mips": "CPU16Regs"},
+    "CPU16RegsPlusSP": {"Mips": "CPU16RegsPlusSP"}
+  },
+  "INPUTS": {
+    "CPU16Regs": {"Mips": []},
+    "CPU16RegsPlusSP": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "CPU16Regs": {"Mips": []},
+    "CPU16RegsPlusSP": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "CPU16Regs": {"Mips": ["RegisterClass","32"]},
+    "CPU16RegsPlusSP": {"Mips": ["RegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "CPU16Regs": {"Mips": ["RegisterClass","32"]},
+    "CPU16RegsPlusSP": {"Mips": ["RegisterClass","32"]}
+  }
+}

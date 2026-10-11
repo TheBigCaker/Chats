@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LFS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LFS16rm": {"X86": "LFS16rm"},
+    "LFS32rm": {"X86": "LFS32rm"}
+  },
+  "INPUTS": {
+    "LFS16rm": {"X86": [["opaquemem",0]]},
+    "LFS32rm": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "LFS16rm": {"X86": [["GR16",16]]},
+    "LFS32rm": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "LFS16rm": {"X86": ["0xb4"]},
+    "LFS32rm": {"X86": ["0xb4"]}
+  },
+  "OUTPUT_BYTES": {
+    "LFS16rm": {"X86": ["0xb4"]},
+    "LFS32rm": {"X86": ["0xb4"]}
+  }
+}

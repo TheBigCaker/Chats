@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSRDPI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSRDPI": {"PowerPC": "XSRDPI"}
+  },
+  "INPUTS": {
+    "XSRDPI": {"PowerPC": [["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSRDPI": {"PowerPC": [["vsfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSRDPI": {"PowerPC": ["XX2Form","60","73"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSRDPI": {"PowerPC": ["XX2Form","60","73"]}
+  }
+}

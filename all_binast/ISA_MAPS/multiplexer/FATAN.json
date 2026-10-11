@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "FATAN",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FATAN_ASSIST.f16": {"Mali": "FATAN_ASSIST.f16"},
+    "FATAN_ASSIST.f32": {"Mali": "FATAN_ASSIST.f32"},
+    "FATAN_TABLE.f16": {"Mali": "FATAN_TABLE.f16"},
+    "FATAN_TABLE.f32": {"Mali": "FATAN_TABLE.f32"},
+    "FATAN_ASSIST.f32": {"Mali": "FATAN_ASSIST.f32"}
+  },
+  "INPUTS": {
+    "FATAN_ASSIST.f16": {"Mali": [["R32",32],["R32",32]]},
+    "FATAN_ASSIST.f32": {"Mali": [["R32",32],["R32",32]]},
+    "FATAN_TABLE.f16": {"Mali": [["R32",32],["R32",32]]},
+    "FATAN_TABLE.f32": {"Mali": [["R32",32],["R32",32]]},
+    "FATAN_ASSIST.f32": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "FATAN_ASSIST.f16": {"Mali": [["R",32]]},
+    "FATAN_ASSIST.f32": {"Mali": [["R",32]]},
+    "FATAN_TABLE.f16": {"Mali": [["R",32]]},
+    "FATAN_TABLE.f32": {"Mali": [["R",32]]},
+    "FATAN_ASSIST.f32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FATAN_ASSIST.f16": {"Mali": ["Bifrost_add","0x67800","0xfff00"]},
+    "FATAN_ASSIST.f32": {"Mali": ["Bifrost_add","0x67a00","0xfffc0"]},
+    "FATAN_TABLE.f16": {"Mali": ["Bifrost_add","0x67900","0xfff00"]},
+    "FATAN_TABLE.f32": {"Mali": ["Bifrost_add","0x67a40","0xfffc0"]},
+    "FATAN_ASSIST.f32": {"Mali": ["Valhall_SFU"]}
+  },
+  "OUTPUT_BYTES": {
+    "FATAN_ASSIST.f16": {"Mali": ["Bifrost_add","0x67800","0xfff00"]},
+    "FATAN_ASSIST.f32": {"Mali": ["Bifrost_add","0x67a00","0xfffc0"]},
+    "FATAN_TABLE.f16": {"Mali": ["Bifrost_add","0x67900","0xfff00"]},
+    "FATAN_TABLE.f32": {"Mali": ["Bifrost_add","0x67a40","0xfffc0"]},
+    "FATAN_ASSIST.f32": {"Mali": ["Valhall_SFU"]}
+  }
+}

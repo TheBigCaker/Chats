@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "UNIMP",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "UNIMP": {"RISCV": "UNIMP"}
+  },
+  "INPUTS": {
+    "UNIMP": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "UNIMP": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "UNIMP": {"RISCV": ["RVInstI","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "UNIMP": {"RISCV": ["RVInstI","0b001"]}
+  }
+}

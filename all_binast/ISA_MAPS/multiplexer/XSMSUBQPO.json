@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSMSUBQPO",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSMSUBQPO": {"PowerPC": "XSMSUBQPO"}
+  },
+  "INPUTS": {
+    "XSMSUBQPO": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSMSUBQPO": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSMSUBQPO": {"PowerPC": ["X_VT5_VA5_VB5_FMA_Ro","63","420"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSMSUBQPO": {"PowerPC": ["X_VT5_VA5_VB5_FMA_Ro","63","420"]}
+  }
+}

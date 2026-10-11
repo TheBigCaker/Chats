@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DTSTEX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DTSTEX": {"PowerPC": "DTSTEX"}
+  },
+  "INPUTS": {
+    "DTSTEX": {"PowerPC": [["f8rc",0],["f8rc",0]]}
+  },
+  "OUTPUTS": {
+    "DTSTEX": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "DTSTEX": {"PowerPC": ["XForm_17","59","162"]}
+  },
+  "OUTPUT_BYTES": {
+    "DTSTEX": {"PowerPC": ["XForm_17","59","162"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VNOR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VNOR": {"PowerPC": "VNOR"}
+  },
+  "INPUTS": {
+    "VNOR": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VNOR": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VNOR": {"PowerPC": ["VXForm_1","1284"]}
+  },
+  "OUTPUT_BYTES": {
+    "VNOR": {"PowerPC": ["VXForm_1","1284"]}
+  }
+}

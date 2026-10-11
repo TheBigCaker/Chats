@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MFVRWZ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MFVRWZ": {"PowerPC": "MFVRWZ"}
+  },
+  "INPUTS": {
+    "MFVRWZ": {"PowerPC": [["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "MFVRWZ": {"PowerPC": [["gprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "MFVRWZ": {"PowerPC": ["XX1_RS6_RD5_XO","31","115"]}
+  },
+  "OUTPUT_BYTES": {
+    "MFVRWZ": {"PowerPC": ["XX1_RS6_RD5_XO","31","115"]}
+  }
+}

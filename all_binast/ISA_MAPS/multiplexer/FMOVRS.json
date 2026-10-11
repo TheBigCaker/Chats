@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FMOVRS",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FMOVRS": {"Sparc": "FMOVRS"}
+  },
+  "INPUTS": {
+    "FMOVRS": {"Sparc": [["I64Regs",0],["FPRegs",0],["FPRegs",0],["RegCCOp",0]]}
+  },
+  "OUTPUTS": {
+    "FMOVRS": {"Sparc": [["FPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "FMOVRS": {"Sparc": ["F4_4r","0b110101","0b00101"]}
+  },
+  "OUTPUT_BYTES": {
+    "FMOVRS": {"Sparc": ["F4_4r","0b110101","0b00101"]}
+  }
+}

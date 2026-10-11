@@ -1,0 +1,16 @@
+# a branch and a backward branch loop, to exercise displacement resolution both ways.
+# print "ok" then exit 0, skipping a block and jumping back over it.
+MOVZ_X 0 1 0
+ADRP_X 1 msg
+ADD_X_imm 1 1 msg@lo12
+MOVZ_X 2 3 0
+MOVZ_X 8 64 0
+SVC 0
+B_imm  skip              # forward branch over the dead block
+MOVZ_X 0 99 0            # never executed
+skip:
+MOVZ_X 0 0 0
+MOVZ_X 8 93 0
+SVC 0
+.align 2
+msg: .ascii "ok\n"

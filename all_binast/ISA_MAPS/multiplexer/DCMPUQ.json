@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DCMPUQ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DCMPUQ": {"PowerPC": "DCMPUQ"}
+  },
+  "INPUTS": {
+    "DCMPUQ": {"PowerPC": [["fpairrc",0],["fpairrc",0]]}
+  },
+  "OUTPUTS": {
+    "DCMPUQ": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "DCMPUQ": {"PowerPC": ["XForm_17","63","642"]}
+  },
+  "OUTPUT_BYTES": {
+    "DCMPUQ": {"PowerPC": ["XForm_17","63","642"]}
+  }
+}

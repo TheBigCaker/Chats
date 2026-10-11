@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SHADDXL",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "SHADDXL.i64": {"Mali": "SHADDXL.i64"},
+    "SHADDXL.s32": {"Mali": "SHADDXL.s32"},
+    "SHADDXL.u32": {"Mali": "SHADDXL.u32"}
+  },
+  "INPUTS": {
+    "SHADDXL.i64": {"Mali": [["R32",32],["R32",32]]},
+    "SHADDXL.s32": {"Mali": [["R32",32],["R32",32]]},
+    "SHADDXL.u32": {"Mali": [["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "SHADDXL.i64": {"Mali": [["R",32]]},
+    "SHADDXL.s32": {"Mali": [["R",32]]},
+    "SHADDXL.u32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "SHADDXL.i64": {"Mali": ["Bifrost_fma","0x70e600","0x7ffe00"]},
+    "SHADDXL.s32": {"Mali": ["Bifrost_fma","0x70e800","0x7ff800"]},
+    "SHADDXL.u32": {"Mali": ["Bifrost_fma","0x70e000","0x7ff800"]}
+  },
+  "OUTPUT_BYTES": {
+    "SHADDXL.i64": {"Mali": ["Bifrost_fma","0x70e600","0x7ffe00"]},
+    "SHADDXL.s32": {"Mali": ["Bifrost_fma","0x70e800","0x7ff800"]},
+    "SHADDXL.u32": {"Mali": ["Bifrost_fma","0x70e000","0x7ff800"]}
+  }
+}

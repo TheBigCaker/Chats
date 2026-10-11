@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VID",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VID_V": {"RISCV": "VID_V"}
+  },
+  "INPUTS": {
+    "VID_V": {"RISCV": [["VMaskOp",0]]}
+  },
+  "OUTPUTS": {
+    "VID_V": {"RISCV": [["VR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VID_V": {"RISCV": ["RVInstVUnary","0b010100","0b10001"]}
+  },
+  "OUTPUT_BYTES": {
+    "VID_V": {"RISCV": ["RVInstVUnary","0b010100","0b10001"]}
+  }
+}

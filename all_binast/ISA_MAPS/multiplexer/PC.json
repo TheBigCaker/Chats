@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PC",
+  "BACKENDS": ["ARM","AMDGPU"],
+  "INDEX": {
+    "PC": {"ARM": "PC"},
+    "PC_REG": {"AMDGPU": "PC_REG"}
+  },
+  "INPUTS": {
+    "PC": {"ARM": []},
+    "PC_REG": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "PC": {"ARM": []},
+    "PC_REG": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "PC": {"ARM": ["ARMReg","15"]},
+    "PC_REG": {"AMDGPU": ["SIReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "PC": {"ARM": ["ARMReg","15"]},
+    "PC_REG": {"AMDGPU": ["SIReg","0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WBINVD",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "WBINVD": {"X86": "WBINVD"}
+  },
+  "INPUTS": {
+    "WBINVD": {"X86": []}
+  },
+  "OUTPUTS": {
+    "WBINVD": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "WBINVD": {"X86": ["0x09"]}
+  },
+  "OUTPUT_BYTES": {
+    "WBINVD": {"X86": ["0x09"]}
+  }
+}

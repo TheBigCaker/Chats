@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MINU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MINU": {"RISCV": "MINU"}
+  },
+  "INPUTS": {
+    "MINU": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "MINU": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "MINU": {"RISCV": ["ALU_rr","0b0000101","0b101"]}
+  },
+  "OUTPUT_BYTES": {
+    "MINU": {"RISCV": ["ALU_rr","0b0000101","0b101"]}
+  }
+}

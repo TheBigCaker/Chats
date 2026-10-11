@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TAILBCTR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "TAILBCTR8": {"PowerPC": "TAILBCTR8"}
+  },
+  "INPUTS": {
+    "TAILBCTR8": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "TAILBCTR8": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "TAILBCTR8": {"PowerPC": ["XLForm_2_ext","19","528","20","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "TAILBCTR8": {"PowerPC": ["XLForm_2_ext","19","528","20","0","0"]}
+  }
+}

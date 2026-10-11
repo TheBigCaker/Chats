@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "IP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "IP_AGEN": {"PowerPC": "IP_AGEN"},
+    "IP_EXEC": {"PowerPC": "IP_EXEC"},
+    "IP_EXECE": {"PowerPC": "IP_EXECE"},
+    "IP_EXECO": {"PowerPC": "IP_EXECO"}
+  },
+  "INPUTS": {
+    "IP_AGEN": {"PowerPC": []},
+    "IP_EXEC": {"PowerPC": []},
+    "IP_EXECE": {"PowerPC": []},
+    "IP_EXECO": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "IP_AGEN": {"PowerPC": []},
+    "IP_EXEC": {"PowerPC": []},
+    "IP_EXECE": {"PowerPC": []},
+    "IP_EXECO": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "IP_AGEN": {"PowerPC": ["ProcResource","4"]},
+    "IP_EXEC": {"PowerPC": ["ProcResource","4"]},
+    "IP_EXECE": {"PowerPC": ["ProcResource","2"]},
+    "IP_EXECO": {"PowerPC": ["ProcResource","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "IP_AGEN": {"PowerPC": ["ProcResource","4"]},
+    "IP_EXEC": {"PowerPC": ["ProcResource","4"]},
+    "IP_EXECE": {"PowerPC": ["ProcResource","2"]},
+    "IP_EXECO": {"PowerPC": ["ProcResource","2"]}
+  }
+}

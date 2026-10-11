@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VPERMR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VPERMR": {"PowerPC": "VPERMR"}
+  },
+  "INPUTS": {
+    "VPERMR": {"PowerPC": [["vrrc",0],["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VPERMR": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VPERMR": {"PowerPC": ["VAForm_1a","59"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPERMR": {"PowerPC": ["VAForm_1a","59"]}
+  }
+}

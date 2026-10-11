@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LWZUX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LWZUX8": {"PowerPC": "LWZUX8"}
+  },
+  "INPUTS": {
+    "LWZUX8": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LWZUX8": {"PowerPC": [["g8rc",0],["ptr_rc_nor0",0]]}
+  },
+  "INPUT_BYTES": {
+    "LWZUX8": {"PowerPC": ["XForm_1_memOp","31","55"]}
+  },
+  "OUTPUT_BYTES": {
+    "LWZUX8": {"PowerPC": ["XForm_1_memOp","31","55"]}
+  }
+}

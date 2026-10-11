@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSTSTDCDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSTSTDCDP": {"PowerPC": "XSTSTDCDP"}
+  },
+  "INPUTS": {
+    "XSTSTDCDP": {"PowerPC": [["u7imm",7],["vsfrc",0]]}
+  },
+  "OUTPUTS": {
+    "XSTSTDCDP": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XSTSTDCDP": {"PowerPC": ["XX2_BF3_DCMX7_RS6","60","362"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSTSTDCDP": {"PowerPC": ["XX2_BF3_DCMX7_RS6","60","362"]}
+  }
+}

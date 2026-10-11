@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "MOVDIR",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MOVDIR64B16": {"X86": "MOVDIR64B16"},
+    "MOVDIR64B32": {"X86": "MOVDIR64B32"},
+    "MOVDIR64B64": {"X86": "MOVDIR64B64"},
+    "MOVDIR64B32_EVEX": {"X86": "MOVDIR64B32_EVEX"},
+    "MOVDIR64B64_EVEX": {"X86": "MOVDIR64B64_EVEX"}
+  },
+  "INPUTS": {
+    "MOVDIR64B16": {"X86": [["GR16",16],["i512mem_GR16",16]]},
+    "MOVDIR64B32": {"X86": [["GR32",32],["i512mem_GR32",32]]},
+    "MOVDIR64B64": {"X86": [["GR64",64],["i512mem_GR64",64]]},
+    "MOVDIR64B32_EVEX": {"X86": [["GR32",32],["i512mem_GR32",32]]},
+    "MOVDIR64B64_EVEX": {"X86": [["GR64",64],["i512mem_GR64",64]]}
+  },
+  "OUTPUTS": {
+    "MOVDIR64B16": {"X86": []},
+    "MOVDIR64B32": {"X86": []},
+    "MOVDIR64B64": {"X86": []},
+    "MOVDIR64B32_EVEX": {"X86": []},
+    "MOVDIR64B64_EVEX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "MOVDIR64B16": {"X86": ["0xF8"]},
+    "MOVDIR64B32": {"X86": ["0xF8"]},
+    "MOVDIR64B64": {"X86": ["0xF8"]},
+    "MOVDIR64B32_EVEX": {"X86": ["0xF8"]},
+    "MOVDIR64B64_EVEX": {"X86": ["0xF8"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVDIR64B16": {"X86": ["0xF8"]},
+    "MOVDIR64B32": {"X86": ["0xF8"]},
+    "MOVDIR64B64": {"X86": ["0xF8"]},
+    "MOVDIR64B32_EVEX": {"X86": ["0xF8"]},
+    "MOVDIR64B64_EVEX": {"X86": ["0xF8"]}
+  }
+}

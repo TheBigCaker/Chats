@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VABSH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VABSH": {"ARM": "VABSH"}
+  },
+  "INPUTS": {
+    "VABSH": {"ARM": [["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VABSH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VABSH": {"ARM": ["AHuI","0b11101","0b11","0b0000","0b11","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VABSH": {"ARM": ["AHuI","0b11101","0b11","0b0000","0b11","0"]}
+  }
+}

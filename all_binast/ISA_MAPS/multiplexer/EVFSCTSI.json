@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVFSCTSI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVFSCTSI": {"PowerPC": "EVFSCTSI"}
+  },
+  "INPUTS": {
+    "EVFSCTSI": {"PowerPC": [["sperc",0]]}
+  },
+  "OUTPUTS": {
+    "EVFSCTSI": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVFSCTSI": {"PowerPC": ["EVXForm_2a","661"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVFSCTSI": {"PowerPC": ["EVXForm_2a","661"]}
+  }
+}

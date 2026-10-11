@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "ARM",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "ARMvdup": {"ARM": "ARMvdup"},
+    "ARMvduplane": {"ARM": "ARMvduplane"}
+  },
+  "INPUTS": {
+    "ARMvdup": {"ARM": []},
+    "ARMvduplane": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "ARMvdup": {"ARM": []},
+    "ARMvduplane": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "ARMvdup": {"ARM": ["SDNode","1"]},
+    "ARMvduplane": {"ARM": ["SDNode","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "ARMvdup": {"ARM": ["SDNode","1"]},
+    "ARMvduplane": {"ARM": ["SDNode","2"]}
+  }
+}

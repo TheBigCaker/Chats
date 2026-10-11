@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MTVSCR",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "MTVSCR": {"PowerPC": "MTVSCR"}
+  },
+  "INPUTS": {
+    "MTVSCR": {"PowerPC": [["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "MTVSCR": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "MTVSCR": {"PowerPC": ["VXForm_5","1604"]}
+  },
+  "OUTPUT_BYTES": {
+    "MTVSCR": {"PowerPC": ["VXForm_5","1604"]}
+  }
+}

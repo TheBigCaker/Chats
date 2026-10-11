@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "INSB",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "INSB": {"X86": "INSB"}
+  },
+  "INPUTS": {
+    "INSB": {"X86": [["dstidx8",0]]}
+  },
+  "OUTPUTS": {
+    "INSB": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "INSB": {"X86": ["0x6C"]}
+  },
+  "OUTPUT_BYTES": {
+    "INSB": {"X86": ["0x6C"]}
+  }
+}

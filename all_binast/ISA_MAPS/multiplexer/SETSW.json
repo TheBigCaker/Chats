@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SETSW",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "SETSW": {"Sparc": "SETSW"}
+  },
+  "INPUTS": {
+    "SETSW": {"Sparc": [["i32imm",32]]}
+  },
+  "OUTPUTS": {
+    "SETSW": {"Sparc": [["IntRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "SETSW": {"Sparc": ["AsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "SETSW": {"Sparc": ["AsmPseudoInst"]}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "PABD",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PABD_H": {"RISCV": "PABD_H"},
+    "PABD_B": {"RISCV": "PABD_B"},
+    "PABD_DH": {"RISCV": "PABD_DH"},
+    "PABD_DB": {"RISCV": "PABD_DB"}
+  },
+  "INPUTS": {
+    "PABD_H": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PABD_B": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PABD_DH": {"RISCV": []},
+    "PABD_DB": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "PABD_H": {"RISCV": [["GPR:$rd",0]]},
+    "PABD_B": {"RISCV": [["GPR:$rd",0]]},
+    "PABD_DH": {"RISCV": []},
+    "PABD_DB": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "PABD_H": {"RISCV": ["RVPBinary_rr","0b1001","0b00","0b000"]},
+    "PABD_B": {"RISCV": ["RVPBinary_rr","0b1001","0b10","0b000"]},
+    "PABD_DH": {"RISCV": ["RVPPairBinary_rr","0b1001","0b00"]},
+    "PABD_DB": {"RISCV": ["RVPPairBinary_rr","0b1001","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "PABD_H": {"RISCV": ["RVPBinary_rr","0b1001","0b00","0b000"]},
+    "PABD_B": {"RISCV": ["RVPBinary_rr","0b1001","0b10","0b000"]},
+    "PABD_DH": {"RISCV": ["RVPPairBinary_rr","0b1001","0b00"]},
+    "PABD_DB": {"RISCV": ["RVPPairBinary_rr","0b1001","0b10"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LDAEXB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "LDAEXB": {"ARM": "LDAEXB"}
+  },
+  "INPUTS": {
+    "LDAEXB": {"ARM": [["addr_offset_none",0]]}
+  },
+  "OUTPUTS": {
+    "LDAEXB": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "LDAEXB": {"ARM": ["AIldaex","0b10"]}
+  },
+  "OUTPUT_BYTES": {
+    "LDAEXB": {"ARM": ["AIldaex","0b10"]}
+  }
+}

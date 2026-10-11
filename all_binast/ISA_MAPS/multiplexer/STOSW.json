@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STOSW",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "STOSW": {"X86": "STOSW"}
+  },
+  "INPUTS": {
+    "STOSW": {"X86": [["dstidx16",0]]}
+  },
+  "OUTPUTS": {
+    "STOSW": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "STOSW": {"X86": ["0xAB"]}
+  },
+  "OUTPUT_BYTES": {
+    "STOSW": {"X86": ["0xAB"]}
+  }
+}

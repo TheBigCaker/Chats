@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VABDU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VABDU_VV": {"RISCV": "VABDU_VV"}
+  },
+  "INPUTS": {
+    "VABDU_VV": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VABDU_VV": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VABDU_VV": {"RISCV": ["VALUVV","0b010011"]}
+  },
+  "OUTPUT_BYTES": {
+    "VABDU_VV": {"RISCV": ["VALUVV","0b010011"]}
+  }
+}

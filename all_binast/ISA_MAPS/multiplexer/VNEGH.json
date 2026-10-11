@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VNEGH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VNEGH": {"ARM": "VNEGH"}
+  },
+  "INPUTS": {
+    "VNEGH": {"ARM": [["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VNEGH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VNEGH": {"ARM": ["AHuI","0b11101","0b11","0b0001","0b01","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VNEGH": {"ARM": ["AHuI","0b11101","0b11","0b0001","0b01","0"]}
+  }
+}

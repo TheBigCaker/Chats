@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ZTR",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "ZTR": {"AArch64": "ZTR"}
+  },
+  "INPUTS": {
+    "ZTR": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "ZTR": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "ZTR": {"AArch64": ["RegisterClass","512"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZTR": {"AArch64": ["RegisterClass","512"]}
+  }
+}

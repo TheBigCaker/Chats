@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DMRRC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "DMRRC": {"PowerPC": "DMRRC"}
+  },
+  "INPUTS": {
+    "DMRRC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "DMRRC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "DMRRC": {"PowerPC": ["PPCRegisterClassWithSize","128","0","1024"]}
+  },
+  "OUTPUT_BYTES": {
+    "DMRRC": {"PowerPC": ["PPCRegisterClassWithSize","128","0","1024"]}
+  }
+}

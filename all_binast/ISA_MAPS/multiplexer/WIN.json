@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WIN",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "WIN__DBZCHK": {"ARM": "WIN__DBZCHK"}
+  },
+  "INPUTS": {
+    "WIN__DBZCHK": {"ARM": [["tGPR",0]]}
+  },
+  "OUTPUTS": {
+    "WIN__DBZCHK": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "WIN__DBZCHK": {"ARM": ["PseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "WIN__DBZCHK": {"ARM": ["PseudoInst"]}
+  }
+}

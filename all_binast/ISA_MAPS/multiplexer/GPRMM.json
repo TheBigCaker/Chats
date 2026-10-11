@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "GPRMM",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "GPRMM16": {"Mips": "GPRMM16"},
+    "GPRMM16Zero": {"Mips": "GPRMM16Zero"},
+    "GPRMM16MoveP": {"Mips": "GPRMM16MoveP"},
+    "GPRMM16MovePPairFirst": {"Mips": "GPRMM16MovePPairFirst"},
+    "GPRMM16MovePPairSecond": {"Mips": "GPRMM16MovePPairSecond"}
+  },
+  "INPUTS": {
+    "GPRMM16": {"Mips": []},
+    "GPRMM16Zero": {"Mips": []},
+    "GPRMM16MoveP": {"Mips": []},
+    "GPRMM16MovePPairFirst": {"Mips": []},
+    "GPRMM16MovePPairSecond": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "GPRMM16": {"Mips": []},
+    "GPRMM16Zero": {"Mips": []},
+    "GPRMM16MoveP": {"Mips": []},
+    "GPRMM16MovePPairFirst": {"Mips": []},
+    "GPRMM16MovePPairSecond": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "GPRMM16": {"Mips": ["RegisterClass","32"]},
+    "GPRMM16Zero": {"Mips": ["RegisterClass","32"]},
+    "GPRMM16MoveP": {"Mips": ["RegisterClass","32"]},
+    "GPRMM16MovePPairFirst": {"Mips": ["RegisterClass","32"]},
+    "GPRMM16MovePPairSecond": {"Mips": ["RegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "GPRMM16": {"Mips": ["RegisterClass","32"]},
+    "GPRMM16Zero": {"Mips": ["RegisterClass","32"]},
+    "GPRMM16MoveP": {"Mips": ["RegisterClass","32"]},
+    "GPRMM16MovePPairFirst": {"Mips": ["RegisterClass","32"]},
+    "GPRMM16MovePPairSecond": {"Mips": ["RegisterClass","32"]}
+  }
+}

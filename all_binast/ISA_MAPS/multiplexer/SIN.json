@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SIN",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SIN_eg": {"AMDGPU": "SIN_eg"},
+    "SIN_HW": {"AMDGPU": "SIN_HW"},
+    "SIN_r600": {"AMDGPU": "SIN_r600"}
+  },
+  "INPUTS": {
+    "SIN_eg": {"AMDGPU": []},
+    "SIN_HW": {"AMDGPU": []},
+    "SIN_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SIN_eg": {"AMDGPU": []},
+    "SIN_HW": {"AMDGPU": []},
+    "SIN_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SIN_eg": {"AMDGPU": ["SIN_Common","0x8D"]},
+    "SIN_HW": {"AMDGPU": ["SDNode","1"]},
+    "SIN_r600": {"AMDGPU": ["SIN_Common","0x6E"]}
+  },
+  "OUTPUT_BYTES": {
+    "SIN_eg": {"AMDGPU": ["SIN_Common","0x8D"]},
+    "SIN_HW": {"AMDGPU": ["SDNode","1"]},
+    "SIN_r600": {"AMDGPU": ["SIN_Common","0x6E"]}
+  }
+}

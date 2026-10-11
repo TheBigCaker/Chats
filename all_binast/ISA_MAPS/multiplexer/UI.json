@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "UI",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "UImm5s2Operand": {"AArch64": "UImm5s2Operand"},
+    "UImm5s4Operand": {"AArch64": "UImm5s4Operand"},
+    "UImm5s8Operand": {"AArch64": "UImm5s8Operand"},
+    "UImm6s1Operand": {"AArch64": "UImm6s1Operand"},
+    "UImm6s2Operand": {"AArch64": "UImm6s2Operand"},
+    "UImm6s4Operand": {"AArch64": "UImm6s4Operand"},
+    "UImm6s8Operand": {"AArch64": "UImm6s8Operand"},
+    "UImm6s16Operand": {"AArch64": "UImm6s16Operand"}
+  },
+  "INPUTS": {
+    "UImm5s2Operand": {"AArch64": []},
+    "UImm5s4Operand": {"AArch64": []},
+    "UImm5s8Operand": {"AArch64": []},
+    "UImm6s1Operand": {"AArch64": []},
+    "UImm6s2Operand": {"AArch64": []},
+    "UImm6s4Operand": {"AArch64": []},
+    "UImm6s8Operand": {"AArch64": []},
+    "UImm6s16Operand": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "UImm5s2Operand": {"AArch64": []},
+    "UImm5s4Operand": {"AArch64": []},
+    "UImm5s8Operand": {"AArch64": []},
+    "UImm6s1Operand": {"AArch64": []},
+    "UImm6s2Operand": {"AArch64": []},
+    "UImm6s4Operand": {"AArch64": []},
+    "UImm6s8Operand": {"AArch64": []},
+    "UImm6s16Operand": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "UImm5s2Operand": {"AArch64": ["UImmScaledMemoryIndexed","5","2"]},
+    "UImm5s4Operand": {"AArch64": ["UImmScaledMemoryIndexed","5","4"]},
+    "UImm5s8Operand": {"AArch64": ["UImmScaledMemoryIndexed","5","8"]},
+    "UImm6s1Operand": {"AArch64": ["UImmScaledMemoryIndexed","6","1"]},
+    "UImm6s2Operand": {"AArch64": ["UImmScaledMemoryIndexed","6","2"]},
+    "UImm6s4Operand": {"AArch64": ["UImmScaledMemoryIndexed","6","4"]},
+    "UImm6s8Operand": {"AArch64": ["UImmScaledMemoryIndexed","6","8"]},
+    "UImm6s16Operand": {"AArch64": ["UImmScaledMemoryIndexed","6","16"]}
+  },
+  "OUTPUT_BYTES": {
+    "UImm5s2Operand": {"AArch64": ["UImmScaledMemoryIndexed","5","2"]},
+    "UImm5s4Operand": {"AArch64": ["UImmScaledMemoryIndexed","5","4"]},
+    "UImm5s8Operand": {"AArch64": ["UImmScaledMemoryIndexed","5","8"]},
+    "UImm6s1Operand": {"AArch64": ["UImmScaledMemoryIndexed","6","1"]},
+    "UImm6s2Operand": {"AArch64": ["UImmScaledMemoryIndexed","6","2"]},
+    "UImm6s4Operand": {"AArch64": ["UImmScaledMemoryIndexed","6","4"]},
+    "UImm6s8Operand": {"AArch64": ["UImmScaledMemoryIndexed","6","8"]},
+    "UImm6s16Operand": {"AArch64": ["UImmScaledMemoryIndexed","6","16"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "TEXC",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "TEXC": {"Mali": "TEXC"},
+    "TEXC_DUAL": {"Mali": "TEXC_DUAL"}
+  },
+  "INPUTS": {
+    "TEXC": {"Mali": [["R32",32],["R32",32],["R32",32]]},
+    "TEXC_DUAL": {"Mali": [["R32",32],["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "TEXC": {"Mali": [["R",32]]},
+    "TEXC_DUAL": {"Mali": [["R",32],["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "TEXC": {"Mali": ["Bifrost_add","0xd7000","0xffc00"]},
+    "TEXC_DUAL": {"Mali": ["Bifrost_add"]}
+  },
+  "OUTPUT_BYTES": {
+    "TEXC": {"Mali": ["Bifrost_add","0xd7000","0xffc00"]},
+    "TEXC_DUAL": {"Mali": ["Bifrost_add"]}
+  }
+}

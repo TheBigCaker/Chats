@@ -1,0 +1,64 @@
+{
+  "CATEGORY": "VAR",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "VAR_TEX.f16": {"Mali": "VAR_TEX.f16"},
+    "VAR_TEX.f32": {"Mali": "VAR_TEX.f32"},
+    "VAR_TEX_BUF_SINGLE": {"Mali": "VAR_TEX_BUF_SINGLE"},
+    "VAR_TEX_BUF_GATHER": {"Mali": "VAR_TEX_BUF_GATHER"},
+    "VAR_TEX_BUF_GRADIENT": {"Mali": "VAR_TEX_BUF_GRADIENT"},
+    "VAR_TEX_BUF_DUAL": {"Mali": "VAR_TEX_BUF_DUAL"},
+    "VAR_TEX_SINGLE": {"Mali": "VAR_TEX_SINGLE"},
+    "VAR_TEX_GATHER": {"Mali": "VAR_TEX_GATHER"},
+    "VAR_TEX_GRADIENT": {"Mali": "VAR_TEX_GRADIENT"},
+    "VAR_TEX_DUAL": {"Mali": "VAR_TEX_DUAL"}
+  },
+  "INPUTS": {
+    "VAR_TEX.f16": {"Mali": []},
+    "VAR_TEX.f32": {"Mali": []},
+    "VAR_TEX_BUF_SINGLE": {"Mali": []},
+    "VAR_TEX_BUF_GATHER": {"Mali": []},
+    "VAR_TEX_BUF_GRADIENT": {"Mali": []},
+    "VAR_TEX_BUF_DUAL": {"Mali": []},
+    "VAR_TEX_SINGLE": {"Mali": []},
+    "VAR_TEX_GATHER": {"Mali": []},
+    "VAR_TEX_GRADIENT": {"Mali": []},
+    "VAR_TEX_DUAL": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "VAR_TEX.f16": {"Mali": [["R",32]]},
+    "VAR_TEX.f32": {"Mali": [["R",32]]},
+    "VAR_TEX_BUF_SINGLE": {"Mali": [["R",32]]},
+    "VAR_TEX_BUF_GATHER": {"Mali": [["R",32]]},
+    "VAR_TEX_BUF_GRADIENT": {"Mali": [["R",32]]},
+    "VAR_TEX_BUF_DUAL": {"Mali": [["R",32]]},
+    "VAR_TEX_SINGLE": {"Mali": [["R",32]]},
+    "VAR_TEX_GATHER": {"Mali": [["R",32]]},
+    "VAR_TEX_GRADIENT": {"Mali": [["R",32]]},
+    "VAR_TEX_DUAL": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "VAR_TEX.f16": {"Mali": ["Bifrost_add","0xca100","0xffd00"]},
+    "VAR_TEX.f32": {"Mali": ["Bifrost_add","0xca000","0xffd00"]},
+    "VAR_TEX_BUF_SINGLE": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_BUF_GATHER": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_BUF_GRADIENT": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_BUF_DUAL": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_SINGLE": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_GATHER": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_GRADIENT": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_DUAL": {"Mali": ["Valhall_VT"]}
+  },
+  "OUTPUT_BYTES": {
+    "VAR_TEX.f16": {"Mali": ["Bifrost_add","0xca100","0xffd00"]},
+    "VAR_TEX.f32": {"Mali": ["Bifrost_add","0xca000","0xffd00"]},
+    "VAR_TEX_BUF_SINGLE": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_BUF_GATHER": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_BUF_GRADIENT": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_BUF_DUAL": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_SINGLE": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_GATHER": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_GRADIENT": {"Mali": ["Valhall_VT"]},
+    "VAR_TEX_DUAL": {"Mali": ["Valhall_VT"]}
+  }
+}

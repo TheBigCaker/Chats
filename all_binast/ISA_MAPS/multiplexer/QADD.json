@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "QADD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "QADD8": {"ARM": "QADD8"},
+    "QADD16": {"ARM": "QADD16"},
+    "QADD": {"ARM": "QADD"}
+  },
+  "INPUTS": {
+    "QADD8": {"ARM": []},
+    "QADD16": {"ARM": []},
+    "QADD": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "QADD8": {"ARM": []},
+    "QADD16": {"ARM": []},
+    "QADD": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "QADD8": {"ARM": ["AAIIntrinsic","0b01100010","0b11111001"]},
+    "QADD16": {"ARM": ["AAIIntrinsic","0b01100010","0b11110001"]},
+    "QADD": {"ARM": ["AAIRevOpr","0b00010000","0b00000101"]}
+  },
+  "OUTPUT_BYTES": {
+    "QADD8": {"ARM": ["AAIIntrinsic","0b01100010","0b11111001"]},
+    "QADD16": {"ARM": ["AAIIntrinsic","0b01100010","0b11110001"]},
+    "QADD": {"ARM": ["AAIRevOpr","0b00010000","0b00000101"]}
+  }
+}

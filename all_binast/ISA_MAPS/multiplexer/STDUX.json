@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STDUX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "STDUX": {"PowerPC": "STDUX"}
+  },
+  "INPUTS": {
+    "STDUX": {"PowerPC": [["g8rc",0],["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "STDUX": {"PowerPC": [["ptr_rc_nor0",0]]}
+  },
+  "INPUT_BYTES": {
+    "STDUX": {"PowerPC": ["XForm_8_memOp","31","181"]}
+  },
+  "OUTPUT_BYTES": {
+    "STDUX": {"PowerPC": ["XForm_8_memOp","31","181"]}
+  }
+}

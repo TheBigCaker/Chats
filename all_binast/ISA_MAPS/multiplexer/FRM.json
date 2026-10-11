@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FRM",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FRM": {"RISCV": "FRM"}
+  },
+  "INPUTS": {
+    "FRM": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "FRM": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "FRM": {"RISCV": ["RISCVReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FRM": {"RISCV": ["RISCVReg","0"]}
+  }
+}

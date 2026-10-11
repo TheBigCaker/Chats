@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FCMPLE",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FCMPLE16": {"Sparc": "FCMPLE16"},
+    "FCMPLE32": {"Sparc": "FCMPLE32"}
+  },
+  "INPUTS": {
+    "FCMPLE16": {"Sparc": []},
+    "FCMPLE32": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FCMPLE16": {"Sparc": []},
+    "FCMPLE32": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FCMPLE16": {"Sparc": ["VISInstID","0b000100000"]},
+    "FCMPLE32": {"Sparc": ["VISInstID","0b000100100"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCMPLE16": {"Sparc": ["VISInstID","0b000100000"]},
+    "FCMPLE32": {"Sparc": ["VISInstID","0b000100100"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMOVDRR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMOVDRR": {"ARM": "VMOVDRR"}
+  },
+  "INPUTS": {
+    "VMOVDRR": {"ARM": [["GPR",64],["GPR",64]]}
+  },
+  "OUTPUTS": {
+    "VMOVDRR": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMOVDRR": {"ARM": ["AVConv5I","0b11000100","0b1011"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMOVDRR": {"ARM": ["AVConv5I","0b11000100","0b1011"]}
+  }
+}

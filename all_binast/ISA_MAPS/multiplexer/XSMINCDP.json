@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSMINCDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSMINCDP": {"PowerPC": "XSMINCDP"}
+  },
+  "INPUTS": {
+    "XSMINCDP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSMINCDP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSMINCDP": {"PowerPC": ["XX3_XT5_XA5_XB5","60","136"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSMINCDP": {"PowerPC": ["XX3_XT5_XA5_XB5","60","136"]}
+  }
+}

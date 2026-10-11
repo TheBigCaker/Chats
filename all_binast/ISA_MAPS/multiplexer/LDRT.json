@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LDRT",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "LDRT_POST_REG": {"ARM": "LDRT_POST_REG"}
+  },
+  "INPUTS": {
+    "LDRT_POST_REG": {"ARM": [["addr_offset_none",0],["am2offset_reg",0]]}
+  },
+  "OUTPUTS": {
+    "LDRT_POST_REG": {"ARM": [["GPR",64],["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "LDRT_POST_REG": {"ARM": ["AI2ldstidx","1","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "LDRT_POST_REG": {"ARM": ["AI2ldstidx","1","0","0"]}
+  }
+}

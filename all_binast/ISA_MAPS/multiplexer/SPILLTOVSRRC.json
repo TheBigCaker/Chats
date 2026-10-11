@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SPILLTOVSRRC",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SPILLTOVSRRC": {"PowerPC": "SPILLTOVSRRC"}
+  },
+  "INPUTS": {
+    "SPILLTOVSRRC": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "SPILLTOVSRRC": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "SPILLTOVSRRC": {"PowerPC": ["PPCRegisterClass","64","31","31"]}
+  },
+  "OUTPUT_BYTES": {
+    "SPILLTOVSRRC": {"PowerPC": ["PPCRegisterClass","64","31","31"]}
+  }
+}

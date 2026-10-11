@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "FORNOT",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FORNOT1": {"Sparc": "FORNOT1"},
+    "FORNOT1S": {"Sparc": "FORNOT1S"},
+    "FORNOT2": {"Sparc": "FORNOT2"},
+    "FORNOT2S": {"Sparc": "FORNOT2S"}
+  },
+  "INPUTS": {
+    "FORNOT1": {"Sparc": []},
+    "FORNOT1S": {"Sparc": []},
+    "FORNOT2": {"Sparc": []},
+    "FORNOT2S": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FORNOT1": {"Sparc": []},
+    "FORNOT1S": {"Sparc": []},
+    "FORNOT2": {"Sparc": []},
+    "FORNOT2S": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FORNOT1": {"Sparc": ["VISInst","0b001111010"]},
+    "FORNOT1S": {"Sparc": ["VISInst","0b001111011"]},
+    "FORNOT2": {"Sparc": ["VISInst","0b001110110"]},
+    "FORNOT2S": {"Sparc": ["VISInst","0b001110111"]}
+  },
+  "OUTPUT_BYTES": {
+    "FORNOT1": {"Sparc": ["VISInst","0b001111010"]},
+    "FORNOT1S": {"Sparc": ["VISInst","0b001111011"]},
+    "FORNOT2": {"Sparc": ["VISInst","0b001110110"]},
+    "FORNOT2S": {"Sparc": ["VISInst","0b001110111"]}
+  }
+}

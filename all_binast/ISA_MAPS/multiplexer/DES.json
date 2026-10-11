@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "DES",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "DES_ROUND": {"Sparc": "DES_ROUND"},
+    "DES_IP": {"Sparc": "DES_IP"},
+    "DES_IIP": {"Sparc": "DES_IIP"},
+    "DES_KEXPAND": {"Sparc": "DES_KEXPAND"}
+  },
+  "INPUTS": {
+    "DES_ROUND": {"Sparc": []},
+    "DES_IP": {"Sparc": [["DFPRegs",0]]},
+    "DES_IIP": {"Sparc": [["DFPRegs",0]]},
+    "DES_KEXPAND": {"Sparc": [["DFPRegs",0],["simm5Op",0]]}
+  },
+  "OUTPUTS": {
+    "DES_ROUND": {"Sparc": []},
+    "DES_IP": {"Sparc": [["DFPRegs",0]]},
+    "DES_IIP": {"Sparc": [["DFPRegs",0]]},
+    "DES_KEXPAND": {"Sparc": [["DFPRegs",0]]}
+  },
+  "INPUT_BYTES": {
+    "DES_ROUND": {"Sparc": ["FourOp","0b011001","0b1001"]},
+    "DES_IP": {"Sparc": ["F3_3","2","0b110110","0b100110100"]},
+    "DES_IIP": {"Sparc": ["F3_3","2","0b110110","0b100110101"]},
+    "DES_KEXPAND": {"Sparc": ["F3_3","2","0b110110","0b100110110"]}
+  },
+  "OUTPUT_BYTES": {
+    "DES_ROUND": {"Sparc": ["FourOp","0b011001","0b1001"]},
+    "DES_IP": {"Sparc": ["F3_3","2","0b110110","0b100110100"]},
+    "DES_IIP": {"Sparc": ["F3_3","2","0b110110","0b100110101"]},
+    "DES_KEXPAND": {"Sparc": ["F3_3","2","0b110110","0b100110110"]}
+  }
+}

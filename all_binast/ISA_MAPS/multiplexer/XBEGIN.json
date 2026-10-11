@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XBEGIN",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XBEGIN": {"X86": "XBEGIN"}
+  },
+  "INPUTS": {
+    "XBEGIN": {"X86": []}
+  },
+  "OUTPUTS": {
+    "XBEGIN": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "XBEGIN": {"X86": ["0"]}
+  },
+  "OUTPUT_BYTES": {
+    "XBEGIN": {"X86": ["0"]}
+  }
+}

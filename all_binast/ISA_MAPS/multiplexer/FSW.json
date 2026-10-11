@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FSW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FSW": {"RISCV": "FSW"}
+  },
+  "INPUTS": {
+    "FSW": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "FSW": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "FSW": {"RISCV": ["FPStore_r","0b010"]}
+  },
+  "OUTPUT_BYTES": {
+    "FSW": {"RISCV": ["FPStore_r","0b010"]}
+  }
+}

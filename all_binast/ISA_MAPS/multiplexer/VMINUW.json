@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMINUW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMINUW": {"PowerPC": "VMINUW"}
+  },
+  "INPUTS": {
+    "VMINUW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMINUW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMINUW": {"PowerPC": ["VX1_Int_Ty","642"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMINUW": {"PowerPC": ["VX1_Int_Ty","642"]}
+  }
+}

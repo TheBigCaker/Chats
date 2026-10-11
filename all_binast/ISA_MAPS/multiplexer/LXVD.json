@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXVD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXVD2X": {"PowerPC": "LXVD2X"}
+  },
+  "INPUTS": {
+    "LXVD2X": {"PowerPC": [["(memrr",0]]}
+  },
+  "OUTPUTS": {
+    "LXVD2X": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LXVD2X": {"PowerPC": ["XX1Form_memOp","31","844"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXVD2X": {"PowerPC": ["XX1Form_memOp","31","844"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VCFSX",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCFSX": {"PowerPC": "VCFSX"},
+    "VCFSX_0": {"PowerPC": "VCFSX_0"}
+  },
+  "INPUTS": {
+    "VCFSX": {"PowerPC": [["u5imm",5],["vrrc",0]]},
+    "VCFSX_0": {"PowerPC": [["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VCFSX": {"PowerPC": [["vrrc",0]]},
+    "VCFSX_0": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCFSX": {"PowerPC": ["VXForm_1","842"]},
+    "VCFSX_0": {"PowerPC": ["VXForm_1","842"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCFSX": {"PowerPC": ["VXForm_1","842"]},
+    "VCFSX_0": {"PowerPC": ["VXForm_1","842"]}
+  }
+}

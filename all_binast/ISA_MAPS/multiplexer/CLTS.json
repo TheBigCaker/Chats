@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CLTS",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CLTS": {"X86": "CLTS"}
+  },
+  "INPUTS": {
+    "CLTS": {"X86": []}
+  },
+  "OUTPUTS": {
+    "CLTS": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CLTS": {"X86": ["0x06"]}
+  },
+  "OUTPUT_BYTES": {
+    "CLTS": {"X86": ["0x06"]}
+  }
+}

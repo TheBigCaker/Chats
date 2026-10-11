@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULOSD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMULOSD": {"PowerPC": "VMULOSD"}
+  },
+  "INPUTS": {
+    "VMULOSD": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMULOSD": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMULOSD": {"PowerPC": ["VXForm_1","456"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULOSD": {"PowerPC": ["VXForm_1","456"]}
+  }
+}

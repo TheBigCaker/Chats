@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ADDU",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "ADDU16_MM": {"Mips": "ADDU16_MM"}
+  },
+  "INPUTS": {
+    "ADDU16_MM": {"Mips": [["RO:$rs",0],["RO:$rt",0]]}
+  },
+  "OUTPUTS": {
+    "ADDU16_MM": {"Mips": [["RO:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "ADDU16_MM": {"Mips": ["ArithRMM16","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADDU16_MM": {"Mips": ["ArithRMM16","1"]}
+  }
+}

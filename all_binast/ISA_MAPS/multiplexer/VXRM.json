@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VXRM",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VXRM": {"RISCV": "VXRM"}
+  },
+  "INPUTS": {
+    "VXRM": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VXRM": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VXRM": {"RISCV": ["RISCVReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VXRM": {"RISCV": ["RISCVReg","0"]}
+  }
+}

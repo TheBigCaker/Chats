@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOVQI",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "MOVQI2PQIrm": {"X86": "MOVQI2PQIrm"}
+  },
+  "INPUTS": {
+    "MOVQI2PQIrm": {"X86": [["i64mem",0]]}
+  },
+  "OUTPUTS": {
+    "MOVQI2PQIrm": {"X86": [["VR128",128]]}
+  },
+  "INPUT_BYTES": {
+    "MOVQI2PQIrm": {"X86": ["0x7E"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOVQI2PQIrm": {"X86": ["0x7E"]}
+  }
+}

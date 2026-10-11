@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "FLEQ",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "FLEQ_S": {"RISCV": "FLEQ_S"},
+    "FLEQ_D": {"RISCV": "FLEQ_D"},
+    "FLEQ_H": {"RISCV": "FLEQ_H"},
+    "FLEQ_Q": {"RISCV": "FLEQ_Q"}
+  },
+  "INPUTS": {
+    "FLEQ_S": {"RISCV": [["rty:$rs1",0],["rty:$rs2",0]]},
+    "FLEQ_D": {"RISCV": [["rty:$rs1",0],["rty:$rs2",0]]},
+    "FLEQ_H": {"RISCV": [["rty:$rs1",0],["rty:$rs2",0]]},
+    "FLEQ_Q": {"RISCV": [["rty:$rs1",0],["rty:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "FLEQ_S": {"RISCV": [["GPR:$rd",0]]},
+    "FLEQ_D": {"RISCV": [["GPR:$rd",0]]},
+    "FLEQ_H": {"RISCV": [["GPR:$rd",0]]},
+    "FLEQ_Q": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "FLEQ_S": {"RISCV": ["FPCmp_rr","0b1010000","0b100"]},
+    "FLEQ_D": {"RISCV": ["FPCmp_rr","0b1010001","0b100"]},
+    "FLEQ_H": {"RISCV": ["FPCmp_rr","0b1010010","0b100"]},
+    "FLEQ_Q": {"RISCV": ["FPCmp_rr","0b1010011","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "FLEQ_S": {"RISCV": ["FPCmp_rr","0b1010000","0b100"]},
+    "FLEQ_D": {"RISCV": ["FPCmp_rr","0b1010001","0b100"]},
+    "FLEQ_H": {"RISCV": ["FPCmp_rr","0b1010010","0b100"]},
+    "FLEQ_Q": {"RISCV": ["FPCmp_rr","0b1010011","0b100"]}
+  }
+}

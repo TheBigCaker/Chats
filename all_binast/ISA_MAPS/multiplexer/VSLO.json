@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSLO",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSLO": {"PowerPC": "VSLO"}
+  },
+  "INPUTS": {
+    "VSLO": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSLO": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSLO": {"PowerPC": ["VX1_Int_Ty","1036"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSLO": {"PowerPC": ["VX1_Int_Ty","1036"]}
+  }
+}

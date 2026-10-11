@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSCMPEQQP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSCMPEQQP": {"PowerPC": "XSCMPEQQP"}
+  },
+  "INPUTS": {
+    "XSCMPEQQP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSCMPEQQP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSCMPEQQP": {"PowerPC": ["X_VT5_VA5_VB5","63","68"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSCMPEQQP": {"PowerPC": ["X_VT5_VA5_VB5","63","68"]}
+  }
+}

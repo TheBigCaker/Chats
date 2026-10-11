@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ADDRVTX",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "ADDRVTX_READ": {"AMDGPU": "ADDRVTX_READ"}
+  },
+  "INPUTS": {
+    "ADDRVTX_READ": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "ADDRVTX_READ": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "ADDRVTX_READ": {"AMDGPU": ["ComplexPattern","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "ADDRVTX_READ": {"AMDGPU": ["ComplexPattern","2"]}
+  }
+}

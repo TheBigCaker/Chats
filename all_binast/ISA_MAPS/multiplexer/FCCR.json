@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FCCR",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FCCRegs": {"Sparc": "FCCRegs"}
+  },
+  "INPUTS": {
+    "FCCRegs": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FCCRegs": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FCCRegs": {"Sparc": ["RegisterClass","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FCCRegs": {"Sparc": ["RegisterClass","1","0"]}
+  }
+}

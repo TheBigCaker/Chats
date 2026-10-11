@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SUBB",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SUBB_UINT": {"AMDGPU": "SUBB_UINT"}
+  },
+  "INPUTS": {
+    "SUBB_UINT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SUBB_UINT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SUBB_UINT": {"AMDGPU": ["R600_2OP_Helper","0x53"]}
+  },
+  "OUTPUT_BYTES": {
+    "SUBB_UINT": {"AMDGPU": ["R600_2OP_Helper","0x53"]}
+  }
+}

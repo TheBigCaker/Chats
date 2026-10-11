@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FPSR",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "FPSR": {"AArch64": "FPSR"}
+  },
+  "INPUTS": {
+    "FPSR": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "FPSR": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "FPSR": {"AArch64": ["AArch64Reg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPSR": {"AArch64": ["AArch64Reg","0"]}
+  }
+}

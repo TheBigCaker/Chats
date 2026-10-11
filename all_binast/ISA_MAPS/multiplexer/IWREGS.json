@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "IWREGS",
+  "BACKENDS": ["AVR"],
+  "INDEX": {
+    "IWREGS": {"AVR": "IWREGS"}
+  },
+  "INPUTS": {
+    "IWREGS": {"AVR": []}
+  },
+  "OUTPUTS": {
+    "IWREGS": {"AVR": []}
+  },
+  "INPUT_BYTES": {
+    "IWREGS": {"AVR": ["RegisterClass","8"]}
+  },
+  "OUTPUT_BYTES": {
+    "IWREGS": {"AVR": ["RegisterClass","8"]}
+  }
+}

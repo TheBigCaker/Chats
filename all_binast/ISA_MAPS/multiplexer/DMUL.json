@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DMUL",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "DMUL": {"Mips": "DMUL"}
+  },
+  "INPUTS": {
+    "DMUL": {"Mips": [["RO:$rs",0],["RO:$rt",0]]}
+  },
+  "OUTPUTS": {
+    "DMUL": {"Mips": [["RO:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "DMUL": {"Mips": ["ArithLogicR","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "DMUL": {"Mips": ["ArithLogicR","1"]}
+  }
+}

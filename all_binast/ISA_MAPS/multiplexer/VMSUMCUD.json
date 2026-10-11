@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMSUMCUD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMSUMCUD": {"PowerPC": "VMSUMCUD"}
+  },
+  "INPUTS": {
+    "VMSUMCUD": {"PowerPC": [["vrrc",0],["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMSUMCUD": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMSUMCUD": {"PowerPC": ["VAForm_1a","23"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMSUMCUD": {"PowerPC": ["VAForm_1a","23"]}
+  }
+}

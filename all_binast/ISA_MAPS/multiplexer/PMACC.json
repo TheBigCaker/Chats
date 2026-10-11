@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "PMACC",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "PMACC_W_H01": {"RISCV": "PMACC_W_H01"},
+    "PMACC_W_H00": {"RISCV": "PMACC_W_H00"},
+    "PMACC_W_H11": {"RISCV": "PMACC_W_H11"}
+  },
+  "INPUTS": {
+    "PMACC_W_H01": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMACC_W_H00": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "PMACC_W_H11": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "PMACC_W_H01": {"RISCV": [["GPR:$rd_wb",0]]},
+    "PMACC_W_H00": {"RISCV": [["GPR:$rd_wb",0]]},
+    "PMACC_W_H11": {"RISCV": [["GPR:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "PMACC_W_H01": {"RISCV": ["RVPTernary_rrr","0b0011","0b01","0b001"]},
+    "PMACC_W_H00": {"RISCV": ["RVPTernary_rrr","0b0001","0b01","0b011"]},
+    "PMACC_W_H11": {"RISCV": ["RVPTernary_rrr","0b0011","0b01","0b011"]}
+  },
+  "OUTPUT_BYTES": {
+    "PMACC_W_H01": {"RISCV": ["RVPTernary_rrr","0b0011","0b01","0b001"]},
+    "PMACC_W_H00": {"RISCV": ["RVPTernary_rrr","0b0001","0b01","0b011"]},
+    "PMACC_W_H11": {"RISCV": ["RVPTernary_rrr","0b0011","0b01","0b011"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CMPSL",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CMPSL": {"X86": "CMPSL"}
+  },
+  "INPUTS": {
+    "CMPSL": {"X86": [["dstidx32",0],["srcidx32",0]]}
+  },
+  "OUTPUTS": {
+    "CMPSL": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CMPSL": {"X86": ["0xA7"]}
+  },
+  "OUTPUT_BYTES": {
+    "CMPSL": {"X86": ["0xA7"]}
+  }
+}

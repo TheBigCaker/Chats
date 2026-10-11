@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "USAT",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "USAT": {"ARM": "USAT"},
+    "USAT16": {"ARM": "USAT16"}
+  },
+  "INPUTS": {
+    "USAT": {"ARM": [["imm0_31",0],["GPRnopc",0],["shift_imm",0]]},
+    "USAT16": {"ARM": [["imm0_15",0],["GPRnopc",0]]}
+  },
+  "OUTPUTS": {
+    "USAT": {"ARM": [["GPRnopc",0]]},
+    "USAT16": {"ARM": [["GPRnopc",0]]}
+  },
+  "INPUT_BYTES": {
+    "USAT": {"ARM": ["AI"]},
+    "USAT16": {"ARM": ["AI"]}
+  },
+  "OUTPUT_BYTES": {
+    "USAT": {"ARM": ["AI"]},
+    "USAT16": {"ARM": ["AI"]}
+  }
+}

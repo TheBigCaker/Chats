@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "OQBP",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "OQBP": {"AMDGPU": "OQBP"}
+  },
+  "INPUTS": {
+    "OQBP": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "OQBP": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "OQBP": {"AMDGPU": ["R600Reg","222"]}
+  },
+  "OUTPUT_BYTES": {
+    "OQBP": {"AMDGPU": ["R600Reg","222"]}
+  }
+}

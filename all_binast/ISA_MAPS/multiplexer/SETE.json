@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "SETE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SETE": {"AMDGPU": "SETE"},
+    "SETE_DX10": {"AMDGPU": "SETE_DX10"},
+    "SETE_INT": {"AMDGPU": "SETE_INT"}
+  },
+  "INPUTS": {
+    "SETE": {"AMDGPU": []},
+    "SETE_DX10": {"AMDGPU": []},
+    "SETE_INT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SETE": {"AMDGPU": []},
+    "SETE_DX10": {"AMDGPU": []},
+    "SETE_INT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SETE": {"AMDGPU": ["R600_2OP","0x08"]},
+    "SETE_DX10": {"AMDGPU": ["R600_2OP","0xC","0"]},
+    "SETE_INT": {"AMDGPU": ["R600_2OP","0x3A","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "SETE": {"AMDGPU": ["R600_2OP","0x08"]},
+    "SETE_DX10": {"AMDGPU": ["R600_2OP","0xC","0"]},
+    "SETE_INT": {"AMDGPU": ["R600_2OP","0x3A","0"]}
+  }
+}

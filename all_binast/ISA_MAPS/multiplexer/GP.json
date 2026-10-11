@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "GP",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "GP": {"Mips": "GP"},
+    "GP_64": {"Mips": "GP_64"},
+    "GP32": {"Mips": "GP32"},
+    "GP64": {"Mips": "GP64"}
+  },
+  "INPUTS": {
+    "GP": {"Mips": []},
+    "GP_64": {"Mips": []},
+    "GP32": {"Mips": []},
+    "GP64": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "GP": {"Mips": []},
+    "GP_64": {"Mips": []},
+    "GP32": {"Mips": []},
+    "GP64": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "GP": {"Mips": ["MipsGPRReg","28"]},
+    "GP_64": {"Mips": ["Mips64GPRReg","28"]},
+    "GP32": {"Mips": ["RegisterClass","32"]},
+    "GP64": {"Mips": ["RegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "GP": {"Mips": ["MipsGPRReg","28"]},
+    "GP_64": {"Mips": ["Mips64GPRReg","28"]},
+    "GP32": {"Mips": ["RegisterClass","32"]},
+    "GP64": {"Mips": ["RegisterClass","64"]}
+  }
+}

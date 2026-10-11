@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "OCTEON",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "OCTEON_MPL": {"Mips": "OCTEON_MPL"},
+    "OCTEON_P": {"Mips": "OCTEON_P"}
+  },
+  "INPUTS": {
+    "OCTEON_MPL": {"Mips": []},
+    "OCTEON_P": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "OCTEON_MPL": {"Mips": []},
+    "OCTEON_P": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "OCTEON_MPL": {"Mips": ["RegisterClass","64"]},
+    "OCTEON_P": {"Mips": ["RegisterClass","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "OCTEON_MPL": {"Mips": ["RegisterClass","64"]},
+    "OCTEON_P": {"Mips": ["RegisterClass","64"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VLENB",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VLENB": {"RISCV": "VLENB"}
+  },
+  "INPUTS": {
+    "VLENB": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VLENB": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VLENB": {"RISCV": ["RISCVReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VLENB": {"RISCV": ["RISCVReg","0"]}
+  }
+}

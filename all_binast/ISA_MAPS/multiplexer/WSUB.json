@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WSUB",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "WSUB": {"RISCV": "WSUB"}
+  },
+  "INPUTS": {
+    "WSUB": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "WSUB": {"RISCV": [["GPRPairRV32:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "WSUB": {"RISCV": ["RVPWideningBinary_rr","0b1000","0b01"]}
+  },
+  "OUTPUT_BYTES": {
+    "WSUB": {"RISCV": ["RVPWideningBinary_rr","0b1000","0b01"]}
+  }
+}

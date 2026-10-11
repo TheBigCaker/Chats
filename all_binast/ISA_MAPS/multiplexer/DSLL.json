@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DSLL",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "DSLL64_32": {"Mips": "DSLL64_32"}
+  },
+  "INPUTS": {
+    "DSLL64_32": {"Mips": [["GPR32",32]]}
+  },
+  "OUTPUTS": {
+    "DSLL64_32": {"Mips": [["GPR64",64]]}
+  },
+  "INPUT_BYTES": {
+    "DSLL64_32": {"Mips": ["FR","0x00","0x3c"]}
+  },
+  "OUTPUT_BYTES": {
+    "DSLL64_32": {"Mips": ["FR","0x00","0x3c"]}
+  }
+}

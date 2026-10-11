@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "COP",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "COP0": {"Mips": "COP0"},
+    "COP2": {"Mips": "COP2"},
+    "COP3": {"Mips": "COP3"}
+  },
+  "INPUTS": {
+    "COP0": {"Mips": []},
+    "COP2": {"Mips": []},
+    "COP3": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "COP0": {"Mips": []},
+    "COP2": {"Mips": []},
+    "COP3": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "COP0": {"Mips": ["RegisterClass","32","0"]},
+    "COP2": {"Mips": ["RegisterClass","32","0"]},
+    "COP3": {"Mips": ["RegisterClass","32","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "COP0": {"Mips": ["RegisterClass","32","0"]},
+    "COP2": {"Mips": ["RegisterClass","32","0"]},
+    "COP3": {"Mips": ["RegisterClass","32","0"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CLC",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CLC": {"X86": "CLC"}
+  },
+  "INPUTS": {
+    "CLC": {"X86": []}
+  },
+  "OUTPUTS": {
+    "CLC": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CLC": {"X86": ["0xF8"]}
+  },
+  "OUTPUT_BYTES": {
+    "CLC": {"X86": ["0xF8"]}
+  }
+}

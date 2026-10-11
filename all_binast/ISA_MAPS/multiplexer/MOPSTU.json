@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MOPSTU",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MOPSTUnitStride": {"RISCV": "MOPSTUnitStride"}
+  },
+  "INPUTS": {
+    "MOPSTUnitStride": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "MOPSTUnitStride": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "MOPSTUnitStride": {"RISCV": ["RISCVMOP","0b00"]}
+  },
+  "OUTPUT_BYTES": {
+    "MOPSTUnitStride": {"RISCV": ["RISCVMOP","0b00"]}
+  }
+}

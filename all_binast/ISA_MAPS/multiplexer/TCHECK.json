@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "TCHECK",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "TCHECK_RET": {"PowerPC": "TCHECK_RET"},
+    "TCHECK": {"PowerPC": "TCHECK"}
+  },
+  "INPUTS": {
+    "TCHECK_RET": {"PowerPC": []},
+    "TCHECK": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "TCHECK_RET": {"PowerPC": [["gprc",0]]},
+    "TCHECK": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "TCHECK_RET": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "TCHECK": {"PowerPC": ["XForm_htm3","31","718"]}
+  },
+  "OUTPUT_BYTES": {
+    "TCHECK_RET": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "TCHECK": {"PowerPC": ["XForm_htm3","31","718"]}
+  }
+}

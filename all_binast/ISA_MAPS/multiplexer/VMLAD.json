@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMLAD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VMLAD": {"ARM": "VMLAD"}
+  },
+  "INPUTS": {
+    "VMLAD": {"ARM": [["DPR",0],["DPR",0],["DPR",0]]}
+  },
+  "OUTPUTS": {
+    "VMLAD": {"ARM": [["DPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMLAD": {"ARM": ["ADbI","0b11100","0b00","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMLAD": {"ARM": ["ADbI","0b11100","0b00","0","0"]}
+  }
+}

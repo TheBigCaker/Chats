@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LXVP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LXVP": {"PowerPC": "LXVP"}
+  },
+  "INPUTS": {
+    "LXVP": {"PowerPC": [["(memrix16",0]]}
+  },
+  "OUTPUTS": {
+    "LXVP": {"PowerPC": [["vsrprc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LXVP": {"PowerPC": ["DQForm_XTp5_RA17_MEM","6","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXVP": {"PowerPC": ["DQForm_XTp5_RA17_MEM","6","0"]}
+  }
+}

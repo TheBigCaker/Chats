@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "QUIET",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "QUIET.f32": {"Mali": "QUIET.f32"},
+    "QUIET.v2f16": {"Mali": "QUIET.v2f16"},
+    "QUIET.f32": {"Mali": "QUIET.f32"},
+    "QUIET.v2f16": {"Mali": "QUIET.v2f16"}
+  },
+  "INPUTS": {
+    "QUIET.f32": {"Mali": [["R32",32]]},
+    "QUIET.v2f16": {"Mali": [["R32",32]]},
+    "QUIET.f32": {"Mali": [["R32",32]]},
+    "QUIET.v2f16": {"Mali": [["R32",32]]}
+  },
+  "OUTPUTS": {
+    "QUIET.f32": {"Mali": [["R",32]]},
+    "QUIET.v2f16": {"Mali": [["R",32]]},
+    "QUIET.f32": {"Mali": [["R",32]]},
+    "QUIET.v2f16": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "QUIET.f32": {"Mali": ["Bifrost_fma","0x701970","0x7ffff8"]},
+    "QUIET.v2f16": {"Mali": ["Bifrost_fma","0x701900","0x7fffc8"]},
+    "QUIET.f32": {"Mali": ["Bifrost_add","0x3d970","0xffff8"]},
+    "QUIET.v2f16": {"Mali": ["Bifrost_add","0x3d900","0xfffc8"]}
+  },
+  "OUTPUT_BYTES": {
+    "QUIET.f32": {"Mali": ["Bifrost_fma","0x701970","0x7ffff8"]},
+    "QUIET.v2f16": {"Mali": ["Bifrost_fma","0x701900","0x7fffc8"]},
+    "QUIET.f32": {"Mali": ["Bifrost_add","0x3d970","0xffff8"]},
+    "QUIET.v2f16": {"Mali": ["Bifrost_add","0x3d900","0xfffc8"]}
+  }
+}

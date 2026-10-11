@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VMLOAD",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMLOAD32": {"X86": "VMLOAD32"},
+    "VMLOAD64": {"X86": "VMLOAD64"}
+  },
+  "INPUTS": {
+    "VMLOAD32": {"X86": []},
+    "VMLOAD64": {"X86": []}
+  },
+  "OUTPUTS": {
+    "VMLOAD32": {"X86": []},
+    "VMLOAD64": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMLOAD32": {"X86": ["0x01"]},
+    "VMLOAD64": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMLOAD32": {"X86": ["0x01"]},
+    "VMLOAD64": {"X86": ["0x01"]}
+  }
+}

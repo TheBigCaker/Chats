@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BINVI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "BINVI": {"RISCV": "BINVI"}
+  },
+  "INPUTS": {
+    "BINVI": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "BINVI": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "BINVI": {"RISCV": ["Shift_ri","0b01101","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "BINVI": {"RISCV": ["Shift_ri","0b01101","0b001"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "FSRL",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "FSRL16": {"Sparc": "FSRL16"},
+    "FSRL32": {"Sparc": "FSRL32"}
+  },
+  "INPUTS": {
+    "FSRL16": {"Sparc": []},
+    "FSRL32": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "FSRL16": {"Sparc": []},
+    "FSRL32": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "FSRL16": {"Sparc": ["VISInst","0b000100011"]},
+    "FSRL32": {"Sparc": ["VISInst","0b000100111"]}
+  },
+  "OUTPUT_BYTES": {
+    "FSRL16": {"Sparc": ["VISInst","0b000100011"]},
+    "FSRL32": {"Sparc": ["VISInst","0b000100111"]}
+  }
+}

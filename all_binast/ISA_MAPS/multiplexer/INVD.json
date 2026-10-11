@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "INVD",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "INVD": {"X86": "INVD"}
+  },
+  "INPUTS": {
+    "INVD": {"X86": []}
+  },
+  "OUTPUTS": {
+    "INVD": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "INVD": {"X86": ["0x08"]}
+  },
+  "OUTPUT_BYTES": {
+    "INVD": {"X86": ["0x08"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SSHAR",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SSHAR": {"RISCV": "SSHAR"}
+  },
+  "INPUTS": {
+    "SSHAR": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "SSHAR": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "SSHAR": {"RISCV": ["RVPBinaryScalar_rr","0b111","0b01","0b010"]}
+  },
+  "OUTPUT_BYTES": {
+    "SSHAR": {"RISCV": ["RVPBinaryScalar_rr","0b111","0b01","0b010"]}
+  }
+}

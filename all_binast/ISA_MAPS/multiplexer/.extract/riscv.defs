@@ -1,0 +1,2587 @@
+CSR_Interrupt|||CalleeSavedRegs|5
+CSR_XLEN_F32_Interrupt|||CalleeSavedRegs|0
+CSR_XLEN_F64_Interrupt|||CalleeSavedRegs|0
+CSR_Interrupt_RVE|||CalleeSavedRegs|16
+CSR_XLEN_F32_Interrupt_RVE|||CalleeSavedRegs|16
+CSR_XLEN_F64_Interrupt_RVE|||CalleeSavedRegs|16
+CSR_XLEN_V_Interrupt_RVE|||CalleeSavedRegs|16
+CSR_XLEN_F32_V_Interrupt_RVE|||CalleeSavedRegs|16
+CSR_XLEN_F64_V_Interrupt_RVE|||CalleeSavedRegs|16
+CSR_RT_MostRegs_RVE|||CalleeSavedRegs|16
+PtrVT|||PtrValueTypeByHwMode|0
+InstFormatPseudo|||InstFormat|0
+InstFormatR|||InstFormat|1
+InstFormatR4|||InstFormat|2
+InstFormatI|||InstFormat|3
+InstFormatS|||InstFormat|4
+InstFormatB|||InstFormat|5
+InstFormatU|||InstFormat|6
+InstFormatJ|||InstFormat|7
+InstFormatCR|||InstFormat|8
+InstFormatCI|||InstFormat|9
+InstFormatCSS|||InstFormat|10
+InstFormatCIW|||InstFormat|11
+InstFormatCL|||InstFormat|12
+InstFormatCS|||InstFormat|13
+InstFormatCA|||InstFormat|14
+InstFormatCB|||InstFormat|15
+InstFormatCJ|||InstFormat|16
+InstFormatCU|||InstFormat|17
+InstFormatCLB|||InstFormat|18
+InstFormatCLH|||InstFormat|19
+InstFormatCSB|||InstFormat|20
+InstFormatCSH|||InstFormat|21
+InstFormatQC_EAI|||InstFormat|22
+InstFormatQC_EI|||InstFormat|23
+InstFormatQC_EB|||InstFormat|24
+InstFormatQC_EJ|||InstFormat|25
+InstFormatQC_ES|||InstFormat|26
+InstFormatNDS_BRANCH_10|||InstFormat|27
+InstFormatOther|||InstFormat|31
+OPC_LOAD|||RISCVOpcode|0b0000011
+OPC_LOAD_FP|||RISCVOpcode|0b0000111
+OPC_CUSTOM_0|||RISCVOpcode|0b0001011
+OPC_MISC_MEM|||RISCVOpcode|0b0001111
+OPC_OP_IMM|||RISCVOpcode|0b0010011
+OPC_AUIPC|||RISCVOpcode|0b0010111
+OPC_OP_IMM_32|||RISCVOpcode|0b0011011
+OPC_0011111|||RISCVOpcode|0b0011111
+OPC_STORE|||RISCVOpcode|0b0100011
+OPC_STORE_FP|||RISCVOpcode|0b0100111
+OPC_CUSTOM_1|||RISCVOpcode|0b0101011
+OPC_AMO|||RISCVOpcode|0b0101111
+OPC_OP|||RISCVOpcode|0b0110011
+OPC_LUI|||RISCVOpcode|0b0110111
+OPC_OP_32|||RISCVOpcode|0b0111011
+OPC_0111111|||RISCVOpcode|0b0111111
+OPC_MADD|||RISCVOpcode|0b1000011
+OPC_MSUB|||RISCVOpcode|0b1000111
+OPC_NMSUB|||RISCVOpcode|0b1001011
+OPC_NMADD|||RISCVOpcode|0b1001111
+OPC_OP_FP|||RISCVOpcode|0b1010011
+OPC_OP_V|||RISCVOpcode|0b1010111
+OPC_CUSTOM_2|||RISCVOpcode|0b1011011
+OPC_1011111|||RISCVOpcode|0b1011111
+OPC_BRANCH|||RISCVOpcode|0b1100011
+OPC_JALR|||RISCVOpcode|0b1100111
+OPC_JAL|||RISCVOpcode|0b1101111
+OPC_SYSTEM|||RISCVOpcode|0b1110011
+OPC_OP_VE|||RISCVOpcode|0b1110111
+OPC_CUSTOM_3|||RISCVOpcode|0b1111011
+EEW1|||EEW|0
+EEWSEWx1|||EEW|1
+EEWSEWx2|||EEW|2
+EEWSEWx4|||EEW|3
+DONT_CARE_ALTFMT|||AltFmtType|0
+IS_NOT_ALTFMT|||AltFmtType|1
+IS_ALTFMT|||AltFmtType|2
+OPC_C0|||RISCVCOpcode|0b00
+OPC_C1|||RISCVCOpcode|0b01
+OPC_C2|||RISCVCOpcode|0b10
+OPMMA|||SMTVDotOpcode|0b1110001
+OPMMA_SLIDE|||SMTVDotOpcode|0b1110011
+OPIVV|||RISCVVFormat|0b000
+OPFVV|||RISCVVFormat|0b001
+OPMVV|||RISCVVFormat|0b010
+OPIVI|||RISCVVFormat|0b011
+OPIVX|||RISCVVFormat|0b100
+OPFVF|||RISCVVFormat|0b101
+OPMVX|||RISCVVFormat|0b110
+OPCFG|||RISCVVFormat|0b111
+MOPLDUnitStride|||RISCVMOP|0b00
+MOPLDIndexedUnord|||RISCVMOP|0b01
+MOPLDStrided|||RISCVMOP|0b10
+MOPLDIndexedOrder|||RISCVMOP|0b11
+MOPSTUnitStride|||RISCVMOP|0b00
+MOPSTIndexedUnord|||RISCVMOP|0b01
+MOPSTStrided|||RISCVMOP|0b10
+MOPSTIndexedOrder|||RISCVMOP|0b11
+LUMOPUnitStride|||RISCVLUMOP|0b00000
+LUMOPUnitStrideMask|||RISCVLUMOP|0b01011
+LUMOPUnitStrideWholeReg|||RISCVLUMOP|0b01000
+LUMOPUnitStrideFF|||RISCVLUMOP|0b10000
+SUMOPUnitStride|||RISCVSUMOP|0b00000
+SUMOPUnitStrideMask|||RISCVSUMOP|0b01011
+SUMOPUnitStrideWholeReg|||RISCVSUMOP|0b01000
+LSWidth8|||RISCVWidth|0b0000
+LSWidth16|||RISCVWidth|0b0101
+LSWidth32|||RISCVWidth|0b0110
+LSWidth64|||RISCVWidth|0b0111
+SDT_RISCVCall|||SDTypeProfile|0
+SDT_RISCVSelectCC|||SDTypeProfile|1,5
+SDT_RISCVBrCC|||SDTypeProfile|0,4
+SDT_RISCVIntUnaryOpW|||SDTypeProfile|1,1
+SDT_RISCVIntBinOpW|||SDTypeProfile|1,2
+riscv_read_csr|||RVSDNode|1
+riscv_write_csr|||RVSDNode|2
+riscv_swap_csr|||RVSDNode|2
+riscv_clear_csr|||RVSDNode|2
+riscv_set_csr|||RVSDNode|2
+riscv_read_counter_wide|||RVSDNode|2
+riscv_add_tprel|||RVSDNode|3
+riscv_probed_alloca|||RVSDNode|1
+riscv_build_gpr_pair|||RVSDNode|2
+riscv_split_gpr_pair|||RVSDNode|1
+uimm1|||RISCVUImmLeafOp|1
+uimm2|||RISCVUImmLeafOp|2
+uimm3|||RISCVUImmLeafOp|3
+uimm4|||RISCVUImmLeafOp|4
+uimm5|||RISCVUImmLeafOp|5
+uimm6|||RISCVUImmLeafOp|6
+uimm7_opcode|||RISCVUImmOp|7
+uimm7|||RISCVUImmLeafOp|7
+uimm8|||RISCVUImmOp|8
+uimm16|||RISCVUImmOp|16
+uimm32|||RISCVUImmOp|32
+uimm48|||RISCVUImmOp|48
+uimm64|||RISCVUImmOp|64
+simm12|||RISCVSImmLeafOp|12
+simm12_optional|||RISCVSImmLeafOp|12
+uimm20|||RISCVUImmOp|20
+Simm21Lsb0JALAsmOperand|||BareSImmNLsb0AsmOperand|21
+AddrRegImm|||ComplexPattern|2
+LUI|GPR|uimm20_lui|RVInstU|
+AUIPC|GPR|uimm20_auipc|RVInstU|
+JAL|GPR|simm21_lsb0_jal|RVInstJ|
+JALR|GPR|GPR,simm12_lo_optional|RVInstI|0b000
+BEQ||GPR:$rs1, GPR:$rs2, bare_simm13_lsb0:$imm12|BranchCC_rri|0b000
+BNE||GPR:$rs1, GPR:$rs2, bare_simm13_lsb0:$imm12|BranchCC_rri|0b001
+BLT||GPR:$rs1, GPR:$rs2, bare_simm13_lsb0:$imm12|BranchCC_rri|0b100
+BGE||GPR:$rs1, GPR:$rs2, bare_simm13_lsb0:$imm12|BranchCC_rri|0b101
+BLTU||GPR:$rs1, GPR:$rs2, bare_simm13_lsb0:$imm12|BranchCC_rri|0b110
+BGEU||GPR:$rs1, GPR:$rs2, bare_simm13_lsb0:$imm12|BranchCC_rri|0b111
+LB|||Load_ri|0b000
+LH|||Load_ri|0b001
+LW|||Load_ri|0b010
+LBU|||Load_ri|0b100
+LHU|||Load_ri|0b101
+SB|||Store_rri|0b000
+SH|||Store_rri|0b001
+SW|||Store_rri|0b010
+ADDI|||ALU_ri|0b000
+SLTI|||ALU_ri|0b010
+SLTIU|||ALU_ri|0b011
+XORI|||ALU_ri|0b100
+ORI|||ALU_ri|0b110
+ANDI|||ALU_ri|0b111
+SLLI|||Shift_ri|0b00000,0b001
+SRLI|||Shift_ri|0b00000,0b101
+SRAI|||Shift_ri|0b01000,0b101
+ADD|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000000,0b000
+SUB|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0100000,0b000
+SLL|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000000,0b001
+SLT|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000000,0b010
+SLTU|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000000,0b011
+XOR|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000000,0b100
+SRL|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000000,0b101
+SRA|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0100000,0b101
+OR|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000000,0b110
+AND|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000000,0b111
+FENCE||fencearg,fencearg|RVInstI|0b000
+FENCE_TSO|||RVInstI|0b000
+FENCE_I|||RVInstI|0b001
+ECALL|||RVInstI|0b000
+EBREAK|||RVInstI|0b000
+UNIMP|||RVInstI|0b001
+CSRRW|||CSR_ir|0b001
+CSRRS|||CSR_ir|0b010
+CSRRC|||CSR_ir|0b011
+CSRRWI|||CSR_ii|0b101
+CSRRSI|||CSR_ii|0b110
+CSRRCI|||CSR_ii|0b111
+LWU|||Load_ri|0b110
+LD|||Load_ri|0b011
+SD|||Store_rri|0b011
+ADDIW|GPR|GPR,simm12_lo|RVInstI|0b000
+SLLIW|||ShiftW_ri|0b0000000,0b001
+SRLIW|||ShiftW_ri|0b0000000,0b101
+SRAIW|||ShiftW_ri|0b0100000,0b101
+ADDW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0000000,0b000
+SUBW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0100000,0b000
+SLLW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0000000,0b001
+SRLW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0000000,0b101
+SRAW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0100000,0b101
+SRET|||Priv|0b0001000
+MRET|||Priv|0b0011000
+MNRET|||Priv|0b0111000
+WFI|||Priv|0b0001000
+SFENCE_W_INVAL|||Priv|0b0001100
+SFENCE_INVAL_IR|||Priv|0b0001100
+SINVAL_VMA||GPR:$rs1, GPR:$rs2|Priv_rr|0b0001011
+HINVAL_VVMA||GPR:$rs1, GPR:$rs2|Priv_rr|0b0010011
+HINVAL_GVMA||GPR:$rs1, GPR:$rs2|Priv_rr|0b0110011
+SFENCE_VMA||GPR:$rs1, GPR:$rs2|Priv_rr|0b0001001
+HFENCE_VVMA||GPR:$rs1, GPR:$rs2|Priv_rr|0b0010001
+HFENCE_GVMA||GPR:$rs1, GPR:$rs2|Priv_rr|0b0110001
+HLV_B|GPR:$rd|GPRMemZeroOffset:$rs1|HLoad_r|0b0110000,0b00000
+HLV_BU|GPR:$rd|GPRMemZeroOffset:$rs1|HLoad_r|0b0110000,0b00001
+HLV_H|GPR:$rd|GPRMemZeroOffset:$rs1|HLoad_r|0b0110010,0b00000
+HLV_HU|GPR:$rd|GPRMemZeroOffset:$rs1|HLoad_r|0b0110010,0b00001
+HLVX_HU|GPR:$rd|GPRMemZeroOffset:$rs1|HLoad_r|0b0110010,0b00011
+HLV_W|GPR:$rd|GPRMemZeroOffset:$rs1|HLoad_r|0b0110100,0b00000
+HLVX_WU|GPR:$rd|GPRMemZeroOffset:$rs1|HLoad_r|0b0110100,0b00011
+HSV_B||GPR:$rs2, GPRMemZeroOffset:$rs1|HStore_rr|0b0110001
+HSV_H||GPR:$rs2, GPRMemZeroOffset:$rs1|HStore_rr|0b0110011
+HSV_W||GPR:$rs2, GPRMemZeroOffset:$rs1|HStore_rr|0b0110101
+HLV_WU|GPR:$rd|GPRMemZeroOffset:$rs1|HLoad_r|0b0110100,0b00001
+HLV_D|GPR:$rd|GPRMemZeroOffset:$rs1|HLoad_r|0b0110110,0b00000
+HSV_D||GPR:$rs2, GPRMemZeroOffset:$rs1|HStore_rr|0b0110111
+SCTRCLR|||Priv|0b0001000
+DRET|||Priv|0b0111101
+PseudoLI|GPR|ixlenimm_li|Pseudo|
+Insn16||uimm16|RVInst16|
+Insn32||uimm32|RVInst|
+Insn48||uimm48|RVInst48|
+Insn64||uimm64|RVInst64|
+InsnR|AnyReg|uimm7_opcode,uimm3,uimm7,AnyReg,AnyReg|DirectiveInsnR|
+InsnR4|AnyReg|uimm7_opcode,uimm3,uimm2,AnyReg,AnyReg,AnyReg|DirectiveInsnR4|
+InsnI|AnyReg|uimm7_opcode,uimm3,AnyReg,simm12_lo|DirectiveInsnI|
+InsnI_Mem|AnyReg|uimm7_opcode,uimm3,AnyReg,simm12_lo_optional|DirectiveInsnI|
+InsnB||uimm7_opcode,uimm3,AnyReg,AnyReg,bare_simm13_lsb0|DirectiveInsnB|
+InsnU|AnyReg|uimm7_opcode,uimm20_lui|DirectiveInsnU|
+InsnJ|AnyReg|uimm7_opcode,simm21_lsb0_jal|DirectiveInsnJ|
+InsnS||uimm7_opcode,uimm3,AnyReg,AnyReg,simm12_lo_optional|DirectiveInsnS|
+sexti16|||ComplexPattern|1
+sexti32|||ComplexPattern|1
+zexti32|||ComplexPattern|1
+zexti16|||ComplexPattern|1
+zexti8|||ComplexPattern|1
+shiftMaskXLen|||ComplexPattern|1,0
+shiftMask32|||ComplexPattern|1,0
+PseudoAddTPRel|GPR|GPR,GPR,tprel_add_symbol|Pseudo|
+PROBED_STACKALLOC||GPR|Pseudo|
+PROBED_STACKALLOC_RVV||GPR|Pseudo|
+PROBED_STACKALLOC_DYN||GPR|Pseudo|
+PseudoMovAddr|GPR|uimm20_lui,simm12_lo|Pseudo|
+riscv_setne|||ComplexPattern|1
+riscv_seteq|||ComplexPattern|1
+_Using_CC_GPR|valty|GPR,GPR,cond_code,valty,valty|Pseudo|
+PseudoClearGPR|GPR||Pseudo|
+ADJCALLSTACKDOWN||i32imm,i32imm|Pseudo|
+ADJCALLSTACKUP||i32imm,i32imm|Pseudo|
+ReadCounterWide|GPR,GPR|i32imm,i32imm|Pseudo|
+negImm|||ComplexPattern|1,0
+_AQ|||LR_r|1,0
+_RL|||LR_r|0,1
+_AQRL|||LR_r|1,1
+_AQ|||SC_r|1,0
+_RL|||SC_r|0,1
+_AQRL|||SC_r|1,1
+_AQ|||AMO_rr|1,0
+_RL|||AMO_rr|0,1
+_AQRL|||AMO_rr|1,1
+simm6|||RISCVSImmLeafOp|6
+uimm7_lsb00|||RISCVUImmLsbZeroOp|7,2
+uimm7_lsb00_optional|||OptionalUImmLsbZeroOp|7,2
+uimm8_lsb00|||RISCVUImmLsbZeroOp|8,2
+uimm8_lsb00_optional|||OptionalUImmLsbZeroOp|8,2
+uimm8_lsb000|||RISCVUImmLsbZeroOp|8,3
+uimm8_lsb000_optional|||OptionalUImmLsbZeroOp|8,3
+uimm9_lsb000|||RISCVUImmLsbZeroOp|9,3
+uimm9_lsb000_optional|||OptionalUImmLsbZeroOp|9,3
+uimm2_opcode|||RISCVUImmOp|2
+uimm5_optional|||OptionalUImmLeafOp|5
+C_ADDI4SPN|GPRC|SP,uimm10_lsb00nonzero|RVInst16CIW|0b000
+C_LW|||CLoad_ri|0b010
+C_LW_INX|||CLoad_ri|0b010
+C_LD|||CLoad_ri|0b011
+C_SW|||CStore_rri|0b110
+C_SW_INX|||CStore_rri|0b110
+C_SD|||CStore_rri|0b111
+C_NOP|||RVInst16CI|0b000
+C_ADDI|GPRNoX0|GPRNoX0,simm6|RVInst16CI|0b000
+PseudoC_ADDI_NOP|GPRX0|GPRX0,simm6|Pseudo|
+C_JAL||bare_simm12_lsb0|RVInst16CJ|0b001
+C_ADDIW|GPRNoX0|GPRNoX0,simm6|RVInst16CI|0b001
+C_LI|GPR|simm6|RVInst16CI|0b010
+C_ADDI16SP|SP|SP,simm10_lsb0000nonzero|RVInst16CI|0b011
+C_LUI|GPRNoX2|c_lui_imm|RVInst16CI|0b011
+C_SRLI|GPRC:$rd|GPRC:$rs1, uimmlog2xlen:$imm|Shift_right|0b00
+C_SRAI|GPRC:$rd|GPRC:$rs1, uimmlog2xlen:$imm|Shift_right|0b01
+C_ANDI|GPRC|GPRC,simm6|RVInst16CB|0b100
+C_SUB|GPRC:$rd_wb|GPRC:$rd, GPRC:$rs2|CA_ALU|0b100011,0b00
+C_XOR|GPRC:$rd_wb|GPRC:$rd, GPRC:$rs2|CA_ALU|0b100011,0b01
+C_OR|GPRC:$rd_wb|GPRC:$rd, GPRC:$rs2|CA_ALU|0b100011,0b10
+C_AND|GPRC:$rd_wb|GPRC:$rd, GPRC:$rs2|CA_ALU|0b100011,0b11
+C_SUBW|GPRC:$rd_wb|GPRC:$rd, GPRC:$rs2|CA_ALU|0b100111,0b00
+C_ADDW|GPRC:$rd_wb|GPRC:$rd, GPRC:$rs2|CA_ALU|0b100111,0b01
+C_J||bare_simm12_lsb0|RVInst16CJ|0b101
+C_BEQZ||GPRC:$rs1, bare_simm9_lsb0:$imm|Bcz|0b110
+C_BNEZ||GPRC:$rs1, bare_simm9_lsb0:$imm|Bcz|0b111
+C_SLLI|GPR|GPR,uimmlog2xlen|RVInst16CI|0b000
+C_LWSP|cls:$rd|SPMem:$rs1, opnd:$imm|CStackLoad|0b010
+C_LWSP_INX|cls:$rd|SPMem:$rs1, opnd:$imm|CStackLoad|0b010
+C_LDSP|cls:$rd|SPMem:$rs1, opnd:$imm|CStackLoad|0b011
+C_JR||GPRNoX0|RVInst16CR|0b1000
+C_MV|GPR|GPRNoX0|RVInst16CR|0b1000
+C_EBREAK|||RVInst16CR|0b1001
+C_JALR||GPRNoX0|RVInst16CR|0b1001
+C_ADD|GPR|GPR,GPRNoX0|RVInst16CR|0b1001
+C_SWSP||cls:$rs2, SPMem:$rs1, opnd:$imm|CStackStore|0b110
+C_SWSP_INX||cls:$rs2, SPMem:$rs1, opnd:$imm|CStackStore|0b110
+C_SDSP||cls:$rs2, SPMem:$rs1, opnd:$imm|CStackStore|0b111
+C_FLW|||CLoad_ri|0b011
+C_FSW|||CStore_rri|0b111
+C_FLWSP|cls:$rd|SPMem:$rs1, opnd:$imm|CStackLoad|0b011
+C_FSWSP||cls:$rs2, SPMem:$rs1, opnd:$imm|CStackStore|0b111
+C_FLD|||CLoad_ri|0b001
+C_FSD|||CStore_rri|0b101
+C_FLDSP|cls:$rd|SPMem:$rs1, opnd:$imm|CStackLoad|0b001
+C_FSDSP||cls:$rs2, SPMem:$rs1, opnd:$imm|CStackStore|0b101
+C_NOP_HINT||simm6nonzero|RVInst16CI|0b000
+InsnCR|AnyReg|uimm2_opcode,uimm4,AnyReg|DirectiveInsnCR|
+InsnCI|AnyReg|uimm2_opcode,uimm3,simm6|DirectiveInsnCI|
+InsnCIW|AnyRegC|uimm2_opcode,uimm3,uimm8|DirectiveInsnCIW|
+InsnCSS||uimm2_opcode,uimm3,AnyReg,uimm6|DirectiveInsnCSS|
+InsnCL|AnyRegC|uimm2_opcode,uimm3,AnyRegC,uimm5_optional|DirectiveInsnCL|
+InsnCS||uimm2_opcode,uimm3,AnyRegC,AnyRegC,uimm5_optional|DirectiveInsnCS|
+InsnCA|AnyRegC|uimm2_opcode,uimm6,uimm2,AnyRegC|DirectiveInsnCA|
+InsnCB||uimm2_opcode,uimm3,AnyRegC,bare_simm9_lsb0|DirectiveInsnCB|
+InsnCJ||uimm2_opcode,uimm3,bare_simm12_lsb0|DirectiveInsnCJ|
+SDT_RISCVBuildPairF64|||SDTypeProfile|1,2
+SDT_RISCVSplitF64|||SDTypeProfile|2,1
+FLD|||FPLoad_r|0b011
+FSD|||FPStore_r|0b011
+FMV_X_D|rdty:$rd|rs1ty:$rs1|FPUnaryOp_r|0b1110001,0b00000,0b000
+FMV_D_X|rdty:$rd|rs1ty:$rs1|FPUnaryOp_r|0b1111001,0b00000,0b000
+PseudoRV32ZdinxLD|GPRPair|GPR,simm12_lo|Pseudo|
+PseudoRV32ZdinxSD||GPRPair,GPRNoX0,simm12_lo|Pseudo|
+PseudoClearFPR64|FPR64||Pseudo|
+FLW|||FPLoad_r|0b010
+FSW|||FPStore_r|0b010
+LW_INX|||Load_ri|0b010
+SW_INX|||Store_rri|0b010
+PseudoMV_FPR32INX|GPRF32|GPRF32|Pseudo|
+FMV_X_W|rdty:$rd|rs1ty:$rs1|FPUnaryOp_r|0b1110000,0b00000,0b000
+FMV_W_X|rdty:$rd|rs1ty:$rs1|FPUnaryOp_r|0b1111000,0b00000,0b000
+PseudoClearFPR32|FPR32||Pseudo|
+MUL|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000001,0b000
+MULH|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000001,0b001
+MULHSU|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000001,0b010
+MULHU|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000001,0b011
+DIV|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000001,0b100
+DIVU|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000001,0b101
+REM|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000001,0b110
+REMU|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000001,0b111
+MULW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0000001,0b000
+DIVW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0000001,0b100
+DIVUW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0000001,0b101
+REMW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0000001,0b110
+REMUW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0000001,0b111
+SImm8PLI_BAsmOperand|||SImmAsmOperand|8
+SImm10PLUIAsmOperand|||SImmAsmOperand|10
+SImm10PLI_HAsmOperand|||SImmAsmOperand|10
+SImm10PLI_WAsmOperand|||SImmAsmOperand|10
+uimm4_plus1|||RISCVUImmPlus1Op|4
+uimm5_plus1|||RISCVUImmPlus1Op|5
+uimm6_plus1|||RISCVUImmPlus1Op|6
+CLS|||Unary_r|0b011000000011,0b001
+ABS|||Unary_r|0b011000000111,0b001
+REV_RV32|||Unary_r|0b011010011111,0b101
+REV16_RV64|||Unary_r|0b011010110000,0b101
+REV_RV64|||Unary_r|0b011010111111,0b101
+CLSW|||UnaryW_r|0b011000000011,0b001
+ABSW|||UnaryW_r|0b011000000111,0b001
+PSLLI_B|||RVPShiftB_ri|0b000,0b010
+PSLLI_H|||RVPShiftH_ri|0b000,0b010
+PSSLAI_H|||RVPShiftH_ri|0b101,0b010
+SSLAI|||RVPShiftW_ri|0b101,0b010
+PSLLI_W|||RVPShiftW_ri|0b000,0b010
+PSSLAI_W|||RVPShiftW_ri|0b101,0b010
+PLI_H||imm:$imm10|PLI_i|0b1011000
+PLI_W||imm:$imm10|PLI_i|0b1011001
+PLI_B||simm8_pli_b|RVPLoadImm_i|0b1011010
+PSEXT_H_B|GPR:$rd|GPR:$rs1|RVPUnary_ri|0b00,0b00100
+PSABS_H|GPR:$rd|GPR:$rs1|RVPUnary_ri|0b00,0b00111
+PSABS_B|GPR:$rd|GPR:$rs1|RVPUnary_ri|0b10,0b00111
+PSEXT_W_B|GPR:$rd|GPR:$rs1|RVPUnary_ri|0b01,0b00100
+PSEXT_W_H|GPR:$rd|GPR:$rs1|RVPUnary_ri|0b01,0b00101
+PLUI_H||simm10_plui:$imm10|PLUI_i|0b1111000
+PLUI_W||simm10_plui:$imm10|PLUI_i|0b1111001
+PSLL_HS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b000,0b00,0b010
+PSLL_BS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b000,0b10,0b010
+PADD_HS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b001,0b00,0b010
+PADD_BS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b001,0b10,0b010
+PSSHL_HS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b010,0b00,0b010
+PSSHLR_HS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b011,0b00,0b010
+PSSHA_HS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b110,0b00,0b010
+PSSHAR_HS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b111,0b00,0b010
+SSHL|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b010,0b01,0b010
+SSHLR|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b011,0b01,0b010
+SSHA|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b110,0b01,0b010
+SSHAR|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b111,0b01,0b010
+PSLL_WS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b000,0b01,0b010
+PADD_WS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b001,0b01,0b010
+PSSHL_WS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b010,0b01,0b010
+SHL|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b010,0b11,0b010
+PSSHLR_WS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b011,0b01,0b010
+SHLR|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b011,0b11,0b010
+PSSHA_WS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b110,0b01,0b010
+SHA|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b110,0b11,0b010
+PSSHAR_WS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b111,0b01,0b010
+SHAR|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b111,0b11,0b010
+PSRLI_B|||RVPShiftB_ri|0b000,0b100
+PSRLI_H|||RVPShiftH_ri|0b000,0b100
+PUSATI_H|||RVPShiftH_ri|0b010,0b100
+PSRAI_B|||RVPShiftB_ri|0b100,0b100
+PSRAI_H|||RVPShiftH_ri|0b100,0b100
+PSRARI_H|||RVPShiftH_ri|0b101,0b100
+PSATI_H|||RVPShiftH_ri|0b110,0b100
+USATI_RV32|||RVPShiftW_ri|0b010,0b100
+SRARI_RV32|||RVPShiftW_ri|0b101,0b100
+SATI_RV32|||RVPShiftW_ri|0b110,0b100
+PSRLI_W|||RVPShiftW_ri|0b000,0b100
+PSRAI_W|||RVPShiftW_ri|0b100,0b100
+PUSATI_W|||RVPShiftW_ri|0b010,0b100
+USATI_RV64|||RVPShiftD_ri|0b010,0b100
+PSRARI_W|||RVPShiftW_ri|0b101,0b100
+SRARI_RV64|||RVPShiftD_ri|0b101,0b100
+PSATI_W|||RVPShiftW_ri|0b110,0b100
+SATI_RV64|||RVPShiftD_ri|0b110,0b100
+PSRL_HS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b000,0b00,0b100
+PSRL_BS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b000,0b10,0b100
+PREDSUM_HS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b001,0b00,0b100
+PREDSUM_BS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b001,0b10,0b100
+PREDSUMU_HS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b011,0b00,0b100
+PREDSUMU_BS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b011,0b10,0b100
+PSRA_HS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b100,0b00,0b100
+PSRA_BS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b100,0b10,0b100
+PSRL_WS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b000,0b01,0b100
+PREDSUM_WS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b001,0b01,0b100
+PREDSUMU_WS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b011,0b01,0b100
+PSRA_WS|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinaryScalar_rr|0b100,0b01,0b100
+PADD_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b00,0b000
+PADD_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b10,0b000
+PSADD_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b00,0b000
+PSADD_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b10,0b000
+PAADD_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0011,0b00,0b000
+PAADD_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0011,0b10,0b000
+PSADDU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b00,0b000
+PSADDU_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b10,0b000
+PAADDU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0111,0b00,0b000
+PAADDU_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0111,0b10,0b000
+PSUB_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b00,0b000
+PSUB_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b10,0b000
+PABD_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1001,0b00,0b000
+PABD_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1001,0b10,0b000
+PSSUB_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b00,0b000
+PSSUB_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b10,0b000
+PASUB_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1011,0b00,0b000
+PASUB_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1011,0b10,0b000
+PABDU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1101,0b00,0b000
+PABDU_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1101,0b10,0b000
+PSSUBU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b00,0b000
+PSSUBU_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b10,0b000
+PASUBU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1111,0b00,0b000
+PASUBU_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1111,0b10,0b000
+SADD|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b01,0b000
+AADD|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0011,0b01,0b000
+SADDU|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b01,0b000
+AADDU|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0111,0b01,0b000
+SSUB|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b01,0b000
+ASUB|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1011,0b01,0b000
+SSUBU|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b01,0b000
+ASUBU|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1111,0b01,0b000
+PADD_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b01,0b000
+PSADD_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b01,0b000
+PAADD_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0011,0b01,0b000
+PSADDU_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b01,0b000
+PAADDU_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0111,0b01,0b000
+PSUB_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b01,0b000
+PSSUB_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b01,0b000
+PASUB_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1011,0b01,0b000
+PSSUBU_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b01,0b000
+PASUBU_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1111,0b01,0b000
+SLX|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b11,0b001
+PMUL_H_B01|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b00,0b001
+MVM|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b00,0b001
+MVMN|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b01,0b001
+MERGE|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b10,0b001
+SRX|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b11,0b001
+PMULU_H_B01|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b00,0b001
+PABDSUMU_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b10,0b001
+PABDSUMAU_B|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b10,0b001
+MUL_H01|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b01,0b001
+MACC_H01|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b01,0b001
+MULU_H01|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b01,0b001
+MACCU_H01|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b01,0b001
+PMUL_W_H01|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b01,0b001
+MUL_W01|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b11,0b001
+PMACC_W_H01|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b01,0b001
+MACC_W01|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b11,0b001
+PMULU_W_H01|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b01,0b001
+MULU_W01|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b11,0b001
+PMACCU_W_H01|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b01,0b001
+MACCU_W01|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b11,0b001
+PSH1ADD_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b00,0b010
+PSSH1SADD_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b00,0b010
+SSH1SADD|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b01,0b010
+PNCLIPUP_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b00,0b010
+PNCLIPUP_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b01,0b010
+PNCLIPUP_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b11,0b010
+PSH1ADD_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b01,0b010
+PSSH1SADD_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b01,0b010
+PNCLIPP_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b00,0b010
+PNCLIPP_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b01,0b010
+PNCLIPP_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b11,0b010
+UNZIP8P|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b00,0b010
+UNZIP16P|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b01,0b010
+UNZIP8HP|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b10,0b010
+UNZIP16HP|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b11,0b010
+ZIP8P|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b00,0b010
+ZIP16P|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b01,0b010
+ZIP8HP|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b10,0b010
+ZIP16HP|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b11,0b010
+PMUL_H_B00|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b00,0b011
+PMUL_H_B11|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b00,0b011
+PMULU_H_B00|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b00,0b011
+PMULU_H_B11|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b00,0b011
+PMULSU_H_B00|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b00,0b011
+PMULSU_H_B11|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b00,0b011
+MUL_H00|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b01,0b011
+MACC_H00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b01,0b011
+MUL_H11|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b01,0b011
+MACC_H11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b01,0b011
+MULU_H00|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b01,0b011
+MACCU_H00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b01,0b011
+MULU_H11|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b01,0b011
+MACCU_H11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b01,0b011
+MULSU_H00|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b01,0b011
+MACCSU_H00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1101,0b01,0b011
+MULSU_H11|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b01,0b011
+MACCSU_H11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b01,0b011
+PMUL_W_H00|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b01,0b011
+MUL_W00|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b11,0b011
+PMACC_W_H00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b01,0b011
+MACC_W00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b11,0b011
+PMUL_W_H11|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b01,0b011
+MUL_W11|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b11,0b011
+PMACC_W_H11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b01,0b011
+MACC_W11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b11,0b011
+PMULU_W_H00|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b01,0b011
+MULU_W00|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b11,0b011
+PMACCU_W_H00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b01,0b011
+MACCU_W00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b11,0b011
+PMULU_W_H11|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b01,0b011
+MULU_W11|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b11,0b011
+PMACCU_W_H11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b01,0b011
+MACCU_W11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b11,0b011
+PMULSU_W_H00|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b01,0b011
+MULSU_W00|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b11,0b011
+PMACCSU_W_H00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1101,0b01,0b011
+MACCSU_W00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1101,0b11,0b011
+PMULSU_W_H11|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b01,0b011
+MULSU_W11|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b11,0b011
+PMACCSU_W_H11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b01,0b011
+MACCSU_W11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b11,0b011
+PPAIRE_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b00,0b100
+PPAIREO_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b00,0b100
+PPAIREO_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b01,0b100
+PPAIROE_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b00,0b100
+PPAIROE_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b01,0b100
+PPAIRO_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b00,0b100
+PPAIRO_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b01,0b100
+PPAIRE_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b01,0b100
+PPAIREO_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b11,0b100
+PPAIROE_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b11,0b100
+PPAIRO_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b11,0b100
+PM2ADD_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b00,0b101
+PM4ADD_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b10,0b101
+PM2ADDA_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b00,0b101
+PM4ADDA_B|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b10,0b101
+PM2ADD_HX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b00,0b101
+PM2ADDA_HX|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b00,0b101
+PM2ADDU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b00,0b101
+PM4ADDU_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b10,0b101
+PM2ADDAU_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b00,0b101
+PM4ADDAU_B|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b10,0b101
+PMQ2ADD_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b00,0b101
+PMQR2ADD_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b10,0b101
+PMQ2ADDA_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b00,0b101
+PMQR2ADDA_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b10,0b101
+PM2SUB_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b00,0b101
+PM2SADD_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b10,0b101
+PM2SUBA_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1001,0b00,0b101
+PM2SUB_HX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b00,0b101
+PM2SADD_HX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b10,0b101
+PM2SUBA_HX|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1011,0b00,0b101
+PM2ADDSU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b00,0b101
+PM4ADDSU_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b10,0b101
+PM2ADDASU_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1101,0b00,0b101
+PM4ADDASU_B|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1101,0b10,0b101
+MQACC_H01|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b00,0b101
+MQRACC_H01|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b10,0b101
+PM2ADD_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b01,0b101
+PM4ADD_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b11,0b101
+PM2ADDA_W|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b01,0b101
+PM4ADDA_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b11,0b101
+PM2ADD_WX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b01,0b101
+PM2ADDA_WX|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b01,0b101
+PM2ADDU_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b01,0b101
+PM4ADDU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b11,0b101
+PM2ADDAU_W|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b01,0b101
+PM4ADDAU_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b11,0b101
+PMQ2ADD_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b01,0b101
+PMQR2ADD_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b11,0b101
+PMQ2ADDA_W|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b01,0b101
+PMQR2ADDA_W|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b11,0b101
+PM2SUB_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b01,0b101
+PM2SUBA_W|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1001,0b01,0b101
+PM2SUB_WX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b01,0b101
+PM2SUBA_WX|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1011,0b01,0b101
+PM2ADDSU_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b01,0b101
+PM4ADDSU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b11,0b101
+PM2ADDASU_W|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1101,0b01,0b101
+PM4ADDASU_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1101,0b11,0b101
+PMQACC_W_H01|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b00,0b101
+MQACC_W01|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b01,0b101
+PMQRACC_W_H01|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b10,0b101
+MQRACC_W01|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b11,0b101
+PAS_HX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b00,0b110
+PSA_HX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b10,0b110
+PSAS_HX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b00,0b110
+PSSA_HX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b10,0b110
+PAAS_HX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0011,0b00,0b110
+PASA_HX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0011,0b10,0b110
+PMSEQ_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b00,0b110
+PMSEQ_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b10,0b110
+PMSLT_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b00,0b110
+PMSLT_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b10,0b110
+PMSLTU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1011,0b00,0b110
+PMSLTU_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1011,0b10,0b110
+PMIN_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b00,0b110
+PMIN_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b10,0b110
+PMINU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1101,0b00,0b110
+PMINU_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1101,0b10,0b110
+PMAX_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b00,0b110
+PMAX_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b10,0b110
+PMAXU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1111,0b00,0b110
+PMAXU_B|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1111,0b10,0b110
+MSEQ|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b01,0b110
+MSLT|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b01,0b110
+MSLTU|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1011,0b01,0b110
+PAS_WX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b01,0b110
+PSA_WX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b11,0b110
+PSAS_WX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b01,0b110
+PSSA_WX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b11,0b110
+PAAS_WX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0011,0b01,0b110
+PASA_WX|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0011,0b11,0b110
+PMSEQ_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b01,0b110
+PMSLT_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b01,0b110
+PMSLTU_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1011,0b01,0b110
+PMIN_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1100,0b01,0b110
+PMINU_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1101,0b01,0b110
+PMAX_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1110,0b01,0b110
+PMAXU_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1111,0b01,0b110
+PMULH_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b00,0b111
+PMULHR_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b10,0b111
+PMHACC_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b00,0b111
+PMHRACC_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b10,0b111
+PMULHU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b00,0b111
+PMULHRU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b10,0b111
+PMHACCU_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b00,0b111
+PMHRACCU_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b10,0b111
+PMULH_H_B0|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b00,0b111
+PMULHSU_H_B0|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b10,0b111
+PMHACC_H_B0|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b00,0b111
+PMHACCSU_H_B0|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b10,0b111
+PMULH_H_B1|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b00,0b111
+PMULHSU_H_B1|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b10,0b111
+PMHACC_H_B1|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b00,0b111
+PMHACCSU_H_B1|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b10,0b111
+PMULHSU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b00,0b111
+PMULHRSU_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b10,0b111
+PMHACCSU_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1001,0b00,0b111
+PMHRACCSU_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1001,0b10,0b111
+PMULQ_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b00,0b111
+PMULQR_H|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b10,0b111
+MULHR|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b11,0b111
+MHACC|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b01,0b111
+MHRACC|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b11,0b111
+MULHRU|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b11,0b111
+MHACCU|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b01,0b111
+MHRACCU|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b11,0b111
+MULH_H0|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b01,0b111
+MULHSU_H0|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b11,0b111
+MHACC_H0|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b01,0b111
+MHACCSU_H0|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b11,0b111
+MULH_H1|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b01,0b111
+MULHSU_H1|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b11,0b111
+MHACC_H1|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b01,0b111
+MHACCSU_H1|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b11,0b111
+MULHRSU|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b11,0b111
+MHACCSU|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1001,0b01,0b111
+MHRACCSU|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1001,0b11,0b111
+MULQ|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b01,0b111
+MULQR|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b11,0b111
+MQACC_H00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1101,0b00,0b111
+MQRACC_H00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1101,0b10,0b111
+MQACC_H11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b00,0b111
+MQRACC_H11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b10,0b111
+PMULH_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b01,0b111
+PMULHR_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0000,0b11,0b111
+PMHACC_W|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b01,0b111
+PMHRACC_W|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0001,0b11,0b111
+PMULHU_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b01,0b111
+PMULHRU_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0010,0b11,0b111
+PMHACCU_W|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b01,0b111
+PMHRACCU_W|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0011,0b11,0b111
+PMULH_W_H0|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b01,0b111
+PMULHSU_W_H0|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0100,0b11,0b111
+PMHACC_W_H0|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b01,0b111
+PMHACCSU_W_H0|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0101,0b11,0b111
+PMULH_W_H1|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b01,0b111
+PMULHSU_W_H1|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b0110,0b11,0b111
+PMHACC_W_H1|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b01,0b111
+PMHACCSU_W_H1|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b0111,0b11,0b111
+PMULHSU_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b01,0b111
+PMULHRSU_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1000,0b11,0b111
+PMHACCSU_W|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1001,0b01,0b111
+PMHRACCSU_W|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1001,0b11,0b111
+PMULQ_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b01,0b111
+PMULQR_W|GPR:$rd|GPR:$rs1, GPR:$rs2|RVPBinary_rr|0b1010,0b11,0b111
+PMQACC_W_H00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1101,0b00,0b111
+MQACC_W00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1101,0b01,0b111
+PMQRACC_W_H00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1101,0b10,0b111
+MQRACC_W00|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1101,0b11,0b111
+PMQACC_W_H11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b00,0b111
+MQACC_W11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b01,0b111
+PMQRACC_W_H11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b10,0b111
+MQRACC_W11|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|RVPTernary_rrr|0b1111,0b11,0b111
+PLI_DH||simm10_pli_h|RVPPairLoadImm_i|0b0011000
+PLI_DB||simm8_pli_b|RVPPairLoadImm_i|0b0011010
+PLUI_DH||simm10_plui|RVPPairLoadImm_i|0b0111000
+PWSLLI_B|||RVPWideningShiftB_ri|0b000
+PWSLLI_H|||RVPWideningShiftH_ri|0b000
+WSLLI|||RVPWideningShiftW_ri|0b000
+PWSLAI_B|||RVPWideningShiftB_ri|0b100
+PWSLAI_H|||RVPWideningShiftH_ri|0b100
+WSLAI|||RVPWideningShiftW_ri|0b100
+PWSLL_BS|||RVPWideningShift_rr|0b000,0b00
+PWSLL_HS|||RVPWideningShift_rr|0b000,0b01
+WSLL|||RVPWideningShift_rr|0b000,0b11
+PWSLA_BS|||RVPWideningShift_rr|0b100,0b00
+PWSLA_HS|||RVPWideningShift_rr|0b100,0b01
+WSLA|||RVPWideningShift_rr|0b100,0b11
+WZIP8P|||RVPWideningShift_rr|0b111,0b00
+WZIP16P|||RVPWideningShift_rr|0b111,0b01
+PWADD_H|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0000,0b00
+WADD|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0000,0b01
+PWADD_B|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0000,0b10
+PM2WADD_H|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0000,0b11
+PWADDA_H|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b0001,0b00
+WADDA|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b0001,0b01
+PWADDA_B|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b0001,0b10
+PM2WADDA_H|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b0001,0b11
+PWADDU_H|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0010,0b00
+WADDU|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0010,0b01
+PWADDU_B|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0010,0b10
+PM2WADD_HX|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0010,0b11
+PWADDAU_H|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b0011,0b00
+WADDAU|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b0011,0b01
+PWADDAU_B|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b0011,0b10
+PM2WADDA_HX|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b0011,0b11
+PWMUL_H|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0100,0b00
+WMUL|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0100,0b01
+PWMUL_B|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0100,0b10
+PM2WADDU_H|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0100,0b11
+PWMACC_H|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b0101,0b00
+WMACC|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b0101,0b01
+PM2WADDAU_H|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b0101,0b11
+PWMULU_H|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0110,0b00
+WMULU|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0110,0b01
+PWMULU_B|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b0110,0b10
+PWMACCU_H|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b0111,0b00
+WMACCU|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b0111,0b01
+PWSUB_H|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b1000,0b00
+WSUB|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b1000,0b01
+PWSUB_B|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b1000,0b10
+PM2WSUB_H|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b1000,0b11
+PWSUBA_H|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1001,0b00
+WSUBA|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1001,0b01
+PWSUBA_B|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1001,0b10
+PM2WSUBA_H|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1001,0b11
+PWSUBU_H|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b1010,0b00
+WSUBU|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b1010,0b01
+PWSUBU_B|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b1010,0b10
+PM2WSUB_HX|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b1010,0b11
+PWSUBAU_H|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1011,0b00
+WSUBAU|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1011,0b01
+PWSUBAU_B|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1011,0b10
+PM2WSUBA_HX|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1011,0b11
+PWMULSU_H|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b1100,0b00
+WMULSU|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b1100,0b01
+PWMULSU_B|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b1100,0b10
+PM2WADDSU_H|GPRPairRV32:$rd|GPR:$rs1, GPR:$rs2|RVPWideningBinary_rr|0b1100,0b11
+PWMACCSU_H|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1101,0b00
+WMACCSU|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1101,0b01
+PM2WADDASU_H|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1101,0b11
+PMQWACC_H|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1111,0b00
+MQWACC|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1111,0b01
+PMQRWACC_H|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1111,0b10
+MQRWACC|GPRPairRV32:$rd_wb|GPRPairRV32:$rd, GPR:$rs1, GPR:$rs2|RVPWideningTernary_rrr|0b1111,0b11
+PREDSUM_DHS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingBinary_rr|0b001,0b00
+PREDSUM_DBS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingBinary_rr|0b001,0b10
+PREDSUMU_DHS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingBinary_rr|0b011,0b00
+PREDSUMU_DBS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingBinary_rr|0b011,0b10
+PNSRLI_B|||RVPNarrowingShiftB_ri|0b000
+PNSRLI_H|||RVPNarrowingShiftH_ri|0b000
+NSRLI|||RVPNarrowingShiftW_ri|0b000
+PNCLIPIU_B|||RVPNarrowingShiftB_ri|0b010
+PNCLIPIU_H|||RVPNarrowingShiftH_ri|0b010
+NCLIPIU|||RVPNarrowingShiftW_ri|0b010
+PNCLIPRIU_B|||RVPNarrowingShiftB_ri|0b011
+PNCLIPRIU_H|||RVPNarrowingShiftH_ri|0b011
+NCLIPRIU|||RVPNarrowingShiftW_ri|0b011
+PNSRAI_B|||RVPNarrowingShiftB_ri|0b100
+PNSRAI_H|||RVPNarrowingShiftH_ri|0b100
+NSRAI|||RVPNarrowingShiftW_ri|0b100
+PNSRARI_B|||RVPNarrowingShiftB_ri|0b101
+PNSRARI_H|||RVPNarrowingShiftH_ri|0b101
+NSRARI|||RVPNarrowingShiftW_ri|0b101
+PNCLIPI_B|||RVPNarrowingShiftB_ri|0b110
+PNCLIPI_H|||RVPNarrowingShiftH_ri|0b110
+NCLIPI|||RVPNarrowingShiftW_ri|0b110
+PNCLIPRI_B|||RVPNarrowingShiftB_ri|0b111
+PNCLIPRI_H|||RVPNarrowingShiftH_ri|0b111
+NCLIPRI|||RVPNarrowingShiftW_ri|0b111
+PNSRL_BS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b000,0b00
+PNSRL_HS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b000,0b01
+NSRL|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b000,0b11
+PNCLIPU_BS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b010,0b00
+PNCLIPU_HS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b010,0b01
+NCLIPU|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b010,0b11
+PNCLIPRU_BS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b011,0b00
+PNCLIPRU_HS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b011,0b01
+NCLIPRU|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b011,0b11
+PNSRA_BS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b100,0b00
+PNSRA_HS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b100,0b01
+NSRA|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b100,0b11
+PNSRAR_BS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b101,0b00
+PNSRAR_HS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b101,0b01
+NSRAR|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b101,0b11
+PNCLIP_BS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b110,0b00
+PNCLIP_HS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b110,0b01
+NCLIP|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b110,0b11
+PNCLIPR_BS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b111,0b00
+PNCLIPR_HS|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b111,0b01
+NCLIPR|GPR:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPNarrowingShift_rr|0b111,0b11
+PSLLI_DB|||RVPPairShiftB_ri|0b000,0b0
+PSLLI_DH|||RVPPairShiftH_ri|0b000,0b0
+PSLLI_DW|||RVPPairShiftW_ri|0b000,0b0
+PSSLAI_DH|||RVPPairShiftH_ri|0b101,0b0
+PSSLAI_DW|||RVPPairShiftW_ri|0b101,0b0
+PSEXT_DH_B|GPRPairRV32:$rd|GPRPairRV32:$rs1|RVPPairUnary_r|0b00,0b00100
+PSEXT_DW_B|GPRPairRV32:$rd|GPRPairRV32:$rs1|RVPPairUnary_r|0b01,0b00100
+PSEXT_DW_H|GPRPairRV32:$rd|GPRPairRV32:$rs1|RVPPairUnary_r|0b01,0b00101
+PSABS_DH|GPRPairRV32:$rd|GPRPairRV32:$rs1|RVPPairUnary_r|0b00,0b00111
+PSABS_DB|GPRPairRV32:$rd|GPRPairRV32:$rs1|RVPPairUnary_r|0b10,0b00111
+PSLL_DHS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b000,0b00,0b0
+PSLL_DWS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b000,0b01,0b0
+PSLL_DBS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b000,0b10,0b0
+PADD_DHS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b001,0b00,0b0
+PADD_DWS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b001,0b01,0b0
+PADD_DBS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b001,0b10,0b0
+PSSHL_DHS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b010,0b00,0b0
+PSSHL_DWS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b010,0b01,0b0
+PSSHLR_DHS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b011,0b00,0b0
+PSSHLR_DWS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b011,0b01,0b0
+PSSHA_DHS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b110,0b00,0b0
+PSSHA_DWS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b110,0b01,0b0
+PSSHAR_DHS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b111,0b00,0b0
+PSSHAR_DWS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b111,0b01,0b0
+PSRLI_DB|||RVPPairShiftB_ri|0b000,0b1
+PSRLI_DH|||RVPPairShiftH_ri|0b000,0b1
+PSRLI_DW|||RVPPairShiftW_ri|0b000,0b1
+PUSATI_DH|||RVPPairShiftH_ri|0b010,0b1
+PUSATI_DW|||RVPPairShiftW_ri|0b010,0b1
+PSRAI_DB|||RVPPairShiftB_ri|0b100,0b1
+PSRAI_DH|||RVPPairShiftH_ri|0b100,0b1
+PSRAI_DW|||RVPPairShiftW_ri|0b100,0b1
+PSRARI_DH|||RVPPairShiftH_ri|0b101,0b1
+PSRARI_DW|||RVPPairShiftW_ri|0b101,0b1
+PSATI_DH|||RVPPairShiftH_ri|0b110,0b1
+PSATI_DW|||RVPPairShiftW_ri|0b110,0b1
+PSRL_DHS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b000,0b00,0b1
+PSRL_DWS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b000,0b01,0b1
+PSRL_DBS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b000,0b10,0b1
+PSRA_DHS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b100,0b00,0b1
+PSRA_DWS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b100,0b01,0b1
+PSRA_DBS|GPRPairRV32:$rd|GPRPairRV32:$rs1, GPR:$rs2|RVPPairShift_rr|0b100,0b10,0b1
+PADD_DH|||RVPPairBinary_rr|0b0000,0b00
+PADD_DW|||RVPPairBinary_rr|0b0000,0b01
+PADD_DB|||RVPPairBinary_rr|0b0000,0b10
+ADDD|||RVPPairBinary_rr|0b0000,0b11
+PSADD_DH|||RVPPairBinary_rr|0b0010,0b00
+PSADD_DW|||RVPPairBinary_rr|0b0010,0b01
+PSADD_DB|||RVPPairBinary_rr|0b0010,0b10
+PAADD_DH|||RVPPairBinary_rr|0b0011,0b00
+PAADD_DW|||RVPPairBinary_rr|0b0011,0b01
+PAADD_DB|||RVPPairBinary_rr|0b0011,0b10
+PSADDU_DH|||RVPPairBinary_rr|0b0110,0b00
+PSADDU_DW|||RVPPairBinary_rr|0b0110,0b01
+PSADDU_DB|||RVPPairBinary_rr|0b0110,0b10
+PAADDU_DH|||RVPPairBinary_rr|0b0111,0b00
+PAADDU_DW|||RVPPairBinary_rr|0b0111,0b01
+PAADDU_DB|||RVPPairBinary_rr|0b0111,0b10
+PSUB_DH|||RVPPairBinary_rr|0b1000,0b00
+PSUB_DW|||RVPPairBinary_rr|0b1000,0b01
+PSUB_DB|||RVPPairBinary_rr|0b1000,0b10
+SUBD|||RVPPairBinary_rr|0b1000,0b11
+PABD_DH|||RVPPairBinary_rr|0b1001,0b00
+PABD_DB|||RVPPairBinary_rr|0b1001,0b10
+PSSUB_DH|||RVPPairBinary_rr|0b1010,0b00
+PSSUB_DW|||RVPPairBinary_rr|0b1010,0b01
+PSSUB_DB|||RVPPairBinary_rr|0b1010,0b10
+PASUB_DH|||RVPPairBinary_rr|0b1011,0b00
+PASUB_DW|||RVPPairBinary_rr|0b1011,0b01
+PASUB_DB|||RVPPairBinary_rr|0b1011,0b10
+PABDU_DH|||RVPPairBinary_rr|0b1101,0b00
+PABDU_DB|||RVPPairBinary_rr|0b1101,0b10
+PSSUBU_DH|||RVPPairBinary_rr|0b1110,0b00
+PSSUBU_DW|||RVPPairBinary_rr|0b1110,0b01
+PSSUBU_DB|||RVPPairBinary_rr|0b1110,0b10
+PASUBU_DH|||RVPPairBinary_rr|0b1111,0b00
+PASUBU_DW|||RVPPairBinary_rr|0b1111,0b01
+PASUBU_DB|||RVPPairBinary_rr|0b1111,0b10
+PSH1ADD_DH|||RVPPairBinaryShift_rr|0b010,0b00
+PSH1ADD_DW|||RVPPairBinaryShift_rr|0b010,0b01
+PSSH1SADD_DH|||RVPPairBinaryShift_rr|0b011,0b00
+PSSH1SADD_DW|||RVPPairBinaryShift_rr|0b011,0b01
+PPAIRE_DB|||RVPPairBinaryPack_rr|0b000,0b00
+PPAIRE_DH|||RVPPairBinaryPack_rr|0b000,0b01
+PPAIREO_DB|||RVPPairBinaryPack_rr|0b001,0b00
+PPAIREO_DH|||RVPPairBinaryPack_rr|0b001,0b01
+PPAIROE_DB|||RVPPairBinaryPack_rr|0b010,0b00
+PPAIROE_DH|||RVPPairBinaryPack_rr|0b010,0b01
+PPAIRO_DB|||RVPPairBinaryPack_rr|0b011,0b00
+PPAIRO_DH|||RVPPairBinaryPack_rr|0b011,0b01
+PAS_DHX|||RVPPairBinaryExchanged_rr|0b0000,0b00
+PSA_DHX|||RVPPairBinaryExchanged_rr|0b0000,0b10
+PSAS_DHX|||RVPPairBinaryExchanged_rr|0b0010,0b00
+PSSA_DHX|||RVPPairBinaryExchanged_rr|0b0010,0b10
+PAAS_DHX|||RVPPairBinaryExchanged_rr|0b0011,0b00
+PASA_DHX|||RVPPairBinaryExchanged_rr|0b0011,0b10
+PMSEQ_DH|||RVPPairBinaryExchanged_rr|0b1000,0b00
+PMSEQ_DW|||RVPPairBinaryExchanged_rr|0b1000,0b01
+PMSEQ_DB|||RVPPairBinaryExchanged_rr|0b1000,0b10
+PMSLT_DH|||RVPPairBinaryExchanged_rr|0b1010,0b00
+PMSLT_DW|||RVPPairBinaryExchanged_rr|0b1010,0b01
+PMSLT_DB|||RVPPairBinaryExchanged_rr|0b1010,0b10
+PMSLTU_DH|||RVPPairBinaryExchanged_rr|0b1011,0b00
+PMSLTU_DW|||RVPPairBinaryExchanged_rr|0b1011,0b01
+PMSLTU_DB|||RVPPairBinaryExchanged_rr|0b1011,0b10
+PMIN_DH|||RVPPairBinaryExchanged_rr|0b1100,0b00
+PMIN_DW|||RVPPairBinaryExchanged_rr|0b1100,0b01
+PMIN_DB|||RVPPairBinaryExchanged_rr|0b1100,0b10
+PMINU_DH|||RVPPairBinaryExchanged_rr|0b1101,0b00
+PMINU_DW|||RVPPairBinaryExchanged_rr|0b1101,0b01
+PMINU_DB|||RVPPairBinaryExchanged_rr|0b1101,0b10
+PMAX_DH|||RVPPairBinaryExchanged_rr|0b1110,0b00
+PMAX_DW|||RVPPairBinaryExchanged_rr|0b1110,0b01
+PMAX_DB|||RVPPairBinaryExchanged_rr|0b1110,0b10
+PMAXU_DH|||RVPPairBinaryExchanged_rr|0b1111,0b00
+PMAXU_DW|||RVPPairBinaryExchanged_rr|0b1111,0b01
+PMAXU_DB|||RVPPairBinaryExchanged_rr|0b1111,0b10
+SDT_RISCVIntBinOpD|||SDTypeProfile|2,4
+SDT_RISCVWideningAddSubAccumulate|||SDTypeProfile|2,4
+SDT_RISCVPackedWideningMul|||SDTypeProfile|1,2
+SDT_RISCVWideningShiftLeft|||SDTypeProfile|2,2
+SDT_RISCVNarrowingShift|||SDTypeProfile|1,3
+shiftMask64|||ComplexPattern|1,0
+SDT_RISCVPPair|||SDTypeProfile|1,2
+SDT_RISCVPackedBinary|||SDTypeProfile|1,2
+SDT_RISCVPackedShift|||SDTypeProfile|1,2
+SDT_RISCVMERGE|||SDTypeProfile|1,3
+SDT_RISCVPackedUnary|||SDTypeProfile|1,1
+SDT_RISCVPZip|||SDTypeProfile|1,2
+SDT_RISCVPWZip|||SDTypeProfile|1,2
+SDT_RISCVPUnzip|||SDTypeProfile|1,2
+SDT_RISCVBuildPairGPRVec|||SDTypeProfile|1,2
+SDT_RISCVSplitGPRVec|||SDTypeProfile|2,1
+PseudoMERGE|GPR|GPR,GPR,GPR|Pseudo|
+FLQ|||FPLoad_r|0b100
+FSQ|||FPStore_r|0b100
+PseudoClearFPR128|FPR128||Pseudo|
+PseudoCCMOVGPR|GPR|GPR,GPR,bcc_opcode,GPR,sfb_rhs|Pseudo|
+PseudoCCMOVGPRNoX0|GPRNoX0|GPRNoX0,GPRNoX0,bcc_opcode,GPR,sfb_rhs|Pseudo|
+MCSPSPUSH|SP:$rd|SP:$rs1|CSPSInst|0b0011000,0b01001
+MCSPSPOP|SP:$rd|SP:$rs1|CSPSInst|0b0011000,0b01100
+SCSPSPUSH|SP:$rd|SP:$rs1|CSPSInst|0b0001000,0b01001
+SCSPSPOP|SP:$rd|SP:$rs1|CSPSInst|0b0001000,0b01100
+VTypeIOp10|||VTypeIOp|10
+VTypeIOp11|||VTypeIOp|11
+simm5|||RISCVSImmLeafOp|5
+_V|VR|VR|RVInstVV|
+_X|VR|GPR|RVInstVX|
+_I|VR|simm5|RVInstIVI|
+VSETVLI|GPR|GPR,VTypeIOp11|RVInstVSetVLi|
+VSETIVLI|GPR|uimm5,VTypeIOp10|RVInstVSetiVLi|
+VSETVL|GPR|GPR,GPR|RVInstVSetVL|
+VS1R_V||VRC:$vs3, GPRMemZeroOffset:$rs1|VWholeStore|1
+VS2R_V||VRC:$vs3, GPRMemZeroOffset:$rs1|VWholeStore|2
+VS4R_V||VRC:$vs3, GPRMemZeroOffset:$rs1|VWholeStore|4
+VS8R_V||VRC:$vs3, GPRMemZeroOffset:$rs1|VWholeStore|8
+VZEXT_VF8|||VEXT_MV_VS2|0b010010,0b00010
+VSEXT_VF8|||VEXT_MV_VS2|0b010010,0b00011
+VZEXT_VF4|||VEXT_MV_VS2|0b010010,0b00100
+VSEXT_VF4|||VEXT_MV_VS2|0b010010,0b00101
+VZEXT_VF2|||VEXT_MV_VS2|0b010010,0b00110
+VSEXT_VF2|||VEXT_MV_VS2|0b010010,0b00111
+PseudoVMSGEU_VI|VR|VR,simm5_plus1,VMaskOp|Pseudo|
+PseudoVMSLTU_VI|VR|VR,simm5_plus1,VMaskOp|Pseudo|
+PseudoVMSGE_VI|VR|VR,simm5_plus1,VMaskOp|Pseudo|
+PseudoVMSLT_VI|VR|VR,simm5_plus1,VMaskOp|Pseudo|
+PseudoVMSGEU_VX_M|VR|VR,GPR,VMaskOp|Pseudo|
+PseudoVMSGE_VX_M|VR|VR,GPR,VMaskOp|Pseudo|
+PseudoVMSGEU_VX_M_T|VR,VRNoV0|VR,GPR,VMaskOp|Pseudo|
+PseudoVMSGE_VX_M_T|VR,VRNoV0|VR,GPR,VMaskOp|Pseudo|
+VFSQRT_V|||VSQR_FV_VS2|0b010011,0b00000
+VFREC7_V|||VRCP_FV_VS2|0b010011,0b00101
+VFRSQRT7_V|||VRCP_FV_VS2|0b010011,0b00100
+VFCLASS_V|||VCLS_FV_VS2|0b010011,0b10000
+VFMERGE_VFM|VR|VR,FPR32,VMaskCarryInOp|RVInstVX|0b010111
+VFMV_V_F|VR|FPR32|RVInstVX|0b010111
+VFCVT_XU_F_V|||VCVTI_FV_VS2|0b010010,0b00000
+VFCVT_X_F_V|||VCVTI_FV_VS2|0b010010,0b00001
+VFCVT_RTZ_XU_F_V|||VCVTI_FV_VS2|0b010010,0b00110
+VFCVT_RTZ_X_F_V|||VCVTI_FV_VS2|0b010010,0b00111
+VFCVT_F_XU_V|||VCVTF_IV_VS2|0b010010,0b00010
+VFCVT_F_X_V|||VCVTF_IV_VS2|0b010010,0b00011
+VFWCVT_XU_F_V|||VWCVTI_FV_VS2|0b010010,0b01000
+VFWCVT_X_F_V|||VWCVTI_FV_VS2|0b010010,0b01001
+VFWCVT_RTZ_XU_F_V|||VWCVTI_FV_VS2|0b010010,0b01110
+VFWCVT_RTZ_X_F_V|||VWCVTI_FV_VS2|0b010010,0b01111
+VFWCVT_F_XU_V|||VWCVTF_IV_VS2|0b010010,0b01010
+VFWCVT_F_X_V|||VWCVTF_IV_VS2|0b010010,0b01011
+VFWCVT_F_F_V|||VWCVTF_FV_VS2|0b010010,0b01100
+VFNCVT_XU_F_W|||VNCVTI_FV_VS2|0b010010,0b10000
+VFNCVT_X_F_W|||VNCVTI_FV_VS2|0b010010,0b10001
+VFNCVT_RTZ_XU_F_W|||VNCVTI_FV_VS2|0b010010,0b10110
+VFNCVT_RTZ_X_F_W|||VNCVTI_FV_VS2|0b010010,0b10111
+VFNCVT_F_XU_W|||VNCVTF_IV_VS2|0b010010,0b10010
+VFNCVT_F_X_W|||VNCVTF_IV_VS2|0b010010,0b10011
+VFNCVT_F_F_W|||VNCVTF_FV_VS2|0b010010,0b10100
+VFNCVT_ROD_F_F_W|||VNCVTF_FV_VS2|0b010010,0b10101
+VCPOP_M|GPR|VR,VMaskOp|RVInstVUnaryRd|0b010000,0b10000
+VFIRST_M|GPR|VR,VMaskOp|RVInstVUnaryRd|0b010000,0b10001
+VMSBF_M|||VMSFS_MV_VS2|0b010100,0b00001
+VMSIF_M|||VMSFS_MV_VS2|0b010100,0b00011
+VMSOF_M|||VMSFS_MV_VS2|0b010100,0b00010
+VIOTA_M|||VIOTA_MV_VS2|0b010100,0b10000
+VID_V|VR|VMaskOp|RVInstVUnary|0b010100,0b10001
+VMV_X_S|GPR|VR|RVInstVUnaryRd|0b010000,0b00000
+VMV_S_X|VR|VR,GPR|RVInstVX|0b010000
+VFMV_F_S|FPR32|VR|RVInstVUnaryRd|0b010000,0b00000
+VFMV_S_F|VR|VR,FPR32|RVInstVX|0b010000
+VRGATHEREI16_VV|||VALUVV|0b001110
+riscv_vmv_x_s|||RVSDNode|1
+riscv_read_vlenb|||RVSDNode|0
+VLOp|||ComplexPattern|1
+V_M1|||LMULInfo|0b000,8
+V_M2|||LMULInfo|0b001,16
+V_M4|||LMULInfo|0b010,32
+V_M8|||LMULInfo|0b011,64
+V_MF8|||LMULInfo|0b101,1
+V_MF4|||LMULInfo|0b110,2
+V_MF2|||LMULInfo|0b111,4
+SCALAR_F16|||FPR_Info|16
+SCALAR_F32|||FPR_Info|32
+SCALAR_F64|||FPR_Info|64
+SCALAR_BF16|||FPR_Info|16
+SelectScalarFPAsInt|||ComplexPattern|1,1
+VI8MF8|||VTypeInfo|8
+VI8MF4|||VTypeInfo|8
+VI8MF2|||VTypeInfo|8
+VI16MF4|||VTypeInfo|16
+VI16MF2|||VTypeInfo|16
+VI32MF2|||VTypeInfo|32
+VI8M1|||VTypeInfo|8
+VI16M1|||VTypeInfo|16
+VI32M1|||VTypeInfo|32
+VI64M1|||VTypeInfo|64
+VI8M2|||GroupVTypeInfo|8
+VI8M4|||GroupVTypeInfo|8
+VI8M8|||GroupVTypeInfo|8
+VI16M2|||GroupVTypeInfo|16
+VI16M4|||GroupVTypeInfo|16
+VI16M8|||GroupVTypeInfo|16
+VI32M2|||GroupVTypeInfo|32
+VI32M4|||GroupVTypeInfo|32
+VI32M8|||GroupVTypeInfo|32
+VI64M2|||GroupVTypeInfo|64
+VI64M4|||GroupVTypeInfo|64
+VI64M8|||GroupVTypeInfo|64
+VF16MF4|||VTypeInfo|16
+VF16MF2|||VTypeInfo|16
+VF32MF2|||VTypeInfo|32
+VF16M1|||VTypeInfo|16
+VF32M1|||VTypeInfo|32
+VF64M1|||VTypeInfo|64
+VF16M2|||GroupVTypeInfo|16
+VF16M4|||GroupVTypeInfo|16
+VF16M8|||GroupVTypeInfo|16
+VF32M2|||GroupVTypeInfo|32
+VF32M4|||GroupVTypeInfo|32
+VF32M8|||GroupVTypeInfo|32
+VF64M2|||GroupVTypeInfo|64
+VF64M4|||GroupVTypeInfo|64
+VF64M8|||GroupVTypeInfo|64
+VBF16MF4|||VTypeInfo|16
+VBF16MF2|||VTypeInfo|16
+VBF16M1|||VTypeInfo|16
+VBF16M2|||GroupVTypeInfo|16
+VBF16M4|||GroupVTypeInfo|16
+VBF16M8|||GroupVTypeInfo|16
+PseudoReadVLENB|GPR||Pseudo|
+PseudoReadVLENBViaVSETVLIX0|GPRNoX0|uimm5|Pseudo|
+PseudoReadVL|GPR||Pseudo|
+PseudoClearVR|VR||Pseudo|
+PseudoVSETVLI|GPR|GPRNoX0,VTypeIOp11|Pseudo|
+PseudoVSETVLIX0|GPRNoX0|GPRX0,VTypeIOp11|Pseudo|
+PseudoVSETVLIX0X0|GPRX0|GPRX0,VTypeIOp11|Pseudo|
+PseudoVSETIVLI|GPR|uimm5,VTypeIOp10|Pseudo|
+rvv_vmnot_op|||ComplexPattern|1,3
+riscv_splat_vector_split_i64_vl|||RVSDNode|4
+riscv_tuple_insert|||RVSDNode|3
+riscv_tuple_extract|||RVSDNode|2
+SDT_RISCVIntUnOp_VL|||SDTypeProfile|1,4
+SDT_RISCVIntBinOp_VL|||SDTypeProfile|1,5
+SDT_RISCVVNBinOp_RM_VL|||SDTypeProfile|1,6
+SDT_RISCVFPUnOp_VL|||SDTypeProfile|1,3
+SDT_RISCVFPBinOp_VL|||SDTypeProfile|1,5
+SDT_RISCVCopySign_VL|||SDTypeProfile|1,5
+riscv_vmv_v_v_vl|||RVSDNode|3
+riscv_vmv_v_x_vl|||RVSDNode|3
+riscv_vfmv_v_f_vl|||RVSDNode|3
+riscv_vmv_s_x_vl|||RVSDNode|3
+riscv_vfmv_s_f_vl|||RVSDNode|3
+riscv_fclass_vl|||RVSDNode|3
+SDT_RISCVVecFMA_VL|||SDTypeProfile|1,5
+SDT_RISCVWVecFMA_VL|||SDTypeProfile|1,5
+SDT_RISCVFPRoundOp_VL|||SDTypeProfile|1,3
+SDT_RISCVFPExtendOp_VL|||SDTypeProfile|1,3
+SDT_RISCVFP2IOp_VL|||SDTypeProfile|1,3
+SDT_RISCVFP2IOp_RM_VL|||SDTypeProfile|1,4
+SDT_RISCVI2FPOp_VL|||SDTypeProfile|1,3
+SDT_RISCVI2FPOp_RM_VL|||SDTypeProfile|1,4
+SDT_RISCVSETCCOP_VL|||SDTypeProfile|1,6
+riscv_vrgather_vx_vl|||RVSDNode|5
+riscv_vrgather_vv_vl|||RVSDNode|5
+riscv_vrgatherei16_vv_vl|||RVSDNode|5
+SDT_RISCVVMERGE_VL|||SDTypeProfile|1,5
+SDT_RISCVVMSETCLR_VL|||SDTypeProfile|1,1
+SDT_RISCVMaskBinOp_VL|||SDTypeProfile|1,3
+riscv_vmnot_vl_op|||ComplexPattern|1,9
+riscv_vcpop_vl|||RVSDNode|3
+riscv_vfirst_vl|||RVSDNode|3
+SDT_RISCVVEXTEND_VL|||SDTypeProfile|1,3
+SDT_RISCVVTRUNCATE_VL|||SDTypeProfile|1,3
+SDT_RISCVVWIntBinOp_VL|||SDTypeProfile|1,5
+SDT_RISCVVWIntTernOp_VL|||SDTypeProfile|1,5
+SDT_RISCVVWFPBinOp_VL|||SDTypeProfile|1,5
+SDT_RISCVVWIntBinOpW_VL|||SDTypeProfile|1,5
+SDT_RISCVVWFPBinOpW_VL|||SDTypeProfile|1,5
+SDTRVVVecReduce|||SDTypeProfile|1,6
+SplatPat|||ComplexPattern|1,1
+SplatPat_simm5|||ComplexPattern|1,3
+SplatPat_uimm5|||ComplexPattern|1,3
+SplatPat_uimm6|||ComplexPattern|1,3
+SplatPat_imm64_neg|||ComplexPattern|1,3
+sew8simm5|||ComplexPattern|1
+sew16simm5|||ComplexPattern|1
+sew32simm5|||ComplexPattern|1
+sew64simm5|||ComplexPattern|1
+riscv_vid_vl|||RVSDNode|2
+SDTRVVSlide|||SDTypeProfile|1,6
+SDTRVVSlide1|||SDTypeProfile|1,5
+SDTRVVFSlide1|||SDTypeProfile|1,5
+simm10|||RISCVSImmOp|10
+AIF_FLQ2|FPR256|simm12_lo,GPR|RVInstI|0b101
+AIF_FSQ2||FPR256,simm12_lo,GPR|RVInstS|0b101
+AIF_FLW_PS|FPR256|simm12_lo,GPR|RVInstI|0b010
+AIF_FLW_PS_EX|FPR256|simm12_lo,GPR,MR0|Pseudo|
+AIF_FLW_PS_PASSTHRU_EX|FPR256|FPR256,simm12_lo,GPR,MR0|Pseudo|
+AIF_FSW_PS||FPR256,simm12_lo,GPR|RVInstS|0b110
+AIF_FSW_PS_EX||FPR256,simm12_lo,GPR,MR0|Pseudo|
+AIF_FBC_PS|FPR256|simm12_lo,GPR|RVInstI|0b000
+AIF_FBC_PS_EX|FPR256|simm12_lo,GPR,MR0|Pseudo|
+AIF_FBCX_PS|FPR256|GPR|RVInstI|0b011
+AIF_FBCX_PS_EX|FPR256|GPR,MR0|Pseudo|
+AIF_FBCX_PS_PASSTHRU_EX|FPR256|FPR256,GPR,MR0|Pseudo|
+AIF_FBCI_PS|FPR256|uimm20_lui|RVInstU|
+AIF_FBCI_PS_EX|FPR256|uimm20_lui,MR0|Pseudo|
+AIF_FBCI_PS_PASSTHRU_EX|FPR256|FPR256,uimm20_lui,MR0|Pseudo|
+_EX|FPR256|FPR256,GPRMemZeroOffset,MR0|Pseudo|
+_PASSTHRU_EX|FPR256|FPR256,FPR256,GPRMemZeroOffset,MR0|Pseudo|
+_EX||FPR256,FPR256,GPRMemZeroOffset,MR0|Pseudo|
+_EX|FPR256|FPR256,FPR256,frmarg,MR0|Pseudo|
+_PASSTHRU_EX|FPR256|FPR256,FPR256,FPR256,frmarg,MR0|Pseudo|
+_EX|FPR256|FPR256,FPR256,MR0|Pseudo|
+_PASSTHRU_EX|FPR256|FPR256,FPR256,FPR256,MR0|Pseudo|
+_EX|FPR256|FPR256,FPR256,FPR256,frmarg,MR0|Pseudo|
+_PASSTHRU_EX|FPR256|FPR256,FPR256,FPR256,FPR256,frmarg,MR0|Pseudo|
+AIF_FCMOV_PS|FPR256|FPR256,FPR256,FPR256|RVInstET4|0b10
+AIF_FCMOV_PS_EX|FPR256|FPR256,FPR256,FPR256,MR0|Pseudo|
+AIF_FCMOV_PS_PASSTHRU_EX|FPR256|FPR256,FPR256,FPR256,FPR256,MR0|Pseudo|
+AIF_FSWIZZ_PS|FPR256|FPR256,uimm8|RVInstET1|0b1110011
+AIF_FSWIZZ_PS_EX|FPR256|FPR256,uimm8,MR0|Pseudo|
+AIF_FSWIZZ_PS_PASSTHRU_EX|FPR256|FPR256,FPR256,uimm8,MR0|Pseudo|
+_EX|FPR256|FPR256,frmarg,MR0|Pseudo|
+_PASSTHRU_EX|FPR256|FPR256,FPR256,frmarg,MR0|Pseudo|
+AIF_FMVZ_X_PS|||ETOpsRdR1Idx|0b1110000,0b000
+AIF_FMVS_X_PS|||ETOpsRdR1Idx|0b1110000,0b010
+_EX|MR|FPR256,FPR256,MR0|Pseudo|
+_PASSTHRU_EX|MR|MR,FPR256,FPR256,MR0|Pseudo|
+_EX|FPR256|FPR256,FPR256,MR0|Pseudo|
+_PASSTHRU_EX|FPR256|FPR256,FPR256,MR0|Pseudo|
+AIF_FBCI_PI|FPR256|uimm20_lui|RVInstU|
+AIF_FBCI_PI_EX|FPR256|uimm20_lui,MR0|Pseudo|
+AIF_FBCI_PI_PASSTHRU_EX|FPR256|FPR256,uimm20_lui,MR0|Pseudo|
+_EX|MR|FPR256,MR0|Pseudo|
+_PASSTHRU_EX|MR|MR,FPR256,MR0|Pseudo|
+_EX|FPR256|FPR256,FPR256,simm10,MR0|Pseudo|
+_PASSTHRU_EX|FPR256|FPR256,FPR256,simm10,MR0|Pseudo|
+_EX|FPR256|FPR256,FPR256,uimm5,MR0|Pseudo|
+_PASSTHRU_EX|FPR256|FPR256,FPR256,uimm5,MR0|Pseudo|
+AIF_FROUND_PS|FPR256|FPR256,frmarg|RVInstET7|
+AIF_FROUND_PS_EX|FPR256|FPR256,frmarg,MR0|Pseudo|
+AIF_PACKB|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b1000000,0b110
+AIF_BITMIXB|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b1000000,0b111
+AIF_MOV_M_X|MR|GPR,uimm8|RVInstET8|
+AIF_MOVA_X_M|GPR||RVInstR|0b1101011,0b000
+AIF_MOVA_M_X||GPR|RVInstR|0b1101011,0b001
+AIF_MASKAND|||ETOpsMdM1M2|0b111
+AIF_MASKOR|||ETOpsMdM1M2|0b110
+AIF_MASKNOT|MR|MR|RVInstET9|0b010
+AIF_MASKXOR|||ETOpsMdM1M2|0b100
+AIF_MASKPOPC|||ETOpsRdM1|0b01
+AIF_MASKPOPCZ|||ETOpsRdM1|0b10
+_EX|FPR256|GPR,GPRMemZeroOffset,MR0|Pseudo|
+_EX||FPR256,GPR,GPRMemZeroOffset,MR0|Pseudo|
+AIF_FCMOVM_PS|FPR256|FPR256,FPR256|RVInstR|0b0000000,0b000
+AIF_FCMOVM_PS_EX|FPR256|FPR256,FPR256,MR0|Pseudo|
+_EX|FPR256|GPR,MR0|Pseudo|
+_EX||FPR256,GPR,MR0|Pseudo|
+_EX|FPR256|FPR256,GPRMemZeroOffset,MR0|Pseudo|
+_PASSTHRU_EX|FPR256|FPR256,FPR256,GPRMemZeroOffset,MR0|Pseudo|
+_EX||FPR256,FPR256,GPRMemZeroOffset,MR0|Pseudo|
+AIF_AMOSWAPL_W|||ETOpsR2R1|0b0000100,0b010
+AIF_AMOADDL_W|||ETOpsR2R1|0b0000000,0b010
+AIF_AMOXORL_W|||ETOpsR2R1|0b0010000,0b010
+AIF_AMOANDL_W|||ETOpsR2R1|0b0110000,0b010
+AIF_AMOORL_W|||ETOpsR2R1|0b0100000,0b010
+AIF_AMOMINL_W|||ETOpsR2R1|0b1000000,0b010
+AIF_AMOMAXL_W|||ETOpsR2R1|0b1010000,0b010
+AIF_AMOMINUL_W|||ETOpsR2R1|0b1100000,0b010
+AIF_AMOMAXUL_W|||ETOpsR2R1|0b1110000,0b010
+AIF_AMOCMPSWAPL_W|||ETOpsR2R1|0b1111000,0b010
+AIF_AMOSWAPG_W|||ETOpsR2R1|0b0000101,0b010
+AIF_AMOADDG_W|||ETOpsR2R1|0b0000001,0b010
+AIF_AMOXORG_W|||ETOpsR2R1|0b0010001,0b010
+AIF_AMOANDG_W|||ETOpsR2R1|0b0110001,0b010
+AIF_AMOORG_W|||ETOpsR2R1|0b0100001,0b010
+AIF_AMOMING_W|||ETOpsR2R1|0b1000001,0b010
+AIF_AMOMAXG_W|||ETOpsR2R1|0b1010001,0b010
+AIF_AMOMINUG_W|||ETOpsR2R1|0b1100001,0b010
+AIF_AMOMAXUG_W|||ETOpsR2R1|0b1110001,0b010
+AIF_AMOCMPSWAPG_W|||ETOpsR2R1|0b1111001,0b010
+AIF_AMOSWAPL_D|||ETOpsR2R1|0b0000100,0b011
+AIF_AMOADDL_D|||ETOpsR2R1|0b0000000,0b011
+AIF_AMOXORL_D|||ETOpsR2R1|0b0010000,0b011
+AIF_AMOANDL_D|||ETOpsR2R1|0b0110000,0b011
+AIF_AMOORL_D|||ETOpsR2R1|0b0100000,0b011
+AIF_AMOMINL_D|||ETOpsR2R1|0b1000000,0b011
+AIF_AMOMAXL_D|||ETOpsR2R1|0b1010000,0b011
+AIF_AMOMINUL_D|||ETOpsR2R1|0b1100000,0b011
+AIF_AMOMAXUL_D|||ETOpsR2R1|0b1110000,0b011
+AIF_AMOCMPSWAPL_D|||ETOpsR2R1|0b1111000,0b011
+AIF_AMOSWAPG_D|||ETOpsR2R1|0b0000101,0b011
+AIF_AMOADDG_D|||ETOpsR2R1|0b0000001,0b011
+AIF_AMOXORG_D|||ETOpsR2R1|0b0010001,0b011
+AIF_AMOANDG_D|||ETOpsR2R1|0b0110001,0b011
+AIF_AMOORG_D|||ETOpsR2R1|0b0100001,0b011
+AIF_AMOMING_D|||ETOpsR2R1|0b1000001,0b011
+AIF_AMOMAXG_D|||ETOpsR2R1|0b1010001,0b011
+AIF_AMOMINUG_D|||ETOpsR2R1|0b1100001,0b011
+AIF_AMOMAXUG_D|||ETOpsR2R1|0b1110001,0b011
+AIF_AMOCMPSWAPG_D|||ETOpsR2R1|0b1111001,0b011
+AIF_SBL||GPR:$rs2, GPRMemZeroOffset:$rs1|ETOpsR1R2S|0b0001000,0b011
+AIF_SHL||GPR:$rs2, GPRMemZeroOffset:$rs1|ETOpsR1R2S|0b0001100,0b011
+AIF_SBG||GPR:$rs2, GPRMemZeroOffset:$rs1|ETOpsR1R2S|0b0001001,0b011
+AIF_SHG||GPR:$rs2, GPRMemZeroOffset:$rs1|ETOpsR1R2S|0b0001101,0b011
+AIF_StackFSQ2||FPR256,GPR,simm12_lo|Pseudo|
+AIF_StackFLQ2|FPR256|GPR,simm12_lo|Pseudo|
+AIF_StackMS||MR,GPR,simm12_lo|Pseudo|
+AIF_StackML|MR|GPR,simm12_lo|Pseudo|
+SCALAR_F16_FPR32|||FPR_Info|16
+NDS_BBC||GPR:$rs1, uimmlog2xlen:$cimm, bare_simm11_lsb0:$imm10|NDSRVInstBB|0
+NDS_BBS||GPR:$rs1, uimmlog2xlen:$cimm, bare_simm11_lsb0:$imm10|NDSRVInstBB|1
+NDS_BEQC||GPR:$rs1, uimm7:$cimm, bare_simm11_lsb0:$imm10|NDSRVInstBC|0b101
+NDS_BNEC||GPR:$rs1, uimm7:$cimm, bare_simm11_lsb0:$imm10|NDSRVInstBC|0b110
+NDS_BFOS|GPR:$rd|GPR:$rs1, uimmlog2xlen:$msb, uimmlog2xlen:$lsb|NDSRVInstBFO|0b011
+NDS_BFOZ|GPR:$rd|GPR:$rs1, uimmlog2xlen:$msb, uimmlog2xlen:$lsb|NDSRVInstBFO|0b010
+NDS_LEA_H|GPR:$rd|GPR:$rs2, GPR:$rs1|NDSRVInstLEA|0b0000101
+NDS_LEA_W|GPR:$rd|GPR:$rs2, GPR:$rs1|NDSRVInstLEA|0b0000110
+NDS_LEA_D|GPR:$rd|GPR:$rs2, GPR:$rs1|NDSRVInstLEA|0b0000111
+NDS_ADDIGP|GPR:$rd|simm18:$imm18|NDSRVInstLBGP|0b01
+NDS_LBGP|GPR:$rd|simm18:$imm18|NDSRVInstLBGP|0b00
+NDS_LBUGP|GPR:$rd|simm18:$imm18|NDSRVInstLBGP|0b10
+NDS_LHGP|GPR:$rd|simm18_lsb0:$imm17|NDSRVInstLHGP|0b001
+NDS_LHUGP|GPR:$rd|simm18_lsb0:$imm17|NDSRVInstLHGP|0b101
+NDS_LWGP|GPR:$rd|simm19_lsb00:$imm17|NDSRVInstLWGP|0b010
+NDS_SBGP||GPR:$rs2, simm18:$imm18|NDSRVInstSBGP|0b11
+NDS_SHGP||GPR:$rs2, simm18_lsb0:$imm17|NDSRVInstSHGP|0b000
+NDS_SWGP||GPR:$rs2, simm19_lsb00:$imm17|NDSRVInstSWGP|0b100
+NDS_FFB|GPR:$rd|GPR:$rs1, GPR:$rs2|NDSRVInstRR|0b0010000
+NDS_FFZMISM|GPR:$rd|GPR:$rs1, GPR:$rs2|NDSRVInstRR|0b0010001
+NDS_FFMISM|GPR:$rd|GPR:$rs1, GPR:$rs2|NDSRVInstRR|0b0010010
+NDS_FLMISM|GPR:$rd|GPR:$rs1, GPR:$rs2|NDSRVInstRR|0b0010011
+NDS_LEA_B_ZE|GPR:$rd|GPR:$rs2, GPR:$rs1|NDSRVInstLEA|0b0001000
+NDS_LEA_H_ZE|GPR:$rd|GPR:$rs2, GPR:$rs1|NDSRVInstLEA|0b0001001
+NDS_LEA_W_ZE|GPR:$rd|GPR:$rs2, GPR:$rs1|NDSRVInstLEA|0b0001010
+NDS_LEA_D_ZE|GPR:$rd|GPR:$rs2, GPR:$rs1|NDSRVInstLEA|0b0001011
+NDS_LWUGP|GPR:$rd|simm19_lsb00:$imm17|NDSRVInstLWGP|0b110
+NDS_LDGP|GPR:$rd|simm20_lsb000:$imm17|NDSRVInstLDGP|0b011
+NDS_SDGP||GPR:$rs2, simm20_lsb000:$imm17|NDSRVInstSDGP|0b111
+NDS_FCVT_S_BF16|rdty:$rd|rs2ty:$rs2|NDSRVInstBFHCvt|0b0000000,0b00010
+NDS_FCVT_BF16_S|rdty:$rd|rs2ty:$rs2|NDSRVInstBFHCvt|0b0000000,0b00011
+NDS_VFWCVT_S_BF16|VR:$vd|VR:$vs2|NDSRVInstVBFHCvt|0b00000
+NDS_VFNCVT_BF16_S|VR:$vd|VR:$vs2|NDSRVInstVBFHCvt|0b00001
+NDS_VFWCVT_F_N|VR:$vd|VR:$vs, VMaskOp:$vm|NDSRVInstVSINTCvt|0b00100
+NDS_VFWCVT_F_NU|VR:$vd|VR:$vs, VMaskOp:$vm|NDSRVInstVSINTCvt|0b00101
+NDS_VFWCVT_F_B|VR:$vd|VR:$vs, VMaskOp:$vm|NDSRVInstVSINTCvt|0b00110
+NDS_VFWCVT_F_BU|VR:$vd|VR:$vs, VMaskOp:$vm|NDSRVInstVSINTCvt|0b00111
+NDS_VLE4_V|VR:$vd|GPRMemZeroOffset:$rs1|NDSRVInstVSINTLN|0b00000
+NDS_VLN8_V|VR:$vd|GPRMemZeroOffset:$rs1, VMaskOp:$vm|NDSRVInstVLN|0b00010
+NDS_VLNU8_V|VR:$vd|GPRMemZeroOffset:$rs1, VMaskOp:$vm|NDSRVInstVLN|0b00011
+NDS_VFPMADT_VF|VR:$vd|VR:$vs2, FPR32:$rs1, VMaskOp:$vm|NDSRVInstVFPMAD|0b000010
+NDS_VFPMADB_VF|VR:$vd|VR:$vs2, FPR32:$rs1, VMaskOp:$vm|NDSRVInstVFPMAD|0b000011
+NDS_VD4DOTS_VV|VR:$vd|VR:$vs1, VR:$vs2, VMaskOp:$vm|NDSRVInstVD4DOT|0b000100
+NDS_VD4DOTU_VV|VR:$vd|VR:$vs1, VR:$vs2, VMaskOp:$vm|NDSRVInstVD4DOT|0b000111
+NDS_VD4DOTSU_VV|VR:$vd|VR:$vs1, VR:$vs2, VMaskOp:$vm|NDSRVInstVD4DOT|0b000101
+NDS_FMV_BF16_X|rdty:$rd|rs1ty:$rs1|FPUnaryOp_r|0b1111000,0b00000,0b000
+NDS_FMV_X_BF16|rdty:$rd|rs1ty:$rs1|FPUnaryOp_r|0b1110000,0b00000,0b000
+CV_EXTRACT|||CVBitManipRII|0b00,0b000
+CV_EXTRACTU|||CVBitManipRII|0b01,0b000
+CV_BCLR|||CVBitManipRII|0b00,0b001
+CV_BSET|||CVBitManipRII|0b01,0b001
+CV_BITREV|||CVBitManipRII|0b11,0b001
+CV_EXTRACTR|||CVBitManipRR|0b0011000
+CV_EXTRACTUR|||CVBitManipRR|0b0011001
+CV_INSERT|GPR|GPR,GPR,uimm5,uimm5|CVInstBitManipRII|0b10,0b000
+CV_INSERTR|GPR|GPR,GPR,GPR|RVInstR|0b0011010,0b011
+CV_BCLRR|||CVBitManipRR|0b0011100
+CV_BSETR|||CVBitManipRR|0b0011101
+CV_ROR|||CVBitManipRR|0b0100000
+CV_FF1|GPR:$rd|GPR:$rs1|CVBitManipR|0b0100001
+CV_FL1|GPR:$rd|GPR:$rs1|CVBitManipR|0b0100010
+CV_CLB|GPR:$rd|GPR:$rs1|CVBitManipR|0b0100011
+CV_CNT|GPR:$rd|GPR:$rs1|CVBitManipR|0b0100100
+CV_MAC|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVInstMac|0b1001000,0b011
+CV_MSU|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVInstMac|0b1001001,0b011
+CV_MACSN|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstMacN|0b00,0b110
+CV_MACHHSN|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstMacN|0b01,0b110
+CV_MACSRN|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstMacN|0b10,0b110
+CV_MACHHSRN|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstMacN|0b11,0b110
+CV_MACUN|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstMacN|0b00,0b111
+CV_MACHHUN|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstMacN|0b01,0b111
+CV_MACURN|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstMacN|0b10,0b111
+CV_MACHHURN|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstMacN|0b11,0b111
+CV_MULSN|||CVInstMulN|0b00,0b100
+CV_MULHHSN|||CVInstMulN|0b01,0b100
+CV_MULSRN|||CVInstMulN|0b10,0b100
+CV_MULHHSRN|||CVInstMulN|0b11,0b100
+CV_MULUN|||CVInstMulN|0b00,0b101
+CV_MULHHUN|||CVInstMulN|0b01,0b101
+CV_MULURN|||CVInstMulN|0b10,0b101
+CV_MULHHURN|||CVInstMulN|0b11,0b101
+CV_ABS|GPR:$rd|GPR:$rs1|CVInstAluR|0b0101000,0b011
+CV_SLE|||CVInstAluRR|0b0101001,0b011
+CV_SLEU|||CVInstAluRR|0b0101010,0b011
+CV_MIN|||CVInstAluRR|0b0101011,0b011
+CV_MINU|||CVInstAluRR|0b0101100,0b011
+CV_MAX|||CVInstAluRR|0b0101101,0b011
+CV_MAXU|||CVInstAluRR|0b0101110,0b011
+CV_EXTHS|GPR:$rd|GPR:$rs1|CVInstAluR|0b0110000,0b011
+CV_EXTHZ|GPR:$rd|GPR:$rs1|CVInstAluR|0b0110001,0b011
+CV_EXTBS|GPR:$rd|GPR:$rs1|CVInstAluR|0b0110010,0b011
+CV_EXTBZ|GPR:$rd|GPR:$rs1|CVInstAluR|0b0110011,0b011
+CV_CLIP|GPR:$rd|GPR:$rs1, uimm5:$imm5|CVInstAluRI|0b0111000,0b011
+CV_CLIPU|GPR:$rd|GPR:$rs1, uimm5:$imm5|CVInstAluRI|0b0111001,0b011
+CV_CLIPR|||CVInstAluRR|0b0111010,0b011
+CV_CLIPUR|||CVInstAluRR|0b0111011,0b011
+CV_ADDN|GPR:$rd|GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstAluRRI|0b00,0b010
+CV_ADDUN|GPR:$rd|GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstAluRRI|0b01,0b010
+CV_ADDRN|GPR:$rd|GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstAluRRI|0b10,0b010
+CV_ADDURN|GPR:$rd|GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstAluRRI|0b11,0b010
+CV_SUBN|GPR:$rd|GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstAluRRI|0b00,0b011
+CV_SUBUN|GPR:$rd|GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstAluRRI|0b01,0b011
+CV_SUBRN|GPR:$rd|GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstAluRRI|0b10,0b011
+CV_SUBURN|GPR:$rd|GPR:$rs1, GPR:$rs2, uimm5:$imm5|CVInstAluRRI|0b11,0b011
+CV_ADDNR|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVInstAluRRNR|0b1000000,0b011
+CV_ADDUNR|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVInstAluRRNR|0b1000001,0b011
+CV_ADDRNR|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVInstAluRRNR|0b1000010,0b011
+CV_ADDURNR|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVInstAluRRNR|0b1000011,0b011
+CV_SUBNR|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVInstAluRRNR|0b1000100,0b011
+CV_SUBUNR|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVInstAluRRNR|0b1000101,0b011
+CV_SUBRNR|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVInstAluRRNR|0b1000110,0b011
+CV_SUBURNR|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVInstAluRRNR|0b1000111,0b011
+CV_ABS_H|GPR:$rd|GPR:$rs1|CVSIMDR|0b01110,0,0,0b000
+CV_ABS_B|GPR:$rd|GPR:$rs1|CVSIMDR|0b01110,0,0,0b001
+CV_EXTRACT_H|||CVSIMDRU|0b10111,0,0b000
+CV_EXTRACT_B|||CVSIMDRU|0b10111,0,0b001
+CV_EXTRACTU_H|||CVSIMDRU|0b10111,0,0b010
+CV_EXTRACTU_B|||CVSIMDRU|0b10111,0,0b011
+CV_INSERT_H|||CVSIMDRUWb|0b10111,0,0b100
+CV_INSERT_B|||CVSIMDRUWb|0b10111,0,0b101
+CV_SHUFFLE_H|||CVSIMDRR|0b11000,0,0,0b000
+CV_SHUFFLE_B|||CVSIMDRR|0b11000,0,0,0b001
+CV_SHUFFLE_SCI_H|||CVSIMDRU|0b11000,0,0b110
+CV_SHUFFLEI0_SCI_B|||CVSIMDRU|0b11000,0,0b111
+CV_SHUFFLEI1_SCI_B|||CVSIMDRU|0b11001,0,0b111
+CV_SHUFFLEI2_SCI_B|||CVSIMDRU|0b11010,0,0b111
+CV_SHUFFLEI3_SCI_B|||CVSIMDRU|0b11011,0,0b111
+CV_SHUFFLE2_H|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVSIMDRRWb|0b11100,0,0,0b000
+CV_SHUFFLE2_B|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVSIMDRRWb|0b11100,0,0,0b001
+CV_PACK|||CVSIMDRR|0b11110,0,0,0b000
+CV_PACK_H|||CVSIMDRR|0b11110,0,1,0b000
+CV_PACKHI_B|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVSIMDRRWb|0b11111,0,1,0b001
+CV_PACKLO_B|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVSIMDRRWb|0b11111,0,0,0b001
+CV_CPLXMUL_R|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVSIMDRRWb|0b01010,1,0,0b000
+CV_CPLXMUL_I|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVSIMDRRWb|0b01010,1,1,0b000
+CV_CPLXMUL_R_DIV2|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVSIMDRRWb|0b01010,1,0,0b010
+CV_CPLXMUL_I_DIV2|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVSIMDRRWb|0b01010,1,1,0b010
+CV_CPLXMUL_R_DIV4|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVSIMDRRWb|0b01010,1,0,0b100
+CV_CPLXMUL_I_DIV4|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVSIMDRRWb|0b01010,1,1,0b100
+CV_CPLXMUL_R_DIV8|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVSIMDRRWb|0b01010,1,0,0b110
+CV_CPLXMUL_I_DIV8|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|CVSIMDRRWb|0b01010,1,1,0b110
+CV_CPLXCONJ|GPR:$rd|GPR:$rs1|CVSIMDR|0b01011,1,0,0b000
+CV_SUBROTMJ|||CVSIMDRR|0b01100,1,0,0b000
+CV_SUBROTMJ_DIV2|||CVSIMDRR|0b01100,1,0,0b010
+CV_SUBROTMJ_DIV4|||CVSIMDRR|0b01100,1,0,0b100
+CV_SUBROTMJ_DIV8|||CVSIMDRR|0b01100,1,0,0b110
+CV_ADD_DIV2|||CVSIMDRR|0b01101,1,0,0b010
+CV_ADD_DIV4|||CVSIMDRR|0b01101,1,0,0b100
+CV_ADD_DIV8|||CVSIMDRR|0b01101,1,0,0b110
+CV_SUB_DIV2|||CVSIMDRR|0b01110,1,0,0b010
+CV_SUB_DIV4|||CVSIMDRR|0b01110,1,0,0b100
+CV_SUB_DIV8|||CVSIMDRR|0b01110,1,0,0b110
+CV_BEQIMM||GPR,simm5,bare_simm13_lsb0|CVInstImmBranch|0b110
+CV_BNEIMM||GPR,simm5,bare_simm13_lsb0|CVInstImmBranch|0b111
+PseudoLongCV_BEQIMM||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|8
+PseudoLongCV_BNEIMM||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|8
+CV_LB_ri_inc|GPR:$rd, GPR:$rs1_wb|BasePtr:$rs1, simm12:$imm12|CVLoad_ri_inc|0b000
+CV_LBU_ri_inc|GPR:$rd, GPR:$rs1_wb|BasePtr:$rs1, simm12:$imm12|CVLoad_ri_inc|0b100
+CV_LH_ri_inc|GPR:$rd, GPR:$rs1_wb|BasePtr:$rs1, simm12:$imm12|CVLoad_ri_inc|0b001
+CV_LHU_ri_inc|GPR:$rd, GPR:$rs1_wb|BasePtr:$rs1, simm12:$imm12|CVLoad_ri_inc|0b101
+CV_LW_ri_inc|GPR:$rd, GPR:$rs1_wb|BasePtr:$rs1, simm12:$imm12|CVLoad_ri_inc|0b010
+CV_LB_rr_inc|GPR:$rd, GPR:$rs1_wb|BasePtr:$rs1, GPR:$rs2|CVLoad_rr_inc|0b0000000,0b011
+CV_LBU_rr_inc|GPR:$rd, GPR:$rs1_wb|BasePtr:$rs1, GPR:$rs2|CVLoad_rr_inc|0b0001000,0b011
+CV_LH_rr_inc|GPR:$rd, GPR:$rs1_wb|BasePtr:$rs1, GPR:$rs2|CVLoad_rr_inc|0b0000001,0b011
+CV_LHU_rr_inc|GPR:$rd, GPR:$rs1_wb|BasePtr:$rs1, GPR:$rs2|CVLoad_rr_inc|0b0001001,0b011
+CV_LW_rr_inc|GPR:$rd, GPR:$rs1_wb|BasePtr:$rs1, GPR:$rs2|CVLoad_rr_inc|0b0000010,0b011
+CV_LB_rr|||CVLoad_rr|0b0000100,0b011
+CV_LBU_rr|||CVLoad_rr|0b0001100,0b011
+CV_LH_rr|||CVLoad_rr|0b0000101,0b011
+CV_LHU_rr|||CVLoad_rr|0b0001101,0b011
+CV_LW_rr|||CVLoad_rr|0b0000110,0b011
+CV_SB_ri_inc|GPR:$rs1_wb|GPR:$rs2, GPR:$rs1, simm12:$imm12|CVStore_ri_inc|0b000
+CV_SH_ri_inc|GPR:$rs1_wb|GPR:$rs2, GPR:$rs1, simm12:$imm12|CVStore_ri_inc|0b001
+CV_SW_ri_inc|GPR:$rs1_wb|GPR:$rs2, GPR:$rs1, simm12:$imm12|CVStore_ri_inc|0b010
+CV_SB_rr_inc|GPR:$rs1_wb|GPR:$rs2, GPR:$rs1, GPR:$rs3|CVStore_rr_inc|0b011,0b0010000
+CV_SH_rr_inc|GPR:$rs1_wb|GPR:$rs2, GPR:$rs1, GPR:$rs3|CVStore_rr_inc|0b011,0b0010001
+CV_SW_rr_inc|GPR:$rs1_wb|GPR:$rs2, GPR:$rs1, GPR:$rs3|CVStore_rr_inc|0b011,0b0010010
+CV_SB_rr||GPR:$rs2, (CVrr $rs1, $rs3|CVStore_rr|0b011,0b0010100
+CV_SH_rr||GPR:$rs2, (CVrr $rs1, $rs3|CVStore_rr|0b011,0b0010101
+CV_SW_rr||GPR:$rs2, (CVrr $rs1, $rs3|CVStore_rr|0b011,0b0010110
+CV_ELW|||CVLoad_ri|0b011
+uimm7_lsb000|||RISCVUImmLsbZeroOp|7,3
+uimm9|||RISCVUImmOp|9
+AddrRegImm9|||ComplexPattern|2
+MIPS_EHB|||MIPSExtInst_ri|0b000011
+MIPS_IHB|||MIPSExtInst_ri|0b000001
+MIPS_PAUSE|||MIPSExtInst_ri|0b000101
+MIPS_PREF||GPR,uimm9,uimm5|Mips_prefetch_ri|
+MIPS_CCMOV|GPR|GPR,GPR,GPR|RVInstR4|0b11,0b011
+MIPS_LWP|GPR,GPR|GPR,uimm7_lsb00|LWPFormat|
+MIPS_LDP|GPR,GPR|GPR,uimm7_lsb000|LDPFormat|
+MIPS_SWP||GPR,GPR,GPR,uimm7_lsb00|SWPFormat|
+MIPS_SDP||GPR,GPR,GPR,uimm7_lsb000|SDPFormat|
+VCIX_Rs1|||VCIXType|0b0000
+VCIX_Rs1V|||VCIXType|0b0010
+VCIX_Rs1VV|||VCIXType|0b1010
+VCIX_Rs1VW|||VCIXType|0b1111
+VCIX_GPR||GPR|VCIXRs1Info|0b100
+VCIX_FPR32||FPR32|VCIXRs1Info|0b101
+VCIX_VR||VR|VCIXRs1Info|0b000
+VCIX_simm5||simm5|VCIXRs1Info|0b011
+payload1|||PayloadOp|1
+payload2|||PayloadOp|2
+payload5|||PayloadOp|5
+SF_VFEXP_V|||VALUVs2|0b010011,0b00111
+SF_VFEXPA_V|||VALUVs2|0b010011,0b00110
+SF_VQMACCU_2x8x2|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|CustomSiFiveVMACC|0b101100
+SF_VQMACC_2x8x2|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|CustomSiFiveVMACC|0b101101
+SF_VQMACCUS_2x8x2|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|CustomSiFiveVMACC|0b101110
+SF_VQMACCSU_2x8x2|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|CustomSiFiveVMACC|0b101111
+SF_VQMACCU_4x8x4|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|CustomSiFiveVMACC|0b111100
+SF_VQMACC_4x8x4|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|CustomSiFiveVMACC|0b111101
+SF_VQMACCUS_4x8x4|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|CustomSiFiveVMACC|0b111110
+SF_VQMACCSU_4x8x4|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|CustomSiFiveVMACC|0b111111
+SF_VFWMACC_4x4x4|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|CustomSiFiveVMACC|0b111100
+SF_VFNRCLIP_XU_F_QF|||CustomSiFiveVFNRCLIP|0b100010
+SF_VFNRCLIP_X_F_QF|||CustomSiFiveVFNRCLIP|0b100011
+SDT_SF_VC_V_X|||SDTypeProfile|1,4
+SDT_SF_VC_XV|||SDTypeProfile|0,5
+SDT_SF_VC_V_XV|||SDTypeProfile|1,4
+SDT_SF_VC_XVV|||SDTypeProfile|0,5
+SDT_SF_VC_V_XVV|||SDTypeProfile|1,5
+SDT_SF_VC_XVW|||SDTypeProfile|0,5
+SDT_SF_VC_V_XVW|||SDTypeProfile|1,5
+SF_CEASE|||Priv|0b0011000
+SF_VSETTN|GPR|GPR|SFInstSetSingle|0b00000
+SF_VSETTM|GPR|GPR|SFInstSetSingle|0b00001
+SF_VSETTK|GPR|GPR|SFInstSetSingle|0b00010
+SF_VTMV_V_T|VR|GPR|SFInstTileMoveOp|0b010000
+SF_VTMV_T_V||GPR,VR|SFInstTileMoveOp|0b010111
+SF_VTZERO_T||TR|SFInstSetZero|
+SF_VLTE8|||SFInstTileLoad|0b000
+SF_VLTE16|||SFInstTileLoad|0b001
+SF_VLTE32|||SFInstTileLoad|0b010
+SF_VLTE64|||SFInstTileLoad|0b011
+SF_VSTE8|||SFInstTileStore|0b000
+SF_VSTE16|||SFInstTileStore|0b001
+SF_VSTE32|||SFInstTileStore|0b010
+SF_VSTE64|||SFInstTileStore|0b011
+SF_MM_F_F||TRM2,VR,VR|SFInstMatmulF|
+VFWMADOT1|||VFWMADTSLIDE_INSN|0b101
+VFWMADOT2|||VFWMADTSLIDE_INSN|0b110
+VFWMADOT3|||VFWMADTSLIDE_INSN|0b111
+VNPACK_VV|||VNPACK_INSN|0b0110001,0b0
+VNSPACK_VV|||VNPACK_INSN|0b0110001,0b1
+VNPACK4_VV|||VNPACK_INSN|0b0100001,0b0
+VNSPACK4_VV|||VNPACK_INSN|0b0100001,0b1
+VPACK_VV|||VPACK_INSN|0b0110011,0b0
+VUPACK_VV|||VPACK_INSN|0b0110011,0b1
+SDT_LoadPair|||SDTypeProfile|2,2
+SDT_StorePair|||SDTypeProfile|0,4
+TH_ADDSL|GPR:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THShiftALU_rri|0b001
+TH_SRRI|||THShift_ri|0b00010,0b001
+TH_EXT|GPR:$rd|GPR:$rs1, uimmlog2xlen:$msb, uimmlog2xlen:$lsb|THBitfieldExtract_rii|0b010
+TH_EXTU|GPR:$rd|GPR:$rs1, uimmlog2xlen:$msb, uimmlog2xlen:$lsb|THBitfieldExtract_rii|0b011
+TH_FF0|||THRev_r|0b10000,0b10
+TH_FF1|||THRev_r|0b10000,0b11
+TH_REV|||THRev_r|0b10000,0b01
+TH_TSTNBZ|||THRev_r|0b10000,0b00
+TH_SRRIW|||THShiftW_ri|0b0001010,0b001
+TH_REVW|||THRev_r|0b10010,0b00
+TH_TST|||THShift_ri|0b10001,0b001
+TH_MVEQZ|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|THCondMov_rr|0b0100000
+TH_MVNEZ|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|THCondMov_rr|0b0100001
+TH_MULA|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|THMulAccumulate_rr|0b0010000
+TH_MULS|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|THMulAccumulate_rr|0b0010001
+TH_MULAH|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|THMulAccumulate_rr|0b0010100
+TH_MULSH|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|THMulAccumulate_rr|0b0010101
+TH_MULAW|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|THMulAccumulate_rr|0b0010010
+TH_MULSW|GPR:$rd_wb|GPR:$rd, GPR:$rs1, GPR:$rs2|THMulAccumulate_rr|0b0010011
+TH_LWUD|GPR:$rd, GPR:$rs2|GPR:$rs1, uimm2:$uimm2, consttype:$const3or4|THLoadPair|0b11110
+TH_SWD||GPR:$rd, GPR:$rs2, GPR:$rs1, uimm2:$uimm2, consttype:$const3or4|THStorePair|0b11100
+TH_LWD|GPR:$rd, GPR:$rs2|GPR:$rs1, uimm2:$uimm2, consttype:$const3or4|THLoadPair|0b11100
+TH_LDD|GPR:$rd, GPR:$rs2|GPR:$rs1, uimm2:$uimm2, consttype:$const3or4|THLoadPair|0b11111
+TH_SDD||GPR:$rd, GPR:$rs2, GPR:$rs1, uimm2:$uimm2, consttype:$const3or4|THStorePair|0b11111
+TH_LBIA|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b00011
+TH_LBIB|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b00001
+TH_LBUIA|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b10011
+TH_LBUIB|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b10001
+TH_LHIA|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b00111
+TH_LHIB|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b00101
+TH_LHUIA|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b10111
+TH_LHUIB|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b10101
+TH_LWIA|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b01011
+TH_LWIB|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b01001
+TH_SBIA|GPR:$rs1_up|GPR:$rd, GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THStoreUpdate|0b00011
+TH_SBIB|GPR:$rs1_up|GPR:$rd, GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THStoreUpdate|0b00001
+TH_SHIA|GPR:$rs1_up|GPR:$rd, GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THStoreUpdate|0b00111
+TH_SHIB|GPR:$rs1_up|GPR:$rd, GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THStoreUpdate|0b00101
+TH_SWIA|GPR:$rs1_up|GPR:$rd, GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THStoreUpdate|0b01011
+TH_SWIB|GPR:$rs1_up|GPR:$rd, GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THStoreUpdate|0b01001
+TH_LRB|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b00000
+TH_LRBU|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b10000
+TH_LURB|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b00010
+TH_LURBU|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b10010
+TH_LRH|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b00100
+TH_LRHU|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b10100
+TH_LURH|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b00110
+TH_LURHU|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b10110
+TH_LRW|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b01000
+TH_LURW|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b01010
+TH_SRB||StTy:$rd, GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THStoreIndexed|0b00000
+TH_SURB||StTy:$rd, GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THStoreIndexed|0b00010
+TH_SRH||StTy:$rd, GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THStoreIndexed|0b00100
+TH_SURH||StTy:$rd, GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THStoreIndexed|0b00110
+TH_SRW||StTy:$rd, GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THStoreIndexed|0b01000
+TH_SURW||StTy:$rd, GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THStoreIndexed|0b01010
+TH_LWUIA|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b11011
+TH_LWUIB|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b11001
+TH_LDIA|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b01111
+TH_LDIB|GPR:$rd, GPR:$rs1_wb|GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THLoadUpdate|0b01101
+TH_SDIA|GPR:$rs1_up|GPR:$rd, GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THStoreUpdate|0b01111
+TH_SDIB|GPR:$rs1_up|GPR:$rd, GPR:$rs1, simm5:$simm5, uimm2:$uimm2|THStoreUpdate|0b01101
+TH_LRWU|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b11000
+TH_LURWU|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b11010
+TH_LRD|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b01100
+TH_LURD|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b01110
+TH_SRD||StTy:$rd, GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THStoreIndexed|0b01100
+TH_SURD||StTy:$rd, GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THStoreIndexed|0b01110
+TH_FLRW|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b01000
+TH_FSRW||StTy:$rd, GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THStoreIndexed|0b01000
+TH_FLRD|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b01100
+TH_FSRD||StTy:$rd, GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THStoreIndexed|0b01100
+TH_FLURW|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b01010
+TH_FSURW||StTy:$rd, GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THStoreIndexed|0b01010
+TH_FLURD|Ty:$rd|GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THLoadIndexed|0b01110
+TH_FSURD||StTy:$rd, GPR:$rs1, GPR:$rs2, uimm2:$uimm2|THStoreIndexed|0b01110
+THVdotV_M1|||LMULInfo|0b000,8
+THVdotV_M2|||LMULInfo|0b001,16
+THVdotV_M4|||LMULInfo|0b010,32
+THVdotV_M8|||LMULInfo|0b011,64
+TH_DCACHE_CSW||GPR:$rs1|THCacheInst_r|0b00001
+TH_DCACHE_ISW||GPR:$rs1|THCacheInst_r|0b00010
+TH_DCACHE_CISW||GPR:$rs1|THCacheInst_r|0b00011
+TH_DCACHE_CVAL1||GPR:$rs1|THCacheInst_r|0b00100
+TH_DCACHE_CVA||GPR:$rs1|THCacheInst_r|0b00101
+TH_DCACHE_IVA||GPR:$rs1|THCacheInst_r|0b00110
+TH_DCACHE_CIVA||GPR:$rs1|THCacheInst_r|0b00111
+TH_DCACHE_CPAL1||GPR:$rs1|THCacheInst_r|0b01000
+TH_DCACHE_CPA||GPR:$rs1|THCacheInst_r|0b01001
+TH_DCACHE_IPA||GPR:$rs1|THCacheInst_r|0b01010
+TH_DCACHE_CIPA||GPR:$rs1|THCacheInst_r|0b01011
+TH_ICACHE_IVA||GPR:$rs1|THCacheInst_r|0b10000
+TH_ICACHE_IPA||GPR:$rs1|THCacheInst_r|0b11000
+TH_DCACHE_CALL|||THCacheInst_void|0b00001
+TH_DCACHE_IALL|||THCacheInst_void|0b00010
+TH_DCACHE_CIALL|||THCacheInst_void|0b00011
+TH_ICACHE_IALL|||THCacheInst_void|0b10000
+TH_ICACHE_IALLS|||THCacheInst_void|0b10001
+TH_L2CACHE_CALL|||THCacheInst_void|0b10101
+TH_L2CACHE_IALL|||THCacheInst_void|0b10110
+TH_L2CACHE_CIALL|||THCacheInst_void|0b10111
+TH_SFENCE_VMAS||GPR:$rs1, GPR:$rs2|THCacheInst_rr|0b0000010
+TH_SYNC|||THCacheInst_void|0b11000
+TH_SYNC_S|||THCacheInst_void|0b11001
+TH_SYNC_I|||THCacheInst_void|0b11010
+TH_SYNC_IS|||THCacheInst_void|0b11011
+AddrRegRegScale3|||AddrRegRegScale|3
+AddrRegZextRegScale3|||AddrRegZextRegScale|3
+simm5shl2|||ComplexPattern|2
+VT_MASKC|GPR:$rd|GPR:$rs1, GPR:$rs2|VTMaskedMove|0b110
+VT_MASKCN|GPR:$rd|GPR:$rs1, GPR:$rs2|VTMaskedMove|0b111
+QC_CM_MVA01S||SR07,SR07|RVInst16CA|0b101011,0b11
+QC_CM_MVSA01|SR07,SR07||RVInst16CA|0b101011,0b01
+QC_CM_PUSH||reglist:$rlist, immtype:$stackadj|RVInstZcCPPP|0b11000
+QC_CM_PUSHFP||reglist_s0:$rlist, immtype:$stackadj|RVInstXqccmpCPPPFP|0b11001
+QC_CM_POPRET||reglist:$rlist, immtype:$stackadj|RVInstZcCPPP|0b11110
+QC_CM_POPRETZ||reglist:$rlist, immtype:$stackadj|RVInstZcCPPP|0b11100
+QC_CM_POP||reglist:$rlist, immtype:$stackadj|RVInstZcCPPP|0b11010
+QC_CM_JT||uimm5|RVInst16CJ|0b101
+QC_CM_JALT||uimm8ge32|RVInst16CJ|0b101
+SDT_SetMultiple|||SDTypeProfile|0,4
+qc_insb|||RVSDNode|4
+SDTIntMulAddOp|||SDTypeProfile|1,3
+uimm10|||RISCVUImmLeafOp|10
+uimm11|||RISCVUImmLeafOp|11
+simm11|||RISCVSImmLeafOp|11
+simm16|||RISCVSImmOp|16
+simm26|||RISCVSImmLeafOp|26
+AddrRegImm26|||ComplexPattern|2
+InsnQC_EAI|AnyReg|uimm7_opcode,uimm3,uimm1,bare_simm32|DirectiveInsnQC_EAI|
+InsnQC_EI|AnyReg|uimm7_opcode,uimm3,uimm2,AnyReg,simm26|DirectiveInsnQC_EI|
+InsnQC_EI_Mem|AnyReg|uimm7_opcode,uimm3,uimm2,AnyReg,simm26|DirectiveInsnQC_EI|
+InsnQC_EB||uimm7_opcode,uimm3,uimm5,AnyReg,simm16,bare_simm13_lsb0|DirectiveInsnQC_EB|
+InsnQC_EJ||uimm7_opcode,uimm3,uimm2,uimm5,bare_simm32_lsb0|DirectiveInsnQC_EJ|
+InsnQC_ES||uimm7_opcode,uimm3,uimm2,AnyReg,AnyReg,simm26|DirectiveInsnQC_ES|
+QC_CSRRWR|GPR|GPR,GPRNoX0|RVInstR|0b1000110,0b000
+QC_CSRRWRI|GPR|uimm5,GPRNoX0|RVInstR|0b1000111,0b000
+QC_LRB|GPR:$rd|BasePtr:$rs1, GPRNoX0:$rs2, uimm3:$shamt|QCILoad_ScaleIdx|0b1000
+QC_LRH|GPR:$rd|BasePtr:$rs1, GPRNoX0:$rs2, uimm3:$shamt|QCILoad_ScaleIdx|0b1001
+QC_LRW|GPR:$rd|BasePtr:$rs1, GPRNoX0:$rs2, uimm3:$shamt|QCILoad_ScaleIdx|0b1010
+QC_LRBU|GPR:$rd|BasePtr:$rs1, GPRNoX0:$rs2, uimm3:$shamt|QCILoad_ScaleIdx|0b1011
+QC_LRHU|GPR:$rd|BasePtr:$rs1, GPRNoX0:$rs2, uimm3:$shamt|QCILoad_ScaleIdx|0b1100
+QC_SRB||GPR:$rd, BasePtr:$rs1, GPRNoX0:$rs2, uimm3:$shamt|QCIStore_ScaleIdx|0b1101
+QC_SRH||GPR:$rd, BasePtr:$rs1, GPRNoX0:$rs2, uimm3:$shamt|QCIStore_ScaleIdx|0b1110
+QC_SRW||GPR:$rd, BasePtr:$rs1, GPRNoX0:$rs2, uimm3:$shamt|QCIStore_ScaleIdx|0b1111
+QC_SHLSAT|||QCIRVInstRR|0b01010
+QC_SHLUSAT|||QCIRVInstRR|0b01100
+QC_ADDSAT|||QCIRVInstRR|0b01110
+QC_ADDUSAT|||QCIRVInstRR|0b01111
+QC_SUBSAT|||QCIRVInstRR|0b10000
+QC_SUBUSAT|||QCIRVInstRR|0b10001
+QC_WRAP|||QCIRVInstRR|0b10010
+QC_WRAPI|GPRNoX0|GPRNoX0,uimm11|RVInstI|0b000
+QC_NORM|GPRNoX0:$rd|GPRNoX0:$rs1|QCIRVInstR|0b0111
+QC_NORMU|GPRNoX0:$rd|GPRNoX0:$rs1|QCIRVInstR|0b1000
+QC_NORMEU|GPRNoX0:$rd|GPRNoX0:$rs1|QCIRVInstR|0b1001
+QC_BEQI||GPRNoX0:$rs1, InTyImm5:$rs2, bare_simm13_lsb0:$imm12|QCIBranchInst_rii|0b000
+QC_BNEI||GPRNoX0:$rs1, InTyImm5:$rs2, bare_simm13_lsb0:$imm12|QCIBranchInst_rii|0b001
+QC_BLTI||GPRNoX0:$rs1, InTyImm5:$rs2, bare_simm13_lsb0:$imm12|QCIBranchInst_rii|0b100
+QC_BGEI||GPRNoX0:$rs1, InTyImm5:$rs2, bare_simm13_lsb0:$imm12|QCIBranchInst_rii|0b101
+QC_BLTUI||GPRNoX0:$rs1, InTyImm5:$rs2, bare_simm13_lsb0:$imm12|QCIBranchInst_rii|0b110
+QC_BGEUI||GPRNoX0:$rs1, InTyImm5:$rs2, bare_simm13_lsb0:$imm12|QCIBranchInst_rii|0b111
+QC_E_BEQI||GPRNoX0:$rs1, InTyImm16:$imm16, bare_simm13_lsb0:$imm12|QCIBranchInst48_rii|0b11000
+QC_E_BNEI||GPRNoX0:$rs1, InTyImm16:$imm16, bare_simm13_lsb0:$imm12|QCIBranchInst48_rii|0b11001
+QC_E_BLTI||GPRNoX0:$rs1, InTyImm16:$imm16, bare_simm13_lsb0:$imm12|QCIBranchInst48_rii|0b11100
+QC_E_BGEI||GPRNoX0:$rs1, InTyImm16:$imm16, bare_simm13_lsb0:$imm12|QCIBranchInst48_rii|0b11101
+QC_E_BLTUI||GPRNoX0:$rs1, InTyImm16:$imm16, bare_simm13_lsb0:$imm12|QCIBranchInst48_rii|0b11110
+QC_E_BGEUI||GPRNoX0:$rs1, InTyImm16:$imm16, bare_simm13_lsb0:$imm12|QCIBranchInst48_rii|0b11111
+QC_INSBRI|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyImm11:$imm11|QCIRVInstRI|0b1
+QC_INSBI|GPRNoX0|GPRNoX0,simm5,uimm5_plus1,uimm5|RVInstIBase|0b001
+QC_INSB|GPRNoX0:$rd_wb|GPRNoX0:$rd,                   InTyRs1:$rs1, uimm5_plus1:$width, uimm5:$shamt|QCIBitManipRIITied|0b001,0b01
+QC_INSBH|GPRNoX0:$rd_wb|GPRNoX0:$rd,                   InTyRs1:$rs1, uimm5_plus1:$width, uimm5:$shamt|QCIBitManipRIITied|0b001,0b10
+QC_INSBR|GPRNoX0:$rd_wb|GPRNoX0:$rd, InTyRs1:$rs1, GPRNoX0:$rs2|QCIRVInstRRTied|0b00000
+QC_INSBHR|GPRNoX0:$rd_wb|GPRNoX0:$rd, InTyRs1:$rs1, GPRNoX0:$rs2|QCIRVInstRRTied|0b00001
+QC_INSBPR|GPRNoX0:$rd_wb|GPRNoX0:$rd, InTyRs1:$rs1, GPRNoX0:$rs2|QCIRVInstRRTied|0b00010
+QC_INSBPRH|GPRNoX0:$rd_wb|GPRNoX0:$rd, InTyRs1:$rs1, GPRNoX0:$rs2|QCIRVInstRRTied|0b00011
+QC_EXTU|GPRNoX0:$rd|InTyRs1:$rs1, uimm5_plus1:$width, uimm5:$shamt|QCIBitManipRII|0b010,0b00
+QC_EXTDU|GPRNoX0:$rd|InTyRs1:$rs1, uimm5_plus1:$width, uimm5:$shamt|QCIBitManipRII|0b010,0b10
+QC_EXTDUR|||QCIRVInstRR|0b00100
+QC_EXTDUPR|||QCIRVInstRR|0b00110
+QC_EXTDUPRH|||QCIRVInstRR|0b00111
+QC_EXT|GPRNoX0:$rd|InTyRs1:$rs1, uimm5_plus1:$width, uimm5:$shamt|QCIBitManipRII|0b010,0b01
+QC_EXTD|GPRNoX0:$rd|InTyRs1:$rs1, uimm5_plus1:$width, uimm5:$shamt|QCIBitManipRII|0b010,0b11
+QC_EXTDR|||QCIRVInstRR|0b00101
+QC_EXTDPR|||QCIRVInstRR|0b01000
+QC_EXTDPRH|||QCIRVInstRR|0b01001
+QC_COMPRESS2|||QCIRVInstI|0b0000
+QC_COMPRESS3|||QCIRVInstI|0b0001
+QC_EXPAND2|||QCIRVInstI|0b0010
+QC_EXPAND3|||QCIRVInstI|0b0011
+QC_CLO|||QCIRVInstI|0b0100
+QC_CTO|||QCIRVInstI|0b0101
+QC_BREV32|||QCIRVInstI|0b0110
+QC_C_BEXTI|GPRC:$rd|GPRC:$rs1, uimmlog2xlennonzero:$shamt|QCI_RVInst16CB_BM|0b00
+QC_C_BSETI|GPRC:$rd|GPRC:$rs1, uimmlog2xlennonzero:$shamt|QCI_RVInst16CB_BM|0b01
+QC_C_EXTU|GPRNoX0|GPRNoX0,uimm5ge6_plus1|RVInst16CI|0b000
+QC_C_MULIADD|GPRC|GPRC,GPRC,uimm5|RVInst16CL|0b001
+QC_MULIADD|GPRNoX0|GPRNoX0,GPRNoX0,simm12_lo|RVInstI|0b110
+QC_SHLADD|GPRNoX0|GPRNoX0,GPRNoX0,uimm5gt3|RVInstRBase|0b011
+QC_SELECTIIEQ|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, simm5:$simm1, simm5:$simm2|QCISELECTIICC|0b010
+QC_SELECTIINE|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, simm5:$simm1, simm5:$simm2|QCISELECTIICC|0b011
+QC_SELECTIEQ|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, GPRNoX0:$rs2, simm5:$simm2|QCISELECTICC|0b010
+QC_SELECTINE|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, GPRNoX0:$rs2, simm5:$simm2|QCISELECTICC|0b011
+QC_SELECTEQI|GPRNoX0:$rd_wb|GPRNoX0:$rd, simm5:$imm, GPRNoX0:$rs2, GPRNoX0:$rs3|QCISELECTCCI|0b010
+QC_SELECTNEI|GPRNoX0:$rd_wb|GPRNoX0:$rd, simm5:$imm, GPRNoX0:$rs2, GPRNoX0:$rs3|QCISELECTCCI|0b011
+QC_SELECTIEQI|GPRNoX0:$rd_wb|GPRNoX0:$rd, simm5:$imm, GPRNoX0:$rs2, simm5:$simm2|QCISELECTICCI|0b010
+QC_SELECTINEI|GPRNoX0:$rd_wb|GPRNoX0:$rd, simm5:$imm, GPRNoX0:$rs2, simm5:$simm2|QCISELECTICCI|0b011
+QC_SWM||InTyRd:$rd, GPR:$rs1, InTyRs2:$rs2, uimm7_lsb00:$imm|QCIStoreMultiple|0b00
+QC_SWMI||InTyRd:$rd, GPR:$rs1, InTyRs2:$rs2, uimm7_lsb00:$imm|QCIStoreMultiple|0b01
+QC_SETWM||InTyRd:$rd, GPR:$rs1, InTyRs2:$rs2, uimm7_lsb00:$imm|QCIStoreMultiple|0b10
+QC_SETWMI||InTyRd:$rd, GPR:$rs1, InTyRs2:$rs2, uimm7_lsb00:$imm|QCIStoreMultiple|0b11
+QC_LWM|GPRNoX0:$rd|GPR:$rs1, InTyRs2:$rs2, uimm7_lsb00:$imm|QCILoadMultiple|0b00
+QC_LWMI|GPRNoX0:$rd|GPR:$rs1, InTyRs2:$rs2, uimm7_lsb00:$imm|QCILoadMultiple|0b01
+QC_LIEQ|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyRs2:$rs2, simm5:$simm|QCILICC|0b000,0b01
+QC_LINE|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyRs2:$rs2, simm5:$simm|QCILICC|0b001,0b01
+QC_LILT|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyRs2:$rs2, simm5:$simm|QCILICC|0b100,0b01
+QC_LIGE|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyRs2:$rs2, simm5:$simm|QCILICC|0b101,0b01
+QC_LILTU|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyRs2:$rs2, simm5:$simm|QCILICC|0b110,0b01
+QC_LIGEU|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyRs2:$rs2, simm5:$simm|QCILICC|0b111,0b01
+QC_LIEQI|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyRs2:$rs2, simm5:$simm|QCILICC|0b000,0b11
+QC_LINEI|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyRs2:$rs2, simm5:$simm|QCILICC|0b001,0b11
+QC_LILTI|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyRs2:$rs2, simm5:$simm|QCILICC|0b100,0b11
+QC_LIGEI|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyRs2:$rs2, simm5:$simm|QCILICC|0b101,0b11
+QC_LILTUI|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyRs2:$rs2, simm5:$simm|QCILICC|0b110,0b11
+QC_LIGEUI|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, InTyRs2:$rs2, simm5:$simm|QCILICC|0b111,0b11
+QC_C_MVEQZ|GPRC|GPRC,GPRC|RVInst16CL|0b101
+QC_MVEQ|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, GPRNoX0:$rs2, GPRNoX0:$rs3|QCIMVCC|0b000
+QC_MVNE|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, GPRNoX0:$rs2, GPRNoX0:$rs3|QCIMVCC|0b001
+QC_MVLT|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, GPRNoX0:$rs2, GPRNoX0:$rs3|QCIMVCC|0b100
+QC_MVGE|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, GPRNoX0:$rs2, GPRNoX0:$rs3|QCIMVCC|0b101
+QC_MVLTU|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, GPRNoX0:$rs2, GPRNoX0:$rs3|QCIMVCC|0b110
+QC_MVGEU|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, GPRNoX0:$rs2, GPRNoX0:$rs3|QCIMVCC|0b111
+QC_MVEQI|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, immType:$imm, GPRNoX0:$rs3|QCIMVCCI|0b000
+QC_MVNEI|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, immType:$imm, GPRNoX0:$rs3|QCIMVCCI|0b001
+QC_MVLTI|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, immType:$imm, GPRNoX0:$rs3|QCIMVCCI|0b100
+QC_MVGEI|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, immType:$imm, GPRNoX0:$rs3|QCIMVCCI|0b101
+QC_MVLTUI|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, immType:$imm, GPRNoX0:$rs3|QCIMVCCI|0b110
+QC_MVGEUI|GPRNoX0:$rd_wb|GPRNoX0:$rd, GPRNoX0:$rs1, immType:$imm, GPRNoX0:$rs3|QCIMVCCI|0b111
+QC_C_DIR|GPRNoX0||RVInst16CI|0b000
+QC_SETINTI||uimm10:$imm10|QCIInt_IMM|0b0
+QC_CLRINTI||uimm10:$imm10|QCIInt_IMM|0b1
+QC_C_EIR||GPRNoX0:$rs1|QCIRVInst16CI_RS1|0b00001
+QC_C_SETINT||GPRNoX0:$rs1|QCIRVInst16CI_RS1|0b00010
+QC_C_CLRINT||GPRNoX0:$rs1|QCIRVInst16CI_RS1|0b00011
+QC_C_DI|||QCIRVInst16CI_NONE|0b10110
+QC_C_EI|||QCIRVInst16CI_NONE|0b10111
+QC_C_MRET|||QCIRVInst16CI_NONE|0b10010
+QC_C_MNRET|||QCIRVInst16CI_NONE|0b10011
+QC_C_MIENTER|||QCIRVInst16CI_NONE|0b10000
+QC_C_MIENTER_NEST|||QCIRVInst16CI_NONE|0b10001
+QC_C_MILEAVERET|||QCIRVInst16CI_NONE|0b10100
+QC_OUTW||GPR,GPR,uimm14lsb00|RVInstI|0b100
+QC_INW|GPRNoX0|GPR,uimm14lsb00|RVInstI|0b101
+QC_E_LB|||QCIRVInstEILoad|0b101,0b00
+QC_E_LBU|||QCIRVInstEILoad|0b101,0b01
+QC_E_LH|||QCIRVInstEILoad|0b101,0b10
+QC_E_LHU|||QCIRVInstEILoad|0b101,0b11
+QC_E_LW|||QCIRVInstEILoad|0b110,0b00
+QC_E_SB|||QCIRVInstESStore|0b110,0b01
+QC_E_SH|||QCIRVInstESStore|0b110,0b10
+QC_E_SW|||QCIRVInstESStore|0b110,0b11
+QC_E_JAL||bare_simm32_lsb0:$imm31|QCIRVInst48EJ|0b01
+QC_E_J||bare_simm32_lsb0:$imm31|QCIRVInst48EJ|0b00
+QC_LI|GPRNoX0|simm20_li|RVInstU|
+QC_E_LI|GPRNoX0|bare_simm32|RVInst48|
+QC_E_XORAI|GPRNoX0:$rd_wb|GPRNoX0:$rd, bare_simm32:$imm|QCIRVInstEAI|0b001,0b0
+QC_E_ORAI|GPRNoX0:$rd_wb|GPRNoX0:$rd, bare_simm32:$imm|QCIRVInstEAI|0b001,0b1
+QC_E_ADDAI|GPRNoX0:$rd_wb|GPRNoX0:$rd, bare_simm32:$imm|QCIRVInstEAI|0b010,0b0
+QC_E_ANDAI|GPRNoX0:$rd_wb|GPRNoX0:$rd, bare_simm32:$imm|QCIRVInstEAI|0b010,0b1
+QC_E_XORI|||QCIRVInstEI|0b011,0b00
+QC_E_ORI|||QCIRVInstEI|0b011,0b01
+QC_E_ADDI|||QCIRVInstEI|0b011,0b10
+QC_E_ANDI|||QCIRVInstEI|0b011,0b11
+QC_SYNC||uimm5:$imm5|QCISync_UIMM5|0b0001
+QC_SYNCR||uimm5:$imm5|QCISync_UIMM5|0b0010
+QC_SYNCWF||uimm5:$imm5|QCISync_UIMM5|0b0100
+QC_SYNCWL||uimm5:$imm5|QCISync_UIMM5|0b1000
+QC_C_SYNC||uimm5slist:$slist|QCIRVInst16CBSYNC|0b000
+QC_C_SYNCR||uimm5slist:$slist|QCIRVInst16CBSYNC|0b001
+QC_C_SYNCWF||uimm5slist:$slist|QCIRVInst16CBSYNC|0b100
+QC_C_SYNCWL||uimm5slist:$slist|QCIRVInst16CBSYNC|0b101
+QC_PPUTCI||uimm8|RVInstI|0b010
+PseudoLongQC_BEQI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|8
+PseudoLongQC_BNEI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|8
+PseudoLongQC_BLTI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|8
+PseudoLongQC_BGEI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|8
+PseudoLongQC_BLTUI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|8
+PseudoLongQC_BGEUI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|8
+PseudoLongQC_E_BEQI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|10
+PseudoLongQC_E_BNEI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|10
+PseudoLongQC_E_BLTI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|10
+PseudoLongQC_E_BGEI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|10
+PseudoLongQC_E_BLTUI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|10
+PseudoLongQC_E_BGEUI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|10
+AddrRegRegScale7|||AddrRegRegScale|7
+uimm5_lsb0|||RISCVUImmLsbZeroOp|5,1
+uimm6_lsb0|||RISCVUImmLsbZeroOp|6,1
+QK_C_LBU|GPRC|BasePtrC,uimm5|RVInst16CL|0b001
+QK_C_SB||GPRC,BasePtrC,uimm5|RVInst16CS|0b101
+QK_C_LHU|GPRC|BasePtrC,uimm6_lsb0|RVInst16CL|0b001
+QK_C_SH||GPRC,BasePtrC,uimm6_lsb0|RVInst16CS|0b101
+QK_C_LBUSP|GPRC|SPMem,uimm4|QKStackInst|0b00
+QK_C_SBSP||GPRC,SPMem,uimm4|QKStackInst|0b10
+QK_C_LHUSP|GPRC|SPMem,uimm5_lsb0|QKStackInst|0b01
+QK_C_SHSP||GPRC,SPMem,uimm5_lsb0|QKStackInst|0b11
+uimm7_eq_xlen|||RISCVUImmOp|7
+YADD|||RVY_rr|0b0000011
+YADDI|||RVY_ri|0b100
+YADDRW|||RVY_rr|0b0001011
+YPERMC|||RVY_rr|0b0010011
+YMV|rdOp:$rd|rs1Op:$rs1|RVYInst2Op|0b0000011,0b00000
+PACKY|||RVY_rr|0b0000001
+YBNDSW|||RVY_rr|0b0011011
+YBNDSRW|||RVY_rr|0b0100011
+YSUNSEAL|||RVY_rr|0b0000111
+YBLD|||RVY_rr|0b0001111
+YBASER|||RVY_r_xy|0b00000
+YLENR|||RVY_r_xy|0b00011
+YTOPR|||RVY_r_xy|0b00010
+YTAGR|||RVY_r_xy|0b00100
+YPERMR|||RVY_r_xy|0b00001
+YTYPER|||RVY_r_xy|0b00101
+YEQ|||RVY_rr|0b0000110
+YSS|||RVY_rr|0b0001110
+YAMASK|||RVY_r_xx|0b00000
+_AQ|||AMO_cas|1,0
+_RL|||AMO_cas|0,1
+_AQRL|||AMO_cas|1,1
+WRS_NTO|||WRSInst|0b000000001101
+WRS_STO|||WRSInst|0b000000011101
+_AQ|||LAQ_r|1,0
+_AQRL|||LAQ_r|1,1
+_RL||GPR:$rs2, GPRMemZeroOffset:$rs1|SRL_r|0,1
+_AQRL||GPR:$rs2, GPRMemZeroOffset:$rs1|SRL_r|1,1
+SDTIntShiftAddOp|||SDTypeProfile|1,3
+sh1add_op|||ComplexPattern|1,6
+sh2add_op|||ComplexPattern|1,6
+sh3add_op|||ComplexPattern|1,6
+sh1add_uw_op|||ComplexPattern|1,6
+sh2add_uw_op|||ComplexPattern|1,6
+sh3add_uw_op|||ComplexPattern|1,6
+ANDN|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0100000,0b111
+ORN|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0100000,0b110
+XNOR|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0100000,0b100
+SH1ADD|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0010000,0b010
+SH2ADD|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0010000,0b100
+SH3ADD|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0010000,0b110
+SLLI_UW|||RVBShift_ri|0b00001,0b001
+ADD_UW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0000100,0b000
+SH1ADD_UW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0010000,0b010
+SH2ADD_UW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0010000,0b100
+SH3ADD_UW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0010000,0b110
+ROL|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0110000,0b001
+ROR|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0110000,0b101
+RORI|||Shift_ri|0b01100,0b101
+ROLW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0110000,0b001
+RORW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0110000,0b101
+RORIW|||ShiftW_ri|0b0110000,0b101
+BCLR|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0100100,0b001
+BSET|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0010100,0b001
+BINV|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0110100,0b001
+BEXT|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0100100,0b101
+BCLRI|||Shift_ri|0b01001,0b001
+BSETI|||Shift_ri|0b00101,0b001
+BINVI|||Shift_ri|0b01101,0b001
+BEXTI|||Shift_ri|0b01001,0b101
+XPERM4|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0010100,0b010
+XPERM8|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0010100,0b100
+CLZ|||Unary_r|0b011000000000,0b001
+CTZ|||Unary_r|0b011000000001,0b001
+CPOP|||Unary_r|0b011000000010,0b001
+CLZW|||UnaryW_r|0b011000000000,0b001
+CTZW|||UnaryW_r|0b011000000001,0b001
+CPOPW|||UnaryW_r|0b011000000010,0b001
+SEXT_B|||Unary_r|0b011000000100,0b001
+SEXT_H|||Unary_r|0b011000000101,0b001
+CLMULR|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000101,0b010
+CLMUL|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000101,0b001
+CLMULH|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000101,0b011
+MIN|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000101,0b100
+MINU|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000101,0b101
+MAX|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000101,0b110
+MAXU|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000101,0b111
+PACK|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000100,0b100
+PACKH|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000100,0b111
+PACKW|GPR:$rd|GPR:$rs1, GPR:$rs2|ALUW_rr|0b0000100,0b100
+ZEXT_H_RV32|||RVBUnaryR|0b0000100,0b100
+ZEXT_H_RV64|||RVBUnaryR|0b0000100,0b100
+REV8_RV32|||Unary_r|0b011010011000,0b101
+REV8_RV64|||Unary_r|0b011010111000,0b101
+ORC_B|||Unary_r|0b001010000111,0b101
+BREV8|||Unary_r|0b011010000111,0b101
+ZIP_RV32|||Unary_r|0b000010001111,0b001
+UNZIP_RV32|||Unary_r|0b000010001111,0b101
+invLogicImm|||ComplexPattern|1,0
+zExtImm32|||ComplexPattern|1,0
+uimm2_optional|||OptionalUImmLeafOp|2
+uimm2_lsb0|||RISCVUImmLsbZeroOp|2,1
+uimm2_lsb0_optional|||OptionalUImmLsbZeroOp|2,1
+C_ZEXT_W|GPRC:$rd_wb|GPRC:$rd|RVZcArith_r|0b11100
+C_ZEXT_H|GPRC:$rd_wb|GPRC:$rd|RVZcArith_r|0b11010
+C_SEXT_B|GPRC:$rd_wb|GPRC:$rd|RVZcArith_r|0b11001
+C_SEXT_H|GPRC:$rd_wb|GPRC:$rd|RVZcArith_r|0b11011
+C_ZEXT_B|GPRC:$rd_wb|GPRC:$rd|RVZcArith_r|0b11000
+C_MUL|GPRC:$rd_wb|GPRC:$rd, GPRC:$rs2|CA_ALU|0b100111,0b10
+C_NOT|GPRC:$rd_wb|GPRC:$rd|RVZcArith_r|0b11101
+C_LBU|GPRC:$rd|BasePtrC:$rs1, uimm2_optional:$imm|CLoadB_ri|0b100000
+C_LHU|rty:$rd|BasePtrC:$rs1, uimm2_lsb0_optional:$imm|CLoadH_ri|0b100001,0b0
+C_LH|rty:$rd|BasePtrC:$rs1, uimm2_lsb0_optional:$imm|CLoadH_ri|0b100001,0b1
+C_SB||GPRC:$rs2, BasePtrC:$rs1, uimm2_optional:$imm|CStoreB_rri|0b100010
+C_SH||rty:$rs2, BasePtrC:$rs1, uimm2_lsb0_optional:$imm|CStoreH_rri|0b100011,0b0
+C_LH_INX|rty:$rd|BasePtrC:$rs1, uimm2_lsb0_optional:$imm|CLoadH_ri|0b100001,0b1
+C_SH_INX||rty:$rs2, BasePtrC:$rs1, uimm2_lsb0_optional:$imm|CStoreH_rri|0b100011,0b0
+CM_MVA01S||SR07,SR07|RVInst16CA|0b101011,0b11
+CM_MVSA01|SR07,SR07||RVInst16CA|0b101011,0b01
+CM_PUSH||reglist:$rlist, immtype:$stackadj|RVInstZcCPPP|0b11000
+CM_POPRET||reglist:$rlist, immtype:$stackadj|RVInstZcCPPP|0b11110
+CM_POPRETZ||reglist:$rlist, immtype:$stackadj|RVInstZcCPPP|0b11100
+CM_POP||reglist:$rlist, immtype:$stackadj|RVInstZcCPPP|0b11010
+CM_JT||uimm5|RVInst16CJ|0b101
+CM_JALT||uimm8ge32|RVInst16CJ|0b101
+C_LDSP_RV32|cls:$rd|SPMem:$rs1, opnd:$imm|CStackLoad|0b011
+C_SDSP_RV32||cls:$rs2, SPMem:$rs1, opnd:$imm|CStackStore|0b111
+C_LD_RV32|||CLoad_ri|0b011
+C_SD_RV32|||CStore_rri|0b111
+FLI_S|rdty:$rd|loadfpimm:$imm|FPFLI_r|0b1111000,0b00001,0b000
+FMINM_S|rty:$rd|rty:$rs1, rty:$rs2|FPALU_rr|0b0010100,0b010
+FMAXM_S|rty:$rd|rty:$rs1, rty:$rs2|FPALU_rr|0b0010100,0b011
+FROUND_S|rdty:$rd|rs1ty:$rs1, frmarg:$frm|FPUnaryOp_r_frm|0b0100000,0b00100
+FROUNDNX_S|rdty:$rd|rs1ty:$rs1, frmarg:$frm|FPUnaryOp_r_frm|0b0100000,0b00101
+FLTQ_S|GPR:$rd|rty:$rs1, rty:$rs2|FPCmp_rr|0b1010000,0b101
+FLEQ_S|GPR:$rd|rty:$rs1, rty:$rs2|FPCmp_rr|0b1010000,0b100
+FLI_D|rdty:$rd|loadfpimm:$imm|FPFLI_r|0b1111001,0b00001,0b000
+FMINM_D|rty:$rd|rty:$rs1, rty:$rs2|FPALU_rr|0b0010101,0b010
+FMAXM_D|rty:$rd|rty:$rs1, rty:$rs2|FPALU_rr|0b0010101,0b011
+FROUND_D|rdty:$rd|rs1ty:$rs1, frmarg:$frm|FPUnaryOp_r_frm|0b0100001,0b00100
+FROUNDNX_D|rdty:$rd|rs1ty:$rs1, frmarg:$frm|FPUnaryOp_r_frm|0b0100001,0b00101
+FLTQ_D|GPR:$rd|rty:$rs1, rty:$rs2|FPCmp_rr|0b1010001,0b101
+FLEQ_D|GPR:$rd|rty:$rs1, rty:$rs2|FPCmp_rr|0b1010001,0b100
+FMVH_X_D|rdty:$rd|rs1ty:$rs1|FPUnaryOp_r|0b1110001,0b00001,0b000
+FMVP_D_X|||FPBinaryOp_rr|0b1011001,0b000
+FMV_X_W_FPR64|rdty:$rd|rs1ty:$rs1|FPUnaryOp_r|0b1110000,0b00000,0b000
+FLI_H|rdty:$rd|loadfpimm:$imm|FPFLI_r|0b1111010,0b00001,0b000
+FMINM_H|rty:$rd|rty:$rs1, rty:$rs2|FPALU_rr|0b0010110,0b010
+FMAXM_H|rty:$rd|rty:$rs1, rty:$rs2|FPALU_rr|0b0010110,0b011
+FROUND_H|rdty:$rd|rs1ty:$rs1, frmarg:$frm|FPUnaryOp_r_frm|0b0100010,0b00100
+FROUNDNX_H|rdty:$rd|rs1ty:$rs1, frmarg:$frm|FPUnaryOp_r_frm|0b0100010,0b00101
+FLTQ_H|GPR:$rd|rty:$rs1, rty:$rs2|FPCmp_rr|0b1010010,0b101
+FLEQ_H|GPR:$rd|rty:$rs1, rty:$rs2|FPCmp_rr|0b1010010,0b100
+FLI_Q|rdty:$rd|loadfpimm:$imm|FPFLI_r|0b1111011,0b00001,0b000
+FMINM_Q|rty:$rd|rty:$rs1, rty:$rs2|FPALU_rr|0b0010111,0b010
+FMAXM_Q|rty:$rd|rty:$rs1, rty:$rs2|FPALU_rr|0b0010111,0b011
+FROUND_Q|rdty:$rd|rs1ty:$rs1, frmarg:$frm|FPUnaryOp_r_frm|0b0100011,0b00100
+FROUNDNX_Q|rdty:$rd|rs1ty:$rs1, frmarg:$frm|FPUnaryOp_r_frm|0b0100011,0b00101
+FLTQ_Q|GPR:$rd|rty:$rs1, rty:$rs2|FPCmp_rr|0b1010011,0b101
+FLEQ_Q|GPR:$rd|rty:$rs1, rty:$rs2|FPCmp_rr|0b1010011,0b100
+FMVH_X_Q|rdty:$rd|rs1ty:$rs1|FPUnaryOp_r|0b1110011,0b00001,0b000
+FMVP_Q_X|||FPBinaryOp_rr|0b1011011,0b000
+FCVT_BF16_S|rdty:$rd|rs1ty:$rs1, frmarg:$frm|FPUnaryOp_r_frm|0b0100010,0b01000
+FCVT_S_BF16|rdty:$rd|rs1ty:$rs1, frmarglegacy:$frm|FPUnaryOp_r_frmlegacy|0b0100000,0b00110
+FLH|||FPLoad_r|0b001
+FSH|||FPStore_r|0b001
+LH_INX|||Load_ri|0b001
+SH_INX|||Store_rri|0b001
+PseudoMV_FPR16INX|GPRF16|GPRF16|Pseudo|
+FMV_X_H|rdty:$rd|rs1ty:$rs1|FPUnaryOp_r|0b1110010,0b00000,0b000
+FMV_H_X|rdty:$rd|rs1ty:$rs1|FPUnaryOp_r|0b1111010,0b00000,0b000
+BEQI||GPR:$rs1, imm5_zibi:$cimm, bare_simm13_lsb0:$imm12|Branch_imm|0b010
+BNEI||GPR:$rs1, imm5_zibi:$cimm, bare_simm13_lsb0:$imm12|Branch_imm|0b011
+PseudoLongBEQI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|8
+PseudoLongBNEI||GPR:$rs1, InTyImm:$imm, simm21_lsb0_jal:$imm20|LongBcciPseudo|8
+CBO_CLEAN||GPRMemZeroOffset:$rs1|CBO_r|0b000000000001
+CBO_FLUSH||GPRMemZeroOffset:$rs1|CBO_r|0b000000000010
+CBO_INVAL||GPRMemZeroOffset:$rs1|CBO_r|0b000000000000
+CBO_ZERO||GPRMemZeroOffset:$rs1|CBO_r|0b000000000100
+PREFETCH_I||BasePtr:$rs1, simm12_lsb00000:$imm12|Prefetch_ri|0b00000
+PREFETCH_R||BasePtr:$rs1, simm12_lsb00000:$imm12|Prefetch_ri|0b00001
+PREFETCH_W||BasePtr:$rs1, simm12_lsb00000:$imm12|Prefetch_ri|0b00011
+AddrRegImmLsb00000|||ComplexPattern|2
+SSPOPCHK||GPRX1X5|RVInstI|0b100
+SSRDP|GPRNoX0||RVInstI|0b100
+SSPUSH||GPRX1X5|RVInstR|0b1100111,0b100
+C_SSPUSH|||RVC_SSInst|0b00001
+C_SSPOPCHK|||RVC_SSInst|0b00101
+CZERO_EQZ|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000111,0b101
+CZERO_NEZ|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0000111,0b111
+LD_RV32|||Load_ri|0b011
+SD_RV32|||Store_rri|0b011
+LXH|||ZilxLoad|0b10010,0b001
+LXW|||ZilxLoad|0b10010,0b010
+LXHU|||ZilxLoad|0b10010,0b101
+LXSB|||ZilxLoad|0b11010,0b000
+LXSH|||ZilxLoad|0b11010,0b001
+LXSW|||ZilxLoad|0b11010,0b010
+LXSBU|||ZilxLoad|0b11010,0b100
+LXSHU|||ZilxLoad|0b11010,0b101
+LXD|||ZilxLoad|0b10010,0b011
+LXWU|||ZilxLoad|0b10010,0b110
+LXSD|||ZilxLoad|0b11010,0b011
+LXSWU|||ZilxLoad|0b11010,0b110
+LXSUWB|||ZilxLoad|0b11110,0b000
+LXSUWH|||ZilxLoad|0b11110,0b001
+LXSUWW|||ZilxLoad|0b11110,0b010
+LXSUWD|||ZilxLoad|0b11110,0b011
+LXSUWBU|||ZilxLoad|0b11110,0b100
+LXSUWHU|||ZilxLoad|0b11110,0b101
+LXSUWWU|||ZilxLoad|0b11110,0b110
+AddrRegReg0|||AddrRegReg|0
+AddrRegReg1|||AddrRegReg|1
+AddrRegReg2|||AddrRegReg|2
+AddrRegReg3|||AddrRegReg|3
+AddrRegZextReg0|||AddrRegZextReg|0
+AddrRegZextReg1|||AddrRegZextReg|1
+AddrRegZextReg2|||AddrRegZextReg|2
+AddrRegZextReg3|||AddrRegZextReg|3
+riscv_mop_r|||RVSDNode|2
+riscv_mop_rr|||RVSDNode|3
+SDT_RISCVZkByteSelect|||SDTypeProfile|1,3
+AES32DSI|||RVKByteSelect|0b10101
+AES32DSMI|||RVKByteSelect|0b10111
+AES64DS|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0011101,0b000
+AES64DSM|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0011111,0b000
+AES64IM|||Unary_r|0b001100000000,0b001
+AES64KS2|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0111111,0b000
+AES64KS1I|GPR:$rd|GPR:$rs1, rnum:$rnum|RVKUnary_rnum|0b0011000,0b001
+AES32ESI|||RVKByteSelect|0b10001
+AES32ESMI|||RVKByteSelect|0b10011
+AES64ES|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0011001,0b000
+AES64ESM|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0011011,0b000
+SHA256SIG0|||Unary_r|0b000100000010,0b001
+SHA256SIG1|||Unary_r|0b000100000011,0b001
+SHA256SUM0|||Unary_r|0b000100000000,0b001
+SHA256SUM1|||Unary_r|0b000100000001,0b001
+SHA512SIG0H|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0101110,0b000
+SHA512SIG0L|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0101010,0b000
+SHA512SIG1H|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0101111,0b000
+SHA512SIG1L|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0101011,0b000
+SHA512SUM0R|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0101000,0b000
+SHA512SUM1R|GPR:$rd|GPR:$rs1, GPR:$rs2|ALU_rr|0b0101001,0b000
+SHA512SIG0|||Unary_r|0b000100000110,0b001
+SHA512SIG1|||Unary_r|0b000100000111,0b001
+SHA512SUM0|||Unary_r|0b000100000100,0b001
+SHA512SUM1|||Unary_r|0b000100000101,0b001
+SM4ED|||RVKByteSelect|0b11000
+SM4KS|||RVKByteSelect|0b11010
+SM3P0|||Unary_r|0b000100001000,0b001
+SM3P1|||Unary_r|0b000100001001,0b001
+VABS_V|||VALUVs2|0b010010,0b10000
+VABD_VV|||VALUVV|0b010001
+VABDU_VV|||VALUVV|0b010011
+VWABDA_VV|||VALUVV|0b010101
+VWABDAU_VV|||VALUVV|0b010110
+uimm6_lsb000|||RISCVUImmLsbZeroOp|6,3
+VDOT4A_VV|VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1, VMaskOp:$vm|VDOT4AVV|0b101100
+VDOT4A_VX|VR:$vd_wb|VR:$vd, VR:$vs2, GPR:$rs1, VMaskOp:$vm|VDOT4AVX|0b101100
+VDOT4AU_VV|VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1, VMaskOp:$vm|VDOT4AVV|0b101000
+VDOT4AU_VX|VR:$vd_wb|VR:$vd, VR:$vs2, GPR:$rs1, VMaskOp:$vm|VDOT4AVX|0b101000
+VDOT4ASU_VV|VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1, VMaskOp:$vm|VDOT4AVV|0b101010
+VDOT4ASU_VX|VR:$vd_wb|VR:$vd, VR:$vs2, GPR:$rs1, VMaskOp:$vm|VDOT4AVX|0b101010
+VDOT4AUS_VX|VR:$vd_wb|VR:$vd, VR:$vs2, GPR:$rs1, VMaskOp:$vm|VDOT4AVX|0b101110
+VQWDOTAU_VV|VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1, VMaskOp:$vm|ZvdotVALUVV|0b100110
+VQWDOTAS_VV|VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1, VMaskOp:$vm|ZvdotVALUVV|0b100111
+VFQWDOTA_VV|VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1, VMaskOp:$vm|ZvdotVALUVV|0b100110
+VFQWDOTA_ALT_VV|VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1, VMaskOp:$vm|ZvdotVALUVV|0b100111
+VFWDOTA_VV|VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1, VMaskOp:$vm|ZvdotVALUVV|0b100100
+VFWCVTBF16_F_F_V|||VWCVTF_FV_VS2|0b010010,0b01101
+VFNCVTBF16_F_F_W|||VNCVTF_FV_VS2|0b010010,0b11101
+VFNCVT_F_F_Q|||VNCVTF_FV_VS2|0b010010,0b11001
+VFNCVT_SAT_F_F_Q|||VNCVTF_FV_VS2|0b010010,0b11011
+I|VR|VR,uimm6,VMaskOp|RVInstIVI_VROR|
+VBREV_V|||VALUVs2|0b010010,0b01010
+VCLZ_V|||VALUVs2|0b010010,0b01100
+VCPOP_V|||VALUVs2|0b010010,0b01110
+VCTZ_V|||VALUVs2|0b010010,0b01101
+VBREV8_V|||VALUVs2|0b010010,0b01000
+VREV8_V|||VALUVs2|0b010010,0b01001
+VGHSH_VV|VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1|ZvkALUVVNoVmTernary|0b101100
+VGMUL_VV|VR:$vd_wb|VR:$vd, VR:$vs2|ZvkALUVs2NoVmBinary|0b101000,0b10001
+VGHSH_VS|VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1|ZvkALUVVNoVmTernary|0b100011
+VGMUL_VS|VR:$vd_wb|VR:$vd, VR:$vs2|ZvkALUVs2NoVmBinary|0b101001,0b10001
+VSHA2CH_VV|VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1|ZvkALUVVNoVmTernary|0b101110
+VSHA2CL_VV|VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1|ZvkALUVVNoVmTernary|0b101111
+VSHA2MS_VV|VR:$vd_wb|VR:$vd, VR:$vs2, VR:$vs1|ZvkALUVVNoVmTernary|0b101101
+VAESKF1_VI|||ZvkALUVINoVm|0b100010
+VAESKF2_VI|VR:$vd_wb|VR:$vd, VR:$vs2, optype:$imm|ZvkALUVINoVmBinary|0b101010
+VAESZ_VS|VR:$vd_wb|VR:$vd, VR:$vs2|ZvkALUVs2NoVmBinary|0b101001,0b00111
+VSM4K_VI|||ZvkALUVINoVm|0b100001
+VSM3C_VI|VR:$vd_wb|VR:$vd, VR:$vs2, optype:$imm|ZvkALUVINoVmBinary|0b101011
+VSM3ME_VV|||ZvkALUVVNoVm|0b100000
+VMMACC_VV|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|VIMEMACVV|0b111000
+VWMMACC_VV|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|VIMEMACVV|0b111001
+VQMMACC_VV|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|VIMEMACVV|0b111010
+V8WMMACC_VV|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|VIMEMACVV|0b111011
+VFMMACC_VV|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|VFMEMACVV|0b010100
+VFWMMACC_VV|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|VFMEMACVV|0b010101
+VFQMMACC_VV|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|VFMEMACVV|0b010110
+VF8WMMACC_VV|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2|VFMEMACVV|0b010111
+VFWMMACC_VV_SCALE|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2, VScaleOp:$vm|VFMEMACScaleVV|0b010101
+VFQMMACC_VV_SCALE|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2, VScaleOp:$vm|VFMEMACScaleVV|0b010110
+VF8WMMACC_VV_SCALE|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2, VScaleOp:$vm|VFMEMACScaleVV|0b010111
+VFWIMMACC_VV|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2, VScaleOp:$vm|VIFMEMACScaleVV|0b111001
+VFQIMMACC_VV|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2, VScaleOp:$vm|VIFMEMACScaleVV|0b111010
+VF8WIMMACC_VV|VR:$vd_wb|VR:$vd, VR:$vs1, VR:$vs2, VScaleOp:$vm|VIFMEMACScaleVV|0b111011
+VMTL_V|||VTileLoad|0b00
+VMTS_V|||VTileStore|0b00
+VMTTL_V|||VTileLoad|0b01
+VMTTS_V|||VTileStore|0b01
+VZIP_VV|||VALUVV|0b111110
+VUNZIPE_V|||VALUVs2|0b010010,0b01011
+VUNZIPO_V|||VALUVs2|0b010010,0b01111
+VPAIRE_VV|||VALUVV|0b001111
+VPAIRO_VV|||VALUVV|0b001111
+SDT_RISCVZip_VL|||SDTypeProfile|1,5
+SDT_RISCVUnzip_VL|||SDTypeProfile|1,4
+SDT_RISCVVecBinOp_VL|||SDTypeProfile|1,5
+sub_16|||SubRegIndex|16
+sub_32|||SubRegIndex|32
+sub_64|||SubRegIndex|64
+sub_cap_addr|||SubRegIndex|32
+sub_vrm4_0|||SubRegIndex|256
+sub_vrm4_1|||SubRegIndex|256,256
+sub_vrm2_0|||SubRegIndex|128
+sub_vrm2_1|||SubRegIndex|128,128
+sub_vrm1_0|||SubRegIndex|64
+sub_vrm1_1|||SubRegIndex|64,64
+sub_gpr_even|||SubRegIndex|32
+sub_gpr_odd|||SubRegIndex|32,32
+X0_H|||RISCVReg|0
+X1_H|||RISCVReg|1
+X2_H|||RISCVReg|2
+X3_H|||RISCVReg|3
+X4_H|||RISCVReg|4
+X5_H|||RISCVReg|5
+X6_H|||RISCVReg|6
+X7_H|||RISCVReg|7
+X8_H|||RISCVReg|8
+X9_H|||RISCVReg|9
+X10_H|||RISCVReg|10
+X11_H|||RISCVReg|11
+X12_H|||RISCVReg|12
+X13_H|||RISCVReg|13
+X14_H|||RISCVReg|14
+X15_H|||RISCVReg|15
+X16_H|||RISCVReg|16
+X17_H|||RISCVReg|17
+X18_H|||RISCVReg|18
+X19_H|||RISCVReg|19
+X20_H|||RISCVReg|20
+X21_H|||RISCVReg|21
+X22_H|||RISCVReg|22
+X23_H|||RISCVReg|23
+X24_H|||RISCVReg|24
+X25_H|||RISCVReg|25
+X26_H|||RISCVReg|26
+X27_H|||RISCVReg|27
+X28_H|||RISCVReg|28
+X29_H|||RISCVReg|29
+X30_H|||RISCVReg|30
+X31_H|||RISCVReg|31
+X0_W|||RISCVRegWithSubRegs|0
+X1_W|||RISCVRegWithSubRegs|1
+X2_W|||RISCVRegWithSubRegs|2
+X3_W|||RISCVRegWithSubRegs|3
+X4_W|||RISCVRegWithSubRegs|4
+X5_W|||RISCVRegWithSubRegs|5
+X6_W|||RISCVRegWithSubRegs|6
+X7_W|||RISCVRegWithSubRegs|7
+X8_W|||RISCVRegWithSubRegs|8
+X9_W|||RISCVRegWithSubRegs|9
+X10_W|||RISCVRegWithSubRegs|10
+X11_W|||RISCVRegWithSubRegs|11
+X12_W|||RISCVRegWithSubRegs|12
+X13_W|||RISCVRegWithSubRegs|13
+X14_W|||RISCVRegWithSubRegs|14
+X15_W|||RISCVRegWithSubRegs|15
+X16_W|||RISCVRegWithSubRegs|16
+X17_W|||RISCVRegWithSubRegs|17
+X18_W|||RISCVRegWithSubRegs|18
+X19_W|||RISCVRegWithSubRegs|19
+X20_W|||RISCVRegWithSubRegs|20
+X21_W|||RISCVRegWithSubRegs|21
+X22_W|||RISCVRegWithSubRegs|22
+X23_W|||RISCVRegWithSubRegs|23
+X24_W|||RISCVRegWithSubRegs|24
+X25_W|||RISCVRegWithSubRegs|25
+X26_W|||RISCVRegWithSubRegs|26
+X27_W|||RISCVRegWithSubRegs|27
+X28_W|||RISCVRegWithSubRegs|28
+X29_W|||RISCVRegWithSubRegs|29
+X30_W|||RISCVRegWithSubRegs|30
+X31_W|||RISCVRegWithSubRegs|31
+X0|||RISCVRegWithSubRegs|0
+X1|||RISCVRegWithSubRegs|1
+X2|||RISCVRegWithSubRegs|2
+X3|||RISCVRegWithSubRegs|3
+X4|||RISCVRegWithSubRegs|4
+X5|||RISCVRegWithSubRegs|5
+X6|||RISCVRegWithSubRegs|6
+X7|||RISCVRegWithSubRegs|7
+X8|||RISCVRegWithSubRegs|8
+X9|||RISCVRegWithSubRegs|9
+X10|||RISCVRegWithSubRegs|10
+X11|||RISCVRegWithSubRegs|11
+X12|||RISCVRegWithSubRegs|12
+X13|||RISCVRegWithSubRegs|13
+X14|||RISCVRegWithSubRegs|14
+X15|||RISCVRegWithSubRegs|15
+X16|||RISCVRegWithSubRegs|16
+X17|||RISCVRegWithSubRegs|17
+X18|||RISCVRegWithSubRegs|18
+X19|||RISCVRegWithSubRegs|19
+X20|||RISCVRegWithSubRegs|20
+X21|||RISCVRegWithSubRegs|21
+X22|||RISCVRegWithSubRegs|22
+X23|||RISCVRegWithSubRegs|23
+X24|||RISCVRegWithSubRegs|24
+X25|||RISCVRegWithSubRegs|25
+X26|||RISCVRegWithSubRegs|26
+X27|||RISCVRegWithSubRegs|27
+X28|||RISCVRegWithSubRegs|28
+X29|||RISCVRegWithSubRegs|29
+X30|||RISCVRegWithSubRegs|30
+X31|||RISCVRegWithSubRegs|31
+XLenRI|||RegInfoByHwMode|32,64
+YLenRI|||RegInfoByHwMode|64,128
+GPR|||GPRRegisterClass|10,5,28,8,18,0
+YGPR|||RegisterClass|64,10,5,28,8,18,0
+GPRJALR|||GPRRegisterClass|0
+GPRC|||GPRRegisterClass|10,8
+GPRTC|||GPRRegisterClass|6,10,28
+SR07|||GPRRegisterClass|8,18
+XLenPairRI|||RegInfoByHwMode|64,128
+DUMMY_REG_PAIR_WITH_X0|||RISCVReg|0
+X0_Pair|||RISCVRegWithSubRegs|0
+GPRPair|||RISCVRegisterClass|64
+GPRPairNoX0|||RISCVRegisterClass|64
+GPRPairC|||RISCVRegisterClass|64
+F0_H|||RISCVReg16|0
+F1_H|||RISCVReg16|1
+F2_H|||RISCVReg16|2
+F3_H|||RISCVReg16|3
+F4_H|||RISCVReg16|4
+F5_H|||RISCVReg16|5
+F6_H|||RISCVReg16|6
+F7_H|||RISCVReg16|7
+F8_H|||RISCVReg16|8
+F9_H|||RISCVReg16|9
+F10_H|||RISCVReg16|10
+F11_H|||RISCVReg16|11
+F12_H|||RISCVReg16|12
+F13_H|||RISCVReg16|13
+F14_H|||RISCVReg16|14
+F15_H|||RISCVReg16|15
+F16_H|||RISCVReg16|16
+F17_H|||RISCVReg16|17
+F18_H|||RISCVReg16|18
+F19_H|||RISCVReg16|19
+F20_H|||RISCVReg16|20
+F21_H|||RISCVReg16|21
+F22_H|||RISCVReg16|22
+F23_H|||RISCVReg16|23
+F24_H|||RISCVReg16|24
+F25_H|||RISCVReg16|25
+F26_H|||RISCVReg16|26
+F27_H|||RISCVReg16|27
+F28_H|||RISCVReg16|28
+F29_H|||RISCVReg16|29
+F30_H|||RISCVReg16|30
+F31_H|||RISCVReg16|31
+FPR16|||FPRRegisterClass|16
+FPR16C|||FPRCRegisterClass|16
+FPR32|||FPRRegisterClass|32
+FPR32C|||FPRCRegisterClass|32
+FPR64|||FPRRegisterClass|64
+FPR64C|||FPRCRegisterClass|64
+FPR128|||FPRRegisterClass|128
+GPRF16|||RISCVRegisterClass|16,10,5,28,8,18,0
+GPRF16C|||RISCVRegisterClass|16,10,8
+GPRF16X0|||RISCVRegisterClass|16
+GPRF16NoX0|||RISCVRegisterClass|16
+GPRF32|||RISCVRegisterClass|32,10,5,28,8,18,0
+GPRF32C|||RISCVRegisterClass|32,10,8
+GPRF32X0|||RISCVRegisterClass|32
+GPRF32NoX0|||RISCVRegisterClass|32
+VTYPE|||RISCVReg|0
+VL|||RISCVReg|0
+VXSAT|||RISCVReg|0
+VXRM|||RISCVReg|0
+VLENB|||RISCVReg|0
+VCSR|||RISCVRegisterClass|32
+VR|||VReg|8,7,1
+VRNoV0|||VReg|1
+VRM2|||VReg|8,31,6,0,2
+VRM2NoV0|||VReg|2
+VRM4|||VReg|4
+VRM4NoV0|||VReg|4
+VRM8|||VReg|8
+VRM8NoV0|||VReg|8
+ZZZ_VRMF8|||VReg|1
+ZZZ_VRMF8NoV0|||VReg|1
+ZZZ_VRMF4|||VReg|1
+ZZZ_VRMF4NoV0|||VReg|1
+ZZZ_VRMF2|||VReg|1
+ZZZ_VRMF2NoV0|||VReg|1
+VMV0|||VReg|1
+ZZZ_VM|||VReg|1
+ZZZ_VMNoV0|||VReg|1
+FFLAGS|||RISCVReg|0
+FRM|||RISCVReg|0
+FCSR|||RISCVReg|0
+SSP|||RISCVReg|0
+SF_VCIX_STATE|||RISCVReg|0
+TR|||RISCVRegisterClass|32,0
+TRM2|||RISCVRegisterClass|32
+TRM4|||RISCVRegisterClass|32
+sub_128|||SubRegIndex|128
+FPR256|||FPRRegisterClass|256
+MR|||RISCVRegisterClass|8,1
+MR0|||RISCVRegisterClass|8
+Andes45ALU|||ProcResource|2
+Andes45MDU|||ProcResource|1
+Andes45LSU|||ProcResource|1
+Andes45CSR|||ProcResource|1
+Andes45FMAC|||ProcResource|1
+Andes45FDIV|||ProcResource|1
+Andes45FMV|||ProcResource|1
+Andes45FMISC|||ProcResource|1
+Andes45VALU|||ProcResource|1
+Andes45VMAC|||ProcResource|1
+Andes45VFMIS|||ProcResource|1
+Andes45VPERMUT|||ProcResource|1
+Andes45VDIV|||ProcResource|1
+Andes45VFDIV|||ProcResource|1
+Andes45VMASK|||ProcResource|1
+Andes45VLSU|||ProcResource|1
+GenericOOOBranch|||ProcResource|1
+GenericOOOMulDiv|||ProcResource|1
+GenericOOOInt|||ProcResource|2
+GenericOOOLSU|||ProcResource|2
+GenericOOOFMulDiv|||ProcResource|1
+GenericOOOFloat|||ProcResource|1
+p8700ALQ|||ProcResource|1
+p8700AGQ|||ProcResource|3
+p8700IssueAL2|||ProcResource|1
+p8700IssueCTI|||ProcResource|1
+p8700IssueLSU|||ProcResource|1
+p8700GpDiv|||ProcResource|1
+p8700GpMul|||ProcResource|1
+p8700FPQ|||ProcResource|3
+p8700IssueFPUS|||ProcResource|1
+p8700IssueFPUL|||ProcResource|1
+p8700FpuApu|||ProcResource|1
+p8700FpuLong|||ProcResource|1
+RocketUnitALU|||ProcResource|1
+RocketUnitIMul|||ProcResource|1
+RocketUnitMem|||ProcResource|1
+RocketUnitB|||ProcResource|1
+RocketUnitFPALU|||ProcResource|1
+RocketUnitIDiv|||ProcResource|1
+RocketUnitFPDivSqrt|||ProcResource|1
+PipeA|||ProcResource|1
+PipeB|||ProcResource|1
+IDiv|||ProcResource|1
+FDiv|||ProcResource|1
+VA1|||ProcResource|1
+VA2|||ProcResource|1
+VL|||ProcResource|1
+VS|||ProcResource|1
+VCQ|||ProcResource|1
+SiFive7VLEN128X100Model|||SiFive7SchedMachineModel|128
+SiFive7VLEN512Model|||SiFive7SchedMachineModel|512
+SiFive7VLEN1024X300Model|||SiFive7SchedMachineModel|1024
+Div|||ProcResource|1
+FloatDiv|||ProcResource|1
+Load|||ProcResource|1
+Store|||ProcResource|1
+VLD|||ProcResource|1
+VST|||ProcResource|1
+VDiv|||ProcResource|1
+VFloatDiv|||ProcResource|1
+SiFiveP600IEXQ0|||ProcResource|1
+SiFiveP600IEXQ1|||ProcResource|1
+SiFiveP600IEXQ2|||ProcResource|1
+SiFiveP600IEXQ3|||ProcResource|1
+SiFiveP600FEXQ0|||ProcResource|1
+SiFiveP600FEXQ1|||ProcResource|1
+SiFiveP600LDST|||ProcResource|2
+SiFiveP600Div|||ProcResource|1
+SiFiveP600FloatDiv|||ProcResource|1
+SiFiveP600VEXQ0|||ProcResource|1
+SiFiveP600VEXQ1|||ProcResource|1
+SiFiveP600VLD|||ProcResource|1
+SiFiveP600VST|||ProcResource|1
+SiFiveP600VDiv|||ProcResource|1
+SiFiveP600VFloatDiv|||ProcResource|1
+SiFiveP800IEXQ0|||ProcResource|1
+SiFiveP800IEXQ1|||ProcResource|1
+SiFiveP800IEXQ2|||ProcResource|1
+SiFiveP800IEXQ3|||ProcResource|1
+SiFiveP800IEXQ4|||ProcResource|1
+SiFiveP800IEXQ5|||ProcResource|1
+SiFiveP800FEXQ0|||ProcResource|1
+SiFiveP800FEXQ1|||ProcResource|1
+SiFiveP800LDST|||ProcResource|2
+SiFiveP800LD|||ProcResource|1
+SiFiveP800Div|||ProcResource|1
+SiFiveP800FloatDiv|||ProcResource|1
+SiFiveP800VEXQ0|||ProcResource|1
+SiFiveP800VEXQ1|||ProcResource|1
+SiFiveP800VLD|||ProcResource|1
+SiFiveP800VST|||ProcResource|1
+SiFiveP800VDiv|||ProcResource|1
+SiFiveP800VFloatDiv|||ProcResource|1
+SMTX100_IQ0|||ProcResource|2
+SMTX100_IQ1|||ProcResource|2
+SMTX100_BQ|||ProcResource|2
+SMTX100_LSQ|||ProcResource|4
+SMTX100_FQ0|||ProcResource|2
+SMTX100_FQ1|||ProcResource|2
+SMTX100_VEU0|||ProcResource|1
+SMTX100_VEU1|||ProcResource|1
+SMTX100_VEU2|||ProcResource|1
+SMTX100_VEU3|||ProcResource|1
+SMX60_LS|||ProcResource|2
+SMX60_IEUA|||ProcResource|1
+SMX60_IEUB|||ProcResource|1
+SMX60_FP|||ProcResource|1
+SMX60_VLS|||ProcResource|1
+SMX60_VIEU|||ProcResource|1
+SMX60_VFP|||ProcResource|1
+SCR1_ALU|||ProcResource|1
+SCR1_LSU|||ProcResource|1
+SCR1_MUL|||ProcResource|1
+SCR1_DIV|||ProcResource|1
+SCR1_CFU|||ProcResource|1
+SCR3RV32_ALU|||ProcResource|1
+SCR3RV32_MUL|||ProcResource|1
+SCR3RV32_DIV|||ProcResource|1
+SCR3RV32_LSU|||ProcResource|1
+SCR3RV32_CFU|||ProcResource|1
+SCR3RV64_ALU|||ProcResource|1
+SCR3RV64_MUL|||ProcResource|1
+SCR3RV64_DIV|||ProcResource|1
+SCR3RV64_LSU|||ProcResource|1
+SCR3RV64_CFU|||ProcResource|1
+SCR4RV32_ALU|||ProcResource|1
+SCR4RV32_MUL|||ProcResource|1
+SCR4RV32_DIV|||ProcResource|1
+SCR4RV32_LSU|||ProcResource|1
+SCR4RV32_CFU|||ProcResource|1
+SCR4RV32_FPU|||ProcResource|1
+SCR4RV32_FDU|||ProcResource|1
+SCR4RV64_ALU|||ProcResource|1
+SCR4RV64_MUL|||ProcResource|1
+SCR4RV64_DIV|||ProcResource|1
+SCR4RV64_LSU|||ProcResource|1
+SCR4RV64_CFU|||ProcResource|1
+SCR4RV64_FPU|||ProcResource|1
+SCR4RV64_FDU|||ProcResource|1
+SCR5RV32_ALU|||ProcResource|1
+SCR5RV32_MUL|||ProcResource|1
+SCR5RV32_DIV|||ProcResource|1
+SCR5RV32_LSU|||ProcResource|1
+SCR5RV32_CFU|||ProcResource|1
+SCR5RV32_FPU|||ProcResource|1
+SCR5RV32_FDU|||ProcResource|1
+SCR5RV64_ALU|||ProcResource|1
+SCR5RV64_MUL|||ProcResource|1
+SCR5RV64_DIV|||ProcResource|1
+SCR5RV64_LSU|||ProcResource|1
+SCR5RV64_CFU|||ProcResource|1
+SCR5RV64_FPU|||ProcResource|1
+SCR5RV64_FDU|||ProcResource|1
+SCR7_ALU_MUL_IS|||ProcResource|1
+SCR7_ALU_DIV_IS|||ProcResource|1
+SCR7_MUL|||ProcResource|1
+SCR7_DIV|||ProcResource|1
+SCR7_LSU|||ProcResource|1
+SCR7_FPU_IS|||ProcResource|1
+SCR7_FALU|||ProcResource|1
+SCR7_FMA|||ProcResource|1
+SCR7_FDIVSQRT|||ProcResource|1
+AscalonLS|||ProcResource|3
+XSPipeALU0|||ProcResource|1
+XSPipeALU1|||ProcResource|1
+XSPipeALU2|||ProcResource|1
+XSPipeALU3|||ProcResource|1
+XSPipeBJU0|||ProcResource|1
+XSPipeBJU1|||ProcResource|1
+XSPipeBJU2|||ProcResource|1
+XSPipeBJU3|||ProcResource|1
+XSPipeFEX0|||ProcResource|1
+XSPipeFEX1|||ProcResource|1
+XSPipeFEX2|||ProcResource|1
+XSPipeFEX3|||ProcResource|1
+XSPipeFEX4|||ProcResource|1
+XSPipeLDU|||ProcResource|3
+XSPipeSTA|||ProcResource|2
+XSPipeSTD|||ProcResource|2
+XS2ALU|||ProcResource|4
+XS2MDU|||ProcResource|2
+XS2MISC|||ProcResource|1
+XS2FMAC|||ProcResource|4
+XS2FMISC|||ProcResource|2
+XS2LD|||ProcResource|2
+XS2ST|||ProcResource|2
+SysRegFFLAGS|||SysReg|0x001
+SysRegFRM|||SysReg|0x002
+SysRegFCSR|||SysReg|0x003
+SysRegVXRM|||SysReg|0x00A
+SysRegVL|||SysReg|0xC20
+SysRegVLENB|||SysReg|0xC22
+SEED|||SysReg|0x015
+CYCLE|||SysReg|0xC00
+TIME|||SysReg|0xC01
+INSTRET|||SysReg|0xC02
+CYCLEH|||SysReg|0xC80
+TIMEH|||SysReg|0xC81
+INSTRETH|||SysReg|0xC82

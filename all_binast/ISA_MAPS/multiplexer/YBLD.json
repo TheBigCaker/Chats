@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YBLD",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YBLD": {"RISCV": "YBLD"}
+  },
+  "INPUTS": {
+    "YBLD": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YBLD": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YBLD": {"RISCV": ["RVY_rr","0b0001111"]}
+  },
+  "OUTPUT_BYTES": {
+    "YBLD": {"RISCV": ["RVY_rr","0b0001111"]}
+  }
+}

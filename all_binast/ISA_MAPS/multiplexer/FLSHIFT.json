@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FLSHIFT",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FLSHIFT_DOUBLE.i32": {"Mali": "FLSHIFT_DOUBLE.i32"}
+  },
+  "INPUTS": {
+    "FLSHIFT_DOUBLE.i32": {"Mali": [["R32",32],["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "FLSHIFT_DOUBLE.i32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FLSHIFT_DOUBLE.i32": {"Mali": ["Bifrost_fma","0x33f800","0x7ff800"]}
+  },
+  "OUTPUT_BYTES": {
+    "FLSHIFT_DOUBLE.i32": {"Mali": ["Bifrost_fma","0x33f800","0x7ff800"]}
+  }
+}

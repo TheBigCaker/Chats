@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "VSLDOI",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSLDOI_get_imm": {"PowerPC": "VSLDOI_get_imm"},
+    "VSLDOI_unary_get_imm": {"PowerPC": "VSLDOI_unary_get_imm"},
+    "VSLDOI_swapped_get_imm": {"PowerPC": "VSLDOI_swapped_get_imm"},
+    "VSLDOI": {"PowerPC": "VSLDOI"}
+  },
+  "INPUTS": {
+    "VSLDOI_get_imm": {"PowerPC": []},
+    "VSLDOI_unary_get_imm": {"PowerPC": []},
+    "VSLDOI_swapped_get_imm": {"PowerPC": []},
+    "VSLDOI": {"PowerPC": [["vrrc",0],["vrrc",0],["u4imm",4]]}
+  },
+  "OUTPUTS": {
+    "VSLDOI_get_imm": {"PowerPC": []},
+    "VSLDOI_unary_get_imm": {"PowerPC": []},
+    "VSLDOI_swapped_get_imm": {"PowerPC": []},
+    "VSLDOI": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSLDOI_get_imm": {"PowerPC": ["SDNodeXForm","0"]},
+    "VSLDOI_unary_get_imm": {"PowerPC": ["SDNodeXForm","1"]},
+    "VSLDOI_swapped_get_imm": {"PowerPC": ["SDNodeXForm","2"]},
+    "VSLDOI": {"PowerPC": ["VAForm_2","44"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSLDOI_get_imm": {"PowerPC": ["SDNodeXForm","0"]},
+    "VSLDOI_unary_get_imm": {"PowerPC": ["SDNodeXForm","1"]},
+    "VSLDOI_swapped_get_imm": {"PowerPC": ["SDNodeXForm","2"]},
+    "VSLDOI": {"PowerPC": ["VAForm_2","44"]}
+  }
+}

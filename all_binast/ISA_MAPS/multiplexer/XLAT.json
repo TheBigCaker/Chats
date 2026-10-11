@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XLAT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XLAT": {"X86": "XLAT"}
+  },
+  "INPUTS": {
+    "XLAT": {"X86": []}
+  },
+  "OUTPUTS": {
+    "XLAT": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "XLAT": {"X86": ["0xD7"]}
+  },
+  "OUTPUT_BYTES": {
+    "XLAT": {"X86": ["0xD7"]}
+  }
+}

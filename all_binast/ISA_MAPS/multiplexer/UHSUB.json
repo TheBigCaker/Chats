@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "UHSUB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "UHSUB16": {"ARM": "UHSUB16"},
+    "UHSUB8": {"ARM": "UHSUB8"}
+  },
+  "INPUTS": {
+    "UHSUB16": {"ARM": []},
+    "UHSUB8": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "UHSUB16": {"ARM": []},
+    "UHSUB8": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "UHSUB16": {"ARM": ["AAIIntrinsic","0b01100111","0b11110111"]},
+    "UHSUB8": {"ARM": ["AAIIntrinsic","0b01100111","0b11111111"]}
+  },
+  "OUTPUT_BYTES": {
+    "UHSUB16": {"ARM": ["AAIIntrinsic","0b01100111","0b11110111"]},
+    "UHSUB8": {"ARM": ["AAIIntrinsic","0b01100111","0b11111111"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCTZW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCTZW": {"PowerPC": "VCTZW"}
+  },
+  "INPUTS": {
+    "VCTZW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VCTZW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VCTZW": {"PowerPC": ["VX_VT5_EO5_VB5","1538","30"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCTZW": {"PowerPC": ["VX_VT5_EO5_VB5","1538","30"]}
+  }
+}

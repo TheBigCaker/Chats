@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SSPOPCHK",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SSPOPCHK": {"RISCV": "SSPOPCHK"}
+  },
+  "INPUTS": {
+    "SSPOPCHK": {"RISCV": [["GPRX1X5",0]]}
+  },
+  "OUTPUTS": {
+    "SSPOPCHK": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SSPOPCHK": {"RISCV": ["RVInstI","0b100"]}
+  },
+  "OUTPUT_BYTES": {
+    "SSPOPCHK": {"RISCV": ["RVInstI","0b100"]}
+  }
+}

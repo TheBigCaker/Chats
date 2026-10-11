@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "ZAS",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "ZAS0": {"AArch64": "ZAS0"},
+    "ZAS1": {"AArch64": "ZAS1"},
+    "ZAS2": {"AArch64": "ZAS2"},
+    "ZAS3": {"AArch64": "ZAS3"}
+  },
+  "INPUTS": {
+    "ZAS0": {"AArch64": []},
+    "ZAS1": {"AArch64": []},
+    "ZAS2": {"AArch64": []},
+    "ZAS3": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "ZAS0": {"AArch64": []},
+    "ZAS1": {"AArch64": []},
+    "ZAS2": {"AArch64": []},
+    "ZAS3": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "ZAS0": {"AArch64": ["AArch64Reg","0"]},
+    "ZAS1": {"AArch64": ["AArch64Reg","1"]},
+    "ZAS2": {"AArch64": ["AArch64Reg","2"]},
+    "ZAS3": {"AArch64": ["AArch64Reg","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZAS0": {"AArch64": ["AArch64Reg","0"]},
+    "ZAS1": {"AArch64": ["AArch64Reg","1"]},
+    "ZAS2": {"AArch64": ["AArch64Reg","2"]},
+    "ZAS3": {"AArch64": ["AArch64Reg","3"]}
+  }
+}

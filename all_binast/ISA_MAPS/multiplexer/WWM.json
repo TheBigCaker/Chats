@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WWM",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "WWM_COPY": {"AMDGPU": "WWM_COPY"}
+  },
+  "INPUTS": {
+    "WWM_COPY": {"AMDGPU": [["unknown",0]]}
+  },
+  "OUTPUTS": {
+    "WWM_COPY": {"AMDGPU": [["unknown",0]]}
+  },
+  "INPUT_BYTES": {
+    "WWM_COPY": {"AMDGPU": ["SPseudoInstSI"]}
+  },
+  "OUTPUT_BYTES": {
+    "WWM_COPY": {"AMDGPU": ["SPseudoInstSI"]}
+  }
+}

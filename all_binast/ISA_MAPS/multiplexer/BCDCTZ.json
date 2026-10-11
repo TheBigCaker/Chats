@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "BCDCTZ",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "BCDCTZ_rec": {"PowerPC": "BCDCTZ_rec"}
+  },
+  "INPUTS": {
+    "BCDCTZ_rec": {"PowerPC": [["vrrc:$VB",0],["u1imm:$PS",1]]}
+  },
+  "OUTPUTS": {
+    "BCDCTZ_rec": {"PowerPC": [["vrrc:$VD",0]]}
+  },
+  "INPUT_BYTES": {
+    "BCDCTZ_rec": {"PowerPC": ["VX_VT5_EO5_VB5_PS1_XO9_o","4","385"]}
+  },
+  "OUTPUT_BYTES": {
+    "BCDCTZ_rec": {"PowerPC": ["VX_VT5_EO5_VB5_PS1_XO9_o","4","385"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCLZB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCLZB": {"PowerPC": "VCLZB"}
+  },
+  "INPUTS": {
+    "VCLZB": {"PowerPC": [["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VCLZB": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCLZB": {"PowerPC": ["VXForm_2","1794"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCLZB": {"PowerPC": ["VXForm_2","1794"]}
+  }
+}

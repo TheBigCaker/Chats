@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MEMCPY",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "MEMCPY": {"ARM": "MEMCPY"}
+  },
+  "INPUTS": {
+    "MEMCPY": {"ARM": [["GPR",64],["GPR",64],["i32imm",32],["variable_ops",0]]}
+  },
+  "OUTPUTS": {
+    "MEMCPY": {"ARM": [["GPR",64],["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "MEMCPY": {"ARM": ["PseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "MEMCPY": {"ARM": ["PseudoInst"]}
+  }
+}

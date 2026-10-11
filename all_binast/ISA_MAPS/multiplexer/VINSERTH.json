@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VINSERTH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VINSERTH": {"PowerPC": "VINSERTH"}
+  },
+  "INPUTS": {
+    "VINSERTH": {"PowerPC": [["vrrc",0],["u4imm",4],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VINSERTH": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VINSERTH": {"PowerPC": ["VXForm_1","845"]}
+  },
+  "OUTPUT_BYTES": {
+    "VINSERTH": {"PowerPC": ["VXForm_1","845"]}
+  }
+}

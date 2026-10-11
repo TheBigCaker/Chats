@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VTOUHH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VTOUHH": {"ARM": "VTOUHH"}
+  },
+  "INPUTS": {
+    "VTOUHH": {"ARM": [["SPR",0],["fbits16",0]]}
+  },
+  "OUTPUTS": {
+    "VTOUHH": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VTOUHH": {"ARM": ["AVConv1XInsS_Encode","0b11101","0b11","0b1111","0b1001","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VTOUHH": {"ARM": ["AVConv1XInsS_Encode","0b11101","0b11","0b1111","0b1001","0"]}
+  }
+}

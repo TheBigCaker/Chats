@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "BTR",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "BTR16rr": {"X86": "BTR16rr"},
+    "BTR32rr": {"X86": "BTR32rr"},
+    "BTR16mr": {"X86": "BTR16mr"},
+    "BTR32mr": {"X86": "BTR32mr"}
+  },
+  "INPUTS": {
+    "BTR16rr": {"X86": [["GR16",16],["GR16",16]]},
+    "BTR32rr": {"X86": [["GR32",32],["GR32",32]]},
+    "BTR16mr": {"X86": [["i16mem",0],["GR16",16]]},
+    "BTR32mr": {"X86": [["i32mem",0],["GR32",32]]}
+  },
+  "OUTPUTS": {
+    "BTR16rr": {"X86": [["GR16",16]]},
+    "BTR32rr": {"X86": [["GR32",32]]},
+    "BTR16mr": {"X86": []},
+    "BTR32mr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "BTR16rr": {"X86": ["0xB3"]},
+    "BTR32rr": {"X86": ["0xB3"]},
+    "BTR16mr": {"X86": ["0xB3"]},
+    "BTR32mr": {"X86": ["0xB3"]}
+  },
+  "OUTPUT_BYTES": {
+    "BTR16rr": {"X86": ["0xB3"]},
+    "BTR32rr": {"X86": ["0xB3"]},
+    "BTR16mr": {"X86": ["0xB3"]},
+    "BTR32mr": {"X86": ["0xB3"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMAXUB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMAXUB": {"PowerPC": "VMAXUB"}
+  },
+  "INPUTS": {
+    "VMAXUB": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMAXUB": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMAXUB": {"PowerPC": ["VX1_Int_Ty","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMAXUB": {"PowerPC": ["VX1_Int_Ty","2"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RMPUPDATE",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "RMPUPDATE": {"X86": "RMPUPDATE"}
+  },
+  "INPUTS": {
+    "RMPUPDATE": {"X86": []}
+  },
+  "OUTPUTS": {
+    "RMPUPDATE": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "RMPUPDATE": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "RMPUPDATE": {"X86": ["0x01"]}
+  }
+}

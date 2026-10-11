@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "FXSAVE",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "FXSAVE": {"X86": "FXSAVE"}
+  },
+  "INPUTS": {
+    "FXSAVE": {"X86": [["opaquemem",0]]}
+  },
+  "OUTPUTS": {
+    "FXSAVE": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "FXSAVE": {"X86": ["0xAE"]}
+  },
+  "OUTPUT_BYTES": {
+    "FXSAVE": {"X86": ["0xAE"]}
+  }
+}

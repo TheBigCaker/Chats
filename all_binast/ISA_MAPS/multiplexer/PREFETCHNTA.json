@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PREFETCHNTA",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PREFETCHNTA": {"X86": "PREFETCHNTA"}
+  },
+  "INPUTS": {
+    "PREFETCHNTA": {"X86": [["i8mem",0]]}
+  },
+  "OUTPUTS": {
+    "PREFETCHNTA": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PREFETCHNTA": {"X86": ["0x18"]}
+  },
+  "OUTPUT_BYTES": {
+    "PREFETCHNTA": {"X86": ["0x18"]}
+  }
+}

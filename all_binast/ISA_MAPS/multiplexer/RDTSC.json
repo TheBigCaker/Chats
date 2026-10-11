@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RDTSC",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "RDTSC": {"X86": "RDTSC"}
+  },
+  "INPUTS": {
+    "RDTSC": {"X86": []}
+  },
+  "OUTPUTS": {
+    "RDTSC": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "RDTSC": {"X86": ["0x31"]}
+  },
+  "OUTPUT_BYTES": {
+    "RDTSC": {"X86": ["0x31"]}
+  }
+}

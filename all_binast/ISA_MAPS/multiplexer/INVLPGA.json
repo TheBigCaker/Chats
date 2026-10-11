@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "INVLPGA",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "INVLPGA32": {"X86": "INVLPGA32"},
+    "INVLPGA64": {"X86": "INVLPGA64"}
+  },
+  "INPUTS": {
+    "INVLPGA32": {"X86": []},
+    "INVLPGA64": {"X86": []}
+  },
+  "OUTPUTS": {
+    "INVLPGA32": {"X86": []},
+    "INVLPGA64": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "INVLPGA32": {"X86": ["0x01"]},
+    "INVLPGA64": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "INVLPGA32": {"X86": ["0x01"]},
+    "INVLPGA64": {"X86": ["0x01"]}
+  }
+}

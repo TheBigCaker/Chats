@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "TAILBA",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "TAILBA8": {"PowerPC": "TAILBA8"}
+  },
+  "INPUTS": {
+    "TAILBA8": {"PowerPC": [["abscalltarget",0]]}
+  },
+  "OUTPUTS": {
+    "TAILBA8": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "TAILBA8": {"PowerPC": ["IForm","18","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "TAILBA8": {"PowerPC": ["IForm","18","0","0"]}
+  }
+}

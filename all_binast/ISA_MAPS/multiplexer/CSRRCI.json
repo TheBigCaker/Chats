@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CSRRCI",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "CSRRCI": {"RISCV": "CSRRCI"}
+  },
+  "INPUTS": {
+    "CSRRCI": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "CSRRCI": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "CSRRCI": {"RISCV": ["CSR_ii","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "CSRRCI": {"RISCV": ["CSR_ii","0b111"]}
+  }
+}

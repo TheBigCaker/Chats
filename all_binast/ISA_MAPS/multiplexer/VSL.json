@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSL": {"PowerPC": "VSL"}
+  },
+  "INPUTS": {
+    "VSL": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSL": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSL": {"PowerPC": ["VX1_Int_Ty","452"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSL": {"PowerPC": ["VX1_Int_Ty","452"]}
+  }
+}

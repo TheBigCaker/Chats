@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ISUBB",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "ISUBB.i32": {"Mali": "ISUBB.i32"}
+  },
+  "INPUTS": {
+    "ISUBB.i32": {"Mali": [["R32",32],["R32",32],["R32",32]]}
+  },
+  "OUTPUTS": {
+    "ISUBB.i32": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "ISUBB.i32": {"Mali": ["Bifrost_fma","0x27fe00","0x7ffe00"]}
+  },
+  "OUTPUT_BYTES": {
+    "ISUBB.i32": {"Mali": ["Bifrost_fma","0x27fe00","0x7ffe00"]}
+  }
+}

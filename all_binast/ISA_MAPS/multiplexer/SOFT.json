@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SOFT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SOFT_WQM": {"AMDGPU": "SOFT_WQM"}
+  },
+  "INPUTS": {
+    "SOFT_WQM": {"AMDGPU": [["unknown",0]]}
+  },
+  "OUTPUTS": {
+    "SOFT_WQM": {"AMDGPU": [["unknown",0]]}
+  },
+  "INPUT_BYTES": {
+    "SOFT_WQM": {"AMDGPU": ["PseudoInstSI"]}
+  },
+  "OUTPUT_BYTES": {
+    "SOFT_WQM": {"AMDGPU": ["PseudoInstSI"]}
+  }
+}

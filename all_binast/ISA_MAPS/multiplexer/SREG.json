@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SREG",
+  "BACKENDS": ["AVR"],
+  "INDEX": {
+    "SREG": {"AVR": "SREG"}
+  },
+  "INPUTS": {
+    "SREG": {"AVR": []}
+  },
+  "OUTPUTS": {
+    "SREG": {"AVR": []}
+  },
+  "INPUT_BYTES": {
+    "SREG": {"AVR": ["AVRReg","14"]}
+  },
+  "OUTPUT_BYTES": {
+    "SREG": {"AVR": ["AVRReg","14"]}
+  }
+}

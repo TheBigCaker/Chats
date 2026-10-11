@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "PUSHA",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PUSHA32": {"X86": "PUSHA32"},
+    "PUSHA16": {"X86": "PUSHA16"}
+  },
+  "INPUTS": {
+    "PUSHA32": {"X86": []},
+    "PUSHA16": {"X86": []}
+  },
+  "OUTPUTS": {
+    "PUSHA32": {"X86": []},
+    "PUSHA16": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PUSHA32": {"X86": ["0x60"]},
+    "PUSHA16": {"X86": ["0x60"]}
+  },
+  "OUTPUT_BYTES": {
+    "PUSHA32": {"X86": ["0x60"]},
+    "PUSHA16": {"X86": ["0x60"]}
+  }
+}

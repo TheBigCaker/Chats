@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSUBEUQM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSUBEUQM": {"PowerPC": "VSUBEUQM"}
+  },
+  "INPUTS": {
+    "VSUBEUQM": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSUBEUQM": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSUBEUQM": {"PowerPC": ["VA1a_Int_Ty","62"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSUBEUQM": {"PowerPC": ["VA1a_Int_Ty","62"]}
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "VCMPNEH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCMPNEH": {"PowerPC": "VCMPNEH"},
+    "VCMPNEH_rec": {"PowerPC": "VCMPNEH_rec"}
+  },
+  "INPUTS": {
+    "VCMPNEH": {"PowerPC": []},
+    "VCMPNEH_rec": {"PowerPC": [["vrrc:$VA",0],["vrrc:$VB",0]]}
+  },
+  "OUTPUTS": {
+    "VCMPNEH": {"PowerPC": []},
+    "VCMPNEH_rec": {"PowerPC": [["vrrc:$VD",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCMPNEH": {"PowerPC": ["VCMP","71"]},
+    "VCMPNEH_rec": {"PowerPC": ["VCMP_rec","71"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCMPNEH": {"PowerPC": ["VCMP","71"]},
+    "VCMPNEH_rec": {"PowerPC": ["VCMP_rec","71"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "STOSB",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "STOSB": {"X86": "STOSB"}
+  },
+  "INPUTS": {
+    "STOSB": {"X86": [["dstidx8",0]]}
+  },
+  "OUTPUTS": {
+    "STOSB": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "STOSB": {"X86": ["0xAA"]}
+  },
+  "OUTPUT_BYTES": {
+    "STOSB": {"X86": ["0xAA"]}
+  }
+}

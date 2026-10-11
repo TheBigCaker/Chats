@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "ALIGNADDR",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "ALIGNADDR": {"Sparc": "ALIGNADDR"}
+  },
+  "INPUTS": {
+    "ALIGNADDR": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "ALIGNADDR": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "ALIGNADDR": {"Sparc": ["VISInst","0b000011000"]}
+  },
+  "OUTPUT_BYTES": {
+    "ALIGNADDR": {"Sparc": ["VISInst","0b000011000"]}
+  }
+}

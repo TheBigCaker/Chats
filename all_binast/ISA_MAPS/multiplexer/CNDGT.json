@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "CNDGT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "CNDGT_eg": {"AMDGPU": "CNDGT_eg"},
+    "CNDGT_INT": {"AMDGPU": "CNDGT_INT"},
+    "CNDGT_r600": {"AMDGPU": "CNDGT_r600"}
+  },
+  "INPUTS": {
+    "CNDGT_eg": {"AMDGPU": []},
+    "CNDGT_INT": {"AMDGPU": []},
+    "CNDGT_r600": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "CNDGT_eg": {"AMDGPU": []},
+    "CNDGT_INT": {"AMDGPU": []},
+    "CNDGT_r600": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "CNDGT_eg": {"AMDGPU": ["CNDGT_Common","0x1A"]},
+    "CNDGT_INT": {"AMDGPU": ["R600_3OP","0x1D","0"]},
+    "CNDGT_r600": {"AMDGPU": ["CNDGT_Common","0x19"]}
+  },
+  "OUTPUT_BYTES": {
+    "CNDGT_eg": {"AMDGPU": ["CNDGT_Common","0x1A"]},
+    "CNDGT_INT": {"AMDGPU": ["R600_3OP","0x1D","0"]},
+    "CNDGT_r600": {"AMDGPU": ["CNDGT_Common","0x19"]}
+  }
+}

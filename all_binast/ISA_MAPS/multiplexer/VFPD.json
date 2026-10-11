@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VFPD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VFPDomain": {"ARM": "VFPDomain"}
+  },
+  "INPUTS": {
+    "VFPDomain": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "VFPDomain": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "VFPDomain": {"ARM": ["Domain","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "VFPDomain": {"ARM": ["Domain","1"]}
+  }
+}

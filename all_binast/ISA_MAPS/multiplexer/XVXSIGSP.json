@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVXSIGSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVXSIGSP": {"PowerPC": "XVXSIGSP"}
+  },
+  "INPUTS": {
+    "XVXSIGSP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XVXSIGSP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XVXSIGSP": {"PowerPC": ["XX2_XT6_XO5_XB6","60","9","475"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVXSIGSP": {"PowerPC": ["XX2_XT6_XO5_XB6","60","9","475"]}
+  }
+}

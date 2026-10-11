@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "VABS",
+  "BACKENDS": ["ARM","RISCV"],
+  "INDEX": {
+    "VABSfd": {"ARM": "VABSfd"},
+    "VABSfq": {"ARM": "VABSfq"},
+    "VABShd": {"ARM": "VABShd"},
+    "VABShq": {"ARM": "VABShq"},
+    "VABS_V": {"RISCV": "VABS_V"}
+  },
+  "INPUTS": {
+    "VABSfd": {"ARM": []},
+    "VABSfq": {"ARM": []},
+    "VABShd": {"ARM": []},
+    "VABShq": {"ARM": []},
+    "VABS_V": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VABSfd": {"ARM": []},
+    "VABSfq": {"ARM": []},
+    "VABShd": {"ARM": []},
+    "VABShq": {"ARM": []},
+    "VABS_V": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VABSfd": {"ARM": ["N2VD","0b11","0b11","0b10","0b01","0b01110","0"]},
+    "VABSfq": {"ARM": ["N2VQ","0b11","0b11","0b10","0b01","0b01110","0"]},
+    "VABShd": {"ARM": ["N2VD","0b11","0b11","0b01","0b01","0b01110","0"]},
+    "VABShq": {"ARM": ["N2VQ","0b11","0b11","0b01","0b01","0b01110","0"]},
+    "VABS_V": {"RISCV": ["VALUVs2","0b010010","0b10000"]}
+  },
+  "OUTPUT_BYTES": {
+    "VABSfd": {"ARM": ["N2VD","0b11","0b11","0b10","0b01","0b01110","0"]},
+    "VABSfq": {"ARM": ["N2VQ","0b11","0b11","0b10","0b01","0b01110","0"]},
+    "VABShd": {"ARM": ["N2VD","0b11","0b11","0b01","0b01","0b01110","0"]},
+    "VABShq": {"ARM": ["N2VQ","0b11","0b11","0b01","0b01","0b01110","0"]},
+    "VABS_V": {"RISCV": ["VALUVs2","0b010010","0b10000"]}
+  }
+}

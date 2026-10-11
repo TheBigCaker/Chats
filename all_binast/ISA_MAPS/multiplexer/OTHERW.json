@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "OTHERW",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "OTHERW": {"Sparc": "OTHERW"}
+  },
+  "INPUTS": {
+    "OTHERW": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "OTHERW": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "OTHERW": {"Sparc": ["UA2005RegWin","0b00011"]}
+  },
+  "OUTPUT_BYTES": {
+    "OTHERW": {"Sparc": ["UA2005RegWin","0b00011"]}
+  }
+}

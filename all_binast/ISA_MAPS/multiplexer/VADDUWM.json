@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VADDUWM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VADDUWM": {"PowerPC": "VADDUWM"}
+  },
+  "INPUTS": {
+    "VADDUWM": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VADDUWM": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VADDUWM": {"PowerPC": ["VXForm_1","128"]}
+  },
+  "OUTPUT_BYTES": {
+    "VADDUWM": {"PowerPC": ["VXForm_1","128"]}
+  }
+}

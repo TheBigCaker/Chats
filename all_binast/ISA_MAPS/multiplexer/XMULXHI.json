@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XMULXHI",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "XMULXHI": {"Sparc": "XMULXHI"}
+  },
+  "INPUTS": {
+    "XMULXHI": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "XMULXHI": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "XMULXHI": {"Sparc": ["VISInst","0b100010110"]}
+  },
+  "OUTPUT_BYTES": {
+    "XMULXHI": {"Sparc": ["VISInst","0b100010110"]}
+  }
+}

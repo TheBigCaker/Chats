@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMINUD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMINUD": {"PowerPC": "VMINUD"}
+  },
+  "INPUTS": {
+    "VMINUD": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VMINUD": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VMINUD": {"PowerPC": ["VX1_Int_Ty","706"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMINUD": {"PowerPC": ["VX1_Int_Ty","706"]}
+  }
+}

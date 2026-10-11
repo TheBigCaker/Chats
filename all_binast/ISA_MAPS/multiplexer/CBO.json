@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "CBO",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "CBO_CLEAN": {"RISCV": "CBO_CLEAN"},
+    "CBO_FLUSH": {"RISCV": "CBO_FLUSH"},
+    "CBO_INVAL": {"RISCV": "CBO_INVAL"},
+    "CBO_ZERO": {"RISCV": "CBO_ZERO"}
+  },
+  "INPUTS": {
+    "CBO_CLEAN": {"RISCV": [["GPRMemZeroOffset:$rs1",0]]},
+    "CBO_FLUSH": {"RISCV": [["GPRMemZeroOffset:$rs1",0]]},
+    "CBO_INVAL": {"RISCV": [["GPRMemZeroOffset:$rs1",0]]},
+    "CBO_ZERO": {"RISCV": [["GPRMemZeroOffset:$rs1",0]]}
+  },
+  "OUTPUTS": {
+    "CBO_CLEAN": {"RISCV": []},
+    "CBO_FLUSH": {"RISCV": []},
+    "CBO_INVAL": {"RISCV": []},
+    "CBO_ZERO": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "CBO_CLEAN": {"RISCV": ["CBO_r","0b000000000001"]},
+    "CBO_FLUSH": {"RISCV": ["CBO_r","0b000000000010"]},
+    "CBO_INVAL": {"RISCV": ["CBO_r","0b000000000000"]},
+    "CBO_ZERO": {"RISCV": ["CBO_r","0b000000000100"]}
+  },
+  "OUTPUT_BYTES": {
+    "CBO_CLEAN": {"RISCV": ["CBO_r","0b000000000001"]},
+    "CBO_FLUSH": {"RISCV": ["CBO_r","0b000000000010"]},
+    "CBO_INVAL": {"RISCV": ["CBO_r","0b000000000000"]},
+    "CBO_ZERO": {"RISCV": ["CBO_r","0b000000000100"]}
+  }
+}

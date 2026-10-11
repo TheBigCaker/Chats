@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "HWXDL",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "HWXDL": {"AMDGPU": "HWXDL"}
+  },
+  "INPUTS": {
+    "HWXDL": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "HWXDL": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "HWXDL": {"AMDGPU": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "HWXDL": {"AMDGPU": ["ProcResource","1"]}
+  }
+}

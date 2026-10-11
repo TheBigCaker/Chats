@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YSS",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YSS": {"RISCV": "YSS"}
+  },
+  "INPUTS": {
+    "YSS": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YSS": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YSS": {"RISCV": ["RVY_rr","0b0001110"]}
+  },
+  "OUTPUT_BYTES": {
+    "YSS": {"RISCV": ["RVY_rr","0b0001110"]}
+  }
+}

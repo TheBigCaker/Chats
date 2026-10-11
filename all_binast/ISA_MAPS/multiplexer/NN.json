@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "NN",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "NN": {"PowerPC": "NN"},
+    "NN": {"PowerPC": "NN"}
+  },
+  "INPUTS": {
+    "NN": {"PowerPC": [["acc",0]]},
+    "NN": {"PowerPC": [["acc",0]]}
+  },
+  "OUTPUTS": {
+    "NN": {"PowerPC": [["acc",0]]},
+    "NN": {"PowerPC": [["acc",0]]}
+  },
+  "INPUT_BYTES": {
+    "NN": {"PowerPC": ["XX3Form_AT3_XAB6"]},
+    "NN": {"PowerPC": ["XX3Form_AT3_XAB6"]}
+  },
+  "OUTPUT_BYTES": {
+    "NN": {"PowerPC": ["XX3Form_AT3_XAB6"]},
+    "NN": {"PowerPC": ["XX3Form_AT3_XAB6"]}
+  }
+}

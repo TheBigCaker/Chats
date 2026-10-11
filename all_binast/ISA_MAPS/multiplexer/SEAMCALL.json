@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SEAMCALL",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SEAMCALL": {"X86": "SEAMCALL"}
+  },
+  "INPUTS": {
+    "SEAMCALL": {"X86": []}
+  },
+  "OUTPUTS": {
+    "SEAMCALL": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SEAMCALL": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "SEAMCALL": {"X86": ["0x01"]}
+  }
+}

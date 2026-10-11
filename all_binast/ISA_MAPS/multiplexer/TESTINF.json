@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "TESTINF",
+  "BACKENDS": ["NVPTX"],
+  "INDEX": {
+    "TESTINF_f32r": {"NVPTX": "TESTINF_f32r"},
+    "TESTINF_f64r": {"NVPTX": "TESTINF_f64r"}
+  },
+  "INPUTS": {
+    "TESTINF_f32r": {"NVPTX": [["B32",0]]},
+    "TESTINF_f64r": {"NVPTX": [["B64",0]]}
+  },
+  "OUTPUTS": {
+    "TESTINF_f32r": {"NVPTX": [["B1",0]]},
+    "TESTINF_f64r": {"NVPTX": [["B1",0]]}
+  },
+  "INPUT_BYTES": {
+    "TESTINF_f32r": {"NVPTX": ["BasicNVPTXInst"]},
+    "TESTINF_f64r": {"NVPTX": ["BasicNVPTXInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "TESTINF_f32r": {"NVPTX": ["BasicNVPTXInst"]},
+    "TESTINF_f64r": {"NVPTX": ["BasicNVPTXInst"]}
+  }
+}

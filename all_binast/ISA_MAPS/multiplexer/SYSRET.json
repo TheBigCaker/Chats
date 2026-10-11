@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SYSRET",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SYSRET": {"X86": "SYSRET"}
+  },
+  "INPUTS": {
+    "SYSRET": {"X86": []}
+  },
+  "OUTPUTS": {
+    "SYSRET": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SYSRET": {"X86": ["0x07"]}
+  },
+  "OUTPUT_BYTES": {
+    "SYSRET": {"X86": ["0x07"]}
+  }
+}

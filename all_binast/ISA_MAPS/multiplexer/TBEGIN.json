@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "TBEGIN",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "TBEGIN_RET": {"PowerPC": "TBEGIN_RET"},
+    "TBEGIN": {"PowerPC": "TBEGIN"}
+  },
+  "INPUTS": {
+    "TBEGIN_RET": {"PowerPC": [["u1imm",1]]},
+    "TBEGIN": {"PowerPC": [["u1imm",1]]}
+  },
+  "OUTPUTS": {
+    "TBEGIN_RET": {"PowerPC": [["gprc",0]]},
+    "TBEGIN": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "TBEGIN_RET": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "TBEGIN": {"PowerPC": ["XForm_htm0","31","654"]}
+  },
+  "OUTPUT_BYTES": {
+    "TBEGIN_RET": {"PowerPC": ["PPCCustomInserterPseudo"]},
+    "TBEGIN": {"PowerPC": ["XForm_htm0","31","654"]}
+  }
+}

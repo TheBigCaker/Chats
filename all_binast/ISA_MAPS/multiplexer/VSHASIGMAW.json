@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSHASIGMAW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSHASIGMAW": {"PowerPC": "VSHASIGMAW"}
+  },
+  "INPUTS": {
+    "VSHASIGMAW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSHASIGMAW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSHASIGMAW": {"PowerPC": ["VXCR_Int_Ty","1666"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSHASIGMAW": {"PowerPC": ["VXCR_Int_Ty","1666"]}
+  }
+}

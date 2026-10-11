@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XRELEASE",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "XRELEASE_PREFIX": {"X86": "XRELEASE_PREFIX"}
+  },
+  "INPUTS": {
+    "XRELEASE_PREFIX": {"X86": []}
+  },
+  "OUTPUTS": {
+    "XRELEASE_PREFIX": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "XRELEASE_PREFIX": {"X86": ["0xF3"]}
+  },
+  "OUTPUT_BYTES": {
+    "XRELEASE_PREFIX": {"X86": ["0xF3"]}
+  }
+}

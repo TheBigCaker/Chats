@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VPACK",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VPACK_VV": {"RISCV": "VPACK_VV"}
+  },
+  "INPUTS": {
+    "VPACK_VV": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VPACK_VV": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VPACK_VV": {"RISCV": ["VPACK_INSN","0b0110011","0b0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VPACK_VV": {"RISCV": ["VPACK_INSN","0b0110011","0b0"]}
+  }
+}

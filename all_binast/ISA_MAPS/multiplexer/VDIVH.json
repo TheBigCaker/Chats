@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VDIVH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VDIVH": {"ARM": "VDIVH"}
+  },
+  "INPUTS": {
+    "VDIVH": {"ARM": [["HPR",0],["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VDIVH": {"ARM": [["HPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VDIVH": {"ARM": ["AHbI","0b11101","0b00","0","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VDIVH": {"ARM": ["AHbI","0b11101","0b00","0","0"]}
+  }
+}

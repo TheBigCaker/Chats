@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "EXIT",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "EXIT_STRICT_WWM": {"AMDGPU": "EXIT_STRICT_WWM"},
+    "EXIT_STRICT_WQM": {"AMDGPU": "EXIT_STRICT_WQM"}
+  },
+  "INPUTS": {
+    "EXIT_STRICT_WWM": {"AMDGPU": [["SReg_1",0]]},
+    "EXIT_STRICT_WQM": {"AMDGPU": [["SReg_1",0]]}
+  },
+  "OUTPUTS": {
+    "EXIT_STRICT_WWM": {"AMDGPU": [["SReg_1",0]]},
+    "EXIT_STRICT_WQM": {"AMDGPU": [["SReg_1",0]]}
+  },
+  "INPUT_BYTES": {
+    "EXIT_STRICT_WWM": {"AMDGPU": ["SPseudoInstSI"]},
+    "EXIT_STRICT_WQM": {"AMDGPU": ["SPseudoInstSI"]}
+  },
+  "OUTPUT_BYTES": {
+    "EXIT_STRICT_WWM": {"AMDGPU": ["SPseudoInstSI"]},
+    "EXIT_STRICT_WQM": {"AMDGPU": ["SPseudoInstSI"]}
+  }
+}

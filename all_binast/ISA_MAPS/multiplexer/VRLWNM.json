@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VRLWNM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VRLWNM": {"PowerPC": "VRLWNM"}
+  },
+  "INPUTS": {
+    "VRLWNM": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VRLWNM": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VRLWNM": {"PowerPC": ["VX1_VT5_VA5_VB5","389"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRLWNM": {"PowerPC": ["VX1_VT5_VA5_VB5","389"]}
+  }
+}

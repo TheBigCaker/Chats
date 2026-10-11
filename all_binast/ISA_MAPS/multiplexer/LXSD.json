@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LXSD",
+  "BACKENDS": ["RISCV","PowerPC"],
+  "INDEX": {
+    "LXSD": {"RISCV": "LXSD"},
+    "LXSD": {"PowerPC": "LXSD"}
+  },
+  "INPUTS": {
+    "LXSD": {"RISCV": []},
+    "LXSD": {"PowerPC": [["(memrix",0]]}
+  },
+  "OUTPUTS": {
+    "LXSD": {"RISCV": []},
+    "LXSD": {"PowerPC": [["vfrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LXSD": {"RISCV": ["ZilxLoad","0b11010","0b011"]},
+    "LXSD": {"PowerPC": ["DSForm_1","57","2"]}
+  },
+  "OUTPUT_BYTES": {
+    "LXSD": {"RISCV": ["ZilxLoad","0b11010","0b011"]},
+    "LXSD": {"PowerPC": ["DSForm_1","57","2"]}
+  }
+}

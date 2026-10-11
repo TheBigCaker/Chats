@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "BTC",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "BTC16rr": {"X86": "BTC16rr"},
+    "BTC32rr": {"X86": "BTC32rr"},
+    "BTC16mr": {"X86": "BTC16mr"},
+    "BTC32mr": {"X86": "BTC32mr"}
+  },
+  "INPUTS": {
+    "BTC16rr": {"X86": [["GR16",16],["GR16",16]]},
+    "BTC32rr": {"X86": [["GR32",32],["GR32",32]]},
+    "BTC16mr": {"X86": [["i16mem",0],["GR16",16]]},
+    "BTC32mr": {"X86": [["i32mem",0],["GR32",32]]}
+  },
+  "OUTPUTS": {
+    "BTC16rr": {"X86": [["GR16",16]]},
+    "BTC32rr": {"X86": [["GR32",32]]},
+    "BTC16mr": {"X86": []},
+    "BTC32mr": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "BTC16rr": {"X86": ["0xBB"]},
+    "BTC32rr": {"X86": ["0xBB"]},
+    "BTC16mr": {"X86": ["0xBB"]},
+    "BTC32mr": {"X86": ["0xBB"]}
+  },
+  "OUTPUT_BYTES": {
+    "BTC16rr": {"X86": ["0xBB"]},
+    "BTC32rr": {"X86": ["0xBB"]},
+    "BTC16mr": {"X86": ["0xBB"]},
+    "BTC32mr": {"X86": ["0xBB"]}
+  }
+}

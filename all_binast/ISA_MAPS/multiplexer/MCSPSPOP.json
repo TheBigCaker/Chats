@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MCSPSPOP",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MCSPSPOP": {"RISCV": "MCSPSPOP"}
+  },
+  "INPUTS": {
+    "MCSPSPOP": {"RISCV": [["SP:$rs1",0]]}
+  },
+  "OUTPUTS": {
+    "MCSPSPOP": {"RISCV": [["SP:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "MCSPSPOP": {"RISCV": ["CSPSInst","0b0011000","0b01100"]}
+  },
+  "OUTPUT_BYTES": {
+    "MCSPSPOP": {"RISCV": ["CSPSInst","0b0011000","0b01100"]}
+  }
+}

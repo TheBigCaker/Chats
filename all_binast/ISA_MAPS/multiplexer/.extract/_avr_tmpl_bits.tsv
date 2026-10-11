@@ -1,0 +1,35 @@
+FeatureSet	3	name	desc	list<SubtargetFeature> i	1	SubtargetFeature
+AVRInst16	4	outs	ins	asmstr	pattern	1	AVRInst
+AVRInst32	4	outs	ins	asmstr	pattern	1	AVRInst
+Pseudo	4	outs	ins	asmstr	pattern	1	AVRInst16
+FRdRr	6	opcode	f	outs	ins	asmstr	pattern	1	AVRInst16
+FZRd	5	t	outs	ins	asmstr	pattern	1	AVRInst16
+FRdK	5	opcode	outs	ins	asmstr	pattern	1	AVRInst16
+FRd	6	opcode	f	outs	ins	asmstr	pattern	1	AVRInst16
+FSTDLDD	5	type	outs	ins	asmstr	pattern	1	AVRInst16
+FSTLD	6	type	mode	outs	ins	asmstr	pattern	1	AVRInst16
+FLPMX	6	e	p	outs	ins	asmstr	pattern	1	AVRInst16
+FMOVWRdRr	4	outs	ins	asmstr	pattern	1	AVRInst16
+FMULSRdRr	4	outs	ins	asmstr	pattern	1	AVRInst16
+FMULSURdRr	4	outs	ins	asmstr	pattern	1	AVRInst16
+FFMULRdRr	5	f	outs	ins	asmstr	pattern	1	AVRInst16
+FWRdK	5	f	outs	ins	asmstr	pattern	1	AVRInst16
+FIORdA	4	outs	ins	asmstr	pattern	1	AVRInst16
+FIOARr	4	outs	ins	asmstr	pattern	1	AVRInst16
+FIOBIT	5	t	outs	ins	asmstr	pattern	1	AVRInst16
+FRdB	5	t	outs	ins	asmstr	pattern	1	AVRInst16
+FDES	4	outs	ins	asmstr	pattern	1	AVRInst16
+FBRsk	6	f	s	outs	ins	asmstr	pattern	1	AVRInst16
+F16	5	opcode	outs	ins	asmstr	pattern	1	AVRInst16
+FBRk	5	f	outs	ins	asmstr	pattern	1	AVRInst16
+F32BRk	5	f	outs	ins	asmstr	pattern	1	AVRInst32
+F32DM	5	f	outs	ins	asmstr	pattern	1	AVRInst32
+FLDSSTSTINY	5	i	outs	ins	asmstr	pattern	1	AVRInst16
+FS	5	b	outs	ins	asmstr	pattern	1	AVRInst16
+FSK	5	f	outs	ins	asmstr	pattern	1	AVRInst16
+ExtensionPseudo	4	outs	ins	asmstr	pattern	1	Pseudo
+StorePseudo	4	outs	ins	asmstr	pattern	1	Pseudo
+SelectPseudo	4	outs	ins	asmstr	pattern	1	Pseudo
+ShiftPseudo	4	outs	ins	asmstr	pattern	1	Pseudo
+AtomicLoadOp8	1	PatFrag Op	1	AtomicLoadOp
+AVRReg	4	num	name	list<Register> subregs = []	list<string> altNames = []	1	RegisterWithSubRegs

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "YSUNSEAL",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "YSUNSEAL": {"RISCV": "YSUNSEAL"}
+  },
+  "INPUTS": {
+    "YSUNSEAL": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "YSUNSEAL": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "YSUNSEAL": {"RISCV": ["RVY_rr","0b0000111"]}
+  },
+  "OUTPUT_BYTES": {
+    "YSUNSEAL": {"RISCV": ["RVY_rr","0b0000111"]}
+  }
+}

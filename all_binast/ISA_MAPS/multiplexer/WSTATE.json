@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "WSTATE",
+  "BACKENDS": ["Sparc"],
+  "INDEX": {
+    "WSTATE": {"Sparc": "WSTATE"}
+  },
+  "INPUTS": {
+    "WSTATE": {"Sparc": []}
+  },
+  "OUTPUTS": {
+    "WSTATE": {"Sparc": []}
+  },
+  "INPUT_BYTES": {
+    "WSTATE": {"Sparc": ["SparcCtrlReg","14"]}
+  },
+  "OUTPUT_BYTES": {
+    "WSTATE": {"Sparc": ["SparcCtrlReg","14"]}
+  }
+}

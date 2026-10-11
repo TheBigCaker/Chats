@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULUWM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMULUWM": {"PowerPC": "VMULUWM"}
+  },
+  "INPUTS": {
+    "VMULUWM": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMULUWM": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMULUWM": {"PowerPC": ["VXForm_1","137"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULUWM": {"PowerPC": ["VXForm_1","137"]}
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "PUSHF",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "PUSHF16": {"X86": "PUSHF16"},
+    "PUSHF32": {"X86": "PUSHF32"},
+    "PUSHF64": {"X86": "PUSHF64"}
+  },
+  "INPUTS": {
+    "PUSHF16": {"X86": []},
+    "PUSHF32": {"X86": []},
+    "PUSHF64": {"X86": []}
+  },
+  "OUTPUTS": {
+    "PUSHF16": {"X86": []},
+    "PUSHF32": {"X86": []},
+    "PUSHF64": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "PUSHF16": {"X86": ["0x9C"]},
+    "PUSHF32": {"X86": ["0x9C"]},
+    "PUSHF64": {"X86": ["0x9C"]}
+  },
+  "OUTPUT_BYTES": {
+    "PUSHF16": {"X86": ["0x9C"]},
+    "PUSHF32": {"X86": ["0x9C"]},
+    "PUSHF64": {"X86": ["0x9C"]}
+  }
+}

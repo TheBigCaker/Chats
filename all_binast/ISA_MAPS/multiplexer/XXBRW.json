@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XXBRW",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XXBRW": {"PowerPC": "XXBRW"}
+  },
+  "INPUTS": {
+    "XXBRW": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XXBRW": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XXBRW": {"PowerPC": ["XX2_XT6_XO5_XB6","60","15","475"]}
+  },
+  "OUTPUT_BYTES": {
+    "XXBRW": {"PowerPC": ["XX2_XT6_XO5_XB6","60","15","475"]}
+  }
+}

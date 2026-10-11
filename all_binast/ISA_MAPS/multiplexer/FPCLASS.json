@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "FPCLASS",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "FPCLASS.f16": {"Mali": "FPCLASS.f16"},
+    "FPCLASS.f32": {"Mali": "FPCLASS.f32"},
+    "FPCLASS.f32": {"Mali": "FPCLASS.f32"},
+    "FPCLASS.f16": {"Mali": "FPCLASS.f16"}
+  },
+  "INPUTS": {
+    "FPCLASS.f16": {"Mali": [["R32",32]]},
+    "FPCLASS.f32": {"Mali": [["R32",32]]},
+    "FPCLASS.f32": {"Mali": []},
+    "FPCLASS.f16": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "FPCLASS.f16": {"Mali": [["R",32]]},
+    "FPCLASS.f32": {"Mali": [["R",32]]},
+    "FPCLASS.f32": {"Mali": [["R",32]]},
+    "FPCLASS.f16": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "FPCLASS.f16": {"Mali": ["Bifrost_add","0x67c40","0xffff0"]},
+    "FPCLASS.f32": {"Mali": ["Bifrost_add","0x67c50","0xffff8"]},
+    "FPCLASS.f32": {"Mali": ["Valhall_"]},
+    "FPCLASS.f16": {"Mali": ["Valhall_"]}
+  },
+  "OUTPUT_BYTES": {
+    "FPCLASS.f16": {"Mali": ["Bifrost_add","0x67c40","0xffff0"]},
+    "FPCLASS.f32": {"Mali": ["Bifrost_add","0x67c50","0xffff8"]},
+    "FPCLASS.f32": {"Mali": ["Valhall_"]},
+    "FPCLASS.f16": {"Mali": ["Valhall_"]}
+  }
+}

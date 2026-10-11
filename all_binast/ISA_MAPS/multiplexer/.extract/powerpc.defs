@@ -1,0 +1,1678 @@
+CSR_SVR32_ColdCC_Common|||CalleeSavedRegs|4,14,0
+CSR_SVR32_ColdCC|||CalleeSavedRegs|2
+CSR_SVR32_ColdCC_Altivec|||CalleeSavedRegs|0,3
+CSR_SVR32_ColdCC_SPE|||CalleeSavedRegs|4,14
+CSR_SVR64_ColdCC|||CalleeSavedRegs|4,14,2,0
+CSR_SVR64_ColdCC_Altivec|||CalleeSavedRegs|0,3
+CSR_64_AllRegs|||CalleeSavedRegs|3,14,0,0
+CSR_64_AllRegs_Altivec|||CalleeSavedRegs|0
+CSR_64_AllRegs_AIX_Dflt_Altivec|||CalleeSavedRegs|0
+CSR_64_AllRegs_VSX|||CalleeSavedRegs|0
+CSR_64_AllRegs_AIX_Dflt_VSX|||CalleeSavedRegs|0
+CSR_ALL_VSRP|||CalleeSavedRegs|0
+BLR8|||XLForm_2_ext|19,16,20,0,0
+BCTR8|||XLForm_2_ext|19,528,20,0,0
+BCCCTR8||(pred |XLForm_2_br|19,528,0
+BCCTR8||crbitrc|XLForm_2_br2|19,528,12,0
+BCCTR8n||crbitrc|XLForm_2_br2|19,528,4,0
+BDZ8||condbrtarget|BForm_1|16,18,0,0
+BDNZ8||condbrtarget|BForm_1|16,16,0,0
+BDZLR8|||XLForm_2_ext|19,16,18,0,0
+BDNZLR8|||XLForm_2_ext|19,16,16,0,0
+BL8||calltarget|IForm|18,0,1
+BL8_TLS||tlscall|IForm|18,0,1
+BLA8||abscalltarget|IForm|18,1,1
+BL8_NOP||calltarget|IForm_and_DForm_4_zero|18,0,1,24
+BL8_NOP_TLS||tlscall|IForm_and_DForm_4_zero|18,0,1,24
+BLA8_NOP||abscalltarget|IForm_and_DForm_4_zero|18,1,1,24
+BL8_NOTOC||calltarget|IForm|18,0,1
+BL8_NOTOC_TLS||tlscall|IForm|18,0,1
+BCTRL8|||XLForm_2_ext|19,528,20,0,1
+BCCCTRL8||(pred |XLForm_2_br|19,528,1
+BCCTRL8||crbitrc|XLForm_2_br2|19,528,12,1
+BCCTRL8n||crbitrc|XLForm_2_br2|19,528,4,1
+BL8_RM||calltarget|IForm|18,0,1
+BLA8_RM||abscalltarget|IForm|18,1,1
+BL8_NOP_RM||calltarget|IForm_and_DForm_4_zero|18,0,1,24
+BLA8_NOP_RM||abscalltarget|IForm_and_DForm_4_zero|18,1,1,24
+BL8_NOTOC_RM||calltarget|IForm|18,0,1
+BCTRL8_RM|||XLForm_2_ext|19,528,20,0,1
+BL8_LDinto_toc||calltarget|IForm_and_DForm_1|18,0,1,58
+BL8_LDinto_toc_RM||calltarget|IForm_and_DForm_1|18,0,1,58
+BL8_TLS_||tlscall|IForm|18,0,1
+pseudo|g8rc|memrr,i32imm,g8rc|PPCCustomInserterPseudo|
+ATOMIC_CMP_SWAP_I64|g8rc|memrr,g8rc,g8rc|PPCCustomInserterPseudo|
+LDARX|g8rc|(memrr |XForm_1_memOp|31,84
+LQARX|g8prc|(memrr |XForm_1_memOp|31,276
+LDARXL|g8rc|(memrr |XForm_1|31,84
+LQARXL|g8prc|(memrr |XForm_1|31,276
+LDAT|g8prc|g8prc,ptr_rc_nor0,u5imm|X_RD5_RS5_IM5|31,614
+LDAT_CSNE|g8rc|ptr_rc_nor0|X_RD5_RS5_IM5|31,614
+LDAT_CSNE_PSEUDO|g8rc|ptr_rc_nor0|PPCPostRAExpPseudo|
+STDCX||g8rc,(memrr |XForm_1_memOp|31,214
+STQCX||g8prc,(memrr |XForm_1_memOp|31,182
+SPLIT_QUADWORD|g8rc,g8rc|g8prc|PPCCustomInserterPseudo|
+ATOMIC_CMP_SWAP_I128|g8prc,g8prc|memrr,g8rc,g8rc,g8rc,g8rc|PPCPostRAExpPseudo|
+STDAT||g8rc,ptr_rc_nor0,u5imm|XForm_base_r3xo_memOp|31,742
+TCRETURNdi8||calltarget,i32imm|PPCEmitTimePseudo|
+TCRETURNai8||abscalltarget,i32imm|PPCEmitTimePseudo|
+TCRETURNri8||CTRRC8,i32imm|PPCEmitTimePseudo|
+TAILBCTR8|||XLForm_2_ext|19,528,20,0,0
+TAILB8||calltarget|IForm|18,0,0
+TAILBA8||abscalltarget|IForm|18,0,0
+MTOCRF8|crbitm|g8rc|XFXForm_5a|31,144
+MTCRF8||i32imm,g8rc|XFXForm_5|31,144
+MFOCRF8|g8rc|crbitm|XFXForm_5a|31,19
+MFCR8|g8rc||XFXForm_3|31,19
+EH_SjLj_SetJmp64|gprc|memr|PPCCustomInserterPseudo|
+EH_SjLj_LongJmp64||memr|PPCCustomInserterPseudo|
+MFSPR8|g8rc|i32imm|XFXForm_1|31,339
+MTSPR8||i32imm,g8rc|XFXForm_1|31,467
+MFCTR8|g8rc||XFXForm_1_ext|31,339,9
+MTCTR8||g8rc|XFXForm_1_ext|31,467,9
+MTCTR8loop||g8rc|XFXForm_1_ext|31,467,9
+DecreaseCTR8loop|crbitrc|i64imm|PPCEmitTimePseudo|
+MFTB8|g8rc||XFXForm_1_ext|31,339,268
+DYNALLOC8|g8rc|g8rc,memri|PPCEmitTimePseudo|
+DYNAREAOFFSET8|i64imm|memri|PPCEmitTimePseudo|
+PROBED_ALLOCA_64|g8rc|g8rc,memri|PPCCustomInserterPseudo|
+PREPARE_PROBED_ALLOCA_64|g8rc,g8rc|g8rc,memri|PPCEmitTimePseudo|
+PREPARE_PROBED_ALLOCA_NEGSIZE_SAME_REG_64|g8rc,g8rc|g8rc,memri|PPCEmitTimePseudo|
+PROBED_STACKALLOC_64|g8rc,g8rc|i64imm|PPCEmitTimePseudo|
+MTLR8||g8rc|XFXForm_1_ext|31,467,8
+MFLR8|g8rc||XFXForm_1_ext|31,339,8
+LI8|g8rc|s16imm64|DForm_2_r0|14
+LIS8|g8rc|s17imm64|DForm_2_r0|15
+ANDI8_rec|g8rc|g8rc,u16imm64|DForm_4|28
+ANDIS8_rec|g8rc|g8rc,u16imm64|DForm_4|29
+ORI8|g8rc|g8rc,u16imm64|DForm_4|24
+ORIS8|g8rc|g8rc,u16imm64|DForm_4|25
+XORI8|g8rc|g8rc,u16imm64|DForm_4|26
+XORIS8|g8rc|g8rc,u16imm64|DForm_4|27
+ADD8TLS|g8rc|g8rc_nox0,tlsreg|XOForm_1|31,266,0
+LBZXTLS|g8rc|ptr_rc_nor0,tlsreg|XForm_1|31,87
+LHZXTLS|g8rc|ptr_rc_nor0,tlsreg|XForm_1|31,279
+LHAXTLS|g8rc|ptr_rc_nor0,tlsreg|XForm_1|31,343
+LWZXTLS|g8rc|ptr_rc_nor0,tlsreg|XForm_1|31,23
+LWAXTLS|g8rc|ptr_rc_nor0,tlsreg|XForm_1|31,341
+LDXTLS|g8rc|ptr_rc_nor0,tlsreg|XForm_1|31,21
+LBZXTLS_32|gprc|ptr_rc_nor0,tlsreg|XForm_1|31,87
+LHZXTLS_32|gprc|ptr_rc_nor0,tlsreg|XForm_1|31,279
+LHAXTLS_32|gprc|ptr_rc_nor0,tlsreg|XForm_1|31,343
+LWZXTLS_32|gprc|ptr_rc_nor0,tlsreg|XForm_1|31,23
+LWAXTLS_32|gprc|ptr_rc_nor0,tlsreg|XForm_1|31,341
+LFSXTLS|f4rc|ptr_rc_nor0,tlsreg|XForm_25|31,535
+LFDXTLS|f8rc|ptr_rc_nor0,tlsreg|XForm_25|31,599
+STBXTLS||g8rc,ptr_rc_nor0,tlsreg|XForm_8|31,215
+STHXTLS||g8rc,ptr_rc_nor0,tlsreg|XForm_8|31,407
+STWXTLS||g8rc,ptr_rc_nor0,tlsreg|XForm_8|31,151
+STDXTLS||g8rc,ptr_rc_nor0,tlsreg|XForm_8|31,149
+STBXTLS_32||gprc,ptr_rc_nor0,tlsreg|XForm_8|31,215
+STHXTLS_32||gprc,ptr_rc_nor0,tlsreg|XForm_8|31,407
+STWXTLS_32||gprc,ptr_rc_nor0,tlsreg|XForm_8|31,151
+STFSXTLS||f4rc,ptr_rc_nor0,tlsreg|XForm_8|31,663
+STFDXTLS||f8rc,ptr_rc_nor0,tlsreg|XForm_8|31,727
+ADDIC8|g8rc|g8rc,s16imm64|DForm_2|12
+ADDI8|g8rc|g8rc_nox0,s16imm64|DForm_2|14
+ADDIS8|g8rc|g8rc_nox0,s17imm64|DForm_2|15
+LA8|g8rc|g8rc_nox0,s16imm64|DForm_2|14
+SUBFIC8|g8rc|g8rc,s16imm64|DForm_2|8
+ADD8TLS_|g8rc|g8rc,tlsreg|XOForm_1|31,266,0
+LBZXTLS_|g8rc|ptr_rc_nor0,tlsreg|XForm_1|31,87
+LHZXTLS_|g8rc|ptr_rc_nor0,tlsreg|XForm_1|31,279
+LHAXTLS_|g8rc|ptr_rc_nor0,tlsreg|XForm_1|31,343
+LWZXTLS_|g8rc|ptr_rc_nor0,tlsreg|XForm_1|31,23
+LWAXTLS_|g8rc|ptr_rc_nor0,tlsreg|XForm_1|31,341
+LDXTLS_|g8rc|ptr_rc_nor0,tlsreg|XForm_1|31,21
+LFSXTLS_|f4rc|ptr_rc_nor0,tlsreg|XForm_25|31,535
+LFDXTLS_|f8rc|ptr_rc_nor0,tlsreg|XForm_25|31,599
+STBXTLS_||g8rc,ptr_rc_nor0,tlsreg|XForm_8|31,215
+STHXTLS_||g8rc,ptr_rc_nor0,tlsreg|XForm_8|31,407
+STWXTLS_||g8rc,ptr_rc_nor0,tlsreg|XForm_8|31,151
+STDXTLS_||g8rc,ptr_rc_nor0,tlsreg|XForm_8|31,149
+STFSXTLS_||f4rc,ptr_rc_nor0,tlsreg|XForm_8|31,663
+STFDXTLS_||f8rc,ptr_rc_nor0,tlsreg|XForm_8|31,727
+CMPD|crrc|g8rc,g8rc|XForm_16_ext|31,0
+CMPLD|crrc|g8rc,g8rc|XForm_16_ext|31,32
+CMPDI|crrc|g8rc,s16imm64|DForm_5_ext|11
+CMPLDI|crrc|g8rc,u16imm64|DForm_6_ext|10
+CMPRB8|crrc|u1imm,g8rc,g8rc|X_BF3_L1_RS5_RS5|31,192
+CMPEQB|crrc|g8rc,g8rc|X_BF3_RS5_RS5|31,224
+EXTSB8_32_64|g8rc|gprc|XForm_11|31,954
+EXTSH8_32_64|g8rc|gprc|XForm_11|31,922
+EXTSW_32|gprc|gprc|XForm_11|31,986
+SRADI_32|gprc|gprc,u6imm|XSForm_1|31,413
+POPCNTD|g8rc|g8rc|XForm_11|31,506
+BPERMD|g8rc|g8rc,g8rc|XForm_6|31,252
+CMPB8|g8rc|g8rc,g8rc|XForm_6|31,508
+POPCNTW|gprc|gprc|XForm_11|31,378
+POPCNTB8|g8rc|g8rc|XForm_11|31,122
+CDTBCD8|g8rc|g8rc|XForm_11|31,282
+CBCDTD8|g8rc|g8rc|XForm_11|31,314
+ADDG6S8|g8rc|g8rc,g8rc|XOForm_1|31,74,0
+MADDHD|g8rc|g8rc,g8rc,g8rc|VAForm_1a|48
+MADDHDU|g8rc|g8rc,g8rc,g8rc|VAForm_1a|49
+MADDLD|gprc|gprc,gprc,gprc|VAForm_1a|51
+MADDLD8|g8rc|g8rc,g8rc,g8rc|VAForm_1a|51
+SETB8|g8rc|crrc|XForm_44|31,128
+ADDPCIS|g8rc|i32imm|DXForm|19,2
+MODSD|g8rc|g8rc,g8rc|XForm_8|31,777
+MODUD|g8rc|g8rc,g8rc|XForm_8|31,265
+MULLI8|g8rc|g8rc,s16imm64|DForm_2|7
+DARN|g8rc|u2imm|XForm_45|31,755
+RLDICL_32_64|g8rc|gprc,u6imm,u6imm|MDForm_1|30,0
+RLDICR_32|gprc|gprc,u6imm,u6imm|MDForm_1|30,1
+ISEL8|g8rc|g8rc_nox0,g8rc,crbitrc|AForm_4|31,15
+LHA8|g8rc|(memri |DForm_1|42
+LWA|g8rc|(memrix |DSForm_1|58,2
+LHAX8|g8rc|(memrr |XForm_1_memOp|31,343
+LWAX|g8rc|(memrr |XForm_1_memOp|31,341
+LWA_32|gprc|(memrix |DSForm_1|58,2
+LWAX_32|gprc|(memrr |XForm_1_memOp|31,341
+LHAU8|g8rc,ptr_rc_nor0|(memri |DForm_1|43
+LHAUX8|g8rc,ptr_rc_nor0|(memrr |XForm_1_memOp|31,375
+LWAUX|g8rc,ptr_rc_nor0|(memrr |XForm_1_memOp|31,373
+LBZ8|g8rc|(memri |DForm_1|34
+LHZ8|g8rc|(memri |DForm_1|40
+LWZ8|g8rc|(memri |DForm_1|32
+LBZX8|g8rc|(memrr |XForm_1_memOp|31,87
+LHZX8|g8rc|(memrr |XForm_1_memOp|31,279
+LWZX8|g8rc|(memrr |XForm_1_memOp|31,23
+LBZU8|g8rc,ptr_rc_nor0|(memri |DForm_1|35
+LHZU8|g8rc,ptr_rc_nor0|(memri |DForm_1|41
+LWZU8|g8rc,ptr_rc_nor0|(memri |DForm_1|33
+LBZUX8|g8rc,ptr_rc_nor0|(memrr |XForm_1_memOp|31,119
+LHZUX8|g8rc,ptr_rc_nor0|(memrr |XForm_1_memOp|31,311
+LWZUX8|g8rc,ptr_rc_nor0|(memrr |XForm_1_memOp|31,55
+LD|g8rc|(memrix |DSForm_1|58,0
+LDtoc|g8rc|tocentry,g8rc|PPCEmitTimePseudo|
+LDtocJTI|g8rc|tocentry,g8rc|PPCEmitTimePseudo|
+LDtocCPT|g8rc|tocentry,g8rc|PPCEmitTimePseudo|
+LDtocBA|g8rc|tocentry,g8rc|PPCEmitTimePseudo|
+LDX|g8rc|(memrr |XForm_1_memOp|31,21
+LDBRX|g8rc|(memrr |XForm_1_memOp|31,532
+LHBRX8|g8rc|(memrr |XForm_1_memOp|31,790
+LWBRX8|g8rc|(memrr |XForm_1_memOp|31,534
+LDU|g8rc,ptr_rc_nor0|(memrix |DSForm_1|58,1
+LDUX|g8rc,ptr_rc_nor0|(memrr |XForm_1_memOp|31,53
+LQ|g8prc|(memrix16 |DQForm_RTp5_RA17_MEM|56,0
+LQX_PSEUDO|g8prc|memrr|PPCCustomInserterPseudo|
+RESTORE_QUADWORD|g8prc|memrix|PPCEmitTimePseudo|
+ADDIStocHA8|g8rc|g8rc_nox0,tocentry|PPCEmitTimePseudo|
+ADDItocL8|g8rc|g8rc_nox0,tocentry|PPCEmitTimePseudo|
+ADDItoc8|g8rc|g8rc_nox0,tocentry|PPCEmitTimePseudo|
+LDtocL|g8rc|tocentry,g8rc_nox0|PPCEmitTimePseudo|
+ADDISgotTprelHA|g8rc|g8rc_nox0,s16imm64|PPCEmitTimePseudo|
+LDgotTprelL|g8rc_nox0|s16imm64,g8rc_nox0|PPCEmitTimePseudo|
+CFENCE8||g8rc|PPCPostRAExpPseudo|
+ADDIStlsgdHA|g8rc|g8rc_nox0,s16imm64|PPCEmitTimePseudo|
+ADDItlsgdL|g8rc|g8rc_nox0,s16imm64|PPCEmitTimePseudo|
+ADDItlsgdLADDR|g8rc|g8rc_nox0,s16imm64,tlsgd|PPCEmitTimePseudo|
+ADDIStlsldHA|g8rc|g8rc_nox0,s16imm64|PPCEmitTimePseudo|
+ADDItlsldL|g8rc|g8rc_nox0,s16imm64|PPCEmitTimePseudo|
+TLSLDAIX8|g8rc|g8rc|PPCEmitTimePseudo|
+ADDItlsldLADDR|g8rc|g8rc_nox0,s16imm64,tlsgd|PPCEmitTimePseudo|
+ADDISdtprelHA|g8rc|g8rc_nox0,s16imm64|PPCEmitTimePseudo|
+ADDIdtprelL|g8rc|g8rc_nox0,s16imm64|PPCEmitTimePseudo|
+PADDIdtprel|g8rc|g8rc_nox0,s16imm64|PPCEmitTimePseudo|
+STB8||g8rc,(memri |DForm_1|38
+STH8||g8rc,(memri |DForm_1|44
+STW8||g8rc,(memri |DForm_1|36
+STBX8||g8rc,(memrr |XForm_8_memOp|31,215
+STHX8||g8rc,(memrr |XForm_8_memOp|31,407
+STWX8||g8rc,(memrr |XForm_8_memOp|31,151
+STD||g8rc,(memrix |DSForm_1|62,0
+STDX||g8rc,(memrr |XForm_8_memOp|31,149
+STDBRX||g8rc,(memrr |XForm_8_memOp|31,660
+STQ||g8prc,(memrix |DSForm_1|62,2
+STQX_PSEUDO||g8prc,memrr|PPCCustomInserterPseudo|
+SPILL_QUADWORD||g8prc,memrix|PPCEmitTimePseudo|
+BUILD_QUADWORD|g8prc|g8rc,g8rc|PPCPostRAExpPseudo|
+STBU8|ptr_rc_nor0|g8rc,(memri |DForm_1|39
+STHU8|ptr_rc_nor0|g8rc,(memri |DForm_1|45
+STWU8|ptr_rc_nor0|g8rc,(memri |DForm_1|37
+STBUX8|ptr_rc_nor0|g8rc,(memrr |XForm_8_memOp|31,247
+STHUX8|ptr_rc_nor0|g8rc,(memrr |XForm_8_memOp|31,439
+STWUX8|ptr_rc_nor0|g8rc,(memrr |XForm_8_memOp|31,183
+STDU|ptr_rc_nor0|g8rc,(memrix |DSForm_1|62,1
+STDUX|ptr_rc_nor0|g8rc,(memrr |XForm_8_memOp|31,181
+HASHST8||g8rc,(memrihash |XForm_XD6_RA5_RB5|31,722
+HASHSTP8||g8rc,(memrihash |XForm_XD6_RA5_RB5|31,658
+HASHCHK8||g8rc,(memrihash |XForm_XD6_RA5_RB5|31,754
+HASHCHKP8||g8rc,(memrihash |XForm_XD6_RA5_RB5|31,690
+ADDEX8|g8rc|g8rc,g8rc,u2imm|Z23Form_RTAB5_CY2|31,170
+CP_COPY8||ty:$RA, ty:$RB|X_RA5_RB5|31,774
+CP_PASTE8_rec|||X_L1_RA5_RB5|31,902
+SLBIEG||gprc,gprc|XForm_26|31,466
+SLBSYNC|||XForm_0|31,338
+vpkuhum_shuffle|||PatFrag|0
+vpkuwum_shuffle|||PatFrag|0
+vpkudum_shuffle|||PatFrag|0
+vpkuhum_unary_shuffle|||PatFrag|1
+vpkuwum_unary_shuffle|||PatFrag|1
+vpkudum_unary_shuffle|||PatFrag|1
+vpkuhum_swapped_shuffle|||PatFrag|2
+vpkuwum_swapped_shuffle|||PatFrag|2
+vpkudum_swapped_shuffle|||PatFrag|2
+vmrglb_shuffle|||PatFrag|1,0
+vmrglh_shuffle|||PatFrag|2,0
+vmrglw_shuffle|||PatFrag|4,0
+vmrghb_shuffle|||PatFrag|1,0
+vmrghh_shuffle|||PatFrag|2,0
+vmrghw_shuffle|||PatFrag|4,0
+vmrglb_unary_shuffle|||PatFrag|1,1
+vmrglh_unary_shuffle|||PatFrag|2,1
+vmrglw_unary_shuffle|||PatFrag|4,1
+vmrghb_unary_shuffle|||PatFrag|1,1
+vmrghh_unary_shuffle|||PatFrag|2,1
+vmrghw_unary_shuffle|||PatFrag|4,1
+vmrglb_swapped_shuffle|||PatFrag|1,2
+vmrglh_swapped_shuffle|||PatFrag|2,2
+vmrglw_swapped_shuffle|||PatFrag|4,2
+vmrghb_swapped_shuffle|||PatFrag|1,2
+vmrghh_swapped_shuffle|||PatFrag|2,2
+vmrghw_swapped_shuffle|||PatFrag|4,2
+vmrgew_shuffle|||PatFrag|0
+vmrgow_shuffle|||PatFrag|0
+vmrgew_unary_shuffle|||PatFrag|1
+vmrgow_unary_shuffle|||PatFrag|1
+vmrgew_swapped_shuffle|||PatFrag|2
+vmrgow_swapped_shuffle|||PatFrag|2
+VSLDOI_get_imm|||SDNodeXForm|0
+vsldoi_shuffle|||PatFrag|0
+VSLDOI_unary_get_imm|||SDNodeXForm|1
+vsldoi_unary_shuffle|||PatFrag|1
+VSLDOI_swapped_get_imm|||SDNodeXForm|2
+vsldoi_swapped_shuffle|||PatFrag|2
+VSPLTB_get_imm|||SDNodeXForm|1
+VSPLTH_get_imm|||SDNodeXForm|2
+VSPLTW_get_imm|||SDNodeXForm|4
+VSPLTISB_get_imm|||SDNodeXForm|1
+vecspltisb|||PatLeaf|1
+VSPLTISH_get_imm|||SDNodeXForm|2
+vecspltish|||PatLeaf|2
+VSPLTISW_get_imm|||SDNodeXForm|4
+vecspltisw|||PatLeaf|4
+DSS||u5imm|DSS_Form|0,822
+DSSALL|||DSS_Form|1,822
+DST||u5imm,gprc,gprc|DSS_Form|0,342
+DSTT||u5imm,gprc,gprc|DSS_Form|1,342
+DSTST||u5imm,gprc,gprc|DSS_Form|0,374
+DSTSTT||u5imm,gprc,gprc|DSS_Form|1,374
+DST64||u5imm,g8rc,gprc|DSS_Form|0,342
+DSTT64||u5imm,g8rc,gprc|DSS_Form|1,342
+DSTST64||u5imm,g8rc,gprc|DSS_Form|0,374
+DSTSTT64||u5imm,g8rc,gprc|DSS_Form|1,374
+MFVSCR|vrrc||VXForm_4|1540
+MTVSCR||vrrc|VXForm_5|1604
+LVEBX|vrrc|(memrr |XForm_1_memOp|31,7
+LVEHX|vrrc|(memrr |XForm_1_memOp|31,39
+LVEWX|vrrc|(memrr |XForm_1_memOp|31,71
+LVX|vrrc|(memrr |XForm_1_memOp|31,103
+LVXL|vrrc|(memrr |XForm_1_memOp|31,359
+LVSL|vrrc|(memrr |XForm_1_memOp|31,6
+LVSR|vrrc|(memrr |XForm_1_memOp|31,38
+STVEBX||vrrc,(memrr |XForm_8_memOp|31,135
+STVEHX||vrrc,(memrr |XForm_8_memOp|31,167
+STVEWX||vrrc,(memrr |XForm_8_memOp|31,199
+STVX||vrrc,(memrr |XForm_8_memOp|31,231
+STVXL||vrrc,(memrr |XForm_8_memOp|31,487
+VMADDFP|vrrc|vrrc,vrrc,vrrc|VAForm_1|46
+VNMSUBFP|vrrc|vrrc,vrrc,vrrc|VAForm_1|47
+VMHADDSHS|||VA1a_Int_Ty|32
+VMHRADDSHS|||VA1a_Int_Ty|33
+VMLADDUHM|||VA1a_Int_Ty|34
+VPERM|||VA1a_Int_Ty3|43
+VSEL|||VA1a_Int_Ty|42
+VSLDOI|vrrc|vrrc,vrrc,u4imm|VAForm_2|44
+VADDFP|vrrc|vrrc,vrrc|VXForm_1|10
+VADDUBM|vrrc|vrrc,vrrc|VXForm_1|0
+VADDUHM|vrrc|vrrc,vrrc|VXForm_1|64
+VADDUWM|vrrc|vrrc,vrrc|VXForm_1|128
+VADDCUW|||VX1_Int_Ty|384
+VADDSBS|||VX1_Int_Ty|768
+VADDSHS|||VX1_Int_Ty|832
+VADDSWS|||VX1_Int_Ty|896
+VADDUBS|||VX1_Int_Ty|512
+VADDUHS|||VX1_Int_Ty|576
+VADDUWS|||VX1_Int_Ty|640
+VAND|vrrc|vrrc,vrrc|VXForm_1|1028
+VANDC|vrrc|vrrc,vrrc|VXForm_1|1092
+VCFSX|vrrc|u5imm,vrrc|VXForm_1|842
+VCFUX|vrrc|u5imm,vrrc|VXForm_1|778
+VCTSXS|vrrc|u5imm,vrrc|VXForm_1|970
+VCTUXS|vrrc|u5imm,vrrc|VXForm_1|906
+VCFSX_0|vrrc|vrrc|VXForm_1|842
+VCTUXS_0|vrrc|vrrc|VXForm_1|906
+VCFUX_0|vrrc|vrrc|VXForm_1|778
+VCTSXS_0|vrrc|vrrc|VXForm_1|970
+VEXPTEFP|||VX2_Int_SP|394
+VLOGEFP|||VX2_Int_SP|458
+VAVGSB|||VX1_Int_Ty|1282
+VAVGSH|||VX1_Int_Ty|1346
+VAVGSW|||VX1_Int_Ty|1410
+VAVGUB|||VX1_Int_Ty|1026
+VAVGUH|||VX1_Int_Ty|1090
+VAVGUW|||VX1_Int_Ty|1154
+VMAXFP|||VX1_Int_Ty|1034
+VMAXSB|||VX1_Int_Ty|258
+VMAXSH|||VX1_Int_Ty|322
+VMAXSW|||VX1_Int_Ty|386
+VMAXUB|||VX1_Int_Ty|2
+VMAXUH|||VX1_Int_Ty|66
+VMAXUW|||VX1_Int_Ty|130
+VMINFP|||VX1_Int_Ty|1098
+VMINSB|||VX1_Int_Ty|770
+VMINSH|||VX1_Int_Ty|834
+VMINSW|||VX1_Int_Ty|898
+VMINUB|||VX1_Int_Ty|514
+VMINUH|||VX1_Int_Ty|578
+VMINUW|||VX1_Int_Ty|642
+VMRGHB|vrrc|vrrc,vrrc|VXForm_1|12
+VMRGHH|vrrc|vrrc,vrrc|VXForm_1|76
+VMRGHW|vrrc|vrrc,vrrc|VXForm_1|140
+VMRGLB|vrrc|vrrc,vrrc|VXForm_1|268
+VMRGLH|vrrc|vrrc,vrrc|VXForm_1|332
+VMRGLW|vrrc|vrrc,vrrc|VXForm_1|396
+VMSUMMBM|||VA1a_Int_Ty3|37
+VMSUMSHM|||VA1a_Int_Ty3|40
+VMSUMUBM|||VA1a_Int_Ty3|36
+VMSUMUHM|||VA1a_Int_Ty3|38
+VMSUMSHS|||VA1a_Int_Ty3|41
+VMSUMUHS|||VA1a_Int_Ty3|39
+VMULESB|||VX1_Int_Ty2|776
+VMULESH|||VX1_Int_Ty2|840
+VMULEUB|||VX1_Int_Ty2|520
+VMULEUH|||VX1_Int_Ty2|584
+VMULOSB|||VX1_Int_Ty2|264
+VMULOSH|||VX1_Int_Ty2|328
+VMULOUB|||VX1_Int_Ty2|8
+VMULOUH|||VX1_Int_Ty2|72
+VREFP|||VX2_Int_SP|266
+VRFIM|||VX2_Int_SP|714
+VRFIN|||VX2_Int_SP|522
+VRFIP|||VX2_Int_SP|650
+VRFIZ|||VX2_Int_SP|586
+VRSQRTEFP|||VX2_Int_SP|330
+VSUBCUW|||VX1_Int_Ty|1408
+VSUBFP|vrrc|vrrc,vrrc|VXForm_1|74
+VSUBUBM|vrrc|vrrc,vrrc|VXForm_1|1024
+VSUBUHM|vrrc|vrrc,vrrc|VXForm_1|1088
+VSUBUWM|vrrc|vrrc,vrrc|VXForm_1|1152
+VSUBSBS|||VX1_Int_Ty|1792
+VSUBSHS|||VX1_Int_Ty|1856
+VSUBSWS|||VX1_Int_Ty|1920
+VSUBUBS|||VX1_Int_Ty|1536
+VSUBUHS|||VX1_Int_Ty|1600
+VSUBUWS|||VX1_Int_Ty|1664
+VSUMSWS|||VX1_Int_Ty|1928
+VSUM2SWS|||VX1_Int_Ty|1672
+VSUM4SBS|||VX1_Int_Ty3|1800
+VSUM4SHS|||VX1_Int_Ty3|1608
+VSUM4UBS|||VX1_Int_Ty3|1544
+VNOR|vrrc|vrrc,vrrc|VXForm_1|1284
+VOR|vrrc|vrrc,vrrc|VXForm_1|1156
+VXOR|vrrc|vrrc,vrrc|VXForm_1|1220
+VRLB|||VX1_Int_Ty|4
+VRLH|||VX1_Int_Ty|68
+VRLW|vrrc|vrrc,vrrc|VXForm_1|132
+VSL|||VX1_Int_Ty|452
+VSLO|||VX1_Int_Ty|1036
+VSLB|||VX1_Int_Ty|260
+VSLH|||VX1_Int_Ty|324
+VSLW|||VX1_Int_Ty|388
+VSPLTB|vrrc|u5imm,vrrc|VXForm_1|524
+VSPLTH|vrrc|u5imm,vrrc|VXForm_1|588
+VSPLTW|vrrc|u5imm,vrrc|VXForm_1|652
+VSPLTBs|vrrc|u5imm,vfrc|VXForm_1|524
+VSPLTHs|vrrc|u5imm,vfrc|VXForm_1|588
+VSR|||VX1_Int_Ty|708
+VSRO|||VX1_Int_Ty|1100
+VSRAB|||VX1_Int_Ty|772
+VSRAH|||VX1_Int_Ty|836
+VSRAW|||VX1_Int_Ty|900
+VSRB|||VX1_Int_Ty|516
+VSRH|||VX1_Int_Ty|580
+VSRW|||VX1_Int_Ty|644
+VSPLTISB|vrrc|s5imm|VXForm_3|780
+VSPLTISH|vrrc|s5imm|VXForm_3|844
+VSPLTISW|vrrc|s5imm|VXForm_3|908
+VPKPX|||VX1_Int_Ty2|782
+VPKSHSS|||VX1_Int_Ty2|398
+VPKSHUS|||VX1_Int_Ty2|270
+VPKSWSS|||VX1_Int_Ty2|462
+VPKSWUS|||VX1_Int_Ty2|334
+VPKUHUS|||VX1_Int_Ty2|142
+VPKUWUS|||VX1_Int_Ty2|206
+VPKUHUM|vrrc|vrrc,vrrc|VXForm_1|14
+VPKUWUM|vrrc|vrrc,vrrc|VXForm_1|78
+VUPKHPX|||VX2_Int_Ty2|846
+VUPKHSB|||VX2_Int_Ty2|526
+VUPKHSH|||VX2_Int_Ty2|590
+VUPKLPX|||VX2_Int_Ty2|974
+VUPKLSB|||VX2_Int_Ty2|654
+VUPKLSH|||VX2_Int_Ty2|718
+VCMPBFP|||VCMP|966
+VCMPBFP_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|966
+VCMPEQFP|||VCMP|198
+VCMPEQFP_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|198
+VCMPGEFP|||VCMP|454
+VCMPGEFP_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|454
+VCMPGTFP|||VCMP|710
+VCMPGTFP_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|710
+VCMPEQUB|||VCMP|6
+VCMPEQUB_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|6
+VCMPGTSB|||VCMP|774
+VCMPGTSB_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|774
+VCMPGTUB|||VCMP|518
+VCMPGTUB_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|518
+VCMPEQUH|||VCMP|70
+VCMPEQUH_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|70
+VCMPGTSH|||VCMP|838
+VCMPGTSH_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|838
+VCMPGTUH|||VCMP|582
+VCMPGTUH_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|582
+VCMPEQUW|||VCMP|134
+VCMPEQUW_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|134
+VCMPGTSW|||VCMP|902
+VCMPGTSW_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|902
+VCMPGTUW|||VCMP|646
+VCMPGTUW_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|646
+V_SET0B|vrrc||VXForm_setzero|1220
+V_SET0H|vrrc||VXForm_setzero|1220
+V_SET0|vrrc||VXForm_setzero|1220
+V_SETALLONESB|vrrc||VXForm_3|908
+V_SETALLONESH|vrrc||VXForm_3|908
+V_SETALLONES|vrrc||VXForm_3|908
+VMULESW|||VX1_Int_Ty2|904
+VMULEUW|||VX1_Int_Ty2|648
+VMULOSW|||VX1_Int_Ty2|392
+VMULOUW|||VX1_Int_Ty2|136
+VMULUWM|vrrc|vrrc,vrrc|VXForm_1|137
+VMAXSD|||VX1_Int_Ty|450
+VMAXUD|||VX1_Int_Ty|194
+VMINSD|||VX1_Int_Ty|962
+VMINUD|||VX1_Int_Ty|706
+VMRGEW|vrrc|vrrc,vrrc|VXForm_1|1932
+VMRGOW|vrrc|vrrc,vrrc|VXForm_1|1676
+VRLD|||VX1_Int_Ty|196
+VSLD|vrrc|vrrc,vrrc|VXForm_1|1476
+VSRD|vrrc|vrrc,vrrc|VXForm_1|1732
+VSRAD|vrrc|vrrc,vrrc|VXForm_1|964
+VADDUDM|vrrc|vrrc,vrrc|VXForm_1|192
+VADDUQM|vrrc|vrrc,vrrc|VXForm_1|256
+VADDEUQM|||VA1a_Int_Ty|60
+VADDCUQ|||VX1_Int_Ty|320
+VADDECUQ|||VA1a_Int_Ty|61
+VSUBUDM|vrrc|vrrc,vrrc|VXForm_1|1216
+VSUBUQM|vrrc|vrrc,vrrc|VXForm_1|1280
+VSUBEUQM|||VA1a_Int_Ty|62
+VSUBCUQ|||VX1_Int_Ty|1344
+VSUBECUQ|||VA1a_Int_Ty|63
+VCLZB|vrrc|vrrc|VXForm_2|1794
+VCLZH|vrrc|vrrc|VXForm_2|1858
+VCLZW|vrrc|vrrc|VXForm_2|1922
+VCLZD|vrrc|vrrc|VXForm_2|1986
+VPOPCNTB|vrrc|vrrc|VXForm_2|1795
+VPOPCNTH|vrrc|vrrc|VXForm_2|1859
+VPOPCNTW|vrrc|vrrc|VXForm_2|1923
+VPOPCNTD|vrrc|vrrc|VXForm_2|1987
+VEQV|vrrc|vrrc,vrrc|VXForm_1|1668
+VNAND|vrrc|vrrc,vrrc|VXForm_1|1412
+VORC|vrrc|vrrc,vrrc|VXForm_1|1348
+VCMPEQUD|||VCMP|199
+VCMPEQUD_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|199
+VCMPGTSD|||VCMP|967
+VCMPGTSD_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|967
+VCMPGTUD|||VCMP|711
+VCMPGTUD_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|711
+VPMSUMB|||VX1_Int_Ty|1032
+VPMSUMH|||VX1_Int_Ty|1096
+VPMSUMW|||VX1_Int_Ty|1160
+VPMSUMD|||VX1_Int_Ty|1224
+VPERMXOR|vrrc|vrrc,vrrc,vrrc|VAForm_1|45
+VPKSDSS|||VX1_Int_Ty2|1486
+VPKSDUS|||VX1_Int_Ty2|1358
+VPKUDUS|||VX1_Int_Ty2|1230
+VPKUDUM|vrrc|vrrc,vrrc|VXForm_1|1102
+VUPKHSW|||VX2_Int_Ty2|1614
+VUPKLSW|||VX2_Int_Ty2|1742
+BCDADD_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB, u1imm:$PS|VX_VT5_VA5_VB5_PS1_XO9_o|1
+BCDSUB_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB, u1imm:$PS|VX_VT5_VA5_VB5_PS1_XO9_o|65
+VGBBD|||VX2_Int_Ty2|1292
+VBPERMQ|||VX1_Int_Ty2|1356
+VSHASIGMAW|||VXCR_Int_Ty|1666
+VSHASIGMAD|||VXCR_Int_Ty|1730
+VCIPHER|||VX1_Int_Ty|1288
+VCIPHERLAST|||VX1_Int_Ty|1289
+VNCIPHER|||VX1_Int_Ty|1352
+VNCIPHERLAST|||VX1_Int_Ty|1353
+VSBOX|||VXBX_Int_Ty|1480
+VMSUMUDM|||VA1a_Int_Ty3|35
+VCMPNEB|||VCMP|7
+VCMPNEB_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|7
+VCMPNEZB|||VCMP|263
+VCMPNEZB_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|263
+VCMPNEH|||VCMP|71
+VCMPNEH_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|71
+VCMPNEZH|||VCMP|327
+VCMPNEZH_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|327
+VCMPNEW|||VCMP|135
+VCMPNEW_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|135
+VCMPNEZW|||VCMP|391
+VCMPNEZW_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|391
+VEXTRACTUB|||VX1_VT5_UIM5_VB5|525
+VEXTRACTUH|||VX1_VT5_UIM5_VB5|589
+VEXTRACTUW|||VX1_VT5_UIM5_VB5|653
+VEXTRACTD|||VX1_VT5_UIM5_VB5|717
+VEXTUBLX|||VX1_RT5_RA5_VB5|1549
+VEXTUBRX|||VX1_RT5_RA5_VB5|1805
+VEXTUHLX|||VX1_RT5_RA5_VB5|1613
+VEXTUHRX|||VX1_RT5_RA5_VB5|1869
+VEXTUWLX|||VX1_RT5_RA5_VB5|1677
+VEXTUWRX|||VX1_RT5_RA5_VB5|1933
+VINSERTB|vrrc|vrrc,u4imm,vrrc|VXForm_1|781
+VINSERTH|vrrc|vrrc,u4imm,vrrc|VXForm_1|845
+VINSERTW|||VX1_VT5_UIM5_VB5|909
+VINSERTD|||VX1_VT5_UIM5_VB5|973
+VCLZLSBB|gprc|vrrc|VXForm_RD5_XO5_RS5|1538,0
+VCTZLSBB|gprc|vrrc|VXForm_RD5_XO5_RS5|1538,1
+VCTZB|||VX_VT5_EO5_VB5|1538,28
+VCTZH|||VX_VT5_EO5_VB5|1538,29
+VCTZW|||VX_VT5_EO5_VB5|1538,30
+VCTZD|||VX_VT5_EO5_VB5|1538,31
+VEXTSB2W|||VX_VT5_EO5_VB5|1538,16
+VEXTSH2W|||VX_VT5_EO5_VB5|1538,17
+VEXTSB2D|||VX_VT5_EO5_VB5|1538,24
+VEXTSH2D|||VX_VT5_EO5_VB5|1538,25
+VEXTSW2D|||VX_VT5_EO5_VB5|1538,26
+VEXTSB2Ws|||VX_VT5_EO5_VB5s|1538,16
+VEXTSH2Ws|||VX_VT5_EO5_VB5s|1538,17
+VEXTSB2Ds|||VX_VT5_EO5_VB5s|1538,24
+VEXTSH2Ds|||VX_VT5_EO5_VB5s|1538,25
+VEXTSW2Ds|||VX_VT5_EO5_VB5s|1538,26
+VNEGW|||VX_VT5_EO5_VB5|1538,6
+VNEGD|||VX_VT5_EO5_VB5|1538,7
+VPRTYBW|||VX_VT5_EO5_VB5|1538,8
+VPRTYBD|||VX_VT5_EO5_VB5|1538,9
+VPRTYBQ|||VX_VT5_EO5_VB5|1538,10
+VBPERMD|||VX1_Int_Ty3|1484
+VPERMR|vrrc|vrrc,vrrc,vrrc|VAForm_1a|59
+VRLWNM|||VX1_VT5_VA5_VB5|389
+VRLWMI|vrrc|vrrc,vrrc,vrrc|VXForm_1|133
+VRLDNM|||VX1_VT5_VA5_VB5|453
+VRLDMI|vrrc|vrrc,vrrc,vrrc|VXForm_1|197
+VSLV|||VX1_VT5_VA5_VB5|1860
+VSRV|||VX1_VT5_VA5_VB5|1796
+VMUL10UQ|vrrc|vrrc|VXForm_BX|513
+VMUL10CUQ|vrrc|vrrc|VXForm_BX|1
+VMUL10EUQ|||VX1_VT5_VA5_VB5|577
+VMUL10ECUQ|||VX1_VT5_VA5_VB5|65
+BCDCFN_rec|vrrc:$VD|vrrc:$VB, u1imm:$PS|VX_VT5_EO5_VB5_PS1_XO9_o|7,385
+BCDCFZ_rec|vrrc:$VD|vrrc:$VB, u1imm:$PS|VX_VT5_EO5_VB5_PS1_XO9_o|6,385
+BCDCTN_rec|vrrc:$VD|vrrc:$VB|VX_VT5_EO5_VB5_XO9_o|5,385
+BCDCTZ_rec|vrrc:$VD|vrrc:$VB, u1imm:$PS|VX_VT5_EO5_VB5_PS1_XO9_o|4,385
+BCDCFSQ_rec|vrrc:$VD|vrrc:$VB, u1imm:$PS|VX_VT5_EO5_VB5_PS1_XO9_o|2,385
+BCDCTSQ_rec|vrrc:$VD|vrrc:$VB|VX_VT5_EO5_VB5_XO9_o|0,385
+BCDCPSGN_rec|||VX1_VT5_VA5_VB5|833
+BCDSETSGN_rec|vrrc:$VD|vrrc:$VB, u1imm:$PS|VX_VT5_EO5_VB5_PS1_XO9_o|31,385
+BCDS_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB, u1imm:$PS|VX_VT5_VA5_VB5_PS1_XO9_o|193
+BCDUS_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VX_VT5_VA5_VB5_XO9_o|129
+BCDSR_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB, u1imm:$PS|VX_VT5_VA5_VB5_PS1_XO9_o|449
+BCDTRUNC_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB, u1imm:$PS|VX_VT5_VA5_VB5_PS1_XO9_o|257
+BCDUTRUNC_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VX_VT5_VA5_VB5_XO9_o|321
+VABSDUB|vrrc|vrrc,vrrc|VXForm_1|1027
+VABSDUH|vrrc|vrrc,vrrc|VXForm_1|1091
+VABSDUW|vrrc|vrrc,vrrc|VXForm_1|1155
+DCMPU|crrc|f8rc,f8rc|XForm_17|59,642
+DCMPUQ|crrc|fpairrc,fpairrc|XForm_17|63,642
+DCMPO|crrc|f8rc,f8rc|XForm_17|59,130
+DCMPOQ|crrc|fpairrc,fpairrc|XForm_17|63,130
+DCFFIXQQ|fpairrc|vrrc|XForm_26|63,994
+DCTFIXQQ|vrrc|fpairrc|XForm_base_r3xo|63,994
+DTSTDC|crrc|f8rc,u6imm|Z22Form_BF3_FRA5_DCM6|59,194
+DTSTDCQ|crrc|fpairrc,u6imm|Z22Form_BF3_FRA5_DCM6|63,194
+DTSTDG|crrc|f8rc,u6imm|Z22Form_BF3_FRA5_DCM6|59,226
+DTSTDGQ|crrc|fpairrc,u6imm|Z22Form_BF3_FRA5_DCM6|63,226
+DTSTEX|crrc|f8rc,f8rc|XForm_17|59,162
+DTSTEXQ|crrc|fpairrc,fpairrc|XForm_17|63,162
+DTSTSF|crrc|f8rc,f8rc|XForm_17|59,674
+DTSTSFQ|crrc|f8rc,fpairrc|XForm_17|63,674
+DTSTSFI|crrc|u6imm,f8rc|XForm_BF3_UIM6_FRB5|59,675
+DTSTSFIQ|crrc|u6imm,fpairrc|XForm_BF3_UIM6_FRB5|63,675
+TLBIEP||gprc,gprc,u2imm,u1imm,u1imm|XForm_RSB5_UIMM2_2UIMM1|31,50
+MTLPL||gprc,gprc|XForm_RBS5|31,275
+MTLPL8||g8rc,g8rc|XForm_RBS5|31,275
+LXVRL|vsrc|(memr |XX1Form_memOp|31,525
+LXVRLL|vsrc|(memr |XX1Form_memOp|31,557
+LXVPRL|vsrprc|(memr |XForm_XTp5_RAB5|31,589
+LXVPRLL|vsrprc|(memr |XForm_XTp5_RAB5|31,621
+STXVRL||vsrc,(memr |XX1Form_memOp|31,653
+STXVRLL||vsrc,(memr |XX1Form_memOp|31,685
+STXVPRL||vsrprc,(memr |XForm_XTp5_RAB5|31,717
+VUPKHSNTOB|vrrc|vrrc|VXForm_VRTB5|387,0
+VUPKLSNTOB|vrrc|vrrc|VXForm_VRTB5|387,1
+VUCMPRHN|vrrc|vrrc,vrrc|VXForm_VRTAB5|3
+VUCMPRLN|vrrc|vrrc,vrrc|VXForm_VRTAB5|67
+XVRLW|vsrc|vsrc,vsrc|XX3Form_XTAB6|60,184
+XXGFMUL128|vsrc|vsrc,vsrc,u1imm|XX3Form_XTAB6_P1|26
+XVADDUWM|vsrc|vsrc,vsrc|XX3Form_XTAB6|60,131
+XVADDUHM|vsrc|vsrc,vsrc|XX3Form_XTAB6|60,139
+XVSUBUWM|vsrc|vsrc,vsrc|XX3Form_XTAB6|60,147
+XVSUBUHM|vsrc|vsrc,vsrc|XX3Form_XTAB6|60,155
+XVMULUWM|vsrc|vsrc,vsrc|XX3Form_XTAB6|60,163
+XVMULUHM|vsrc|vsrc,vsrc|XX3Form_XTAB6|60,171
+XVMULHSW|vsrc|vsrc,vsrc|XX3Form_XTAB6|60,179
+XVMULHSH|vsrc|vsrc,vsrc|XX3Form_XTAB6|60,187
+XVMULHUW|vsrc|vsrc,vsrc|XX3Form_XTAB6|60,114
+XVMULHUH|vsrc|vsrc,vsrc|XX3Form_XTAB6|60,122
+SDT_PPCInst512|||SDTypeProfile|1,2
+SDT_PPCInst256|||SDTypeProfile|1,2
+DMXXEXTFDMR256|vsrprc|dmrrowp,u2imm|XX2Form_AT3_XBp5_P2|60,484
+DMXXINSTDMR256|dmrrowp|vsrprc,u2imm|XX2Form_AT3_XBp5_P2|60,485
+DMXOR|dmr|dmr,dmr|XForm_ATB3|31,7,177
+TCHECK_RET|gprc||PPCCustomInserterPseudo|
+TBEGIN_RET|gprc|u1imm|PPCCustomInserterPseudo|
+TBEGIN||u1imm|XForm_htm0|31,654
+TEND||u1imm|XForm_htm1|31,686
+TABORT||gprc|XForm_base_r3xo|31,910
+TABORTWC||u5imm,gprc,gprc|XForm_base_r3xo|31,782
+TABORTWCI||u5imm,gprc,u5imm|XForm_base_r3xo|31,846
+TABORTDC||u5imm,gprc,gprc|XForm_base_r3xo|31,814
+TABORTDCI||u5imm,gprc,u5imm|XForm_base_r3xo|31,878
+TSR||u1imm|XForm_htm2|31,750
+TRECLAIM||gprc|XForm_base_r3xo|31,942
+TRECHKPT|||XForm_base_r3xo|31,1006
+TCHECK|crrc||XForm_htm3|31,718
+SDT_PPCstfiwx|||SDTypeProfile|0,2
+SDT_PPClfiwx|||SDTypeProfile|1,1
+SDT_PPCLxsizx|||SDTypeProfile|1,2
+SDT_PPCstxsix|||SDTypeProfile|0,3
+SDT_PPCcv_fp_to_int|||SDTypeProfile|1,1
+SDT_PPCstore_scal_int_from_vsr|||SDTypeProfile|0,3
+SDT_PPCVexts|||SDTypeProfile|1,2
+SDT_PPCvperm|||SDTypeProfile|1,3
+SDT_PPCVecSplat|||SDTypeProfile|1,2
+SDT_PPCSpToDp|||SDTypeProfile|1,1
+SDT_PPCVecShift|||SDTypeProfile|1,3
+SDT_PPCVecShiftQuad|||SDTypeProfile|1,2
+SDT_PPCVecInsert|||SDTypeProfile|1,3
+SDT_PPCxxpermdi|||SDTypeProfile|1,3
+SDT_PPCvcmp|||SDTypeProfile|1,3
+SDT_PPCcondbr|||SDTypeProfile|0,3
+SDT_PPCFtsqrt|||SDTypeProfile|1,1
+SDT_PPClbrx|||SDTypeProfile|1,2
+SDT_PPCstbrx|||SDTypeProfile|0,3
+SDT_StoreCond|||SDTypeProfile|0,3
+SDT_PPCTC_ret|||SDTypeProfile|0,2
+SDT_PPCqvfperm|||SDTypeProfile|1,3
+SDT_PPCqvgpci|||SDTypeProfile|1,1
+SDT_PPCqvaligni|||SDTypeProfile|1,3
+SDT_PPCqvesplati|||SDTypeProfile|1,2
+SDT_PPCqbflt|||SDTypeProfile|1,1
+SDT_PPCqvlfsb|||SDTypeProfile|1,1
+SDT_PPCextswsli|||SDTypeProfile|1,2
+SDT_PPCFPMinMax|||SDTypeProfile|1,2
+SDT_PPCBinaryArithWithFlagsOut|||SDTypeProfile|2,2
+SDT_PPCBinaryArithWithFlagsInOut|||SDTypeProfile|2,3
+SDT_PPCBcdShift|||SDTypeProfile|1,3
+SDT_PPCBcdShiftRound|||SDTypeProfile|1,3
+SDT_PPCBcdTrunc|||SDTypeProfile|1,3
+SDT_PPCBcdUTrunc|||SDTypeProfile|1,2
+SDT_PPCBcdUShift|||SDTypeProfile|1,2
+PPCmffs|||SDNode|0
+PPCfsel|||SDNode|3
+PPCaddiTlsgdLAddr|||SDNode|3
+PPCaddiTlsldLAddr|||SDNode|3
+PPCbuild_fp128|||SDNode|2
+PPCbuild_spe64|||SDNode|2
+PPCextract_spe|||SDNode|2
+SDT_PPCCall|||SDTypeProfile|0
+PPCbctrl_load_toc|||SDNode|1
+PPCbl_load_toc|||SDNode|1
+PPCbctrl_load_toc_rm|||SDNode|1
+PPCbl_load_toc_rm|||SDNode|1
+PPCeh_sjlj_setjmp|||SDNode|1
+PPCeh_sjlj_longjmp|||SDNode|1
+SDTDynOp|||SDTypeProfile|1,2
+SDTDynAreaOp|||SDTypeProfile|1,1
+PN|acc|acc|XX3Form_AT3_XAB6|
+NP|acc|acc|XX3Form_AT3_XAB6|
+NN|acc|acc|XX3Form_AT3_XAB6|
+WPN|wacc|wacc|XX3Form_AT3_XAB6|
+WNP|wacc|wacc|XX3Form_AT3_XAB6|
+WNN|wacc|wacc|XX3Form_AT3_XAB6|
+PN|acc|acc|XX3Form_AT3_XAB6|
+NP|acc|acc|XX3Form_AT3_XAB6|
+NN|acc|acc|XX3Form_AT3_XAB6|
+WPN|wacc|wacc|XX3Form_AT3_XAB6|
+WNP|wacc|wacc|XX3Form_AT3_XAB6|
+WNN|wacc|wacc|XX3Form_AT3_XAB6|
+KILL_PAIR|vsrprc|vsrprc|PPCPostRAExpPseudo|
+BUILD_UACC|acc|uacc|PPCPostRAExpPseudo|
+SPILL_ACC||acc,memrix16|PPCEmitTimePseudo|
+SPILL_UACC||uacc,memrix16|PPCEmitTimePseudo|
+RESTORE_ACC|acc|memrix16|PPCEmitTimePseudo|
+RESTORE_UACC|uacc|memrix16|PPCEmitTimePseudo|
+SPILL_WACC||wacc,memrix16|PPCEmitTimePseudo|
+SPILL_DMRP||dmrp,memrix16|PPCEmitTimePseudo|
+SPILL_DMR||dmr,memrix16|PPCEmitTimePseudo|
+RESTORE_WACC|wacc|memrix16|PPCEmitTimePseudo|
+RESTORE_DMRP|dmrp|memrix16|PPCEmitTimePseudo|
+RESTORE_DMR|dmr|memrix16|PPCEmitTimePseudo|
+SDT_PPCSplat32|||SDTypeProfile|1,3
+SDT_PPCAccBuild|||SDTypeProfile|1,4
+SDT_PPCPairBuild|||SDTypeProfile|1,2
+SDT_PPCAccExtractVsx|||SDTypeProfile|1,2
+SDT_PPCPairExtractVsx|||SDTypeProfile|1,2
+SDT_PPCxxmfacc|||SDTypeProfile|1,1
+SDT_PPCsetbc|||SDTypeProfile|1,1
+SDT_PPCLXVRZX|||SDTypeProfile|1,2
+PLI8|g8rc|s34imm64|MLS_DForm_SI34_RT5|14
+PLI|gprc|s34imm|MLS_DForm_SI34_RT5|14
+LXVP|vsrprc|(memrix16 |DQForm_XTp5_RA17_MEM|6,0
+LXVPX|vsrprc|(memrr |XForm_XTp5_RAB5|31,333
+STXVP||vsrprc,(memrix16 |DQForm_XTp5_RA17_MEM|6,1
+STXVPX||vsrprc,(memrr |XForm_XTp5_RAB5|31,461
+XSCMPEQQP|||X_VT5_VA5_VB5|63,68
+XSCMPGEQP|||X_VT5_VA5_VB5|63,196
+XSCMPGTQP|||X_VT5_VA5_VB5|63,228
+XXSPLTIW|vsrc|i32imm|8RR_DForm_IMM32_XT6|32,3
+XXSPLTIDP|vsrc|i32imm|8RR_DForm_IMM32_XT6|32,2
+SETBC|gprc|crbitrc|XForm_XT5_BI5|31,384
+SETBCR|gprc|crbitrc|XForm_XT5_BI5|31,416
+SETNBC|gprc|crbitrc|XForm_XT5_BI5|31,448
+SETNBCR|gprc|crbitrc|XForm_XT5_BI5|31,480
+SETBC8|g8rc|crbitrc|XForm_XT5_BI5|31,384
+SETBCR8|g8rc|crbitrc|XForm_XT5_BI5|31,416
+SETNBC8|g8rc|crbitrc|XForm_XT5_BI5|31,448
+SETNBCR8|g8rc|crbitrc|XForm_XT5_BI5|31,480
+VSLDBI|vrrc|vrrc,vrrc,u3imm|VNForm_VTAB5_SD3|22,0
+VSRDBI|vrrc|vrrc,vrrc,u3imm|VNForm_VTAB5_SD3|22,1
+VEXTRACTBM|gprc|vrrc|VXForm_RD5_XO5_RS5|1602,8
+VEXTRACTHM|gprc|vrrc|VXForm_RD5_XO5_RS5|1602,9
+VEXTRACTWM|gprc|vrrc|VXForm_RD5_XO5_RS5|1602,10
+VEXTRACTDM|gprc|vrrc|VXForm_RD5_XO5_RS5|1602,11
+VEXTRACTQM|gprc|vrrc|VXForm_RD5_XO5_RS5|1602,12
+VEXPANDBM|vrrc|vrrc|VXForm_RD5_XO5_RS5|1602,0
+VEXPANDHM|vrrc|vrrc|VXForm_RD5_XO5_RS5|1602,1
+VEXPANDWM|vrrc|vrrc|VXForm_RD5_XO5_RS5|1602,2
+VEXPANDDM|vrrc|vrrc|VXForm_RD5_XO5_RS5|1602,3
+VEXPANDQM|vrrc|vrrc|VXForm_RD5_XO5_RS5|1602,4
+MTVSRBM|vrrc|g8rc|VXForm_RD5_XO5_RS5|1602,16
+MTVSRHM|vrrc|g8rc|VXForm_RD5_XO5_RS5|1602,17
+MTVSRWM|vrrc|g8rc|VXForm_RD5_XO5_RS5|1602,18
+MTVSRDM|vrrc|g8rc|VXForm_RD5_XO5_RS5|1602,19
+MTVSRQM|vrrc|g8rc|VXForm_RD5_XO5_RS5|1602,20
+MTVSRBMI|vrrc|u16imm64|DXForm|4,10
+VCNTMBB|g8rc|vrrc,u1imm|VXForm_RD5_MP_VB5|1602,12
+VCNTMBH|g8rc|vrrc,u1imm|VXForm_RD5_MP_VB5|1602,13
+VCNTMBW|g8rc|vrrc,u1imm|VXForm_RD5_MP_VB5|1602,14
+VCNTMBD|g8rc|vrrc,u1imm|VXForm_RD5_MP_VB5|1602,15
+VEXTDUBVLX|vrrc|vrrc,vrrc,gprc|VAForm_1a|24
+VEXTDUBVRX|vrrc|vrrc,vrrc,gprc|VAForm_1a|25
+VEXTDUHVLX|vrrc|vrrc,vrrc,gprc|VAForm_1a|26
+VEXTDUHVRX|vrrc|vrrc,vrrc,gprc|VAForm_1a|27
+VEXTDUWVLX|vrrc|vrrc,vrrc,gprc|VAForm_1a|28
+VEXTDUWVRX|vrrc|vrrc,vrrc,gprc|VAForm_1a|29
+VEXTDDVLX|vrrc|vrrc,vrrc,gprc|VAForm_1a|30
+VEXTDDVRX|vrrc|vrrc,vrrc,gprc|VAForm_1a|31
+VPDEPD|vrrc|vrrc,vrrc|VXForm_1|1485
+VPEXTD|vrrc|vrrc,vrrc|VXForm_1|1421
+PDEPD|g8rc|g8rc,g8rc|XForm_6|31,156
+PEXTD|g8rc|g8rc,g8rc|XForm_6|31,188
+VCFUGED|vrrc|vrrc,vrrc|VXForm_1|1357
+VGNB|g8rc|vrrc,u3imm|VXForm_RD5_N3_VB5|1228
+CFUGED|g8rc|g8rc,g8rc|XForm_6|31,220
+VCLZDM|vrrc|vrrc,vrrc|VXForm_1|1924
+VCTZDM|vrrc|vrrc,vrrc|VXForm_1|1988
+CNTLZDM|g8rc|g8rc,g8rc|XForm_6|31,59
+CNTTZDM|g8rc|g8rc,g8rc|XForm_6|31,571
+VCLRLB|vrrc|vrrc,gprc|VXForm_1|397
+VCLRRB|vrrc|vrrc,gprc|VXForm_1|461
+VMULLD|vrrc|vrrc,vrrc|VXForm_1|457
+VMULHSW|vrrc|vrrc,vrrc|VXForm_1|905
+VMULHUW|vrrc|vrrc,vrrc|VXForm_1|649
+VMULHSD|vrrc|vrrc,vrrc|VXForm_1|969
+VMULHUD|vrrc|vrrc,vrrc|VXForm_1|713
+VMODSW|vrrc|vrrc,vrrc|VXForm_1|1931
+VMODUW|vrrc|vrrc,vrrc|VXForm_1|1675
+VMODSD|vrrc|vrrc,vrrc|VXForm_1|1995
+VMODUD|vrrc|vrrc,vrrc|VXForm_1|1739
+VDIVSW|vrrc|vrrc,vrrc|VXForm_1|395
+VDIVUW|vrrc|vrrc,vrrc|VXForm_1|139
+VDIVSD|vrrc|vrrc,vrrc|VXForm_1|459
+VDIVUD|vrrc|vrrc,vrrc|VXForm_1|203
+VDIVESW|vrrc|vrrc,vrrc|VXForm_1|907
+VDIVEUW|vrrc|vrrc,vrrc|VXForm_1|651
+VDIVESD|vrrc|vrrc,vrrc|VXForm_1|971
+VDIVEUD|vrrc|vrrc,vrrc|VXForm_1|715
+XVTLSBB|crrc|vsrc|XX2_BF3_XO5_XB6_XO9|60,2,475
+BRH|gprc|gprc|XForm_11|31,219
+BRW|gprc|gprc|XForm_11|31,155
+BRH8|g8rc|g8rc|XForm_11|31,219
+BRW8|g8rc|g8rc|XForm_11|31,155
+BRD|g8rc|g8rc|XForm_11|31,187
+LXVRBX|||X_XT6_RA5_RB5|31,13
+LXVRHX|||X_XT6_RA5_RB5|31,45
+LXVRWX|||X_XT6_RA5_RB5|31,77
+LXVRDX|||X_XT6_RA5_RB5|31,109
+STXVRBX|||X_XS6_RA5_RB5|31,141
+STXVRHX|||X_XS6_RA5_RB5|31,173
+STXVRWX|||X_XS6_RA5_RB5|31,205
+STXVRDX|||X_XS6_RA5_RB5|31,237
+VMULESD|vrrc|vrrc,vrrc|VXForm_1|968
+VMULEUD|vrrc|vrrc,vrrc|VXForm_1|712
+VMULOSD|vrrc|vrrc,vrrc|VXForm_1|456
+VMULOUD|vrrc|vrrc,vrrc|VXForm_1|200
+VMSUMCUD|vrrc|vrrc,vrrc,vrrc|VAForm_1a|23
+VDIVSQ|vrrc|vrrc,vrrc|VXForm_1|267
+VDIVUQ|vrrc|vrrc,vrrc|VXForm_1|11
+VDIVESQ|vrrc|vrrc,vrrc|VXForm_1|779
+VDIVEUQ|vrrc|vrrc,vrrc|VXForm_1|523
+VCMPEQUQ|||VCMP|455
+VCMPGTSQ|||VCMP|903
+VCMPGTUQ|||VCMP|647
+VCMPEQUQ_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|455
+VCMPGTSQ_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|903
+VCMPGTUQ_rec|vrrc:$VD|vrrc:$VA, vrrc:$VB|VCMP_rec|647
+VMODSQ|vrrc|vrrc,vrrc|VXForm_1|1803
+VMODUQ|vrrc|vrrc,vrrc|VXForm_1|1547
+VEXTSD2Q|vrrc|vrrc|VXForm_RD5_XO5_RS5|1538,27
+VCMPUQ|crrc|vrrc,vrrc|VXForm_BF3_VAB5|257
+VCMPSQ|crrc|vrrc,vrrc|VXForm_BF3_VAB5|321
+VRLQNM|||VX1_VT5_VA5_VB5|325
+VRLQMI|vrrc|vrrc,vrrc,vrrc|VXForm_1|69
+VSLQ|||VX1_VT5_VA5_VB5|261
+VSRAQ|||VX1_VT5_VA5_VB5|773
+VSRQ|||VX1_VT5_VA5_VB5|517
+VRLQ|||VX1_VT5_VA5_VB5|5
+XSCVQPUQZ|||X_VT5_XO5_VB5|63,0,836
+XSCVQPSQZ|||X_VT5_XO5_VB5|63,8,836
+XSCVUQQP|||X_VT5_XO5_VB5|63,3,836
+XSCVSQQP|||X_VT5_XO5_VB5|63,11,836
+LXVKQ|vsrc|u5imm|XForm_XT6_IMM5|60,31,360
+XVCVSPBF16|||XX2_XT6_XO5_XB6|60,17,475
+XVCVBF16SPN|||XX2_XT6_XO5_XB6|60,16,475
+XSMAXCQP|||X_VT5_VA5_VB5|63,676
+XSMINCQP|||X_VT5_VA5_VB5|63,740
+WAITP10||u2imm,u2imm|XForm_IMM2_IMM2|31,30
+SYNCP10||u3imm,u2imm|XForm_IMM3_IMM2|31,598
+PLA8|g8rc|g8rc_nox0,s34imm64|MLS_DForm_SI34_RT5|14
+PLA8pc|g8rc|s34imm64_pcrel|MLS_DForm_SI34_RT5|14
+PSUBI||g8rc,g8rc_nox0,s34imm64|PPCAsmPseudo|
+PLA|gprc|gprc_nor0,s34imm64|MLS_DForm_SI34_RT5|14
+PLApc|gprc|s34imm64_pcrel|MLS_DForm_SI34_RT5|14
+BRINC|gprc|gprc,gprc|EVXForm_1|527
+EFDABS|sperc|sperc|EFXForm_2|740
+EFDADD|sperc|sperc,sperc|EFXForm_1|736
+EFDCFS|sperc|spe4rc|EFXForm_2a|751
+EFDCFSF|sperc|spe4rc|EFXForm_2a|755
+EFDCFSI|sperc|gprc|EFXForm_2a|753
+EFDCFSID|sperc|gprc|EFXForm_2a|739
+EFDCFUF|sperc|spe4rc|EFXForm_2a|754
+EFDCFUI|sperc|gprc|EFXForm_2a|752
+EFDCFUID|sperc|gprc|EFXForm_2a|738
+EFDCMPEQ|crrc|sperc,sperc|EFXForm_3|750
+EFDCMPGT|crrc|sperc,sperc|EFXForm_3|748
+EFDCMPLT|crrc|sperc,sperc|EFXForm_3|749
+EFDCTSF|sperc|spe4rc|EFXForm_2a|759
+EFDCTSI|gprc|sperc|EFXForm_2a|757
+EFDCTSIDZ|gprc|sperc|EFXForm_2a|747
+EFDCTSIZ|gprc|sperc|EFXForm_2a|762
+EFDCTUF|sperc|spe4rc|EFXForm_2a|758
+EFDCTUI|gprc|sperc|EFXForm_2a|756
+EFDCTUIDZ|gprc|sperc|EFXForm_2a|746
+EFDCTUIZ|gprc|sperc|EFXForm_2a|760
+EFDDIV|sperc|sperc,sperc|EFXForm_1|745
+EFDMUL|sperc|sperc,sperc|EFXForm_1|744
+EFDNABS|sperc|sperc|EFXForm_2|741
+EFDNEG|sperc|sperc|EFXForm_2|742
+EFDSUB|sperc|sperc,sperc|EFXForm_1|737
+EFDTSTEQ|crrc|sperc,sperc|EFXForm_3|766
+EFDTSTGT|crrc|sperc,sperc|EFXForm_3|764
+EFDTSTLT|crrc|sperc,sperc|EFXForm_3|765
+EFSABS|spe4rc|spe4rc|EFXForm_2|708
+EFSADD|spe4rc|spe4rc,spe4rc|EFXForm_1|704
+EFSCFD|spe4rc|sperc|EFXForm_2a|719
+EFSCFSF|spe4rc|spe4rc|EFXForm_2a|723
+EFSCFSI|spe4rc|gprc|EFXForm_2a|721
+EFSCFUF|spe4rc|spe4rc|EFXForm_2a|722
+EFSCFUI|spe4rc|gprc|EFXForm_2a|720
+EFSCMPEQ|crrc|spe4rc,spe4rc|EFXForm_3|718
+EFSCMPGT|crrc|spe4rc,spe4rc|EFXForm_3|716
+EFSCMPLT|crrc|spe4rc,spe4rc|EFXForm_3|717
+EFSCTSF|spe4rc|spe4rc|EFXForm_2a|727
+EFSCTSI|gprc|spe4rc|EFXForm_2a|725
+EFSCTSIZ|gprc|spe4rc|EFXForm_2a|730
+EFSCTUF|sperc|spe4rc|EFXForm_2a|726
+EFSCTUI|gprc|spe4rc|EFXForm_2a|724
+EFSCTUIZ|gprc|spe4rc|EFXForm_2a|728
+EFSDIV|spe4rc|spe4rc,spe4rc|EFXForm_1|713
+EFSMUL|spe4rc|spe4rc,spe4rc|EFXForm_1|712
+EFSNABS|spe4rc|spe4rc|EFXForm_2|709
+EFSNEG|spe4rc|spe4rc|EFXForm_2|710
+EFSSUB|spe4rc|spe4rc,spe4rc|EFXForm_1|705
+EFSTSTEQ|crrc|sperc,sperc|EFXForm_3|734
+EFSTSTGT|crrc|sperc,sperc|EFXForm_3|732
+EFSTSTLT|crrc|sperc,sperc|EFXForm_3|733
+EVABS|sperc|sperc|EVXForm_2|520
+EVADDIW|sperc|sperc,u5imm|EVXForm_1|514
+EVADDSMIAAW|sperc|sperc|EVXForm_2|1225
+EVADDSSIAAW|sperc|sperc|EVXForm_2|1217
+EVADDUSIAAW|sperc|sperc|EVXForm_2|1216
+EVADDUMIAAW|sperc|sperc|EVXForm_2|1224
+EVADDW|sperc|sperc,sperc|EVXForm_1|512
+EVAND|sperc|sperc,sperc|EVXForm_1|529
+EVANDC|sperc|sperc,sperc|EVXForm_1|530
+EVCMPEQ|crrc|sperc,sperc|EVXForm_3|564
+EVCMPGTS|crrc|sperc,sperc|EVXForm_3|561
+EVCMPGTU|crrc|sperc,sperc|EVXForm_3|560
+EVCMPLTS|crrc|sperc,sperc|EVXForm_3|563
+EVCMPLTU|crrc|sperc,sperc|EVXForm_3|562
+EVCNTLSW|sperc|sperc|EVXForm_2|526
+EVCNTLZW|sperc|sperc|EVXForm_2|525
+EVDIVWS|sperc|sperc,sperc|EVXForm_1|1222
+EVDIVWU|sperc|sperc,sperc|EVXForm_1|1223
+EVEQV|sperc|sperc,sperc|EVXForm_1|537
+EVEXTSB|sperc|sperc|EVXForm_2|522
+EVEXTSH|sperc|sperc|EVXForm_2|523
+EVFSABS|sperc|sperc|EVXForm_2|644
+EVFSADD|sperc|sperc,sperc|EVXForm_1|640
+EVFSCFSF|sperc|sperc|EVXForm_2a|659
+EVFSCFSI|sperc|sperc|EVXForm_2a|657
+EVFSCFUF|sperc|sperc|EVXForm_2a|658
+EVFSCFUI|sperc|sperc|EVXForm_2a|650
+EVFSCMPEQ|crrc|sperc,sperc|EVXForm_3|654
+EVFSCMPGT|crrc|sperc,sperc|EVXForm_3|652
+EVFSCMPLT|crrc|sperc,sperc|EVXForm_3|653
+EVFSCTSF|sperc|sperc|EVXForm_2a|663
+EVFSCTSI|sperc|sperc|EVXForm_2a|661
+EVFSCTSIZ|sperc|sperc|EVXForm_2a|666
+EVFSCTUF|sperc|sperc|EVXForm_2a|662
+EVFSCTUI|sperc|sperc|EVXForm_2a|660
+EVFSCTUIZ|sperc|sperc|EVXForm_2a|664
+EVFSDIV|sperc|sperc,sperc|EVXForm_1|649
+EVFSMUL|sperc|sperc,sperc|EVXForm_1|648
+EVFSNABS|sperc|sperc|EVXForm_2|645
+EVFSNEG|sperc|sperc|EVXForm_2|646
+EVFSSUB|sperc|sperc,sperc|EVXForm_1|641
+EVFSTSTEQ|crrc|sperc,sperc|EVXForm_3|670
+EVFSTSTGT|crrc|sperc,sperc|EVXForm_3|668
+EVFSTSTLT|crrc|sperc,sperc|EVXForm_3|669
+EVLDD|sperc|(spe8dis |EVXForm_D|769
+EVLDDX|sperc|(memrr |EVXForm_1|768
+EVLDH|sperc|(spe8dis |EVXForm_D|773
+EVLDHX|sperc|(memrr |EVXForm_1|772
+EVLDW|sperc|(spe8dis |EVXForm_D|771
+EVLDWX|sperc|(memrr |EVXForm_1|770
+EVLHHESPLAT|sperc|(spe2dis |EVXForm_D|777
+EVLHHESPLATX|sperc|(memrr |EVXForm_1|776
+EVLHHOUSPLAT|sperc|(spe2dis |EVXForm_D|781
+EVLHHOUSPLATX|sperc|(memrr |EVXForm_1|780
+EVLHHOSSPLAT|sperc|(spe2dis |EVXForm_D|783
+EVLHHOSSPLATX|sperc|(memrr |EVXForm_1|782
+EVLWHE|sperc|(spe4dis |EVXForm_D|785
+EVLWHEX|sperc|(memrr |EVXForm_1|784
+EVLWHOS|sperc|(spe4dis |EVXForm_D|791
+EVLWHOSX|sperc|(memrr |EVXForm_1|790
+EVLWHOU|sperc|(spe4dis |EVXForm_D|789
+EVLWHOUX|sperc|(memrr |EVXForm_1|788
+EVLWHSPLAT|sperc|(spe4dis |EVXForm_D|797
+EVLWHSPLATX|sperc|(memrr |EVXForm_1|796
+EVLWWSPLAT|sperc|(spe4dis |EVXForm_D|793
+EVLWWSPLATX|sperc|(memrr |EVXForm_1|792
+EVMERGEHI|sperc|sperc,sperc|EVXForm_1|556
+EVMERGELO|sperc|gprc,gprc|EVXForm_1|557
+EVMERGEHILO|sperc|sperc,sperc|EVXForm_1|558
+EVMERGELOHI|sperc|sperc,sperc|EVXForm_1|559
+EVMHEGSMFAA|sperc|sperc,sperc|EVXForm_1|1323
+EVMHEGSMFAN|sperc|sperc,sperc|EVXForm_1|1451
+EVMHEGSMIAA|sperc|sperc,sperc|EVXForm_1|1321
+EVMHEGSMIAN|sperc|sperc,sperc|EVXForm_1|1449
+EVMHEGUMIAA|sperc|sperc,sperc|EVXForm_1|1320
+EVMHEGUMIAN|sperc|sperc,sperc|EVXForm_1|1448
+EVMHESMF|sperc|sperc,sperc|EVXForm_1|1035
+EVMHESMFA|sperc|sperc,sperc|EVXForm_1|1067
+EVMHESMFAAW|sperc|sperc,sperc|EVXForm_1|1291
+EVMHESMFANW|sperc|sperc,sperc|EVXForm_1|1419
+EVMHESMI|sperc|sperc,sperc|EVXForm_1|1033
+EVMHESMIA|sperc|sperc,sperc|EVXForm_1|1065
+EVMHESMIAAW|sperc|sperc,sperc|EVXForm_1|1289
+EVMHESMIANW|sperc|sperc,sperc|EVXForm_1|1417
+EVMHESSF|sperc|sperc,sperc|EVXForm_1|1027
+EVMHESSFA|sperc|sperc,sperc|EVXForm_1|1059
+EVMHESSFAAW|sperc|sperc,sperc|EVXForm_1|1283
+EVMHESSFANW|sperc|sperc,sperc|EVXForm_1|1411
+EVMHESSIAAW|sperc|sperc,sperc|EVXForm_1|1281
+EVMHESSIANW|sperc|sperc,sperc|EVXForm_1|1409
+EVMHEUMI|sperc|sperc,sperc|EVXForm_1|1032
+EVMHEUMIA|sperc|sperc,sperc|EVXForm_1|1064
+EVMHEUMIAAW|sperc|sperc,sperc|EVXForm_1|1288
+EVMHEUMIANW|sperc|sperc,sperc|EVXForm_1|1416
+EVMHEUSIAAW|sperc|sperc,sperc|EVXForm_1|1280
+EVMHEUSIANW|sperc|sperc,sperc|EVXForm_1|1408
+EVMHOGSMFAA|sperc|sperc,sperc|EVXForm_1|1327
+EVMHOGSMFAN|sperc|sperc,sperc|EVXForm_1|1455
+EVMHOGSMIAA|sperc|sperc,sperc|EVXForm_1|1325
+EVMHOGSMIAN|sperc|sperc,sperc|EVXForm_1|1453
+EVMHOGUMIAA|sperc|sperc,sperc|EVXForm_1|1324
+EVMHOGUMIAN|sperc|sperc,sperc|EVXForm_1|1452
+EVMHOSMF|sperc|sperc,sperc|EVXForm_1|1039
+EVMHOSMFA|sperc|sperc,sperc|EVXForm_1|1071
+EVMHOSMFAAW|sperc|sperc,sperc|EVXForm_1|1295
+EVMHOSMFANW|sperc|sperc,sperc|EVXForm_1|1423
+EVMHOSMI|sperc|sperc,sperc|EVXForm_1|1037
+EVMHOSMIA|sperc|sperc,sperc|EVXForm_1|1069
+EVMHOSMIAAW|sperc|sperc,sperc|EVXForm_1|1293
+EVMHOSMIANW|sperc|sperc,sperc|EVXForm_1|1421
+EVMHOSSF|sperc|sperc,sperc|EVXForm_1|1031
+EVMHOSSFA|sperc|sperc,sperc|EVXForm_1|1063
+EVMHOSSFAAW|sperc|sperc,sperc|EVXForm_1|1287
+EVMHOSSFANW|sperc|sperc,sperc|EVXForm_1|1415
+EVMHOSSIAAW|sperc|sperc,sperc|EVXForm_1|1285
+EVMHOSSIANW|sperc|sperc,sperc|EVXForm_1|1413
+EVMHOUMI|sperc|sperc,sperc|EVXForm_1|1036
+EVMHOUMIA|sperc|sperc,sperc|EVXForm_1|1068
+EVMHOUMIAAW|sperc|sperc,sperc|EVXForm_1|1292
+EVMHOUMIANW|sperc|sperc,sperc|EVXForm_1|1420
+EVMHOUSIAAW|sperc|sperc,sperc|EVXForm_1|1284
+EVMHOUSIANW|sperc|sperc,sperc|EVXForm_1|1412
+EVMRA|sperc|sperc|EVXForm_2|1220
+EVMWHSMF|sperc|sperc,sperc|EVXForm_1|1103
+EVMWHSMFA|sperc|sperc,sperc|EVXForm_1|1135
+EVMWHSMI|sperc|sperc,sperc|EVXForm_1|1101
+EVMWHSMIA|sperc|sperc,sperc|EVXForm_1|1133
+EVMWHSSF|sperc|sperc,sperc|EVXForm_1|1095
+EVMWHSSFA|sperc|sperc,sperc|EVXForm_1|1127
+EVMWHUMI|sperc|sperc,sperc|EVXForm_1|1100
+EVMWHUMIA|sperc|sperc,sperc|EVXForm_1|1132
+EVMWLSMIAAW|sperc|sperc,sperc|EVXForm_1|1353
+EVMWLSMIANW|sperc|sperc,sperc|EVXForm_1|1481
+EVMWLSSIAAW|sperc|sperc,sperc|EVXForm_1|1345
+EVMWLSSIANW|sperc|sperc,sperc|EVXForm_1|1473
+EVMWLUMI|sperc|sperc,sperc|EVXForm_1|1096
+EVMWLUMIA|sperc|sperc,sperc|EVXForm_1|1128
+EVMWLUMIAAW|sperc|sperc,sperc|EVXForm_1|1352
+EVMWLUMIANW|sperc|sperc,sperc|EVXForm_1|1480
+EVMWLUSIAAW|sperc|sperc,sperc|EVXForm_1|1344
+EVMWLUSIANW|sperc|sperc,sperc|EVXForm_1|1472
+EVMWSMF|sperc|sperc,sperc|EVXForm_1|1115
+EVMWSMFA|sperc|sperc,sperc|EVXForm_1|1147
+EVMWSMFAA|sperc|sperc,sperc|EVXForm_1|1371
+EVMWSMFAN|sperc|sperc,sperc|EVXForm_1|1499
+EVMWSMI|sperc|sperc,sperc|EVXForm_1|1113
+EVMWSMIA|sperc|sperc,sperc|EVXForm_1|1145
+EVMWSMIAA|sperc|sperc,sperc|EVXForm_1|1369
+EVMWSMIAN|sperc|sperc,sperc|EVXForm_1|1497
+EVMWSSF|sperc|sperc,sperc|EVXForm_1|1107
+EVMWSSFA|sperc|sperc,sperc|EVXForm_1|1139
+EVMWSSFAA|sperc|sperc,sperc|EVXForm_1|1363
+EVMWSSFAN|sperc|sperc,sperc|EVXForm_1|1491
+EVMWUMI|sperc|sperc,sperc|EVXForm_1|1112
+EVMWUMIA|sperc|sperc,sperc|EVXForm_1|1144
+EVMWUMIAA|sperc|sperc,sperc|EVXForm_1|1368
+EVMWUMIAN|sperc|sperc,sperc|EVXForm_1|1496
+EVNAND|sperc|sperc,sperc|EVXForm_1|542
+EVNEG|sperc|sperc|EVXForm_2|521
+EVNOR|sperc|sperc,sperc|EVXForm_1|536
+EVOR|sperc|sperc,sperc|EVXForm_1|535
+EVORC|sperc|sperc,sperc|EVXForm_1|539
+EVRLWI|sperc|sperc,u5imm|EVXForm_1|554
+EVRLW|sperc|sperc,sperc|EVXForm_1|552
+EVRNDW|sperc|sperc|EVXForm_2|524
+EVSEL|sperc|sperc,sperc,crrc|EVXForm_4|79
+EVSLWI|sperc|sperc,u5imm|EVXForm_1|550
+EVSLW|sperc|sperc,sperc|EVXForm_1|548
+EVSPLATFI|sperc|s5imm|EVXForm_2|555
+EVSPLATI|sperc|s5imm|EVXForm_2|553
+EVSRWIS|sperc|sperc,u5imm|EVXForm_1|547
+EVSRWIU|sperc|sperc,u5imm|EVXForm_1|546
+EVSRWS|sperc|sperc,sperc|EVXForm_1|545
+EVSRWU|sperc|sperc,sperc|EVXForm_1|544
+EVSTDD||sperc,(spe8dis |EVXForm_D|801
+EVSTDDX||sperc,(memrr |EVXForm_1|800
+EVSTDH||sperc,(spe8dis |EVXForm_D|805
+EVSTDHX||sperc,(memrr |EVXForm_1|804
+EVSTDW||sperc,(spe8dis |EVXForm_D|803
+EVSTDWX||sperc,(memrr |EVXForm_1|802
+EVSTWHE||sperc,(spe4dis |EVXForm_D|817
+EVSTWHEX||sperc,(memrr |EVXForm_1|816
+EVSTWHO||sperc,(spe4dis |EVXForm_D|821
+EVSTWHOX||sperc,(memrr |EVXForm_1|820
+EVSTWWE||sperc,(spe4dis |EVXForm_D|825
+EVSTWWEX||sperc,(memrr |EVXForm_1|824
+EVSTWWO||sperc,(spe4dis |EVXForm_D|829
+EVSTWWOX||sperc,(memrr |EVXForm_1|828
+EVSUBFSSIAAW|sperc|sperc|EVXForm_2|1219
+EVSUBFSMIAAW|sperc|sperc|EVXForm_2|1227
+EVSUBFUMIAAW|sperc|sperc|EVXForm_2|1226
+EVSUBFUSIAAW|sperc|sperc|EVXForm_2|1218
+EVSUBFW|sperc|sperc,sperc|EVXForm_1|516
+EVSUBIFW|sperc|u5imm,sperc|EVXForm_1|518
+EVXOR|sperc|sperc,sperc|EVXForm_1|534
+SPELWZ|spe4rc|(memri |DForm_1|32
+SPELWZX|spe4rc|(memrr |XForm_1|31,23
+SPESTW||spe4rc,(memri |DForm_1|36
+SPESTWX||spe4rc,(memrr |XForm_8|31,151
+SELECT_CC_SPE4|spe4rc|crrc,spe4rc,spe4rc,i32imm|PPCCustomInserterPseudo|
+SELECT_CC_SPE|sperc|crrc,sperc,sperc,i32imm|PPCCustomInserterPseudo|
+SELECT_SPE4|spe4rc|crbitrc,spe4rc,spe4rc|PPCCustomInserterPseudo|
+SELECT_SPE|sperc|crbitrc,sperc,sperc|PPCCustomInserterPseudo|
+SDT_PPCldvsxlh|||SDTypeProfile|1,1
+SDT_PPCfpexth|||SDTypeProfile|1,2
+SDT_PPCldsplat|||SDTypeProfile|1,1
+SDT_PPClxvd2x|||SDTypeProfile|1,1
+SDT_PPCstxvd2x|||SDTypeProfile|0,2
+SDT_PPCxxswapd|||SDTypeProfile|1,1
+SDTVecConv|||SDTypeProfile|1,2
+SDT_PPCld_vec_be|||SDTypeProfile|1,1
+SDT_PPCst_vec_be|||SDTypeProfile|0,2
+SDT_PPCxxperm|||SDTypeProfile|1,3
+SDT_PPCxvcvsxwsp|||SDTypeProfile|1,1
+PPCSToV|||SDNode|1
+NAME|vsrc|vsrc,vsrc|XX3Form_Rc|
+_rec|vsrc|vsrc,vsrc|XX3Form_Rc|
+LXSDX|vsfrc|(memrr |XX1Form_memOp|31,588
+XFLOADf64|vsfrc|(memrr |PseudoXFormMemOp|
+LXVD2X|vsrc|(memrr |XX1Form_memOp|31,844
+LXVDSX|vsrc|(memrr |XX1Form_memOp|31,332
+LXVW4X|vsrc|(memrr |XX1Form_memOp|31,780
+STXSDX||vsfrc,(memrr |XX1Form_memOp|31,716
+XFSTOREf64||vsfrc,(memrr |PseudoXFormMemOp|
+STXVD2X||vsrc,(memrr |XX1Form_memOp|31,972
+STXVW4X||vsrc,(memrr |XX1Form_memOp|31,908
+XSADDDP|vsfrc|vsfrc,vsfrc|XX3Form|60,32
+XSMULDP|vsfrc|vsfrc,vsfrc|XX3Form|60,48
+XVADDDP|vsrc|vsrc,vsrc|XX3Form|60,96
+XVADDSP|vsrc|vsrc,vsrc|XX3Form|60,64
+XVMULDP|vsrc|vsrc,vsrc|XX3Form|60,112
+XVMULSP|vsrc|vsrc,vsrc|XX3Form|60,80
+XSSUBDP|vsfrc|vsfrc,vsfrc|XX3Form|60,40
+XVSUBDP|vsrc|vsrc,vsrc|XX3Form|60,104
+XVSUBSP|vsrc|vsrc,vsrc|XX3Form|60,72
+XSMADDADP|vsfrc|vsfrc,vsfrc,vsfrc|XX3Form|60,33
+XSMADDMDP|vsfrc|vsfrc,vsfrc,vsfrc|XX3Form|60,41
+XSMSUBADP|vsfrc|vsfrc,vsfrc,vsfrc|XX3Form|60,49
+XSMSUBMDP|vsfrc|vsfrc,vsfrc,vsfrc|XX3Form|60,57
+XSNMADDADP|vsfrc|vsfrc,vsfrc,vsfrc|XX3Form|60,161
+XSNMADDMDP|vsfrc|vsfrc,vsfrc,vsfrc|XX3Form|60,169
+XSNMSUBADP|vsfrc|vsfrc,vsfrc,vsfrc|XX3Form|60,177
+XSNMSUBMDP|vsfrc|vsfrc,vsfrc,vsfrc|XX3Form|60,185
+XVMADDADP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,97
+XVMADDMDP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,105
+XVMADDASP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,65
+XVMADDMSP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,73
+XVMSUBADP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,113
+XVMSUBMDP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,121
+XVMSUBASP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,81
+XVMSUBMSP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,89
+XVNMADDADP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,225
+XVNMADDMDP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,233
+XVNMADDASP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,193
+XVNMADDMSP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,201
+XVNMSUBADP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,241
+XVNMSUBMDP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,249
+XVNMSUBASP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,209
+XVNMSUBMSP|vsrc|vsrc,vsrc,vsrc|XX3Form|60,217
+XSDIVDP|vsfrc|vsfrc,vsfrc|XX3Form|60,56
+XSSQRTDP|vsfrc|vsfrc|XX2Form|60,75
+XSREDP|vsfrc|vsfrc|XX2Form|60,90
+XSRSQRTEDP|vsfrc|vsfrc|XX2Form|60,74
+XSTDIVDP|crrc|vsfrc,vsfrc|XX3Form_1|60,61
+XSTSQRTDP|crrc|vsfrc|XX2Form_1|60,106
+XVTDIVDP|crrc|vsrc,vsrc|XX3Form_1|60,125
+XVTDIVSP|crrc|vsrc,vsrc|XX3Form_1|60,93
+XVTSQRTDP|crrc|vsrc|XX2Form_1|60,234
+XVTSQRTSP|crrc|vsrc|XX2Form_1|60,170
+XVDIVDP|vsrc|vsrc,vsrc|XX3Form|60,120
+XVDIVSP|vsrc|vsrc,vsrc|XX3Form|60,88
+XVSQRTDP|vsrc|vsrc|XX2Form|60,203
+XVSQRTSP|vsrc|vsrc|XX2Form|60,139
+XVREDP|vsrc|vsrc|XX2Form|60,218
+XVRESP|vsrc|vsrc|XX2Form|60,154
+XVRSQRTEDP|vsrc|vsrc|XX2Form|60,202
+XVRSQRTESP|vsrc|vsrc|XX2Form|60,138
+XSCMPODP|crrc|vsfrc,vsfrc|XX3Form_1|60,43
+XSCMPUDP|crrc|vsfrc,vsfrc|XX3Form_1|60,35
+XSABSDP|vsfrc|vsfrc|XX2Form|60,345
+XSNABSDP|vsfrc|vsfrc|XX2Form|60,361
+XSNABSDPs|vssrc|vssrc|XX2Form|60,361
+XSNEGDP|vsfrc|vsfrc|XX2Form|60,377
+XSCPSGNDP|vsfrc|vsfrc,vsfrc|XX3Form|60,176
+XVABSDP|vsrc|vsrc|XX2Form|60,473
+XVABSSP|vsrc|vsrc|XX2Form|60,409
+XVCPSGNDP|vsrc|vsrc,vsrc|XX3Form|60,240
+XVCPSGNSP|vsrc|vsrc,vsrc|XX3Form|60,208
+XVNABSDP|vsrc|vsrc|XX2Form|60,489
+XVNABSSP|vsrc|vsrc|XX2Form|60,425
+XVNEGDP|vsrc|vsrc|XX2Form|60,505
+XVNEGSP|vsrc|vsrc|XX2Form|60,441
+XSCVDPSP|vsfrc|vsfrc|XX2Form|60,265
+XSCVDPSXDS|vsfrc|vsfrc|XX2Form|60,344
+XSCVDPSXDSs|vssrc|vssrc|XX2Form|60,344
+XSCVDPSXWS|vsfrc|vsfrc|XX2Form|60,88
+XSCVDPSXWSs|vssrc|vssrc|XX2Form|60,88
+XSCVDPUXDS|vsfrc|vsfrc|XX2Form|60,328
+XSCVDPUXDSs|vssrc|vssrc|XX2Form|60,328
+XSCVDPUXWS|vsfrc|vsfrc|XX2Form|60,72
+XSCVDPUXWSs|vssrc|vssrc|XX2Form|60,72
+XSCVSPDP|vsfrc|vsfrc|XX2Form|60,329
+XSCVSXDDP|vsfrc|vsfrc|XX2Form|60,376
+XSCVUXDDP|vsfrc|vsfrc|XX2Form|60,360
+XVCVDPSP|vsrc|vsrc|XX2Form|60,393
+XVCVDPSXDS|vsrc|vsrc|XX2Form|60,472
+XVCVDPSXWS|vsrc|vsrc|XX2Form|60,216
+XVCVDPUXDS|vsrc|vsrc|XX2Form|60,456
+XVCVDPUXWS|vsrc|vsrc|XX2Form|60,200
+XVCVSPDP|vsrc|vsrc|XX2Form|60,457
+XVCVSPSXDS|vsrc|vsrc|XX2Form|60,408
+XVCVSPSXWS|vsrc|vsrc|XX2Form|60,152
+XVCVSPUXDS|vsrc|vsrc|XX2Form|60,392
+XVCVSPUXWS|vsrc|vsrc|XX2Form|60,136
+XVCVSXDDP|vsrc|vsrc|XX2Form|60,504
+XVCVSXDSP|vsrc|vsrc|XX2Form|60,440
+XVCVSXWSP|vsrc|vsrc|XX2Form|60,184
+XVCVUXDDP|vsrc|vsrc|XX2Form|60,488
+XVCVUXDSP|vsrc|vsrc|XX2Form|60,424
+XVCVUXWSP|vsrc|vsrc|XX2Form|60,168
+XVCVSXWDP|vsrc|vsrc|XX2Form|60,248
+XVCVUXWDP|vsrc|vsrc|XX2Form|60,232
+XSRDPIC|vsfrc|vsfrc|XX2Form|60,107
+XVRDPIC|vsrc|vsrc|XX2Form|60,235
+XVRSPIC|vsrc|vsrc|XX2Form|60,171
+XSMAXDP|vsfrc|vsfrc,vsfrc|XX3Form|60,160
+XSMINDP|vsfrc|vsfrc,vsfrc|XX3Form|60,168
+XVMAXDP|vsrc|vsrc,vsrc|XX3Form|60,224
+XVMINDP|vsrc|vsrc,vsrc|XX3Form|60,232
+XVMAXSP|vsrc|vsrc,vsrc|XX3Form|60,192
+XVMINSP|vsrc|vsrc,vsrc|XX3Form|60,200
+XSRDPI|vsfrc|vsfrc|XX2Form|60,73
+XSRDPIM|vsfrc|vsfrc|XX2Form|60,121
+XSRDPIP|vsfrc|vsfrc|XX2Form|60,105
+XSRDPIZ|vsfrc|vsfrc|XX2Form|60,89
+XVRDPI|vsrc|vsrc|XX2Form|60,201
+XVRDPIM|vsrc|vsrc|XX2Form|60,249
+XVRDPIP|vsrc|vsrc|XX2Form|60,233
+XVRDPIZ|vsrc|vsrc|XX2Form|60,217
+XVRSPI|vsrc|vsrc|XX2Form|60,137
+XVRSPIM|vsrc|vsrc|XX2Form|60,185
+XVRSPIP|vsrc|vsrc|XX2Form|60,169
+XVRSPIZ|vsrc|vsrc|XX2Form|60,153
+XXLAND|vsrc|vsrc,vsrc|XX3Form|60,130
+XXLANDC|vsrc|vsrc,vsrc|XX3Form|60,138
+XXLNOR|vsrc|vsrc,vsrc|XX3Form|60,162
+XXLOR|vsrc|vsrc,vsrc|XX3Form|60,146
+XXLORf|vsfrc|vsfrc,vsfrc|XX3Form|60,146
+XXLXOR|vsrc|vsrc,vsrc|XX3Form|60,154
+XXLXORz|vsrc||XX3Form_SameOp|60,154
+XXLXORdpz|vsfrc||XX3Form_SameOp|60,154
+XXLXORspz|vssrc||XX3Form_SameOp|60,154
+XXMRGHW|vsrc|vsrc,vsrc|XX3Form|60,18
+XXMRGLW|vsrc|vsrc,vsrc|XX3Form|60,50
+XXPERMDI|vsrc|vsrc,vsrc,u2imm|XX3Form_2|60,10
+XXPERMDIs|vsrc|vsfrc,u2imm|XX3Form_2s|60,10
+XXSEL|vsrc|vsrc,vsrc,vsrc|XX4Form|60,3
+XXSLDWI|vsrc|vsrc,vsrc,u2imm|XX3Form_2|60,2
+XXSLDWIs|vsrc|vsfrc,u2imm|XX3Form_2s|60,2
+XXSPLTW|vsrc|vsrc,u2imm|XX2Form_2|60,164
+XXSPLTWs|vsrc|vsfrc,u2imm|XX2Form_2|60,164
+XXLEQV|vsrc|vsrc,vsrc|XX3Form|60,186
+XXLNAND|vsrc|vsrc,vsrc|XX3Form|60,178
+XXLEQVOnes|vsrc||XX3Form_SameOp|60,186
+XXLORC|vsrc|vsrc,vsrc|XX3Form|60,170
+LXSSPX|vssrc|(memrr |XX1Form_memOp|31,524
+LXSIWAX|vsfrc|(memrr |XX1Form_memOp|31,76
+LXSIWZX|vsfrc|(memrr |XX1Form_memOp|31,12
+XFLOADf32|vssrc|memrr|PseudoXFormMemOp|
+LIWAX|vsfrc|memrr|PseudoXFormMemOp|
+LIWZX|vsfrc|memrr|PseudoXFormMemOp|
+STXSSPX||vssrc,(memrr |XX1Form_memOp|31,652
+STXSIWX||vsfrc,(memrr |XX1Form_memOp|31,140
+XFSTOREf32||vssrc,memrr|PseudoXFormMemOp|
+STIWX||vsfrc,memrr|PseudoXFormMemOp|
+XSADDSP|vssrc|vssrc,vssrc|XX3Form|60,0
+XSMULSP|vssrc|vssrc,vssrc|XX3Form|60,16
+XSSUBSP|vssrc|vssrc,vssrc|XX3Form|60,8
+XSDIVSP|vssrc|vssrc,vssrc|XX3Form|60,24
+XSRESP|vssrc|vssrc|XX2Form|60,26
+XSRSP|vssrc|vsfrc|XX2Form|60,281
+XSSQRTSP|vssrc|vssrc|XX2Form|60,11
+XSRSQRTESP|vssrc|vssrc|XX2Form|60,10
+XSMADDASP|vssrc|vssrc,vssrc,vssrc|XX3Form|60,1
+XSMADDMSP|vssrc|vssrc,vssrc,vssrc|XX3Form|60,9
+XSMSUBASP|vssrc|vssrc,vssrc,vssrc|XX3Form|60,17
+XSMSUBMSP|vssrc|vssrc,vssrc,vssrc|XX3Form|60,25
+XSNMADDASP|vssrc|vssrc,vssrc,vssrc|XX3Form|60,129
+XSNMADDMSP|vssrc|vssrc,vssrc,vssrc|XX3Form|60,137
+XSNMSUBASP|vssrc|vssrc,vssrc,vssrc|XX3Form|60,145
+XSNMSUBMSP|vssrc|vssrc,vssrc,vssrc|XX3Form|60,153
+XSCVSXDSP|vssrc|vsfrc|XX2Form|60,312
+XSCVUXDSP|vssrc|vsfrc|XX2Form|60,296
+XSCVDPSPN|vsrc|vssrc|XX2Form|60,267
+XSCVSPDPN|vssrc|vsrc|XX2Form|60,331
+MFVSRD|g8rc|vsfrc|XX1_RS6_RD5_XO|31,51
+MFVRD|g8rc|vsrc|XX1_RS6_RD5_XO|31,51
+MFVSRWZ|gprc|vsfrc|XX1_RS6_RD5_XO|31,115
+MFVRWZ|gprc|vsrc|XX1_RS6_RD5_XO|31,115
+MTVSRD|vsfrc|g8rc|XX1_RS6_RD5_XO|31,179
+MTVRD|vsrc|g8rc|XX1_RS6_RD5_XO|31,179
+MTVSRWA|vsfrc|gprc|XX1_RS6_RD5_XO|31,211
+MTVRWA|vsrc|gprc|XX1_RS6_RD5_XO|31,211
+MTVSRWZ|vsfrc|gprc|XX1_RS6_RD5_XO|31,243
+MTVRWZ|vsrc|gprc|XX1_RS6_RD5_XO|31,243
+MTVSRWS|vsrc|gprc|XX1_RS6_RD5_XO|31,403
+MTVSRDD|vsrc|g8rc_nox0,g8rc|XX1Form|31,435
+MFVSRLD|g8rc|vsrc|XX1_RS6_RD5_XO|31,307
+XSCPSGNQP|||X_VT5_VA5_VB5|63,100
+XSABSQP|||X_VT5_XO5_VB5|63,0,804
+XSNABSQP|||X_VT5_XO5_VB5|63,8,804
+XSNEGQP|||X_VT5_XO5_VB5|63,16,804
+XSADDQP|||X_VT5_VA5_VB5|63,4
+XSMULQP|||X_VT5_VA5_VB5|63,36
+XSSUBQP|||X_VT5_VA5_VB5|63,516
+XSDIVQP|||X_VT5_VA5_VB5|63,548
+XSSQRTQP|||X_VT5_XO5_VB5|63,27,804
+XSMADDQP|||X_VT5_VA5_VB5_FMA|63,388
+XSMSUBQP|||X_VT5_VA5_VB5_FMA|63,420
+XSNMADDQP|||X_VT5_VA5_VB5_FMA|63,452
+XSNMSUBQP|||X_VT5_VA5_VB5_FMA|63,484
+XSADDQPO|||X_VT5_VA5_VB5_Ro|63,4
+XSMULQPO|||X_VT5_VA5_VB5_Ro|63,36
+XSSUBQPO|||X_VT5_VA5_VB5_Ro|63,516
+XSDIVQPO|||X_VT5_VA5_VB5_Ro|63,548
+XSSQRTQPO|||X_VT5_XO5_VB5_Ro|63,27,804
+XSMADDQPO|||X_VT5_VA5_VB5_FMA_Ro|63,388
+XSMSUBQPO|||X_VT5_VA5_VB5_FMA_Ro|63,420
+XSNMADDQPO|||X_VT5_VA5_VB5_FMA_Ro|63,452
+XSNMSUBQPO|||X_VT5_VA5_VB5_FMA_Ro|63,484
+XSCMPEXPDP|crrc|vsfrc,vsfrc|XX3Form_1|60,59
+XSCMPEXPQP|crrc:$BF|vrrc:$RA, vrrc:$RB|X_BF3_VA5_VB5|63,164
+XSCMPOQP|crrc:$BF|vrrc:$RA, vrrc:$RB|X_BF3_VA5_VB5|63,132
+XSCMPUQP|crrc:$BF|vrrc:$RA, vrrc:$RB|X_BF3_VA5_VB5|63,644
+XSCMPEQDP|||XX3_XT5_XA5_XB5|60,3
+XSCMPGEDP|||XX3_XT5_XA5_XB5|60,19
+XSCMPGTDP|||XX3_XT5_XA5_XB5|60,11
+XSCVDPQP|||X_VT5_XO5_VB5_TyVB|63,22,836
+XSCVQPDP|||X_VT5_XO5_VB5_VSFR|63,20,836
+XSCVQPDPO|||X_VT5_XO5_VB5_VSFR_Ro|63,20,836
+XSCVQPSDZ|||X_VT5_XO5_VB5|63,25,836
+XSCVQPSWZ|||X_VT5_XO5_VB5|63,9,836
+XSCVQPUDZ|||X_VT5_XO5_VB5|63,17,836
+XSCVQPUWZ|||X_VT5_XO5_VB5|63,1,836
+XSCVSDQP|||X_VT5_XO5_VB5_TyVB|63,10,836
+XSCVUDQP|||X_VT5_XO5_VB5_TyVB|63,2,836
+XSCVDPHP|||XX2_XT6_XO5_XB6|60,17,347
+XSCVHPDP|||XX2_XT6_XO5_XB6|60,16,347
+XVCVHPSP|||XX2_XT6_XO5_XB6|60,24,475
+XVCVSPHP|||XX2_XT6_XO5_XB6|60,25,475
+XSRQPI|vrrc:$VRT|u1imm:$R, vrrc:$VRB, u2imm:$idx|Z23_VT5_R1_VB5_RMC2_EX1|63,5,0
+XSRQPIX|vrrc:$VRT|u1imm:$R, vrrc:$VRB, u2imm:$idx|Z23_VT5_R1_VB5_RMC2_EX1|63,5,1
+XSRQPXP|vrrc:$VRT|u1imm:$R, vrrc:$VRB, u2imm:$idx|Z23_VT5_R1_VB5_RMC2_EX1|63,37,0
+XSIEXPDP|vsrc|g8rc,g8rc|XX1Form|60,918
+XSIEXPQP|vrrc|vrrc,vsfrc|XForm_18|63,868
+XSXEXPDP|||XX2_RT5_XO5_XB6|60,0,347
+XSXSIGDP|||XX2_RT5_XO5_XB6|60,1,347
+XSXEXPQP|||X_VT5_XO5_VB5|63,2,804
+XSXSIGQP|||X_VT5_XO5_VB5|63,18,804
+XXEXTRACTUW|vsfrc|vsrc,u4imm|XX2_RD6_UIM5_RS6|60,165
+XVIEXPDP|||XX3_XT5_XA5_XB5|60,248
+XVIEXPSP|||XX3_XT5_XA5_XB5|60,216
+XVXEXPDP|||XX2_XT6_XO5_XB6|60,0,475
+XVXEXPSP|||XX2_XT6_XO5_XB6|60,8,475
+XVXSIGDP|||XX2_XT6_XO5_XB6|60,1,475
+XVXSIGSP|||XX2_XT6_XO5_XB6|60,9,475
+XSTSTDCSP|crrc|u7imm,vssrc|XX2_BF3_DCMX7_RS6|60,298
+XSTSTDCDP|crrc|u7imm,vsfrc|XX2_BF3_DCMX7_RS6|60,362
+XSTSTDCQP|crrc|u7imm,vrrc|X_BF3_DCMX7_RS5|63,708
+XVTSTDCSP|vsrc|u7imm,vsrc|XX2_RD6_DCMX7_RS6|60,13,5
+XVTSTDCDP|vsrc|u7imm,vsrc|XX2_RD6_DCMX7_RS6|60,15,5
+XSMAXCDP|||XX3_XT5_XA5_XB5|60,128
+XSMINCDP|||XX3_XT5_XA5_XB5|60,136
+XSMAXJDP|||XX3_XT5_XA5_XB5|60,144
+XSMINJDP|||XX3_XT5_XA5_XB5|60,152
+XXBRH|||XX2_XT6_XO5_XB6|60,7,475
+XXBRW|||XX2_XT6_XO5_XB6|60,15,475
+XXBRD|||XX2_XT6_XO5_XB6|60,23,475
+XXBRQ|||XX2_XT6_XO5_XB6|60,31,475
+XXPERM|vsrc|vsrc,vsrc,vsrc|XX3Form|60,26
+XXPERMR|vsrc|vsrc,vsrc,vsrc|XX3Form|60,58
+XXSPLTIB|vsrc|u8imm_trunc|X_RD6_IMM8|60,360
+LXV|vsrc|(memrix16 |DQ_RD6_RS5_DQ12|61,1
+LXSD|vfrc|(memrix |DSForm_1|57,2
+LXSSP|vfrc|(memrix |DSForm_1|57,3
+LXSIBZX|||X_XT6_RA5_RB5|31,781
+LXSIHZX|||X_XT6_RA5_RB5|31,813
+LXVH8X|||X_XT6_RA5_RB5|31,812
+LXVB16X|||X_XT6_RA5_RB5|31,876
+LXVX|||X_XT6_RA5_RB5|31,268
+LXVL|vsrc|(memr |XX1Form_memOp|31,269
+LXVLL|vsrc|(memr |XX1Form_memOp|31,301
+LXVWSX|||X_XT6_RA5_RB5|31,364
+STXV||vsrc,(memrix16 |DQ_RD6_RS5_DQ12|61,5
+STXSD||vfrc,(memrix |DSForm_1|61,2
+STXSSP||vfrc,(memrix |DSForm_1|61,3
+STXSIBX|||X_XS6_RA5_RB5|31,909
+STXSIHX|||X_XS6_RA5_RB5|31,941
+STXSIBXv|||X_XS6_RA5_RB5|31,909
+STXSIHXv|||X_XS6_RA5_RB5|31,941
+STXVH8X|||X_XS6_RA5_RB5|31,940
+STXVB16X|||X_XS6_RA5_RB5|31,1004
+STXVX|||X_XS6_RA5_RB5|31,396
+STXVL||vsrc,(memr |XX1Form_memOp|31,397
+STXVLL||vsrc,(memr |XX1Form_memOp|31,429
+DFLOADf32|vssrc|memrix|PPCPostRAExpPseudo|
+DFLOADf64|vsfrc|memrix|PPCPostRAExpPseudo|
+DFSTOREf32||vssrc,memrix|PPCPostRAExpPseudo|
+DFSTOREf64||vsfrc,memrix|PPCPostRAExpPseudo|
+SPILLTOVSR_STX||spilltovsrrc,memrr|PseudoXFormMemOp|
+SPILLTOVSR_ST||spilltovsrrc,memrix|PPCPostRAExpPseudo|
+SPILLTOVSR_LDX|spilltovsrrc|memrr|PseudoXFormMemOp|
+SPILLTOVSR_LD|spilltovsrrc|memrix|PPCPostRAExpPseudo|
+SELECT_CC_VSRC|vsrc|crrc,vsrc,vsrc,i32imm|PPCCustomInserterPseudo|
+SELECT_VSRC|vsrc|crbitrc,vsrc,vsrc|PPCCustomInserterPseudo|
+SELECT_CC_VSFRC|f8rc|crrc,f8rc,f8rc,i32imm|PPCCustomInserterPseudo|
+SELECT_VSFRC|f8rc|crbitrc,f8rc,f8rc|PPCCustomInserterPseudo|
+SELECT_CC_VSSRC|f4rc|crrc,f4rc,f4rc,i32imm|PPCCustomInserterPseudo|
+SELECT_VSSRC|f4rc|crbitrc,f4rc,f4rc|PPCCustomInserterPseudo|
+u8imm_trunc|||UImmediateOp|8
+s16imm64|||ImmediateRelocOp|16
+u16imm64|||UImmediateRelocOp|16
+s17imm|||ImmediateRelocOp|16
+s17imm64|||ImmediateRelocOp|16
+sub_lt|||SubRegIndex|1
+sub_gt|||SubRegIndex|1,1
+sub_eq|||SubRegIndex|1,2
+sub_un|||SubRegIndex|1,3
+sub_32|||SubRegIndex|32
+sub_32_hi_phony|||SubRegIndex|32,32
+sub_64|||SubRegIndex|64
+sub_64_hi_phony|||SubRegIndex|64,64
+sub_vsx0|||SubRegIndex|128
+sub_vsx1|||SubRegIndex|128,128
+sub_gp8_x0|||SubRegIndex|64
+sub_gp8_x1|||SubRegIndex|64,64
+sub_fp0|||SubRegIndex|64
+sub_fp1|||SubRegIndex|64,64
+VFHRC|||PPCNonAllocatableRegisterClass|64,0
+FHRC|||PPCNonAllocatableRegisterClass|64,0
+ZERO|||GPR|0
+CR0|||CR|0
+CR1|||CR|1
+CR2|||CR|2
+CR3|||CR|3
+CR4|||CR|4
+CR5|||CR|5
+CR6|||CR|6
+CR7|||CR|7
+LR|||SPR|8
+LR8|||SPR|8
+CTR|||SPR|9
+CTR8|||SPR|9
+VRSAVE|||SPR|256
+SPEFSCR|||SPR|512
+XER|||SPR|1
+CARRY|||SPR|1
+GPRC32|||PPCNonAllocatableRegisterClass|32,2,30
+GPRC|||PPCGPRRegisterClass|32,2,30,2,31
+G8RC|||PPCGPRRegisterClass|64,2,30,2,31
+GPRC_NOR0|||PPCGPRRegisterClass|32,2,31
+G8RC_NOX0|||PPCGPRRegisterClass|64,2,31
+SPERC|||PPCRegisterClass|64,2,30
+F8RC|||PPCRegisterClass|64,0,31
+F4RC|||PPCRegisterClass|32
+FpRC|||PPCRegisterClassWithSize|128,128
+VRRC|||PPCRegisterClassWithSize|128,128
+VSLRC|||PPCRegisterClassWithSize|128,0,31,128
+VSRC|||PPCRegisterClassWithSize|128,128
+VFRC|||PPCRegisterClass|64
+VSFRC|||PPCRegisterClass|64
+SPILLTOVSRRC|||PPCRegisterClass|64,31,31
+VSSRC|||PPCRegisterClass|32
+CRBITRC|||PPCRegisterClassWithSize|32,32
+CRRC|||PPCRegisterClass|32
+CTRRC|||PPCNonAllocatableRegisterClass|32
+CTRRC8|||PPCNonAllocatableRegisterClass|64
+LRRC|||PPCNonAllocatableRegisterClass|32
+LR8RC|||PPCNonAllocatableRegisterClass|64
+VRSAVERC|||PPCRegisterClass|32
+CARRYRC|||PPCNonAllocatableRegisterClass|32
+G8pRC|||PPCRegisterClassWithSize|128,1,14,128
+sub_dmrrow0|||SubRegIndex|128
+sub_dmrrow1|||SubRegIndex|128,128
+sub_dmrrowp0|||SubRegIndex|256
+sub_dmrrowp1|||SubRegIndex|256,256
+sub_wacc_lo|||SubRegIndex|512
+sub_wacc_hi|||SubRegIndex|512,512
+sub_dmr0|||SubRegIndex|1024
+sub_dmr1|||SubRegIndex|1024,1024
+DMRp0|||DMRp|0
+DMRp1|||DMRp|1
+DMRp2|||DMRp|2
+DMRp3|||DMRp|3
+DMRROWRC|||PPCRegisterClassWithSize|128,0,128
+DMRROWpRC|||PPCRegisterClassWithSize|128,0,256
+WACCRC|||PPCRegisterClassWithSize|128,0,512
+WACC_HIRC|||PPCRegisterClassWithSize|128,0,512
+DMRRC|||PPCRegisterClassWithSize|128,0,1024
+DMRpRC|||PPCRegisterClassWithSize|128,2048
+sub_pair0|||SubRegIndex|256
+sub_pair1|||SubRegIndex|256,256
+ACC0|||ACC|0
+ACC1|||ACC|1
+ACC2|||ACC|2
+ACC3|||ACC|3
+ACC4|||ACC|4
+ACC5|||ACC|5
+ACC6|||ACC|6
+ACC7|||ACC|7
+ACCRC|||PPCRegisterClassWithPriority|128,31,1,512
+UACC0|||UACC|0
+UACC1|||UACC|1
+UACC2|||UACC|2
+UACC3|||UACC|3
+UACC4|||UACC|4
+UACC5|||UACC|5
+UACC6|||UACC|6
+UACC7|||UACC|7
+UACCRC|||PPCRegisterClassWithPriority|128,4,1,512
+VSRpRC|||PPCRegisterClassWithPriority|128,0,15,2,0,256
+PPC440Itineraries|||ProcessorItineraries|0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,1,2,1,1,1,1,1,1,1,2,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0
+PPCA2Itineraries|||ProcessorItineraries|0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,0,8,0,0,0,0,0,0,0,0,0,9,0,9,0,0,8,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PPCE500Itineraries|||ProcessorItineraries|1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+PPCE500mcItineraries|||ProcessorItineraries|1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+PPCE5500Itineraries|||ProcessorItineraries|2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2
+P10_BF|||ProcResource|4
+P10_BR|||ProcResource|2
+P10_CY|||ProcResource|4
+P10_DF|||ProcResource|1
+P10_DV|||ProcResource|2
+P10_DX|||ProcResource|2
+P10_FX|||ProcResource|4
+P10_LD|||ProcResource|2
+P10_MM|||ProcResource|2
+P10_PM|||ProcResource|4
+P10_ST|||ProcResource|2
+P10_SX|||ProcResource|2
+P10_ANY_SLOT|||ProcResource|8
+P10_EVEN_SLOT|||ProcResource|4
+P10_ODD_SLOT|||ProcResource|4
+P10BF_Read_1C|||SchedReadAdvance|1
+P10BF_Read_2C|||SchedReadAdvance|2
+P10BR_Read_1C|||SchedReadAdvance|1
+P10CY_Read_1C|||SchedReadAdvance|1
+P10CY_Read_3C|||SchedReadAdvance|3
+P10DF_Read_1C|||SchedReadAdvance|1
+P10DV_Read_1C|||SchedReadAdvance|1
+P10DX_Read_1C|||SchedReadAdvance|1
+P10F2_Read_1C|||SchedReadAdvance|1
+P10FX_Read_1C|||SchedReadAdvance|1
+P10LD_Read_1C|||SchedReadAdvance|1
+P10MM_Read_1C|||SchedReadAdvance|1
+P10MM_Read_6C|||SchedReadAdvance|6
+P10MU_Read_1C|||SchedReadAdvance|1
+P10PM_Read_1C|||SchedReadAdvance|1
+P10ST_Read_1C|||SchedReadAdvance|1
+P10SX_Read_1C|||SchedReadAdvance|1
+P10vMU_Read_1C|||SchedReadAdvance|1
+P7_LSU_FXU|||ProcResource|4
+P7_LSU|||ProcResource|2
+P7_FXU|||ProcResource|2
+P7_FPU|||ProcResource|4
+P7_ScalarFPU|||ProcResource|2
+P7_VectorFPU|||ProcResource|2
+P7_VMX|||ProcResource|1
+P7_VPM|||ProcResource|1
+P7_VXS|||ProcResource|1
+P7_DFU|||ProcResource|1
+P7_BRU|||ProcResource|1
+P7_CRU|||ProcResource|1
+P7_PORT_LS|||ProcResource|2
+P7_PORT_FX|||ProcResource|2
+P7_PORT_FP|||ProcResource|2
+P7_PORT_BR|||ProcResource|1
+P7_PORT_CR|||ProcResource|1
+P8_LU_LS_FX|||ProcResource|6
+P8_LU_LS|||ProcResource|4
+P8_LS|||ProcResource|2
+P8_LU|||ProcResource|2
+P8_FX|||ProcResource|2
+P8_DFU|||ProcResource|1
+P8_BR|||ProcResource|1
+P8_CY|||ProcResource|1
+P8_CRL|||ProcResource|1
+P8_VMX|||ProcResource|2
+P8_PM|||ProcResource|2
+P8_XS|||ProcResource|2
+P8_VX|||ProcResource|2
+P8_FPU|||ProcResource|4
+P8_FP_Scal|||ProcResource|2
+P8_FP_2x64|||ProcResource|2
+P8_FP_4x32|||ProcResource|2
+P8_PORT_ALLFX|||ProcResource|6
+P8_PORT_FXLD|||ProcResource|4
+P8_PORT_LD_FX|||ProcResource|2
+P8_PORT_ST_FXLD_FX|||ProcResource|2
+P8_PORT_VMX_FP|||ProcResource|2
+P8_PORT_BR|||ProcResource|1
+P8_PORT_CR|||ProcResource|1
+DISPx02|||ProcResource|2
+DISPx13|||ProcResource|2
+DISPxab|||ProcResource|2
+DISPb01|||ProcResource|2
+IP_AGEN|||ProcResource|4
+IP_EXEC|||ProcResource|4
+IP_EXECE|||ProcResource|2
+IP_EXECO|||ProcResource|2
+ALU|||ProcResource|4
+ALUE|||ProcResource|2
+ALUO|||ProcResource|2
+DIV|||ProcResource|2
+DP|||ProcResource|4
+DPE|||ProcResource|2
+DPO|||ProcResource|2
+LS|||ProcResource|4
+PM|||ProcResource|2
+DFU|||ProcResource|1
+BR|||ProcResource|1
+CY|||ProcResource|1

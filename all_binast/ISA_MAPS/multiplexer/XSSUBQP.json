@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSSUBQP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSSUBQP": {"PowerPC": "XSSUBQP"}
+  },
+  "INPUTS": {
+    "XSSUBQP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSSUBQP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSSUBQP": {"PowerPC": ["X_VT5_VA5_VB5","63","516"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSSUBQP": {"PowerPC": ["X_VT5_VA5_VB5","63","516"]}
+  }
+}

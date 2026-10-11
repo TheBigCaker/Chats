@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "CZERO",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "CZERO_EQZ": {"RISCV": "CZERO_EQZ"},
+    "CZERO_NEZ": {"RISCV": "CZERO_NEZ"}
+  },
+  "INPUTS": {
+    "CZERO_EQZ": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "CZERO_NEZ": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "CZERO_EQZ": {"RISCV": [["GPR:$rd",0]]},
+    "CZERO_NEZ": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "CZERO_EQZ": {"RISCV": ["ALU_rr","0b0000111","0b101"]},
+    "CZERO_NEZ": {"RISCV": ["ALU_rr","0b0000111","0b111"]}
+  },
+  "OUTPUT_BYTES": {
+    "CZERO_EQZ": {"RISCV": ["ALU_rr","0b0000111","0b101"]},
+    "CZERO_NEZ": {"RISCV": ["ALU_rr","0b0000111","0b111"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VTOUIZH",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VTOUIZH": {"ARM": "VTOUIZH"}
+  },
+  "INPUTS": {
+    "VTOUIZH": {"ARM": [["HPR",0]]}
+  },
+  "OUTPUTS": {
+    "VTOUIZH": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VTOUIZH": {"ARM": ["AVConv1IsH_Encode","0b11101","0b11","0b1100","0b1001"]}
+  },
+  "OUTPUT_BYTES": {
+    "VTOUIZH": {"ARM": ["AVConv1IsH_Encode","0b11101","0b11","0b1100","0b1001"]}
+  }
+}

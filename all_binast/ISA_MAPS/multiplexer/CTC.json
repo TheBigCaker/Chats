@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CTC",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "CTC2_MM": {"Mips": "CTC2_MM"}
+  },
+  "INPUTS": {
+    "CTC2_MM": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "OUTPUTS": {
+    "CTC2_MM": {"Mips": [["COP2Opnd",0]]}
+  },
+  "INPUT_BYTES": {
+    "CTC2_MM": {"Mips": ["InstSE"]}
+  },
+  "OUTPUT_BYTES": {
+    "CTC2_MM": {"Mips": ["InstSE"]}
+  }
+}

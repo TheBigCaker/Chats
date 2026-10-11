@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SWP",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SWP": {"ARM": "SWP"}
+  },
+  "INPUTS": {
+    "SWP": {"ARM": [["GPRnopc",0],["addr_offset_none",0]]}
+  },
+  "OUTPUTS": {
+    "SWP": {"ARM": [["GPRnopc",0]]}
+  },
+  "INPUT_BYTES": {
+    "SWP": {"ARM": ["AIswp","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "SWP": {"ARM": ["AIswp","0"]}
+  }
+}

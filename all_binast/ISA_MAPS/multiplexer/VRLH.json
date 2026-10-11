@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VRLH",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VRLH": {"PowerPC": "VRLH"}
+  },
+  "INPUTS": {
+    "VRLH": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VRLH": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VRLH": {"PowerPC": ["VX1_Int_Ty","68"]}
+  },
+  "OUTPUT_BYTES": {
+    "VRLH": {"PowerPC": ["VX1_Int_Ty","68"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "NVE",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "NVExtFrm": {"ARM": "NVExtFrm"}
+  },
+  "INPUTS": {
+    "NVExtFrm": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "NVExtFrm": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "NVExtFrm": {"ARM": ["Format","39"]}
+  },
+  "OUTPUT_BYTES": {
+    "NVExtFrm": {"ARM": ["Format","39"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MSAS",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MSASave": {"Mips": "MSASave"}
+  },
+  "INPUTS": {
+    "MSASave": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "MSASave": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "MSASave": {"Mips": ["MipsReg","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "MSASave": {"Mips": ["MipsReg","3"]}
+  }
+}

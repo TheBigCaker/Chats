@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMCLEAR",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "VMCLEARm": {"X86": "VMCLEARm"}
+  },
+  "INPUTS": {
+    "VMCLEARm": {"X86": [["i64mem",0]]}
+  },
+  "OUTPUTS": {
+    "VMCLEARm": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "VMCLEARm": {"X86": ["0xC7"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMCLEARm": {"X86": ["0xC7"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "IF",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "IF_PREDICATE_SET": {"AMDGPU": "IF_PREDICATE_SET"}
+  },
+  "INPUTS": {
+    "IF_PREDICATE_SET": {"AMDGPU": [["R600_Reg32",600]]}
+  },
+  "OUTPUTS": {
+    "IF_PREDICATE_SET": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "IF_PREDICATE_SET": {"AMDGPU": ["ILFormat"]}
+  },
+  "OUTPUT_BYTES": {
+    "IF_PREDICATE_SET": {"AMDGPU": ["ILFormat"]}
+  }
+}

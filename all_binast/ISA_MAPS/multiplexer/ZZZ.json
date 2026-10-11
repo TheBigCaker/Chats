@@ -1,0 +1,54 @@
+{
+  "CATEGORY": "ZZZ",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "ZZZ_VRMF8": {"RISCV": "ZZZ_VRMF8"},
+    "ZZZ_VRMF8NoV0": {"RISCV": "ZZZ_VRMF8NoV0"},
+    "ZZZ_VRMF4": {"RISCV": "ZZZ_VRMF4"},
+    "ZZZ_VRMF4NoV0": {"RISCV": "ZZZ_VRMF4NoV0"},
+    "ZZZ_VRMF2": {"RISCV": "ZZZ_VRMF2"},
+    "ZZZ_VRMF2NoV0": {"RISCV": "ZZZ_VRMF2NoV0"},
+    "ZZZ_VM": {"RISCV": "ZZZ_VM"},
+    "ZZZ_VMNoV0": {"RISCV": "ZZZ_VMNoV0"}
+  },
+  "INPUTS": {
+    "ZZZ_VRMF8": {"RISCV": []},
+    "ZZZ_VRMF8NoV0": {"RISCV": []},
+    "ZZZ_VRMF4": {"RISCV": []},
+    "ZZZ_VRMF4NoV0": {"RISCV": []},
+    "ZZZ_VRMF2": {"RISCV": []},
+    "ZZZ_VRMF2NoV0": {"RISCV": []},
+    "ZZZ_VM": {"RISCV": []},
+    "ZZZ_VMNoV0": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "ZZZ_VRMF8": {"RISCV": []},
+    "ZZZ_VRMF8NoV0": {"RISCV": []},
+    "ZZZ_VRMF4": {"RISCV": []},
+    "ZZZ_VRMF4NoV0": {"RISCV": []},
+    "ZZZ_VRMF2": {"RISCV": []},
+    "ZZZ_VRMF2NoV0": {"RISCV": []},
+    "ZZZ_VM": {"RISCV": []},
+    "ZZZ_VMNoV0": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "ZZZ_VRMF8": {"RISCV": ["VReg","1"]},
+    "ZZZ_VRMF8NoV0": {"RISCV": ["VReg","1"]},
+    "ZZZ_VRMF4": {"RISCV": ["VReg","1"]},
+    "ZZZ_VRMF4NoV0": {"RISCV": ["VReg","1"]},
+    "ZZZ_VRMF2": {"RISCV": ["VReg","1"]},
+    "ZZZ_VRMF2NoV0": {"RISCV": ["VReg","1"]},
+    "ZZZ_VM": {"RISCV": ["VReg","1"]},
+    "ZZZ_VMNoV0": {"RISCV": ["VReg","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "ZZZ_VRMF8": {"RISCV": ["VReg","1"]},
+    "ZZZ_VRMF8NoV0": {"RISCV": ["VReg","1"]},
+    "ZZZ_VRMF4": {"RISCV": ["VReg","1"]},
+    "ZZZ_VRMF4NoV0": {"RISCV": ["VReg","1"]},
+    "ZZZ_VRMF2": {"RISCV": ["VReg","1"]},
+    "ZZZ_VRMF2NoV0": {"RISCV": ["VReg","1"]},
+    "ZZZ_VM": {"RISCV": ["VReg","1"]},
+    "ZZZ_VMNoV0": {"RISCV": ["VReg","1"]}
+  }
+}

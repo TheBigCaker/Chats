@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EVNEG",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EVNEG": {"PowerPC": "EVNEG"}
+  },
+  "INPUTS": {
+    "EVNEG": {"PowerPC": [["sperc",0]]}
+  },
+  "OUTPUTS": {
+    "EVNEG": {"PowerPC": [["sperc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EVNEG": {"PowerPC": ["EVXForm_2","521"]}
+  },
+  "OUTPUT_BYTES": {
+    "EVNEG": {"PowerPC": ["EVXForm_2","521"]}
+  }
+}

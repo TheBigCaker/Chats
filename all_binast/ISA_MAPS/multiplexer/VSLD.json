@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSLD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSLD": {"PowerPC": "VSLD"}
+  },
+  "INPUTS": {
+    "VSLD": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VSLD": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSLD": {"PowerPC": ["VXForm_1","1476"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSLD": {"PowerPC": ["VXForm_1","1476"]}
+  }
+}

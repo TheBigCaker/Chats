@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "LFDXTLS",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "LFDXTLS": {"PowerPC": "LFDXTLS"},
+    "LFDXTLS_": {"PowerPC": "LFDXTLS_"}
+  },
+  "INPUTS": {
+    "LFDXTLS": {"PowerPC": [["ptr_rc_nor0",0],["tlsreg",0]]},
+    "LFDXTLS_": {"PowerPC": [["ptr_rc_nor0",0],["tlsreg",0]]}
+  },
+  "OUTPUTS": {
+    "LFDXTLS": {"PowerPC": [["f8rc",0]]},
+    "LFDXTLS_": {"PowerPC": [["f8rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "LFDXTLS": {"PowerPC": ["XForm_25","31","599"]},
+    "LFDXTLS_": {"PowerPC": ["XForm_25","31","599"]}
+  },
+  "OUTPUT_BYTES": {
+    "LFDXTLS": {"PowerPC": ["XForm_25","31","599"]},
+    "LFDXTLS_": {"PowerPC": ["XForm_25","31","599"]}
+  }
+}

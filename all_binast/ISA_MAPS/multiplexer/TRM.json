@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "TRM",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "TRM2": {"RISCV": "TRM2"},
+    "TRM4": {"RISCV": "TRM4"}
+  },
+  "INPUTS": {
+    "TRM2": {"RISCV": []},
+    "TRM4": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "TRM2": {"RISCV": []},
+    "TRM4": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "TRM2": {"RISCV": ["RISCVRegisterClass","32"]},
+    "TRM4": {"RISCV": ["RISCVRegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "TRM2": {"RISCV": ["RISCVRegisterClass","32"]},
+    "TRM4": {"RISCV": ["RISCVRegisterClass","32"]}
+  }
+}

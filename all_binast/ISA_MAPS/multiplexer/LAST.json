@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LAST",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "LAST": {"AMDGPU": "LAST"}
+  },
+  "INPUTS": {
+    "LAST": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "LAST": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "LAST": {"AMDGPU": ["InstFlag","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "LAST": {"AMDGPU": ["InstFlag","1"]}
+  }
+}

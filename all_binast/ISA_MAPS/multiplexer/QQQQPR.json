@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "QQQQPR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "QQQQPR": {"ARM": "QQQQPR"}
+  },
+  "INPUTS": {
+    "QQQQPR": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "QQQQPR": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "QQQQPR": {"ARM": ["RegisterClass","256"]}
+  },
+  "OUTPUT_BYTES": {
+    "QQQQPR": {"ARM": ["RegisterClass","256"]}
+  }
+}

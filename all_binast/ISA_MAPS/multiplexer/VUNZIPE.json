@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUNZIPE",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VUNZIPE_V": {"RISCV": "VUNZIPE_V"}
+  },
+  "INPUTS": {
+    "VUNZIPE_V": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "VUNZIPE_V": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "VUNZIPE_V": {"RISCV": ["VALUVs2","0b010010","0b01011"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUNZIPE_V": {"RISCV": ["VALUVs2","0b010010","0b01011"]}
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "CMPXCHG",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "CMPXCHG8rr": {"X86": "CMPXCHG8rr"},
+    "CMPXCHG16rr": {"X86": "CMPXCHG16rr"},
+    "CMPXCHG32rr": {"X86": "CMPXCHG32rr"},
+    "CMPXCHG8rm": {"X86": "CMPXCHG8rm"},
+    "CMPXCHG16rm": {"X86": "CMPXCHG16rm"},
+    "CMPXCHG32rm": {"X86": "CMPXCHG32rm"},
+    "CMPXCHG8B": {"X86": "CMPXCHG8B"}
+  },
+  "INPUTS": {
+    "CMPXCHG8rr": {"X86": [["GR8",8]]},
+    "CMPXCHG16rr": {"X86": [["GR16",16]]},
+    "CMPXCHG32rr": {"X86": [["GR32",32]]},
+    "CMPXCHG8rm": {"X86": [["i8mem",0],["GR8",8]]},
+    "CMPXCHG16rm": {"X86": [["i16mem",0],["GR16",16]]},
+    "CMPXCHG32rm": {"X86": [["i32mem",0],["GR32",32]]},
+    "CMPXCHG8B": {"X86": [["i64mem",0]]}
+  },
+  "OUTPUTS": {
+    "CMPXCHG8rr": {"X86": [["GR8",8]]},
+    "CMPXCHG16rr": {"X86": [["GR16",16]]},
+    "CMPXCHG32rr": {"X86": [["GR32",32]]},
+    "CMPXCHG8rm": {"X86": []},
+    "CMPXCHG16rm": {"X86": []},
+    "CMPXCHG32rm": {"X86": []},
+    "CMPXCHG8B": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "CMPXCHG8rr": {"X86": ["0xB0"]},
+    "CMPXCHG16rr": {"X86": ["0xB1"]},
+    "CMPXCHG32rr": {"X86": ["0xB1"]},
+    "CMPXCHG8rm": {"X86": ["0xB0"]},
+    "CMPXCHG16rm": {"X86": ["0xB1"]},
+    "CMPXCHG32rm": {"X86": ["0xB1"]},
+    "CMPXCHG8B": {"X86": ["0xC7"]}
+  },
+  "OUTPUT_BYTES": {
+    "CMPXCHG8rr": {"X86": ["0xB0"]},
+    "CMPXCHG16rr": {"X86": ["0xB1"]},
+    "CMPXCHG32rr": {"X86": ["0xB1"]},
+    "CMPXCHG8rm": {"X86": ["0xB0"]},
+    "CMPXCHG16rm": {"X86": ["0xB1"]},
+    "CMPXCHG32rm": {"X86": ["0xB1"]},
+    "CMPXCHG8B": {"X86": ["0xC7"]}
+  }
+}

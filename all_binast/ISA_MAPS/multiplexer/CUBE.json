@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "CUBE",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "CUBE_SSEL": {"Mali": "CUBE_SSEL"},
+    "CUBE_TSEL": {"Mali": "CUBE_TSEL"},
+    "CUBE_SSEL": {"Mali": "CUBE_SSEL"},
+    "CUBE_TSEL": {"Mali": "CUBE_TSEL"}
+  },
+  "INPUTS": {
+    "CUBE_SSEL": {"Mali": [["R32",32],["R32",32],["R32",32]]},
+    "CUBE_TSEL": {"Mali": [["R32",32],["R32",32],["R32",32]]},
+    "CUBE_SSEL": {"Mali": []},
+    "CUBE_TSEL": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "CUBE_SSEL": {"Mali": [["R",32]]},
+    "CUBE_TSEL": {"Mali": [["R",32]]},
+    "CUBE_SSEL": {"Mali": [["R",32]]},
+    "CUBE_TSEL": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "CUBE_SSEL": {"Mali": ["Bifrost_add","0x3e000","0xffc00"]},
+    "CUBE_TSEL": {"Mali": ["Bifrost_add","0x3e400","0xffc00"]},
+    "CUBE_SSEL": {"Mali": ["Valhall_SFU"]},
+    "CUBE_TSEL": {"Mali": ["Valhall_SFU"]}
+  },
+  "OUTPUT_BYTES": {
+    "CUBE_SSEL": {"Mali": ["Bifrost_add","0x3e000","0xffc00"]},
+    "CUBE_TSEL": {"Mali": ["Bifrost_add","0x3e400","0xffc00"]},
+    "CUBE_SSEL": {"Mali": ["Valhall_SFU"]},
+    "CUBE_TSEL": {"Mali": ["Valhall_SFU"]}
+  }
+}

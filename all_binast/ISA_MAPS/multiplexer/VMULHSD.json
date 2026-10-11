@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VMULHSD",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VMULHSD": {"PowerPC": "VMULHSD"}
+  },
+  "INPUTS": {
+    "VMULHSD": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VMULHSD": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VMULHSD": {"PowerPC": ["VXForm_1","969"]}
+  },
+  "OUTPUT_BYTES": {
+    "VMULHSD": {"PowerPC": ["VXForm_1","969"]}
+  }
+}

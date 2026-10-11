@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "EEWSEW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "EEWSEWx1": {"RISCV": "EEWSEWx1"},
+    "EEWSEWx2": {"RISCV": "EEWSEWx2"},
+    "EEWSEWx4": {"RISCV": "EEWSEWx4"}
+  },
+  "INPUTS": {
+    "EEWSEWx1": {"RISCV": []},
+    "EEWSEWx2": {"RISCV": []},
+    "EEWSEWx4": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "EEWSEWx1": {"RISCV": []},
+    "EEWSEWx2": {"RISCV": []},
+    "EEWSEWx4": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "EEWSEWx1": {"RISCV": ["EEW","1"]},
+    "EEWSEWx2": {"RISCV": ["EEW","2"]},
+    "EEWSEWx4": {"RISCV": ["EEW","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "EEWSEWx1": {"RISCV": ["EEW","1"]},
+    "EEWSEWx2": {"RISCV": ["EEW","2"]},
+    "EEWSEWx4": {"RISCV": ["EEW","3"]}
+  }
+}

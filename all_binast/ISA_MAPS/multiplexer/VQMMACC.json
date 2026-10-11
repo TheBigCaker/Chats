@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VQMMACC",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "VQMMACC_VV": {"RISCV": "VQMMACC_VV"}
+  },
+  "INPUTS": {
+    "VQMMACC_VV": {"RISCV": [["VR:$vd",0],["VR:$vs1",0],["VR:$vs2",0]]}
+  },
+  "OUTPUTS": {
+    "VQMMACC_VV": {"RISCV": [["VR:$vd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "VQMMACC_VV": {"RISCV": ["VIMEMACVV","0b111010"]}
+  },
+  "OUTPUT_BYTES": {
+    "VQMMACC_VV": {"RISCV": ["VIMEMACVV","0b111010"]}
+  }
+}

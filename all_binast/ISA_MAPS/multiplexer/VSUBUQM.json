@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSUBUQM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSUBUQM": {"PowerPC": "VSUBUQM"}
+  },
+  "INPUTS": {
+    "VSUBUQM": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VSUBUQM": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSUBUQM": {"PowerPC": ["VXForm_1","1280"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSUBUQM": {"PowerPC": ["VXForm_1","1280"]}
+  }
+}

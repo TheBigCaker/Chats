@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VUDOTD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VUDOTD": {"ARM": "VUDOTD"}
+  },
+  "INPUTS": {
+    "VUDOTD": {"ARM": [["RegTy:$Vd",0],["RegTy:$Vn",0],["RegTy:$Vm",0]]}
+  },
+  "OUTPUTS": {
+    "VUDOTD": {"ARM": [["RegTy:$dst",0]]}
+  },
+  "INPUT_BYTES": {
+    "VUDOTD": {"ARM": ["VDOT","0","1","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "VUDOTD": {"ARM": ["VDOT","0","1","0"]}
+  }
+}

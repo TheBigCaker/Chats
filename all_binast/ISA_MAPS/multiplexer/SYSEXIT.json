@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SYSEXIT",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "SYSEXIT": {"X86": "SYSEXIT"}
+  },
+  "INPUTS": {
+    "SYSEXIT": {"X86": []}
+  },
+  "OUTPUTS": {
+    "SYSEXIT": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "SYSEXIT": {"X86": ["0x35"]}
+  },
+  "OUTPUT_BYTES": {
+    "SYSEXIT": {"X86": ["0x35"]}
+  }
+}

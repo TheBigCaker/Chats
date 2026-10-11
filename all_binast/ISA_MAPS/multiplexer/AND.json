@@ -1,0 +1,44 @@
+{
+  "CATEGORY": "AND",
+  "BACKENDS": ["RISCV","Mips","PowerPC","AMDGPU"],
+  "INDEX": {
+    "ANDI": {"RISCV": "ANDI"},
+    "AND": {"RISCV": "AND"},
+    "AND_MM": {"Mips": "AND_MM"},
+    "AND64": {"Mips": "AND64"},
+    "ANDI8_rec": {"PowerPC": "ANDI8_rec"},
+    "AND_INT": {"AMDGPU": "AND_INT"}
+  },
+  "INPUTS": {
+    "ANDI": {"RISCV": []},
+    "AND": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "AND_MM": {"Mips": []},
+    "AND64": {"Mips": [["RO:$rs",0],["RO:$rt",0]]},
+    "ANDI8_rec": {"PowerPC": [["g8rc",0],["u16imm64",16]]},
+    "AND_INT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "ANDI": {"RISCV": []},
+    "AND": {"RISCV": [["GPR:$rd",0]]},
+    "AND_MM": {"Mips": []},
+    "AND64": {"Mips": [["RO:$rd",0]]},
+    "ANDI8_rec": {"PowerPC": [["g8rc",0]]},
+    "AND_INT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "ANDI": {"RISCV": ["ALU_ri","0b111"]},
+    "AND": {"RISCV": ["ALU_rr","0b0000000","0b111"]},
+    "AND_MM": {"Mips": ["MMRel","1"]},
+    "AND64": {"Mips": ["ArithLogicR","1"]},
+    "ANDI8_rec": {"PowerPC": ["DForm_4","28"]},
+    "AND_INT": {"AMDGPU": ["R600_2OP_Helper","0x30"]}
+  },
+  "OUTPUT_BYTES": {
+    "ANDI": {"RISCV": ["ALU_ri","0b111"]},
+    "AND": {"RISCV": ["ALU_rr","0b0000000","0b111"]},
+    "AND_MM": {"Mips": ["MMRel","1"]},
+    "AND64": {"Mips": ["ArithLogicR","1"]},
+    "ANDI8_rec": {"PowerPC": ["DForm_4","28"]},
+    "AND_INT": {"AMDGPU": ["R600_2OP_Helper","0x30"]}
+  }
+}

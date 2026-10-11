@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XSXEXPDP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XSXEXPDP": {"PowerPC": "XSXEXPDP"}
+  },
+  "INPUTS": {
+    "XSXEXPDP": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "XSXEXPDP": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "XSXEXPDP": {"PowerPC": ["XX2_RT5_XO5_XB6","60","0","347"]}
+  },
+  "OUTPUT_BYTES": {
+    "XSXEXPDP": {"PowerPC": ["XX2_RT5_XO5_XB6","60","0","347"]}
+  }
+}

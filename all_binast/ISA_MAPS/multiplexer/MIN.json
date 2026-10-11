@@ -1,0 +1,49 @@
+{
+  "CATEGORY": "MIN",
+  "BACKENDS": ["RISCV","NVPTX","AMDGPU"],
+  "INDEX": {
+    "MIN": {"RISCV": "MIN"},
+    "MIN_RELU_S32": {"NVPTX": "MIN_RELU_S32"},
+    "MIN_RELU_S16x2": {"NVPTX": "MIN_RELU_S16x2"},
+    "MIN": {"AMDGPU": "MIN"},
+    "MIN_DX10": {"AMDGPU": "MIN_DX10"},
+    "MIN_INT": {"AMDGPU": "MIN_INT"},
+    "MIN_UINT": {"AMDGPU": "MIN_UINT"}
+  },
+  "INPUTS": {
+    "MIN": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]},
+    "MIN_RELU_S32": {"NVPTX": [["B32",0],["B32",0]]},
+    "MIN_RELU_S16x2": {"NVPTX": [["B32",0],["B32",0]]},
+    "MIN": {"AMDGPU": []},
+    "MIN_DX10": {"AMDGPU": []},
+    "MIN_INT": {"AMDGPU": []},
+    "MIN_UINT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "MIN": {"RISCV": [["GPR:$rd",0]]},
+    "MIN_RELU_S32": {"NVPTX": [["B32",0]]},
+    "MIN_RELU_S16x2": {"NVPTX": [["B32",0]]},
+    "MIN": {"AMDGPU": []},
+    "MIN_DX10": {"AMDGPU": []},
+    "MIN_INT": {"AMDGPU": []},
+    "MIN_UINT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "MIN": {"RISCV": ["ALU_rr","0b0000101","0b100"]},
+    "MIN_RELU_S32": {"NVPTX": ["BasicNVPTXInst"]},
+    "MIN_RELU_S16x2": {"NVPTX": ["BasicNVPTXInst"]},
+    "MIN": {"AMDGPU": ["R600_2OP_Helper","0x4"]},
+    "MIN_DX10": {"AMDGPU": ["R600_2OP_Helper","0x6"]},
+    "MIN_INT": {"AMDGPU": ["R600_2OP_Helper","0x37"]},
+    "MIN_UINT": {"AMDGPU": ["R600_2OP_Helper","0x39"]}
+  },
+  "OUTPUT_BYTES": {
+    "MIN": {"RISCV": ["ALU_rr","0b0000101","0b100"]},
+    "MIN_RELU_S32": {"NVPTX": ["BasicNVPTXInst"]},
+    "MIN_RELU_S16x2": {"NVPTX": ["BasicNVPTXInst"]},
+    "MIN": {"AMDGPU": ["R600_2OP_Helper","0x4"]},
+    "MIN_DX10": {"AMDGPU": ["R600_2OP_Helper","0x6"]},
+    "MIN_INT": {"AMDGPU": ["R600_2OP_Helper","0x37"]},
+    "MIN_UINT": {"AMDGPU": ["R600_2OP_Helper","0x39"]}
+  }
+}

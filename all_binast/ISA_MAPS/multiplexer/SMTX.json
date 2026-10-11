@@ -1,0 +1,64 @@
+{
+  "CATEGORY": "SMTX",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SMTX100_IQ0": {"RISCV": "SMTX100_IQ0"},
+    "SMTX100_IQ1": {"RISCV": "SMTX100_IQ1"},
+    "SMTX100_BQ": {"RISCV": "SMTX100_BQ"},
+    "SMTX100_LSQ": {"RISCV": "SMTX100_LSQ"},
+    "SMTX100_FQ0": {"RISCV": "SMTX100_FQ0"},
+    "SMTX100_FQ1": {"RISCV": "SMTX100_FQ1"},
+    "SMTX100_VEU0": {"RISCV": "SMTX100_VEU0"},
+    "SMTX100_VEU1": {"RISCV": "SMTX100_VEU1"},
+    "SMTX100_VEU2": {"RISCV": "SMTX100_VEU2"},
+    "SMTX100_VEU3": {"RISCV": "SMTX100_VEU3"}
+  },
+  "INPUTS": {
+    "SMTX100_IQ0": {"RISCV": []},
+    "SMTX100_IQ1": {"RISCV": []},
+    "SMTX100_BQ": {"RISCV": []},
+    "SMTX100_LSQ": {"RISCV": []},
+    "SMTX100_FQ0": {"RISCV": []},
+    "SMTX100_FQ1": {"RISCV": []},
+    "SMTX100_VEU0": {"RISCV": []},
+    "SMTX100_VEU1": {"RISCV": []},
+    "SMTX100_VEU2": {"RISCV": []},
+    "SMTX100_VEU3": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "SMTX100_IQ0": {"RISCV": []},
+    "SMTX100_IQ1": {"RISCV": []},
+    "SMTX100_BQ": {"RISCV": []},
+    "SMTX100_LSQ": {"RISCV": []},
+    "SMTX100_FQ0": {"RISCV": []},
+    "SMTX100_FQ1": {"RISCV": []},
+    "SMTX100_VEU0": {"RISCV": []},
+    "SMTX100_VEU1": {"RISCV": []},
+    "SMTX100_VEU2": {"RISCV": []},
+    "SMTX100_VEU3": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "SMTX100_IQ0": {"RISCV": ["ProcResource","2"]},
+    "SMTX100_IQ1": {"RISCV": ["ProcResource","2"]},
+    "SMTX100_BQ": {"RISCV": ["ProcResource","2"]},
+    "SMTX100_LSQ": {"RISCV": ["ProcResource","4"]},
+    "SMTX100_FQ0": {"RISCV": ["ProcResource","2"]},
+    "SMTX100_FQ1": {"RISCV": ["ProcResource","2"]},
+    "SMTX100_VEU0": {"RISCV": ["ProcResource","1"]},
+    "SMTX100_VEU1": {"RISCV": ["ProcResource","1"]},
+    "SMTX100_VEU2": {"RISCV": ["ProcResource","1"]},
+    "SMTX100_VEU3": {"RISCV": ["ProcResource","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMTX100_IQ0": {"RISCV": ["ProcResource","2"]},
+    "SMTX100_IQ1": {"RISCV": ["ProcResource","2"]},
+    "SMTX100_BQ": {"RISCV": ["ProcResource","2"]},
+    "SMTX100_LSQ": {"RISCV": ["ProcResource","4"]},
+    "SMTX100_FQ0": {"RISCV": ["ProcResource","2"]},
+    "SMTX100_FQ1": {"RISCV": ["ProcResource","2"]},
+    "SMTX100_VEU0": {"RISCV": ["ProcResource","1"]},
+    "SMTX100_VEU1": {"RISCV": ["ProcResource","1"]},
+    "SMTX100_VEU2": {"RISCV": ["ProcResource","1"]},
+    "SMTX100_VEU3": {"RISCV": ["ProcResource","1"]}
+  }
+}

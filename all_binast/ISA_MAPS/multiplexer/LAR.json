@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "LAR",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LAR16rm": {"X86": "LAR16rm"},
+    "LAR16rr": {"X86": "LAR16rr"},
+    "LAR32rm": {"X86": "LAR32rm"},
+    "LAR32rr": {"X86": "LAR32rr"}
+  },
+  "INPUTS": {
+    "LAR16rm": {"X86": [["i16mem",0]]},
+    "LAR16rr": {"X86": [["GR16orGR32orGR64",16]]},
+    "LAR32rm": {"X86": [["i16mem",0]]},
+    "LAR32rr": {"X86": [["GR16orGR32orGR64",16]]}
+  },
+  "OUTPUTS": {
+    "LAR16rm": {"X86": [["GR16",16]]},
+    "LAR16rr": {"X86": [["GR16",16]]},
+    "LAR32rm": {"X86": [["GR32",32]]},
+    "LAR32rr": {"X86": [["GR32",32]]}
+  },
+  "INPUT_BYTES": {
+    "LAR16rm": {"X86": ["0x02"]},
+    "LAR16rr": {"X86": ["0x02"]},
+    "LAR32rm": {"X86": ["0x02"]},
+    "LAR32rr": {"X86": ["0x02"]}
+  },
+  "OUTPUT_BYTES": {
+    "LAR16rm": {"X86": ["0x02"]},
+    "LAR16rr": {"X86": ["0x02"]},
+    "LAR32rm": {"X86": ["0x02"]},
+    "LAR32rr": {"X86": ["0x02"]}
+  }
+}

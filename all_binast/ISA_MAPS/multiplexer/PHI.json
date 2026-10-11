@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "PHI",
+  "BACKENDS": ["Mali"],
+  "INDEX": {
+    "PHI": {"Mali": "PHI"}
+  },
+  "INPUTS": {
+    "PHI": {"Mali": []}
+  },
+  "OUTPUTS": {
+    "PHI": {"Mali": [["R",32]]}
+  },
+  "INPUT_BYTES": {
+    "PHI": {"Mali": ["Bifrost_add/"]}
+  },
+  "OUTPUT_BYTES": {
+    "PHI": {"Mali": ["Bifrost_add/"]}
+  }
+}

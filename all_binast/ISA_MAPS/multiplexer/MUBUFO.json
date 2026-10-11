@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MUBUFO",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "MUBUFOffset": {"AMDGPU": "MUBUFOffset"}
+  },
+  "INPUTS": {
+    "MUBUFOffset": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "MUBUFOffset": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "MUBUFOffset": {"AMDGPU": ["ComplexPattern","3"]}
+  },
+  "OUTPUT_BYTES": {
+    "MUBUFOffset": {"AMDGPU": ["ComplexPattern","3"]}
+  }
+}

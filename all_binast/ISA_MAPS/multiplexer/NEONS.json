@@ -1,0 +1,39 @@
+{
+  "CATEGORY": "NEONS",
+  "BACKENDS": ["AArch64"],
+  "INDEX": {
+    "NEONSplatOfSVELogicalImmPat": {"AArch64": "NEONSplatOfSVELogicalImmPat"},
+    "NEONSplatOfSVEAddSubImm": {"AArch64": "NEONSplatOfSVEAddSubImm"},
+    "NEONSplatOfSVEArithSImm": {"AArch64": "NEONSplatOfSVEArithSImm"},
+    "NEONSplatOfSImm8": {"AArch64": "NEONSplatOfSImm8"},
+    "NEONSplatOfUImm8": {"AArch64": "NEONSplatOfUImm8"}
+  },
+  "INPUTS": {
+    "NEONSplatOfSVELogicalImmPat": {"AArch64": []},
+    "NEONSplatOfSVEAddSubImm": {"AArch64": []},
+    "NEONSplatOfSVEArithSImm": {"AArch64": []},
+    "NEONSplatOfSImm8": {"AArch64": []},
+    "NEONSplatOfUImm8": {"AArch64": []}
+  },
+  "OUTPUTS": {
+    "NEONSplatOfSVELogicalImmPat": {"AArch64": []},
+    "NEONSplatOfSVEAddSubImm": {"AArch64": []},
+    "NEONSplatOfSVEArithSImm": {"AArch64": []},
+    "NEONSplatOfSImm8": {"AArch64": []},
+    "NEONSplatOfUImm8": {"AArch64": []}
+  },
+  "INPUT_BYTES": {
+    "NEONSplatOfSVELogicalImmPat": {"AArch64": ["ComplexPattern","1"]},
+    "NEONSplatOfSVEAddSubImm": {"AArch64": ["ComplexPattern","2"]},
+    "NEONSplatOfSVEArithSImm": {"AArch64": ["ComplexPattern","1"]},
+    "NEONSplatOfSImm8": {"AArch64": ["ComplexPattern","1"]},
+    "NEONSplatOfUImm8": {"AArch64": ["ComplexPattern","1"]}
+  },
+  "OUTPUT_BYTES": {
+    "NEONSplatOfSVELogicalImmPat": {"AArch64": ["ComplexPattern","1"]},
+    "NEONSplatOfSVEAddSubImm": {"AArch64": ["ComplexPattern","2"]},
+    "NEONSplatOfSVEArithSImm": {"AArch64": ["ComplexPattern","1"]},
+    "NEONSplatOfSImm8": {"AArch64": ["ComplexPattern","1"]},
+    "NEONSplatOfUImm8": {"AArch64": ["ComplexPattern","1"]}
+  }
+}

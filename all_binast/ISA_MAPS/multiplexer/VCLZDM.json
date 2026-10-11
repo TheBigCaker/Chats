@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VCLZDM",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VCLZDM": {"PowerPC": "VCLZDM"}
+  },
+  "INPUTS": {
+    "VCLZDM": {"PowerPC": [["vrrc",0],["vrrc",0]]}
+  },
+  "OUTPUTS": {
+    "VCLZDM": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VCLZDM": {"PowerPC": ["VXForm_1","1924"]}
+  },
+  "OUTPUT_BYTES": {
+    "VCLZDM": {"PowerPC": ["VXForm_1","1924"]}
+  }
+}

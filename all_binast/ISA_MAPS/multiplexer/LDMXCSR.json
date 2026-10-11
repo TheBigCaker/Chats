@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "LDMXCSR",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "LDMXCSR": {"X86": "LDMXCSR"}
+  },
+  "INPUTS": {
+    "LDMXCSR": {"X86": [["i32mem",0]]}
+  },
+  "OUTPUTS": {
+    "LDMXCSR": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "LDMXCSR": {"X86": ["0xAE"]}
+  },
+  "OUTPUT_BYTES": {
+    "LDMXCSR": {"X86": ["0xAE"]}
+  }
+}

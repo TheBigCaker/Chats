@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SLT",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "SLT": {"RISCV": "SLT"}
+  },
+  "INPUTS": {
+    "SLT": {"RISCV": [["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "SLT": {"RISCV": [["GPR:$rd",0]]}
+  },
+  "INPUT_BYTES": {
+    "SLT": {"RISCV": ["ALU_rr","0b0000000","0b010"]}
+  },
+  "OUTPUT_BYTES": {
+    "SLT": {"RISCV": ["ALU_rr","0b0000000","0b010"]}
+  }
+}

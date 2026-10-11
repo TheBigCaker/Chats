@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "VSPLTB",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSPLTB_get_imm": {"PowerPC": "VSPLTB_get_imm"},
+    "VSPLTB": {"PowerPC": "VSPLTB"},
+    "VSPLTBs": {"PowerPC": "VSPLTBs"}
+  },
+  "INPUTS": {
+    "VSPLTB_get_imm": {"PowerPC": []},
+    "VSPLTB": {"PowerPC": [["u5imm",5],["vrrc",0]]},
+    "VSPLTBs": {"PowerPC": [["u5imm",5],["vfrc",0]]}
+  },
+  "OUTPUTS": {
+    "VSPLTB_get_imm": {"PowerPC": []},
+    "VSPLTB": {"PowerPC": [["vrrc",0]]},
+    "VSPLTBs": {"PowerPC": [["vrrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "VSPLTB_get_imm": {"PowerPC": ["SDNodeXForm","1"]},
+    "VSPLTB": {"PowerPC": ["VXForm_1","524"]},
+    "VSPLTBs": {"PowerPC": ["VXForm_1","524"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSPLTB_get_imm": {"PowerPC": ["SDNodeXForm","1"]},
+    "VSPLTB": {"PowerPC": ["VXForm_1","524"]},
+    "VSPLTBs": {"PowerPC": ["VXForm_1","524"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MFTACX",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "MFTACX": {"Mips": "MFTACX"}
+  },
+  "INPUTS": {
+    "MFTACX": {"Mips": [["ACC64DSPOpnd",0]]}
+  },
+  "OUTPUTS": {
+    "MFTACX": {"Mips": [["GPR32Opnd",32]]}
+  },
+  "INPUT_BYTES": {
+    "MFTACX": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "MFTACX": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

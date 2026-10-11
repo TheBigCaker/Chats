@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SYNCP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "SYNCP10": {"PowerPC": "SYNCP10"}
+  },
+  "INPUTS": {
+    "SYNCP10": {"PowerPC": [["u3imm",3],["u2imm",2]]}
+  },
+  "OUTPUTS": {
+    "SYNCP10": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "SYNCP10": {"PowerPC": ["XForm_IMM3_IMM2","31","598"]}
+  },
+  "OUTPUT_BYTES": {
+    "SYNCP10": {"PowerPC": ["XForm_IMM3_IMM2","31","598"]}
+  }
+}

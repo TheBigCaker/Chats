@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "GOTO",
+  "BACKENDS": ["NVPTX"],
+  "INDEX": {
+    "GOTO": {"NVPTX": "GOTO"}
+  },
+  "INPUTS": {
+    "GOTO": {"NVPTX": [["brtarget",0]]}
+  },
+  "OUTPUTS": {
+    "GOTO": {"NVPTX": []}
+  },
+  "INPUT_BYTES": {
+    "GOTO": {"NVPTX": ["BasicNVPTXInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "GOTO": {"NVPTX": ["BasicNVPTXInst"]}
+  }
+}

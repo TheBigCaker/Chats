@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MERGE",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "MERGE": {"RISCV": "MERGE"}
+  },
+  "INPUTS": {
+    "MERGE": {"RISCV": [["GPR:$rd",0],["GPR:$rs1",0],["GPR:$rs2",0]]}
+  },
+  "OUTPUTS": {
+    "MERGE": {"RISCV": [["GPR:$rd_wb",0]]}
+  },
+  "INPUT_BYTES": {
+    "MERGE": {"RISCV": ["RVPTernary_rrr","0b0101","0b10","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "MERGE": {"RISCV": ["RVPTernary_rrr","0b0101","0b10","0b001"]}
+  }
+}

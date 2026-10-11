@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFDCMPGT",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFDCMPGT": {"PowerPC": "EFDCMPGT"}
+  },
+  "INPUTS": {
+    "EFDCMPGT": {"PowerPC": [["sperc",0],["sperc",0]]}
+  },
+  "OUTPUTS": {
+    "EFDCMPGT": {"PowerPC": [["crrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFDCMPGT": {"PowerPC": ["EFXForm_3","748"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFDCMPGT": {"PowerPC": ["EFXForm_3","748"]}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MASK",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "MASK_WRITE": {"AMDGPU": "MASK_WRITE"}
+  },
+  "INPUTS": {
+    "MASK_WRITE": {"AMDGPU": [["R600_Reg32",600]]}
+  },
+  "OUTPUTS": {
+    "MASK_WRITE": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "MASK_WRITE": {"AMDGPU": ["InstR600"]}
+  },
+  "OUTPUT_BYTES": {
+    "MASK_WRITE": {"AMDGPU": ["InstR600"]}
+  }
+}

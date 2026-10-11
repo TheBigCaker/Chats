@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "MODE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "MODE": {"AMDGPU": "MODE"}
+  },
+  "INPUTS": {
+    "MODE": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "MODE": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "MODE": {"AMDGPU": ["SIReg","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "MODE": {"AMDGPU": ["SIReg","0"]}
+  }
+}

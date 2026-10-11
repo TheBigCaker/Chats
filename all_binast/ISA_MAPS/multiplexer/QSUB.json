@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "QSUB",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "QSUB16": {"ARM": "QSUB16"},
+    "QSUB8": {"ARM": "QSUB8"},
+    "QSUB": {"ARM": "QSUB"}
+  },
+  "INPUTS": {
+    "QSUB16": {"ARM": []},
+    "QSUB8": {"ARM": []},
+    "QSUB": {"ARM": []}
+  },
+  "OUTPUTS": {
+    "QSUB16": {"ARM": []},
+    "QSUB8": {"ARM": []},
+    "QSUB": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "QSUB16": {"ARM": ["AAIIntrinsic","0b01100010","0b11110111"]},
+    "QSUB8": {"ARM": ["AAIIntrinsic","0b01100010","0b11111111"]},
+    "QSUB": {"ARM": ["AAIRevOpr","0b00010010","0b00000101"]}
+  },
+  "OUTPUT_BYTES": {
+    "QSUB16": {"ARM": ["AAIIntrinsic","0b01100010","0b11110111"]},
+    "QSUB8": {"ARM": ["AAIIntrinsic","0b01100010","0b11111111"]},
+    "QSUB": {"ARM": ["AAIRevOpr","0b00010010","0b00000101"]}
+  }
+}

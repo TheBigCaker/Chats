@@ -1,0 +1,29 @@
+{
+  "CATEGORY": "CPS",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "CPS3p": {"ARM": "CPS3p"},
+    "CPS2p": {"ARM": "CPS2p"},
+    "CPS1p": {"ARM": "CPS1p"}
+  },
+  "INPUTS": {
+    "CPS3p": {"ARM": [["imod_op",0],["iflags_op",0],["imm0_31",0]]},
+    "CPS2p": {"ARM": [["imod_op",0],["iflags_op",0]]},
+    "CPS1p": {"ARM": [["imm0_31",0]]}
+  },
+  "OUTPUTS": {
+    "CPS3p": {"ARM": []},
+    "CPS2p": {"ARM": []},
+    "CPS1p": {"ARM": []}
+  },
+  "INPUT_BYTES": {
+    "CPS3p": {"ARM": ["CPS"]},
+    "CPS2p": {"ARM": ["CPS"]},
+    "CPS1p": {"ARM": ["CPS"]}
+  },
+  "OUTPUT_BYTES": {
+    "CPS3p": {"ARM": ["CPS"]},
+    "CPS2p": {"ARM": ["CPS"]},
+    "CPS1p": {"ARM": ["CPS"]}
+  }
+}

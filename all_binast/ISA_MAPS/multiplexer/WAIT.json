@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "WAIT",
+  "BACKENDS": ["X86","AMDGPU"],
+  "INDEX": {
+    "WAIT": {"X86": "WAIT"},
+    "WAIT_ASYNCMARK": {"AMDGPU": "WAIT_ASYNCMARK"}
+  },
+  "INPUTS": {
+    "WAIT": {"X86": []},
+    "WAIT_ASYNCMARK": {"AMDGPU": [["s16imm",16]]}
+  },
+  "OUTPUTS": {
+    "WAIT": {"X86": []},
+    "WAIT_ASYNCMARK": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "WAIT": {"X86": ["0x9B"]},
+    "WAIT_ASYNCMARK": {"AMDGPU": ["SOPP_Pseudo"]}
+  },
+  "OUTPUT_BYTES": {
+    "WAIT": {"X86": ["0x9B"]},
+    "WAIT_ASYNCMARK": {"AMDGPU": ["SOPP_Pseudo"]}
+  }
+}

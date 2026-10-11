@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CEIL",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "CEIL": {"AMDGPU": "CEIL"}
+  },
+  "INPUTS": {
+    "CEIL": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "CEIL": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "CEIL": {"AMDGPU": ["R600_1OP_Helper","0x12"]}
+  },
+  "OUTPUT_BYTES": {
+    "CEIL": {"AMDGPU": ["R600_1OP_Helper","0x12"]}
+  }
+}

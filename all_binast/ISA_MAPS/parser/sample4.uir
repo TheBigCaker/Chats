@@ -1,0 +1,2 @@
+.backend aarch64
+ADD r2, r3, r4

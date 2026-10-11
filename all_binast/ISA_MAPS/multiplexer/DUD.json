@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "DUD",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "DUDivMacro": {"Mips": "DUDivMacro"}
+  },
+  "INPUTS": {
+    "DUDivMacro": {"Mips": [["GPR64Opnd",64],["GPR64Opnd",64]]}
+  },
+  "OUTPUTS": {
+    "DUDivMacro": {"Mips": [["GPR64Opnd",64]]}
+  },
+  "INPUT_BYTES": {
+    "DUDivMacro": {"Mips": ["MipsAsmPseudoInst"]}
+  },
+  "OUTPUT_BYTES": {
+    "DUDivMacro": {"Mips": ["MipsAsmPseudoInst"]}
+  }
+}

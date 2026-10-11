@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "RDMSRLIST",
+  "BACKENDS": ["X86"],
+  "INDEX": {
+    "RDMSRLIST": {"X86": "RDMSRLIST"}
+  },
+  "INPUTS": {
+    "RDMSRLIST": {"X86": []}
+  },
+  "OUTPUTS": {
+    "RDMSRLIST": {"X86": []}
+  },
+  "INPUT_BYTES": {
+    "RDMSRLIST": {"X86": ["0x01"]}
+  },
+  "OUTPUT_BYTES": {
+    "RDMSRLIST": {"X86": ["0x01"]}
+  }
+}

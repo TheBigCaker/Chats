@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "XVADDSP",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "XVADDSP": {"PowerPC": "XVADDSP"}
+  },
+  "INPUTS": {
+    "XVADDSP": {"PowerPC": [["vsrc",0],["vsrc",0]]}
+  },
+  "OUTPUTS": {
+    "XVADDSP": {"PowerPC": [["vsrc",0]]}
+  },
+  "INPUT_BYTES": {
+    "XVADDSP": {"PowerPC": ["XX3Form","60","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "XVADDSP": {"PowerPC": ["XX3Form","60","64"]}
+  }
+}

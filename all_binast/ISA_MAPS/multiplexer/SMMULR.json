@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "SMMULR",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "SMMULR": {"ARM": "SMMULR"}
+  },
+  "INPUTS": {
+    "SMMULR": {"ARM": [["GPR",64],["GPR",64]]}
+  },
+  "OUTPUTS": {
+    "SMMULR": {"ARM": [["GPR",64]]}
+  },
+  "INPUT_BYTES": {
+    "SMMULR": {"ARM": ["AMul2I","0b0111010","0b0011"]}
+  },
+  "OUTPUT_BYTES": {
+    "SMMULR": {"ARM": ["AMul2I","0b0111010","0b0011"]}
+  }
+}

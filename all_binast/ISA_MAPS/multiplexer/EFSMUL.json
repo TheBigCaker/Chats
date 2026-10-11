@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "EFSMUL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "EFSMUL": {"PowerPC": "EFSMUL"}
+  },
+  "INPUTS": {
+    "EFSMUL": {"PowerPC": [["spe4rc",0],["spe4rc",0]]}
+  },
+  "OUTPUTS": {
+    "EFSMUL": {"PowerPC": [["spe4rc",0]]}
+  },
+  "INPUT_BYTES": {
+    "EFSMUL": {"PowerPC": ["EFXForm_1","712"]}
+  },
+  "OUTPUT_BYTES": {
+    "EFSMUL": {"PowerPC": ["EFXForm_1","712"]}
+  }
+}

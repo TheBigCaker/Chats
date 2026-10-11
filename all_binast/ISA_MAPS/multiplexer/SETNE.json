@@ -1,0 +1,24 @@
+{
+  "CATEGORY": "SETNE",
+  "BACKENDS": ["AMDGPU"],
+  "INDEX": {
+    "SETNE_DX10": {"AMDGPU": "SETNE_DX10"},
+    "SETNE_INT": {"AMDGPU": "SETNE_INT"}
+  },
+  "INPUTS": {
+    "SETNE_DX10": {"AMDGPU": []},
+    "SETNE_INT": {"AMDGPU": []}
+  },
+  "OUTPUTS": {
+    "SETNE_DX10": {"AMDGPU": []},
+    "SETNE_INT": {"AMDGPU": []}
+  },
+  "INPUT_BYTES": {
+    "SETNE_DX10": {"AMDGPU": ["R600_2OP","0xF","0"]},
+    "SETNE_INT": {"AMDGPU": ["R600_2OP","0x3D","0"]}
+  },
+  "OUTPUT_BYTES": {
+    "SETNE_DX10": {"AMDGPU": ["R600_2OP","0xF","0"]},
+    "SETNE_INT": {"AMDGPU": ["R600_2OP","0x3D","0"]}
+  }
+}

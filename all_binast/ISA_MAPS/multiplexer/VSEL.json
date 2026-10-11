@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VSEL",
+  "BACKENDS": ["PowerPC"],
+  "INDEX": {
+    "VSEL": {"PowerPC": "VSEL"}
+  },
+  "INPUTS": {
+    "VSEL": {"PowerPC": []}
+  },
+  "OUTPUTS": {
+    "VSEL": {"PowerPC": []}
+  },
+  "INPUT_BYTES": {
+    "VSEL": {"PowerPC": ["VA1a_Int_Ty","42"]}
+  },
+  "OUTPUT_BYTES": {
+    "VSEL": {"PowerPC": ["VA1a_Int_Ty","42"]}
+  }
+}

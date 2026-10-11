@@ -1,0 +1,34 @@
+{
+  "CATEGORY": "THV",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "THVdotV_M1": {"RISCV": "THVdotV_M1"},
+    "THVdotV_M2": {"RISCV": "THVdotV_M2"},
+    "THVdotV_M4": {"RISCV": "THVdotV_M4"},
+    "THVdotV_M8": {"RISCV": "THVdotV_M8"}
+  },
+  "INPUTS": {
+    "THVdotV_M1": {"RISCV": []},
+    "THVdotV_M2": {"RISCV": []},
+    "THVdotV_M4": {"RISCV": []},
+    "THVdotV_M8": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "THVdotV_M1": {"RISCV": []},
+    "THVdotV_M2": {"RISCV": []},
+    "THVdotV_M4": {"RISCV": []},
+    "THVdotV_M8": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "THVdotV_M1": {"RISCV": ["LMULInfo","0b000","8"]},
+    "THVdotV_M2": {"RISCV": ["LMULInfo","0b001","16"]},
+    "THVdotV_M4": {"RISCV": ["LMULInfo","0b010","32"]},
+    "THVdotV_M8": {"RISCV": ["LMULInfo","0b011","64"]}
+  },
+  "OUTPUT_BYTES": {
+    "THVdotV_M1": {"RISCV": ["LMULInfo","0b000","8"]},
+    "THVdotV_M2": {"RISCV": ["LMULInfo","0b001","16"]},
+    "THVdotV_M4": {"RISCV": ["LMULInfo","0b010","32"]},
+    "THVdotV_M8": {"RISCV": ["LMULInfo","0b011","64"]}
+  }
+}

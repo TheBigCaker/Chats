@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "VTOUIZD",
+  "BACKENDS": ["ARM"],
+  "INDEX": {
+    "VTOUIZD": {"ARM": "VTOUIZD"}
+  },
+  "INPUTS": {
+    "VTOUIZD": {"ARM": [["DPR",0]]}
+  },
+  "OUTPUTS": {
+    "VTOUIZD": {"ARM": [["SPR",0]]}
+  },
+  "INPUT_BYTES": {
+    "VTOUIZD": {"ARM": ["AVConv1IsD_Encode","0b11101","0b11","0b1100","0b1011"]}
+  },
+  "OUTPUT_BYTES": {
+    "VTOUIZD": {"ARM": ["AVConv1IsD_Encode","0b11101","0b11","0b1100","0b1011"]}
+  }
+}

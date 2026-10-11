@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CPURAR",
+  "BACKENDS": ["Mips"],
+  "INDEX": {
+    "CPURAReg": {"Mips": "CPURAReg"}
+  },
+  "INPUTS": {
+    "CPURAReg": {"Mips": []}
+  },
+  "OUTPUTS": {
+    "CPURAReg": {"Mips": []}
+  },
+  "INPUT_BYTES": {
+    "CPURAReg": {"Mips": ["RegisterClass","32"]}
+  },
+  "OUTPUT_BYTES": {
+    "CPURAReg": {"Mips": ["RegisterClass","32"]}
+  }
+}

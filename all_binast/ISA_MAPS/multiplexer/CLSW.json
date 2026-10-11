@@ -1,0 +1,19 @@
+{
+  "CATEGORY": "CLSW",
+  "BACKENDS": ["RISCV"],
+  "INDEX": {
+    "CLSW": {"RISCV": "CLSW"}
+  },
+  "INPUTS": {
+    "CLSW": {"RISCV": []}
+  },
+  "OUTPUTS": {
+    "CLSW": {"RISCV": []}
+  },
+  "INPUT_BYTES": {
+    "CLSW": {"RISCV": ["UnaryW_r","0b011000000011","0b001"]}
+  },
+  "OUTPUT_BYTES": {
+    "CLSW": {"RISCV": ["UnaryW_r","0b011000000011","0b001"]}
+  }
+}
