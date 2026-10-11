@@ -1,0 +1,172 @@
+//
+// Copyright © 2020, 2022, 2024 Arm Ltd. All rights reserved.
+// SPDX-License-Identifier: MIT
+//
+
+// The following files are omitted due to technical limitations:
+// Directories : data, include, python
+// Files : LICENSE, README.md, SConscript, SConstruct, Security.md, filelist.json, filedefs.json
+
+/** @file Android.bp
+ *  @brief Generation script for building AndroidNN driver.
+ */
+
+/** @dir arm_compute
+ *  @brief All the arm_compute headers.
+ */
+
+/** @dir arm_compute/core
+ *  @brief Core module: common basic types and kernels.
+ */
+
+/** @dir arm_compute/core/CL
+ *  @brief OpenCL backend core: kernels and utilities.
+ */
+
+/** @file arm_compute/core/CL/CLKernelLibrary.h
+ *  @brief Manages all the OpenCL kernels compilation and caching, provides accessors for the OpenCL Context.
+ */
+
+/** @file arm_compute/core/CL/OpenCL.h
+ *  @brief Wrapper to configure the Khronos OpenCL C++ header
+ */
+
+/** @dir arm_compute/core/CPP
+ *  @brief CPP backend core: kernels and utilities.
+ */
+
+/** @file arm_compute/core/CPP/CPPKernels.h
+ *  @brief Includes all the CPP kernels at once
+ */
+
+/** @dir arm_compute/core/CPP/kernels
+ *  @brief Folder containing all the CPP kernels
+ */
+
+/** @dir arm_compute/core/experimental
+ *  @brief All experimental interfaces
+ */
+
+/** @dir arm_compute/core/utils
+ *  @brief Common core utilities.
+ */
+
+/** @dir arm_compute/graph
+ *  @brief Graph API.
+ */
+
+/** @dir arm_compute/graph/algorithms
+ *  @brief Generic algorithms used by the graph backend (e.g Order of traversal)
+ */
+
+/** @dir arm_compute/graph/backends
+ *  @brief The backend specific code
+ */
+
+/** @dir arm_compute/graph/backends/CL
+ *  @brief OpenCL specific operations
+ */
+
+/** @dir arm_compute/graph/backends/NEON
+ *  @brief Arm® Neon™ specific operations
+ */
+
+/** @dir arm_compute/graph/detail
+ *  @brief Collection of internal utilities.
+ */
+
+/** @dir arm_compute/graph/frontend
+ *  @brief Code related to the stream frontend interface.
+ */
+
+/** @dir arm_compute/graph/mutators
+ *  @brief Used to modify / optimise the Graph intermediate representation(Operator fusion, in place operations, etc.)
+ */
+
+/** @dir arm_compute/graph/nodes
+ *  @brief The various nodes supported by the graph API.
+ */
+
+/** @dir arm_compute/graph/printers
+ *  @brief Debug printers.
+ */
+
+/** @file arm_compute/graph.h
+ *  @brief Includes all the Graph headers at once.
+ */
+
+/** @dir arm_compute/runtime
+ *  @brief Runtime interface: memory, scheduler, functions.
+ */
+
+/** @dir arm_compute/runtime/CL
+ *  @brief OpenCL backend runtime interface.
+ */
+
+/** @file arm_compute/runtime/CL/CLFunctions.h
+ *  @brief Includes all the OpenCL functions at once
+ */
+
+/** @file arm_compute/runtime/CL/CLScheduler.h
+ *  @brief Interface to enqueue OpenCL kernels and get/set the OpenCL CommandQueue and ICLTuner.
+ */
+
+/** @file arm_compute/runtime/CL/ICLTuner.h
+ *  @brief Interface used to tune the local work-group size of OpenCL kernels.
+ */
+
+/** @dir arm_compute/runtime/CL/functions
+ *  @brief Folder containing all the OpenCL functions.
+ */
+
+/** @dir arm_compute/runtime/CL/tuners
+ *  @brief Local workgroup size tuners for specific architectures / GPUs.
+ */
+
+/** @dir arm_compute/runtime/CPP
+ *  @brief CPP backend runtime interface.
+ */
+
+/** @file arm_compute/runtime/CPP/CPPScheduler.h
+ *  @brief Basic pool of threads to execute CPP/Neon code on several cores in parallel.
+ */
+
+/** @dir arm_compute/runtime/CPP/functions
+ *  @brief Folder containing all the CPP functions.
+ */
+
+/** @dir arm_compute/runtime/experimental
+ *  @brief Experimental runtime interface.
+ */
+
+/** @dir arm_compute/runtime/NEON
+ *  @brief Arm® Neon™ backend runtime interface.
+ */
+
+/** @file arm_compute/runtime/NEON/NEFunctions.h
+ *  @brief Includes all the Arm® Neon™ functions at once.
+ */
+
+/** @dir arm_compute/runtime/NEON/functions
+ *  @brief Folder containing all the Arm® Neon™ functions.
+ */
+
+/** @dir arm_compute/runtime/OMP
+ *  @brief OpenMP backend runtime interface.
+ */
+
+/** @file arm_compute/runtime/OMP/OMPScheduler.h
+ *  @brief OpenMP scheduler (Alternative to the CPPScheduler).
+ */
+
+/** @dir arm_compute/runtime/common
+ *  @brief Common utility code used by all backends.
+ */
+
+/** @dir docs
+ *  @brief Doxyfile and Doxygen sources used to generate this documentation.
+ */
+
+/** @dir support
+ *  @brief Various headers to work around toolchains / platform issues.
+ */

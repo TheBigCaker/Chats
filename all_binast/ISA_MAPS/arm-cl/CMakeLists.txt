@@ -1,0 +1,500 @@
+# Copyright (c) 2023-2025 Arm Limited.
+#
+# SPDX-License-Identifier: MIT
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+
+project(
+  ArmCompute
+  VERSION 0.0.0
+  DESCRIPTION
+  "The Compute Library is a collection of low-level machine learning functions \
+   optimized for Arm® Cortex®-A, Arm® Neoverse™ CPU and Arm® Mali™ GPU \
+   architectures."
+  LANGUAGES C CXX ASM
+)
+
+# * Component build options.
+option(ARM_COMPUTE_BUILD_EXAMPLES "Build example programs." OFF)
+option(ARM_COMPUTE_BUILD_SHARED_LIB "Build a shared library." ON)
+option(ARM_COMPUTE_BUILD_TESTING "Build tests." OFF)
+
+# * Feature build options.
+option(ARM_COMPUTE_ENABLE_ASSERTS "Enable asserts." OFF)
+option(ARM_COMPUTE_ENABLE_CPPTHREADS "Enable C++11 threads backend." OFF)
+option(ARM_COMPUTE_ENABLE_LOGGING "Enable logging." OFF)
+option(ARM_COMPUTE_ENABLE_OPENMP "Enable OpenMP backend." ON)
+option(ARM_COMPUTE_ENABLE_WERROR "Enable fatal warnings." OFF)
+
+# * Debugging options.
+option(ARM_COMPUTE_ENABLE_CODE_COVERAGE "Enable code coverage." OFF)
+option(ARM_COMPUTE_ENABLE_SANITIZERS "Enable sanitizers." OFF)
+option(ARM_COMPUTE_USE_LIBCXX "Use libcxx instead of the default stdlib." OFF)
+
+# * Build mode: multi-ISA (default) or single-ISA
+option(ACL_MULTI_ISA "Build Multi-ISA as default" ON)
+set(ACL_ARCH_ISA "armv8.6-a" CACHE STRING "Architecture (armv8-a, armv8.2-a, armv8.6-a)")
+set_property(CACHE ACL_ARCH_ISA PROPERTY STRINGS armv8-a armv8.2-a armv8.6-a)
+set(ACL_ARCH_FEATURES "" CACHE STRING "Comma separated features list (sve,sve2,sme2)")
+
+# * Arch features
+option(ACL_BUILD_SVE  "Enable SVE support"  OFF)
+option(ACL_BUILD_SVE2 "Enable SVE2 support" OFF)
+option(ACL_BUILD_SME2 "Enable SME2 support" OFF)
+
+# * Arch feature probing for single-ISA
+include(CheckCXXCompilerFlag)
+check_cxx_compiler_flag("-march=armv8-a"                              ACL_HAS_MARCH_V8A)
+check_cxx_compiler_flag("-march=armv8.2-a+fp16+dotprod"               ACL_HAS_MARCH_V82_F16_DOT)
+check_cxx_compiler_flag("-march=armv8.6-a+sve+sve2+fp16+dotprod+i8mm" ACL_HAS_MARCH_V86_ALL)
+check_cxx_compiler_flag("-march=armv8.2-a"                            ACL_HAS_MARCH_V82_BASE)
+check_cxx_compiler_flag("-march=armv8.6-a"                            ACL_HAS_MARCH_V86_BASE)
+
+# * Set variables.
+set(ARM_COMPUTE_C_STANDARD 99 CACHE STRING "C Standard to use for the library.")
+set(ARM_COMPUTE_CXX_STANDARD 14 CACHE STRING "CXX Standard to use for the library.")
+
+# If this is the top-level project and the installation directory hasn't been set, set it
+# to be <project-root>/install/
+if(PROJECT_IS_TOP_LEVEL)
+  if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install" CACHE PATH "Install path" FORCE)
+    message(STATUS "CMAKE_INSTALL_PREFIX was not set, using default: ${CMAKE_INSTALL_PREFIX}")
+  endif()
+endif()
+
+include(${CMAKE_CURRENT_LIST_DIR}/cmake/configurations.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/cmake/compilers/setup.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/cmake/version.cmake)
+
+if(ACL_ARCH_ISA STREQUAL "armv8-a" AND (ACL_MULTI_ISA OR ACL_BUILD_SVE OR ACL_BUILD_SVE2 OR ACL_BUILD_SME2))
+  message(FATAL_ERROR
+    "Invalid configuration: '${ACL_ARCH_ISA}' does not support requested features"
+  )
+endif()
+
+# * Print build configuration
+if(ACL_MULTI_ISA)
+  message(STATUS "Multi-ISA build selected. All detectable features are enabled.")
+  message(STATUS "Building arm_compute_(core, core_fp16, sve, sve2).")
+else()
+  message(STATUS "Single-ISA build selected: ${ACL_ARCH_ISA}")
+  if(NOT "${ACL_ARCH_FEATURES}" STREQUAL "")
+    message(STATUS "Requested features: ${ACL_ARCH_FEATURES}")
+  endif()
+  set(libs "core")
+  if(NOT (ACL_ARCH_ISA STREQUAL "armv8-a"))
+    string(APPEND libs ", core_fp16")
+  endif()
+  if(ACL_BUILD_SVE)
+    string(APPEND libs ", sve")
+  endif()
+  if(ACL_BUILD_SVE2)
+    string(APPEND libs ", sve2")
+  endif()
+  message(STATUS "Building arm_compute_(${libs}).")
+endif()
+
+# * Set architecture.
+if(ACL_MULTI_ISA)
+  set(ARM_COMPUTE_ARCH           "-march=armv8-a")
+  set(ARM_COMPUTE_CORE_FP16_ARCH "-march=armv8.2-a+fp16+dotprod")
+  set(ARM_COMPUTE_SVE_ARCH       "-march=armv8.2-a+sve+fp16+dotprod")
+  set(ARM_COMPUTE_SVE2_ARCH      "-march=armv8.6-a+sve2+fp16+dotprod+i8mm")
+else()
+  set(ACL_MARCH "")
+  if(ACL_BUILD_SME2 OR ACL_BUILD_SVE2)
+    set(ACL_MARCH  "+sve2+fp16+dotprod+i8mm")
+  elseif(ACL_BUILD_SVE)
+    set(ACL_MARCH "+sve+fp16+dotprod")
+  elseif(ACL_ARCH_ISA STREQUAL "armv8.2-a" OR ACL_ARCH_ISA STREQUAL "armv8.6-a")
+    set(ACL_MARCH "+fp16+dotprod")
+  endif()
+
+  set(ARM_COMPUTE_ARCH           "-march=${ACL_ARCH_ISA}${ACL_MARCH}" CACHE STRING "Architecture (march) for core library.")
+  set(ARM_COMPUTE_CORE_FP16_ARCH "-march=${ACL_ARCH_ISA}${ACL_MARCH}" CACHE STRING "Architecture (march) for core library with fp16 support.")
+  set(ARM_COMPUTE_SVE_ARCH       "-march=${ACL_ARCH_ISA}${ACL_MARCH}" CACHE STRING "Architecture (march) for SVE library.")
+  set(ARM_COMPUTE_SVE2_ARCH      "-march=${ACL_ARCH_ISA}${ACL_MARCH}" CACHE STRING "Architecture (march) for SVE2 library.")
+  message(STATUS "Using arch: ${ARM_COMPUTE_ARCH}")
+endif()
+
+if(ARM_COMPUTE_ENABLE_OPENMP)
+  find_package(OpenMP REQUIRED)
+endif()
+
+# Introduce CMAKE_INSTALL_BINDIR, CMAKE_INSTALL_LIBDIR, CMAKE_INSTALL_INCLUDEDIR variables
+include(GNUInstallDirs)
+
+# Set lib build type accordingly
+if(ARM_COMPUTE_BUILD_SHARED_LIB)
+  message(STATUS "Building Arm Compute Library with shared libraries.")
+  set(ARM_COMPUTE_LIB_BUILD_TYPE SHARED)
+else()
+  message(STATUS "Building Arm Compute Library with static libraries.")
+  set(ARM_COMPUTE_LIB_BUILD_TYPE STATIC)
+endif()
+
+set(
+  ARM_COMPUTE_PUBLIC_INCLUDE
+  ${CMAKE_CURRENT_LIST_DIR}
+  ${CMAKE_CURRENT_LIST_DIR}/include
+)
+
+set(
+  ARM_COMPUTE_COMMON_INCLUDE
+  ${ARM_COMPUTE_PUBLIC_INCLUDE}
+  ${CMAKE_CURRENT_LIST_DIR}
+  ${CMAKE_CURRENT_LIST_DIR}/src/cpu/kernels/assembly
+  ${CMAKE_CURRENT_LIST_DIR}/src/core/NEON/kernels/arm_gemm
+  ${CMAKE_CURRENT_LIST_DIR}/src/core/NEON/kernels/assembly
+)
+
+set(
+  ARM_COMPUTE_GRAPH_INCLUDE
+  ${ARM_COMPUTE_COMMON_INCLUDE}
+  ${CMAKE_CURRENT_LIST_DIR}/src/core/NEON/kernels/convolution/common
+  ${CMAKE_CURRENT_LIST_DIR}/src/core/NEON/kernels/arm_conv/depthwise
+  ${CMAKE_CURRENT_LIST_DIR}/src/core/NEON/kernels/convolution/winograd
+)
+
+set(
+  ARM_COMPUTE_INCLUDE
+  ${ARM_COMPUTE_GRAPH_INCLUDE}
+  ${CMAKE_CURRENT_LIST_DIR}/third_party/kleidiai
+)
+
+set(
+  ARM_COMPUTE_SVE_COMMON_INCLUDE
+  ${ARM_COMPUTE_COMMON_INCLUDE}
+  ${CMAKE_CURRENT_LIST_DIR}/src/core/NEON/kernels/arm_conv
+  ${CMAKE_CURRENT_LIST_DIR}/src/core/cpu/kernels/assembly
+  ${CMAKE_CURRENT_LIST_DIR}/src/cpu/kernels/assembly
+  ${CMAKE_CURRENT_LIST_DIR}/src/core/NEON/kernels/arm_gemm/merges
+)
+
+if(ACL_MULTI_ISA OR ACL_BUILD_SVE)
+  add_library(arm_compute_sve OBJECT)
+  set_target_properties(
+    arm_compute_sve
+    PROPERTIES
+      COMPILE_OPTIONS "${ARM_COMPUTE_SVE_ARCH};${ARM_COMPUTE_COMMON_CCXX_FLAGS}"
+      COMPILE_DEFINITIONS "${ARM_COMPUTE_DEFINES}"
+      INCLUDE_DIRECTORIES "${ARM_COMPUTE_SVE_COMMON_INCLUDE}"
+      LINK_LIBRARIES "${ARM_COMPUTE_LINK_LIBS}"
+  )
+else()
+  add_library(arm_compute_sve OBJECT EXCLUDE_FROM_ALL)
+endif()
+
+if(ACL_MULTI_ISA OR ACL_BUILD_SVE2)
+  add_library(arm_compute_sve2 OBJECT)
+  set_target_properties(
+    arm_compute_sve2
+    PROPERTIES
+      COMPILE_OPTIONS "${ARM_COMPUTE_SVE2_ARCH};${ARM_COMPUTE_COMMON_CCXX_FLAGS}"
+      COMPILE_DEFINITIONS "${ARM_COMPUTE_DEFINES}"
+      INCLUDE_DIRECTORIES "${ARM_COMPUTE_SVE_COMMON_INCLUDE}"
+      LINK_LIBRARIES "${ARM_COMPUTE_LINK_LIBS}"
+  )
+else()
+  add_library(arm_compute_sve2 OBJECT EXCLUDE_FROM_ALL)
+endif()
+
+add_library(arm_compute_core OBJECT)
+set_target_properties(
+  arm_compute_core
+  PROPERTIES
+  COMPILE_OPTIONS "${ARM_COMPUTE_ARCH};${ARM_COMPUTE_COMMON_CCXX_FLAGS}"
+  COMPILE_DEFINITIONS "${ARM_COMPUTE_DEFINES}"
+  INCLUDE_DIRECTORIES "${ARM_COMPUTE_INCLUDE}"
+  LINK_LIBRARIES "${ARM_COMPUTE_LINK_LIBS}"
+)
+
+if(NOT (ACL_ARCH_ISA STREQUAL "armv8-a"))
+  add_library(arm_compute_core_fp16 OBJECT)
+  set_target_properties(
+    arm_compute_core_fp16
+    PROPERTIES
+      COMPILE_OPTIONS "${ARM_COMPUTE_CORE_FP16_ARCH};${ARM_COMPUTE_COMMON_CCXX_FLAGS}"
+      COMPILE_DEFINITIONS "${ARM_COMPUTE_DEFINES}"
+      INCLUDE_DIRECTORIES "${ARM_COMPUTE_INCLUDE}"
+      LINK_LIBRARIES "${ARM_COMPUTE_LINK_LIBS}"
+  )
+else()
+  add_library(arm_compute_core_fp16 OBJECT EXCLUDE_FROM_ALL)
+endif()
+
+add_library(arm_compute_graph ${ARM_COMPUTE_LIB_BUILD_TYPE})
+set_target_properties(
+    arm_compute_graph
+    PROPERTIES
+        COMPILE_OPTIONS "${ARM_COMPUTE_ARCH};${ARM_COMPUTE_COMMON_CCXX_FLAGS}"
+        COMPILE_DEFINITIONS "${ARM_COMPUTE_DEFINES}"
+        INCLUDE_DIRECTORIES "${ARM_COMPUTE_GRAPH_INCLUDE}"
+        LINK_LIBRARIES "${ARM_COMPUTE_LINK_LIBS}$<IF:$<PLATFORM_ID:Darwin>,;arm_compute,>"
+)
+
+if(ACL_MULTI_ISA)
+  add_library(arm_compute ${ARM_COMPUTE_LIB_BUILD_TYPE}
+    $<TARGET_OBJECTS:arm_compute_core>
+    $<TARGET_OBJECTS:arm_compute_core_fp16>
+    $<TARGET_OBJECTS:arm_compute_sve>
+    $<TARGET_OBJECTS:arm_compute_sve2>
+  )
+else()
+  set(lib_objs $<TARGET_OBJECTS:arm_compute_core>)
+
+  if(ACL_ARCH_ISA STREQUAL "armv8-a")
+    # base
+
+  elseif(ACL_ARCH_ISA STREQUAL "armv8.2-a")
+    list(APPEND lib_objs $<TARGET_OBJECTS:arm_compute_core_fp16>)
+    if(ACL_BUILD_SVE)
+      list(APPEND lib_objs $<TARGET_OBJECTS:arm_compute_sve>)
+    endif()
+    if(ACL_BUILD_SVE2)
+      list(APPEND lib_objs $<TARGET_OBJECTS:arm_compute_sve2>)
+    endif()
+
+  elseif(ACL_ARCH_ISA STREQUAL "armv8.6-a")
+    list(APPEND lib_objs $<TARGET_OBJECTS:arm_compute_core_fp16>)
+    if(ACL_BUILD_SVE)
+      list(APPEND lib_objs $<TARGET_OBJECTS:arm_compute_sve>)
+    endif()
+    if(ACL_BUILD_SVE2)
+      list(APPEND lib_objs $<TARGET_OBJECTS:arm_compute_sve2>)
+    endif()
+
+  else()
+    message(FATAL_ERROR "Unsupported ACL_ARCH_ISA='${ACL_ARCH_ISA}'")
+  endif()
+
+  add_library(arm_compute ${ARM_COMPUTE_LIB_BUILD_TYPE} ${lib_objs})
+  set_target_properties(arm_compute PROPERTIES OUTPUT_NAME "arm_compute_${ACL_ARCH_ISA}")
+endif()
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+  target_compile_options(arm_compute_core PRIVATE -arch arm64)
+  if(TARGET arm_compute_core_fp16)
+    target_compile_options(arm_compute_core_fp16 PRIVATE -arch arm64)
+  endif()
+endif()
+
+
+# Linking to arm_compute[_graph] should automatically bring includes and dependent libs with it
+foreach(TARGET IN ITEMS arm_compute arm_compute_graph)
+  target_link_libraries(${TARGET} PUBLIC ${ARM_COMPUTE_LINK_LIBS})
+  target_include_directories(${TARGET} PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>
+    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+  )
+  set_target_properties(${TARGET} PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}")
+endforeach()
+
+# Linking to this target should automatically bring includes and dependent libs with it.
+set(ARM_COMPUTE_TARGETS arm_compute arm_compute_graph arm_compute_core)
+
+if(TARGET arm_compute_core_fp16)
+  list(APPEND ARM_COMPUTE_TARGETS arm_compute_core_fp16)
+endif()
+if(TARGET arm_compute_sve)
+  list(APPEND ARM_COMPUTE_TARGETS arm_compute_sve)
+endif()
+if(TARGET arm_compute_sve2)
+  list(APPEND ARM_COMPUTE_TARGETS arm_compute_sve2)
+endif()
+
+# Create an alias targets so that a user can download ArmCompute via FetchContent and
+# still link to ArmCompute::Core and ArmCompute::Graph. Otherwise these targets would not
+# be available at configure-time (as required by FetchContent)
+add_library(${PROJECT_NAME}::Core ALIAS arm_compute)
+add_library(${PROJECT_NAME}::Graph ALIAS arm_compute_graph)
+
+# Library target sources.
+add_subdirectory(src)
+
+if(ARM_COMPUTE_BUILD_TESTING)
+  add_library(arm_compute_validation_framework OBJECT)
+  add_subdirectory(tests)
+  add_executable(arm_compute_validation $<TARGET_OBJECTS:arm_compute_validation_framework>)
+  add_subdirectory(tests/validation)
+  add_executable(arm_compute_benchmark $<TARGET_OBJECTS:arm_compute_validation_framework>)
+  add_subdirectory(tests/benchmark)
+
+  set_target_properties(
+    arm_compute_benchmark arm_compute_validation_framework arm_compute_validation
+    PROPERTIES
+    COMPILE_OPTIONS "${ARM_COMPUTE_ARCH};${ARM_COMPUTE_COMMON_CCXX_FLAGS}"
+    INCLUDE_DIRECTORIES "${ARM_COMPUTE_PUBLIC_INCLUDE};${ARM_COMPUTE_COMMON_INCLUDE}"
+    COMPILE_DEFINITIONS "${ARM_COMPUTE_DEFINES}"
+    LINK_LIBRARIES "arm_compute;arm_compute_graph"
+
+    # Adjusted for relative location of installed arm_compute lib
+    INSTALL_RPATH "$ORIGIN/../${CMAKE_INSTALL_LIBDIR}"
+    BUILD_RPATH "$ORIGIN/../${CMAKE_INSTALL_LIBDIR}"
+    INSTALL_RPATH_USE_LINK_PATH TRUE
+  )
+  list(APPEND ARM_COMPUTE_TARGETS arm_compute_validation arm_compute_benchmark)
+endif(ARM_COMPUTE_BUILD_TESTING)
+
+# Examples Binaries
+if(ARM_COMPUTE_BUILD_EXAMPLES)
+  add_subdirectory(examples)
+
+  # Graph Examples
+  foreach(test_name ${EXAMPLE_GRAPH_NAMES})
+    add_executable(
+      ${test_name}
+      "examples/${test_name}.cpp"
+      utils/Utils.cpp
+      utils/GraphUtils.cpp
+      utils/CommonGraphOptions.cpp
+    )
+    target_include_directories(${test_name} PRIVATE
+      $<BUILD_INTERFACE:${ARM_COMPUTE_PUBLIC_INCLUDE}>
+      $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+    )
+  endforeach()
+
+  # NEON Examples
+  foreach(test_name ${EXAMPLE_NEON_NAMES})
+    add_executable(
+      ${test_name}
+      "examples/${test_name}.cpp"
+      utils/Utils.cpp
+    )
+    target_include_directories(${test_name} PRIVATE
+      $<BUILD_INTERFACE:${ARM_COMPUTE_PUBLIC_INCLUDE}>
+      $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+    )
+  endforeach()
+
+  # Set common properties
+  set_target_properties(
+    ${EXAMPLE_GRAPH_NAMES} ${EXAMPLE_NEON_NAMES}
+    PROPERTIES
+    COMPILE_OPTIONS "${ARM_COMPUTE_ARCH};${ARM_COMPUTE_COMMON_CCXX_FLAGS}"
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/examples"
+  )
+
+  # Now set the linking properties which differ between the NEON and Graph examples
+  set_target_properties(${EXAMPLE_GRAPH_NAMES} PROPERTIES LINK_LIBRARIES "arm_compute;arm_compute_graph")
+  set_target_properties(${EXAMPLE_NEON_NAMES} PROPERTIES LINK_LIBRARIES arm_compute)
+endif(ARM_COMPUTE_BUILD_EXAMPLES)
+
+set_target_properties(
+  ${ARM_COMPUTE_TARGETS} ${EXAMPLE_NEON_NAMES} ${EXAMPLE_GRAPH_NAMES}
+  PROPERTIES
+  COMPILE_WARNING_AS_ERROR ${ARM_COMPUTE_ENABLE_WERROR}
+  C_STANDARD ${ARM_COMPUTE_C_STANDARD}
+  C_STANDARD_REQUIRED ON
+  C_CLANG_TIDY "${ARM_COMPUTE_CLANG_TIDY}"
+  C_EXTENSIONS OFF
+  C_VISIBILITY_PRESET hidden
+  CXX_CLANG_TIDY "${ARM_COMPUTE_CLANG_TIDY}"
+  CXX_EXTENSIONS OFF
+  CXX_SCAN_FOR_MODULES OFF
+  CXX_STANDARD ${ARM_COMPUTE_CXX_STANDARD}
+  CXX_STANDARD_REQUIRED ON
+  CXX_VISIBILITY_PRESET default
+  LINK_OPTIONS "${ARM_COMPUTE_LINKER_FLAGS}"
+  POSITION_INDEPENDENT_CODE ON
+  VISIBILITY_INLINES_HIDDEN ON
+)
+
+# Install libraries
+install(
+  TARGETS
+  ${ARM_COMPUTE_TARGETS}
+  EXPORT ${PROJECT_NAME}Targets
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
+
+# Introduce the functions write_basic_package_version_file(...) and
+# configure_package_config_file(...) into the current workspace
+include(CMakePackageConfigHelpers)
+
+# Set filenames and installation destinations
+set(ARM_COMPUTE_CONFIG_FILE ${PROJECT_NAME}Config.cmake)
+set(ARM_COMPUTE_CONFIG_VERSION_FILE ${PROJECT_NAME}ConfigVersion.cmake)
+set(ARM_COMPUTE_TARGETS_NAME ${PROJECT_NAME}Targets)
+set(ARM_COMPUTE_TARGETS_FILE "${CMAKE_CURRENT_BINARY_DIR}/${ARM_COMPUTE_TARGETS_NAME}.cmake")
+set(ARM_COMPUTE_CONFIG_TEMPLATE_FILE "cmake/${ARM_COMPUTE_CONFIG_FILE}.in")
+set(ARM_COMPUTE_CONFIG_OUTPUT_FILE "${CMAKE_CURRENT_BINARY_DIR}/${ARM_COMPUTE_CONFIG_FILE}")
+set(ARM_COMPUTE_CONFIG_VERSION_OUTPUT_FILE "${CMAKE_CURRENT_BINARY_DIR}/${ARM_COMPUTE_CONFIG_VERSION_FILE}")
+set(ARM_COMPUTE_CONFIG_INSTALL_DIR "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}")
+
+# Add all targets to the build-tree export set
+export(
+  EXPORT ${PROJECT_NAME}Targets
+  NAMESPACE ${PROJECT_NAME}::
+  FILE "${ARM_COMPUTE_TARGETS_FILE}"
+)
+
+# Install the exported targets to allow other projects to find this project with find_package()
+install(
+  EXPORT ${PROJECT_NAME}Targets
+  NAMESPACE ${PROJECT_NAME}::
+  DESTINATION "${ARM_COMPUTE_CONFIG_INSTALL_DIR}"
+)
+
+# Install header files
+# N.B. The absence of a trailing slash is *important*. Do not add one.
+install(
+  DIRECTORY
+  "${CMAKE_CURRENT_LIST_DIR}/include/"
+  "${CMAKE_CURRENT_LIST_DIR}/arm_compute"
+  "${CMAKE_CURRENT_LIST_DIR}/utils"
+  "${CMAKE_CURRENT_LIST_DIR}/support"
+  "${CMAKE_CURRENT_LIST_DIR}/third_party/kleidiai"
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
+
+# Install the header files from the src/ directory (only) preserving the folder structure
+install(
+  DIRECTORY "${CMAKE_CURRENT_LIST_DIR}/src/"
+  DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/src"
+  FILES_MATCHING
+  PATTERN "*.h" PATTERN "*.hpp"
+)
+
+# Generate the *Config.cmake file for find_package()
+configure_package_config_file(
+  "${ARM_COMPUTE_CONFIG_TEMPLATE_FILE}"
+  "${ARM_COMPUTE_CONFIG_OUTPUT_FILE}"
+  INSTALL_DESTINATION ${ARM_COMPUTE_CONFIG_INSTALL_DIR}
+)
+
+# Configure *ConfigVersion.cmake which exports the version info
+write_basic_package_version_file(
+  "${ARM_COMPUTE_CONFIG_VERSION_OUTPUT_FILE}"
+  VERSION ${${PROJECT_NAME}_VERSION}
+  COMPATIBILITY AnyNewerVersion
+)
+
+# Install the generated *Config.cmake for find_package()
+install(
+  FILES "${ARM_COMPUTE_CONFIG_OUTPUT_FILE}" "${ARM_COMPUTE_CONFIG_VERSION_OUTPUT_FILE}"
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
+)

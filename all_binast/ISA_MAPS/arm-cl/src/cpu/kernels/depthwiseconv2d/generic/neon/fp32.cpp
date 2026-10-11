@@ -1,0 +1,42 @@
+/*
+ * Copyright (c) 2022, 2025 Arm Limited.
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+#include "src/common/utils/profile/acl_profile.h"
+#include "src/cpu/kernels/depthwiseconv2d/generic/neon/impl.h"
+namespace arm_compute
+{
+namespace cpu
+{
+void neon_fp32_deptwiseconv2dnative(const ITensor         *src,
+                                    const ITensor         *weights,
+                                    const ITensor         *bias,
+                                    ITensor               *dst,
+                                    const Window          &window,
+                                    bool                   has_biases,
+                                    const ConvolutionInfo &info)
+{
+    ARM_COMPUTE_TRACE_EVENT(ARM_COMPUTE_PROF_CAT_CPU, ARM_COMPUTE_PROF_LVL_CPU, "neon_fp32_deptwiseconv2dnative");
+    run_depthwise_float<float, float>(src, weights, bias, dst, window, has_biases, info);
+}
+} // namespace cpu
+} // namespace arm_compute

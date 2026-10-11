@@ -1,0 +1,134 @@
+# Copyright (c) 2023-2026 Arm Limited.
+#
+# SPDX-License-Identifier: MIT
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+fail_fast: false
+
+exclude: |
+    (?x)^(
+        data/.*|
+        include/.*|
+        src/CMakeLists.txt|
+        src/Bazel.build|
+        Android.bp|
+        src/core/NEON/kernels/convolution/.*|
+        src/core/NEON/kernels/arm_gemm/.*|
+        src/core/NEON/kernels/arm_conv/.*|
+        src/cpu/kernels/assembly/arm_gemm/.*|
+        src/cpu/kernels/assembly/arm_common/.*|
+        third_party/.*|
+        LICENSES/.*
+    )$
+
+repos:
+  - repo: local
+    hooks:
+      - id: android-bp-checks
+        name: Android.bp Checks
+        stages: [pre-commit]
+        language: python
+        entry: python ./scripts/format_code.py --check_android_bp
+        pass_filenames: false
+        additional_dependencies: ['psutil==5.8.0', 'Jinja2==3.0.1']
+      - id: format-code
+        name: ACL Basic Formatting Checks
+        stages: [pre-commit]
+        language: python
+        entry: python ./scripts/format_code.py --check_formatting --file_list
+        pass_filenames: true
+        additional_dependencies: ['psutil==5.8.0', 'Jinja2==3.0.1']
+      - id: copyright-checks
+        name: ACL Copyright Year Checks
+        stages: [pre-commit]
+        language: python
+        entry: python ./scripts/format_code.py --check_copyright --file_list
+        pass_filenames: true
+        additional_dependencies: ['psutil==5.8.0', 'Jinja2==3.0.1']
+      - id: include-functions-kernels
+        name: Include new functions and kernels in headers
+        stages: [pre-commit]
+        language: python
+        entry: python ./scripts/include_functions_kernels.py
+        additional_dependencies: ['psutil==5.8.0', 'Jinja2==3.0.1']
+        pass_filenames: false
+      - id: check-bad-style
+        name: Check bad style on all files
+        stages: [pre-commit]
+        language: script
+        entry: ./scripts/check_bad_style.sh
+        pass_filenames: false
+      - id: prepare-cmake-build-files
+        name: Prepare CMake build files
+        stages: [pre-commit]
+        language: python
+        entry: python ./scripts/generate_build_files.py --cmake
+        pass_filenames: false
+      - id: prepare-bazel-build-files
+        name: Prepare Bazel build files
+        stages: [pre-commit]
+        language: python
+        entry: python ./scripts/generate_build_files.py --bazel
+        pass_filenames: false
+      - id: fix-header-guards-acl
+        name: Fix header guards in ACL
+        stages: [pre-commit]
+        language: python
+        entry: python ./scripts/check_header_guards.py --extensions=h,hh,hpp,inl --comment_style=double_slash --prefix=ACL --exclude=src/core/NEON/kernels/convolution/,src/core/NEON/kernels/arm_gemm/,src/core/NEON/kernels/arm_conv/,include/,third_party/,src/cpu/kernels/assembly/arm_gemm,src/cpu/kernels/assembly/arm_common --add_extension
+        pass_filenames: true
+      - id: pre-push-check
+        name: Commit Message Check
+        language: python
+        always_run: true
+        entry: bash -c "pip install -q commitizen && git log -1 --pretty=%s | cz check"
+        stages: [pre-push]
+      - id: check-signoff
+        name: Check Signed-off-by
+        entry: >
+          bash -c 'git log -1 --pretty=%B |
+          grep -qiE "^Signed-off-by: .+ <.+@.+>$"'
+        always_run: true
+        language: system
+        stages: [pre-push]
+  - repo: https://github.com/pre-commit/mirrors-clang-format
+    rev: v14.0.6
+    hooks:
+      - id: clang-format
+        files: .*\.(cpp|h|hpp|hh|cc|inl|c)$
+        stages: [pre-commit]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: end-of-file-fixer
+        stages: [pre-commit]
+      - id: trailing-whitespace
+        stages: [pre-commit]
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+        description: Forces to replace line ending by the UNIX 'lf' character.
+        stages: [pre-commit]
+      - id: check-added-large-files
+        args: ['--maxkb=100']
+        stages: [pre-commit]
+  - repo: https://github.com/fsfe/reuse-tool
+    rev: v6.2.0
+    hooks:
+      - id: reuse
+        stages: [ pre-commit ]
+        name: "REUSE Compliant Copyright and License"

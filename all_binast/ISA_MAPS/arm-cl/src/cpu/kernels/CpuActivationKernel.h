@@ -1,0 +1,108 @@
+/*
+ * Copyright (c) 2017-2025 Arm Limited.
+ *
+ * SPDX-License-Identifier: MIT
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+#ifndef ACL_SRC_CPU_KERNELS_CPUACTIVATIONKERNEL_H
+#define ACL_SRC_CPU_KERNELS_CPUACTIVATIONKERNEL_H
+
+#include "arm_compute/core/Types.h"
+#include "arm_compute/function_info/ActivationLayerInfo.h"
+
+#include "src/core/common/Macros.h"
+#include "src/core/helpers/LUTManager.h"
+#include "src/cpu/ICpuKernel.h"
+#include "src/cpu/kernels/activation/heuristics/CpuActivationKernelHeuristics.h"
+
+namespace arm_compute
+{
+namespace cpu
+{
+namespace kernels
+{
+/** Interface for the activation kernel */
+class CpuActivationKernel : public ICPPKernel
+{
+private:
+    using ActivationKernelPtr = heuristics::CpuActivationKernelHeuristics::KernelPtr;
+
+public:
+    CpuActivationKernel() = default;
+    ARM_COMPUTE_DISALLOW_COPY_ALLOW_MOVE(CpuActivationKernel);
+    /** Configure kernel for a given list of arguments
+     *
+     * @note If the output tensor is a nullptr, the activation function will be performed in-place
+     *
+     * @param[in, out] src             Source tensor info. In case of @p dst tensor = nullptr, this tensor will store the result
+     *                                 of the activation function. Data types supported: QASYMM8/QASYMM8_SIGNED/QSYMM16/F16/F32.
+     * @param[out]     dst             Destination tensor info. Data type supported: same as @p src
+     * @param[in]      activation_info Activation layer information.
+     */
+    void configure(const ITensorInfo *src, ITensorInfo *dst, ActivationLayerInfo activation_info);
+    /** Static function to check if given info will lead to a valid configuration
+     *
+     * Similar to CpuActivationKernel::configure()
+     *
+     * @return a status
+     */
+    static Status validate(const ITensorInfo *src, const ITensorInfo *dst, const ActivationLayerInfo &act_info);
+
+    /** Return minimum workload size of the relevant kernel
+     *
+     * @param[in] platform     The CPU platform used to create the context.
+     * @param[in] thread_count Number of threads in the execution.
+     *
+     * @return[out] small_network_mws          Minimum workload size for requsted configuration.
+     */
+    size_t get_mws(const CPUInfo &platform, size_t thread_count) const override;
+
+    // Inherited methods overridden:
+    void        run_op(ITensorPack &tensors, const Window &window, const ThreadInfo &info) override;
+    const char *name() const override;
+
+    /** Get the preferred dimension in which the scheduler splits the work into multiple jobs.
+     *
+     * @return The split dimension hint.
+     */
+    size_t get_split_dimension_hint() const
+    {
+        return _heuristics.scheduler_hint().split_dimension();
+    }
+
+    /** Prepare the activation kernel for execution (Only executed once)
+     *
+     * @param[in] tensors Pack of input and output tensors
+     *
+     */
+    void prepare(ITensorPack &tensors);
+
+private:
+    ActivationLayerInfo                       _act_info{};
+    std::string                               _name{};
+    heuristics::CpuActivationKernelHeuristics _heuristics{};
+    PaddingSize                               _src_padding{};
+    PaddingSize                               _dst_padding{};
+    bool                                      _inplace{};
+};
+} // namespace kernels
+} // namespace cpu
+} // namespace arm_compute
+#endif // ACL_SRC_CPU_KERNELS_CPUACTIVATIONKERNEL_H
